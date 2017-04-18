@@ -1,0 +1,156 @@
+@media(max-width:1199px){
+    .navigation .navbar-default .navbar-nav > li:last-of-type > a{
+        margin-right:60px;
+    }
+    .navigation .navbar-default .navbar-header .navbar-brand{
+        margin-left:100px;
+    }
+    .service-sec .serv-title p{
+        margin-right:15px;
+        margin-left:15px;
+    }
+    .got-sec .got-title p{
+        margin-right:30px;
+        margin-left:30px;
+    }
+    .portfolio-sec .portfolio-title p{
+      margin-right:30px;
+        margin-left:30px;  
+    }
+    .portfolio-sec .iso-post{
+        width:470px;
+    }
+    .people-sec .people-post{
+        text-align:center;
+    }
+    footer .foot-elem ul > li > a{
+        margin:5px 15px;
+    }
+}
+@media(max-width:991px){
+    .navigation .nav-post p{
+        font-size:30px;
+    }
+    .navigation .nav-post a{
+        padding:20px 80px;
+    }   
+    .navigation .navbar-default .navbar-nav > li:last-of-type > a{
+        margin-right:40px;
+    }
+    .navigation .navbar-default .navbar-header .navbar-brand{
+        margin-left:50px;
+    }
+    .portfolio-sec .iso-post{
+        width:360px;
+    }
+    .get-sec .first,.get-sec .second{
+        float:none;
+        margin-right:Auto;
+        margin-left:auto;
+        width:100%;
+    }
+    footer .foot-elem ul > li > a{
+        margin:5px 10px;
+        font-size:20px;
+    }
+}
+@media(max-width:880px){
+    .navigation .navbar-default .navbar-nav > li > a{
+        font-size:14px;
+        padding:9px 15px;
+    }
+    .navigation .navbar-default .navbar-nav > li:last-of-type > a{
+        margin-right:20px;
+    }
+    .navigation .navbar-default .navbar-header .navbar-brand{
+        margin-left:20px;
+    }
+}
+@media(max-width:767px){
+    .navigation .navbar-default .navbar-nav{
+    border:none;
+    margin-right:80px;
+    margin-left:80px;
+}
+.portfolio-sec{
+    display:none;
+}
+.navigation .navbar-default .navbar-nav > li > a{
+        margin-bottom:5px;
+        margin-top:5px;
+        font-size:16px;
+        text-align:center;
+    }
+    footer .foot-elem ul > li{
+       margin:5px 2.5px;
+    }
+    footer .foot-elem ul > li > a{
+        font-size:17px;
+    }
+    .navigation .navbar-default .navbar-nav > li > a:hover,.navigation .navbar-default .navbar-nav > li.click > a{
+        border-radius:0px;
+    }
+    .navigation .navbar-right{
+        background:rgba(225,70,128,1);
+    }
+    .navigation .navbar-default .navbar-nav > li:last-of-type > a{
+        margin-right:7.5px;
+    }
+}
+@media(max-width:550px){
+    .navigation .nav-post p{
+        font-size:25px;
+        margin-right:10px;
+        margin-left:10px;
+    }
+    .navigation .nav-post a{
+        padding:18px 70px;
+    }  
+    .navigation .navbar-default .navbar-nav{
+    border:none;
+    margin-right:60px;
+    margin-left:60px;
+}
+.got-sec .got-title p{
+        margin-right:15px;
+        margin-left:15px;
+    }
+    .portfolio-sec .portfolio-title p{
+       margin-right:15px;
+        margin-left:15px; 
+    }
+    .get-sec .button a{
+        padding:24px 70px;
+    }
+}
+@media(max-width:440px){
+    .navigation .navbar-default .navbar-nav{
+    border:none;
+    margin-right:40px;
+    margin-left:40px;
+}
+.get-sec .button a{
+        padding:22px 65px;
+    }
+}
+@media(max-width:360px){
+    .navigation .nav-post a{
+        padding:16px 55px;
+    }
+    .navigation .navbar-default .navbar-nav{
+    border:none;
+    margin-right:25px;
+    margin-left:25px;
+}
+.get-sec .button a{
+        padding:22px 65px;
+    }
+}
+@media(max-width:330px){
+    .navigation .navbar-default .navbar-header .navbar-brand{
+        margin-left:10px;
+    }
+    .get-sec .button a{
+        padding:20px 60px;
+    }
+}

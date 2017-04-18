@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="icon" href="images/Logo.png">
+    <title>Calculator</title>
+        <link rel="stylesheet" href="css/calculator.css">
+  </head>
+    <body>      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+  <form id="calc" name="cal">
+            <input type="text" name="screen" id="screen" placeholder="0." disabled value="">
+            <div class="cont">
+                <input type="button" id="clear" class="btn" value="C" onclick="cal.screen.value = ''">
+                <input type="button" id="1" class="btn" value="<-" onclick="cal.screen.value = cal.screen.value.substring(0,(cal.screen.value.length - 1))">
+                <input type="button" id="square" class="btn" value="^2" onclick="cal.screen.value = cal.screen.value * cal.screen.value">
+                
+                <input type="button" id="divide" class="btn" value="/"  onclick="cal.screen.value += '/'">
+                
+                <input type="button" class="btn" value="7" onclick="cal.screen.value += '7'">
+                <input type="button" class="btn" value="8" onclick="cal.screen.value += '8'">
+                <input type="button" id="9" class="btn" value="9" onclick="cal.screen.value += '9'">
+                <input type="button" id="multiply" class="btn" value="*"  onclick="cal.screen.value += '*'">
+                
+                <input type="button" id="4" class="btn" value="4" onclick="cal.screen.value += '4'">
+                <input type="button" id="5" class="btn" value="5" onclick="cal.screen.value += '5'">
+                <input type="button" id="6" class="btn" value="6" onclick="cal.screen.value += '6'">
+                <input type="button" id="minus" class="btn" value="-" onclick="cal.screen.value += '-'">
+                
+                
+                <input type="button" id="1" class="btn" value="1" onclick="cal.screen.value += '1'">
+                <input type="button" id="2" class="btn" value="2" onclick="cal.screen.value += '2'">
+                <input type="button" id="3" class="btn" value="3" onclick="cal.screen.value += '3'">
+                <input type="button" id="plus" class="btn" value="+" onclick="cal.screen.value += '+'">
+                
+                <input type="button" id="0" class="btn" value="0" onclick="cal.screen.value += '0'">
+                <input type="button" id="point" class="btn" value="." onclick="cal.screen.value += '.'">
+                <input type="button" id="equal" class="btn" value="=" onclick="cal.screen.value = eval(cal.screen.value)">
+            </div>
+            <div class="footer">
+                Made By <a href="">M.B</a> 2016 &copy;
+            </div>
+        </div>
+</body>
+  </body>
+</html>

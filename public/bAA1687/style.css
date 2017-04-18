@@ -1,0 +1,129 @@
+* {
+	font-family: 'Titillium Web', sans-serif;
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+}
+body {
+	background: linear-gradient(to bottom , #455062 , #945b47);
+}
+ .clear {
+	 clear: both;
+ }
+.form {
+	width: 500px;
+	padding: 35px;
+	background: #35475f;
+	margin: 50px auto;
+	overflow: hidden;
+	box-shadow: 0px 5px 10px 0px #333;
+}
+.form .buttons {
+	width: 170px;
+	float: right;
+	margin-bottom: 40px;
+	color: #72849c;
+	background: #333;
+	position: relative;
+}
+.form .buttons area {
+	position: absolute;
+	z-index: 1;
+	width: 50%;
+	right: 0;
+	top: 0;
+	height: 100%;
+	background: #27b59d;
+}
+.form .buttons label {
+	float: right;
+	padding: 3px;
+	width: 50%;
+	text-align: center;
+	cursor: pointer;
+	position: relative;
+	z-index: 2;
+}
+.form .buttons label.active {
+	color: #FFF;
+}
+.form .name {
+	margin-bottom: 40px;
+	color: #72849c;
+}
+.form .name span {
+	padding: 10px 0px;
+	font-size: 25px;
+}
+.form .name span.active {
+	color: #FFF;
+	border-bottom: 2px solid #27b59d;
+}
+.form .name span:first-child {
+	padding-left: 0;
+}
+.form .name p {
+	display: inline-block;
+	padding: 0px 20px;
+}
+
+
+.form form h3 {
+	margin-bottom: 8px;
+	margin-top: 8px;
+	color: #FFF;
+}
+.form form input[type="text"],input[type="password"],input[type="email"] {
+	background: none;
+	outline: none;
+	border: none;
+	padding: 5px;
+	border-bottom: 1px solid #72849c;
+	width: 100%;
+	color: #fff;
+}
+.form form input[type="submit"] {
+	padding: 5px;
+	font-size: 20px;
+	width: 20%;
+	left: 40%;
+	position: relative;
+	border:none;
+	background: #27b59d;
+	color:#FFF;
+	outline: none;
+	margin-top: 10px;
+	cursor: pointer;
+}
+.form form label input[type="checkbox"] {
+	display: none;
+}
+.form form label input[type="checkbox"]:checked + section {
+	border-radius: 5px;
+	background: #27b59d;
+}
+.form form label section {
+	float: left;
+	border-radius: 50%;
+	overflow: hidden;
+	background: #72849c;
+	width: 20px;
+	height: 20px;
+	margin: 3px 5px 0px 0px;
+	position: relative;
+	cursor: pointer;
+	transition: 400ms;
+}
+.form form label {
+	color: #72849c;
+}
+.form form label a{
+	padding: 3px 0px;
+	color: #FFF;
+	border-bottom: 1px solid #27b59d;
+	text-decoration: none;
+	margin-left: 5px;
+}
+.form form.si {
+	display: none;
+}

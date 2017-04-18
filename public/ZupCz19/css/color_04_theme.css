@@ -1,0 +1,31 @@
+/****Start Default****/
+
+/*Active Link*/
+.navbar-inverse .navbar-nav > .active > a, 
+.navbar-inverse .navbar-nav > .active > a:hover, 
+.navbar-inverse .navbar-nav > .active > a:focus,
+.dropdown-menu > li > a:hover, 
+.dropdown-menu > li > a:focus,
+.carousel-indicators .active,
+.option-box .cog-check
+{
+    background-color: #FFD500
+}
+.navbar-inverse .navbar-brand span,
+.about h1 span, .about h3 span,
+.tesimonials span
+{
+    color: #FFD500;
+}
+.option-box .color-option,
+.tesimonials .carousel-indicators li.active
+{
+
+    border: 3px solid #FFD500;
+    
+}
+.dropdown-menu
+{
+    border-top: 3px solid #FFD500;
+
+}

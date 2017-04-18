@@ -1,0 +1,42 @@
+/* start default theme */
+
+.logo h1 span ,.logo span ,#menu a:active , #menu .active a , #menu li a:hover , .team ul li a:hover
+ ,.view a:hover , .readMore,.news ul li a:hover, .cont a ,.news h3 a:hover{
+	color:	#40E0D0;
+}
+
+.camera_caption h2{
+	border-bottom:4px solid 	#40E0D0;
+}
+.cBtn ul li:hover, .gearcheak, #filter li a:hover,.footer .subS ,#filter .current , .forma .cBtn .send , #filter li a.selected , .cBtn .buy{
+	background:	#40E0D0;
+}
+.cBtn .buy , .footer .subS{
+	box-shadow: 0px 2px 0px 0px #179abf;
+}
+/* End default theme */
+
+
+
+.uparrow ,.sk-rotating-plane , .custom-navbar .navbar-brand .navbar-toggle , .custom-navbar .navbar-toggle .icon-bar
+ , .bx-controls-direction a ,.bx-controls-direction a {
+  background-color: #40E0D0;
+
+  }
+
+#team h3 , #plan small ,#plan .plan-button .btn:hover , #contact .medium-icon , 
+
+   .custom-navbar .nav li.active > a 
+
+ ,  .medium-icon , h5 , .option-box i , .color-white a  {
+  color: #40E0D0;
+  
+}
+
+#plan .plan:hover , #contact .form-control:focus {
+  
+  border-color: #40E0D0;
+}
+
+ 
+

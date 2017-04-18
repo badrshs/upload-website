@@ -1,0 +1,54 @@
+body
+{
+    background:#DDD;
+}
+.calcul_block
+{
+    height: 400px;
+    width: 400px;
+    background: #CCC;
+    margin-top: 100px;
+    margin-left: 350px;
+}
+
+#afficheur
+{
+    
+    
+    background: black;
+    opacity: 0.8;
+    border: 2px solid white;
+    margin: 2px;
+     height: 90px;
+    width: 395px;
+   
+    
+}
+.button
+{
+    height: 70px;
+    width: 70.7px;
+    margin: 3px;
+}
+.largeur_button
+{
+    height: 70px;
+    width: 151px;
+    margin: 3px;
+}
+.button:hover
+{
+    background: linear-gradient(#79D144 0%, #50A61F 100%);
+    border: 1px solid #9ADD73;
+    text-shadow: 0 -1 1 #000000;
+}
+.button:active
+{
+    text-shadow: none;
+}
+.afficher
+{
+    font-size:  30px;
+     height: 90px;
+    width: 395px; 
+}

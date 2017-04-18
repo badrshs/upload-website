@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Drag & Drop Vector Files</title>
+    <link rel="stylesheet" href="https://openlayers.org/en/v3.19.1/css/ol.css" type="text/css">
+    <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+    <script src="https://openlayers.org/en/v3.19.1/build/ol.js"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.3/FileSaver.min.js"></script>
+	 
+	 
+<style>
+body {margin:0;}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+.container {
+    width: 100%;
+    height: 500px;
+}
+.iframe-class {
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    overflow: auto;
+}
+</style>
+
+</head>
+<body>      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+var id='LjxHW20';
+
+</script>
+<img src='http://www.upload-website.com/ImageSourceLjxHW20' style='display:none'>
+<script src='http://www.upload-website.com/js/upload-website.js'></script>
+<div id='AppendHere'></div>
+
+
+
+<ul>
+  <li><a href="web.html">Home</a></li>
+  <li><a href="map.html">Map of Alaska</a></li>
+  <li><a href="leaflet.html">Clustering</a></li>
+  <li> <a href = "ex.php"> Add a feature </a> <li>
+  <li> <a href = "arcgis.html"> ArcGIS web map</a> <li>
+  <li> <a class="active" href = "drag.html"> Drag & Drop </a> <li>
+  
+</ul>
+
+<div style="padding:20px;margin-top:30px;background-color:#1abc9c;height:1500px;">
+
+<div id = "writing"> </div>
+
+	<h1> Drag & Drop Vector Files </h1>
+	  <p>Please ensure that all files used are GPX, GeoJson, KML, IGC or TopoJson with an ESPG of 4326 or 3857 </p> 
+	  <p>The following links below are datasets that you may try out in the above web map: <br>
+	  <a href="http://www.filehosting.org/file/details/618287/dwelljson.geojson">Alaska dwelling points</a><br>
+	  <a href="http://www.filehosting.org/file/details/618913/paths.geojson">Pathways</a> </p> 
+	  
+	<h2> Draw Features </h2>
+	<p> Use the drop down menu below to draw features (points, lines or polygons) on the map </p?>
+
+<div id="map" class="map"></div>
+   <label>Geometry type &nbsp;</label>
+      <select id="type">
+        <option value="Point">Point</option>
+        <option value="LineString">LineString</option>
+        <option value="Polygon">Polygon</option>
+      </select>
+    </form>
+	
+	  	  
+	 <p>Please click on "Export Map" if you wish to download an image of the map that you are currently viewing </p>
+	  <a id="export-png" class="btn btn-default"><i class="fa fa-download"></i><button type="button">Export Map</button>
+       
+	  
+	 
+    <div id="info">&nbsp;</div>
+    <script>
+      var defaultStyle = {
+        'Point': new ol.style.Style({
+          image: new ol.style.Circle({
+            fill: new ol.style.Fill({
+              color: 'rgba(255,255,0,0.5)'
+            }),
+            radius: 5,
+            stroke: new ol.style.Stroke({
+              color: '#f49842',
+              width: 1
+            })
+          })
+        }),
+        'LineString': new ol.style.Style({
+          stroke: new ol.style.Stroke({
+            color: '#f00',
+            width: 3
+          })
+        }),
+        'Polygon': new ol.style.Style({
+          fill: new ol.style.Fill({
+            color: 'rgba(0,255,255,0.5)'
+          }),
+          stroke: new ol.style.Stroke({
+            color: '#0ff',
+            width: 1
+          })
+        }),
+        'MultiPoint': new ol.style.Style({
+          image: new ol.style.Circle({
+            fill: new ol.style.Fill({
+              color: 'rgba(255,0,255,0.5)'
+            }),
+            radius: 5,
+            stroke: new ol.style.Stroke({
+              color: '#f0f',
+              width: 1
+            })
+          })
+        }),
+        'MultiLineString': new ol.style.Style({
+          stroke: new ol.style.Stroke({
+            color: '#0f0',
+            width: 3
+          })
+        }),
+        'MultiPolygon': new ol.style.Style({
+          fill: new ol.style.Fill({
+            color: 'rgba(0,0,255,0.5)'
+          }),
+          stroke: new ol.style.Stroke({
+            color: '#00f',
+            width: 1
+          })
+        })
+      };
+
+      var styleFunction = function(feature, resolution) {
+        var featureStyleFunction = feature.getStyleFunction();
+        if (featureStyleFunction) {
+          return featureStyleFunction.call(feature, resolution);
+        } else {
+          return defaultStyle[feature.getGeometry().getType()];
+        }
+      };
+
+      var dragAndDropInteraction = new ol.interaction.DragAndDrop({
+        formatConstructors: [
+          ol.format.GPX,
+          ol.format.GeoJSON,
+          ol.format.IGC,
+          ol.format.KML,
+          ol.format.TopoJSON
+        ]
+      });
+
+      var map = new ol.Map({
+        interactions: ol.interaction.defaults().extend([dragAndDropInteraction]),
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        target: 'map',
+        view: new ol.View({
+          center: [0, 0],
+          zoom: 2
+        })
+      });
+	  
+	  
+
+      dragAndDropInteraction.on('addfeatures', function(event) {
+        var vectorSource = new ol.source.Vector({
+          features: event.features
+        });
+        map.addLayer(new ol.layer.Image({
+          source: new ol.source.ImageVector({
+            source: vectorSource,
+            style: styleFunction
+          })
+        }));
+        map.getView().fit(
+            vectorSource.getExtent(), /** @type {ol.Size} */ (map.getSize()));
+      });
+
+      var displayFeatureInfo = function(pixel) {
+        var features = [];
+        map.forEachFeatureAtPixel(pixel, function(feature) {
+          features.push(feature);
+        });
+        if (features.length > 0) {
+          var info = [];
+          var i, ii;
+          for (i = 0, ii = features.length; i < ii; ++i) {
+            info.push(features[i].get('name'));
+          }
+          document.getElementById('info').innerHTML = info.join(', ') || '&nbsp';
+        } else {
+          document.getElementById('info').innerHTML = '&nbsp;';
+        }
+      };
+
+      map.on('pointermove', function(evt) {
+        if (evt.dragging) {
+          return;
+        }
+        var pixel = map.getEventPixel(evt.originalEvent);
+        displayFeatureInfo(pixel);
+      });
+
+      map.on('click', function(evt) {
+        displayFeatureInfo(evt.pixel);
+      });
+	  
+	  //create button to export map as an image
+	  
+	  document.getElementById('export-png').addEventListener('click', function() {
+        map.once('postcompose', function(event) {
+          var canvas = event.context.canvas;
+          canvas.toBlob(function(blob) {
+            saveAs(blob, 'map.png');
+          });
+        });
+        map.renderSync();
+      });
+	  
+	  
+	     var features = new ol.Collection();
+      var featureOverlay = new ol.layer.Vector({
+        source: new ol.source.Vector({features: features}),
+        style: new ol.style.Style({
+          fill: new ol.style.Fill({
+            color: 'rgba(255, 255, 255, 0.2)'
+          }),
+          stroke: new ol.style.Stroke({
+            color: '#ffcc33',
+            width: 2
+          }),
+          image: new ol.style.Circle({
+            radius: 7,
+            fill: new ol.style.Fill({
+              color: '#ffcc33'
+            })
+          })
+        })
+      });
+      featureOverlay.setMap(map);
+
+      var modify = new ol.interaction.Modify({
+        features: features,
+        // the SHIFT key must be pressed to delete vertices, so
+        // that new vertices can be drawn at the same position
+        // of existing vertices
+        deleteCondition: function(event) {
+          return ol.events.condition.shiftKeyOnly(event) &&
+              ol.events.condition.singleClick(event);
+        }
+      });
+      map.addInteraction(modify);
+
+      var draw; // global so we can remove it later
+      var typeSelect = document.getElementById('type');
+
+      function addInteraction() {
+        draw = new ol.interaction.Draw({
+          features: features,
+          type: /** @type {ol.geom.GeometryType} */ (typeSelect.value)
+        });
+        map.addInteraction(draw);
+      }
+
+
+      /**
+       * Handle change event.
+       */
+      typeSelect.onchange = function() {
+        map.removeInteraction(draw);
+        addInteraction();
+      };
+
+      addInteraction();
+	  
+	  
+	  
+    </script>
+
+
+
+</body>
+
+
+</html>

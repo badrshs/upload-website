@@ -1,0 +1,116 @@
+@font-face {
+
+  src: url(../hacen-liner-screen_0.ttf);
+  font-family: 'hacen';
+
+}
+
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box
+}
+
+body {
+ background: url('../images/bg.jpg') no-repeat;
+ background-size: cover
+}
+
+.error {
+ width: 100%;
+ height: 40px;
+ background: rgba(231, 76, 60,1.0);
+ text-align: center;
+ font-family: hacen;
+ font-size: 20px;
+ line-height: 40px;
+ color: #fff;
+ display: none
+}
+
+.container {
+  width: 700px;
+  height: 400px;
+  background: none;
+  margin: 100px auto 0;
+  text-align: center
+}
+
+.container h1 {
+  font-size: 40px;
+  font-family: hacen;
+  color: #fff;
+  font-weight: normal;
+  margin-bottom: 50px;
+}
+
+.years,
+.months,
+.days {
+  width: 80px;
+  height: 40px;
+  border: 1px solid #EEE;
+  border-radius: 2px;
+  margin-right: 15px;
+  font-family: hacen;
+  font-size: 15px;
+}
+
+.container .btn {
+ display: inline-block;
+ width: 100px;
+ height: 40px;
+ border-radius: 2px;
+ background: #01b388;
+ color: #fff;
+ border: none;
+ font-size: 20px;
+ font-family: hacen;
+ font-weight: normal;
+ margin-right: 15px;
+ outline: none;
+ cursor: pointer;
+ transition: padding 0.6s ease;
+}
+
+.container .btn .fa-spinner {
+ display: none
+}
+
+.years {
+ padding-left: 5px;
+}
+
+.container .result {
+ display: none;
+ width: 500px;
+ height: 350px;
+ background: none;
+ margin: 0 auto;
+ padding: 10px;
+}
+
+.container .result h2,
+.container .result span {
+ display: inline-block;
+ font-size: 30px;
+ font-family: hacen;
+ color: #fff;
+ font-weight: normal;
+ text-shadow: 2px 2px 2px #000;
+}
+
+.container .result .img-burj {
+ display: block;
+ width: 250px;
+ height: 250px;
+ margin: 20px auto 0;
+ background: #f90
+}
+
+
+/* spical styles */
+
+::-webkit-input-placeholder {
+ color: #000
+}

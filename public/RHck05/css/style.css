@@ -1,0 +1,548 @@
+/*START Main rulez*/
+
+*{
+	-moz-box-sizing: border-box;
+    text-decoration: none;
+    list-style: none	
+}
+
+
+@import 'https://fonts.googleapis.com/css?family=Righteous';
+
+
+.container{ width: 1170px; margin: auto}
+
+.clearfix{clear: both}
+
+
+/*Start header*/
+.header .slider{
+	background-image: url('../n71.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+	height: 600px
+}
+
+.header .slider .intro{padding-top: 216px}
+
+.header .slider .intro h2{
+	margin-top: 0;
+	font-size: 50px;
+	border-bottom: 4px solid #fff;
+	border-top: 4px solid #fff;
+	width: 600px;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	padding: 5px 0;
+    font-family: 'Righteous', cursive;
+}
+
+.header .slider .intro button{
+	background: none;
+	border: 1px solid #fff;
+	font-size: 25px;
+	padding: 7px 34px;
+	transition: 0.5s;
+}
+
+.header .slider .intro button:hover{
+	background-color: #fff;
+	color: RGBA(0, 0, 0, 0.6);
+	cursor: pointer;
+	box-shadow: 3px 5px 16px #000;
+	transform: rotate(2deg) scale(1.2,1.2);
+}
+/*End header*/
+
+
+
+/*Start header navbar*/
+.header .navbar{
+	background-color: #252F31;
+	text-transform: uppercase;
+	height: 60px
+}
+
+.header .navbar h2{margin: 9px 0; font-size: 35px;}
+
+.header .navbar h2 span{ color:#2DCC70 }
+/*End header navbar*/
+
+
+
+/*Start header ul*/
+.header .navbar ul{
+	padding: 0;
+	float: right;
+	padding: 5px 0 0 0;
+	margin-right: -76px
+}
+
+.header .navbar ul li{margin-right: -10px}
+
+.header .navbar ul li:last-child{margin-right: 0}
+
+.header .navbar ul li a{padding: 22px 20px}
+
+.header .navbar ul li a:active,
+.header .navbar ul li a:hover{color: #2DCC70; transition: 0.2s}
+
+.header .navbar ul li a:hover{background-color: #4B5557}
+/*End header ul*/
+
+
+
+/*Start features*/
+.features {
+	overflow: hidden;
+	padding: 60px 0 60px 0
+}
+
+.features .feat{
+	width: 28.333%;
+    display: inline-block;
+	height: 150px;
+	color: #5C6868;
+	background-color: #fff;
+	margin: 1%;
+	font-size: 21px;
+	height: 214px;
+    outline: 2px solid #fff;
+    box-shadow: 1px 1px 7px ;
+    padding: 0 14px;
+}
+
+
+.features .feat p{
+	line-height: 1.4;
+	color: #888;
+    text-align: justify; /* to chang the article from "messy article" to perfect article*/
+    -moz-text-align: justify;
+    -webkit-text-align: justify;
+    word-spacing: -2px
+    
+}
+
+
+/*END features*/
+
+
+/*star about-me*/
+.aboutme{
+	background-color: #F2F2F2;
+	min-height: 636px;
+    position: relative;
+}
+
+.aboutme .image{
+	width: 40%;
+	height: 636px;
+    right: 33px;
+    position: relative
+}
+
+.aboutme .image img{
+	width: 100%;
+	height:100%;
+	opacity: 0.9
+}
+
+.aboutme .info{
+    width: 55%;
+	margin: 15px 0 0 55px
+}
+
+.aboutme .info h1{
+	color: #586263;
+	font-size: 50px
+}
+
+.aboutme .info h2{margin-left: 50px}
+
+.aboutme .info p:last-of-type{margin-top: 30px}
+
+.aboutme .info .hobbies{margin-top: 45px}
+
+.aboutme .info .hobbies > div{
+	width: 45%;
+	min-height: 100px;
+	line-height: 24px
+}
+
+.aboutme .info .hobbies .content .icon,
+.aboutme .info .hobbies .content2 .icon
+{
+	width: 32px;
+	margin: 19px 15px 0 3px;
+	font-size: 34px;
+	color: #2DCC70
+}
+
+.aboutme .info .hobbies .content{
+	margin-right: 40px;
+    width: 45%
+}
+
+.mb{ margin-bottom: -10px} /*FRAME WORK*/
+
+.ml{ margin-left: 50px} /*FRAME WORK*/
+
+/*end about-me*/
+
+
+
+
+
+/*start my-skills*/
+.my-skills{
+	padding: 56px 0 56px;
+	height: 500px
+}
+
+.my-skills h1{font-size: 50px}
+
+
+
+/*practice about : reset & after*/
+.my-skills .skills button{
+	color: #2DCC70;
+	background: none;
+	border: 2px solid #5BD799;
+	font-size: 25px;
+	padding: 7px 34px;
+	margin-top: 30px
+}
+
+.my-skills .skills button:hover{
+	background-color: #5BD799;
+	color: #fff;
+}
+
+
+.my-skills .progress,
+.my-skills .skills {width: 50%}
+
+
+.my-skills .progress .technique{ margin: 30px 0 0 50px}
+
+.my-skills .progress .technique h3{
+	margin-bottom: 10px;
+	letter-spacing: 1px;
+}
+
+.my-skills .progress .technique div{
+	background-color: #F2F2F2;
+    height: 25px;
+    width: 90%
+}
+
+
+.my-skills .progress .technique span{
+	background-color:  #5BD799;
+	display: block;
+	height: 25px;
+	line-height: 25px;
+	text-align: right;
+	font-weight: bold
+}
+/*end my-skills*/
+
+
+
+/*start resume*/
+.resume{
+	background-image: url('../Webdesign2.jpg');
+	padding: 56px 0 56px;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.resume h1{
+	text-shadow: 0px 2px 5px #000;
+	font-size: 50px;
+}
+
+.resume p{
+	font-size: 20px;
+	padding: 0 87px 0 !important;
+    text-shadow: 0px 2px 5px #000;
+}
+
+.resume button{
+	color: #fff;
+	background: #2DCC70;
+	border: 2px solid #5BD799;
+	font-size: 25px;
+	padding: 7px 34px;
+	margin-top: 30px;
+    transition: all 1s ease-in-out;
+}
+
+.resume button:hover{
+	background-color: #5BD799;
+	color: #fff;
+    transform: scale(1.1)
+}
+/*end resume*/
+
+
+
+/*Start my-education*/
+.my-education{
+	padding: 80px 0 56px;
+	clear: both;
+	height: 1500px
+}
+
+.my-education hr{ color: #586263; opacity:0.3;}
+
+.w45{width: 45%}/*FRAME WORK*/
+
+.my-education .exp{margin-top: 70px;}
+
+.my-education .main div img,
+.my-education .main1 div img{
+	width: 100%;
+	height: 321px;
+}
+
+.my-education .main1 {margin-right: 60px;}
+
+.my-education .main1 p:last-of-type{margin-bottom: 50px;}
+
+.my-education h2+p{margin-top: -10px;}
+
+.my-education .exp p:last-of-type{margin: 27px 0 59px 0;}
+
+.my-education .exp p+div{
+    background-color: #2DCC70;
+    border: 2px solid #5BD799;
+    font-size: 15px;
+    transition: 0.3s;
+    margin: -5px 0 33px 0;
+    font-weight: bold;
+    width: 66px;
+    height: 24px;
+}
+
+
+.my-education .exp p+div:hover{
+	background-color: #5BD799;
+	color: #fff;
+	cursor: pointer;
+}
+
+
+.my-education .main{
+	margin-top: 80px;
+	width: 45%;
+	margin-right: 50px;
+}
+
+.my-education .main p:last-of-type{margin-bottom: 50px;}
+
+.my-education .main+.exp{margin-top: 140px;}
+/*End my-education*/
+
+
+
+/*start testimonials*/
+.testimonials{
+	background-image: url('../local-web-design.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+	padding: 56px 0 56px;
+}
+
+.testimonials q{
+    font: italic bold 20px/1.8 'Orbitron', sans-serif;
+}
+
+.testimonials h2{
+    font-size: 32px;
+    text-shadow: 0px 0px 3px #000;
+}
+
+
+.testimonials ul{
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+.testimonials ul li{
+    width: 25px;
+    border: 2px solid #5BD799;
+    margin-left: 5px;
+    display: inline-block;
+    height: 25px;
+    border-radius: 50%;
+}
+
+.testimonials ul li.active,
+.testimonials ul li:hover{
+    background-color: #5BD799;
+    cursor: pointer;
+}
+/*end testimonials*/
+
+
+
+/*Start portfoilo*/
+.portfolio{padding: 30px 0 30px 0;}
+
+.portfolio h1{
+	margin-top: 60px;
+    font-size: 50px
+}
+
+.portfolio p{
+    font: bold 18px/1.8 arial,tahoma;
+    color: #888;
+}
+
+.portfolio .our-work{
+	margin-top: 28px;
+	overflow: visible;
+}
+
+.portfolio .our-work > div{
+	width: 30.333333%;
+    float: left;
+    margin: 0 0 25px 25px;
+	height: 270px;
+    transition: all 1s ease-in-out
+}
+
+.portfolio .our-work > div:hover{transform: scale(1.1) rotateY(180deg); }
+
+.portfolio .our-work > div img{
+	width: 100%;
+	height: 100%;
+    padding: 3px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+}
+/*End portfoilo*/
+
+
+
+/*Start contact*/
+.contact{
+	background-color: #252F31;
+	padding: 56px 0 56px ;
+	margin-top: 56px;
+}
+
+.contact .info{
+    width: 50%;
+    margin-right: 5%;
+}
+
+.contact .info h1{margin-bottom: 40px;}
+
+.contact p{
+     font: 18px/1.8 arial,tahoma;
+     color: #888;
+}
+
+.contact p span i,
+.contact strong{color: #fff;}
+
+.contact p span i{
+    margin-right: 6px;
+    font-size: 20px;
+}
+
+.contact a{color: #888;}
+
+.contact a:hover{color: #DFE5E5 }
+
+.contact .form{
+	width: 45%;
+    margin-top: 50px
+}
+
+.contact .form label{
+    display: block;
+    margin-bottom: 10px;
+    color: #DFE5E5;
+    font-size: 18px
+}
+
+.input{
+    width: 80%;
+    background: #4B5557;
+    border: 0;
+    margin-bottom: 20px;
+    padding: 7px
+}
+
+.input:hover{outline: 1px solid #fff}
+
+.contact .form input{height: 35px;}
+
+.contact .form textarea{height: 250px;}
+
+.contact .form input[type="submit"]{
+    background-color: #191E22;
+    color: #DFE5E5;
+    height: 45px;
+    font-size: 25px
+}
+
+.contact .form input[type="submit"]:hover{
+    background-color: #DFE5E5;
+    color: #191E22;
+    box-shadow: none
+}
+/*End contact*/
+
+
+
+/*Start footer*/
+footer{
+    background-color: #191E22;
+    margin-bottom: 0;
+    padding: 20px 0;
+    color: #DFE5E5
+}
+
+footer span{font-size: 18px}
+
+.fa-stack{ margin: 10px -3px 0 0}
+
+.fc:hover{
+    color: aqua;
+}
+
+.all-fa{
+    color: #191E22;
+    transition: 1s
+}
+
+.all-fa:hover{color: #fff; transform: rotate(360deg)}
+/*end footer*/
+
+
+
+
+
+
+::-moz-selection { /* Code for Firefox */
+    color: #fff;
+    background: #2DCC70
+}
+
+/*FRAME WORK*/
+.CSS3{transition: 0.3s;}
+.CSS3:hover{box-shadow: 3px 5px 16px grey; cursor: pointer;}
+
+.tx{ text-align: center}
+.of{ overflow: hidden}
+.fa-left{float: left}
+.white{color: #fff}
+.r-text-sh{ text-shadow: none;}
+h1 , h2 , h3{text-transform: uppercase; color: #586263; text-shadow: 0px 0px 3px};
+a{text-decoration: none;}
+
+/*END Main rulez*/

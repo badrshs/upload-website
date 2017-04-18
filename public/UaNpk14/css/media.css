@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+/**** start Media CSS Document here ****/
+
+
+
+/* start smart phones and tablets here */
+@media (min-width:0px) and (max-width:767px){
+	
+	.navbar-inverse .navbar-nav > .active > a, 
+	.navbar-inverse .navbar-nav > .active > a:hover, 
+	.navbar-inverse .navbar-nav > .active > a:focus{
+		padding-top:10px;
+		padding-bottom:10px;}
+		
+	.navbar-inverse .navbar-nav > li > a{
+		padding-top:10px;
+		padding-bottom:10px;}	
+		
+	.subscribe .form-control{
+		margin-top:20px;
+		margin-bottom:20px;
+		margin-right:auto;
+		margin-left:auto;}	
+	
+	.navbar-fixed-top .navbar-collapse, 
+	.navbar-fixed-bottom .navbar-collapse{
+		max-height:none;}
+		
+	.OurAwesomeWork{
+		text-align:center;}
+		
+	.SocialList img{
+		max-width:75%;
+		height:auto;}	
+	
+	}
+/* end smart phones and tablets here */
+
+
+
+/* start small screen here */
+@media (min-width:768px) and (max-width:991px){
+	
+	
+	
+	}
+/* end small screen here */
+
+
+
+/* start medium screen here */
+@media (min-width:992px) and (max-width:1199px){
+	
+	
+	
+	}
+/* end medium screen here */
+
+
+
+/* start large screen here */
+@media (min-width:1200px){
+	
+
+	
+	}
+/* end large screen here */
+
+
+
+/**** end Media CSS Document here ****/
+

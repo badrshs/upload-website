@@ -1,0 +1,81 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Century Gothic';
+	font-size: 175%;
+    background-image: url("images8.png");
+} 
+	
+}
+#first{width: 550px;
+     background-color:#EB984E;
+	 margin: 0 auto;
+	 border: solid 2px;
+	border-color: #AF601A;}
+#second{width: 550px;
+     background-color:#D5DBDB;
+	 margin: 0 auto;
+	 border: solid 9px;
+	 border-color:#2E4053;}
+#third{width: 175px;
+     background-color:#F5CBA7;
+	 margin: 0 auto;
+	 border: solid 2px;
+	 border-color: #2E4053;
+	 	padding: 0px 15px 0px 15px;}
+#fourth{width: 490px;
+     background-color:#D5DBDB;
+	 margin: 0 auto;
+	 border: solid 9px;
+	 border-color:#2E4053;}
+.nav {
+		border: solid 7px;
+		border-color:#2E4053;
+		background-color:#D5DBDB;
+		color:#ffffff;
+		list-style: none;
+		text-align: center;
+		padding: 5px 0 5px 0;
+}
+.nav > li {
+		display: inline-block;
+		padding: 0 45px 0 45px;
+}
+
+.nav > li > a {
+		text-decoration: none;
+		color: #000000;
+	}
+	
+.nav > li > a:hover {
+		color: #FDFEFE;
+	}
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1.0;
+	line-
+}
+.page {
+	list-style: none;
+}
+.pager {
+	font-size: 400%;
+	list-style: none;
+	text-align: center;
+	padding: 5px 0 5px 0;
+}
+
+.pager > li {
+		display: inline-block;
+		padding: 0 45px 0 45px;
+}
+
+.pager > li > a {
+		text-decoration: none;
+		color: #D5DBDB;
+	
+}
+
+.pager > li > a:hover {
+	color: #2E4053;
+	
+}

@@ -1,0 +1,393 @@
+/*start main rules*/
+*
+{
+    box-sizing: border-box;
+}
+body
+{
+    font-family: 'Cairo', sans-serif;  
+    direction: rtl;
+}
+
+
+
+ul, ol
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+h1, h2, h3
+{
+    margin: 0;
+}
+
+.text-center
+{
+    text-align: center;
+}
+.main-color
+{
+    color: #f7600e;
+}
+.main-background
+{
+    background-color: #252E30
+}
+
+/*end main rules*/
+
+/*start header
+================================================================*/
+header 
+{
+    
+    background-image: url("../images/b.jpg");
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: #fff;
+   
+}
+header .overlay
+{
+    background: rgba(49, 55, 61, .7);
+    width: 100%;
+    height: 100%;
+}
+header .header-arrow
+{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px 0;
+    
+}
+header .header-arrow i
+{
+    border: 2px solid #7b7b7b;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+}
+header .header-arrow i:hover
+{
+    border: 2px solid #f7600e;
+    border-radius: 50%;
+    width: 33px;
+    height: 33px;
+    line-height: 33px;
+    color: #f7600e;
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    cursor: pointer;
+}
+header .header-elm
+{
+    padding-top: 30.3333%;
+}
+header .header-elm h1, h2, h3
+{
+    padding-bottom: 25px;
+}
+
+/*start teacher
+================================================================*/
+.teacher
+{
+    margin-top: 5%;
+    padding: 60px 0;
+    overflow: hidden;
+    position: relative;
+}
+.teacher p
+{
+    text-align: center;
+    color: #fff;
+}
+.teacher .dr-hamdy
+{
+    width: 25%;
+    float: right;
+    margin-right: 15%;
+    margin-left: 0;
+}
+.teacher .dr-mosaad
+{
+    width: 25%;
+    float: left;
+    margin-left: 15%;
+    margin-right: 0;
+    
+}
+.teacher .dr-hamdy img
+{
+    width: 100%;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    padding: 3px;
+    background-color: #fff;
+}
+
+.teacher .dr-mosaad img
+{
+    width: 100%;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    padding: 3px;
+    background-color: #fff;
+}
+.teacher figcaption
+{
+    padding-top: 10px;
+    font-size: 20px;
+    color: #fff;
+}
+
+
+.teacher .teacher-arrow
+{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px 0;
+    
+}
+.teacher .teacher-arrow i
+{
+    border: 2px solid #7b7b7b;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    color: #fff;
+}
+.teacher .teacher-arrow i:hover
+{
+    border: 2px solid #f7600e;
+    border-radius: 50%;
+    width: 33px;
+    height: 33px;
+    line-height: 33px;
+    color: #f7600e;
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    cursor: pointer;
+}
+/*start project
+================================================================*/
+.project
+{
+    margin-top: 5%;
+    padding: 60px 0;
+    overflow: hidden;
+    position: relative;
+}
+.project .card
+{
+    width: 29.33333%;
+    height: 350px;
+    margin-left: 2%;
+    margin-right: 2%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 1s ease-in-out;
+    float: right;
+}
+.project .card:hover
+{
+    transform: rotatey(180deg);
+}
+.project .card .face
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    color: #777;
+    backface-visibility: hidden;
+}
+.project .card .front .top-card
+{
+    background-color: #444;
+    width: 100%;
+    height: 80px;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 55px;
+     backface-visibility: hidden;
+}
+.project .card .front .top-card img
+{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    top: 25px;
+}
+.project .card .front p
+{
+    width: 90%;
+    margin: 5px auto;
+    line-height: 28px;
+}
+.project .card .back
+{
+ transform: rotateY(180deg);  
+    
+}
+.project .card .back ol
+{
+    text-align: right;
+    line-height: 25px;
+    margin-right: 25px;
+}
+.project .project-arrow
+{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px 0;
+    
+}
+.project .project-arrow i
+{
+    border: 2px solid #7b7b7b;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    color: #000;
+}
+.project .project-arrow i:hover
+{
+    border: 2px solid #f7600e;
+    border-radius: 50%;
+    width: 33px;
+    height: 33px;
+    line-height: 33px;
+    color: #f7600e;
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    cursor: pointer;
+}
+/*start footer in page
+========================================================*/
+.footer
+{
+    margin-top: 100px;
+    direction: ltr;
+}
+.contact
+{
+    background-color: #252e30;
+    padding-bottom: 80px;
+    padding-top: 40px;
+}
+.contact:after
+{
+    content: ".";
+    display: block;
+    overflow: hidden;
+    height: 0;
+    clear: both;
+}
+.contact-me, .form
+{
+    float: left;
+    width: 50%;
+    margin-top: 50px;
+}
+.contact-me h3
+{
+    margin: 0;
+    color: #fff;
+    letter-spacing: 1px;
+    font-size: 25px;
+}
+.contact-me address
+{
+    line-height: 30px;
+    color: #575c5d;
+    margin-top: 20px;
+}
+.contact-me address span
+{
+    color: #fff;
+    display: inline-block;
+    width: 100px; 
+}
+.form label
+{
+    margin-bottom: 15px;
+    margin-left: 40px;
+    display: block;
+    color: #fff;
+}
+.form input
+{
+    margin-bottom: 25px;
+    margin-left: 40px;
+    display: block;
+    width: 90%;
+    padding: 13px 5px;
+    background-color: #4b5456;
+    box-shadow: none;
+    font-size: 18px;
+    border: none;
+}
+input::-webkit-input-placeholder {color: #eee;}
+input::-o-placeholder {color: #eee;}
+input::-moz-placeholder {color: #eee;}
+input::-ms-input-placeholder {color: #eee;}
+input:focus::-webkit-input-placeholder {color: transparent;} 
+input:focus::-o-placeholder {color: transparent;}
+input:focus::-moz-placeholder {color: transparent;}
+input:focus::-ms-input-placeholder {color: transparent;}
+
+.form input#sign-in
+{
+    width: 40%;
+    border: none;
+    background-color: #191f21;
+    color: #fff;
+    text-align: center;
+    margin-top: 60px;
+    cursor: pointer;
+}
+.social
+{
+    background-color: #191f21;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: #3e4648;
+    line-height: 30px;
+    text-align: center;
+    font-size: 20px;
+}
+.social p
+{
+    margin: 0;
+}
+.social i{color: darkgrey;}
+.social i:hover{color: #fff;cursor: pointer;}

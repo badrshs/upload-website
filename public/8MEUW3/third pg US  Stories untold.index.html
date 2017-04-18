@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<style>
+
+body {
+  background-color: #C71585;
+  margin: 0 15%;
+  font-family: US;
+   }
+h1 {
+  text-align: center;
+  font-family: ‘Metrophobic’,
+  font-weight: normal;
+  font-color white;
+  text-transform: uppercase;
+  border-bottom: 1px solid #FFFFFF;
+  margin-top: 30px;
+}
+.mySlides {display:none;}
+</style>
+<body>      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+var id='8MEUW3';
+
+</script>
+<img src='http://www.upload-website.com/ImageSource8MEUW3' style='display:none'>
+<script src='http://www.upload-website.com/js/upload-website.js'></script>
+<div id='AppendHere'></div>
+
+
+
+<h2 class="w3-center">Stories Untold Events</h2>
+
+<div class="w3-content" style="max-width:400px">
+  <div class="mySlides w3-container w3-pink">
+    <h1><b>Wedding Album</b></h1>
+    <h1><i>Work with your budget to plan your storybook wedding.</i></h1>
+  </div>
+
+  <center> <img class="mySlides" src="images/card.jpg" style="width:400px;height:400px;"> </center> </div>
+  <center><img class="mySlides" src="images/chair.jpg" style="width:1000px;height:800px;"> </center> </div>
+  <center><img class="mySlides" src="images/decor.jpg" style="width:400px;height:600px;"> </center> </div>
+  <center> <img class="mySlides" src="images/invite.jpg" style="width:1000px;height:800px;"> </center> </div>
+  <center> <img class="mySlides" src="images/wedcake.jpg" style="width:600px;height:700px;"> </center> </div>
+  <center> <img class="mySlides" src="images/cake.jpg" style="width:1000px;height:600px;"> </center> </div>
+  <center> <img class="mySlides" src="images/mirror.jpg" style="width:1000px;height:600px;"> </center> </div>
+
+</div>
+
+<script>
+var slideIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > x.length) {slideIndex = 1}
+    x[slideIndex-1].style.display = "block";
+    setTimeout(carousel, 2000);
+}
+</script>
+
+</body>
+</html>
+

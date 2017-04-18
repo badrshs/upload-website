@@ -1,0 +1,112 @@
+h1, h2, h3, h4, h5, h6 
+  font-family: $font
+  font-weight: 700
+  line-height: 1.5em
+  text-rendering: optimizelegibility // Fix the character spacing for headings
+  text-transform: uppercase
+  margin-bottom: 0.75em
+
+h1
+  font-size: (35/14) * 1em
+  line-height: (42/35) * 1em
+  margin-bottom: (21 / 35) * 1em// 42px
+
+h2 
+  font-size: 1.5em
+  line-height: 1em
+  margin-bottom: 1em // 21px
+
+h3
+  font-size: (18/14) * 1em
+  line-height: (21/18) * 1em
+  margin-bottom: (10.5/18) * 1em// 18px
+
+h4
+  font-size: 1em // 14px
+h5
+  font-size: 1em
+  font-weight: 300 // 14px
+
+h6
+  font-size: (13/14) * 1em
+  line-height: (14/13) * 1em // 13px
+
+p, figure, ul, ol
+  margin-bottom: 1.5em
+
+a
+  text-decoration: none
+  font-family: $font
+  color: $text-color
+  +transition(all 0.4s ease-out)
+
+blockquote
+  font-weight: 900
+  line-height: 1.5em
+  letter-spacing: 1px
+  position: relative
+  text-transform: uppercase
+  color: $brown
+
+  &:after
+    content: '\201C'
+    font-family: fixedsys, consolas, monospace
+    position: absolute
+    font-size: 5em
+    line-height: 0.75em
+    color: $red
+    top: 0
+    left: 0.15em
+
+  p
+    margin: 1.5em 1em 1.5em 4em
+
+.post-content
+  text-align: justify
+
+  p
+    +pie-clearfix()
+
+  ol, ul
+    list-style-position: inside !important
+
+  ol
+    list-style: decimal
+  
+  ul
+    list-style: circle
+  
+  .aligncenter
+    display: table
+    margin: 0 auto
+  
+
+  .alignright
+    float: right
+    margin: 0 0 0.75em 0.75em
+
+  .alignleft
+    float: left
+    margin: 0 0.75em 0.75em 0
+
+  .wp-caption
+    padding: 7px
+    box-shadow: 0 0 0 1px $gray
+    margin-bottom: 1.5em
+
+    > a
+      display: block
+  
+  .wp-caption-text
+    color: $red
+    text-align: center
+    margin: 0 auto
+    display: table-caption
+    margin-bottom: 0.75em
+
+.post-pagination
+  color: $red
+  margin-bottom: 1.5em
+  > a
+    &:hover
+      color: $red

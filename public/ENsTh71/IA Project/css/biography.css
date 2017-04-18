@@ -1,0 +1,24 @@
+body
+{
+    width: auto;
+    height: auto;
+    margin: auto;
+    background-image:url(gear-wallpaper-6.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+img.profile{
+    width: 240px;
+    height: 300px;
+    margin-top: 30px;
+    margin-left: 500px;
+}
+p.para{
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-right: 50px;
+}

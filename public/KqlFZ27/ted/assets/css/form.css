@@ -1,0 +1,165 @@
+#speaker .container-fluid .col-lg-12 {
+  margin-top: 100px;
+}
+.content {
+  margin-top: 100px;
+  text-align: left;
+  width: 90vmin;
+  margin: auto;
+}
+
+.content p {
+  text-align: inherit;
+}
+.ar {
+  text-align: justify;
+  text-align: right;
+}
+
+h2 {
+  text-align: center;
+  color: #ff2b06;
+}
+
+.container h1 {
+  text-align: center;
+  margin-top: 5%;
+  padding-bottom:20px;
+  padding-top: 50px;
+  color: #ff2b06;
+}
+
+.form{
+  width: 50vmin;
+   margin-top: 1%;
+   padding: 10px;
+   background: #fff;
+   border:1px solid rgba(0, 0, 0, 0.075);
+   margin-bottom:;
+   color:#000 !important;
+   font-size:17px;
+   -webkit-transition: all 0.4s;
+   -moz-transition: all 0.4s;
+   transition: all 0.4s;
+ }
+
+ .form:hover{
+   border:1px solid #ff2b06 !important;
+ }
+
+ .form:focus{
+   color: white;
+   outline: none;
+   border:1px solid #ff2b06 !important;
+ }
+
+
+  .cv{
+   width: 100%;
+   margin-top: 1%;
+   padding: 10px;
+   background: #fff;
+   border:1px solid rgba(0, 0, 0, 0.075);
+   margin-bottom:;
+   color:#000 !important;
+   font-size:17px;
+   -webkit-transition: all 0.4s;
+   -moz-transition: all 0.4s;
+   transition: all 0.4s;
+ }
+
+ .cv:hover{
+   border:1px solid #ff2b06 !important;
+ }
+
+ .cv:focus{
+   color: white;
+   outline: none;
+   border:1px solid #ff2b06 !important;
+ }
+ #submit {
+   text-align: center;
+   width: 150px;
+   height: 41px;
+   padding: 11px;
+ }
+
+#adding_new_member_form span {
+  font-size: 2.5em;
+  color: red;
+}
+
+ .textarea{
+   height: 200px;
+   max-height: 200px;
+ }
+
+/* Generic Button Styles */
+
+
+
+/* Send Button Styles */
+
+ .form-btn{
+   width:110px;
+   display: block;
+   height: auto;
+   padding:15px;
+   color:#000;
+   background:#ff2b06;
+   border:none;
+   border-radius:3px;
+   outline: none;
+   -webkit-transition: all 0.3s;
+   -moz-transition: all 0.3s;
+   transition: all 0.3s;
+   margin:auto;
+   padding-bottom: 20px;
+   box-shadow: 0px 1px 4px rgba(0,0,0, 0.10);
+   -moz-box-shadow: 0px 1px 4px rgba(0,0,0, 0.10);
+   -webkit-box-shadow: 0px 1px 4px rgba(0,0,0, 0.10);
+ }
+
+.form-btn:hover{
+   background:#ff2b06 !important;
+   color: white;
+   border:none;
+ }
+
+.form-btn:active {
+   opacity: 0.9;
+ }
+center{
+ margin-top:330px;
+}
+input {
+   position: relative;
+   z-index: 9999;
+}
+
+select {
+  width: 250px !important;
+}
+
+
+/* ====================== end ==================== */
+.member-form {
+  margin-left: 10%;
+  margin-top: 5%;
+
+}
+textarea {
+  width: 65vmin !important;
+  height: 200px;
+}
+
+label {
+  padding-bottom: ;
+  font-size: 1.2em;
+  text-transform: capitalize;
+  margin-left: auto;
+  color: #000;
+}
+ .col-xs-12 {
+   padding-bottom: 30px;
+ }

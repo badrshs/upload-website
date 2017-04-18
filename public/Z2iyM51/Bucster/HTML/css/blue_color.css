@@ -1,0 +1,18 @@
+/* start default theme */
+
+.logo h1 span ,.logo span ,#menu a:active , #menu .active a , #menu li a:hover , .team ul li a:hover
+ ,.view a:hover , .readMore,.news ul li a:hover, .cont a ,.news h3 a:hover{
+	color:#1fcdff;
+}
+
+.camera_caption h2{
+	border-bottom:4px solid #1fcdff;
+}
+.cBtn ul li:hover , #filter li a:hover,.footer .subS ,#filter .current , .forma .cBtn .send , #filter li a.selected , .cBtn .buy{
+	background:#1fcdff;
+}
+.cBtn .buy , .footer .subS{
+	box-shadow: 0px 2px 0px 0px #179abf;
+}
+/* End default theme */
+

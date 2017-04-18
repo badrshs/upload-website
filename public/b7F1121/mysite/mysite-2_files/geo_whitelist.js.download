@@ -1,0 +1,1 @@
+window._GEO_WHITELIST=["AE","AR","AT","AU","BE","CA","CO","DE","DK","ES","FI","FR","GB","HK","ID","IN","IT","JP","MY","NL","NO","NZ","PR","PT","SA","SE","TR","UK","US","ZA"];

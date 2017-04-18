@@ -1,0 +1,1187 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>JabRef references</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+<!--
+// QuickSearch script for JabRef HTML export 
+// Version: 3.0
+//
+// Copyright (c) 2006-2011, Mark Schenk
+//
+// This software is distributed under a Creative Commons Attribution 3.0 License
+// http://creativecommons.org/licenses/by/3.0/
+//
+// Features:
+// - intuitive find-as-you-type searching
+//    ~ case insensitive
+//    ~ ignore diacritics (optional)
+//
+// - search with/without Regular Expressions
+// - match BibTeX key
+//
+
+// Search settings
+var searchAbstract = true;	// search in abstract
+var searchReview = true;	// search in review
+
+var noSquiggles = true; 	// ignore diacritics when searching
+var searchRegExp = false; 	// enable RegExp searches
+
+
+if (window.addEventListener) {
+	window.addEventListener("load",initSearch,false); }
+else if (window.attachEvent) {
+	window.attachEvent("onload", initSearch); }
+
+function initSearch() {
+	// check for quick search table and searchfield
+	if (!document.getElementById('qs_table')||!document.getElementById('quicksearch')) { return; }
+
+	// load all the rows and sort into arrays
+	loadTableData();
+	
+	//find the query field
+	qsfield = document.getElementById('qs_field');
+
+	// previous search term; used for speed optimisation
+	prevSearch = '';
+
+	//find statistics location
+	stats = document.getElementById('stat');
+	setStatistics(-1);
+	
+	// set up preferences
+	initPreferences();
+
+	// shows the searchfield
+	document.getElementById('quicksearch').style.display = 'block';
+	document.getElementById('qs_field').onkeyup = quickSearch;
+}
+
+function loadTableData() {
+	// find table and appropriate rows
+	searchTable = document.getElementById('qs_table');
+	var allRows = searchTable.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+
+	// split all rows into entryRows and infoRows (e.g. abstract, review, bibtex)
+	entryRows = new Array(); infoRows = new Array(); absRows = new Array(); revRows = new Array();
+
+	// get data from each row
+	entryRowsData = new Array(); absRowsData = new Array(); revRowsData = new Array(); 
+	
+	BibTeXKeys = new Array();
+	
+	for (var i=0, k=0, j=0; i<allRows.length;i++) {
+		if (allRows[i].className.match(/entry/)) {
+			entryRows[j] = allRows[i];
+			entryRowsData[j] = stripDiacritics(getTextContent(allRows[i]));
+			allRows[i].id ? BibTeXKeys[j] = allRows[i].id : allRows[i].id = 'autokey_'+j;
+			j ++;
+		} else {
+			infoRows[k++] = allRows[i];
+			// check for abstract/review
+			if (allRows[i].className.match(/abstract/)) {
+				absRows.push(allRows[i]);
+				absRowsData[j-1] = stripDiacritics(getTextContent(allRows[i]));
+			} else if (allRows[i].className.match(/review/)) {
+				revRows.push(allRows[i]);
+				revRowsData[j-1] = stripDiacritics(getTextContent(allRows[i]));
+			}
+		}
+	}
+	//number of entries and rows
+	numEntries = entryRows.length;
+	numInfo = infoRows.length;
+	numAbs = absRows.length;
+	numRev = revRows.length;
+}
+
+function quickSearch(){
+	
+	tInput = qsfield;
+
+	if (tInput.value.length == 0) {
+		showAll();
+		setStatistics(-1);
+		qsfield.className = '';
+		return;
+	} else {
+		t = stripDiacritics(tInput.value);
+
+		if(!searchRegExp) { t = escapeRegExp(t); }
+			
+		// only search for valid RegExp
+		try {
+			textRegExp = new RegExp(t,"i");
+			closeAllInfo();
+			qsfield.className = '';
+		}
+			catch(err) {
+			prevSearch = tInput.value;
+			qsfield.className = 'invalidsearch';
+			return;
+		}
+	}
+	
+	// count number of hits
+	var hits = 0;
+
+	// start looping through all entry rows
+	for (var i = 0; cRow = entryRows[i]; i++){
+
+		// only show search the cells if it isn't already hidden OR if the search term is getting shorter, then search all
+		if(cRow.className.indexOf('noshow')==-1 || tInput.value.length <= prevSearch.length){
+			var found = false; 
+
+			if (entryRowsData[i].search(textRegExp) != -1 || BibTeXKeys[i].search(textRegExp) != -1){ 
+				found = true;
+			} else {
+				if(searchAbstract && absRowsData[i]!=undefined) {
+					if (absRowsData[i].search(textRegExp) != -1){ found=true; } 
+				}
+				if(searchReview && revRowsData[i]!=undefined) {
+					if (revRowsData[i].search(textRegExp) != -1){ found=true; } 
+				}
+			}
+			
+			if (found){
+				cRow.className = 'entry show';
+				hits++;
+			} else {
+				cRow.className = 'entry noshow';
+			}
+		}
+	}
+
+	// update statistics
+	setStatistics(hits)
+	
+	// set previous search value
+	prevSearch = tInput.value;
+}
+
+
+// Strip Diacritics from text
+// http://stackoverflow.com/questions/990904/javascript-remove-accents-in-strings
+
+// String containing replacement characters for stripping accents 
+var stripstring = 
+    'AAAAAAACEEEEIIII'+
+    'DNOOOOO.OUUUUY..'+
+    'aaaaaaaceeeeiiii'+
+    'dnooooo.ouuuuy.y'+
+    'AaAaAaCcCcCcCcDd'+
+    'DdEeEeEeEeEeGgGg'+
+    'GgGgHhHhIiIiIiIi'+
+    'IiIiJjKkkLlLlLlL'+
+    'lJlNnNnNnnNnOoOo'+
+    'OoOoRrRrRrSsSsSs'+
+    'SsTtTtTtUuUuUuUu'+
+    'UuUuWwYyYZzZzZz.';
+
+function stripDiacritics(str){
+
+    if(noSquiggles==false){
+        return str;
+    }
+
+    var answer='';
+    for(var i=0;i<str.length;i++){
+        var ch=str[i];
+        var chindex=ch.charCodeAt(0)-192;   // Index of character code in the strip string
+        if(chindex>=0 && chindex<stripstring.length){
+            // Character is within our table, so we can strip the accent...
+            var outch=stripstring.charAt(chindex);
+            // ...unless it was shown as a '.'
+            if(outch!='.')ch=outch;
+        }
+        answer+=ch;
+    }
+    return answer;
+}
+
+// http://stackoverflow.com/questions/3446170/escape-string-for-use-in-javascript-regex
+// NOTE: must escape every \ in the export code because of the JabRef Export...
+function escapeRegExp(str) {
+  return str.replace(/[-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+}
+
+function toggleInfo(articleid,info) {
+
+	var entry = document.getElementById(articleid);
+	var abs = document.getElementById('abs_'+articleid);
+	var rev = document.getElementById('rev_'+articleid);
+	var bib = document.getElementById('bib_'+articleid);
+	
+	if (abs && info == 'abstract') {
+		abs.className.indexOf('noshow') == -1?abs.className = 'abstract noshow':abs.className = 'abstract show';
+	} else if (rev && info == 'review') {
+		rev.className.indexOf('noshow') == -1?rev.className = 'review noshow':rev.className = 'review show';
+	} else if (bib && info == 'bibtex') {
+		bib.className.indexOf('noshow') == -1?bib.className = 'bibtex noshow':bib.className = 'bibtex show';
+	} else { 
+		return;
+	}
+
+	// check if one or the other is available
+	var revshow; var absshow; var bibshow;
+	(abs && abs.className.indexOf('noshow') == -1)? absshow = true: absshow = false;
+	(rev && rev.className.indexOf('noshow') == -1)? revshow = true: revshow = false;	
+	(bib && bib.className.indexOf('noshow') == -1)? bibshow = true: bibshow = false;
+	
+	// highlight original entry
+	if(entry) {
+		if (revshow || absshow || bibshow) {
+		entry.className = 'entry highlight show';
+		} else {
+		entry.className = 'entry show';
+		}
+	}
+	
+	// When there's a combination of abstract/review/bibtex showing, need to add class for correct styling
+	if(absshow) {
+		(revshow||bibshow)?abs.className = 'abstract nextshow':abs.className = 'abstract';
+	} 
+	if (revshow) {
+		bibshow?rev.className = 'review nextshow': rev.className = 'review';
+	}	
+	
+}
+
+function setStatistics (hits) {
+	if(hits < 0) { hits=numEntries; }
+	if(stats) { stats.firstChild.data = hits + '/' + numEntries}
+}
+
+function getTextContent(node) {
+	// Function written by Arve Bersvendsen
+	// http://www.virtuelvis.com
+	
+	if (node.nodeType == 3) {
+	return node.nodeValue;
+	} // text node
+	if (node.nodeType == 1 && node.className != "infolinks") { // element node
+	var text = [];
+	for (var chld = node.firstChild;chld;chld=chld.nextSibling) {
+		text.push(getTextContent(chld));
+	}
+	return text.join("");
+	} return ""; // some other node, won't contain text nodes.
+}
+
+function showAll(){
+	closeAllInfo();
+	for (var i = 0; i < numEntries; i++){ entryRows[i].className = 'entry show'; }
+}
+
+function closeAllInfo(){
+	for (var i=0; i < numInfo; i++){
+		if (infoRows[i].className.indexOf('noshow') ==-1) {
+			infoRows[i].className = infoRows[i].className + ' noshow';
+		}
+	}
+}
+
+function clearQS() {
+	qsfield.value = '';
+	showAll();
+}
+
+function redoQS(){
+	showAll();
+	quickSearch(qsfield);
+}
+
+function updateSetting(obj){
+	var option = obj.id;
+	var checked = obj.value;
+
+	switch(option)
+	 {
+	 case "opt_searchAbs":
+	   searchAbstract=!searchAbstract;
+	   redoQS();
+	   break;
+	 case "opt_searchRev":
+	   searchReview=!searchReview;
+	   redoQS();
+	   break;
+	 case "opt_useRegExp":
+	   searchRegExp=!searchRegExp;
+	   redoQS();
+	   break;
+	 case "opt_noAccents":
+	   noSquiggles=!noSquiggles;
+	   loadTableData();
+	   redoQS();
+	   break;
+	 }
+}
+
+function initPreferences(){
+	if(searchAbstract){document.getElementById("opt_searchAbs").checked = true;}
+	if(searchReview){document.getElementById("opt_searchRev").checked = true;}
+	if(noSquiggles){document.getElementById("opt_noAccents").checked = true;}
+	if(searchRegExp){document.getElementById("opt_useRegExp").checked = true;}
+	
+	if(numAbs==0) {document.getElementById("opt_searchAbs").parentNode.style.display = 'none';}
+	if(numRev==0) {document.getElementById("opt_searchRev").parentNode.style.display = 'none';}
+}
+
+function toggleSettings(){
+	var togglebutton = document.getElementById('showsettings');
+	var settings = document.getElementById('settings');
+	
+	if(settings.className == "hidden"){
+		settings.className = "show";
+		togglebutton.innerText = "close settings";
+		togglebutton.textContent = "close settings";
+	}else{
+		settings.className = "hidden";
+		togglebutton.innerText = "settings...";		
+		togglebutton.textContent = "settings...";
+	}
+}
+
+-->
+</script>
+<style type="text/css">
+body { background-color: white; font-family: Arial, sans-serif; font-size: 13px; line-height: 1.2; padding: 1em; color: #2E2E2E; margin: auto 2em; }
+
+form#quicksearch { width: auto; border-style: solid; border-color: gray; border-width: 1px 0px; padding: 0.7em 0.5em; display:none; position:relative; }
+span#searchstat {padding-left: 1em;}
+
+div#settings { margin-top:0.7em; /* border-bottom: 1px transparent solid; background-color: #efefef; border: 1px grey solid; */ }
+div#settings ul {margin: 0; padding: 0; }
+div#settings li {margin: 0; padding: 0 1em 0 0; display: inline; list-style: none; }
+div#settings li + li { border-left: 2px #efefef solid; padding-left: 0.5em;}
+div#settings input { margin-bottom: 0px;}
+
+div#settings.hidden {display:none;}
+
+#showsettings { border: 1px grey solid; padding: 0 0.5em; float:right; line-height: 1.6em; text-align: right; }
+#showsettings:hover { cursor: pointer; }
+
+.invalidsearch { background-color: red; }
+input[type="button"] { background-color: #efefef; border: 1px #2E2E2E solid;}
+
+table { width: 100%; empty-cells: show; border-spacing: 0em 0.2em; margin: 1em 0em; border-style: none; }
+th, td { border: 1px gray solid; border-width: 1px 1px; padding: 0.5em; vertical-align: top; text-align: left; }
+th { background-color: #efefef; }
+td + td, th + th { border-left: none; }
+
+td a { color: navy; text-decoration: none; }
+td a:hover  { text-decoration: underline; }
+
+tr.noshow { display: none;}
+tr.highlight td { background-color: #EFEFEF; border-top: 2px #2E2E2E solid; font-weight: bold; }
+tr.abstract td, tr.review td, tr.bibtex td { background-color: #EFEFEF; text-align: justify; border-bottom: 2px #2E2E2E solid; }
+tr.nextshow td { border-bottom: 1px gray solid; }
+
+tr.bibtex pre { width: 100%; overflow: auto; white-space: pre-wrap;}
+p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
+
+@media print {
+	p.infolinks, #qs_settings, #quicksearch, t.bibtex { display: none !important; }
+	tr { page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+var id='ZxynP30';
+
+</script>
+<img src='http://www.upload-website.com/ImageSourceZxynP30' style='display:none'>
+<script src='http://www.upload-website.com/js/upload-website.js'></script>
+<div id='AppendHere'></div>
+
+
+
+<form action="" id="quicksearch">
+<input type="text" id="qs_field" autocomplete="off" placeholder="Type to search..." /> <input type="button" onclick="clearQS()" value="clear" />
+<span id="searchstat">Matching entries: <span id="stat">0</span></span>
+<div id="showsettings" onclick="toggleSettings()">settings...</div>
+<div id="settings" class="hidden">
+<ul>
+<li><input type="checkbox" class="search_setting" id="opt_searchAbs" onchange="updateSetting(this)"><label for="opt_searchAbs"> include abstract</label></li>
+<li><input type="checkbox" class="search_setting" id="opt_searchRev" onchange="updateSetting(this)"><label for="opt_searchRev"> include review</label></li>
+<li><input type="checkbox" class="search_setting" id="opt_useRegExp" onchange="updateSetting(this)"><label for="opt_useRegExp"> use RegExp</label></li>
+<li><input type="checkbox" class="search_setting" id="opt_noAccents" onchange="updateSetting(this)"><label for="opt_noAccents"> ignore accents</label></li>
+</ul>
+</div>
+</form>
+<table id="qs_table" border="1">
+<thead><tr><th width="20%">Author</th><th width="30%">Title</th><th width="5%">Year</th><th width="30%">Journal/Proceedings</th><th width="10%">Reftype</th><th width="5%">DOI/URL</th></tr></thead>
+<tbody><tr id="Aksoy2015" class="entry">
+	<td>Aksoy, E.E., Aein, M.J., Tamosiunaite, M. and Worgotter, F.</td>
+	<td>Semantic parsing of human manipulation activities using on-line learned models for robot imitation <p class="infolinks">[<a href="javascript:toggleInfo('Aksoy2015','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Aksoy2015','bibtex')">BibTeX</a>]</p></td>
+	<td>2015</td>
+	<td>IEEE International Conference on Intelligent Robots and Systems<br/>Vol. 2015-December, pp. 2875-2882&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/IROS.2015.7353773">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Aksoy2015" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Human manipulation activity recognition is an important yet challenging task in robot imitation. In this paper, we introduce, for the first time, a novel method for semantic decomposition and recognition of continuous human manipulation activities by using on-line learned individual manipulation models. Solely based on the spatiotemporal interactions between objects and hands in the scene, the proposed framework can parse not only sequential and concurrent (overlapping) manipulation streams but also basic primitive elements of each detected manipulation. Without requiring any prior object knowledge, the framework can furthermore extract object-like scene entities that are performing the same role in the detected manipulations. The framework was evaluated on our new egocentric activity dataset which contains 120 different samples of 8 single atomic manipulations (e.g. Cutting and Stirring) and 20 long and complex activity demonstrations such as “making a sandwich” and “preparing a breakfast”. We finally show that parsed manipulation actions can be imitated by robots even in various scene contexts with novel objects.</td>
+</tr>
+<tr id="bib_Aksoy2015" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Aksoy2015,
+  author = {Aksoy, E. E. and Aein, M. J. and Tamosiunaite, M. and Worgotter, F.},
+  title = {Semantic parsing of human manipulation activities using on-line learned models for robot imitation},
+  journal = {IEEE International Conference on Intelligent Robots and Systems},
+  year = {2015},
+  volume = {2015-December},
+  pages = {2875--2882},
+  doi = {http://dx.doi.org/10.1109/IROS.2015.7353773}
+}
+</pre></td>
+</tr>
+<tr id="Argall2009" class="entry">
+	<td>Argall, B.D., Chernova, S., Veloso, M. and Browning, B.</td>
+	<td>A survey of robot learning from demonstration <p class="infolinks">[<a href="javascript:toggleInfo('Argall2009','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Argall2009','bibtex')">BibTeX</a>]</p></td>
+	<td>2009</td>
+	<td>Robotics and Autonomous Systems<br/>Vol. 57(5), pp. 469-483&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/j.robot.2008.10.024">DOI</a> <a href="http://dx.doi.org/10.1016/j.robot.2008.10.024">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_Argall2009" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: We present a comprehensive survey of robot Learning from Demonstration (LfD), a technique that develops policies from example state to action mappings. We introduce the LfD design choices in terms of demonstrator, problem space, policy derivation and performance, and contribute the foundations for a structure in which to categorize LfD research. Specifically, we analyze and categorize the multiple ways in which examples are gathered, ranging from teleoperation to imitation, as well as the various techniques for policy derivation, including matching functions, dynamics models and plans. To conclude we discuss LfD limitations and related promising areas for future research. textcopyright 2008 Elsevier B.V. All rights reserved.</td>
+</tr>
+<tr id="bib_Argall2009" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Argall2009,
+  author = {Argall, Brenna D. and Chernova, Sonia and Veloso, Manuela and Browning, Brett},
+  title = {A survey of robot learning from demonstration},
+  journal = {Robotics and Autonomous Systems},
+  publisher = {Elsevier B.V.},
+  year = {2009},
+  volume = {57},
+  number = {5},
+  pages = {469--483},
+  url = {http://dx.doi.org/10.1016/j.robot.2008.10.024},
+  doi = {http://dx.doi.org/10.1016/j.robot.2008.10.024}
+}
+</pre></td>
+</tr>
+<tr id="Beom1995" class="entry">
+	<td>Beom, H.R.B.H.R. and Cho, H.S.C.H.S.</td>
+	<td>A sensor-based navigation for a mobile robot using fuzzy logic and$nreinforcement learning <p class="infolinks">[<a href="javascript:toggleInfo('Beom1995','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Beom1995','bibtex')">BibTeX</a>]</p></td>
+	<td>1995</td>
+	<td>IEEE Transactions on Systems, Man, and Cybernetics<br/>Vol. 25(3), pp. 464-477&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/21.364859">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Beom1995" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: The proposed navigator consists of an avoidance behavior and$ngoal-seeking behavior. Two behaviors are independently designed at the$ndesign stage and then combined them by a behavior selector at the$nrunning stage. A behavior selector using a bistable switching function$nchooses a behavior at each action step so that the mobile robot can go$nfor the goal position without colliding with obstacles. Fuzzy logic maps$nthe input fuzzy sets representing the mobile robot's state space$ndetermined by sensor readings to the output fuzzy sets representing the$nmobile robot's action space. Fuzzy rule bases are built through the$nreinforcement learning which requires simple evaluation data rather than$nthousands of input-output training data. Since the fuzzy rules for each$nbehavior are learned through a reinforcement learning method, the fuzzy$nrule bases can be easily constructed for more complex environments. In$norder to find the mobile robot's present state, ultrasonic sensors$nmounted at the mobile robot are used. The effectiveness of the proposed$nmethod is verified by a series of simulations</td>
+</tr>
+<tr id="bib_Beom1995" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Beom1995,
+  author = {Beom, Hee Rak Beom Hee Rak and Cho, Hyung Suck Cho Hyung Suck},
+  title = {A sensor-based navigation for a mobile robot using fuzzy logic and$nreinforcement learning},
+  journal = {IEEE Transactions on Systems, Man, and Cybernetics},
+  year = {1995},
+  volume = {25},
+  number = {3},
+  pages = {464--477},
+  doi = {http://dx.doi.org/10.1109/21.364859}
+}
+</pre></td>
+</tr>
+<tr id="Bicho2011" class="entry">
+	<td>Bicho, E., Erlhagen, W., Louro, L. and Costa e Silva, E.</td>
+	<td>Neuro-cognitive mechanisms of decision making in joint action: A human-robot interaction study <p class="infolinks">[<a href="javascript:toggleInfo('Bicho2011','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Bicho2011','bibtex')">BibTeX</a>]</p></td>
+	<td>2011</td>
+	<td>Human Movement Science<br/>Vol. 30(5), pp. 846-868&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/j.humov.2010.08.012">DOI</a> <a href="http://dx.doi.org/10.1016/j.humov.2010.08.012">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_Bicho2011" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: In this paper we present a model for action preparation and decision making in cooperative tasks that is inspired by recent experimental findings about the neuro-cognitive mechanisms supporting joint action in humans. It implements the coordination of actions and goals among the partners as a dynamic process that integrates contextual cues, shared task knowledge and predicted outcome of others' motor behavior. The control architecture is formalized by a system of coupled dynamic neural fields representing a distributed network of local but connected neural populations. Different pools of neurons encode task-relevant information about action means, task goals and context in the form of self-sustained activation patterns. These patterns are triggered by input from connected populations and evolve continuously in time under the influence of recurrent interactions. The dynamic model of joint action is evaluated in a task in which a robot and a human jointly construct a toy object. We show that the highly context sensitive mapping from action observation onto appropriate complementary actions allows coping with dynamically changing joint action situations. ?? 2010 Elsevier B.V.</td>
+</tr>
+<tr id="bib_Bicho2011" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Bicho2011,
+  author = {Bicho, Estela and Erlhagen, Wolfram and Louro, Luis and Costa e Silva, Eliana},
+  title = {Neuro-cognitive mechanisms of decision making in joint action: A human-robot interaction study},
+  journal = {Human Movement Science},
+  publisher = {Elsevier B.V.},
+  year = {2011},
+  volume = {30},
+  number = {5},
+  pages = {846--868},
+  url = {http://dx.doi.org/10.1016/j.humov.2010.08.012},
+  doi = {http://dx.doi.org/10.1016/j.humov.2010.08.012}
+}
+</pre></td>
+</tr>
+<tr id="Brooks1989" class="entry">
+	<td>Brooks, R.A.</td>
+	<td>A Robot that Walks; Emergent Behaviors from a Carefully Evolved Network <p class="infolinks">[<a href="javascript:toggleInfo('Brooks1989','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Brooks1989','bibtex')">BibTeX</a>]</p></td>
+	<td>1989</td>
+	<td>Neural Computation<br/>Vol. 1(2), pp. 253-262&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1162/neco.1989.1.2.253">DOI</a> <a href="http://www.mitpressjournals.org/doi/abs/10.1162/neco.1989.1.2.253">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_Brooks1989" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Most animals have significant behavioral expertise built in without having to explicitly learn it all from scratch. This expertise is a product of evolution of the organism; it can be viewed as a very long-term form of learning which provides a structured system within which individuals might learn more specialized skills or abilities. This paper suggests one possible mechanism for analagous robot evolution by describing a carefully designed series of networks, each one being a strict augmentation of the previous one, which control a six-legged walking machine capable of walking over rough terrain and following a person passively sensed in the infrared spectrum. As the completely decentralized networks are augmented, the robot's performance and behavior repertoire demonstrably improve. The rationale for such demonstrations is that they may provide a hint as to the requirements for automatically building massive networks to carry out complex sensory-motor tasks. The experiments with an actual robot ensure ...</td>
+</tr>
+<tr id="bib_Brooks1989" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Brooks1989,
+  author = {Brooks, Rodney A.},
+  title = {A Robot that Walks; Emergent Behaviors from a Carefully Evolved Network},
+  journal = {Neural Computation},
+  year = {1989},
+  volume = {1},
+  number = {2},
+  pages = {253--262},
+  url = {http://www.mitpressjournals.org/doi/abs/10.1162/neco.1989.1.2.253},
+  doi = {http://dx.doi.org/10.1162/neco.1989.1.2.253}
+}
+</pre></td>
+</tr>
+<tr id="Dominey2008" class="entry">
+	<td>Dominey, P.F., Metta, G., Nori, F. and Natale, L.</td>
+	<td>Anticipation and initiative in human-humanoid interaction <p class="infolinks">[<a href="javascript:toggleInfo('Dominey2008','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Dominey2008','bibtex')">BibTeX</a>]</p></td>
+	<td>2008</td>
+	<td>2008 8th IEEE-RAS International Conference on Humanoid Robots, Humanoids 2008, pp. 693-699&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/ICHR.2008.4755974">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Dominey2008" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: One of the long-term goals for humanoid robotics is to have these robots working side-by side with humans, helping the humans in a variety of open ended tasks, which can change in real-time. In such contexts a crucial component of the robot behavior will be to adapt as rapidly as possible to regularities that can be learned from the human. This will allow the robot to anticipate predictable events, in order to render the interaction more fluid. This will be particularly pertinent in the context of tasks that will be repeated several times, or that contain sub-tasks that will be repeated within the global task. Through exposure to repetition the robot should automatically extract and exploit the underlying regularities. Here we present results from human-robot cooperation experiments in the context of a cooperative assembly task. The architecture is characterized by the maintenance and use of an ldquointeraction historyrdquo - a literal record of all past interactions that have taken place. During on-line interaction, the system continuously searches the interaction history for sequences whose onset matches the actions that are currently being invoked. Recognition of such matches allows the robot to take different levels of anticipatory activity. As predicted sequences are successively validated by the user, the level of anticipation and learning increases. Level 1 anticipation allows the system to predict what the user will say, and thus eliminate the need for verification when the prediction holds. At Level 2 allows the system to take initiative to propose the predicted next event. At Level 3, the robot is highly confident and takes initiative to perform the predicted action. We demonstrate how these progressive levels render the cooperative interaction more fluid and more rapid. Implications for further refinement in the quality of human-robot cooperation are discussed.</td>
+</tr>
+<tr id="bib_Dominey2008" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Dominey2008,
+  author = {Dominey, Peter Ford and Metta, Giorgio and Nori, Francesco and Natale, Lorenzo},
+  title = {Anticipation and initiative in human-humanoid interaction},
+  journal = {2008 8th IEEE-RAS International Conference on Humanoid Robots, Humanoids 2008},
+  year = {2008},
+  pages = {693--699},
+  doi = {http://dx.doi.org/10.1109/ICHR.2008.4755974}
+}
+</pre></td>
+</tr>
+<tr id="Fukumoto1995" class="entry">
+	<td>Fukumoto, S., Miyajima, H., Kishida, K. and Nagasawa, Y.</td>
+	<td>A destructive learning method of fuzzy inference rules <p class="infolinks">[<a href="javascript:toggleInfo('Fukumoto1995','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Fukumoto1995','bibtex')">BibTeX</a>]</p></td>
+	<td>1995</td>
+	<td>Proceedings of 1995 IEEE International Conference on Fuzzy Systems<br/>Vol. 2, pp. 203-210&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/FUZZY.1992.258618">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Fukumoto1995" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: In order to construct a fuzzy system with a learning function, numerous studies combining fuzzy systems and neural networks (or descent method) are being carried out. The self-tuning method using the descent method has been proposed by Ichihashi et al. (1991) and it is known that the constructive method is more powerful than other methods using neural networks (or descent method). But this method does not have a sufficient generalization capability or an expressing capability for the acquired knowledge. In this paper, we propose a new learning method called a destructive method of fuzzy inference rules by the descent method. And we show that the destructive method is superior in the number of rules and inference errors but inferior in learning speed to the constructive one. Further more, in order to improve learning speed, we propose a learning method combining the constructive and the destructive methods. Some numerical examples are given to show the validity of the proposed methods, and applications of these methods to the obstacle avoidance problem are shown</td>
+</tr>
+<tr id="bib_Fukumoto1995" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Fukumoto1995,
+  author = {Fukumoto, S and Miyajima, H and Kishida, K and Nagasawa, Y},
+  title = {A destructive learning method of fuzzy inference rules},
+  journal = {Proceedings of 1995 IEEE International Conference on Fuzzy Systems},
+  year = {1995},
+  volume = {2},
+  pages = {203--210},
+  doi = {http://dx.doi.org/10.1109/FUZZY.1992.258618}
+}
+</pre></td>
+</tr>
+<tr id="Garrell2013" class="entry">
+	<td>Garrell, A., Villamizar, M., Moreno-Noguer, F. and Sanfeliu, A.</td>
+	<td>Proactive behavior of an autonomous mobile robot for human-assisted learning <p class="infolinks">[<a href="javascript:toggleInfo('Garrell2013','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Garrell2013','bibtex')">BibTeX</a>]</p></td>
+	<td>2013</td>
+	<td>Proceedings - IEEE International Workshop on Robot and Human Interactive Communication, pp. 107-113&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/ROMAN.2013.6628463">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Garrell2013" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: During the last decade, there has been a growing interest in making autonomous social robots able to interact with people. However, there are still many open issues regarding the social capabilities that robots should have in order to perform these interactions more naturally. In this paper we present the results of several experiments conducted at the Barcelona Robot Lab in the campus of the “Universitat Politècnica de Catalunya” in which we have analyzed different important aspects of the interaction between a mobile robot and nontrained human volunteers. First, we have proposed different robot behaviors to approach a person and create an engagement with him/her. In order to perform this task we have provided the robot with several perception and action capabilities, such as that of detecting people, planning an approach and verbally communicating its intention to initiate a conversation. Once the initial engagement has been created, we have developed further communication skills in order to let people assist the robot and improve its face recognition system. After this assisted and online learning stage, the robot becomes able to detect people under severe changing conditions, which, in turn enhances the number and the manner that subsequent human-robot interactions are performed.</td>
+</tr>
+<tr id="bib_Garrell2013" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Garrell2013,
+  author = {Garrell, A. and Villamizar, M. and Moreno-Noguer, F. and Sanfeliu, A.},
+  title = {Proactive behavior of an autonomous mobile robot for human-assisted learning},
+  journal = {Proceedings - IEEE International Workshop on Robot and Human Interactive Communication},
+  year = {2013},
+  pages = {107--113},
+  doi = {http://dx.doi.org/10.1109/ROMAN.2013.6628463}
+}
+</pre></td>
+</tr>
+<tr id="Gielniak2011" class="entry">
+	<td>Gielniak, M.J. and Thomaz, A.L.</td>
+	<td>Generating anticipation in robot motion <p class="infolinks">[<a href="javascript:toggleInfo('Gielniak2011','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Gielniak2011','bibtex')">BibTeX</a>]</p></td>
+	<td>2011</td>
+	<td>Proceedings - IEEE International Workshop on Robot and Human Interactive Communication, pp. 449-454&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/ROMAN.2011.6005255">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Gielniak2011" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Robots that display anticipatory motion provide their human partners with greater time to respond in interactive tasks because human partners are aware of robot intent earlier. We create anticipatory motion autonomously from a single motion exemplar by extracting hand and body symbols that communicate motion intent and moving them earlier in the motion. We validate that our algorithm extracts the most salient frame (i.e. the correct symbol) which is the most informative about motion intent to human observers. Furthermore, we show that anticipatory variants allow humans to discern motion intent sooner than motions without anticipation, and that humans are able to reliably predict motion intent prior to the symbol frame when motion is anticipatory. Finally, we quantified the time range for robot motion when humans can perceive intent more accurately and the collaborative social benefits of anticipatory motion are greatest.</td>
+</tr>
+<tr id="bib_Gielniak2011" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Gielniak2011,
+  author = {Gielniak, Michael J. and Thomaz, Andrea L.},
+  title = {Generating anticipation in robot motion},
+  journal = {Proceedings - IEEE International Workshop on Robot and Human Interactive Communication},
+  year = {2011},
+  pages = {449--454},
+  doi = {http://dx.doi.org/10.1109/ROMAN.2011.6005255}
+}
+</pre></td>
+</tr>
+<tr id="Hawkins2014" class="entry">
+	<td>Hawkins, K.P., Bansal, S., Vo, N.N. and Bobick, A.F.</td>
+	<td>Anticipating human actions for collaboration in the presence of task and sensor uncertainty <p class="infolinks">[<a href="javascript:toggleInfo('Hawkins2014','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Hawkins2014','bibtex')">BibTeX</a>]</p></td>
+	<td>2014</td>
+	<td>Proceedings - IEEE International Conference on Robotics and Automation, pp. 2215-2222&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/ICRA.2014.6907165">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Hawkins2014" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: A representation for structured activities is developed that allows a robot to probabilistically infer which task actions a human is currently performing and to predict which future actions will be executed and when they will occur. The goal is to enable a robot to anticipate collaborative actions in the presence of uncertain sensing and task ambiguity. The system can represent multi-path tasks where the task variations may contain partially ordered actions or even optional actions that may be skipped altogether. The task is represented by an AND-OR tree structure from which a probabilistic graphical model is constructed. Inference methods for that model are derived that support a planning and execution system for the robot which attempts to minimize a cost function based upon expected human idle time. We demonstrate the theory in both simulation and actual human-robot performance of a two-way-branch assembly task. In particular we show that the inference model can robustly anticipate the actions of the human even in the presence of unreliable or noisy detections because of its integration of all its sensing information along with knowledge of task structure.</td>
+</tr>
+<tr id="bib_Hawkins2014" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Hawkins2014,
+  author = {Hawkins, Kelsey P. and Bansal, Shray and Vo, Nam N. and Bobick, Aaron F.},
+  title = {Anticipating human actions for collaboration in the presence of task and sensor uncertainty},
+  journal = {Proceedings - IEEE International Conference on Robotics and Automation},
+  year = {2014},
+  pages = {2215--2222},
+  doi = {http://dx.doi.org/10.1109/ICRA.2014.6907165}
+}
+</pre></td>
+</tr>
+<tr id="Hoffman2008" class="entry">
+	<td>Hoffman, G. and Breazeal, C.</td>
+	<td>Achieving fluency through perceptual-symbol practice in human-robot collaboration <p class="infolinks">[<a href="javascript:toggleInfo('Hoffman2008','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Hoffman2008','bibtex')">BibTeX</a>]</p></td>
+	<td>2008</td>
+	<td>Proceedings of the 3rd international conference on Human robot interaction - HRI '08, pp. 1&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1145/1349822.1349824">DOI</a> <a href="http://portal.acm.org/citation.cfm?doid=1349822.1349824">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_Hoffman2008" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: We have developed a cognitive architecture for robotic teammates based on the neuro-psychological principles of perceptual symbols and simulation, with the aim of attaining increased fluency in human-robot teams. An instantiation of this architecture was implemented on a robotic desk lamp, performing in a human-robot collaborative task. This paper describes initial results from a human-subject study measuring team efficiency and team fluency, in which the robot works on a joint task with untrained subjects. We find significant differences in a number of efficiency and fluency metrics, when comparing our architecture to a purely reactive robot with similar capabilities.</td>
+</tr>
+<tr id="bib_Hoffman2008" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Hoffman2008,
+  author = {Hoffman, Guy and Breazeal, Cynthia},
+  title = {Achieving fluency through perceptual-symbol practice in human-robot collaboration},
+  journal = {Proceedings of the 3rd international conference on Human robot interaction - HRI '08},
+  year = {2008},
+  pages = {1},
+  url = {http://portal.acm.org/citation.cfm?doid=1349822.1349824},
+  doi = {http://dx.doi.org/10.1145/1349822.1349824}
+}
+</pre></td>
+</tr>
+<tr id="Hoffman2007" class="entry">
+	<td>Hoffman, G. and Breazeal, C.</td>
+	<td>Cost-based anticipatory action selection for human-robot fluency <p class="infolinks">[<a href="javascript:toggleInfo('Hoffman2007','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Hoffman2007','bibtex')">BibTeX</a>]</p></td>
+	<td>2007</td>
+	<td>IEEE Transactions on Robotics<br/>Vol. 23(5), pp. 952-961&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/TRO.2007.907483">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Hoffman2007" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: A crucial skill for fluent action meshing in human team activity is a learned and calculated selection of anticipatory actions.We believe that the same holds for robotic teammates, if they are to perform in a similarly fluent manner with their human counterparts. In this work, we describe a model for human-robot joint action, and propose an adaptive action selection mechanism for a robotic teammate, which makes anticipatory decisions based on the confidence of their validity and their relative risk. We conduct an analysis of our method, predicting an improvement in task efficiency compared to a purely reactive process. We then present results from a study involving untrained human subjects working with a simulated version of a robot using our system. We show a significant improvement in best-case task efficiency when compared to a group of users working with a reactive agent, as well as a significant difference in the perceived commitment of the robot to the team and its contribution to the team's fluency and success. By way of explanation, we raise a number of fluency metric hypotheses, and evaluate their significance between the two study conditions.</td>
+</tr>
+<tr id="bib_Hoffman2007" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Hoffman2007,
+  author = {Hoffman, Guy and Breazeal, Cynthia},
+  title = {Cost-based anticipatory action selection for human-robot fluency},
+  journal = {IEEE Transactions on Robotics},
+  year = {2007},
+  volume = {23},
+  number = {5},
+  pages = {952--961},
+  doi = {http://dx.doi.org/10.1109/TRO.2007.907483}
+}
+</pre></td>
+</tr>
+<tr id="Kanda2009" class="entry">
+	<td>Kanda, T., Glas, D.F., Shiomi, M. and Hagita, N.</td>
+	<td>Abstracting peoples trajectories for social robots to proactively approach customers <p class="infolinks">[<a href="javascript:toggleInfo('Kanda2009','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Kanda2009','bibtex')">BibTeX</a>]</p></td>
+	<td>2009</td>
+	<td>IEEE Transactions on Robotics<br/>Vol. 25(6), pp. 1382-1396&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/TRO.2009.2032969">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Kanda2009" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: For a robot providing services to people in a public space such as a shopping mall, it is important to distinguish potential customers, such as window shoppers, from other people, such as busy commuters. In this paper, we present a series of abstraction techniques for people's trajectories and a service framework for using these techniques in a social robot, which enables a designer to make the robot proactively approach customers by only providing information about target local behavior. We placed a ubiquitous sensor network consisting of six laser range finders in a shopping arcade. The system tracks people's positions as well as their local behaviors, such as fast walking, idle walking, wandering, or stopping. We accumulated people's trajectories for a week, applying a clustering technique to the accumulated trajectories to extract information about the use of space and people's typical global behaviors. This information enables the robot to target its services to people who are walking idly or stopping. The robot anticipates both the areas in which people are likely to perform these behaviors as well as the probable local behaviors of individuals a few seconds in the future. In a field experiment, we demonstrate that this service framework enables the robot to serve people efficiently.</td>
+</tr>
+<tr id="bib_Kanda2009" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Kanda2009,
+  author = {Kanda, Takayuki and Glas, Dylan F. and Shiomi, Masahiro and Hagita, Norihiro},
+  title = {Abstracting peoples trajectories for social robots to proactively approach customers},
+  journal = {IEEE Transactions on Robotics},
+  year = {2009},
+  volume = {25},
+  number = {6},
+  pages = {1382--1396},
+  doi = {http://dx.doi.org/10.1109/TRO.2009.2032969}
+}
+</pre></td>
+</tr>
+<tr id="Koppula2013" class="entry">
+	<td>Koppula, H.S. and Saxena, A.</td>
+	<td>Anticipating human activities for reactive robotic response (supporting video) <p class="infolinks">[<a href="javascript:toggleInfo('Koppula2013','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Koppula2013','bibtex')">BibTeX</a>]</p></td>
+	<td>2013</td>
+	<td>2013 IEEE/RSJ International Conference on Intelligent Robots and Systems, pp. 2071&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/IROS.2013.6696634">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Koppula2013" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: We represent each possible future using an anticipatory temporal conditional random field (ATCRF) that models the rich spatial-temporal relations through object affordances. We then consider each ATCRF as a particle and represent the distribution over the potential futures using a set of particles.</td>
+</tr>
+<tr id="bib_Koppula2013" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Koppula2013,
+  author = {Koppula, Hema Swetha and Saxena, Ashutosh},
+  title = {Anticipating human activities for reactive robotic response (supporting video)},
+  journal = {2013 IEEE/RSJ International Conference on Intelligent Robots and Systems},
+  year = {2013},
+  pages = {2071},
+  doi = {http://dx.doi.org/10.1109/IROS.2013.6696634}
+}
+</pre></td>
+</tr>
+<tr id="Kwon2012" class="entry">
+	<td>Kwon, W.Y. and Suh, I.H.</td>
+	<td>A temporal Bayesian network with application to design of a proactive robotic assistant <p class="infolinks">[<a href="javascript:toggleInfo('Kwon2012','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Kwon2012','bibtex')">BibTeX</a>]</p></td>
+	<td>2012</td>
+	<td>Proceedings - IEEE International Conference on Robotics and Automation, pp. 3685-3690&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/ICRA.2012.6224673">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Kwon2012" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: For effective human-robot interaction, a robot should be able to make prediction about future circumstance. This enables the robot to generate preparative behaviors to reduce waiting time, thereby greatly improving the quality of the interaction. In this paper, we propose a novel probabilistic temporal prediction method for proactive interaction that is based on a Bayesian network approach. In our proposed method, conditional probabilities of temporal events can be explicitly represented by defining temporal nodes in a Bayesian network. Utilizing these nodes, both temporal and causal infor- mation can be simultaneously inferred in a unified framework. An assistant robot can use the temporal Bayesian network to infer the best proactive action and the best time to act so that the waiting time for both the human and the robot is minimized. To validate our proposed method, we present experimental results for case in which a robot assists in a human assembly task.</td>
+</tr>
+<tr id="bib_Kwon2012" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Kwon2012,
+  author = {Kwon, Woo Young and Suh, Il Hong},
+  title = {A temporal Bayesian network with application to design of a proactive robotic assistant},
+  journal = {Proceedings - IEEE International Conference on Robotics and Automation},
+  year = {2012},
+  pages = {3685--3690},
+  doi = {http://dx.doi.org/10.1109/ICRA.2012.6224673}
+}
+</pre></td>
+</tr>
+<tr id="Maniezzo1994" class="entry">
+	<td>Maniezzo, V.</td>
+	<td>Genetic Evolution of the Topology and Weight Distribution of Neural Networks <p class="infolinks">[<a href="javascript:toggleInfo('Maniezzo1994','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Maniezzo1994','bibtex')">BibTeX</a>]</p></td>
+	<td>1994</td>
+	<td>IEEE Transactions on Neural Networks<br/>Vol. 5(1), pp. 39-53&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/72.265959">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Maniezzo1994" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: This paper proposes a system based on a parallel genetic algorithm with enhanced encoding and operational abilities. The system, used to evolve feedforward artificial neural networks, has been applied to two widely different problem areas: Boolean function learning and robot control. It is shown that the good results obtained in both cases are due to two factors: first, the enhanced exploration abilities provided by the search-space reducing evolution of both coding granularity and network topology, and, second, the enhanced exploitational abilities due to a recently proposed cooperative local optimizing genetic operator.</td>
+</tr>
+<tr id="bib_Maniezzo1994" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Maniezzo1994,
+  author = {Maniezzo, Vittorio},
+  title = {Genetic Evolution of the Topology and Weight Distribution of Neural Networks},
+  journal = {IEEE Transactions on Neural Networks},
+  year = {1994},
+  volume = {5},
+  number = {1},
+  pages = {39--53},
+  doi = {http://dx.doi.org/10.1109/72.265959}
+}
+</pre></td>
+</tr>
+<tr id="Montesano2008" class="entry">
+	<td>Montesano, L., Lopes, M., Bernardino, a. and Santos-Victor, J.</td>
+	<td>Learning Object Affordances: From Sensory--Motor Coordination to Imitation <p class="infolinks">[<a href="javascript:toggleInfo('Montesano2008','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Montesano2008','bibtex')">BibTeX</a>]</p></td>
+	<td>2008</td>
+	<td>IEEE Transactions on Robotics<br/>Vol. 24(1), pp. 15-26&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/TRO.2007.914848">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Montesano2008" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Affordances encode relationships between actions, objects, and effects. They play an important role on basic cognitive capabilities such as prediction and planning. We address the problem of learning affordances through the interaction of a robot with the environment, a key step to understand the world properties and develop social skills. We present a general model for learning object affordances using Bayesian networks integrated within a general developmental architecture for social robots. Since learning is based on a probabilistic model, the approach is able to deal with uncertainty, redundancy, and irrelevant information. We demonstrate successful learning in the real world by having an humanoid robot interacting with objects. We illustrate the benefits of the acquired knowledge in imitation games.</td>
+</tr>
+<tr id="bib_Montesano2008" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Montesano2008,
+  author = {Montesano, L. and Lopes, M. and Bernardino, a. and Santos-Victor, J.},
+  title = {Learning Object Affordances: From Sensory--Motor Coordination to Imitation},
+  journal = {IEEE Transactions on Robotics},
+  year = {2008},
+  volume = {24},
+  number = {1},
+  pages = {15--26},
+  doi = {http://dx.doi.org/10.1109/TRO.2007.914848}
+}
+</pre></td>
+</tr>
+<tr id="Norrlof2002" class="entry">
+	<td>Norrl&ouml;f, M.</td>
+	<td>An adaptive iterative learning control algorithm with experiments on an industrial robot <p class="infolinks">[<a href="javascript:toggleInfo('Norrlof2002','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Norrlof2002','bibtex')">BibTeX</a>]</p></td>
+	<td>2002</td>
+	<td>IEEE Transactions on Robotics and Automation<br/>Vol. 18(2), pp. 245-251&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/TRA.2002.999653">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Norrlof2002" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: An adaptive iterative learning control (ILC) algorithm based on an estimation procedure using a Kalman filter and an optimization of a quadratic criterion is presented. It is shown that by taking the measure- ment disturbance into consideration the resulting ILC filters become iter- ation-varying. Results from experiments on an industrial robot show that the algorithm is successful also in an application.</td>
+</tr>
+<tr id="bib_Norrlof2002" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Norrlof2002,
+  author = {Norrl&ouml;f, Mikael},
+  title = {An adaptive iterative learning control algorithm with experiments on an industrial robot},
+  journal = {IEEE Transactions on Robotics and Automation},
+  year = {2002},
+  volume = {18},
+  number = {2},
+  pages = {245--251},
+  doi = {http://dx.doi.org/10.1109/TRA.2002.999653}
+}
+</pre></td>
+</tr>
+<tr id="Obo2015" class="entry">
+	<td>Obo, T., Loo, C.K. and Kubota, N.</td>
+	<td>Robot posture generation based on genetic algorithm for imitation <p class="infolinks">[<a href="javascript:toggleInfo('Obo2015','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Obo2015','bibtex')">BibTeX</a>]</p></td>
+	<td>2015</td>
+	<td>2015 IEEE Congress on Evolutionary Computation, CEC 2015 - Proceedings, pp. 552-557&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/CEC.2015.7256938">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Obo2015" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Human-like-motion performed by robots can have a contribution to exert a strong influence on human-robot interaction, because bodily expressions convey important and effective information. If the robots could adapt the features of human behavior to their motions and skills, the communication would become more smooth and natural. In this paper, we develop a posture measurement system for a robot imitation using a 3D image sensor. This paper proposes a method of robot posture generation based on a steady-state genetic algorithm (SSGA). SSGA is one of evolutionary optimization methods using selection, mutation, and crossover operators. Since SSGA is a simplified model, it is easy to implement into a real-time processing. Furthermore, we apply a continuous model of generation for an adaptive search in dynamical environment. Keywords—</td>
+</tr>
+<tr id="bib_Obo2015" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Obo2015,
+  author = {Obo, Takenori and Loo, Chu Kiong and Kubota, Naoyuki},
+  title = {Robot posture generation based on genetic algorithm for imitation},
+  journal = {2015 IEEE Congress on Evolutionary Computation, CEC 2015 - Proceedings},
+  year = {2015},
+  pages = {552--557},
+  doi = {http://dx.doi.org/10.1109/CEC.2015.7256938}
+}
+</pre></td>
+</tr>
+<tr id="Oudeyer2007" class="entry">
+	<td>Oudeyer, P.-y. and Hafner, V.V.</td>
+	<td>Intrinsic Motivation for Autonomous Mental Development To cite this version : Intrinsic Motivation Systems for Autonomous Mental Development <p class="infolinks">[<a href="javascript:toggleInfo('Oudeyer2007','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Oudeyer2007','bibtex')">BibTeX</a>]</p></td>
+	<td>2007</td>
+	<td>Evolutionary Computation, IEEE Transactions on<br/>Vol. 11(2), pp. 265-286&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1007/BF01252847">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Oudeyer2007" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Exploratory activities seem to be intrinsically re- warding for children and crucial for their cognitive development. Can a machine be endowed with such an intrinsic motivation system? This is the question we study in this paper, presenting a number of computational systems that try to capture this drive towards novel or curious situations. After discussing related research coming from developmental psychology, neuroscience, developmental robotics, and active learning, this paper presents the mechanism of Intelligent Adaptive Curiosity, an intrinsic motivation system which pushes a robot towards situations in which it maximizes its learning progress. This drive makes the robot focus on situations which are neither too predictable nor too unpredictable, thus permitting autonomous mental development. The complexity of the robot's activities autonomously increases and complex developmental sequences self-organize without being constructed in a supervised manner. Two experiments are presented illustrating the stage-like organization emerging with this mechanism. In one of them, a physical robot is placed on a baby play mat with objects that it can learn to manipulate. Exper- imental results show that the robot first spends time in situations which are easy to learn, then shifts its attention progressively to situations of increasing difficulty, avoiding situations in which nothing can be learned. Finally, these various results are discussed in relation to more complex forms of behavioral organization and data coming from developmental psychology.</td>
+</tr>
+<tr id="bib_Oudeyer2007" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Oudeyer2007,
+  author = {Oudeyer, Pierre-yves and Hafner, Verena V},
+  title = {Intrinsic Motivation for Autonomous Mental Development To cite this version : Intrinsic Motivation Systems for Autonomous Mental Development},
+  journal = {Evolutionary Computation, IEEE Transactions on},
+  year = {2007},
+  volume = {11},
+  number = {2},
+  pages = {265--286},
+  doi = {http://dx.doi.org/10.1007/BF01252847}
+}
+</pre></td>
+</tr>
+<tr id="Paletta2007" class="entry">
+	<td>Paletta, L., Fritz, G., Kintzler, F., Irran, J&ouml;. and Dorffner, G.</td>
+	<td>Learning to perceive affordances in a framework of developmental embodied cognition <p class="infolinks">[<a href="javascript:toggleInfo('Paletta2007','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Paletta2007','bibtex')">BibTeX</a>]</p></td>
+	<td>2007</td>
+	<td>2007 IEEE 6th International Conference on Development and Learning, ICDL, pp. 110-115&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/DEVLRN.2007.4354046">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Paletta2007" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Recently, the aspect of visual perception has been explored in the context of Gibson's concept of affordances in various ways. We focus in this work on the importance of developmental learning and the perceptual cueing for an agent's anticipation of opportunities for interaction, in extension to functional views on visual feature representations. The concept for the incremental learning of complex from basic affordances is presented in relation to learning of specific affordance features. We demonstrate the learning of causal relations between visual cues and associated anticipated interactions by reinforcement learning of predictive perceptual states. The work pursues a recently presented framework for cueing and recognition of affordance-based visual entities that plays an important role in robot control architectures, in analogy to human perception. We experimentally verify the concept within a real world robot scenario by learning predictive features from delayed rewards, and prove that features were selected for their relevance in predicting opportunities for interaction.</td>
+</tr>
+<tr id="bib_Paletta2007" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Paletta2007,
+  author = {Paletta, Lucas and Fritz, Gerald and Kintzler, Florian and Irran, J&ouml;rg and Dorffner, Georg},
+  title = {Learning to perceive affordances in a framework of developmental embodied cognition},
+  journal = {2007 IEEE 6th International Conference on Development and Learning, ICDL},
+  year = {2007},
+  pages = {110--115},
+  doi = {http://dx.doi.org/10.1109/DEVLRN.2007.4354046}
+}
+</pre></td>
+</tr>
+<tr id="Pilarski2012" class="entry">
+	<td>Pilarski, P.M., Dawson, M.R., Degris, T., Carey, J.P. and Sutton, R.S.</td>
+	<td>Dynamic switching and real-time machine learning for improved human control of assistive biomedical robots <p class="infolinks">[<a href="javascript:toggleInfo('Pilarski2012','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Pilarski2012','bibtex')">BibTeX</a>]</p></td>
+	<td>2012</td>
+	<td>Proceedings of the IEEE RAS and EMBS International Conference on Biomedical Robotics and Biomechatronics, pp. 296-302&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/BioRob.2012.6290309">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Pilarski2012" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: A general problem for human-machine interaction occurs when a machine's controllable dimensions outnumber the control channels available to its human user. In this work, we examine one prominent example of this problem: amputee switching between the multiple functions of a powered artificial limb. We propose a dynamic switching approach that learns during ongoing interaction to anticipate user behaviour, thereby presenting the most effective control option for a given context or task. Switching predictions are learned in real time using temporal difference methods and reinforcement learning, and demonstrated within the context of a robotic arm and a multifunction myoelectric controller. We find that a learned, dynamic switching order is able to out-perform the best fixed (non-adaptive) switching regime on a standard prosthetic proficiency task, increasing the number of optimal switching suggestions by 23%, and decreasing the expected transition time between degrees of freedom by more than 14%. These preliminary results indicate that real-time machine learning, specifically online prediction and anticipation, may be an important tool for developing more robust and intuitive controllers for assistive biomedical robots. We expect these techniques will transfer well to near-term use by patients. Future work will describe clinical testing of this approach with a population of amputee patients.</td>
+</tr>
+<tr id="bib_Pilarski2012" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Pilarski2012,
+  author = {Pilarski, Patrick M. and Dawson, Michael R. and Degris, Thomas and Carey, Jason P. and Sutton, Richard S.},
+  title = {Dynamic switching and real-time machine learning for improved human control of assistive biomedical robots},
+  journal = {Proceedings of the IEEE RAS and EMBS International Conference on Biomedical Robotics and Biomechatronics},
+  year = {2012},
+  pages = {296--302},
+  doi = {http://dx.doi.org/10.1109/BioRob.2012.6290309}
+}
+</pre></td>
+</tr>
+<tr id="Satake2009" class="entry">
+	<td>Satake, S., Kanda, T., Glas, D.F., Imai, M., Ishiguro, H. and Hagita, N.</td>
+	<td>How to approach humans? <p class="infolinks">[<a href="javascript:toggleInfo('Satake2009','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Satake2009','bibtex')">BibTeX</a>]</p></td>
+	<td>2009</td>
+	<td>Proceedings of the 4th ACM/IEEE international conference on Human robot interaction - HRI '09<br/>Vol. 28(3), pp. 109&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1145/1514095.1514117">DOI</a> <a href="http://portal.acm.org/citation.cfm?doid=1514095.1514117">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_Satake2009" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: This paper proposes a model of approach behavior with which a robot can initiate conversation with people who are walking. We developed the model by learning from the failures in a simplistic approach behavior used in a real shopping mall. Sometimes people were unaware of the robot's presence, even when it spoke to them. Sometimes, people were not sure whether the robot was really trying to start a conversation, and they did not start talking with it even though they displayed interest. To prevent such failures, our model includes the following functions: predicting the walking behavior of people, choosing a target person, planning its approaching path, and nonverbally indicating its intention to initiate a conversation. The approach model was implemented and used in a real shopping mall. The field trial demonstrated that our model significantly improves the robot's performance in initiating conversations.</td>
+</tr>
+<tr id="bib_Satake2009" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Satake2009,
+  author = {Satake, Satoru and Kanda, Takayuki and Glas, Dylan F. and Imai, Michita and Ishiguro, Hiroshi and Hagita, Norihiro},
+  title = {How to approach humans?},
+  journal = {Proceedings of the 4th ACM/IEEE international conference on Human robot interaction - HRI '09},
+  year = {2009},
+  volume = {28},
+  number = {3},
+  pages = {109},
+  url = {http://portal.acm.org/citation.cfm?doid=1514095.1514117},
+  doi = {http://dx.doi.org/10.1145/1514095.1514117}
+}
+</pre></td>
+</tr>
+<tr id="Schaal1999" class="entry">
+	<td>Schaal, S.</td>
+	<td>Is Imitation Learnig the Route to Humanoid Robots? <p class="infolinks">[<a href="javascript:toggleInfo('Schaal1999','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Schaal1999','bibtex')">BibTeX</a>]</p></td>
+	<td>1999</td>
+	<td>Trends in Cognitive Sciences<br/>Vol. 3(6), pp. 233-242&nbsp;</td>
+	<td>article</td>
+	<td>&nbsp;</td>
+</tr>
+<tr id="abs_Schaal1999" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: This review investigates two recent developments in artificial intelligence and neural computation: learning from imitation and the development of humanoid robots. It will be postulated that the study of imitation learning offers a promising route to gain new insights into mechanisms of perceptual motor control that could ultimately lead to the creation of autonomous humanoid robots. Imitation learning focuses on three important issues: efficient motor learning, the connection between action and perception, and modular motor control in form of movement primitives. It will be reviewed how re- search on representations of, and functional connections between action and perception have contributed to our understanding of motor acts of other beings. The recent discov- ery that some areas in the primate brain are active during both movement perception and execution has provided a hypothetical neural basis of imitation. Computational ap- proaches to imitation learning will also be described, initially from the perspective of traditional AI and robotics, but also from the perspective of neural network models and statistical learning research. Parallels and differences between biological and computa- tional approaches to imitation will be highlighted and an overview of current projects that actually employ imitation learning for humanoid robots will be given. In</td>
+</tr>
+<tr id="bib_Schaal1999" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Schaal1999,
+  author = {Schaal, Stefan},
+  title = {Is Imitation Learnig the Route to Humanoid Robots?},
+  journal = {Trends in Cognitive Sciences},
+  year = {1999},
+  volume = {3},
+  number = {6},
+  pages = {233--242}
+}
+</pre></td>
+</tr>
+<tr id="Shah2011" class="entry">
+	<td>Shah, J. and Wiken, J.</td>
+	<td>Improved Human-Robot Team Performance Using Chaski, A Human-Inspired Plan Execution System <p class="infolinks">[<a href="javascript:toggleInfo('Shah2011','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Shah2011','bibtex')">BibTeX</a>]</p></td>
+	<td>2011</td>
+	<td>Artificial Intelligence, pp. 29-36&nbsp;</td>
+	<td>article</td>
+	<td>&nbsp;</td>
+</tr>
+<tr id="abs_Shah2011" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: We describe the design and evaluation of Chaski, a robot plan execution system that uses insights from human-human teaming to make human-robot teaming more natural and fluid. Chaski is a task-level executive that enables a robot to collaboratively execute a shared plan with a person. The system chooses and schedules the robot's actions, adapts to the human partner, and acts to minimize the human's idle time. We evaluate Chaski in human subject experiments in which a person works with a mobile and dexterous robot to col- laboratively assemble structures using building blocks. We measure team performance outcomes for robots controlled by Chaski compared to robots that are verbally commanded, step-by-step by the human teammate. We show that Chaski reduces the human's idle time by 85%, a statistically signif- icant difference. This result supports the hypothesis that human-robot team performance is improved when a robot emulates the effective coordination behaviors observed in hu- man teams. Categories</td>
+</tr>
+<tr id="bib_Shah2011" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Shah2011,
+  author = {Shah, Julie and Wiken, James},
+  title = {Improved Human-Robot Team Performance Using Chaski, A Human-Inspired Plan Execution System},
+  journal = {Artificial Intelligence},
+  year = {2011},
+  pages = {29--36}
+}
+</pre></td>
+</tr>
+<tr id="SiangKokSim2003" class="entry">
+	<td>Siang Kok Sim, Kai Wei Ong and Seet, G.</td>
+	<td>A Foundation for Robot Learning <p class="infolinks">[<a href="javascript:toggleInfo('SiangKokSim2003','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('SiangKokSim2003','bibtex')">BibTeX</a>]</p></td>
+	<td>2003</td>
+	<td>The Fourth International Conference on Control and Automation 2003 ICCA Final Program and Book of Abstracts ICCA-03(June), pp. 649-653&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/ICCA.2003.1595102">DOI</a> <a href="http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=1595102">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_SiangKokSim2003" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: This paper considers the fundamental issues of robot learning in which answers to basic questions on robot learning, such as "What can the robot learn?", "What are the consequences of robot learning?", "How does the robot learn?", "How fast do robots need to learn?", and "When do robots learn?" are addressed. The answers to these questions may lead to the identification of the elements of robot learning and the interaction between these elements. Hence, the purpose of this paper is to discuss the fundamental issues in a holistic manner so that key elements that characterise robot learning can be formalised into a framework.</td>
+</tr>
+<tr id="bib_SiangKokSim2003" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{SiangKokSim2003,
+  author = {Siang Kok Sim and Kai Wei Ong and Seet, G},
+  title = {A Foundation for Robot Learning},
+  journal = {The Fourth International Conference on Control and Automation 2003 ICCA Final Program and Book of Abstracts ICCA-03},
+  year = {2003},
+  number = {June},
+  pages = {649--653},
+  url = {http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=1595102},
+  doi = {http://dx.doi.org/10.1109/ICCA.2003.1595102}
+}
+</pre></td>
+</tr>
+<tr id="SylvainCalinonFlorentGuenter2007" class="entry">
+	<td>Sylvain Calinon Florent Guenter, A.B.</td>
+	<td>On Learning, Representing and Generalizing a Task in a Humanoid Robot <p class="infolinks">[<a href="javascript:toggleInfo('SylvainCalinonFlorentGuenter2007','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('SylvainCalinonFlorentGuenter2007','bibtex')">BibTeX</a>]</p></td>
+	<td>2007</td>
+	<td>IEEE Transactions on Systems, Man and Cybernetics<br/>Vol. 37(2), pp. 286-298&nbsp;</td>
+	<td>article</td>
+	<td>&nbsp;</td>
+</tr>
+<tr id="abs_SylvainCalinonFlorentGuenter2007" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: We present a programming-by-demonstration framework for generically extracting the relevant features of a given task and for addressing the problem of generalizing the acquired knowledge to different contexts. We validate the archi- tecture through a series of experiments, in which a human demon- strator teaches a humanoid robot simple manipulatory tasks. A probability-based estimation of the relevance is suggested by first projecting the motion data onto a generic latent space using principal component analysis. The resulting signals are encoded using a mixture of Gaussian/Bernoulli distributions (Gaussian mixture model/Bernoulli mixturemodel). This provides ameasure of the spatio-temporal correlations across the different modalities collected from the robot, which can be used to determine a metric of the imitation performance. The trajectories are then generalized using Gaussian mixture regression. Finally, we analytically com- pute the trajectory which optimizes the imitation metric and use this to generalize the skill to different contexts. Index</td>
+</tr>
+<tr id="bib_SylvainCalinonFlorentGuenter2007" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{SylvainCalinonFlorentGuenter2007,
+  author = {Sylvain Calinon Florent Guenter, Aude Billard},
+  title = {On Learning, Representing and Generalizing a Task in a Humanoid Robot},
+  journal = {IEEE Transactions on Systems, Man and Cybernetics},
+  year = {2007},
+  volume = {37},
+  number = {2},
+  pages = {286--298}
+}
+</pre></td>
+</tr>
+<tr id="Urgen2016" class="entry">
+	<td>Urgen, B.A., Pehlivan, S. and Saygin, A.P.</td>
+	<td>Representational similarity of actions in the human brain <p class="infolinks">[<a href="javascript:toggleInfo('Urgen2016','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Urgen2016','bibtex')">BibTeX</a>]</p></td>
+	<td>2016</td>
+	<td>(July), pp. 3-6&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/PRNI.2016.7552341">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Urgen2016" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: —Visual processing of actions is supported by a network of brain regions in occipito-temporal, parietal, and premotor cortex in the primate brain, known as the Action Observation Network (AON). What remain unclear are the representational properties of each node of this network. In this study, we investigated the representational content of brain areas in AON using fMRI, representational similarity analysis (RSA), and modeling. Subjects were shown video clips of three agents performing eight different actions during fMRI scanning. We then computed the representational dissimilarity matrices (RDMs) for each brain region, and compared them with that of two sets of model representations that were constructed based on computer vision and semantic attributes. Our findings reveal that different nodes of the AON have different representational properties. PSTS as the visual area of the AON represents high level visual features such as movement kinematics. As one goes higher in the AON hierarchy, representations become more abstract and semantic as our results revealed that parietal cortex represents several aspects of actions such as action category, intention of the action, and target of the action. These results suggest that during visual processing of actions, pSTS pools information from visual cortex to compute movement kinematics, and passes that information to higher levels of AON coding semantics of actions such as action category, intention of action, and target of action, consistent with computational models of visual action recognition. Keywords—</td>
+</tr>
+<tr id="bib_Urgen2016" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Urgen2016,
+  author = {Urgen, Burcu A and Pehlivan, Selen and Saygin, Ayse P},
+  title = {Representational similarity of actions in the human brain},
+  year = {2016},
+  number = {July},
+  pages = {3--6},
+  doi = {http://dx.doi.org/10.1109/PRNI.2016.7552341}
+}
+</pre></td>
+</tr>
+<tr id="Xiong2013" class="entry">
+	<td>Xiong, X. and De La Torre, F.</td>
+	<td>Supervised descent method and its applications to face alignment <p class="infolinks">[<a href="javascript:toggleInfo('Xiong2013','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Xiong2013','bibtex')">BibTeX</a>]</p></td>
+	<td>2013</td>
+	<td>Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition, pp. 532-539&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/CVPR.2013.75">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Xiong2013" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Many computer vision problems (e.g., camera calibra- tion, image alignment, structure from motion) are solved through a nonlinear optimization method. It is generally accepted that 2nd order descent methods are the most ro- bust, fast and reliable approaches for nonlinear optimiza- tion of a general smooth function. However, in the context of computer vision, 2nd order descent methods have two main drawbacks: (1) The function might not be analytically dif- ferentiable and numerical approximations are impractical. (2) The Hessian might be large and not positive definite. To address these issues, this paper proposes a Supervised Descent Method (SDM) for minimizing a Non-linear Least Squares (NLS) function. During training, the SDM learns a sequence of descent directions that minimizes the mean of NLS functions sampled at different points. In testing, SDM minimizes the NLS objective using the learned descent directions without computing the Jacobian nor the Hes- sian. We illustrate the benefits of our approach in synthetic and real examples, and show how SDM achieves state-of- the-art performance in the problem of facial feature detection. The code is available at www.humansensing.cs.cmu.edu/intraface.</td>
+</tr>
+<tr id="bib_Xiong2013" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Xiong2013,
+  author = {Xiong, Xuehan and De La Torre, Fernando},
+  title = {Supervised descent method and its applications to face alignment},
+  journal = {Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition},
+  year = {2013},
+  pages = {532--539},
+  doi = {http://dx.doi.org/10.1109/CVPR.2013.75}
+}
+</pre></td>
+</tr>
+<tr id="Zanfir2013" class="entry">
+	<td>Zanfir, M., Leordeanu, M. and Sminchisescu, C.</td>
+	<td>The Moving Pose: An Efficient 3D Kinematics Descriptor for Low-Latency Action Recognition and Detection <p class="infolinks">[<a href="javascript:toggleInfo('Zanfir2013','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Zanfir2013','bibtex')">BibTeX</a>]</p></td>
+	<td>2013</td>
+	<td>The IEEE International Conference on Computer Vision (ICCV), pp. 2752-2759&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/ICCV.2013.342">DOI</a> <a href="http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=6751453$\backslash$npapers3://publication/doi/10.1109/ICCV.2013.342">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_Zanfir2013" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Human action recognition under low observational latency is receiving a growing interest in computer vision due to rapidly developing technologies in human-robot interaction, computer gaming and surveillance. In this paper we propose a fast, simple, yet powerful non-parametric Moving Pose (MP) framework for low-latency human action and activity recognition. Central to our methodology is a moving pose descriptor that considers both pose information as well as differential quantities (speed and acceleration) of the human body joints within a short time window around the current frame. The proposed descriptor is used in conjunction with a modified kNN classifier that considers both the temporal location of a particular frame within the action sequence as well as the discrimination power of its moving pose descriptor compared to other frames in the training set. The resulting method is non-parametric and enables low-latency recognition, one-shot learning, and action detection in difficult unsegmented sequences. Moreover, the framework is real-time, scalable, and outperforms more sophisticated approaches on challenging benchmarks like MSR-Action3D or MSR-DailyActivities3D. View full abstract</td>
+</tr>
+<tr id="bib_Zanfir2013" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Zanfir2013,
+  author = {Zanfir, Mihai and Leordeanu, Marius and Sminchisescu, Cristian},
+  title = {The Moving Pose: An Efficient 3D Kinematics Descriptor for Low-Latency Action Recognition and Detection},
+  journal = {The IEEE International Conference on Computer Vision (ICCV)},
+  year = {2013},
+  pages = {2752--2759},
+  url = {http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=6751453$npapers3://publication/doi/10.1109/ICCV.2013.342},
+  doi = {http://dx.doi.org/10.1109/ICCV.2013.342}
+}
+</pre></td>
+</tr>
+</tbody>
+</table>
+<footer>
+ <small>Created by <a href="http://jabref.sourceforge.net">JabRef</a> on 15/11/2016.</small>
+</footer>
+<!-- file generated by JabRef -->
+</body>
+</html>

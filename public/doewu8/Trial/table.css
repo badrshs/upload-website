@@ -1,0 +1,53 @@
+table
+{
+	width: 700px;
+}
+table 
+{
+	text-align: center;
+}
+th td
+{
+	text-align: center ;
+}
+th
+{
+	padding: 10px 10px ;
+	font-size: 200% ;
+	color: red ;
+}
+td
+{
+	font-size: 130% ;
+}
+h1{
+	margin:0;
+	color:red;
+	font-family: sans-serif;
+	font-size: 40px;
+	text-align: left;
+	vertical-align:middle;
+	text-decoration:none;
+}
+footer{
+	float:center;
+}
+footer ul li{
+	display:inline-block;
+	margin-left:100px;
+	list-style:none;
+}
+footer ul li a{
+	font-family: sans-serif;
+	font-weight: 400;
+	font-size:20px;
+	color:white;
+	text-decoration: none;
+	
+}
+footer{
+	width:100%;
+	background-color: #222;
+	padding: 20px 0px;
+}
+

@@ -1,0 +1,54 @@
+body{
+    background-color: #030303;
+}
+
+.main-contact h2{
+    color: #333;
+}
+.email span{
+    color: red;
+}
+
+.main-contact span{
+    color: red;
+}
+
+.phone{
+    color: #ddd;
+    margin-bottom: 20px;
+}
+.btn-info{
+    color: #fff;
+    background-color: #333;
+    border-color: #46b8da;
+    margin: 10px;
+    padding: 10px;
+    border-color: red;
+}
+
+.btn-info:hover{
+    background-color: #fff;
+    color: #000;
+    border-color: red
+}
+
+.fa-5x {
+    font-size: 5em;
+    color: red;
+    padding: 10px;
+    position: static;
+}
+
+.text-justify {
+    text-align: justify;
+    font-size: 18px;
+    padding: 10px;
+    margin: 12px;
+    color: red;
+}
+
+label{
+    color: red;
+    padding: 5px;
+    font-size: 16px;
+}

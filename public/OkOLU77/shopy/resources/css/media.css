@@ -1,0 +1,697 @@
+@media only screen and (max-width : 1200px) {
+    /*===================
+        Start Home Page
+    =====================*/
+    section.main-carousel .carousel-inner .item.item-two div.carousel-caption div.carousel-information,
+    section.main-carousel .carousel-inner .item.item-three div.carousel-caption div.carousel-information,
+    section.main-carousel .carousel-inner .item.item-four div.carousel-caption div.carousel-information{
+        padding: 20px 0px;
+    }
+    section.main-carousel .carousel-inner .item.item-two div.carousel-caption div.carousel-information p,
+    section.main-carousel .carousel-inner .item.item-three div.carousel-caption div.carousel-information p,
+    section.main-carousel .carousel-inner .item.item-four div.carousel-caption div.carousel-information p{
+        margin: 20px 0px;
+    }
+    section.main-carousel .carousel-inner .item.item-two div.carousel-caption div.carousel-information p span,
+    section.main-carousel .carousel-inner .item.item-three div.carousel-caption div.carousel-information p span,
+    section.main-carousel .carousel-inner .item.item-four div.carousel-caption div.carousel-information p span{
+        font-size: 14px;
+    }
+    section.main-carousel .carousel-inner .item.item-two div.carousel-caption div.carousel-information a,
+    section.main-carousel .carousel-inner .item.item-three div.carousel-caption div.carousel-information a,
+    section.main-carousel .carousel-inner .item.item-four div.carousel-caption div.carousel-information a{
+        margin-top: 30px;
+    }
+    section.page-content div.ads a{
+        height: 120px;
+    }
+    section.page-content div.ads a h3{
+        font-size: 18px;
+    }
+    section.page-content div.ads a p{
+        font-size: 12px;
+    }
+    div.featured-bestseller div.featured-products div.featured-items div.featured-item{
+        margin: 5px 0px;
+    }
+    div.featured-bestseller div.featured-products div.featured-items div.featured-item div.item-info p{
+        font-size: 12px;
+        margin: 0 0 7px;
+    }
+    div.featured-bestseller div.bestseller div.bestseller-items div.bestseller-item div.item-info{
+        padding-top: 35px;
+        width: 100%;
+    }
+    div.testimonials-new div.new div.new-items div.new-item div.item-info{
+        padding-top: 35px;
+    }
+    div.testimonials-new div.testimonials-products div.testimonials-items div.testimonials-item div.item-info p{
+        font-size: 12px;
+    }
+    div.testimonials-new div.testimonials-products div.testimonials-items div.testimonials-item{
+        margin: 5px 0px;
+    }
+    div.testimonials-new div.testimonials-products div.testimonials-items div.testimonials-item div.item-img{
+        width: 24%;
+    }
+    div.last-blogs div.last-blogs-items div.last-blogs-item div.last-blogs-info ul{
+        padding: 10px 0px;
+    }
+    div.last-blogs div.last-blogs-items div.last-blogs-item div.last-blogs-info ul li{
+        font-size: 12px;
+    }
+    footer div.footer-top div.footer-copyright p{
+        margin-bottom: 40px;
+    }
+    footer div.footer-top div.footer-copyright i{
+        font-size: 12px;
+    }
+    /*===================
+        End Home Page
+    =====================*/
+    /*===================
+        Start Shop Page
+    =====================*/
+    section.shop div.shop-aside div.options{
+        padding: 5px 0px;
+    }
+    section.shop div.shop-aside div.options span{
+        margin: 5px 0px;
+    }
+    section.shop div.shop-content div.shop-page nav ul li a{
+        margin: 0px 1px;
+    }
+    section.shop div.shop-content div.shop-items div.shop-item div.item-info{
+        padding-top: 35px;
+    }
+    section.shop div.shop-aside div.search-buttom{
+        padding: 10px 0px;
+    }
+    /*===================
+        End Shop Page
+    =====================*/
+    /*===================
+        Start Blog Page
+    =====================*/
+    div.blog-content div.blog-content-items div.blog-content-item div.blog-content-info ul{
+        padding: 10px 13px;
+    }
+    /*===================
+        End Blog Page
+    =====================*/
+}
+
+@media only screen and (max-width : 991px) {
+    /*===================
+        Start Home Page
+    =====================*/
+    div.header-top div.header-top-left ul li, div.header-top div.header-top-center ul li, div.header-top div.header-top-right ul li{
+        padding: 0px 4px;
+    }
+    nav.navbar-inverse .navbar-right li a{
+        font-size: 14px;
+    }
+    div#loginandregister h3:before, div#language h3:before, div#via h3:before, div#cart-items h3:before,div#favorites h3:before{
+        left: -100px;
+    }
+    @keyframes linetopmove{
+        25%{
+            top:100px;
+            opacity: 1;
+        }
+        50%{
+            top:100px;
+            opacity: 1;
+        }
+        70%{
+            top:100px;
+            opacity: 1;
+        }
+        100%{
+            top:75px;
+            opacity: 0;
+        }
+    }
+    @-webkit-keyframes linetopmove{
+        25%{
+            top:100px;
+            opacity: 1;
+        }
+        50%{
+            top:100px;
+            opacity: 1;
+        }
+        70%{
+            top:100px;
+            opacity: 1;
+        }
+        100%{
+            top:75px;
+            opacity: 0;
+        }
+    }
+    @-moz-keyframes linetopmove{
+        25%{
+            top:100px;
+            opacity: 1;
+        }
+        50%{
+            top:100px;
+            opacity: 1;
+        }
+        70%{
+            top:100px;
+            opacity: 1;
+        }
+        100%{
+            top:75px;
+            opacity: 0;
+        }
+    }
+    @-o-keyframes linetopmove{
+        25%{
+            top:100px;
+            opacity: 1;
+        }
+        50%{
+            top:100px;
+            opacity: 1;
+        }
+        70%{
+            top:100px;
+            opacity: 1;
+        }
+        100%{
+            top:75px;
+            opacity: 0;
+        }
+    }
+    @-ms-keyframes linetopmove{
+        25%{
+            top:100px;
+            opacity: 1;
+        }
+        50%{
+            top:100px;
+            opacity: 1;
+        }
+        70%{
+            top:100px;
+            opacity: 1;
+        }
+        100%{
+            top:75px;
+            opacity: 0;
+        }
+    }
+    section.main-carousel .carousel-inner .item.item-one div.carousel-caption span.top-line{
+        top:75px;
+        left: 25%;
+    }
+    section.main-carousel .carousel-inner .item.item-one div.carousel-caption h1{
+        top: 85px;
+        left: 27%;
+    }
+    @keyframes linebottommove{
+        25%{
+            top:170px;
+            opacity: 1;
+        }
+        50%{
+            top:170px;
+            opacity: 1;
+        }
+        75%{
+            top:170px;
+            opacity: 1;
+        }
+        100%{
+            top:200px;
+            opacity: 0;
+        }
+    }
+    @-webkit-keyframes linebottommove{
+        25%{
+            top:170px;
+            opacity: 1;
+        }
+        50%{
+            top:170px;
+            opacity: 1;
+        }
+        75%{
+            top:170px;
+            opacity: 1;
+        }
+        100%{
+            top:200px;
+            opacity: 0;
+        }
+    }
+    @-moz-keyframes linebottommove{
+        25%{
+            top:170px;
+            opacity: 1;
+        }
+        50%{
+            top:170px;
+            opacity: 1;
+        }
+        75%{
+            top:170px;
+            opacity: 1;
+        }
+        100%{
+            top:200px;
+            opacity: 0;
+        }
+    }
+    @-o-keyframes linebottommove{
+        25%{
+            top:170px;
+            opacity: 1;
+        }
+        50%{
+            top:170px;
+            opacity: 1;
+        }
+        75%{
+            top:170px;
+            opacity: 1;
+        }
+        100%{
+            top:200px;
+            opacity: 0;
+        }
+    }
+    @-ms-keyframes linebottommove{
+        25%{
+            top:170px;
+            opacity: 1;
+        }
+        50%{
+            top:170px;
+            opacity: 1;
+        }
+        75%{
+            top:170px;
+            opacity: 1;
+        }
+        100%{
+            top:200px;
+            opacity: 0;
+        }
+    }
+    section.main-carousel .carousel-inner .item.item-one div.carousel-caption span.bottom-line{
+        top: 200px;
+        left: 25%;
+    }
+    section.main-carousel .carousel-inner .item.item-two div.carousel-caption div.carousel-information,
+    section.main-carousel .carousel-inner .item.item-three div.carousel-caption div.carousel-information,
+    section.main-carousel .carousel-inner .item.item-four div.carousel-caption div.carousel-information{
+        padding: 20px 0px;
+    }
+    section.main-carousel .carousel-inner .item.item-two div.carousel-caption div.carousel-information span.carousel-price,
+    section.main-carousel .carousel-inner .item.item-three div.carousel-caption div.carousel-information span.carousel-price,
+    section.main-carousel .carousel-inner .item.item-four div.carousel-caption div.carousel-information span.carousel-price{
+        margin-top: 20px;
+    }
+    section.main-carousel .carousel-inner .item.item-two div.carousel-caption div.carousel-information a,
+    section.main-carousel .carousel-inner .item.item-three div.carousel-caption div.carousel-information a,
+    section.main-carousel .carousel-inner .item.item-four div.carousel-caption div.carousel-information a{
+        width: 40%;
+    }
+    section.main-carousel .carousel-inner .item.item-two div.carousel-caption div.carousel-image img,
+    section.main-carousel .carousel-inner .item.item-three div.carousel-caption div.carousel-image img,
+    section.main-carousel .carousel-inner .item.item-four div.carousel-caption div.carousel-image img{
+        margin: 10px auto;
+    }
+    section.page-content div.ads a{
+        margin: 10px 0px; 
+    }
+    section.page-content div.ads a img{
+        width: 31%;
+    }
+    section.page-content div.ads a h3,
+    section.page-content div.ads a p{
+        width: 75%;
+    }
+    div.featured-bestseller div.bestseller h2:after{
+        left: -150px;
+    }
+    div.featured-bestseller div.featured-products div.featured-items div.featured-item{
+        margin: 10px 0px 23px 0px; 
+    }
+    div.featured-bestseller div.bestseller div.bestseller-items div.bestseller-item div.item-info h3{
+        font-size: 16px;
+    }
+    div.featured-bestseller div.bestseller div.bestseller-items div.bestseller-item div.item-info span{
+        margin: 20px auto 0px auto;
+    }
+    div.testimonials-new div.new h2:after{
+        left: -150px;
+    }
+    div.testimonials-new div.testimonials-products div.testimonials-items div.testimonials-item{
+        margin: 10px 0px 28px 0px;
+    }
+    div.testimonials-new div.new div.new-items div.new-item div.item-info h3{
+        font-size: 16px;
+    }
+    div.testimonials-new div.new div.new-items div.new-item div.item-info p{
+        font-size: 10px;
+    }
+    div.testimonials-new div.new div.new-items div.new-item div.item-info span{
+        margin: 20px auto 0px auto;
+    }
+    div.last-blogs div.last-blogs-items div.last-blogs-item a.last-blogs-image img{
+        width: 100%;
+    }
+    footer div.footer-top div.footer-copyright{
+        margin-bottom: 30px;
+    }
+    footer div.footer-top div.footer-contact{
+        margin-bottom: 30px;
+    }
+    /*===================
+        End Home Page
+    =====================*/
+    /*==========================
+        Start Contact Us One Page
+    ==========================*/
+    section.contact-page-one div.map-one h2:after,
+    section.contact-page-one div.contact-form-one h2:after,
+    section.contact-page-one div.contact-info-one h2:after{
+        left: -110px !important;
+    }
+    /*==========================
+        End Contact Us One Page
+    ==========================*/
+    /*==========================
+        Start Check Out Page
+    ==========================*/
+    section.checkout h2:after{
+        left: -140px;
+    }
+    /*==========================
+        End Check Out Page
+    ==========================*/
+}
+
+@media only screen and (max-width : 767px) {
+    /*===================
+        Start Home Page
+    =====================*/
+    div#language div.language-links a,
+    div#via div.via-links a{
+        margin: 5px 0px 5px 0px;
+    }
+    div.header-top div.header-top-left ul li a span,
+    div.header-top div.header-top-center ul li a span,
+    div.header-top div.header-top-right ul li a span{
+        display: none;
+    }
+    .navbar-inverse .navbar-toggle{
+        margin: 33px 10px;
+        border-radius: 0px;
+    }
+    .navbar-inverse .navbar-toggle:focus,.navbar-inverse .navbar-toggle:hover{
+        background: #fff;
+    }
+    nav.navbar-inverse .navbar-right li.main-li ul{
+        position: static;
+        width: 97%;
+        margin: 0 auto;
+        display: none;
+    }
+    nav.navbar-inverse .navbar-right li.main-li:hover ul{
+        display: block;
+    }
+    section.offer div.offer-info{
+        overflow: hidden;
+    }
+    div.featured-bestseller div.bestseller div.bestseller-items div.col-xs-12{
+        width: 50%;
+    }
+    div.featured-bestseller div.bestseller div.bestseller-items div.bestseller-item div.item-img img{
+        margin: 0 auto;
+    }
+    div.testimonials-new div.new div.new-items div.col-xs-12{
+        width: 50%;
+    }
+    div.testimonials-new div.new div.new-items div.new-item div.item-img img{
+        margin: 0 auto;
+    }
+    /*===================
+        End Home Page
+    =====================*/
+    /*===================
+        Start Shop Page
+    =====================*/
+    section.shop div.shop-content div.shop-items div.shop-item div.item-img img{
+        margin: 0 auto;
+    }
+    section.shop div.shop-content div.shop-page nav ul{
+        float: left;
+    }
+    section.shop div.shop-content div.shop-page nav ul li a{
+        margin: 0px 5px;
+    }
+    /*===================
+        End Shop Page
+    =====================*/
+    /*===================
+        Start Blog Page
+    =====================*/
+    div.blog-content div.blog-content-items div.col-xs-6{
+        width: 100%;
+    }
+    div.blog-content div.blog-content-items div.blog-content-item a.blog-content-image img{
+        width: 100%;
+    }
+    /*===================
+        End Blog Page
+    =====================*/
+}
+
+@media only screen and (max-width : 480px) {
+    /*===================
+        Start Home Page
+    =====================*/
+    section.offer div.offer-info div#clockdiv div.clockdiv-content{
+        margin: 20px 4px 20px 0px;
+    }
+    section.page-content div.ads div.col-xs-6{
+        width: 100%;
+    }
+    div.featured-bestseller div.bestseller div.bestseller-items div.col-xs-12{
+        width: 100%;
+    }
+    div.testimonials-new div.new div.new-items div.col-xs-12{
+        width: 100%;
+    }
+    div.last-blogs h2:after{
+        left: -160px;
+    }
+    div.last-blogs div.last-blogs-items div.last-blogs-item div.last-blogs-info ul li{
+        padding-right: 9px;
+    }
+    footer div.footer-top div.opening-time div.payment-method i{
+        margin: 0px 3px;
+    }
+    footer div.footer-bottom div.designer{
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    footer div.footer-bottom div.designer,
+    footer div.footer-bottom div.designer a{
+        font-size: 12px;
+    }
+    footer div.footer-bottom div.social{
+        width: 75%;
+        margin: 0 auto;
+    }
+    footer div.footer-bottom div.social a{
+        font-size: 12px;
+    }
+    /*===================
+        End Home Page
+    =====================*/
+    /*===================
+        Start Shop Page
+    =====================*/
+    section.shop div.shop-content h2:after{
+        left: -170px;
+    }
+    section.shop div.shop-content div.shop-page div.col-xs-6{
+        width: 100%;
+    }
+    section.shop div.shop-content div.shop-page nav ul li a{
+        margin: 0px 2px;
+    }
+    section.shop div.shop-content div.shop-items div.col-xs-6{
+        width: 100%;
+    }
+    section.shop div.shop-content div.shop-items div.shop-item div.item-info{
+        width: 100%;
+    }
+    /*===================
+        End Shop Page
+    =====================*/
+    /*===================
+        Start Blog Page
+    =====================*/
+    section.blog-one div.blog-content h2:after{
+        left: -160px;
+    }
+    /*===================
+        End Blog Page
+    =====================*/
+}
+
+@media only screen and (max-width : 320px) {
+    /*===================
+        Start Home Page
+    =====================*/
+    div.header-top div.col-xs-3,
+    div.header-top div.col-xs-4,
+    div.header-top div.col-xs-5{
+        width: 100%;
+    }
+    div.header-top div.header-top-left ul li a span,
+    div.header-top div.header-top-center ul li a span,
+    div.header-top div.header-top-right ul li a span{
+        display: block;
+        float: right;
+        padding-left: 5px;
+    }
+    nav.navbar-inverse a.navbar-brand{
+        width: 40%;
+    }
+    section.offer div.offer-info div#clockdiv div.clockdiv-content{
+        width: 50px;
+        height: 50px;
+        margin: 20px 3px 20px 0px;
+    }
+    section.offer div.offer-info div#clockdiv div.clockdiv-content span{
+        height: 30px;
+        line-height: 30px;
+    }
+    section.page-content div.ads a{
+        height: 109px;
+    }
+    section.page-content div.ads a img{
+        width: 43%;
+    }
+    div.featured-bestseller div.featured-products h2{
+        font-size: 16px;
+    }
+    div.featured-bestseller div.featured-products h2 span a.left span,
+    div.featured-bestseller div.featured-products h2 span a.right span{
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+    }
+    .carousel-control .glyphicon-chevron-left{
+        margin-left: 10px;
+    }
+    div.featured-bestseller div.featured-products h2 span a.left,
+    div.featured-bestseller div.featured-products h2 span a.right{
+        top: -15px;
+    }
+    div.featured-bestseller div.featured-products div.featured-items div.featured-item div.item-info p {
+        font-size: 10px;
+        margin: 0 0 5px;
+    }
+    div.featured-bestseller div.bestseller h2:after{
+        left: -200px;
+    }
+    div.featured-bestseller div.bestseller h2 a.left span,
+    div.featured-bestseller div.bestseller h2 a.right span,
+    div.testimonials-new div.new h2 a.left span,
+    div.testimonials-new div.new h2 a.right span,
+    div.testimonials-new div.testimonials-products h2 span a.left span,
+    div.testimonials-new div.testimonials-products h2 span a.right span{
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+    }
+    div.featured-bestseller div.bestseller h2:after{
+        left: -140px;
+    }
+    div.featured-bestseller div.bestseller h2 a.left,
+    div.featured-bestseller div.bestseller h2 a.right,
+    div.testimonials-new div.new h2 a.left,
+    div.testimonials-new div.new h2 a.right,
+    div.testimonials-new div.testimonials-products h2 span a.left,
+    div.testimonials-new div.testimonials-products h2 span a.right{
+        top: -15px;
+    }
+    div.testimonials-new div.new h2:after{
+        left: -140px
+    }
+    div.testimonials-new div.testimonials-products div.testimonials-items div.testimonials-item div.item-info h3{
+        font-size: 14px;
+    }
+    div.testimonials-new div.testimonials-products div.testimonials-items div.testimonials-item div.item-info p{
+        font-size: 10px;
+    }
+    div.last-blogs h2 a.left,
+    div.last-blogs h2 a.right{
+        top: -10px;
+    }
+    div.last-blogs h2 a.left span,
+    div.last-blogs h2 a.right span{
+        width: 35px;
+        text-align: center;
+        height: 35px;
+        line-height: 35px;
+    }
+    footer div.footer-top div.footer-contact ul li i{
+        margin-right: 4px;
+    }
+    footer div.footer-top div.opening-time ul li{
+        font-size: 13px;
+    }
+    footer div.footer-top div.opening-time div.payment-method i{
+        margin: 0px -1px;
+    }
+    footer div.footer-bottom div.social{
+        width: 80%;
+    }
+    footer div.footer-bottom div.social ul li{
+        padding: 0px 8px;
+    }
+    footer div.footer-bottom div.social ul li a{
+        font-size: 14px;
+    }
+    /*===================
+        End Home Page
+    =====================*/
+    /*===================
+        Start Shop Page
+    =====================*/
+    section.shop div.shop-content h2:after{
+        left: -200px;
+    }
+    section.shop div.shop-content div.shop-page nav ul li a{
+        margin: 0px;
+    }
+    /*===================
+        End Shop Page
+    =====================*/
+    /*===================
+        Start Blog Page
+    =====================*/
+    section.blog-one div.blog-content h2:after{
+        left: -200px;
+    }
+    div.blog-content div.blog-content-items div.blog-content-item a.blog-content-image div.date{
+        right: 10px;
+    }
+    div.blog-content div.blog-content-items div.blog-content-item div.blog-content-info h3{
+        font-size: 16px;
+    }
+    /*===================
+        End Blog Page
+    =====================*/
+}

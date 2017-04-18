@@ -1,0 +1,54 @@
+input, textarea, select
+
+	&:focus
+		outline: none
+	
+form 
+	margin: 0 0 1.5em
+
+label, input, button, select, textarea
+	font-family: $font
+	text-decoration: none
+	padding: (1.5/2) * 1em
+	line-height: 1.5em
+
+
+textarea
+	resize: vertical
+
+
+input[type=submit], button[type=submit]
+	background: darken($darkgray, 20%)
+	border: none
+	color: darken($darkgray, 40%)
+	display: inline-block
+	+transition(all 0.4s ease-out)
+	text-transform: uppercase
+	letter-spacing: 1px
+
+	&:hover
+		background: $black
+		color: $white
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"]
+	border: none
+	line-height: 1.5em
+	padding: (1.5/2) * 1em
+	vertical-align: middle
+	background-color: $gray
+	min-width: 120px

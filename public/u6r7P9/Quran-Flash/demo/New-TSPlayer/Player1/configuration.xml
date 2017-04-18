@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?> 
+<tsplayer> 
+<skinoptions> 
+<skin>New-TSPlayer/Skin/NewSkin.swf</skin> 
+<playlist>1</playlist> 
+</skinoptions> 
+<functionality> 
+<streaming>1</streaming> 
+<autoplay>1</autoplay> 
+<volume>100</volume> 
+<repeat>1</repeat> 
+<shuffling>1</shuffling> 
+</functionality> 
+</tsplayer>

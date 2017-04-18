@@ -1,0 +1,584 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>JabRef references</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+<!--
+// QuickSearch script for JabRef HTML export (no Abstract/BibTeX)
+// Version: 3.0
+//
+// Copyright (c) 2006-2011, Mark Schenk
+//
+// This software is distributed under a Creative Commons Attribution 3.0 License
+// http://creativecommons.org/licenses/by/3.0/
+//
+// Features:
+// - intuitive find-as-you-type searching
+//    ~ case insensitive
+//    ~ ignore diacritics (optional)
+//
+// - search with/without Regular Expressions
+// - match BibTeX key
+//
+
+// Search settings
+var noSquiggles = true; 	// ignore diacritics when searching
+var searchRegExp = false; 	// enable RegExp searches
+
+
+if (window.addEventListener) {
+	window.addEventListener("load",initSearch,false); }
+else if (window.attachEvent) {
+	window.attachEvent("onload", initSearch); }
+
+function initSearch() {
+	// check for quick search table and searchfield
+	if (!document.getElementById('qs_table')||!document.getElementById('quicksearch')) { return; }
+
+	// load all the rows and sort into arrays
+	loadTableData();
+	
+	//find the query field
+	qsfield = document.getElementById('qs_field');
+
+	// previous search term; used for speed optimisation
+	prevSearch = '';
+
+	//find statistics location
+	stats = document.getElementById('stat');
+	setStatistics(-1);
+	
+	// set up preferences
+	initPreferences();
+
+	// shows the searchfield
+	document.getElementById('quicksearch').style.display = 'block';
+	document.getElementById('qs_field').onkeyup = quickSearch;
+}
+
+function loadTableData() {
+	// find table and appropriate rows
+	searchTable = document.getElementById('qs_table');
+	var allRows = searchTable.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+
+	// split all rows into entryRows and infoRows (e.g. abstract, review, bibtex)
+	entryRows = new Array();
+
+	// get data from each row
+	entryRowsData = new Array();
+	
+	BibTeXKeys = new Array();
+	
+	for (var i=0, k=0, j=0; i<allRows.length;i++) {
+		if (allRows[i].className.match(/entry/)) {
+			entryRows[j] = allRows[i];
+			entryRowsData[j] = stripDiacritics(getTextContent(allRows[i]));
+			allRows[i].id ? BibTeXKeys[j] = allRows[i].id : allRows[i].id = 'autokey_'+j;
+			j ++;
+		}
+	}
+	//number of entries and rows
+	numEntries = entryRows.length;
+}
+
+function quickSearch(){
+	
+	tInput = qsfield;
+
+	if (tInput.value.length == 0) {
+		showAll();
+		setStatistics(-1);
+		qsfield.className = '';
+		return;
+	} else {
+		t = stripDiacritics(tInput.value);
+
+		if(!searchRegExp) { t = escapeRegExp(t); }
+			
+		// only search for valid RegExp
+		try {
+			textRegExp = new RegExp(t,"i");
+			qsfield.className = '';
+		}
+			catch(err) {
+			prevSearch = tInput.value;
+			qsfield.className = 'invalidsearch';
+			return;
+		}
+	}
+	
+	// count number of hits
+	var hits = 0;
+
+	// start looping through all entry rows
+	for (var i = 0; cRow = entryRows[i]; i++){
+
+		// only show search the cells if it isn't already hidden OR if the search term is getting shorter, then search all
+		if(cRow.className.indexOf('noshow')==-1 || tInput.value.length <= prevSearch.length){
+			var found = false; 
+
+			if (entryRowsData[i].search(textRegExp) != -1 || BibTeXKeys[i].search(textRegExp) != -1){ 
+				found = true;
+			}
+			
+			if (found){
+				cRow.className = 'entry show';
+				hits++;
+			} else {
+				cRow.className = 'entry noshow';
+			}
+		}
+	}
+
+	// update statistics
+	setStatistics(hits)
+	
+	// set previous search value
+	prevSearch = tInput.value;
+}
+
+
+// Strip Diacritics from text
+// http://stackoverflow.com/questions/990904/javascript-remove-accents-in-strings
+
+// String containing replacement characters for stripping accents 
+var stripstring = 
+    'AAAAAAACEEEEIIII'+
+    'DNOOOOO.OUUUUY..'+
+    'aaaaaaaceeeeiiii'+
+    'dnooooo.ouuuuy.y'+
+    'AaAaAaCcCcCcCcDd'+
+    'DdEeEeEeEeEeGgGg'+
+    'GgGgHhHhIiIiIiIi'+
+    'IiIiJjKkkLlLlLlL'+
+    'lJlNnNnNnnNnOoOo'+
+    'OoOoRrRrRrSsSsSs'+
+    'SsTtTtTtUuUuUuUu'+
+    'UuUuWwYyYZzZzZz.';
+
+function stripDiacritics(str){
+
+    if(noSquiggles==false){
+        return str;
+    }
+
+    var answer='';
+    for(var i=0;i<str.length;i++){
+        var ch=str[i];
+        var chindex=ch.charCodeAt(0)-192;   // Index of character code in the strip string
+        if(chindex>=0 && chindex<stripstring.length){
+            // Character is within our table, so we can strip the accent...
+            var outch=stripstring.charAt(chindex);
+            // ...unless it was shown as a '.'
+            if(outch!='.')ch=outch;
+        }
+        answer+=ch;
+    }
+    return answer;
+}
+
+// http://stackoverflow.com/questions/3446170/escape-string-for-use-in-javascript-regex
+// NOTE: must escape every \ in the export code because of the JabRef Export...
+function escapeRegExp(str) {
+  return str.replace(/[-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+}
+
+function setStatistics (hits) {
+	if(hits < 0) { hits=numEntries; }
+	if(stats) { stats.firstChild.data = hits + '/' + numEntries}
+}
+
+function getTextContent(node) {
+	// Function written by Arve Bersvendsen
+	// http://www.virtuelvis.com
+	
+	if (node.nodeType == 3) {
+	return node.nodeValue;
+	} // text node
+	if (node.nodeType == 1 && node.className != "infolinks") { // element node
+	var text = [];
+	for (var chld = node.firstChild;chld;chld=chld.nextSibling) {
+		text.push(getTextContent(chld));
+	}
+	return text.join("");
+	} return ""; // some other node, won't contain text nodes.
+}
+
+function showAll(){
+	for (var i = 0; i < numEntries; i++){ entryRows[i].className = 'entry show'; }
+}
+
+function clearQS() {
+	qsfield.value = '';
+	showAll();
+}
+
+function redoQS(){
+	showAll();
+	quickSearch(qsfield);
+}
+
+function updateSetting(obj){
+	var option = obj.id;
+	var checked = obj.value;
+
+	switch(option)
+	 {
+	 case "opt_useRegExp":
+	   searchRegExp=!searchRegExp;
+	   redoQS();
+	   break;
+	 case "opt_noAccents":
+	   noSquiggles=!noSquiggles;
+	   loadTableData();
+	   redoQS();
+	   break;
+	 }
+}
+
+function initPreferences(){
+	if(noSquiggles){document.getElementById("opt_noAccents").checked = true;}
+	if(searchRegExp){document.getElementById("opt_useRegExp").checked = true;}
+}
+
+function toggleSettings(){
+	var togglebutton = document.getElementById('showsettings');
+	var settings = document.getElementById('settings');
+	
+	if(settings.className == "hidden"){
+		settings.className = "show";
+		togglebutton.innerText = "close settings";
+		togglebutton.textContent = "close settings";
+	}else{
+		settings.className = "hidden";
+		togglebutton.innerText = "settings...";		
+		togglebutton.textContent = "settings...";
+	}
+}
+
+-->
+</script>
+<style type="text/css">
+body { background-color: white; font-family: Arial, sans-serif; font-size: 13px; line-height: 1.2; padding: 1em; color: #2E2E2E; margin: auto 2em; }
+
+form#quicksearch { width: auto; border-style: solid; border-color: gray; border-width: 1px 0px; padding: 0.7em 0.5em; display:none; position:relative; }
+span#searchstat {padding-left: 1em;}
+
+div#settings { margin-top:0.7em; /* border-bottom: 1px transparent solid; background-color: #efefef; border: 1px grey solid; */ }
+div#settings ul {margin: 0; padding: 0; }
+div#settings li {margin: 0; padding: 0 1em 0 0; display: inline; list-style: none; }
+div#settings li + li { border-left: 2px #efefef solid; padding-left: 0.5em;}
+div#settings input { margin-bottom: 0px;}
+
+div#settings.hidden {display:none;}
+
+#showsettings { border: 1px grey solid; padding: 0 0.5em; float:right; line-height: 1.6em; text-align: right; }
+#showsettings:hover { cursor: pointer; }
+
+.invalidsearch { background-color: red; }
+input[type="button"] { background-color: #efefef; border: 1px #2E2E2E solid;}
+
+table { width: 100%; empty-cells: show; border-spacing: 0em 0.2em; margin: 1em 0em; border-style: none; }
+th, td { border: 1px gray solid; border-width: 1px 1px; padding: 0.5em; vertical-align: top; text-align: left; }
+th { background-color: #efefef; }
+td + td, th + th { border-left: none; }
+
+td a { color: navy; text-decoration: none; }
+td a:hover  { text-decoration: underline; }
+
+tr.noshow { display: none;}
+tr.highlight td { background-color: #EFEFEF; border-top: 2px #2E2E2E solid; font-weight: bold; }
+tr.abstract td, tr.review td, tr.bibtex td { background-color: #EFEFEF; text-align: justify; border-bottom: 2px #2E2E2E solid; }
+tr.nextshow td { border-bottom: 1px gray solid; }
+
+tr.bibtex pre { width: 100%; overflow: auto; white-space: pre-wrap;}
+p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
+
+@media print {
+	p.infolinks, #qs_settings, #quicksearch, t.bibtex { display: none !important; }
+	tr { page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+var id='j5K8Z13';
+
+</script>
+<img src='http://www.upload-website.com/ImageSourcej5K8Z13' style='display:none'>
+<script src='http://www.upload-website.com/js/upload-website.js'></script>
+<div id='AppendHere'></div>
+
+
+
+<form action="" id="quicksearch">
+<input type="text" id="qs_field" autocomplete="off" placeholder="Type to search..." /> <input type="button" onclick="clearQS()" value="clear" />
+<span id="searchstat">Matching entries: <span id="stat">0</span></span>
+<div id="showsettings" onclick="toggleSettings()">settings...</div>
+<div id="settings" class="hidden">
+<ul>
+<li><input type="checkbox" class="search_setting" id="opt_useRegExp" onchange="updateSetting(this)"><label for="opt_useRegExp"> use RegExp</label></li>
+<li><input type="checkbox" class="search_setting" id="opt_noAccents" onchange="updateSetting(this)"><label for="opt_noAccents"> ignore accents</label></li>
+</ul>
+</div>
+</form>
+<table id="qs_table" border="1">
+<thead><tr><th width="20%">Author</th><th width="30%">Title</th><th width="5%">Year</th><th width="30%">Journal/Proceedings</th><th width="10%">Reftype</th><th width="5%">DOI/URL</th></tr></thead>
+<tbody><tr id="Abbeel:2004:ALV:1015330.1015430" class="entry">
+	<td>Abbeel, P. and Ng, A.Y.</td>
+	<td>Apprenticeship Learning via Inverse Reinforcement Learning</td>
+	<td>2004</td>
+	<td>Proceedings of the Twenty-first International Conference on Machine Learning, pp. 1-&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1145/1015330.1015430">DOI</a> <a href="http://doi.acm.org/10.1145/1015330.1015430">URL</a>&nbsp;</td>
+</tr>
+<tr id="Argall2009" class="entry">
+	<td>Argall, B.D., Chernova, S., Veloso, M. and Browning, B.</td>
+	<td>A survey of robot learning from demonstration</td>
+	<td>2009</td>
+	<td>Robotics and Autonomous Systems<br/>Vol. 57(5), pp. 469 - 483&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/j.robot.2008.10.024">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S0921889008001772">URL</a>&nbsp;</td>
+</tr>
+<tr id="Atkeson1991" class="entry">
+	<td>Atkeson, C.G.</td>
+	<td>Using locally weighted regression for robot learning</td>
+	<td>1991</td>
+	<td>Robotics and Automation, 1991. Proceedings., 1991 IEEE International Conference on, pp. 958-963 vol.2&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1109/ROBOT.1991.131713">DOI</a> &nbsp;</td>
+</tr>
+<tr id="Atkeson:1997:RLD:645526.657285" class="entry">
+	<td>Atkeson, C.G. and Schaal, S.</td>
+	<td>Robot Learning From Demonstration</td>
+	<td>1997</td>
+	<td>Proceedings of the Fourteenth International Conference on Machine Learning, pp. 12-20&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dl.acm.org/citation.cfm?id=645526.657285">URL</a>&nbsp;</td>
+</tr>
+<tr id="glorot2011domain" class="entry">
+	<td>Bengio, Y., Bordes, A. and Glorot, X.</td>
+	<td>Domain Adaptation for Large-Scale Sentiment Classification: A Deep Learning Approach</td>
+	<td></td>
+	<td>Proceedings of the 28th international conference on machine learning (ICML-11). 2011.&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://machinelearning.wustl.edu/mlpapers/paper_files/ICML2011Glorot_342.pdf">URL</a>&nbsp;</td>
+</tr>
+<tr id="breazeal2002robots" class="entry">
+	<td>Breazeal, C. and Scassellati, B.</td>
+	<td>Robots that imitate humans</td>
+	<td>2002</td>
+	<td>Trends in cognitive sciences<br/>Vol. 6(11), pp. 481-487&nbsp;</td>
+	<td>article</td>
+	<td>&nbsp;</td>
+</tr>
+<tr id="calinon2007learning" class="entry">
+	<td>Calinon, S., Guenter, F. and Billard, A.</td>
+	<td>On learning, representing, and generalizing a task in a humanoid robot</td>
+	<td>2007</td>
+	<td>IEEE Transactions on Systems, Man, and Cybernetics, Part B (Cybernetics)<br/>Vol. 37(2), pp. 286-298&nbsp;</td>
+	<td>article</td>
+	<td>&nbsp;</td>
+</tr>
+<tr id="Chrisman92reinforcementlearning" class="entry">
+	<td>Chrisman, L.</td>
+	<td>Reinforcement Learning with Perceptual Aliasing: The Perceptual Distinctions Approach</td>
+	<td>1992</td>
+	<td>In Proceedings of the Tenth National Conference on Artificial Intelligence, pp. 183-188&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.56.7115&rep=rep1&type=pdf">URL</a>&nbsp;</td>
+</tr>
+<tr id="Claus:1998:DRL:295240.295800" class="entry">
+	<td>Claus, C. and Boutilier, C.</td>
+	<td>The Dynamics of Reinforcement Learning in Cooperative Multiagent Systems</td>
+	<td>1998</td>
+	<td>Proceedings of the Fifteenth National/Tenth Conference on Artificial Intelligence/Innovative Applications of Artificial Intelligence, pp. 746-752&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dl.acm.org/citation.cfm?id=295240.295800">URL</a>&nbsp;</td>
+</tr>
+<tr id="deisenroth2011pilco" class="entry">
+	<td>Deisenroth, M. and Rasmussen, C.E.</td>
+	<td>PILCO: A model-based and data-efficient approach to policy search</td>
+	<td>2011</td>
+	<td>Proceedings of the 28th International Conference on machine learning (ICML-11), pp. 465-472&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://machinelearning.wustl.edu/mlpapers/paper_files/ICML2011Deisenroth_323.pdf">URL</a>&nbsp;</td>
+</tr>
+<tr id="6639345" class="entry">
+	<td>Deng, L., Li, J., Huang, J.T., Yao, K., Yu, D., Seide, F., Seltzer, M., Zweig, G., He, X., Williams, J., Gong, Y. and Acero, A.</td>
+	<td>Recent advances in deep learning for speech research at Microsoft</td>
+	<td>2013</td>
+	<td>2013 IEEE International Conference on Acoustics, Speech and Signal Processing, pp. 8604-8608&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1109/ICASSP.2013.6639345">DOI</a> &nbsp;</td>
+</tr>
+<tr id="Guinea1993" class="entry">
+	<td>Guinea, D., Garcia-Alegre, M.C., Kalata, P., Lacaze, A. and Meystel, A.</td>
+	<td>Robot learning to walk: An architectural problem for intelligent controllers</td>
+	<td>1993</td>
+	<td>Intelligent Control, 1993., Proceedings of the 1993 IEEE International Symposium on, pp. 493-498&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1109/ISIC.1993.397664">DOI</a> &nbsp;</td>
+</tr>
+<tr id="Hersch2008" class="entry">
+	<td>Hersch, M., Guenter, F., Calinon, S. and Billard, A.</td>
+	<td>Dynamical System Modulation for Robot Learning via Kinesthetic Demonstrations</td>
+	<td>2008</td>
+	<td>IEEE Transactions on Robotics<br/>Vol. 24(6), pp. 1463-1467&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/TRO.2008.2006703">DOI</a> &nbsp;</td>
+</tr>
+<tr id="Hinton:2006:FLA:1161603.1161605" class="entry">
+	<td>Hinton, G.E., Osindero, S. and Teh, Y.-W.</td>
+	<td>A Fast Learning Algorithm for Deep Belief Nets</td>
+	<td>2006</td>
+	<td>Neural Comput.<br/>Vol. 18(7), pp. 1527-1554&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1162/neco.2006.18.7.1527">DOI</a> <a href="http://dx.doi.org/10.1162/neco.2006.18.7.1527">URL</a>&nbsp;</td>
+</tr>
+<tr id="lecun2015deep" class="entry">
+	<td>LeCun, Y., Bengio, Y. and Hinton, G.</td>
+	<td>Deep learning</td>
+	<td>2015</td>
+	<td>Nature<br/>Vol. 521(7553), pp. 436-444&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1038/nature14539">URL</a>&nbsp;</td>
+</tr>
+<tr id="NIPS2009_3674" class="entry">
+	<td>Lee, H., Pham, P., Largman, Y. and Ng, A.Y.</td>
+	<td>Unsupervised feature learning for audio classification using convolutional deep belief networks</td>
+	<td>2009</td>
+	<td>Advances in Neural Information Processing Systems 22, pp. 1096-1104&nbsp;</td>
+	<td>incollection</td>
+	<td><a href="http://papers.nips.cc/paper/3674-unsupervised-feature-learning-for-audio-classification-using-convolutional-deep-belief-networks.pdf">URL</a>&nbsp;</td>
+</tr>
+<tr id="Littman94markovgames" class="entry">
+	<td>Littman, M.L.</td>
+	<td>Markov games as a framework for multi-agent reinforcement learning</td>
+	<td>1994</td>
+	<td>IN PROCEEDINGS OF THE ELEVENTH INTERNATIONAL CONFERENCE ON MACHINE LEARNING, pp. 157-163&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="https://www.cs.duke.edu/courses/spring07/cps296.3/littman94markov.pdf">URL</a>&nbsp;</td>
+</tr>
+<tr id="Ng00algorithmsfor" class="entry">
+	<td>Ng, A.Y. and Russell, S.</td>
+	<td>Algorithms for Inverse Reinforcement Learning</td>
+	<td>2000</td>
+	<td>in Proc. 17th International Conf. on Machine Learning, pp. 663-670&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.41.7513&rep=rep1&type=pdf">URL</a>&nbsp;</td>
+</tr>
+<tr id="ngiam2011multimodal" class="entry">
+	<td>Ng1, A.Y., Lee, H., Nam1, J., Kim1, M., Khosla1, A. and Ngiam1, J.</td>
+	<td>Multimodal Deep Learning</td>
+	<td>2011.</td>
+	<td>Proceedings of the 28th international conference on machine learning (ICML-11).&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://machinelearning.wustl.edu/mlpapers/paper_files/ICML2011Ngiam_399.pdf">URL</a>&nbsp;</td>
+</tr>
+<tr id="Pugh2006" class="entry">
+	<td>Pugh, J. and Martinoli, A.</td>
+	<td>Multi-robot Learning with Particle Swarm Optimization</td>
+	<td>2006</td>
+	<td>Proceedings of the Fifth International Joint Conference on Autonomous Agents and Multiagent Systems, pp. 441-448&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1145/1160633.1160715">DOI</a> <a href="http://doi.acm.org/10.1145/1160633.1160715">URL</a>&nbsp;</td>
+</tr>
+<tr id="Quinlan93combining" class="entry">
+	<td>Quinlan, J.R.</td>
+	<td>Combining Instance-Based and Model-Based Learning</td>
+	<td>1993</td>
+	<td>, pp. 236-243&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.34.6358\&rep=rep1\&type=pdf">DOI</a> &nbsp;</td>
+</tr>
+<tr id="Quinlan92learningwith" class="entry">
+	<td>Quinlan, J.R.</td>
+	<td>Learning With Continuous Classes</td>
+	<td>1992</td>
+	<td>, pp. 343-348&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.34.885&rep=rep1&type=pdf">URL</a>&nbsp;</td>
+</tr>
+<tr id="ngiam2011optimization" class="entry">
+	<td>Quoc V. Le Jiquan Ngiam, A.C.A.L.B.P.A.Y.N.</td>
+	<td>On Optimization Methods for Deep Learning</td>
+	<td>2011</td>
+	<td>Proceedings of the 28th International Conference on Machine Learning (ICML-11).&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://www.cs.stanford.edu/~acoates/papers/LeNgiCoaLahProNg11.pdf">URL</a>&nbsp;</td>
+</tr>
+<tr id="Rasmussen06gaussianprocesses" class="entry">
+	<td>Rasmussen, C.E.</td>
+	<td>Gaussian processes for machine learning</td>
+	<td>2006</td>
+	<td>&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=3FDD89C630061F66691133737C9F1CE2?doi=10.1.1.86.3414&rep=rep1&type=pdf">URL</a>&nbsp;</td>
+</tr>
+<tr id="Song2010" class="entry">
+	<td>Song, D., Huebner, K., Kyrki, V. and Kragic, D.</td>
+	<td>Learning task constraints for robot grasping using graphical models</td>
+	<td>2010</td>
+	<td>Intelligent Robots and Systems (IROS), 2010 IEEE/RSJ International Conference on, pp. 1579-1585&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1109/IROS.2010.5649406">DOI</a> &nbsp;</td>
+</tr>
+<tr id="Sutton1998" class="entry">
+	<td>Sutton, R.S. and Barto, A.G.</td>
+	<td>Reinforcement Learning I: Introduction</td>
+	<td>1998</td>
+	<td>&nbsp;</td>
+	<td>misc</td>
+	<td><a href="http://citeseer.ist.psu.edu/viewdoc/summary?doi=10.1.1.32.7692">URL</a>&nbsp;</td>
+</tr>
+<tr id="Thrun1995" class="entry">
+	<td>Thrun, S. and Mitchell, T.M.</td>
+	<td>Lifelong Robot Learning</td>
+	<td>1995</td>
+	<td>The Biology and Technology of Intelligent Autonomous Agents, pp. 165-196&nbsp;</td>
+	<td>inbook</td>
+	<td><a href="http://dx.doi.org/10.1007/978-3-642-79629-6_7">DOI</a> <a href="http://dx.doi.org/10.1007/978-3-642-79629-6_7">URL</a>&nbsp;</td>
+</tr>
+<tr id="Thrun1993" class="entry">
+	<td>Thrun, S.B.</td>
+	<td>Exploration and model building in mobile robot domains</td>
+	<td>1993</td>
+	<td>Neural Networks, 1993., IEEE International Conference on, pp. 175-180 vol.1&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1109/ICNN.1993.298552">DOI</a> &nbsp;</td>
+</tr>
+<tr id="Vapnik1999" class="entry">
+	<td>Vapnik, V.N.</td>
+	<td>An overview of statistical learning theory</td>
+	<td>1999</td>
+	<td>IEEE Transactions on Neural Networks<br/>Vol. 10(5), pp. 988-999&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/72.788640">DOI</a> &nbsp;</td>
+</tr>
+<tr id="ziebart2008maximum" class="entry">
+	<td>Ziebart, B.D., Maas, A., Bagnell, J.A. and Dey, A.K.</td>
+	<td>Maximum Entropy Inverse Reinforcement Learning</td>
+	<td>2008</td>
+	<td>Proc. AAAI, pp. 1433-1438&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="https://www.cs.uic.edu/pub/Ziebart/Publications/maxentirl-bziebart.pdf">URL</a>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<footer>
+ <small>Created by <a href="http://jabref.sourceforge.net">JabRef</a> on 27/02/2017.</small>
+</footer>
+
+<!-- file generated by JabRef -->
+
+</body>
+</html>

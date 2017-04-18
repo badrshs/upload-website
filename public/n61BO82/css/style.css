@@ -1,0 +1,517 @@
+/* Start My Framework */
+
+body {
+    font-family: 'Cairo', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 1100px;
+    margin: auto;
+    position: relative;
+}
+
+.transition {
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+}
+
+.table-row {
+    display: table-row;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.upper {
+    text-transform: uppercase;
+}
+
+.hidden {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.opp {
+    opacity: 1;
+}
+
+
+textarea:focus, input:focus,button:focus {
+    outline: none;
+}
+
+/* End My Framework */
+/* Fixed Header */
+.f-header {
+    width: 100%;
+    height: 90px;
+    z-index: 9999;
+    overflow: hidden;
+    position: fixed;
+    background: #84c554;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: none;
+}
+
+.f-header .container .logo {
+    width: 140px;
+    height: 100%;
+    float: left;
+}
+
+.f-header .container .logo img {
+    width: 100%;
+}
+
+.f-header .container ul {
+    margin: 30px 0;
+    padding: 0;
+    float: right;
+}
+
+.f-header .container ul li {
+    float: right;
+    display: inline-block;
+    margin: 0;
+    font-size: 20px;
+    color: #212265;
+}
+
+.f-header .container ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+}
+
+.f-header .container ul li a:hover {
+    background: #fff;
+    padding: 50px 10px;
+    color: #84c554;
+}
+/* End */
+/* Start Header */
+.header {
+    width: 100%;
+    height: 650px;
+    background: url('../img/background/pexels-photo.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.header .container .logo {
+    width: 200px;
+    margin: 25px 0;
+    overflow: hidden;
+    float: left;
+}
+
+.header .container .logo img {
+    width: 100%;
+}
+
+.header .container ul {
+    margin: 55px 0;
+    padding: 0;
+    float: right;
+}
+
+.header .container ul li {
+    float: right;
+    display: inline-block;
+    margin: 5px;
+    font-size: 19px;
+    color: #212265;
+}
+
+.header .container ul li:first-child {
+    width: 100%;
+    margin: 10px 0;
+    text-align: right;
+}
+
+.header .container ul li:first-child img {
+    width: 200px;
+}
+
+.header .container ul li a {
+    text-decoration: none;
+    color: #212265;
+    padding: 10px;
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+}
+
+.header .container ul li a:hover {
+    padding: 10px;
+    border-bottom: 1px solid #97cd71;
+    color: #97cd71;
+}
+
+/* End Header */
+
+/* Welcome */
+.welcome {
+    margin: 90px 25px;
+}
+
+.welcome h1,
+.welcome p {
+    color: #212265;
+}
+
+.welcome button {
+    width: 200px;
+    padding: 10px;
+    font-size: 18px;
+    background: #84c554;
+    border: 2px solid #84c554;
+    color: #ffffff;
+    font-family: 'Source Sans Pro', sans-serif;
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+}
+
+.welcome button:hover {
+    width: 220px;
+    opacity: 0.9;
+    cursor: pointer;
+}
+/* Hello */
+.hello {
+    width: 100%;
+    height: 100%;
+    padding: 50px 0;
+    background: url('../img/background/sky-night-space-house.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    color: #f2f2f2;
+    overflow: hidden;
+}
+/* End */
+
+/* Start Projects */
+.projects {
+    width: 100%;
+    height: 100%;
+    padding: 40px 0;
+    background: #fff;
+    overflow: hidden;
+}
+
+.projects .container .title h1 {
+    color: #0a2431;
+    margin: 20px 0 0 0;
+}
+
+.projects .container .title img {
+    margin: 5px 0 20px 0;
+}
+
+.projects .container .case .box .overlay {
+    width: 100%;
+    height: 100%;
+    font-size: 40px;
+    padding: 80px 0;
+    opacity: 0;
+    background: rgba(41,64,114,0.9);
+    color: #fff;
+    overflow: hidden;
+    position: absolute;
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+}
+
+.projects .container .box .overlay a i {
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    font-size: 0;
+    transform: rotate(360deg);
+    color: #fff;
+}
+
+.projects .container .box .overlay:hover a i {
+    font-size: 40px;
+    transform: rotate(0deg);
+}
+
+.projects .container .box:hover {
+    box-shadow: 0 0 10px 1px #eee;
+}
+
+.projects .container .box:hover .overlay {
+    opacity: 1;
+}
+
+.projects .container .case .b-b .overlay  {
+    padding: 200px 0;
+}
+
+.projects .container .case .m-h-b .overlay  {
+    padding: 180px 0;
+}
+
+.box {
+    float: left;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box
+}
+
+.s-b {
+    width: 24%;
+    margin: 1%;
+    height: 200px;
+}
+
+.b-b {
+    width: 46%;
+    margin: 1%;
+    height: 422px;
+    float: right;
+}
+
+.m-b {
+    width: 50%;
+    margin: 1%;
+    height: 230px;
+}
+
+.m-h-b {
+    width: 24%;
+    margin: 1%;
+    height: 450px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.box img {
+    width: 100%;
+    height: 100%;
+}
+
+/* End Porjects */
+
+/* Start Brack */
+.brack {
+    width: 100%;
+    height: 100%;
+    background: #294072;
+    overflow: hidden;
+    color: #fff;
+}
+
+.brack .left {
+    box-sizing: border-box;
+    width: 50%;
+    height: 100%;
+    padding: 80px 0 0 0;
+}
+
+.brack .right {
+    box-sizing: border-box;
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+
+/* End Brack */
+
+/* Start  testim */
+.testim {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+
+.testim .container .client {
+    width: 80%;
+    margin: 0 10%;
+    height: 100%;
+    padding: 60px 0;
+    overflow: hidden;
+    color: #fff;
+}
+
+.testim .container .client .img {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    display: inline-block;
+    background: #eee;
+    border-radius: 50%;
+}
+
+.testim .container .client .img img {
+    width: 100%;
+}
+
+.testim .container .client h2 {
+    color: #294072;
+    margin: 8px 0 2px 0;
+    font-weight: 400;
+}
+
+.testim .container .client span {
+    font-size: 14px;
+    margin: 0;
+    color: #294072;
+}
+
+.testim .container .client p {
+    color: #294072;
+}
+
+.testim .container .client .stars .star {
+    display: inline-block;
+    color: #84c554;
+    margin: 0 3px;
+    font-size: 18px;
+}
+
+.testim .container .fa-chevron-right,
+.testim .container .fa-chevron-left {
+    position: absolute;
+    top: 50%;
+    color: #999;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.testim .container .fa-chevron-right {
+    right: 0;
+}
+
+.testim .container .fa-chevron-left {
+    left: 0;
+}
+
+.testim .container .fa-chevron-right:hover,
+.testim .container .fa-chevron-left:hover {
+    color: #84c554;
+}
+
+/* End Testimonials */
+
+/* Start Contact Us */
+.contact {
+    width: 100%;
+    height: 100%;
+    background: url('../img/background/icons.png');
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.contact .head {
+    width: 100%;
+    height: 100%;
+    background: #294072;
+    overflow: hidden;
+}
+
+.contact .head h1 {
+    color: #fff;
+    margin: 0;
+    padding: 40px 0;
+}
+
+.contact .container form {
+    width: 40%;
+    margin: 80px 0;
+    height: 100%;
+    display: inline-block;
+}
+
+.contact .container form input {
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    width: 100%;
+    padding: 8px;
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    background: #fff;
+    border: none;
+    border-bottom: 2px solid #eee;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.contact .container form textarea {
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    width: 100%;
+    padding: 8px;
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    background: #fff;
+    border: none;
+    border-bottom: 2px solid #eee;
+    font-family: 'Source Sans Pro', sans-serif;
+    height: 120px;
+    max-width: 100%;
+    max-height: 120px;
+    color: #0a2431;
+}
+
+.contact .container form input[type="submit"] {
+    background: #294072;
+    color: #fff;
+    padding: 12px;
+    width: 104%;
+    cursor: pointer;
+}
+
+.contact .container form input:focus {
+    border-bottom: 2px solid #294072;
+}
+
+.contact .container form textarea:focus {
+    border-bottom: 2px solid #294072;
+}
+
+/* End Contact */
+
+/* Foteer */
+.foteer {
+    width: 100%;
+    height: 100%;
+    padding: 30px 0;
+    background: #294072;
+    color: #fff;
+    font-size: 20px;
+}

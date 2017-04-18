@@ -1,0 +1,374 @@
+*
+{
+	box-sizing: border-box;
+/*	outline: 1px solid red;*/
+}
+body
+{
+	height: 3000px;
+}
+.container
+{
+	width: 1170px;
+	margin: 0 auto;
+}
+/*start header*/
+.face
+{
+	height: 600px;
+	background-image:url(yacht.jpg);
+	background-repeat: no-repeat;
+}
+.nav
+{
+	padding-top: 10px;
+	margin-bottom: 200px;
+}
+.nav-bar,
+{
+	width: 80%;
+}
+.logo
+{
+	width: 20%;
+	margin-left: 10px;
+}
+.nav ul
+{
+	float: right;
+	margin-top: 30px;
+}
+.nav ul li
+{
+	float: left;
+	text-transform: capitalize;
+}
+.nav ul li a
+{
+	color: #fff;
+	padding: 20px;
+	margin: 5px;
+	text-decoration: none;
+}
+.nav .logo h1
+{
+	font-family: 'Lobster', cursive;
+	color: #fff;
+	text-transform: capitalize;
+	font-size: 50px;
+	float: left;
+	margin-left: 15px;
+}
+.nav .logo h1 span
+{
+	text-transform:uppercase;
+	font-size: 12px;
+	border-top: 1px solid #fff;
+	font-family: sans-serif;
+	padding:5px 4px 3px 3px;
+}
+.slogan
+{
+	float: right;
+	width: 40%;
+	text-align: right;
+	color: #fff;
+	padding: 20px 30px 30px 30px;
+}
+.slogan h2
+{
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 50px;
+	font-weight: bold;
+	margin-bottom: 50px;
+}
+.slogan p
+{
+	text-transform: uppercase;
+	line-height: 150%;
+	font-family: fantasy;
+}
+/*start header*/
+
+/*start content*/
+.content
+{
+	margin-bottom: 50px;
+	margin-top: 50px;
+	margin-left: 100px;
+	margin-right: 60px;
+	height: 300px;
+}
+.content .detail
+{
+	width: 40%;
+	float: left;
+	margin-right: 50px;
+}
+.content .photo
+{
+	width: 40%;
+	float: right;;
+}
+.content .detail
+{
+	text-align: center;
+}
+.content .detail h1
+{
+	font-family: 'Sacramento', cursive;
+	text-transform: capitalize;
+	color:#E19D29;
+	font-size: 60px;
+	padding: 10px;
+}
+.content .detail h1 span
+{
+	color: #333;
+	font-family: sans-serif;
+	font-size: 50px;
+}
+.content .detail p
+{
+	color: #333;
+	font-family: sans-serif;
+	line-height: 150%;
+	margin-bottom: 10px;
+}
+.content .detail button
+{
+	padding: 10px 15px;
+	background:#fff;
+	border: 1px solid #eee;
+	color:#E19D29;
+}
+.photo img
+{
+	margin-top: 50px;
+	border:5px ridge #eee;
+	box-shadow: 5px 5px 3px #eee;
+}
+/*start content*/
+
+/*start adv*/
+.adv
+{
+	height: 400px;
+	background-image: url(details.jpg);
+	padding: 20px;
+	display: flex;
+	align-items: center;
+}
+.adv .first
+{
+	width:18%;
+	height: 300px;
+	float: left;
+	margin: auto;
+	border: 8px inset #A68F58;
+}
+.adv div:first-of-type
+{
+	background-image: url(y2.jpg);
+	background-repeat: no-repeat;
+}
+.adv div:nth-of-type(2)
+{
+	background-image: url(y1.jpg);
+	background-repeat: no-repeat;
+}
+.adv div:last-of-type
+{
+	background-image: url(y3.jpg);
+	background-repeat: no-repeat;
+}
+.first h1
+{
+	font-family: sans-serif;
+	border: 3px double #ccc;
+	background-color: #fff;
+	text-align: center;
+	width: 130px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-top: 210px;
+	margin-left: 18px;
+	font-weight: bold;
+}
+.first span
+{
+	margin-top: 8px;
+	border: 1px solid #ccc;
+}
+/*end adv*/
+
+/*start offers*/
+.offers
+{
+	height: 700px;
+	display: flex;
+	align-items: center;
+	padding-left: 100px;
+	padding-right: 100px; 
+}
+.offers .second
+{
+	float: left;
+	margin: auto;
+	width: 200px;
+}
+.offers .second h1
+{
+	font-family: 'Fjalla One', sans-serif;
+	text-align: center;
+	padding: 10px;
+	font-size: 20px;
+}
+.offers .second h1 span
+{
+	color: #000;
+	font-size: 14px;
+	text-transform: uppercase;
+}
+.offers  .st h1
+{
+	color: #C68F4C;
+}
+.second .two
+{
+	background-color: #C68F4C;
+}
+.offers  .sec h1
+{
+	color: #EF7047;
+}
+.second .three
+{
+	background-color: #EF7047;
+}
+.offers .second h2
+{
+	color: #fff;
+	font-family: fantasy;
+	font-size: 15px;
+	font-weight: bold;
+	text-align: center;
+	text-transform: uppercase;
+	padding: 10px;
+}
+.offers .second h2:nth-of-type(2),.offers .second h2:last-of-type
+{
+	width: 100px;
+	float: left;
+	margin-bottom: 10px;
+}
+.offers .second h2:nth-of-type(2)
+{
+	border-right: 1px solid bisque;
+}
+.offers .second h2 span
+{
+	font-size: 10px;
+	font-weight: lighter;
+}
+.offers  .rd h1
+{
+	color: #008491;
+}
+.second .four
+{
+	background-color: #008491;
+}
+.offers .second p
+{
+	color: #fff;
+	font-family:sans-serif;
+	font-size: 14px;
+	text-align: center;
+	padding: 10px;
+}
+.offers .second .link
+{
+	width:inherit;
+	background-color: #fff;
+	text-align: center;
+}
+.offers .second a
+{
+	text-decoration: none;
+	color:#E19D29;
+	font-size: 20px;
+	padding-bottom: 8px;
+}
+/*end offers*/
+
+/*start footer*/
+footer
+{
+	height: 200px;
+}
+footer .ph, footer .navbar
+{
+	width: 50%;
+	float: left;
+	height: inherit;
+}
+footer .ph
+{
+	background-image: url(ft.jpg);
+	background-repeat: no-repeat;
+}
+footer .ph div
+{
+	width: 150px;
+	height: 100px;
+	margin: 50px auto;
+	background-color: #fff;
+	border: 8px solid #A68F58;
+}
+footer .ph div h1
+{
+	font-family: 'Lobster', cursive;
+	color:#E19D29;
+	text-transform: capitalize;
+	font-size: 40px;
+	margin-left: 15px;
+	
+	
+}
+footer .ph div h1 span
+{
+	text-transform:uppercase;
+	font-size: 12px;
+	border-top: 1px solid #E19D29;
+	font-family: sans-serif;
+	padding-top: 5px;
+}
+footer .navbr
+{
+	
+}
+footer .navbar div
+{
+	width: 50%;
+	float: left;
+	height: inherit;
+	background: #3F3B54;
+	margin: auto;
+}
+footer .navbar div ul
+{
+	margin: 20px 40px;;
+}
+footer .navbar div ul li
+{
+	list-style:disc;
+	padding: 20px;
+}
+footer .navbar div ul li a
+{
+	text-decoration: none;
+	color: #fff;
+	font-family: fantasy;
+}
+/*end footer*/

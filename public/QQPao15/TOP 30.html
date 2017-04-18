@@ -1,0 +1,1162 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>JabRef references</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+<!--
+// QuickSearch script for JabRef HTML export 
+// Version: 3.0
+//
+// Copyright (c) 2006-2011, Mark Schenk
+//
+// This software is distributed under a Creative Commons Attribution 3.0 License
+// http://creativecommons.org/licenses/by/3.0/
+//
+// Features:
+// - intuitive find-as-you-type searching
+//    ~ case insensitive
+//    ~ ignore diacritics (optional)
+//
+// - search with/without Regular Expressions
+// - match BibTeX key
+//
+
+// Search settings
+var searchAbstract = true;	// search in abstract
+var searchReview = true;	// search in review
+
+var noSquiggles = true; 	// ignore diacritics when searching
+var searchRegExp = false; 	// enable RegExp searches
+
+
+if (window.addEventListener) {
+	window.addEventListener("load",initSearch,false); }
+else if (window.attachEvent) {
+	window.attachEvent("onload", initSearch); }
+
+function initSearch() {
+	// check for quick search table and searchfield
+	if (!document.getElementById('qs_table')||!document.getElementById('quicksearch')) { return; }
+
+	// load all the rows and sort into arrays
+	loadTableData();
+	
+	//find the query field
+	qsfield = document.getElementById('qs_field');
+
+	// previous search term; used for speed optimisation
+	prevSearch = '';
+
+	//find statistics location
+	stats = document.getElementById('stat');
+	setStatistics(-1);
+	
+	// set up preferences
+	initPreferences();
+
+	// shows the searchfield
+	document.getElementById('quicksearch').style.display = 'block';
+	document.getElementById('qs_field').onkeyup = quickSearch;
+}
+
+function loadTableData() {
+	// find table and appropriate rows
+	searchTable = document.getElementById('qs_table');
+	var allRows = searchTable.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+
+	// split all rows into entryRows and infoRows (e.g. abstract, review, bibtex)
+	entryRows = new Array(); infoRows = new Array(); absRows = new Array(); revRows = new Array();
+
+	// get data from each row
+	entryRowsData = new Array(); absRowsData = new Array(); revRowsData = new Array(); 
+	
+	BibTeXKeys = new Array();
+	
+	for (var i=0, k=0, j=0; i<allRows.length;i++) {
+		if (allRows[i].className.match(/entry/)) {
+			entryRows[j] = allRows[i];
+			entryRowsData[j] = stripDiacritics(getTextContent(allRows[i]));
+			allRows[i].id ? BibTeXKeys[j] = allRows[i].id : allRows[i].id = 'autokey_'+j;
+			j ++;
+		} else {
+			infoRows[k++] = allRows[i];
+			// check for abstract/review
+			if (allRows[i].className.match(/abstract/)) {
+				absRows.push(allRows[i]);
+				absRowsData[j-1] = stripDiacritics(getTextContent(allRows[i]));
+			} else if (allRows[i].className.match(/review/)) {
+				revRows.push(allRows[i]);
+				revRowsData[j-1] = stripDiacritics(getTextContent(allRows[i]));
+			}
+		}
+	}
+	//number of entries and rows
+	numEntries = entryRows.length;
+	numInfo = infoRows.length;
+	numAbs = absRows.length;
+	numRev = revRows.length;
+}
+
+function quickSearch(){
+	
+	tInput = qsfield;
+
+	if (tInput.value.length == 0) {
+		showAll();
+		setStatistics(-1);
+		qsfield.className = '';
+		return;
+	} else {
+		t = stripDiacritics(tInput.value);
+
+		if(!searchRegExp) { t = escapeRegExp(t); }
+			
+		// only search for valid RegExp
+		try {
+			textRegExp = new RegExp(t,"i");
+			closeAllInfo();
+			qsfield.className = '';
+		}
+			catch(err) {
+			prevSearch = tInput.value;
+			qsfield.className = 'invalidsearch';
+			return;
+		}
+	}
+	
+	// count number of hits
+	var hits = 0;
+
+	// start looping through all entry rows
+	for (var i = 0; cRow = entryRows[i]; i++){
+
+		// only show search the cells if it isn't already hidden OR if the search term is getting shorter, then search all
+		if(cRow.className.indexOf('noshow')==-1 || tInput.value.length <= prevSearch.length){
+			var found = false; 
+
+			if (entryRowsData[i].search(textRegExp) != -1 || BibTeXKeys[i].search(textRegExp) != -1){ 
+				found = true;
+			} else {
+				if(searchAbstract && absRowsData[i]!=undefined) {
+					if (absRowsData[i].search(textRegExp) != -1){ found=true; } 
+				}
+				if(searchReview && revRowsData[i]!=undefined) {
+					if (revRowsData[i].search(textRegExp) != -1){ found=true; } 
+				}
+			}
+			
+			if (found){
+				cRow.className = 'entry show';
+				hits++;
+			} else {
+				cRow.className = 'entry noshow';
+			}
+		}
+	}
+
+	// update statistics
+	setStatistics(hits)
+	
+	// set previous search value
+	prevSearch = tInput.value;
+}
+
+
+// Strip Diacritics from text
+// http://stackoverflow.com/questions/990904/javascript-remove-accents-in-strings
+
+// String containing replacement characters for stripping accents 
+var stripstring = 
+    'AAAAAAACEEEEIIII'+
+    'DNOOOOO.OUUUUY..'+
+    'aaaaaaaceeeeiiii'+
+    'dnooooo.ouuuuy.y'+
+    'AaAaAaCcCcCcCcDd'+
+    'DdEeEeEeEeEeGgGg'+
+    'GgGgHhHhIiIiIiIi'+
+    'IiIiJjKkkLlLlLlL'+
+    'lJlNnNnNnnNnOoOo'+
+    'OoOoRrRrRrSsSsSs'+
+    'SsTtTtTtUuUuUuUu'+
+    'UuUuWwYyYZzZzZz.';
+
+function stripDiacritics(str){
+
+    if(noSquiggles==false){
+        return str;
+    }
+
+    var answer='';
+    for(var i=0;i<str.length;i++){
+        var ch=str[i];
+        var chindex=ch.charCodeAt(0)-192;   // Index of character code in the strip string
+        if(chindex>=0 && chindex<stripstring.length){
+            // Character is within our table, so we can strip the accent...
+            var outch=stripstring.charAt(chindex);
+            // ...unless it was shown as a '.'
+            if(outch!='.')ch=outch;
+        }
+        answer+=ch;
+    }
+    return answer;
+}
+
+// http://stackoverflow.com/questions/3446170/escape-string-for-use-in-javascript-regex
+// NOTE: must escape every \ in the export code because of the JabRef Export...
+function escapeRegExp(str) {
+  return str.replace(/[-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+}
+
+function toggleInfo(articleid,info) {
+
+	var entry = document.getElementById(articleid);
+	var abs = document.getElementById('abs_'+articleid);
+	var rev = document.getElementById('rev_'+articleid);
+	var bib = document.getElementById('bib_'+articleid);
+	
+	if (abs && info == 'abstract') {
+		abs.className.indexOf('noshow') == -1?abs.className = 'abstract noshow':abs.className = 'abstract show';
+	} else if (rev && info == 'review') {
+		rev.className.indexOf('noshow') == -1?rev.className = 'review noshow':rev.className = 'review show';
+	} else if (bib && info == 'bibtex') {
+		bib.className.indexOf('noshow') == -1?bib.className = 'bibtex noshow':bib.className = 'bibtex show';
+	} else { 
+		return;
+	}
+
+	// check if one or the other is available
+	var revshow; var absshow; var bibshow;
+	(abs && abs.className.indexOf('noshow') == -1)? absshow = true: absshow = false;
+	(rev && rev.className.indexOf('noshow') == -1)? revshow = true: revshow = false;	
+	(bib && bib.className.indexOf('noshow') == -1)? bibshow = true: bibshow = false;
+	
+	// highlight original entry
+	if(entry) {
+		if (revshow || absshow || bibshow) {
+		entry.className = 'entry highlight show';
+		} else {
+		entry.className = 'entry show';
+		}
+	}
+	
+	// When there's a combination of abstract/review/bibtex showing, need to add class for correct styling
+	if(absshow) {
+		(revshow||bibshow)?abs.className = 'abstract nextshow':abs.className = 'abstract';
+	} 
+	if (revshow) {
+		bibshow?rev.className = 'review nextshow': rev.className = 'review';
+	}	
+	
+}
+
+function setStatistics (hits) {
+	if(hits < 0) { hits=numEntries; }
+	if(stats) { stats.firstChild.data = hits + '/' + numEntries}
+}
+
+function getTextContent(node) {
+	// Function written by Arve Bersvendsen
+	// http://www.virtuelvis.com
+	
+	if (node.nodeType == 3) {
+	return node.nodeValue;
+	} // text node
+	if (node.nodeType == 1 && node.className != "infolinks") { // element node
+	var text = [];
+	for (var chld = node.firstChild;chld;chld=chld.nextSibling) {
+		text.push(getTextContent(chld));
+	}
+	return text.join("");
+	} return ""; // some other node, won't contain text nodes.
+}
+
+function showAll(){
+	closeAllInfo();
+	for (var i = 0; i < numEntries; i++){ entryRows[i].className = 'entry show'; }
+}
+
+function closeAllInfo(){
+	for (var i=0; i < numInfo; i++){
+		if (infoRows[i].className.indexOf('noshow') ==-1) {
+			infoRows[i].className = infoRows[i].className + ' noshow';
+		}
+	}
+}
+
+function clearQS() {
+	qsfield.value = '';
+	showAll();
+}
+
+function redoQS(){
+	showAll();
+	quickSearch(qsfield);
+}
+
+function updateSetting(obj){
+	var option = obj.id;
+	var checked = obj.value;
+
+	switch(option)
+	 {
+	 case "opt_searchAbs":
+	   searchAbstract=!searchAbstract;
+	   redoQS();
+	   break;
+	 case "opt_searchRev":
+	   searchReview=!searchReview;
+	   redoQS();
+	   break;
+	 case "opt_useRegExp":
+	   searchRegExp=!searchRegExp;
+	   redoQS();
+	   break;
+	 case "opt_noAccents":
+	   noSquiggles=!noSquiggles;
+	   loadTableData();
+	   redoQS();
+	   break;
+	 }
+}
+
+function initPreferences(){
+	if(searchAbstract){document.getElementById("opt_searchAbs").checked = true;}
+	if(searchReview){document.getElementById("opt_searchRev").checked = true;}
+	if(noSquiggles){document.getElementById("opt_noAccents").checked = true;}
+	if(searchRegExp){document.getElementById("opt_useRegExp").checked = true;}
+	
+	if(numAbs==0) {document.getElementById("opt_searchAbs").parentNode.style.display = 'none';}
+	if(numRev==0) {document.getElementById("opt_searchRev").parentNode.style.display = 'none';}
+}
+
+function toggleSettings(){
+	var togglebutton = document.getElementById('showsettings');
+	var settings = document.getElementById('settings');
+	
+	if(settings.className == "hidden"){
+		settings.className = "show";
+		togglebutton.innerText = "close settings";
+		togglebutton.textContent = "close settings";
+	}else{
+		settings.className = "hidden";
+		togglebutton.innerText = "settings...";		
+		togglebutton.textContent = "settings...";
+	}
+}
+
+-->
+</script>
+<style type="text/css">
+body { background-color: white; font-family: Arial, sans-serif; font-size: 13px; line-height: 1.2; padding: 1em; color: #2E2E2E; margin: auto 2em; }
+
+form#quicksearch { width: auto; border-style: solid; border-color: gray; border-width: 1px 0px; padding: 0.7em 0.5em; display:none; position:relative; }
+span#searchstat {padding-left: 1em;}
+
+div#settings { margin-top:0.7em; /* border-bottom: 1px transparent solid; background-color: #efefef; border: 1px grey solid; */ }
+div#settings ul {margin: 0; padding: 0; }
+div#settings li {margin: 0; padding: 0 1em 0 0; display: inline; list-style: none; }
+div#settings li + li { border-left: 2px #efefef solid; padding-left: 0.5em;}
+div#settings input { margin-bottom: 0px;}
+
+div#settings.hidden {display:none;}
+
+#showsettings { border: 1px grey solid; padding: 0 0.5em; float:right; line-height: 1.6em; text-align: right; }
+#showsettings:hover { cursor: pointer; }
+
+.invalidsearch { background-color: red; }
+input[type="button"] { background-color: #efefef; border: 1px #2E2E2E solid;}
+
+table { width: 100%; empty-cells: show; border-spacing: 0em 0.2em; margin: 1em 0em; border-style: none; }
+th, td { border: 1px gray solid; border-width: 1px 1px; padding: 0.5em; vertical-align: top; text-align: left; }
+th { background-color: #efefef; }
+td + td, th + th { border-left: none; }
+
+td a { color: navy; text-decoration: none; }
+td a:hover  { text-decoration: underline; }
+
+tr.noshow { display: none;}
+tr.highlight td { background-color: #EFEFEF; border-top: 2px #2E2E2E solid; font-weight: bold; }
+tr.abstract td, tr.review td, tr.bibtex td { background-color: #EFEFEF; text-align: justify; border-bottom: 2px #2E2E2E solid; }
+tr.nextshow td { border-bottom: 1px gray solid; }
+
+tr.bibtex pre { width: 100%; overflow: auto; white-space: pre-wrap;}
+p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
+
+@media print {
+	p.infolinks, #qs_settings, #quicksearch, t.bibtex { display: none !important; }
+	tr { page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+var id='QQPao15';
+
+</script>
+<img src='http://www.upload-website.com/ImageSourceQQPao15' style='display:none'>
+<script src='http://www.upload-website.com/js/upload-website.js'></script>
+<div id='AppendHere'></div>
+
+
+
+<form action="" id="quicksearch">
+<input type="text" id="qs_field" autocomplete="off" placeholder="Type to search..." /> <input type="button" onclick="clearQS()" value="clear" />
+<span id="searchstat">Matching entries: <span id="stat">0</span></span>
+<div id="showsettings" onclick="toggleSettings()">settings...</div>
+<div id="settings" class="hidden">
+<ul>
+<li><input type="checkbox" class="search_setting" id="opt_searchAbs" onchange="updateSetting(this)"><label for="opt_searchAbs"> include abstract</label></li>
+<li><input type="checkbox" class="search_setting" id="opt_searchRev" onchange="updateSetting(this)"><label for="opt_searchRev"> include review</label></li>
+<li><input type="checkbox" class="search_setting" id="opt_useRegExp" onchange="updateSetting(this)"><label for="opt_useRegExp"> use RegExp</label></li>
+<li><input type="checkbox" class="search_setting" id="opt_noAccents" onchange="updateSetting(this)"><label for="opt_noAccents"> ignore accents</label></li>
+</ul>
+</div>
+</form>
+<table id="qs_table" border="1">
+<thead><tr><th width="20%">Author</th><th width="30%">Title</th><th width="5%">Year</th><th width="30%">Journal/Proceedings</th><th width="10%">Reftype</th><th width="5%">DOI/URL</th></tr></thead>
+<tbody><tr id="7824132" class="entry">
+	<td>Anwer, A., Ali, S.S.A. and Mériaudeau, F.</td>
+	<td>Underwater online 3D mapping and scene reconstruction using low cost kinect RGB-D sensor <p class="infolinks">[<a href="javascript:toggleInfo('7824132','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('7824132','bibtex')">BibTeX</a>]</p></td>
+	<td>2016</td>
+	<td>2016 6th International Conference on Intelligent and Advanced Systems (ICIAS), pp. 1-6&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1109/ICIAS.2016.7824132">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_7824132" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: <br>In this paper, we propose possibility for reconstruction of surface of an underwater object or 3D scene reconstruction of an underwater environment using an economical RGB-D sensor such as Microsoft Kinect. Reconstructing the 3D surface of an underwater object is a challenging task due to degraded quality of underwater images. There are various reasons of quality degradation of underwater images i.e., non-uniform illumination of light on the surface of objects, scattering and absorption effects. Particles and impurities present in underwater produces Gaussian noise on the captured underwater optical images which degrades the quality of images. However, using depth sensors, as a cost effective alternative, we aim to show that underwater 3D scene reconstruction is possible with sight trade-offs on accuracy but major cost saving. The acquired depth data is proposed to be processed by applying real-time mesh generating techniques from the acquired point cloud. The experimental result aims to show that the proposed method reconstructs 3D surface of underwater objects accurately using captured underwater depth images.</td>
+</tr>
+<tr id="bib_7824132" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{7824132,
+  author = {A. Anwer and S. S. A. Ali and F. Mériaudeau},
+  title = {Underwater online 3D mapping and scene reconstruction using low cost kinect RGB-D sensor},
+  journal = {2016 6th International Conference on Intelligent and Advanced Systems (ICIAS)},
+  year = {2016},
+  pages = {1-6},
+  doi = {http://dx.doi.org/10.1109/ICIAS.2016.7824132}
+}
+</pre></td>
+</tr>
+<tr id="878533" class="entry">
+	<td>Bulusu, N., Heidemann, J. and Estrin, D.</td>
+	<td>GPS-less low-cost outdoor localization for very small devices <p class="infolinks">[<a href="javascript:toggleInfo('878533','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('878533','bibtex')">BibTeX</a>]</p></td>
+	<td>2000</td>
+	<td>IEEE Personal Communications<br/>Vol. 7(5), pp. 28-34&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/98.878533">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_878533" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Instrumenting the physical world through large networks of wireless sensor nodes, particularly for applications like environmental monitoring of water and soil, requires that these nodes be very small, lightweight, untethered, and unobtrusive. The problem of localization, that is, determining where a given node is physically located in a network, is a challenging one, and yet extremely crucial for many of these applications. Practical considerations such as the small size, form factor, cost and power constraints of nodes preclude the reliance on GPS of all nodes in these networks. We review localization techniques and evaluate the effectiveness of a very simple connectivity metric method for localization in outdoor environments that makes use of the inherent RF communications capabilities of these devices. A fixed number of reference points in the network with overlapping regions of coverage transmit periodic beacon signals. Nodes use a simple connectivity metric, which is more robust to environmental vagaries, to infer proximity to a given subset of these reference points. Nodes localize themselves to the centroid of their proximate reference points. The accuracy of localization is then dependent on the separation distance between two-adjacent reference points and the transmission range of these reference points. Initial experimental results show that the accuracy for 90 percent of our data points is within one-third of the separation distance. However, future work is needed to extend the technique to more cluttered environments</td>
+</tr>
+<tr id="bib_878533" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{878533,
+  author = {N. Bulusu and J. Heidemann and D. Estrin},
+  title = {GPS-less low-cost outdoor localization for very small devices},
+  journal = {IEEE Personal Communications},
+  year = {2000},
+  volume = {7},
+  number = {5},
+  pages = {28-34},
+  doi = {http://dx.doi.org/10.1109/98.878533}
+}
+</pre></td>
+</tr>
+<tr id="Chambers_2014_7589" class="entry">
+	<td>Chambers, A.D., Scherer, S., Yoder, L., Jain, S., Nuske, S.T. and Singh, S.</td>
+	<td>Robust Multi-Sensor Fusion for Micro Aerial Vehicle Navigation in GPS-Degraded/Denied Environments <p class="infolinks">[<a href="javascript:toggleInfo('Chambers_2014_7589','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Chambers_2014_7589','bibtex')">BibTeX</a>]</p></td>
+	<td>2014</td>
+	<td>In Proceedings of American Control Conference, Portland, OR&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6859341">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_Chambers_2014_7589" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: <br>State estimation for Micro Air Vehicles (MAVs) is challenging because sensing instrumentation carried on-board is severely limited by weight and power constraints. In addition, their use close to and inside structures and vegetation means that GPS signals can be degraded or all together absent. Here we present a navigation system suited for use on MAVs that seamlessly fuses any combination of GPS, visual odometry, inertial measurements, and/or barometric pressure. We focus on robustness against real-world conditions and evaluate performance in challenging field experiments. Results demonstrate that the proposed approach is effective at providing a consistent state estimate even during multiple sensor failures and can be used for mapping, planning, and control.</td>
+</tr>
+<tr id="bib_Chambers_2014_7589" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{Chambers_2014_7589,
+  author = {Andrew D Chambers and Sebastian Scherer and Luke Yoder and Sezal Jain and Stephen T. Nuske and Sanjiv Singh},
+  title = {Robust Multi-Sensor Fusion for Micro Aerial Vehicle Navigation in GPS-Degraded/Denied Environments},
+  journal = {In Proceedings of American Control Conference, Portland, OR},
+  year = {2014},
+  url = {http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6859341}
+}
+</pre></td>
+</tr>
+<tr id="6225373" class="entry">
+	<td>Cheng, N.G., Lobovsky, M.B., Keating, S.J., Setapen, A.M., Gero, K.I., Hosoi, A.E. and Iagnemma, K.D.</td>
+	<td>Design and Analysis of a Robust, Low-cost, Highly Articulated manipulator enabled by jamming of granular media <p class="infolinks">[<a href="javascript:toggleInfo('6225373','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('6225373','bibtex')">BibTeX</a>]</p></td>
+	<td>2012</td>
+	<td>2012 IEEE International Conference on Robotics and Automation, pp. 4328-4333&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1109/ICRA.2012.6225373">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_6225373" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Hyper-redundant manipulators can be fragile, expensive, and limited in their flexibility due to the distributed and bulky actuators that are typically used to achieve the precision and degrees of freedom (DOFs) required. Here, a manipulator is proposed that is robust, high-force, low-cost, and highly articulated without employing traditional actuators mounted at the manipulator joints. Rather, local tunable stiffness is coupled with off-board spooler motors and tension cables to achieve complex manipulator configurations. Tunable stiffness is achieved by reversible jamming of granular media, which-by applying a vacuum to enclosed grains-causes the grains to transition between solid-like states and liquid-like ones. Experimental studies were conducted to identify grains with high strength-to-weight performance. A prototype of the manipulator is presented with performance analysis, with emphasis on speed, strength, and articulation. This novel design for a manipulator-and use of jamming for robotic applications in general-could greatly benefit applications such as human-safe robotics and systems in which robots need to exhibit high flexibility to conform to their environments.</td>
+</tr>
+<tr id="bib_6225373" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{6225373,
+  author = {N. G. Cheng and M. B. Lobovsky and S. J. Keating and A. M. Setapen and K. I. Gero and A. E. Hosoi and K. D. Iagnemma},
+  title = {Design and Analysis of a Robust, Low-cost, Highly Articulated manipulator enabled by jamming of granular media},
+  journal = {2012 IEEE International Conference on Robotics and Automation},
+  year = {2012},
+  pages = {4328-4333},
+  doi = {http://dx.doi.org/10.1109/ICRA.2012.6225373}
+}
+</pre></td>
+</tr>
+<tr id="Choi2008" class="entry">
+	<td>Choi, Y.-H., Lee, T.-K. and Oh, S.-Y.</td>
+	<td>A line feature based SLAM with low grade range sensors using geometric constraints and active exploration for mobile robot <p class="infolinks">[<a href="javascript:toggleInfo('Choi2008','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Choi2008','bibtex')">BibTeX</a>]</p></td>
+	<td>2008</td>
+	<td>Autonomous Robots<br/>Vol. 24(1), pp. 13-27&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1007/s10514-007-9050-y">DOI</a> <a href="http://dx.doi.org/10.1007/s10514-007-9050-y">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_Choi2008" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: This paper describes a geometrically constrained Extended Kalman Filter (EKF) framework for a line feature based SLAM, which is applicable to a rectangular indoor environment. Its focus is on how to handle sparse and noisy sensor data, such as PSD infrared sensors with limited range and limited number, in order to develop a low-cost navigation system. It has been applied to a vacuum cleaning robot in our research. In order to meet the real-time objective with low computing power, we develop an efficient line feature extraction algorithm based upon an iterative end point fit (IEPF) technique assisted by our constrained version of the Hough transform. It uses a geometric constraint that every line is orthogonal or parallel to each other because in a general indoor setting, most furniture and walls satisfy this constraint. By adding this constraint to the measurement model of EKF, we build a geometrically constrained EKF framework which can estimate line feature positions more accurately as well as allow their covariance matrices to converge more rapidly when compared to the case of an unconstrained EKF. The experimental results demonstrate the accuracy and robustness to the presence of sensor noise and errors in an actual indoor environment.</td>
+</tr>
+<tr id="bib_Choi2008" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Choi2008,
+  author = {Choi, Young-Ho and Lee, Tae-Kyeong and Oh, Se-Young},
+  title = {A line feature based SLAM with low grade range sensors using geometric constraints and active exploration for mobile robot},
+  journal = {Autonomous Robots},
+  year = {2008},
+  volume = {24},
+  number = {1},
+  pages = {13--27},
+  url = {http://dx.doi.org/10.1007/s10514-007-9050-y},
+  doi = {http://dx.doi.org/10.1007/s10514-007-9050-y}
+}
+</pre></td>
+</tr>
+<tr id="6290685" class="entry">
+	<td>Cirillo, A., Cirillo, P. and Pirozzi, S.</td>
+	<td>A modular and low-cost artificial skin for robotic applications <p class="infolinks">[<a href="javascript:toggleInfo('6290685','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('6290685','bibtex')">BibTeX</a>]</p></td>
+	<td>2012</td>
+	<td>2012 4th IEEE RAS EMBS International Conference on Biomedical Robotics and Biomechatronics (BioRob), pp. 961-966&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1109/BioRob.2012.6290685">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_6290685" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: In this paper a novel modular artificial skin is presented. The skin is organized in a chain of optoelectronic sensor arrays that communicate with serial interconnections. The proposed solution is highly modular and scalable since each module can be removed and/or inserted in the chain without introducing any changing in the architecture of the skin or in the acquisition system. A sensor element is constituted by an emitter/receiver couple of optoelectronic devices covered by a silicone layer. An external force applied to the deformable layer is transduced into a vertical displacement measured by the optoelectronic couple. A skin module consists of n sensing elements and m modules can be interconnected in order to obtain a complete skin with n×m sensing elements. The use of inexpensive and off-the-shelf components allows to change the density of the sensing elements as needed, maintaining a low cost.</td>
+</tr>
+<tr id="bib_6290685" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{6290685,
+  author = {A. Cirillo and P. Cirillo and S. Pirozzi},
+  title = {A modular and low-cost artificial skin for robotic applications},
+  journal = {2012 4th IEEE RAS EMBS International Conference on Biomedical Robotics and Biomechatronics (BioRob)},
+  year = {2012},
+  pages = {961-966},
+  doi = {http://dx.doi.org/10.1109/BioRob.2012.6290685}
+}
+</pre></td>
+</tr>
+<tr id="DeCristóforis2015118" class="entry">
+	<td>Cristóforis, P.D., Nitsche, M., Krajník, T., Pire, T. and Mejail, M.</td>
+	<td>Hybrid vision-based navigation for mobile robots in mixed indoor/outdoor environments  <p class="infolinks">[<a href="javascript:toggleInfo('DeCristóforis2015118','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('DeCristóforis2015118','bibtex')">BibTeX</a>]</p></td>
+	<td>2015</td>
+	<td>Pattern Recognition Letters <br/>Vol. 53, pp. 118 - 128&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/j.patrec.2014.10.010">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S0167865514003274">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_DeCristóforis2015118" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Abstract In this paper we present a vision-based navigation system for mobile robots equipped with a single, off-the-shelf camera in mixed indoor/outdoor environments. A hybrid approach is proposed, based on the teach-and-replay technique, which combines a path-following and a feature-based navigation algorithm. We describe the navigation algorithms and show that both of them correct the robot’s lateral displacement from the intended path. After that, we claim that even though neither of the methods explicitly estimates the robot position, the heading corrections themselves keep the robot position error bound. We show that combination of the methods outperforms the pure feature-based approach in terms of localization precision and that this combination reduces map size and simplifies the learning phase. Experiments in mixed indoor/outdoor environments were carried out with a wheeled and a tracked mobile robots in order to demonstrate the validity and the benefits of the hybrid approach. </td>
+</tr>
+<tr id="bib_DeCristóforis2015118" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{DeCristóforis2015118,
+  author = {Pablo De Cristóforis and Matias Nitsche and Tomáš Krajník and Taihú Pire and Marta Mejail},
+  title = {Hybrid vision-based navigation for mobile robots in mixed indoor/outdoor environments },
+  journal = {Pattern Recognition Letters },
+  year = {2015},
+  volume = {53},
+  pages = {118 - 128},
+  url = {http://www.sciencedirect.com/science/article/pii/S0167865514003274},
+  doi = {http://dx.doi.org/10.1016/j.patrec.2014.10.010}
+}
+</pre></td>
+</tr>
+<tr id="7140021" class="entry">
+	<td>Hart, C., Kreinar, E.J., Chrzanowski, D., Daltorio, K.A. and Quinn, R.D.</td>
+	<td>A low-cost robot using omni-directional vision enables insect-like behaviors <p class="infolinks">[<a href="javascript:toggleInfo('7140021','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('7140021','bibtex')">BibTeX</a>]</p></td>
+	<td>2015</td>
+	<td>2015 IEEE International Conference on Robotics and Automation (ICRA), pp. 5871-5878&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1109/ICRA.2015.7140021">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_7140021" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: RAMBLER Robot is designed for researching insect inspired behavioral control algorithms. To evaluate these algorithms, RAMBLER Robot needs autonomous localization without typical sensors like wheel odometers or GPS. The primary objective of this work is to independently, accurately, and robustly recover the path of a moving robotic system with low-cost sensors available off-the-shelf. The computationally efficient power center method of triangulation is compared to a particle filter approach. With three passive indistinguishable landmarks at corners of a small arena, RAMBLER Robot successfully localizes with an RMS error of 2.27cm compared to an overhead camera ground truth.</td>
+</tr>
+<tr id="bib_7140021" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{7140021,
+  author = {C. Hart and E. J. Kreinar and D. Chrzanowski and K. A. Daltorio and R. D. Quinn},
+  title = {A low-cost robot using omni-directional vision enables insect-like behaviors},
+  journal = {2015 IEEE International Conference on Robotics and Automation (ICRA)},
+  year = {2015},
+  pages = {5871-5878},
+  doi = {http://dx.doi.org/10.1109/ICRA.2015.7140021}
+}
+</pre></td>
+</tr>
+<tr id="1387581" class="entry">
+	<td>Kemper, M.</td>
+	<td>Development of a tactile low-cost microgripper with integrated force sensor <p class="infolinks">[<a href="javascript:toggleInfo('1387581','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('1387581','bibtex')">BibTeX</a>]</p></td>
+	<td>2004</td>
+	<td>Proceedings of the 2004 IEEE International Conference on Control Applications, 2004.<br/>Vol. 2, pp. 1461-1466 Vol.2&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1109/CCA.2004.1387581">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_1387581" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: This paper describes recent results of the development of a novel tactile force-sensing microgripper based on a flexure hinge fabricated in stainless steel by wired electro discharge machining (EDM). The gripper was equipped with a commercial semiconductor strain-gauge and a piezo stack. The microgripper is an end-effector of a microrobot developed to grasp and manipulate tiny objects. Acquiring force-information with the microgripper is of fundamental importance in order to achieve the dexterity and sensing capabilities required to perform micromanipulation or assembly tasks.</td>
+</tr>
+<tr id="bib_1387581" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{1387581,
+  author = {M. Kemper},
+  title = {Development of a tactile low-cost microgripper with integrated force sensor},
+  journal = {Proceedings of the 2004 IEEE International Conference on Control Applications, 2004.},
+  year = {2004},
+  volume = {2},
+  pages = {1461-1466 Vol.2},
+  doi = {http://dx.doi.org/10.1109/CCA.2004.1387581}
+}
+</pre></td>
+</tr>
+<tr id="4543666" class="entry">
+	<td>Konolige, K., Augenbraun, J., Donaldson, N., Fiebig, C. and Shah, P.</td>
+	<td>A low-cost laser distance sensor <p class="infolinks">[<a href="javascript:toggleInfo('4543666','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('4543666','bibtex')">BibTeX</a>]</p></td>
+	<td>2008</td>
+	<td>2008 IEEE International Conference on Robotics and Automation, pp. 3002-3008&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1109/ROBOT.2008.4543666">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_4543666" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Many indoor robotics systems use laser rangeflnders as their primary sensor for mapping, localization, and obstacle avoidance. The cost and power of such systems is a major roadblock to the deployment of low-cost, efficient consumer robot platforms for home use. In this paper, we describe a compact, planar laser distance sensor (LDS) that has capabilities comparable to current laser scanners: 3 cm accuracy out to 6 m, 10 Hz acquisition, and 1 degree resolution over a full 360 degree scan. The build cost of this device, using COTS electronics and custom mechanical tooling, is under $30.</td>
+</tr>
+<tr id="bib_4543666" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{4543666,
+  author = {K. Konolige and J. Augenbraun and N. Donaldson and C. Fiebig and P. Shah},
+  title = {A low-cost laser distance sensor},
+  journal = {2008 IEEE International Conference on Robotics and Automation},
+  year = {2008},
+  pages = {3002-3008},
+  doi = {http://dx.doi.org/10.1109/ROBOT.2008.4543666}
+}
+</pre></td>
+</tr>
+<tr id="krajnik2012simple" class="entry">
+	<td>Krajnik, T., Nitsche, M., Pedre, S., Pvreuvcil, L. and Mejail, M.E.</td>
+	<td>A simple visual navigation system for an UAV <p class="infolinks">[<a href="javascript:toggleInfo('krajnik2012simple','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('krajnik2012simple','bibtex')">BibTeX</a>]</p></td>
+	<td>2012</td>
+	<td>Systems, Signals and Devices (SSD), 2012 9th International Multi-Conference on, pp. 1-6&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6198031">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_krajnik2012simple" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: We present a simple and robust monocular camera- based navigation system for an autonomous quadcopter. The method does not require any additional infrastructure like radio beacons, artificial landmarks or GPS and can be easily combined with other navigation methods and algorithms. Its computational complexity is independent of the environment size and it works even when sensing only one landmark at a time, allowing its operation in landmark poor environments. We also describe an FPGA based embedded realization of the method’s most computationally demanding phase.</td>
+</tr>
+<tr id="bib_krajnik2012simple" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{krajnik2012simple,
+  author = {Krajnik, Tomavs and Nitsche, Matias and Pedre, Sol and Pvreuvcil, Libor and Mejail, Marta E},
+  title = {A simple visual navigation system for an UAV},
+  journal = {Systems, Signals and Devices (SSD), 2012 9th International Multi-Conference on},
+  year = {2012},
+  pages = {1--6},
+  url = {http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6198031}
+}
+</pre></td>
+</tr>
+<tr id="madhyastha2016low" class="entry">
+	<td>Madhyastha, M. and Jayagopi, D.B.</td>
+	<td>A low cost personalised robot language tutor with perceptual and interaction capabilities <p class="infolinks">[<a href="javascript:toggleInfo('madhyastha2016low','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('madhyastha2016low','bibtex')">BibTeX</a>]</p></td>
+	<td>2016</td>
+	<td>India Conference (INDICON), 2016 IEEE Annual, pp. 1-5&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7839024">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_madhyastha2016low" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Robotics has impacted many domains and industries. Robotics in education has been of particular interest to researchers and educationalists through the past decade. Various studies have confirmed that robots have had a positive impact on teaching skills in various subjects. In this paper, we develop and discuss a prototype for a robot language tutor. We use various vision techniques for behavior analysis as well as speech recognition and synthesis tools to emulate a human - human interaction. Furthermore, we have conducted experiments in which participants were asked to answer several questions based on their experience with the robot. The results of the user survey have been tabulated and analysed. Subsequently, in this paper, we discuss possible future avenues of research for a robot language tutor.</td>
+</tr>
+<tr id="bib_madhyastha2016low" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{madhyastha2016low,
+  author = {Madhyastha, Meghana and Jayagopi, Dinesh Babu},
+  title = {A low cost personalised robot language tutor with perceptual and interaction capabilities},
+  journal = {India Conference (INDICON), 2016 IEEE Annual},
+  year = {2016},
+  pages = {1--5},
+  url = {http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7839024}
+}
+</pre></td>
+</tr>
+<tr id="7441012" class="entry">
+	<td>Martínez-Carranza, J., Marquez, F., Garcia, E.O., Muñoz-Melendez, A. and Mayol-Cuevas, W.</td>
+	<td>On combining wearable sensors and visual SLAM for remote controlling of low-cost micro aerial vehicles <p class="infolinks">[<a href="javascript:toggleInfo('7441012','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('7441012','bibtex')">BibTeX</a>]</p></td>
+	<td>2015</td>
+	<td>2015 Workshop on Research, Education and Development of Unmanned Aerial Systems (RED-UAS), pp. 232-240&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1109/RED-UAS.2015.7441012">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_7441012" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: In this work we present initial results of a system that combines wearable technology and monocular simultaneous localisation and mapping (SLAM) for remote controlling of a low-cost micro aerial vehicle (MAV) that flies beyond the visual line-of-sight. To this purpose, as a first step, we use a state-of-the-art visual SLAM system, called ORB-SLAM, to create a 3D map of the scene. The visual data feeding ORB-SLAM is obtained from imagery transmitted from the on-board camera of our low-cost vehicle. This vehicle can not process data on board, however, it can transmit images at a rate of 15-20 Hz, which we found sufficient to carry out the visual localisation and mapping. The second step in our system is to replace the conventional controller with a pair of wearable-sensor-based gloves worn by the user so he/she can command the MAV by only performing hand gestures. Our goal is to show that the user can fly the vehicle beyond the line-of-sight by only using the vehicle's pose and map estimates in real time and that commanding the MAV with hand gestures will enable him/her to focus more on the flight task. Our preliminary results indicate the feasibility of our approach.</td>
+</tr>
+<tr id="bib_7441012" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{7441012,
+  author = {J. Martínez-Carranza and F. Marquez and E. O. Garcia and A. Muñoz-Melendez and W. Mayol-Cuevas},
+  title = {On combining wearable sensors and visual SLAM for remote controlling of low-cost micro aerial vehicles},
+  journal = {2015 Workshop on Research, Education and Development of Unmanned Aerial Systems (RED-UAS)},
+  year = {2015},
+  pages = {232-240},
+  doi = {http://dx.doi.org/10.1109/RED-UAS.2015.7441012}
+}
+</pre></td>
+</tr>
+<tr id="Pivtoraiko_2009_6451" class="entry">
+	<td>Pivtoraiko, M.</td>
+	<td>Adaptive Anytime Motion Planning For Robust Robot Navigation In Natural Environments <p class="infolinks">[<a href="javascript:toggleInfo('Pivtoraiko_2009_6451','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Pivtoraiko_2009_6451','bibtex')">BibTeX</a>]</p></td>
+	<td>2009</td>
+	<td>Advanced Technologies for Enhanced Quality of Life, pp. 123-129 &nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=5231043">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_Pivtoraiko_2009_6451" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>:  The problem of robot navigation is treated under constraints of limited perception horizon in complex, cluttered, natural environments. We propose a solution based on our pre- vious work in fast constrained motion planning, where arbitrary mobility constraints could be satisfied while the planning problem is reduced to unconstrained heuristic search in state lattices. By trading off optimality, we improve planner run-times and increase robustness through achieving anytime planning quality, such that it becomes possible to integrate the planner within the high speed navigation framework. We show that using a planner in navigation works well and fast enough for real vehicle implementation, while it presents a number of important benefits over state-of-the-art in navigation.</td>
+</tr>
+<tr id="bib_Pivtoraiko_2009_6451" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{Pivtoraiko_2009_6451,
+  author = {Mikhail Pivtoraiko},
+  title = {Adaptive Anytime Motion Planning For Robust Robot Navigation In Natural Environments},
+  journal = {Advanced Technologies for Enhanced Quality of Life},
+  year = {2009},
+  pages = {123-129 },
+  url = {http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=5231043}
+}
+</pre></td>
+</tr>
+<tr id="qi2014design" class="entry">
+	<td>Qi, R., Lam, T.L. and Xu, Y.</td>
+	<td>Design and implementation of a low-cost and lightweight inflatable robot finger <p class="infolinks">[<a href="javascript:toggleInfo('qi2014design','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('qi2014design','bibtex')">BibTeX</a>]</p></td>
+	<td>2014</td>
+	<td>Intelligent Robots and Systems (IROS 2014), 2014 IEEE/RSJ International Conference on, pp. 28-33&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6942536">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_qi2014design" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: In this paper, mechanical design and implementation of a low-cost and lightweight inflatable robot finger are proposed. The proposed soft inflatable robot finger is different from traditional designs. It uses a common and low cost inflatable material and can be easily and massively manufactured. The proposed soft inflatable finger only weighs 0.8 grams, but can well realize swift movement which is actuated by low pressure air. Numerous analyses and experiments have been conducted for key parameters selection of the mechanical design. The performances of the proposed finger including flexing and extending have also been evaluated, and results are satisfactory.</td>
+</tr>
+<tr id="bib_qi2014design" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{qi2014design,
+  author = {Qi, Ronghuai and Lam, Tin Lun and Xu, Yangsheng},
+  title = {Design and implementation of a low-cost and lightweight inflatable robot finger},
+  journal = {Intelligent Robots and Systems (IROS 2014), 2014 IEEE/RSJ International Conference on},
+  year = {2014},
+  pages = {28--33},
+  url = {http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6942536}
+}
+</pre></td>
+</tr>
+<tr id="5980332" class="entry">
+	<td>Quigley, M., Asbeck, A. and Ng, A.</td>
+	<td>A low-cost compliant 7-DOF robotic manipulator <p class="infolinks">[<a href="javascript:toggleInfo('5980332','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('5980332','bibtex')">BibTeX</a>]</p></td>
+	<td>2011</td>
+	<td>2011 IEEE International Conference on Robotics and Automation, pp. 6051-6058&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1109/ICRA.2011.5980332">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_5980332" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: We present the design of a new low-cost series elastic robotic arm. The arm is unique in that it achieves reasonable performance for the envisioned tasks (backlash-free, sub-3mm repeatability, moves at 1.5m/s, 2kg payload) but with a significantly lower parts cost than comparable manipulators. The paper explores the design decisions and tradeoffs made in achieving this combination of price and performance. A new, human-safe design is also described: the arm uses stepper motors with a series-elastic transmission for the proximal four degrees of freedom (DOF), and non-series-elastic robotics servos for the distal three DOF. Tradeoffs of the design are discussed, especially in the areas of human safety and control bandwidth. The arm is used to demonstrate pancake cooking (pouring batter, flipping pancakes), using the intrinsic compliance of the arm to aid in interaction with objects.</td>
+</tr>
+<tr id="bib_5980332" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{5980332,
+  author = {M. Quigley and A. Asbeck and A. Ng},
+  title = {A low-cost compliant 7-DOF robotic manipulator},
+  journal = {2011 IEEE International Conference on Robotics and Automation},
+  year = {2011},
+  pages = {6051-6058},
+  doi = {http://dx.doi.org/10.1109/ICRA.2011.5980332}
+}
+</pre></td>
+</tr>
+<tr id="Rosenberg_2002_4389" class="entry">
+	<td>Rowe, A., Rosenberg, C. and Nourbakhsh , I.</td>
+	<td>A Low Cost Embedded Color Vision System <p class="infolinks">[<a href="javascript:toggleInfo('Rosenberg_2002_4389','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Rosenberg_2002_4389','bibtex')">BibTeX</a>]</p></td>
+	<td>2002</td>
+	<td>International Conference on Intelligent Robots and Systems &nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=1041390">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_Rosenberg_2002_4389" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: In this paper we describe a functioning low cost embedded vision system which can perform basic color blob tracking at 16.7 frames per second. This system utilizes a low cost CMOS color camera module and all image data is processed by a high speed, low cost microcontroller. This eliminates the need for a separate frame grabber and high speed host computer typically found in traditional vision systems. The resulting embedded system makes it possible to utilize simple color vision algorithms in applications like small mobile robotics where a traditional vision system would not be practical.</td>
+</tr>
+<tr id="bib_Rosenberg_2002_4389" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{Rosenberg_2002_4389,
+  author = {Anthony Rowe and Chuck Rosenberg and Illah Nourbakhsh },
+  title = {A Low Cost Embedded Color Vision System},
+  journal = {International Conference on Intelligent Robots and Systems },
+  year = {2002},
+  url = {http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=1041390}
+}
+</pre></td>
+</tr>
+<tr id="6224638" class="entry">
+	<td>Rubenstein, M., Ahler, C. and Nagpal, R.</td>
+	<td>Kilobot: A low cost scalable robot system for collective behaviors <p class="infolinks">[<a href="javascript:toggleInfo('6224638','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('6224638','bibtex')">BibTeX</a>]</p></td>
+	<td>2012</td>
+	<td>2012 IEEE International Conference on Robotics and Automation, pp. 3293-3298&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1109/ICRA.2012.6224638">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_6224638" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: In current robotics research there is a vast body of work on algorithms and control methods for groups of decentralized cooperating robots, called a swarm or collective. These algorithms are generally meant to control collectives of hundreds or even thousands of robots; however, for reasons of cost, time, or complexity, they are generally validated in simulation only, or on a group of a few tens of robots. To address this issue, this paper presents Kilobot, a low-cost robot designed to make testing collective algorithms on hundreds or thousands of robots accessible to robotics researchers. To enable the possibility of large Kilobot collectives where the number of robots is an order of magnitude larger than the largest that exist today, each robot is made with only $14 worth of parts and takes 5 minutes to assemble. Furthermore, the robot design allows a single user to easily operate a large Kilobot collective, such as programming, powering on, and charging all robots, which would be difficult or impossible to do with many existing robotic systems.</td>
+</tr>
+<tr id="bib_6224638" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{6224638,
+  author = {M. Rubenstein and C. Ahler and R. Nagpal},
+  title = {Kilobot: A low cost scalable robot system for collective behaviors},
+  journal = {2012 IEEE International Conference on Robotics and Automation},
+  year = {2012},
+  pages = {3293-3298},
+  doi = {http://dx.doi.org/10.1109/ICRA.2012.6224638}
+}
+</pre></td>
+</tr>
+<tr id="sadat2014feature" class="entry">
+	<td>Sadat, S.A., Chutskoff, K., Jungic, D., Wawerla, J. and Vaughan, R.</td>
+	<td>Feature-rich path planning for robust navigation of mavs with mono-slam <p class="infolinks">[<a href="javascript:toggleInfo('sadat2014feature','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('sadat2014feature','bibtex')">BibTeX</a>]</p></td>
+	<td>2014</td>
+	<td>Robotics and Automation (ICRA), 2014 IEEE International Conference on, pp. 3870-3875&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://ieeexplore.ieee.org/abstract/document/6907420/">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_sadat2014feature" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: We present a path planning method for MAVs with vision-only MonoSLAM that generates safe paths to a goal according to the information richness of the environment. The planner runs on top of monocular SLAM and uses the available information about structure of the environment and features visibility to find trajectories that maintain visual contact with feature-rich areas. The MAV continuously re-plans as it explores and updates the feature-points in the map. In real- world experiments we show that our system is able to avoid paths that lead into visually-poor sections of the environment by considering the distribution of visual features. If the same system ignores the availability of visually-informative regions in the planning, it is unable to estimate its state accurately and fails to reach its goal.</td>
+</tr>
+<tr id="bib_sadat2014feature" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{sadat2014feature,
+  author = {Sadat, Seyed Abbas and Chutskoff, Kyle and Jungic, Damir and Wawerla, Jens and Vaughan, Richard},
+  title = {Feature-rich path planning for robust navigation of mavs with mono-slam},
+  journal = {Robotics and Automation (ICRA), 2014 IEEE International Conference on},
+  year = {2014},
+  pages = {3870--3875},
+  url = {http://ieeexplore.ieee.org/abstract/document/6907420/}
+}
+</pre></td>
+</tr>
+<tr id="shen2014multi" class="entry">
+	<td>Shen, S., Mulgaonkar, Y., Michael, N. and Kumar, V.</td>
+	<td>Multi-sensor fusion for robust autonomous flight in indoor and outdoor environments with a rotorcraft MAV <p class="infolinks">[<a href="javascript:toggleInfo('shen2014multi','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('shen2014multi','bibtex')">BibTeX</a>]</p></td>
+	<td>2014</td>
+	<td>2014 IEEE International Conference on Robotics and Automation (ICRA), pp. 4974-4981&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6907588">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_shen2014multi" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>:  We present a modular and extensible approach to integrate noisy measurements from multiple heterogeneous sensors that yield either absolute or relative observations at different and varying time intervals, and to provide smooth and globally consistent estimates of position in real time for autonomous flight. We describe the development of algorithms and software architecture for a new 1.9 kg MAV platform equipped with an IMU, laser scanner, stereo cameras, pressure altimeter, magnetometer, and a GPS receiver, in which the state estimation and control are performed onboard on an Intel NUC 3 rd generation i3 processor. We illustrate the robustness of our framework in large-scale, indoor-outdoor autonomous aerial navigation experiments involving traversals of over 440 meters at average speeds of 1.5 m/s with winds around 10 mph while entering and exiting buildings. </td>
+</tr>
+<tr id="bib_shen2014multi" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{shen2014multi,
+  author = {Shen, Shaojie and Mulgaonkar, Yash and Michael, Nathan and Kumar, Vijay},
+  title = {Multi-sensor fusion for robust autonomous flight in indoor and outdoor environments with a rotorcraft MAV},
+  journal = {2014 IEEE International Conference on Robotics and Automation (ICRA)},
+  year = {2014},
+  pages = {4974--4981},
+  url = {http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6907588}
+}
+</pre></td>
+</tr>
+<tr id="PereaStröm2016" class="entry">
+	<td>Ström, D.P., Bogoslavskyi, I. and Stachniss, C.</td>
+	<td>Robust exploration and homing for autonomous robots  <p class="infolinks">[<a href="javascript:toggleInfo('PereaStröm2016','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('PereaStröm2016','bibtex')">BibTeX</a>]</p></td>
+	<td>2016</td>
+	<td>Robotics and Autonomous Systems , pp.  - &nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/j.robot.2016.08.015">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S0921889016304730">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_PereaStröm2016" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Abstract The ability to explore an unknown environment is an important prerequisite for building truly autonomous robots. Two central capabilities for autonomous exploration are the selection of the next view point(s) for gathering new observations and robust navigation. In this paper, we propose a novel exploration strategy that exploits background knowledge by considering previously seen environments to make better exploration decisions. We furthermore combine this approach with robust homing so that the robot can navigate back to its starting location even if the mapping system fails and does not produce a consistent map. We implemented the proposed approach in ROS and thoroughly evaluated it. The experiments indicate that our method improves the ability of a robot to explore challenging environments as well as the quality of the resulting maps. Furthermore, the robot is able to navigate back home, even if it cannot rely on its map. </td>
+</tr>
+<tr id="bib_PereaStröm2016" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{PereaStröm2016,
+  author = {Daniel Perea Ström and Igor Bogoslavskyi and Cyrill Stachniss},
+  title = {Robust exploration and homing for autonomous robots },
+  journal = {Robotics and Autonomous Systems },
+  year = {2016},
+  pages = { - },
+  url = {http://www.sciencedirect.com/science/article/pii/S0921889016304730},
+  doi = {http://dx.doi.org/10.1016/j.robot.2016.08.015}
+}
+</pre></td>
+</tr>
+<tr id="surmann20013d" class="entry">
+	<td>Surmann, H., Lingemann, K., N&uuml;chter, A. and Hertzberg, J.</td>
+	<td>A 3D laser range finder for autonomous mobile robots <p class="infolinks">[<a href="javascript:toggleInfo('surmann20013d','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('surmann20013d','bibtex')">BibTeX</a>]</p></td>
+	<td>2001</td>
+	<td>Proceedings of the 32nd ISR (International Symposium on Robotics)<br/>Vol. 19(21), pp. 153-158&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://s3.amazonaws.com/academia.edu.documents/27519862/a_3d_laser_range_finder_for_autonomous_mobile_robots.pdf?AWSAccessKeyId=AKIAIWOWYYGZ2Y53UL3A&Expires=1488151268&Signature=Y2aY61vq9fnGPolpv2tU12rvI%2Fg%3D&response-content-disposition=inline%3B%20filename%3DA_3D_laser_range_finder_for_autonomous_m.pdf">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_surmann20013d" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: This paper presents a high quality, low cost 3D laser range finder designed for autonomous mobile systems. The 3D laser is built on the base of a 2D range finder by the exten- sion with a standard servo. The servo is controlled by a com- puter running RT-Linux. The scan resolution ( ✂ 5 cm) for a complete 3D scan of an area of 150 (h) ✄ 90 (v) degree is up to 115000 points and can be grabbed in 12 seconds. Stan- dard resolutions e.g. 150 (h) ✄ 90 (v) degree with 22500 points are grabbed in 4 seconds. While scanning, different online algorithms for line and surface detection are applied to the data. Object segmentation and detection are done off- line after the scan. The implemented software modules de- tect overhanging objects blocking the path of the robot. With the proposed approach a cheap, precise, reliable and real-time capable 3D sensor for autonomous mobile robots is available and the robot navigation and recognition in real-time is im- proved.</td>
+</tr>
+<tr id="bib_surmann20013d" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{surmann20013d,
+  author = {Surmann, Hartmut and Lingemann, Kai and N&uuml;chter, Andreas and Hertzberg, Joachim},
+  title = {A 3D laser range finder for autonomous mobile robots},
+  journal = {Proceedings of the 32nd ISR (International Symposium on Robotics)},
+  year = {2001},
+  volume = {19},
+  number = {21},
+  pages = {153--158},
+  url = {http://s3.amazonaws.com/academia.edu.documents/27519862/a_3d_laser_range_finder_for_autonomous_mobile_robots.pdf?AWSAccessKeyId=AKIAIWOWYYGZ2Y53UL3A&amp;Expires=1488151268&amp;Signature=Y2aY61vq9fnGPolpv2tU12rvI%2Fg%3D&amp;response-content-disposition=inline%3B%20filename%3DA_3D_laser_range_finder_for_autonomous_m.pdf}
+}
+</pre></td>
+</tr>
+<tr id="tardos2002robust" class="entry">
+	<td>Tardos, J.D., Neira, J., Newman, P.M. and Leonard, J.J.</td>
+	<td>Robust mapping and localization in indoor environments using sonar data <p class="infolinks">[<a href="javascript:toggleInfo('tardos2002robust','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('tardos2002robust','bibtex')">BibTeX</a>]</p></td>
+	<td>2002</td>
+	<td>The International Journal of Robotics Research<br/>Vol. 21(4), pp. 311-330&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://ijr.sagepub.com/content/21/4/311.short">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_tardos2002robust" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: In this paper we describe a new technique for the creation of feature-based stochastic maps using standard Polaroid sonar sensors. The fundamental contributions of our proposal are: (1) a perceptual grouping process that permits the robust identification and localization of environmental features, such as straight segments and corners, from the sparse and noisy sonar data; (2) a map joining technique that allows the system to build a sequence of independent limited-size stochastic maps and join them in a globally consistent way; (3) a robust mechanism to determine which features in a stochastic map correspond to the same environment feature, allowing the system to update the stochastic map accordingly, and perform tasks such as revisiting and loop closing. We demonstrate the practicality of this approach by building a geometric map of a medium size, real indoor environment, with several people moving around the robot. Maps built from laser data for the same experiment are provided for comparison.</td>
+</tr>
+<tr id="bib_tardos2002robust" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{tardos2002robust,
+  author = {Tardos, Juan D and Neira, Jose and Newman, Paul M and Leonard, John J},
+  title = {Robust mapping and localization in indoor environments using sonar data},
+  journal = {The International Journal of Robotics Research},
+  publisher = {SAGE Publications},
+  year = {2002},
+  volume = {21},
+  number = {4},
+  pages = {311--330},
+  url = {http://ijr.sagepub.com/content/21/4/311.short}
+}
+</pre></td>
+</tr>
+<tr id="tomoiagua2016indoor" class="entry">
+	<td>Tomoiagua, T., Predoi, C. and Cocsereanu, L.</td>
+	<td>Indoor Mapping Using Low Cost LIDAR Based Systems <p class="infolinks">[<a href="javascript:toggleInfo('tomoiagua2016indoor','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('tomoiagua2016indoor','bibtex')">BibTeX</a>]</p></td>
+	<td>2016</td>
+	<td>Applied Mechanics and Materials<br/>Vol. 841, pp. 198-205&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="https://www.scientific.net/AMM.841.198.pdf">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_tomoiagua2016indoor" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: <br>There are situations like collapsed buildings or inaccessible indoor spaces for humans, when ground robots may be of the most value. Small robots will likely to get into voids and go deeper than the 18-20 feet that a camera on a probe or a borescope can go into. The ground robots would be used to try to understand the internal layout of the structure and to avoid a secondary collapse, for example. In this paper are presented some results on the attempt to create a low cost simultaneous mapping and guiding system suitable for small robots based on low cost LIDAR (LIght Detection And Ranging) devices. The aim was to create the mapping and guiding system minimizing the costs and maximizing the performances and capabilities. </td>
+</tr>
+<tr id="bib_tomoiagua2016indoor" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{tomoiagua2016indoor,
+  author = {Tomoiagua, Tiberius and Predoi, Cristian and Cocsereanu, Liviu},
+  title = {Indoor Mapping Using Low Cost LIDAR Based Systems},
+  journal = {Applied Mechanics and Materials},
+  year = {2016},
+  volume = {841},
+  pages = {198--205},
+  url = {https://www.scientific.net/AMM.841.198.pdf}
+}
+</pre></td>
+</tr>
+<tr id="ulmen2010robust" class="entry">
+	<td>Ulmen, J. and Cutkosky, M.R.</td>
+	<td>A robust, low-cost and low-noise artificial skin for human-friendly robots. <p class="infolinks">[<a href="javascript:toggleInfo('ulmen2010robust','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('ulmen2010robust','bibtex')">BibTeX</a>]</p></td>
+	<td>2010</td>
+	<td>IEEE International Conference on Robotics and Automation, pp. 4836-4841&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="https://pdfs.semanticscholar.org/18a8/4b34923543c2ac45513a7e2ac9e13c776e7f.pdf">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_ulmen2010robust" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: As robots and humans move towards sharing the same environment, the need for safety in robotic systems is of growing importance. Towards this goal of human-friendly robotics, a robust, low-cost, low-noise capacitive force sensing array is presented with application as a whole body artificial skin covering. This highly scalable design provides excellent noise immunity, low-hysteresis, and has the potential to be made flexible and formable. Noise immunity is accomplished through the use of shielding and local sensor processing. A small and low-cost multivibrator circuit is replicated locally at each taxel, minimizing stray capacitance and noise coupling. Each circuit has a digital pulse train output, which allows robust signal transmission in noisy electrical environments. Wire count is minimized through serial or row-column addressing schemes, and the use of an open-drain output on each taxel allows hundreds of sensors to require only a single output wire. With a small set of interface wires, large arrays can be scanned hundreds of times per second and dynamic response remains flat over a broad frequency range. Sensor performance is evaluated on a bench-top version of a 4x4 taxel array in quasistatic and dynamic cases.</td>
+</tr>
+<tr id="bib_ulmen2010robust" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{ulmen2010robust,
+  author = {Ulmen, John and Cutkosky, Mark R},
+  title = {A robust, low-cost and low-noise artificial skin for human-friendly robots.},
+  journal = {IEEE International Conference on Robotics and Automation},
+  year = {2010},
+  pages = {4836--4841},
+  url = {https://pdfs.semanticscholar.org/18a8/4b34923543c2ac45513a7e2ac9e13c776e7f.pdf}
+}
+</pre></td>
+</tr>
+<tr id="Valada_2012_7069" class="entry">
+	<td>Valada, A., Velagapudi, P., Kannan, B., Tomaszewski, C., Kantor, G.A. and Scerri, P.</td>
+	<td>Development of a Low Cost Multi-Robot Autonomous Marine Surface Platform <p class="infolinks">[<a href="javascript:toggleInfo('Valada_2012_7069','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Valada_2012_7069','bibtex')">BibTeX</a>]</p></td>
+	<td>2012</td>
+	<td>The 8th International Conference on Field and Service Robotics (FSR 2012)&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://link.springer.com/chapter/10.1007/978-3-642-40686-7_43">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_Valada_2012_7069" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: In this paper, we outline a low cost multi-robot autonomous platform for a broad set of applications including water quality monitoring, flood disaster mitigation and depth buoy verification. By working cooperatively, fleets of vessels can cover large areas that would otherwise be impractical, time consuming and prohibitively expensive to traverse by a single vessel. We describe the hardware design, control infrastructure, and software architecture of the system, while additionally presenting experimental results from several field trials. Further, we discuss our initial efforts towards developing our system for water quality monitoring, in which a team of watercraft equipped with specialized sensors autonomously samples the physical quantity being measured and provides online situational awareness to the operator regarding water quality in the observed area. From canals in New York to volcanic lakes in the Philippines, our vessels have been tested in diverse marine environments and the results obtained from initial experiments in these domains are also discussed.</td>
+</tr>
+<tr id="bib_Valada_2012_7069" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{Valada_2012_7069,
+  author = {Abhinav Valada and Prasanna Velagapudi and Balajee Kannan and Christopher Tomaszewski and George A Kantor and Paul Scerri},
+  title = {Development of a Low Cost Multi-Robot Autonomous Marine Surface Platform},
+  journal = {The 8th International Conference on Field and Service Robotics (FSR 2012)},
+  year = {2012},
+  url = {http://link.springer.com/chapter/10.1007/978-3-642-40686-7_43}
+}
+</pre></td>
+</tr>
+<tr id="Werries_2016_8099" class="entry">
+	<td>Werries, A. and Dolan, J.M.</td>
+	<td>Adaptive Kalman Filtering Methods for Low-Cost GPS/INS Localization for Autonomous Vehicles <p class="infolinks">[<a href="javascript:toggleInfo('Werries_2016_8099','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Werries_2016_8099','bibtex')">BibTeX</a>]</p></td>
+	<td>2016</td>
+	<td>Robotics Institute of Carnegie Mellon University (CMU-RI-TR-16-18)&nbsp;</td>
+	<td>techreport</td>
+	<td><a href="http://repository.cmu.edu/robotics/1185/">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_Werries_2016_8099" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>:  For autonomous vehicles, navigation systems must be accurate enough to provide lane-level localization. High- accuracy sensors are available but not cost-effective for production use. Although prone to significant error in poor circumstances, even low-cost GPS systems are able to correct Inertial Navigation Systems (INS) to limit the effects of dead reckoning error over short periods between sufficiently accurate GPS updates. Kalman filters (KF) are a standard approach for GPS/INS integration, but require careful tuning in order to achieve quality results. This creates a motivation for a KF which is able to adapt to different sensors and circumstances on its own. Typically for adaptive filters, either the process (Q) or measurement (R) noise covariance matrix is adapted, and the other is fixed to values estimated a priori. We show that by adapting Q based on the state-correction sequence and R based on GPS receiver-reported standard deviation, our filter reduces GPS root-mean-squared error by 23% in comparison to raw GPS, with 15% from only adapting R.</td>
+</tr>
+<tr id="bib_Werries_2016_8099" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@techreport{Werries_2016_8099,
+  author = {Adam Werries and John M Dolan},
+  title = {Adaptive Kalman Filtering Methods for Low-Cost GPS/INS Localization for Autonomous Vehicles},
+  journal = {Robotics Institute of Carnegie Mellon University },
+  year = {2016},
+  number = {CMU-RI-TR-16-18},
+  url = {http://repository.cmu.edu/robotics/1185/}
+}
+</pre></td>
+</tr>
+<tr id="yamaguchi20163d" class="entry">
+	<td>Whelan, T., Kaess, M., Finman, R., Fallon, M., Johannsson, H., Leonard, J.J. and McDonald, J.</td>
+	<td>3D mapping, localisation and object retrieval using low cost robotic platforms: A robotic search engine for the real-world <p class="infolinks">[<a href="javascript:toggleInfo('yamaguchi20163d','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('yamaguchi20163d','bibtex')">BibTeX</a>]</p></td>
+	<td>2014</td>
+	<td>In RSS Workshop on RGB-D: Advanced Reasoning with Depth Cameras&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://homepages.inf.ed.ac.uk/mfallon2/publications/14_whelan_rss_workshop.pdf">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_yamaguchi20163d" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: In this paper we present work in progress on the development of a low-cost autonomous robotic platform that integrates multiple state-of-the-art techniques in RGB-D perception to form a system capable of completing a real-world task in an entirely autonomous fashion. The task we set out to complete is determining the location of a preselected object within the physical world. This experiment requires a robotic framework with a number of capabilities including autonomous exploration, dense real-time localisation and mapping, object detection, path planning and motion control.</td>
+</tr>
+<tr id="bib_yamaguchi20163d" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{yamaguchi20163d,
+  author = {Thomas Whelan and Michael Kaess and Ross Finman and Maurice Fallon and Hordur Johannsson and John J. Leonard and John McDonald},
+  title = {3D mapping, localisation and object retrieval using low cost robotic platforms: A robotic search engine for the real-world},
+  journal = {In RSS Workshop on RGB-D: Advanced Reasoning with Depth Cameras},
+  year = {2014},
+  url = {http://homepages.inf.ed.ac.uk/mfallon2/publications/14_whelan_rss_workshop.pdf}
+}
+</pre></td>
+</tr>
+<tr id="yamaguchi20163d" class="entry">
+	<td>Yamaguchi, T., Emaru, T., Kobayashi, Y. and Ravankar, A.A.</td>
+	<td>3D map-building from RGB-D data considering noise characteristics of Kinect <p class="infolinks">[<a href="javascript:toggleInfo('yamaguchi20163d','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('yamaguchi20163d','bibtex')">BibTeX</a>]</p></td>
+	<td>2016</td>
+	<td>System Integration (SII), 2016 IEEE/SICE International Symposium on, pp. 379-384&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7844028">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_yamaguchi20163d" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>:  For a mobile robot to explore in an unknown environment, the robot needs to do Simultaneous Localization and Mapping (SLAM). Recently, RGB-D sensor such as the Microsoft Kinect has been extensively used as a low cost 3D sensor measurement and mapping the environment. The advan- tage of RGB-D sensor is that it can capture RGB image with per-pixel depth information. One disadvantage for this sensor is that its depth information is very noisy. Moreover, if the robot equipped with the Kinect moves long distances, the localization error gets accumulated over time. The main aim of this study is to reduce the error of the SLAM using RGB-D sensor, by taking into account the noise characteristics of the Kinect sensor. The noise characteristics are investigated by experiments taking into account the RGB and depth information. A noise model is derived as a function of both distance and angle to the observed surface. The noise model is applied to Iterative Closest Point (ICP) algorithm for SLAM. Finally, the results of the proposed SLAM are shown and the improvement in accuracy is verified.</td>
+</tr>
+<tr id="bib_yamaguchi20163d" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{yamaguchi20163d,
+  author = {Yamaguchi, Takahiro and Emaru, Takanori and Kobayashi, Yukinori and Ravankar, Ankit A},
+  title = {3D map-building from RGB-D data considering noise characteristics of Kinect},
+  journal = {System Integration (SII), 2016 IEEE/SICE International Symposium on},
+  year = {2016},
+  pages = {379--384},
+  url = {http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7844028}
+}
+</pre></td>
+</tr>
+<tr id="Zhang_2015_7843" class="entry">
+	<td>Zhang, J. and Singh, S.</td>
+	<td>Visual-lidar Odometry and Mapping: Low-drift, Robust, and Fast <p class="infolinks">[<a href="javascript:toggleInfo('Zhang_2015_7843','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Zhang_2015_7843','bibtex')">BibTeX</a>]</p></td>
+	<td>2015</td>
+	<td>IEEE Intl. Conf. on Robotics and Automation (ICRA)&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7139486">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_Zhang_2015_7843" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: <br>Here, we present a general framework for combining visual odometry and lidar odometry in a fundamental and first principle method. The method shows improvements in performance over the state of the art, particularly in robustness to aggressive motion and temporary lack of visual features. The proposed on-line method starts with visual odometry to estimate the ego-motion and to register point clouds from a scanning lidar at a high frequency but low fidelity. Then, scan matching based lidar odometry refines the motion estimation and point cloud registration simultaneously. We show results with datasets collected in our own experiments as well as using the KITTI odometry benchmark. Our proposed method is ranked #1 on the benchmark in terms of average translation and rotation errors, with a 0.75% of relative position drift. In addition to comparison of the motion estimation accuracy, we evaluate robustness of the method when the sensor suite moves at a high speed and is subject to significant ambient lighting changes. </td>
+</tr>
+<tr id="bib_Zhang_2015_7843" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Zhang_2015_7843,
+  author = {Ji Zhang and Sanjiv Singh},
+  title = {Visual-lidar Odometry and Mapping: Low-drift, Robust, and Fast},
+  journal = {IEEE Intl. Conf. on Robotics and Automation (ICRA)},
+  year = {2015},
+  url = {http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7139486}
+}
+</pre></td>
+</tr>
+</tbody>
+</table>
+<footer>
+ <small>Created by <a href="http://jabref.sourceforge.net">JabRef</a> on 27/02/2017.</small>
+</footer>
+<!-- file generated by JabRef -->
+</body>
+</html>

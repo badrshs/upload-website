@@ -1,0 +1,197 @@
+/*start main Rulez*/
+
+body{
+
+}
+.container{
+	width:1170px;
+	
+	margin:auto;
+}
+.clearfix{clear:both}
+/*end main Rulez*/
+
+/*start header*/
+.header .slider{
+	background-image:url("../img/m.jpg");
+	background-color:#EEE;
+	
+	height:600px;
+	background-size:cover;
+
+}
+.header .slider .intro {
+	padding-top:350px;
+	margin:0;
+	
+	height:600px;
+	background-repeat:no-repeat;
+	text-align:center;
+	
+}
+.header .slider .intro h2{
+	font-size:50px;
+	margin:0 auto;
+	width:500px;
+	color:#fff;
+	border-top:3px solid #fff;
+		border-bottom:4px solid #fff;
+		letter-spacing:10px
+}
+.header .navbar{
+	background-color:#252f31;
+	color:#FFF;
+	overflow:hidden
+}
+.header .navbar h2{
+	float:left
+}
+.header .navbar h2 span{
+	color:#2ecc71
+}
+.header .navbar ul{
+	list-style:none;
+	padding-left:0;
+	overflow:hidden;
+	float:right
+}
+.header .navbar ul li{
+	float:left;
+	padding:10px
+}
+.header .navbar ul li a{
+	color:#FFF;
+	text-decoration:none;
+}
+.header .navbar ul li a:hover{
+	color:green;
+}
+.header .navbar ul li .active a{
+	color:green
+	
+}
+/*end header*/
+
+/*start advantages*/
+.advantages {
+	overflow:hidden;
+	padding-top:30px;
+	padding-bottom:30px;
+}
+.advantages .advan{
+	float:left;
+	width:33.333%;
+	height:150px;
+
+}
+.advantages .advan h{
+	color:#444
+}
+.advantages .advan p{
+	line-height:2;
+	color:#888;
+	padding:0 20px 0 0;
+}
+/*end advantages*/
+/*start about me*/
+.about-me{
+	background-color:#f2f2f2;
+	overflow:hidden;
+}
+.about-me .image{
+	float:left;
+	width:40%
+}
+.about-me .info h2{color:red}
+}
+.about-me .image img{
+	width:100%
+}
+.about-me .info{
+	float:left;
+	width:60%
+}
+.about-me .info .hobbies{
+	float:left;
+	overflow:hidden;
+	margin:20px;
+}
+.about-me .info .hobbies > div{
+	float:left;
+	width:50%;
+	min-height:100px
+}
+
+/*start resume*/
+.resume{
+	background-color:#f2f2f2;
+	padding-top:30px;
+	padding-bottom:30px;
+	text-align:center;
+}
+.resume button{
+	color:green
+}
+
+/*end resume*/
+
+
+
+
+/*start my education*/
+.education{
+padding-top:30px;
+padding-bottom:3opx;
+overflow:hidden;
+text-align:center;
+}
+.education h2{color:red}
+
+
+
+/*end my education*/
+
+
+/*start portfolio*/
+.portfolio{
+	padding-top:30px;
+	padding-bottom:30px;
+	text-align:center;
+}
+.portfolio .our-work{
+	overflow:hidden;
+	
+	
+}
+
+
+.portfolio .our-work img{
+	width:400px;
+	height:400px
+}
+
+
+/*end portfolio*/
+/*start contact*/
+.contact{
+	background-color:green;
+	color:white;
+	overflow:hidden;
+	text-align:center;
+}
+.contact h2{
+	color:#FFF
+}
+.contact p{color:fff;}
+
+/*end contact*/
+
+/*start footer*/
+.footer{
+	background-color:#191E22;
+	color:#6a6e71;
+	padding:20px 0;
+	text-align:center;
+}
+
+/*end footer*/

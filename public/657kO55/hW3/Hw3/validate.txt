@@ -1,0 +1,15 @@
+ahmadJ;MA;12345;mastercard
+ahmadJal;MC;41111111111;visa
+ahmad;MG;12345123456;visa
+ahmadJ;ME;12345;mastercard
+ahmadJ;MA;4111111111111111;visa
+ahmadJ;MA;5111111111111111;mastercard
+ahmadJ;MD;5111111111111111;mastercard
+ahmadJ;MA;5111111111111111;mastercard
+ahmadJ;MA;5111111111111122;mastercard
+ahmadJ;MA;4388576018402626;visa
+ahmadJ;MB;4388576018410707;visa
+ahmadJ;MA;4532111851303861;visa
+ahmadJ;MA;4485262052242056;visa
+;;;
+ahmadJal;ME;12345;visa

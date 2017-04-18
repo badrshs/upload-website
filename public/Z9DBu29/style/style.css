@@ -1,0 +1,364 @@
+*{
+    box-sizing: border-box;
+}
+section{
+    padding: 30px 0px;
+}
+hr{
+    width: 10%;
+    border-top:4px solid #b8c4cb;
+    opacity: .6 ;
+}
+h2{
+    text-transform: uppercase;
+    font-weight:bold;
+}
+html,body{
+    background: #87509C;
+    overflow-x: hidden;
+}
+.navbar-default .navbar-brand{
+    color:#FFF;
+    font-size:35px;
+}
+.navbar-default .navbar-nav > li > a{
+    color:#FFF;
+    text-transform: uppercase;
+    font-size:20px;
+}
+.navbar-default .navbar-nav > li > a:hover ,
+.navbar-default .navbar-brand:hover{
+    background: #6d3781;
+    border-radius:10px;
+    color:#FFF
+}
+.navbar-default{
+    background: #87509C;
+    border:none;
+    position:relative;
+    top:7%;
+    width: 100%;
+}
+.container-fluid{
+    padding-left: 100px;
+    padding-right: 100px;
+}
+/*start section cuda*/
+.cuda{
+    height:80%;
+    background: #87509C;
+    text-align: center;
+    color:#FFF;
+    display: flex;
+    align-items: center;
+}
+.about_us{
+    width: 100%;
+    margin-bottom: 60px; 
+    margin-top: 50px;
+}
+.about_us p{
+    font-size:30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.about_us button{
+    border-radius: 0;
+    background: #EB7D4B;
+    border:1px solid #EB7D4B;
+    padding:20px 35px;
+    font-size:20px;
+    margin-top: 40px;
+}
+.services{
+    padding: 50px 0 ;
+    background: #17C2A4;
+    color:#FFF;
+}
+.services .head{
+    text-align: center;
+    margin-bottom: 70px;
+}
+.services .row > div {
+    margin-bottom: 30px;
+}
+.services .row > div img{
+    margin: auto;
+    margin-bottom: 15px;
+}
+/*start our team*/
+.our_team{
+    background: #E7F1F8;
+}
+.our_team .container .person{
+    margin-bottom: 30px;
+}
+.our_team .container .person span{
+    color:#39198e;
+    font-weight: bold;
+    margin-bottom:10px;
+    display:block;
+}
+.our_team .container .person i{
+    font-size:30px;
+    color:#848181;
+    cursor:pointer;
+}
+.our_team .container .person >div{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+     margin-left: auto;
+    margin-right: auto;
+}
+/*start our skills*/
+.our-skills{
+    padding:40px 0px;
+}
+.our-skills p{
+    margin-bottom: 30px;
+}
+.skills .row h4{
+    text-align: left;
+}
+.skills .row > div{
+    overflow: hidden;
+}
+/* -------------------------------------
+ * Bar container
+ * ------------------------------------- */
+.progress-radial {
+  float: left;
+  margin-right: 30px;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color:;
+}
+/* -------------------------------------
+ * Optional centered circle w/text
+ * ------------------------------------- */
+.progress-radial .overlay {
+  position: absolute;
+  width: 85px;
+  height: 85px;
+  background-color: #fffde8;
+  border-radius: 50%;
+  margin-left: 8px;
+  margin-top: 8px;
+  text-align: center;
+  line-height: 85px;
+  font-size: 16px;
+}
+
+/* -------------------------------------
+ * Mixin for progress-% class
+ * ------------------------------------- */
+.progress-0 {
+  background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(90deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-5 {
+  background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(108deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-10 {
+  background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(126deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-15 {
+  background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(144deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-20 {
+  background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(162deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-25 {
+  background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(180deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-30 {
+  background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(198deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-35 {
+  background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(216deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-40 {
+  background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(216deg, #EB7D4A 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-45 {
+  background-image: linear-gradient(90deg, #2f3439 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(252deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-50 {
+  background-image: linear-gradient(-90deg, #ff6347 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-55 {
+  background-image: linear-gradient(-72deg, #ff6347 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-60 {
+  background-image: linear-gradient(-54deg, #D74680 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #D74680 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-65 {
+  background-image: linear-gradient(-36deg, #ff6347 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-70 {
+  background-image: linear-gradient(-18deg, #14C7A8 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #14C7A8 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-75 {
+  background-image: linear-gradient(0deg, #ff6347 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-80 {
+  background-image: linear-gradient(18deg, #ff6347 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-85 {
+  background-image: linear-gradient(36deg, #30BAE7 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #30BAE7 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-90 {
+  background-image: linear-gradient(54deg, #ff6347 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-95 {
+  background-image: linear-gradient(72deg, #ff6347 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+
+.progress-100 {
+  background-image: linear-gradient(90deg, #ff6347 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #ff6347 50%, #2f3439 50%, #2f3439);
+}
+/*start port folio*/
+.our_portfolio{
+    background: #FFDD99;
+    padding:30px 0;
+}
+.our_portfolio button{
+    border-radius: 5px;
+    background: #EFCC87;
+    border:1px solid #EFCC87 ;
+    padding:10px 20px;
+    margin-left: 10px;
+    margin-bottom: 30px;
+}
+.our_portfolio button:hover,
+.our_portfolio .active{
+    background: #FFFFFF;
+}
+.our_portfolio button:last-of-type{
+    background: #17C2A4;
+    border:2px solid #17C2A4;
+    font-size:20px;
+    color:#FFF;
+    margin-top: 30px;
+}
+#Container .mix{
+    display: none;
+    margin: 10px;
+}
+.our_portfolio .row >div{
+    width:35%;
+}
+/*start clint*/
+.our_clints{
+    background: #D74680;
+    color:#FFF;
+}
+.our_clints label{
+    margin-bottom: 30px;
+    display: block;
+}
+.our_clints .row > div{
+    overflow: hidden;
+    margin-bottom: 80px;
+}
+.our_clints .row .img{
+    float:left;
+    width: 30%;
+    
+}
+.our_clints .row .person{
+    float:left;
+    width: 70%;
+    margin-left:20px;
+}
+.our_clints .row .person q{
+    font-size:17px;
+    color:#CCC;
+}
+.our_clints .row .person h4{
+    font-weight: bolder;
+}
+.our_clints .row .person span{
+    color:#EE9E8E;
+    font-weight:bold;
+}
+.our_clints .row .img{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.our_clints .row .img img{
+    width: 100%;
+}
+/*start section contact us*/
+.contact_us{
+    background: #3C5499;
+    color:#FFF;
+}
+.contact_us p{
+    margin-bottom: 20px;
+}
+.contact_us input,textarea { /* Firefox 19+ */
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    background:#273A71;
+    border:1px solid #273A71 ;
+}
+.contact_us input,textarea::-moz-placeholder{
+    color:#e8e3e3
+}
+.contact_us textarea{
+    height:200px
+}
+.contact_us button{
+    background: #30BAE7;
+    border:1px solid #30BAE7 ;
+    padding:15px 40px;
+    border-radius:1;
+    margin-top:20px;
+}
+/*start footer*/
+footer{
+    background:#344B8E;
+    color:#FFF;
+    overflow: hidden;
+}
+footer ul li {
+    display:inline-block;
+    padding:20px  20px 10px 20px;
+    font-size:20px;
+    cursor:pointer;
+}
+footer ul li:hover{
+    color:#30B4E3;
+}
+/*start jqery effect */
+.services .row > div {
+    position:relative;
+    top:200px;
+    opacity:0;
+}

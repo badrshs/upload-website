@@ -1,0 +1,226 @@
+
+	
+
+body{
+	background-color:orange;
+}
+#logo{
+	
+	border:2px solid red;
+	height:200px;
+	width:100%;
+	text-align:center;
+	font-family: tahoma;
+    padding-top:100px;
+	font-size:50px;
+	font-style:italic;
+	text-shadow:3px 3px red;
+}
+
+
+#marquee{
+margin-top:15px;
+background-color:#406020;
+}
+#timming{
+color:silver;
+font-size:15px;
+font-weight:bold;
+margin-left:25px;
+float:left;
+margin-right:35px;
+padding-right:30px;
+margin-top:-8px;
+
+}
+
+
+
+.img{
+height:30px;
+width:30px;
+text-align:center;
+margin:15px;
+margin-left:-10px;
+border-right:2px solid green;
+padding-right:10px;
+
+}
+
+marquee{
+	
+	width:40%;
+	font-family:andalus;
+	font-size:25px;
+	color:silver;
+	padding:10px;
+    
+}
+
+#search{
+float:right;
+margin-top:6px;
+padding:10px;
+margin-right:0px;
+float:right;
+
+}
+
+
+input{
+background-color:white;
+padding:4px;
+margin:3px;
+width:200px;
+}
+#searchtool{
+float:right;
+}
+section{
+	
+	text-align:center;
+	clear:both;
+	margin-top:20px;
+}
+
+
+
+nav{
+
+	float:left;
+	clear:both;
+	
+}
+
+ul{
+	padding:0px;
+	margin-top:3px;
+}
+
+ul li{
+	list-style:none;
+	display:inline-block;
+
+}
+
+ul li a{
+	text-decoration:none;
+	font-size:28px;
+	padding:10px 15px;
+	border-radius:5px 5px 0px 0px;
+	color:white;
+	border-right:2px solid orange;
+	background-color:#ff3939;
+}
+ul li a:hover{
+	
+	background-color:#df0303;
+	
+	
+}
+
+
+
+aside{
+width:20%;
+float:left;
+}
+aside h3{
+padding:10px;
+
+}
+aside a{
+display:block;
+color:white;
+text-align:center;
+font-weight:bold;
+text-decoration:none;
+background:linear-gradient(to right,#a04040,#a08060);
+font-size:20px;
+box-shadow:5px 5px 5px;
+margin-bottom:-7px;
+
+}
+
+aside h3:hover{
+
+background-color:#a00040;
+}
+
+
+
+#home{
+	font-size:30px;
+	float:right;
+	width:75%;
+	margin:10px;
+color:#660000;
+font-weight:bold;
+padding:10px;
+background:linear-gradient(#CC6600,#CC9900);
+box-shadow:6px 6px 6px;
+	
+}
+
+table{
+	
+width:80%;
+
+}
+th{
+	font-size:25px;
+	color:#990033;
+	padding:30px;
+
+	text-align:left;
+	padding-left:0px;
+}
+
+
+tr a{
+
+	text-decoration:none;
+	
+}
+
+td{
+
+	padding:5px;
+	margin:10px;
+}
+
+#num1{
+	margin-top:-70px;
+	padding:25px;
+	text-align:right;
+	color:silver;
+}
+
+
+#end{
+	
+
+	height:190px;
+	width:400px;
+	float:right;
+	margin-top:-180px;
+	font-size:200px;
+	text-align:center;
+	vertical-align:middle;
+	font-family:georgian;
+	color:#660000;
+	text-shadow:#990000 5px 5px 5px;
+    clear: both;
+}
+
+
+
+#copyright{
+    margin-top: 20px;
+    background:#406020;
+    text-align:center;
+    padding:10px;
+    color:rosybrown;
+
+ 
+}

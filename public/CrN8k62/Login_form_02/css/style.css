@@ -1,0 +1,225 @@
+body
+{
+	background: url(../image/img.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100% 720px;
+    overflow: hidden;
+}
+#fields
+{
+	background-color: rgba(2,2,2,0.5);
+	max-height: 100%;
+	width: 100%;
+	height: 1080px
+}
+.navbar-inverse
+{
+	background-color: transparent;
+	border-color:transparent;
+}
+.navbar-brand
+{
+	font-size: 25px;
+}
+.navbar-brand span
+{
+	color: #3366ff;
+}
+.navbar-nav > li
+{
+	margin-left: 15px;
+}
+.navbar-inverse .navbar-nav > .active > a, 
+.navbar-inverse .navbar-nav > .active > a:hover, 
+.navbar-inverse .navbar-nav > .active > a:focus
+{
+	background-color:#6699ff;
+}
+.nav > li > a
+{
+	font-size: 15px;
+	font-weight: bold;
+	letter-spacing: 1px;
+}	
+
+.contant .signup
+{
+	width: 400px;
+	height: 500px;
+	background-color: #FFF;
+	margin-bottom: 0px;
+	margin-top: 100px;
+	background-color: #DDD;
+
+
+}
+.contant .signup .header h2
+{
+	margin-left: 15px;
+	color: #404040;
+	padding-top: 30px;
+	margin-bottom: 40px
+}
+.contant .signup .header p
+{
+	color: #737373;
+	padding-bottom: 20px;
+	margin-left: 15px;
+}
+.contant .signup .form
+{
+	margin-bottom: 0px;
+	background-color: #DDD;
+	
+}
+.form-group
+{
+	margin-bottom: 10px;
+}
+
+.contant .signup .form .form-group
+{
+
+	border: 1px solid #DDD;
+	width: 370px;
+	margin-left: 15px;
+	max-height: 150px;
+}
+.contant .signup .form .form-group textarea
+{
+	width: 370px;
+	height: 170px;
+}
+.contant .signup .form button
+{
+	margin-left: 15px;
+	margin-bottom: 70px;
+	margin-top: 20px;
+}
+.btn
+{
+	width: 150px;
+    height: 50px;
+   	font-size: 20px;
+}
+.contant .wel
+{
+	margin-top: 200px;
+	margin-right: 200px
+}
+.contant .wel h1
+{
+	color: #009900;
+	margin-bottom: 30px;
+	letter-spacing: 3px;
+	font-family: arial, tahoma
+}
+.contant .wel p
+{
+	color: #a6a6a6;
+	line-height: 30px;
+	font-size: 19px;
+	letter-spacing: 1.7px
+}
+.contant .login
+{
+	margin-top: 50px;
+	margin-right: 200px
+}
+.contant .login button
+{
+	margin-bottom: 15px;
+	margin-right: 10px
+}
+.modalContant
+{
+	width: 600px;
+	height: 500px;
+	border: 1px solid #FFF;
+	margin: 100px auto;
+	display: none;
+	background-color: #000;
+	display: block;
+	border-radius: 20px;
+	opacity: .9
+}
+h2
+{
+	padding: 0;
+	margin-top: 50px;
+	margin-bottom: 0px;
+	margin-left: 15px;
+	color: #3377ff;
+	letter-spacing: 2px;
+	font-size: 40px
+}
+.logInForm{
+	padding-top: 50px;
+	padding-bottom: 100px;
+}
+
+.logInForm .form
+{
+	width: 550px;
+	height: 40px;
+	border: 1px solid #CCC;
+	margin-left: 15px;
+	margin-bottom: 10px;
+	display: inline-block;
+	margin-top: 5px;
+}
+.logInForm label 
+{
+	margin-left: 15px;
+	color: #FFF;
+}
+
+.logInForm .btn
+{
+	width: 554px;
+	height: 40px;
+	color: #FFF;
+	background-color: #269900;
+	border: 1px solid #DDD;
+	margin-left: 15px;
+	cursor: pointer;
+}
+.logInForm .btn:hover{
+	background-color:  #2db300;
+}
+.logInForm .rem
+{
+	margin-left: 15px;
+	margin-top: 10px
+}
+#rem 
+{
+	color: #fff
+}
+
+.logInForm .cancel
+{
+	width: 100px;
+	height: 40px;
+	background-color: #F00;
+	color: #FFF;
+	border: 1px solid #DDD;
+	margin-left: 15px;
+	margin-top: 10px;
+	cursor: pointer;
+}
+.logInForm .cancel:hover
+{
+	background-color: #ff1a1a
+}
+.logInForm .spw
+{
+	float: right;
+	margin-right: 35px;
+	margin-top: 25px;
+	color: #FFF;
+}
+.logInForm .spw a{text-decoration: none; color: #FFF}

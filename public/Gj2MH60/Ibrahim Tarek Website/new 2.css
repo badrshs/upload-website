@@ -1,0 +1,40 @@
+	body {
+		background-image: url("vector-abstract-blue-wave-background.jpg");
+	}
+	.n1{text-align: center;
+	font-size: 40px}
+	}
+
+	h2, h3, {
+		margin: 0;
+	}
+	h1 {
+		font-size: 40pt;
+		text-decoration: underline;
+		top: 3px;
+		padding-bottom: 10px;
+		line-height: 25px;
+	}
+	h2, h3, h4, h5, h6 {
+	font-size: 25px;
+	float: left;
+	 width: calc(100% - 200px);
+	 position: center center;}
+	 .n8 {padding-bottom: 50px;
+	 }
+	.n3 {
+		float: left;
+	}
+	.img1 {
+		margin-left: 429px;
+		margin-bottom: 100px;
+		position: top;
+		position: static;
+		position: absolute;
+    top: 80px;
+	
+	}
+	.n3 {
+		font-style: bold; 
+		font-size: 20px;
+	}

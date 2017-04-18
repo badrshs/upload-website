@@ -1,0 +1,360 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الرئيسية</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+<link href="css/clock.css" rel="stylesheet">
+<link href="css/font.css" rel="stylesheet">
+
+
+</head>
+
+<body>      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#sidebar-collapse">
+					<span class="sr-only"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html"><span>اسم النظام المحاسبي </span> </a>
+				<ul class="user-menu">
+					<li class="dropdown pull-right">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> صالح ابوامونه <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> الصفحة الشخصية</a></li>
+							<li><a href="#"><svg class="glyph stroked gear"><use xlink:href="#stroked-gear"></use></svg> الإعدادات</a></li>
+							<li><a href="#"><svg class="glyph stroked cancel"><use xlink:href="#stroked-cancel"></use></svg> تسجيل الخروج</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+							
+		</div>
+	</nav>
+		
+	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar" style="height: 580px;">
+		<form role="search">
+			<div class="form-group">
+				<input type="text" style="width: 100%;" class="form-control" placeholder="بحث">
+			</div>
+		</form>
+		<ul class="nav menu">
+			<li class="active"><a href="index.html">الرئيسية &nbsp; <svg class="glyph stroked home"><use xlink:href="#stroked-home"/></svg></a></li>
+            <li><a href="">المراجعة والتعديل &nbsp; <svg class="glyph stroked clipboard with paper"><use xlink:href="#stroked-clipboard-with-paper"/></svg></a></li>
+							<li class="parent ">
+            <li><a href="">التقارير &nbsp; <svg class="glyph stroked clipboard with paper"><use xlink:href="#stroked-clipboard-with-paper"/></svg></a></li>
+							<li class="parent ">
+				<a href="">
+					<span data-toggle="collapse" href="#sub-item-1">مجموعات العمل &nbsp; <svg class="glyph stroked chevron down"><use xlink:href="#stroked-chevron-down"/></svg> </span>
+				</a>
+				<ul class="children collapse" id="sub-item-1">
+					<li>
+						<a class="" href="">مجموعة عمل جديدة &nbsp;
+							<svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg>
+						</a>
+					</li>
+					<li>
+						<a class="" href="">فتح مجموعة عمل &nbsp;
+							<svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg>
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li role="presentation" class="divider"></li>
+			<li><a href="">خروج &nbsp; <svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg></a></li>
+		</ul>
+
+
+		
+
+				<div class="clock-inner">
+
+					<div class="clock-center"></div>
+					<div id="clock-seconds"></div>
+					<div id="clock-minutes"></div>
+					<div id="clock-hours"></div>
+
+					<ul class="clock-numbers">
+
+						<li>12</li>
+						<li>3</li>
+						<li>6</li>
+						<li>9</li>
+
+					</ul>
+
+				</div> <!-- end clock-inner -->
+
+
+	
+	
+
+	</div><!--/.sidebar-->
+		
+	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
+		<div class="row">
+			<ol class="breadcrumb">
+           	<li><a href="index.html"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
+				
+			</ol>
+		
+        <div class="col-md-12" style="
+    margin-top: 15px;">
+				<div class="panel panel-default">
+					<div class="panel-body tabs">
+					
+						<ul class="nav nav-pills">
+							<li class="active"><a href="#pilltab1" data-toggle="tab">الحسابات</a></li>
+							<li><a href="#pilltab2" data-toggle="tab">المبيعات</a></li>
+							<li><a href="#pilltab3" data-toggle="tab">المشتريات</a></li>
+                            <li><a href="#pilltab4" data-toggle="tab">المحاسبة</a></li>
+                            <li><a href="#pilltab5" data-toggle="tab">المخازن</a></li>
+							<li><a href="#pilltab6" data-toggle="tab">القبض والصرف</a></li>
+                            <li><a href="#pilltab7" data-toggle="tab">الشيكات</a></li>
+                            <li><a href="#pilltab8" data-toggle="tab">التقارير</a></li>
+							<li><a href="#pilltab9" data-toggle="tab">بيانات اخرى</a></li>
+                            <li><a href="#pilltab10" data-toggle="tab">أدوات</a></li>
+						</ul>
+		
+						<div class="tab-content">
+							<div class="tab-pane fade in active" id="pilltab1">
+					<h3 style="text-align: center; margin-bottom: 40px; margin-top: 5px;">الحسابات</h3>
+								
+                                <a class="clint" href="new account.html" style="background-color: #96B842; " >حساب جديد &nbsp;
+    <svg style=" width: 70px; " class="glyph stroked clipboard with paper"><use xlink:href="#stroked-clipboard-with-paper"/></svg></a>
+                                <a style=" margin-right: 15px; WIDTH: 130px; height: 105px; text-align: center; padding: 15px 10px 15px 10px;" class="clint" href="" > فهرس الحسابات &nbsp;
+                                 <svg style=" width: 50px; height:50px; margin-top: 5px;" class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"/></svg></a>
+								 
+								 <a style=" margin-right: 15px; WIDTH: 130px; height: 105px; text-align: center; padding: 15px 10px 15px 10px;" class="clint" href="" >ميزان المراجعة &nbsp;
+                                 <svg style=" width: 50px; height:50px; margin-top: 5px;" class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"/></svg></a>
+                                 								
+								 <a style= " margin-top: 115px; margin-right: -275px;; WIDTH: 275px; height: 105px; text-align: center; padding: 15px 10px 15px 10px; background-color: #1E95C8; " class="clint" href="" > حساب الأستاذ العام  &nbsp;
+                <svg style=" width: 50px; height:50px; margin-top: 5px;  " class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"/></svg></a>
+                                 
+                                 
+                                 <a class="clint" href="show accounts.html" style="background-color: #96B842; margin-right: 15px; " >عرض قائمة الحسابات &nbsp;
+                                <svg style=" width: 70px; " class="glyph stroked notepad "><use xlink:href="#stroked-notepad"/></svg></a>
+								
+                                 
+							</div>
+							<div class="tab-pane fade" id="pilltab2">
+							<h3 style="text-align: center; margin-bottom: 40px; margin-top: 5px;">المبيعات</h3>
+								
+                                <a class="clint" href="customers.html" style="background-color: #96B842; " >الزبائن &nbsp;
+                                 <svg style=" width: 70px; " class="glyph stroked male user "><use xlink:href="#stroked-male-user"/></svg></a>
+                                <a style=" margin-right: 15px; WIDTH: 110px; height: 105px; text-align: center; padding: 15px 10px 15px 10px;" class="clint" href="Bills of sale.html" >فواتير البيع &nbsp;
+                                 <svg style=" width: 50px; height:50px; margin-top: 5px;" class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"/></svg></a>
+								 
+								 <a style=" margin-right: 15px; WIDTH: 110px; height: 105px; text-align: center; padding: 15px 10px 15px 10px;" class="clint" href="" >الارساليات &nbsp;
+                                 <svg style=" width: 50px; height:50px; margin-top: 5px;" class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"/></svg></a>
+                                 <a style= " margin-top: 115px; margin-right: -235px;; WIDTH: 110px; height: 105px; text-align: center; padding: 15px 10px 15px 10px; " class="clint" href="Receipts arrested.html" > ايصالات القبض  &nbsp;
+                                 <svg style=" width: 50px; height:50px; margin-top: 5px;" class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"/></svg></a>
+								
+								 <a style= " margin-top: 115px; margin-right: -110px;; WIDTH: 110px; height: 105px; text-align: center; padding: 15px 10px 15px 10px; " class="clint" href="" > العروض  &nbsp;
+                                 <svg style=" width: 50px; height:50px; margin-top: 5px; " class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"/></svg></a>
+                                 
+                                 <a class="clint" href="" style="margin-right: 15px;text-align: center;
+background-color: #96B842;width: 205px;line-height: 150px;height: 220px; " >أرصدة الزبائن &nbsp;
+                                 <svg style=" width: 70px; height:70px; " class="glyph stroked clipboard with paper"><use xlink:href="#stroked-clipboard-with-paper"/></svg></a>
+                                 <a class="clint" href="" style="background-color: #1E95C8; margin-right: 15px; " >الطلبيات &nbsp;
+                                <svg style=" width: 70px; " class="glyph stroked notepad "><use xlink:href="#stroked-notepad"/></svg></a>
+								 
+                                <a style=" margin-right: 15px; WIDTH: 110px; height: 105px; text-align: center; padding: 15px 10px 15px 10px;" class="clint" href="" >الفهارس &nbsp;
+                                 <svg style=" width: 50px; height:50px; margin-top: 5px" class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"/></svg></a>
+                                  <a style= " margin-top: 115px; margin-right: -110px;; WIDTH: 110px; height: 105px; text-align: center; padding: 15px 10px 15px 10px; " class="clint" href="" >الاشعارات  &nbsp;
+                                 <svg style=" width: 50px; height:50px; margin-top: 5px;" class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"/></svg></a>
+                                 <a class="clint" href="items.html" style="background-color: #1E95C8; margin-right:15px; " >الأصناف &nbsp;
+                           <svg style=" width: 70px; " class="glyph stroked app window with content"><use xlink:href="#stroked-app-window-with-content"/></svg></a>
+                           
+                           <a style="  WIDTH: 141px; height: 105px; text-align: center; padding: 15px 10px 15px 10px;" class="clint" href="Selling reference bills.html" >فواتير مرجع البيع &nbsp;
+                                 <svg style=" width: 50px; height:50px; margin-top: 5px;" class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"/></svg></a>
+								 
+                                <a style=" margin-right: 15px; WIDTH: 235px; background-color: #96B842; height: 105px; text-align: center; padding: 15px 10px 15px 10px;" class="clint" href="" >فهرس الزبائن  &nbsp;
+                                 <svg style=" width: 50px; height:50px; margin-top: 5px;" class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"/></svg></a>
+								 
+                                
+							</div>
+							<div class="tab-pane fade" id="pilltab3">
+								<h3 style="text-align: center; margin-bottom: 40px; margin-top: 5px;">المشتريات</h3>
+								
+                                <a class="clint" href="suppliers.html" style="background-color: #96B842; " >الموردين 
+                                 <svg style=" width: 70px; " class="glyph stroked male user "><use xlink:href="#stroked-male-user"/></svg></a>
+                                <a style=" margin-right: 15px; WIDTH: 110px; height: 105px; text-align: center; padding: 15px 10px 15px 10px;" class="clint" href="shiraa of sale.html" >فواتير الشراء &nbsp;
+                                 <svg style=" width: 50px; height:50px; margin-top: 5px;" class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"/></svg></a>
+								 
+								 <a style=" margin-right: 15px; WIDTH: 110px; height: 105px; text-align: center; padding: 15px 10px 15px 10px;" class="clint" href="" >الارساليات &nbsp;
+                                 <svg style=" width: 50px; height:50px; margin-top: 5px;" class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"/></svg></a>
+                                 <a style= " margin-top: 115px; margin-right: -235px;; WIDTH: 110px; height: 105px; text-align: center; padding: 15px 10px 15px 10px; " class="clint" href="Bills of exchange.html" >  سندات الصرف  &nbsp;
+                                 <svg style=" width: 50px; height:50px; margin-top: 5px;" class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"/></svg></a>
+								
+								 <a style= " margin-top: 115px; margin-right: -110px;; WIDTH: 110px; height: 105px; text-align: center; padding: 15px 10px 15px 10px; " class="clint" href="" > العروض  &nbsp;
+                                 <svg style=" width: 50px; height:50px; margin-top: 5px; " class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"/></svg></a>
+                                 
+                                 <a class="clint" href="" style="margin-right: 15px;text-align: center;
+background-color: #96B842;width: 205px;line-height: 150px;height: 220px; " >أرصدة الموردين &nbsp;
+                                 <svg style=" width: 70px; height:70px; " class="glyph stroked clipboard with paper"><use xlink:href="#stroked-clipboard-with-paper"/></svg></a>
+                                 <a class="clint" href="" style="background-color: #1E95C8; margin-right: 15px; " >الطلبيات &nbsp;
+                                <svg style=" width: 70px; " class="glyph stroked notepad "><use xlink:href="#stroked-notepad"/></svg></a>
+								 
+                                <a style=" margin-right: 15px; WIDTH: 110px; height: 105px; text-align: center; padding: 15px 10px 15px 10px;" class="clint" href="" >الفهارس &nbsp;
+                                 <svg style=" width: 50px; height:50px; margin-top: 5px" class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"/></svg></a>
+                                  <a style= " margin-top: 115px; margin-right: -110px;; WIDTH: 110px; height: 105px; text-align: center; padding: 15px 10px 15px 10px; " class="clint" href="" >الاشعارات  &nbsp;
+                                 <svg style=" width: 50px; height:50px; margin-top: 5px;" class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"/></svg></a>
+                                 <a class="clint" href="items.html" style="background-color: #1E95C8; margin-right:15px; " >الأصناف &nbsp;
+                           <svg style=" width: 70px; " class="glyph stroked app window with content"><use xlink:href="#stroked-app-window-with-content"/></svg></a>
+                           
+                           <a style="  WIDTH: 146px; height: 105px; text-align: center; padding: 15px 10px 15px 10px;" class="clint" href="expincis of sale.html" >فواتير المصاريف &nbsp;
+                                 <svg style=" width: 50px; height:50px; margin-top: 5px;" class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"/></svg></a>
+								 
+                                <a style=" margin-right: 15px; WIDTH: 235px; background-color: #96B842; height: 105px; text-align: center; padding: 15px 10px 15px 10px;" class="clint" href="" >فهرس الموردين  &nbsp;
+                                 <svg style=" width: 50px; height:50px; margin-top: 5px;" class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"/></svg></a>
+								
+								<a style="  WIDTH: 205px; height: 105px;   margin-right: 15px; text-align: center; padding: 15px 10px 15px 10px;" class="clint" href="Purchase reference bills.html" >فواتير مرجع الشراء&nbsp;
+                                 <svg style=" width: 50px; height:50px; margin-top: 5px;" class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"/></svg></a>
+								 
+                                </div>
+                                
+                                <div class="tab-pane fade" id="pilltab4">
+							<h3 style="text-align: center; margin-bottom: 40px; margin-top: 5px;">المحاسبة</h3>
+								
+                    <a class="clint" href="kuoad.html" style="background-color: #96B842; " >قيود المحاسبة &nbsp;
+    <svg style=" width: 70px; " class="glyph stroked clipboard with paper"><use xlink:href="#stroked-clipboard-with-paper"/></svg></a>
+                                <a style=" margin-right: 15px; WIDTH: 130px; height: 105px; text-align: center; padding: 15px 10px 15px 10px;" class="clint" href="" > الموازنات &nbsp;
+                                 <svg style=" width: 50px; height:50px; margin-top: 5px;" class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"/></svg></a>
+								 
+								 <a style=" margin-right: 15px; WIDTH: 130px; height: 105px; text-align: center; padding: 15px 10px 15px 10px;" class="clint" href="" >ميزان المراجعة &nbsp;
+                                 <svg style=" width: 50px; height:50px; margin-top: 5px;" class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"/></svg></a>
+                                 								
+								 <a style= " margin-top: 115px; margin-right: -275px;; WIDTH: 275px; height: 105px; text-align: center; padding: 15px 10px 15px 10px; background-color: #1E95C8; " class="clint" href="" > حساب الأستاذ العام  &nbsp;
+                <svg style=" width: 50px; height:50px; margin-top: 5px;  " class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"/></svg></a>
+                                 
+                                 
+                                 <a class="clint" href="show accounts.html" style="background-color: #96B842; margin-right: 15px; " >عرض قائمة الحسابات &nbsp;
+                                <svg style=" width: 70px; " class="glyph stroked notepad "><use xlink:href="#stroked-notepad"/></svg></a>
+								
+								<a class="clint" href="Balance Sheet.html" style=" margin-right: 15px; " >الميزانية العمومية &nbsp;
+                                <svg style="width: 70px;" class="glyph stroked app window with content"><use xlink:href="#stroked-app-window-with-content"/></svg></a>
+								
+							
+						</div>
+                        <div class="tab-pane fade" id="pilltab5">
+							<h3 style="text-align: center; margin-bottom: 40px; margin-top: 5px;">المخازن</h3>
+								
+                                <a class="clint" href="items.html" style="background-color: #96B842; " >الأصناف &nbsp;
+    <svg style=" width: 70px; " class="glyph stroked clipboard with paper"><use xlink:href="#stroked-clipboard-with-paper"/></svg></a>
+                                <a style=" margin-right: 15px; WIDTH: 130px; height: 105px; text-align: center; padding: 15px 10px 15px 10px;" class="clint" href="Stores.html" > المخازن &nbsp;
+                                 <svg class="glyph stroked home"><use xlink:href="#stroked-home"/></svg></a>
+								 
+								 <a style=" margin-right: 15px; WIDTH: 130px; height: 105px; text-align: center; padding: 15px 10px 15px 10px;" class="clint" href="" >المعادلات &nbsp;
+                                 <svg class="glyph stroked gear"><use xlink:href="#stroked-gear"/></svg></a>
+                                 								
+								 <a style= " margin-top: 115px; margin-right: -275px;; WIDTH: 275px; height: 105px; text-align: center; padding: 15px 10px 15px 10px; background-color: #1E95C8; " class="clint" href="" > حركات المخازن  &nbsp;
+                <svg  style="width: 60px;margin-top: 7px;height: 60px;"class="glyph stroked app window with content"><use xlink:href="#stroked-app-window-with-content"/></svg></svg></a>
+                                 
+                                 
+                                 <a class="clint" href=".html" style="background-color: #96B842; margin-right: 15px; " > أرصدة المخازن &nbsp;
+                                <svg style=" width: 70px; " class="glyph stroked notepad "><use xlink:href="#stroked-notepad"/></svg></a>
+								
+								
+							
+						</div>
+                        <div class="tab-pane fade" id="pilltab6">
+						<h3 style="text-align: center; margin-bottom: 40px; margin-top: 5px;">القبض والصرف</h3>
+						<a class="clint" href="customers.html" style="background-color: #1E95C8; " >الزبائن &nbsp;
+                                 <svg style=" width: 70px; " class="glyph stroked male user "><use xlink:href="#stroked-male-user"/></svg></a>
+								 <a class="clint" href="suppliers.html" style="background-color: #96B842; margin-right: 15px; " >الموردين &nbsp;
+                                 <svg style=" width: 70px; " class="glyph stroked male user "><use xlink:href="#stroked-male-user"/></svg></a>
+								 
+                                <a style=" margin-right: 15px; WIDTH: 110px; height: 105px; text-align: center; padding: 15px 10px 15px 10px;" class="clint" href="Receipts arrested.html" >القبض &nbsp;
+                                 <svg style=" width: 50px; height:50px; margin-top: 5px;" class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"/></svg></a>
+								 
+								 <a style=" margin-right: 15px; WIDTH: 110px; height: 105px; text-align: center; padding: 15px 10px 15px 10px;" class="clint" href="" >قبض متعدد &nbsp;
+                                 <svg style=" width: 50px; height:50px; margin-top: 5px;" class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"/></svg></a>
+                                 <a style= " margin-top: 115px; margin-right: -235px;; WIDTH: 110px; height: 105px; text-align: center; padding: 15px 10px 15px 10px; " class="clint" href="Bills of exchange.html" > الصرف  &nbsp;
+                                 <svg style=" width: 50px; height:50px; margin-top: 5px;" class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"/></svg></a>
+								
+								 <a style= " margin-top: 115px; margin-right: -110px;; WIDTH: 110px; height: 105px; text-align: center; padding: 15px 10px 15px 10px; " class="clint" href="" > صرف متعدد  &nbsp;
+                                 <svg style=" width: 50px; height:50px; margin-top: 5px; " class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"/></svg></a>
+								 
+								 <a style=" margin-right: 15px; WIDTH: 110px; height: 105px; text-align: center; padding: 15px 10px 15px 10px;" class="clint" href="" >تفصيل القبض &nbsp;
+                                 <svg style=" width: 50px; height:50px; margin-top: 5px" class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"/></svg></a>
+                                  <a style= " margin-top: 115px; margin-right: -110px;; WIDTH: 110px; height: 105px; text-align: center; padding: 15px 10px 15px 10px; " class="clint" href="" >تفصيل الصرف &nbsp;
+                                 <svg style=" width: 50px; height:50px; margin-top: 5px;" class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"/></svg></a>
+                                
+							
+                                 
+                                 <a class="clint" href="show accounts.html" style="margin-right: 15px;text-align: center;background-color: #96B842;width: 160px;line-height: 150px;height: 220px; " >الحسابات &nbsp;
+                                 <svg style=" width: 70px; height:70px; " class="glyph stroked clipboard with paper"><use xlink:href="#stroked-clipboard-with-paper"/></svg></a>
+                                 <a class="clint" href="" style="background-color: #1E95C8; margin-right: 15px; " >الموظفين &nbsp;
+                               <svg style=" width: 70px; " class="glyph stroked male user "><use xlink:href="#stroked-male-user"/></svg></a>
+								 
+                                
+						</div>
+                        <div class="tab-pane fade" id="pilltab7">
+						<h3 style="text-align: center; margin-bottom: 40px; margin-top: 5px;">الشيكات</h3>			
+							
+						</div>
+                        <div class="tab-pane fade" id="pilltab8">
+						<h3 style="text-align: center; margin-bottom: 40px; margin-top: 5px;">التقارير</h3>
+
+						</div>
+                        
+                        <div class="tab-pane fade" id="pilltab9">
+                        <h3 style="text-align: center; margin-bottom: 40px; margin-top: 5px;">بيانات أخرى</h3>
+						</div>
+                        
+                        <div class="tab-pane fade" id="pilltab10">
+					<h3 style="text-align: center; margin-bottom: 40px; margin-top: 5px;">أدوات</h3>
+								
+							
+						</div>
+					</div>
+				</div>
+			</div>		
+		
+	</div>	
+
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/clock.js"></script>
+	<script src="js/icon.js"></script>
+	<script>
+		$('#calendar').datepicker({
+		});
+
+		!function ($) {
+		    $(document).on("click","ul.nav li.parent > a > span.icon", function(){          
+		        $(this).find('em:first').toggleClass("glyphicon-minus");      
+		    }); 
+		    $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+		}(window.jQuery);
+
+		$(window).on('resize', function () {
+		  if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+		})
+		$(window).on('resize', function () {
+		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+		})
+	</script>	
+</body>
+
+</html>

@@ -1,0 +1,453 @@
+/* star main rulez */
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+body{
+    background-color: #f3f1f2;
+    font-family: 'Varela Round' , tahoma
+}
+.container {
+    width:940px;
+    margin: 0px auto;
+    overflow: hidden;
+}
+
+/* end main rulez */
+/* my fremwork */
+
+#clear {
+    clear: both;
+}
+.spacial-heading { position: relative; }
+.spacial-heading:after {
+    content: "";
+    display: block;
+    position: relative;
+    top: 8px;
+    left: 0;
+    width: 40px;
+    border-bottom: 3px solid #1ca2cf;
+    margin: auto;
+}
+
+/*my fremwork */
+/* strat navbar */
+header {
+    background-image: url('../img/back1.jpeg');
+    background-size: cover;
+    width: 100%;
+    height: 662px;
+}
+#nav {
+    width: 100%;
+}
+#nav .logo {
+    float: left;
+    width: 40%;
+    position: relative;
+}
+#nav .logo img {
+    width: 215px;
+    position: absolute;
+    margin-top: 1px;
+}
+#nav .nav {
+    float: right;
+    width: 60%;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#nav .nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-left: 60px;
+}
+#nav .nav ul li {
+    display: inline-block;
+    float: left;
+    padding: 14px 0;
+    margin-right: 18px;
+    border-bottom: 2px solid transparent;
+    
+}
+#nav .nav ul li.active a {
+    color: #1ca2cf;
+    border-bottom: 2px solid #1ca2cf;
+}
+#nav .nav ul li:hover {
+    border-bottom: 2px solid #1ca2cf;
+    color:#1ca2cf;
+    transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+}
+
+#nav .nav ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    padding: 14px 0;
+    color: #fff;
+}
+#nav .nav ul li a:hover {
+    color:#1ca2cf;
+    transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+}
+/* end navbar */
+/* start slider */
+.slider h1 {
+    text-transform: uppercase;
+    color: #fff;
+    font-family: tahoma;
+}
+.slider .bxslider li {
+    display: block;
+}
+.slider h1 span {
+    color: #1ca2cf;
+}
+.slider p {
+    color: #fff;
+    text-transform: capitalize;
+}
+.slider .bx-wrapper {
+    height: 100%;
+}
+.slider .bx-wrapper .bx-viewport {
+    background: none;
+    border: none;
+    box-shadow: none;
+    height: 100% !important;
+    text-align: center;
+}
+.bx-wrapper .bx-pager.bx-default-pager a {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+}
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active {
+    background: #1ca2cf;
+}
+/* end slider */
+/* start welcome */
+.welcome h2 {
+    width: 135px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #ddd;
+    margin-bottom: 80px;
+}
+.welcome .services {
+    height: 130px;
+}
+.welcome .services > div {
+    float: left;
+    width: 25%;
+    text-align: center;
+    color: #949494;
+    text-transform: capitalize;
+}
+.welcome .services i {
+    font-size: 65px;
+    color: rgba(0, 0, 0, 0.83);
+}
+.welcome .text-serv p {
+    text-align: center;
+    padding: 20px;
+    color: #949494;
+}
+.welcome .text-serv button {
+    width: 150px;
+    height: 40px;
+    background: #1ca2cf;
+    color: #fff;
+    line-height: 40px;
+    border: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    margin: 30px auto;
+    cursor: pointer;
+}
+.welcome .text-serv button:hover {
+    background: #FF9800;
+    transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    
+}
+/* end welcome */
+/* start counter*/
+.counter {
+    width: 100%;
+    height: 350px;
+    background: url(../img/back2.jpg);
+    background-size: cover;
+    background-position: 10px;
+    position: relative;
+    color: #fff;
+}
+.counter .overlay {
+    background-color: #1ca2cf;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    z-index: 1;
+}
+.counter .count {
+    width: 100%;
+    height: 350px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 130px;
+    position: relative;
+    z-index: 2;
+}
+.counter .count > div {
+    width: 20%;
+    float: left;
+}
+.counter .count i {
+    font-size: 65px;
+}
+.counter .count .progress-number {
+    font-size: 35px;
+    margin: 6px;
+}
+.counter .count h5 {
+    margin: 0;
+    text-transform: capitalize;
+
+}
+/* end counter */
+/* start works */
+.works  h2 {
+    width: 145px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #ddd;
+    margin-bottom: 80px;
+}
+.work {
+    width: 100%;
+    height: 390px;
+    margin-bottom: 70px;
+}
+.work > div {
+    width: 30%;
+    height: 180px;
+    float: left;
+    margin: 0 16px 24px 15px;
+    border: 4px solid rgb(230, 230, 230);
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.work > div .over {
+    background-color: #1ca2cf;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    line-height: 180px;
+    display: none;
+    z-index: 1;
+    -webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+    
+}
+.work > div:hover .over {
+    display: block;
+    -webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.work > div:hover img{
+	-webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+.work > div img {
+    width: 100%;
+    height: 100%;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+
+
+/*end works */
+/* start client */
+.our-client {
+    padding: 24px 0;
+}
+.our-client h2 {
+    width: 146px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #ddd;
+    margin-bottom: 24px;
+}
+.our-client .client {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    padding: 20px 0;
+}
+.our-client .client ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+}
+.our-client .client ul li {
+    width: 140px;
+    height: 140px;
+    float: left;
+    margin-left: 5%;
+    display: block;
+    line-height: 190px;
+    
+}
+.our-client .client ul li img {
+    width: 90%;
+}
+/* end client */
+/* start footer*/
+footer {
+    width: 100%;
+    height: 260px;
+    background-color: #28272d;
+    overflow: hidden;
+}
+footer .foot .child1 {
+    width: 32.6666%;
+    float: left;
+    height: 100%
+    
+}
+footer .foot .child1 img {
+    width: 50%;
+    margin-top: 50px;
+}
+footer .foot .child1 p {
+    color: #95989c;
+    width: 95%;
+}
+footer .foot .child2 {
+    width: 32.666%;
+    float: left;
+    height: 100%;
+    color: #95989c;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+footer .foot .child2 > span{
+    width: 100%;
+    display: block;
+    line-height: 16px;
+    margin-top: 50px;
+    padding-bottom: 1px;
+}
+footer .foot .child2 > span i {
+    width: 10%;
+    height: 20px;
+    float: left;
+    
+}
+footer .foot .child2 > span p {
+    width: 90%;
+    float: right;
+    margin: 0;
+}
+footer .foot .child3 {
+    width: 32.6666%;
+    height: 90px;
+    overflow: hidden;
+    float: left;
+    color: #95989c;
+    margin-top: 50px;
+    
+}
+footer .foot .child4 {
+    width: 32.6666%;
+    height: 50px;
+    float: left;
+    margin-top: 40px;
+}
+footer .foot .child4 input {
+    display: block;
+    width: 85%;
+    border-width: 1px;
+    border-style: solid;
+    padding: 8px;
+    outline: 0;
+    font-family: inherit;
+    font-size: 0.95em;
+    float: left;
+}
+footer .foot .child4 button {
+    width: 15%;
+    height: 37px;
+    padding: 0;
+    margin: 1px 0 0px -1px;
+    border: 0;
+    background: #1ca2cf;
+    color: #fff;
+    cursor: pointer;
+}
+
+.footer {
+    width: 100%;
+    height: 50px;
+    background: #18181a;
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.footer #right {
+    float: right;
+    padding-right: 10px;
+}
+.footer #left{
+    float:left;
+    padding-left: 10px;
+}
+.footer a {
+    color: #1ca2cf;
+    text-decoration: none;
+}
+/*end footer*/
+/* scroll */
+#scroll-top {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    right: 25px;
+    bottom: 35px;
+    font-size: 30px;
+    color: #1ca2cf;
+    cursor: pointer;
+    z-index: 9999;
+    display: none;
+}

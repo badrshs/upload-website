@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<head>
+<style>
+body {
+background-image: url(educationback.jpg);background-repeat:no-repeat;background-size:100% 100%;
+}
+h1{
+color:white;
+font-size:60px;
+}
+h2{
+color: white;
+}
+h3 {
+color:white;
+font-size:26px;
+}
+p{
+color:white;
+font-size:18px;
+}
+h4{
+font-size:20px;
+color:white;
+}
+
+
+</style>
+
+
+   <meta charset="utf-8">
+	<title>Education</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+  
+</head>
+<body>
+<header id="Education">
+
+
+     <center><a href="home.html"><h2>Home</h2></a></center>
+
+ 
+ 
+
+      
+      
+            </br><center><h1><span><ins>Education</ins></span></h1></center>
+         
+
+                 </br>
+                 		                 </br>
+		 <center><h3><ins>University of Life</ins></h3></center>  <center><h3>Faculty of BIS <span>&bull;</span> <em class="date">September 2013</em></h3></center>
+				  
+                  
+
+                  <center><p>
+				    Iam a student in the 4th level in the faculty of BIS and i</br>
+                    have studied many subjects in those 2 fields the Business field</br> 
+					&the Computer sience field.Right Now i have a total GPA=2.9 </br>
+					and i have finished many courses like </br>
+				
+					
+		
+                     
+                     </p> </center>
+                  
+
+                  <center-left><h3><ins>Have Passed the following courses</ins></h3></center-left>
+				  <table border="1" align=center>
+				  <tr>
+				  <td><h4>University Requirements</h4></td>
+				  <td><h4>Faculty Requirements</h4></td>
+				  <td><h4>Specialization Requirements</h4></td>
+				  </tr>
+				
+				  <tr>
+				  <td><center><p>Human Rights</br>English1</br>English</br></p></center></td>
+				  <td><center><p>Accounting1</br>Accounting 2</br>Partnerships</br>Corporations</br>Cost Accounting</br>Managerial Acc.</br>Auditing</br>Management</br>OB</br>Production</br>Marketing</br>HRM</br>Finance</br><Economics</br>Money&Banking</br>Math</br>Statisrics</br></p></center></td>
+				  <td><center><p>Introduction to computer</br>Operating Systems</br>Information Systems</br>Programming1&2</br>System Analysis1&2</br>Database</br>E-commerce</br>MIS</br>DSS</br>Data Security</br>Networks</br>Operation Researc</p></center></td>
+				  </tr>
+				  </table>
+				  
+				  
+				  
+
+                
+
+              
+</body>
+</html>

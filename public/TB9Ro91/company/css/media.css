@@ -1,0 +1,123 @@
+/* start media */
+/* smart phones and tablets */
+@media (max-width:767px)
+{
+    body
+    {
+        padding-top: 0px;
+    }
+    /* star overriding bootstrap */
+    .navbar-brand
+    {
+        font-family: 'Clicker Script', cursive;
+        font-size: 40px;
+        font-weight: bold;
+        padding: 15px 20px;
+    }
+    .navbar-inverse .navbar-brand {
+        color: #fff;
+    }
+    .navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
+        min-height: 450px;
+    }
+    /* end overriding bootstrap */
+    /* start header section */
+    .header
+    {
+        min-height: 550px;
+    }
+    .header h1
+    {
+        font-size: 80px;
+        margin-bottom: 20px;
+        margin-top: 40px;
+    }
+    .header .h1
+    {
+        margin-bottom: 5px;
+        font-size: 25px;
+        letter-spacing: normal;
+    }
+    .header .rotating,h3
+    {
+        font-size: 20px;
+    }
+    /* end header section */
+    /* start testimonials section */
+    .testimonials .testimonial-img img
+    {
+    border-radius: 50%;
+    border: 5px solid #fff;
+    margin: auto;
+    display: block;
+    margin-bottom: 10px;
+    float: none;
+    }
+    .testimonials h4
+    {
+        margin-top: 0;
+        text-align: center;
+        margin-left: 0;
+    }
+    .testimonials .testimonial-img2 img
+    {
+    border-radius: 50%;
+    border: 5px solid #fff;
+    margin: auto;
+    display: block;
+    margin-bottom: 10px;
+    float: none;
+    }
+    .testimonials .name2
+    {
+        margin-top: 0;
+        text-align: center;
+        margin-left: 0;
+    }
+    /* end testimonials section */
+    /* start team section */
+    .our-team .img-responsive
+    {
+        margin: 0 auto;
+    }
+    /* end team section */
+    /* start contact us section */
+    .contact-us span
+    ,.contact-us i
+    {
+        padding-bottom: 30px;
+    }
+    .contact-us input
+    {
+        width: 200px;
+        margin: 0 auto;
+    }
+    .contact-us textarea
+    {
+        width: 200px;
+        height: 70px;
+        margin: 0 auto;
+    }
+    /* end contact us section */
+}
+
+/* large screen */
+@media(min-width:1200px)
+{
+    /* start testimonials section */
+    .testimonials h4
+    {
+        margin-top: 180px;
+        margin-left: -70px;
+    }
+    .testimonials .name2
+    {
+        margin-left: 0px;
+        float: right;
+        margin-right: -140px;
+    }
+    /* end testimonials section */
+    /* start contact us section */
+    
+    /* end contact us section */
+}

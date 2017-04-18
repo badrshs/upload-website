@@ -1,0 +1,186 @@
+/*----------------------------------------------*/
+/*==============START MAIN RULEZ================*/
+/*----------------------------------------------*/
+*{margin:0;padding:0px;}
+.container{width:85%;margin:auto;text-align:center}
+body{background:#fff;color:#2c3e50}
+ul{list-style:none}
+a{text-decoration:none}
+
+/*=====================END MAIN RULEZ===========*/
+
+
+/*----------------------------------------------*/
+/*================START HEADER==================*/
+/*----------------------------------------------*/
+header .nav{
+    background:#101010;
+    position:fixed;
+    top:0;
+    width:100%;
+    overflow:hidden;
+    z-index:2
+}
+header .nav .logo{
+    float:left;
+    width:12%;
+    padding:15px 0
+}
+header .nav .logo p{color:#fff;font-family:arial;font-size:2em}
+header .nav .logo p span:first-of-type{font-weight:bolder;margin:0 -10px;}
+header .nav .logo p span:last-of-type{color:yellow;font-weight:normal}
+header .nav .menu{
+    float:right;
+    width:66%;
+    margin-left:17%;
+}
+header .menu ul li{display:inline-block}
+header .menu ul li a{
+    color:#565454;
+    display:block;
+    margin:0 10px;
+    padding:33px 5px;
+    text-transform:capitalize
+}
+header .menu ul li a:hover{
+    color:#feaf1e;
+    background:#ddd;
+}
+header .menu ul button{
+    background:#feaf1e;
+    padding:7px 10px;
+    border:none;
+    border-radius:3px;
+    margin-left:23px;
+}
+header .menu ul button a{ color:#fff}
+header .menu ul button:hover{background:#428bca}
+header .main{
+    height:600px;
+    width:100%;
+    background-image:url('../images/image-back.jpg');
+    background-size:cover;
+    position:relative;
+    top:63px;
+    z-index:1
+}
+/*===============END HEADER=====================*/
+
+/*----------------------------------------------*/
+/*==============START CONTENT===================*/
+/*----------------------------------------------*/
+
+/*===================FEATURES===================*/
+.content .features {
+    padding:100px 0;
+}
+.content .features .lead{width:81%;margin:auto;padding:30px}
+.content .features .lead h1{text-transform:uppercase;margin:40px 0;font-size:38px}
+.content .features .lead > p{font-size:24px;font-weight:200;line-height:1.5}
+.content .features .feats{overflow:hidden}
+.content .features .feats .feat{width:23%;margin:20px 1%;float:left;text-align:justify center}
+.content .features .feats .feat i{
+    font-size:3.5em;
+}
+.content .features .feats .feat h3{font-size:24px;margin:10px 0;font-weight:300}
+.content .features .feats .feat p{line-height:1.5}
+.content .features .feats .feat button a{color:#fff}
+.content .features .feats .feat button{
+    background:#feaf1e;
+    padding:7px 10px;
+    border:none;
+    border-radius:3px;
+    margin-top:20px;
+}
+.content .features .feats .feat button:hover{background:#428bca}
+/*================ABOUT=========================*/ 
+.content .about {
+    padding:100px 0;
+    background:#e8e8e8;
+    overflow:hidden
+}
+.content .about .lead{width:81%;margin:auto;padding:30px}
+.content .about .lead h1{text-transform:uppercase;margin:40px 0;font-size:38px}
+.content .about .lead > p{font-size:24px;font-weight:200;line-height:1.5}
+.content .about img{width:47%;float:left}
+.content .about .description{width:50%;margin-left:3%;float:left;text-align:left}
+.content .about .description h2{font-size:32px;font-weight:200}
+.content .about .description p:first-of-type{margin:20px 0;line-height:1.5}
+.content .about .description hr{border:0;height:1px;background:#fff;}
+.content .about .description p{line-height:1.5}
+.content .about .description button{
+    background:#feaf1e;
+    padding:7px 10px;
+    border:none;
+    border-radius:3px;
+    margin:23px 0;
+}
+.content .about .description button a{ color:#fff}
+.content .about .description button:hover{background:#428bca}
+.content .about .description button:last-of-type{background-color:#34495e}
+/*=============GALLERY==========================*/
+.content .gallery {
+    padding:100px 0;
+    background:#101010;
+}
+.content .gallery .lead {width:81%;margin:auto;padding:30px;color:#fff}
+.content .gallery .lead h1{text-transform:uppercase;margin:40px 0;font-size:38px}
+.content .gallery .lead > p{font-size:24px;font-weight:200;line-height:1.5}
+.content .gallery .photo{overflow:hidden}
+.content .gallery .photo .img{float:left;width:23%;margin-left:2%;margin-bottom:20px;}
+.content .gallery .photo .img img{width:98%;border-radius:5px}
+.content .gallery .photo .img img:hover{scal:1.5;transition:all .2s;}
+/*=============PRODUCT==========================*/
+.content .product {
+    padding:100px 0;
+}
+.content .product .lead {width:81%;margin:auto;padding:30px}
+.content .product .lead h1{text-transform:uppercase;margin:40px 0;font-size:38px}
+.content .product .lead > p{font-size:24px;font-weight:200;line-height:1.5}
+/*=============SLIDER==========================*/
+.content .slider {
+    padding:100px 0;
+    overflow:hidden
+}
+.content .slider img{float:left;width:18%;margin-left:2%;border-radius:5px;box-shadow:10px 10px 10px #ccc}
+/*============END CONTENT=======================*/
+
+/*----------------------------------------------*/
+/*==============START FOOTER====================*/
+/*----------------------------------------------*/
+
+/*=============SUBSCRIBE==========================*/
+footer{
+    padding:100px 0;
+    background:#101010;
+    color:#fff
+}
+footer .subscribe .lead2{width:45%;margin:auto;padding:50px;border-bottom:1px solid #888}
+footer .subscribe p{margin:20px 0;line-height:1.5}
+footer .subscribe .lead2 form input {height:70px;border:none}
+footer .subscribe .lead2 form input:hover {border:none}
+footer .subscribe .lead2 form input[type="email"]{
+    background:#fff;
+    border-radius:5px 0 0 5px;
+    margin-right:-5px;
+    padding:0 10px
+}
+footer .subscribe .lead2 form input[type="submit"]{
+    background:#fbc713;
+    border-radius:0 5px 5px 0;
+    padding:10px;
+    font-weight:bold;
+    color:#fff;
+}
+footer i{
+    margin:30px 0;
+    color:#fbc713;
+}
+footer a{color:#fbc713}
+/*================END FOOTER====================*/
+
+/*----------------------------------------------*/
+/*==============START MY FRAMEWORK==============*/
+/*----------------------------------------------*/
+.clearfix{clear:both}
+/*================END MY FRAMEWORK==============*/

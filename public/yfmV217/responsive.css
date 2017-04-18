@@ -1,0 +1,78 @@
+@media (max-width:500px) {
+#menu a, #menu{
+display:block; position:relative; text-align:center; border-bottom: 1px #ccc solid;
+}
+}
+
+@media (max-width:500px) {
+#logo{
+position:relative;bottom:15px;}
+}
+@media (max-width:500px) {
+#info{
+top:455px;
+height:350px;
+}
+}
+@media (max-width:500px) {
+.cat_works,#cat_works{
+margin-right:0px; margin-top:40px; top:420px;}
+}
+@media (max-width:500px) {
+.cat_works{
+margin-right:0px; }
+}
+@media (max-width:500px) {
+.about_me{
+font-size:8pt; padding:5.5px;}
+}
+@media (max-width:500px) {
+.demo_website h1{
+font-size:8pt;}
+}
+@media (max-width:830px) {
+.demo_website h1{
+font-size:14pt;}
+}
+@media (max-width:500px) {
+#cat{
+top:400px;}
+}
+@media (max-width:500px) {
+#footer{
+top:600px;}
+}
+@media (max-width:500px) {
+.desf{
+position:relative;
+top:92px;}
+}
+@media (max-width:500px) {
+.des{
+position:relative;
+top:0px;}
+}
+@media (max-width:830px) {
+.desf{
+position:relative;
+top:87px;}
+}
+@media (max-width:830px) {
+.screen_website{
+position:relative;width:400px; left:-380px; margin-top:-120px;
+}
+}
+@media (max-width:500px) {
+.screen_website{
+display:none;
+}
+}
+@media (max-width:500px) {
+.screen_logos{
+display:none;
+}
+}
+@media (max-width:500px) {
+#demologos{
+top:400px;}
+}

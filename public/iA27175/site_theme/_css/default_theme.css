@@ -1,0 +1,42 @@
+/***srart default olor ***/
+.option-box .color-option ul li{ background: #e50000; }
+.option-box .gear-check{ color: #fff; }
+.about h2 span{ color: #e50000 ; }
+.testmonials span{ color: #e50000;   }
+.testmonials .carousel-indicators li{  }
+.footer .copy-right strong{ color: #e50000; }
+.footer h3{}
+.navbar-inverse .navbar-nav > .active > a:hover{ color: #e50000; }
+.navbar-inverse .navbar-nav > li > a:hover{ color:#e50000;  }
+.navbar-inverse .navbar-brand span{ color:;}
+.dropdown-menu > li > a:hover{ background-color:transparent; }
+.footer .three-columns li a:hover{ color: #e50000;}
+.carousel-indicators .active{  background-color:#e50000 ;  }
+.footer .copy-right span{ color: #e50000; }
+.option-box h2{ color: #e50000;   }
+/*** srart defaultc olor***/
+
+.features .fee i{ color: #e50000;}
+.features .feat i:hover{ background-color: #E50000; }
+.services .ser i{ color: #E50000; }
+.subscribe .btn-success:hover{ background: #e50000; }
+.work-work .work .item .over button{ background-color: #e50000; border: 1px solid #e50000; }
+.work-work .show-more{ border: 1px solid #e50000; background: #e50000; }
+.work-work .show-more:hover{ background-color: #e50000; }
+.statistics .statis i:hover{ color: #e50000; }
+.statistics .statis:hover{ color:#e50000;  }
+.contact-us .fields i{ color: #e50000; }
+.contact-us button{ background: #e50000; }
+.contact-us button:hover{ background: #e50000; }
+.footer .sicial-site .fa-facebook:hover { color:#e50000;  }
+.footer .sicial-site .fa-twitter:hover { color:#e50000;  }
+.footer .sicial-site .fa-google:hover { color:#e50000;  }
+.footer .sicial-site .fa-skype:hover { color:#e50000;  }
+.footer .sicial-site .fa-youtube:hover { color:#e50000;  }
+.footer .sicial-site .fa-envelope:hover { color:#e50000;  }
+#scroll-top:hover{ color: #e50000; }
+.dropdown-menu > li > a:hover{ color: #e50000; }
+.main-color{ color: #e50000; }
+.features .fee i {color: #E50000; border: 1px solid #e50000;}
+.sell-now .sel .buttons .show-more{ background: #e50000; }
+.option-box .gear-check:hover{ color: #e50000; }

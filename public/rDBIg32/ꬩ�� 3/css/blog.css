@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+.iconheader ,  .blogone   { padding :20px  ;  margin-bottom:10px }
+ .iconheader i {color:#1DA1F2 }
+.iconheader h2 { display:inline-block ; color:#FEAE02 }
+ .blogone  .row div:first-child { border:1px solid #B7B7B7  ; padding:20px 0px }
+ .blogone img  { transition:all 1s ease ; cursor:pointer ; max-height:80%  ; max-width:80%}
+  .blogone img:hover { transform:scale(1.1)}
+  .blogone h3 { margin-bottom:10px ; color:#838383} 
+  .blogone p i { margin-left:10px ; color: #1DA1F2}
+  .blogone p { color:#9A9A9A ; font-size:17px}
+  @media ( min-width : 0px) and ( max-width:992px ) {
+	  .blogone h3 , .blogone p     { text-align:center}
+	   
+	   .blogone .btn-info { text-align:center ; float:none ; display:block}
+	  
+	  
+	  }

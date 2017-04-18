@@ -1,0 +1,36 @@
+body {
+	font-family: "Trebuchet MS", "Verdana", sans-serif;
+	color: white;
+	background-color: #595547;
+	/*text-align: center;*/
+	/*width:800px;*/
+}
+
+a {
+	color:#FF4F4F;
+}
+
+h1, h2 {
+	color:#9FC2F8;
+}
+
+h1 {
+	font-size: 40pt;
+}
+
+strong {
+	color:  #FFF86B;
+}
+
+/*
+q {
+	color:#D1DFEB ;
+}
+
+ul, ol, blockquote {
+	text-align:left;
+}
+
+ul {
+	list-style-type: square;
+}*/

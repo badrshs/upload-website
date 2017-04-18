@@ -1,0 +1,48 @@
+.container{
+  width: 95%
+}
+form {
+    background: #ffffff;
+    padding: 6px;
+    border-radius: 3px;
+    box-shadow: 1px 2px 9px rgba(34, 34, 34, 0.31), -1px -2px 9px rgba(34, 34, 34, 0.43);
+    text-align: center;
+}
+input[type="text"] {
+    background: #333333;
+    border: 0;
+    width: 98%;
+    text-indent: 12px;
+    font-size: 25px;
+    height: 91px;
+    margin-top: 1px;
+    outline: none;
+    color: #fff;
+    margin-bottom: 9px;
+}
+input[type="button"] {
+    width: 24%;
+    height: 65px;
+    font-size: 30px;
+    margin-left: -1px;
+    margin-bottom: 3px;
+    background: #fff;
+    border: 1px solid rgba(34, 34, 34, 0.23);
+    cursor: pointer;
+    color: #222;
+    outline: none;
+}
+
+#component {
+    background: rgb(51, 51, 51);
+    color: #fff;
+}
+#zero{
+    width: 46%;
+    border-radius: 28px;
+}
+input:focus{
+  box-shadow: none;
+  border-color: transparent;
+  border:0;
+}

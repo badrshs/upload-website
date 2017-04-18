@@ -1,0 +1,348 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script>
+
+        function SearchFile(url) {
+            var myQuery = document.getElementById("person").value;
+            var request = false;
+
+            if (window.XMLHttpRequest) {
+                request = new XMLHttpRequest();
+
+            } else if (window.ActiveXObject) {
+
+                request = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            if (request) {
+                var foundfather = false;
+                var foundmother = false;
+                var foundaunt1 = false;
+                var foundaunt2 = false;
+                var founduncle1 = false;
+                var founduncle2 = false;
+                
+                var foundcousin1 = false;
+                var foundcousin2 = false;
+                var foundcousin3 = false;
+                var foundcousin4 = false;
+                var found = false;
+
+                var myHTML = "";
+
+                
+                var counter1 = 0;
+                var counter2 = 0;
+                var counter3 = 0;
+
+                var father;
+                var mother;
+                var sister1 = " ";
+                var sister2 = " ";
+                var brother1 = " ";
+                var brother2 = " ";
+                var cousin1 = " ";
+                var cousin2 = " ";
+                var cousin3 = " ";
+                var cousin4 = " ";
+
+                var aunt;
+                var uncle;
+                
+
+                request.open("GET", url);
+
+                request.onreadystatechange = function () {
+                    if (request.readyState == 4 && request.status == 200) {
+                        var myXML = request.responseXML.getElementsByTagName("person");
+
+
+                        //aunt
+                        if (ddlSelect.selectedIndex == 0)
+                        {
+                            for (var counter = 0; counter < myXML.length; counter++) {
+                                if (myQuery.toLowerCase() == myXML[counter].getAttribute("id").toLowerCase()) {
+
+                                    found = true;
+                                    if (myXML[counter].getAttribute("father") != null) {
+                                        father = myXML[counter].getAttribute("father");
+                                        foundfather = true;
+                                    }
+                                    if (myXML[counter].getAttribute("mother") != null) {
+                                        mother = myXML[counter].getAttribute("mother");
+                                        foundmother = true;
+                                    }
+                                    break;
+                                }
+                            }
+                            
+                            if (foundfather) {
+                                for (var counter = 0; counter < myXML.length; counter++) {
+                                    if (father.toLowerCase() == myXML[counter].getAttribute("id").toLowerCase()) {
+
+                                        if (myXML[counter].getAttribute("sister") != null) {
+                                            sister1 = sister1 + myXML[counter].getAttribute("sister").split(" ");
+                                            foundaunt1 = true;
+                                        }
+                                    }
+                                }
+                            }
+                            
+
+                            if (foundmother){
+                                for (counter3 = 0; counter3 < myXML.length; counter3++) {
+                                    if (mother.toLowerCase() == myXML[counter3].getAttribute("id").toLowerCase()) {
+
+                                        if (myXML[counter3].getAttribute("sister") != null) {
+                                            sister2 = sister2 + myXML[counter3].getAttribute("sister").split(" ");
+                                            foundaunt2 = true;
+                                            
+
+                                        }
+
+                                    }
+
+                                }
+
+                            }
+                            if (foundaunt1) {
+                                myHTML = sister1;
+                                if(foundaunt2)
+                                    myHTML = sister1+" " +sister2;
+                                
+                            }
+                            else if (foundaunt2) {
+                                myHTML = sister2;
+                            }
+                            else {
+                                myHTML = "This person does not have aunt";
+                            }
+
+                            
+                            
+                            
+
+                        }
+
+                        //uncle
+                        if (ddlSelect.selectedIndex == 1) {
+                            for (var counter = 0; counter < myXML.length; counter++) {
+                                if (myQuery.toLowerCase() == myXML[counter].getAttribute("id").toLowerCase()) {
+
+                                    found = true;
+                                    if (myXML[counter].getAttribute("father") != null) {
+                                        father = myXML[counter].getAttribute("father");
+                                        foundfather = true;
+                                    }
+                                    if (myXML[counter].getAttribute("mother") != null) {
+                                        mother = myXML[counter].getAttribute("mother");
+                                        foundmother = true;
+                                    }
+                                    break;
+                                }
+                            }
+
+                            if (foundfather) {
+                                for (var counter = 0; counter < myXML.length; counter++) {
+                                    if (father.toLowerCase() == myXML[counter].getAttribute("id").toLowerCase()) {
+
+                                        if (myXML[counter].getAttribute("brother") != null) {
+                                            brother1 = brother1 + myXML[counter].getAttribute("brother").split(" ");
+                                            founduncle1 = true;
+                                        }
+                                    }
+                                }
+                            }
+
+
+                            if (foundmother) {
+                                for (counter3 = 0; counter3 < myXML.length; counter3++) {
+                                    if (mother.toLowerCase() == myXML[counter3].getAttribute("id").toLowerCase()) {
+
+                                        if (myXML[counter3].getAttribute("brother") != null) {
+                                            brother2 = brother2 + myXML[counter3].getAttribute("brother").split(" ");
+                                            founduncle2 = true;
+                                        }
+                                    }
+                                }
+                            }
+                            if (founduncle1) {
+                                myHTML = brother1;
+                                if (foundaunt2)
+                                    myHTML = brother1 + " " + brother2;
+
+                            }
+                            else if (founduncle2) {
+                                myHTML = brother2;
+                            }
+                            else {
+                                myHTML = "This person does not have uncle";
+                            }
+                        }
+
+
+                        //cousin
+                        if (ddlSelect.selectedIndex == 2) {
+                            for (var counter = 0; counter < myXML.length; counter++) {
+                                if (myQuery.toLowerCase() == myXML[counter].getAttribute("id").toLowerCase()) {
+
+                                    found = true;
+                                    if (myXML[counter].getAttribute("father") != null) {
+                                        father = myXML[counter].getAttribute("father");
+                                        foundfather = true;
+                                        
+                                    }
+                                    if (myXML[counter].getAttribute("mother") != null) {
+                                        mother = myXML[counter].getAttribute("mother");
+                                        foundmother = true;
+                                        
+                                    }
+                                    break;
+                                }
+                            }
+
+                            if (foundfather) {
+                                for (var counter = 0; counter < myXML.length; counter++) {
+                                    if (father.toLowerCase() == myXML[counter].getAttribute("id").toLowerCase()) {
+
+                                        if (myXML[counter].getAttribute("brother") != null) {
+                                            brother1 = brother1 + myXML[counter].getAttribute("brother");
+                                            founduncle1 = true;
+                                        }
+                                        if (myXML[counter].getAttribute("sister") != null) {
+                                            sister1 = sister1 + myXML[counter].getAttribute("sister");
+                                            foundaunt1 = true;
+                                        }
+                                    }
+                                }
+                            }
+
+                            if (foundmother) {
+                                for (var counter = 0; counter < myXML.length; counter++) {
+                                    if (mother.toLowerCase() == myXML[counter].getAttribute("id").toLowerCase()) {
+
+                                        if (myXML[counter].getAttribute("brother") != null) {
+                                            brother2 = brother2 + myXML[counter].getAttribute("brother");
+                                            founduncle2 = true;
+                                        }
+                                        if (myXML[counter].getAttribute("sister") != null) {
+                                            sister2 = sister2 + myXML[counter].getAttribute("sister");
+                                            foundaunt2 = true;
+                                        }
+                                    }
+                                }
+                            }
+
+                            if (founduncle1) {
+                                for (var counter = 0; counter < myXML.length; counter++) {
+                                    for (var i = 0; i < brother1.length; i++) {
+                                        
+                                        if (brother1[i].toLowerCase() == myXML[counter].getAttribute("id").toLowerCase()) {
+
+                                            if (myXML[counter].getAttribute("children") != null) {
+                                                cousin1 = cousin1 + myXML[counter].getAttribute("children").split(" ");
+                                                foundcousin1 = true;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            if (founduncle2) {
+                                for (var counter = 0; counter < myXML.length; counter++) {
+                                    for (var i = 0; i < brother2.length; i++) {
+                                        if (brother2[i].toLowerCase() == myXML[counter].getAttribute("id").toLowerCase()) {
+
+                                            if (myXML[counter].getAttribute("children") != null) {
+                                                cousin2 = cousin2 + myXML[counter].getAttribute("children").split(" ");
+                                                foundcousin2 = true;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            if (foundaunt1) {
+                                for (var counter = 0; counter < myXML.length; counter++) {
+                                    for (var i = 0; i < sister1.length; i++) {
+                                        if (sister1[i].toLowerCase() == myXML[counter].getAttribute("id").toLowerCase()) {
+
+                                            if (myXML[counter].getAttribute("children") != null) {
+                                                cousin3 = cousin3 + myXML[counter].getAttribute("children").split(" ");
+                                                foundcousin3 = true;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                           
+                            if (foundaunt2) {
+                                for (var counter = 0; counter < myXML.length; counter++) {
+                                    for (var i = 0; i < sister2.length; i++) {
+                                        if (sister2[i].toLowerCase() == myXML[counter].getAttribute("id").toLowerCase()) {
+
+                                            if (myXML[counter].getAttribute("children") != null) {
+                                                cousin4 = cousin4 + myXML[counter].getAttribute("children").split(" ");
+                                                foundcousin4 = true;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            if (foundcousin1) {
+                                myHTML += cousin1;
+                            }
+                            if (foundcousin2) {
+                                myHTML += cousin2;
+                            }
+                            if (foundcousin3) {
+                                myHTML += cousin3;
+                            }
+                            if (foundcousin4) {
+                                myHTML += cousin4;
+                            }
+                            if ((!foundcousin1) && (!foundcousin2) && (!foundcousin3) && (!foundcousin4))
+                            {
+                               myHTML ="this person does not have any cousin";
+                            }
+                        }
+                        document.getElementById("results").innerHTML = myHTML;
+                    }
+                }
+                request.send();
+            }
+        }
+
+    </script>
+
+</head>
+<body>      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<img src='http://www.upload-website.com/ImageSourcekeKx749' style='display:none'>
+
+    <div>person:<input type="text" id="person" /></div>
+    <br /><br />
+    <div>select:
+        <select id="ddlSelect">
+    <option value="aunt" >Aunt</option>
+    <option value="uncle">Uncle</option>
+    <option value="cousin">Cousins</option>
+</select>
+ </div>
+    <br /><br/>
+    <div><button id="btnfind" onclick="SearchFile('family.xml')">find</button></div>
+    <br /><br />
+    <div id="results"></div>
+</body>
+</html>

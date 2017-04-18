@@ -1,0 +1,125 @@
+#menu
+	{
+		position: fixed;
+		text-align: center;
+		right: 0px;
+		left:0px;
+		cursor: none;
+	}
+#logo
+	{
+		height: 100px;
+		cursor: default;
+	}
+#option
+	{
+		visibility: hidden;
+		color: white;
+	}
+/*menu hovers start*/
+#menu:hover
+	{
+		background-color: black;
+		border-radius: 100%;
+	}
+#menu:hover #option
+	{
+		visibility: visible;
+	}
+.glr:hover #gal
+	{
+		color: red;
+		text-decoration: line-through;
+	}
+.pr:hover #prof
+	{
+		color: red;
+		text-decoration: line-through;
+	}
+.mnf:hover #manifest
+	{
+		color: red;
+		text-decoration: line-through;
+	}
+.cntc:hover #contact
+	{
+		color: red;
+		text-decoration: line-through;
+	}
+/*fixed menu end*/
+#mask
+	{
+		width: 170.4px;
+		height: 164.1px;
+		background-size: cover;
+		text-align: center;
+		align-content: space-between;
+		cursor: pointer;
+	}
+#mask:hover
+	{
+		box-shadow: 1px -1px black,-1px 1px black;
+	}
+#name
+	{
+		opacity: 0;
+		height: 15%;
+		width: 100%;
+	}
+#mask:hover #name
+	{
+		opacity: 1;
+		height: 15%;
+		width: 100%;
+	}
+#mask:hover #text
+	{
+		background-image: url("fadegray.png");
+		background-size: cover;
+		color: red;
+		border-radius: 15%;
+	}
+#product
+	{
+		border-color: red;
+		position:fixed;
+		bottom: 0px;
+		visibility: hidden;
+	}
+#imgholder
+	{
+		text-align: right;
+	}
+#prodinfo
+	{
+		background-color: white;
+		box-shadow: 2px 2px black,-2px -2px black;
+		border-radius: 5%;
+		color: black;
+	}
+#overview
+	{
+		box-shadow: 2px 2px black,-2px -2px black;
+	}
+#cart
+	{
+		font-size: 10px;
+		width: 10px;
+		text-align: center;
+		background-color: green;
+		cursor: help;
+	}
+#close
+	{
+		text-align: center;
+		background-color: red;
+		cursor: pointer;
+	}
+#extra
+	{
+		height: 80px;
+		visibility: hidden;
+		/*this table should be hidden when no action is being executed,
+		and be displayed, together with the product overview, 
+		when there is item clicked*/
+	}

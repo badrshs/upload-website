@@ -1,0 +1,551 @@
+/*start main rulz*/
+
+.container{width: 1170px; margin: auto;}
+.fix{clear: both}
+/*end main rulz*/
+
+/*start header*/
+.header .cover
+{ 
+    margin-top: 0;
+    background-image: url('../images/cover.jpg');/*for test*/
+    background-size: cover;
+    height: 380px;
+    position: absolute;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right:0;
+    z-index: 1
+    
+    
+   
+}
+.header .cover .container .text
+{
+    height:150px;
+    padding: 70px 220px;
+}
+.header .cover .container .text h2
+{
+    margin: 0;
+    font-size: 40px;
+    text-transform:uppercase;
+    padding-left:10px 
+}
+.header .cover .container .text p , span
+{
+    color:#fff
+}
+.header .cover .container .text p
+{
+
+    font-size: 15px;
+    text-align: justify;
+    font-weight:600
+    
+}
+.header .cover .container .text button
+{
+    
+    margin-left: 240px;
+    border: 3px solid #fff;
+    border-radius: 10%;
+    margin-top:-5px;
+    padding: 5px 40px;
+    background: none;
+    color:#fff;
+    font-weight:bold
+   
+}
+
+/*end header*/
+
+
+/*start content*/
+.content .back
+{
+    height: 1600px;  
+    background-color: #dbdbdd;
+}
+.content .back .boody
+{
+    border-radius: 15px;
+    display:block;
+    height: 1230px;  /*for tets*/
+    background-color: #ececec;
+    width: 1200px; /*for test*/
+    position: absolute;
+    z-index: 2;
+    top:45%;
+    overflow:hidden;
+}
+
+/*start left section*/
+.content .back .boody .left 
+{
+    width:25%;
+    float:left;
+    height: 100%;
+    border-right: 2px solid #e2e2e2;
+    padding-right: 5%;
+    padding-top: 25px;
+    padding-left: 5%;
+   
+}
+.content .back .boody .left .menu
+{
+    display: block;
+    color:#676161;
+      font-weight:bold
+}
+
+.content .back .boody .left .menu  ul
+{
+    list-style:none;
+    padding-left:0;
+   
+}
+.content .back .boody .left .menu  ul li
+
+{
+    padding-top:10px ;
+    border-bottom:3px solid #e2e2e2;
+    margin: 10px 0 5px 0;
+    cursor: pointer;
+   
+    
+}
+.content .back .boody .left .menu ul li i
+{
+    padding-right:5px   
+}
+
+.content .back .boody .left .menu ul .active,
+.content .back .boody .left .menu ul li:hover
+{color:#102f43}
+
+.content .back .boody .left .form
+{
+    
+    width:85%  ;
+    padding-top: 20px;
+    font-weight:bold;
+    color:#102f43
+}
+
+
+.content .back .boody .left .form .top
+{  
+    border-top-right-radius:5px;
+    border-top-left-radius:5px;
+    background-color:#d2cccc;
+    color:#102f43;
+    padding-top:10px;
+    padding-right:10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    width:100%
+    
+}
+
+.content .back .boody .left .form .down
+{
+    background: #fff; 
+    display: inline-block;
+    width: 100%;
+    border-bottom-right-radius:5px;
+    border-bottom-left-radius:5px;
+    padding-top:20px;
+    padding-right:10px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    
+   
+}
+.content .back .boody .left .form .down p
+{
+    margin-top:0;
+    margin-bottom:10px
+    
+}
+
+
+
+.content .back .boody .left .form .down div
+{
+    height:20px;
+    border: 3px solid #d2cccc;
+    margin-bottom: 30px;
+    width:90%;
+    
+}
+.content .back .boody .left .form .down button
+{
+    padding: 5px 20px;
+    border-radius:10px;
+    background-color:#d2cccc;
+    font-weight:bold;
+    color:#102f43
+}
+
+
+.content .back .boody .left .form .down .form2
+
+{
+    text-align: center;
+    padding-bottom:5px;
+    padding-top:10px;
+    margin-bottom:10px;
+    font-weight: normal
+   
+   
+    
+}
+.content .back .boody .left .form .down .form2 i
+{
+    color:#e2e2e2;
+    padding-right: 5px;
+    font-weight: normal
+}
+ 
+
+.content .back .boody .left .form .down .form22
+{
+    text-align: center;
+    border-bottom: 3px solid #e2e2e2;
+    padding-bottom: 10px;
+    
+}
+.content .back .boody .left .form .down .v
+{
+    padding-top:10px;
+    
+}
+
+.content .back .boody .left .no1,
+.content .back .boody .left .no2
+{
+    padding: 2px;
+    margin-top:20px;
+    margin-right: 12px;
+    border:3px solid #e2e2e2;
+    background-color:#102f43;
+    display:inline-block;
+    width: 77px;
+    color:#FFF;
+    text-align: center;
+    font-weight:bold    
+}
+
+.content .back .boody .left .no1 i
+{
+        color: darkgoldenrod;
+
+}
+.content .back .boody .left .no2 i
+{
+    color:red
+}
+ 
+
+/*end left section*/
+
+
+/*start right section*/
+.content .back .boody .right
+{
+    width:54%;
+    float:left;
+    height: 100%;
+    padding-right:5%;
+    padding-top: 25px;
+    padding-left: 5%;
+   
+}
+
+.content .back .boody .right  .sec1 .title h2
+{
+    color:#102f43;
+    
+}
+
+.content .back .boody .right  .sec1 .content
+{
+    margin-top:35px;
+    overflow: hidden
+}
+
+
+.content .back .boody .right  .sec1 .content .photo,
+.content .back .boody .right  .sec1 .content .paragraph
+{
+    width:50%;
+    float: left
+}
+.content .back .boody .right  .sec1 .content .photo
+{
+ 
+    float: left;
+    width:50%;
+    margin-bottom: 10px
+    
+    
+}
+.content .back .boody .right  .sec1 .content .photo img
+{
+    display: block;
+    width:100%;
+    border:5px solid #676161;
+    border-radius:10px
+}
+.content .back .boody .right  .sec1 .content .paragraph
+{
+    float: right;
+    width: 45%
+}
+
+.content .back .boody .right  .sec1 .content .paragraph .top
+{
+    margin-top: 0;
+    margin-bottom:5px;
+    color: #102f43;
+    text-transform:capitalize
+}
+.content .back .boody .right  .sec1 .content .paragraph p 
+{  
+   margin-top:0;
+    margin-bottom:0;
+    line-height: 1.5;
+    text-transform:capitalize
+}
+.content .back .boody .right  .sec1 .content .paragraph .down
+{
+    margin-top: 5px;
+    margin-bottom:0;
+    color: #102f43;
+    text-transform:capitalize;
+    cursor:pointer
+}
+
+
+.content .back .boody .right  .sec2
+{
+    margin-top:5px
+}
+
+.content .back .boody .right  .sec2 .content
+{
+    margin-top:35px;
+    overflow: hidden;
+    
+}
+
+
+.content .back .boody .right  .sec12.content .photo,
+.content .back .boody .right  .sec2 .content .paragraph
+{
+    width:50%;
+    float: left
+}
+.content .back .boody .right  .sec2 .content .photo
+{
+ 
+    float: left;
+    width:50%
+    
+    
+}
+.content .back .boody .right  .sec2 .content .photo img
+{
+    display: block;
+    width:100%;
+    border:4px solid #676161;
+    border-radius:10px
+}
+.content .back .boody .right  .sec2 .content .paragraph
+{
+    float: right;
+    width: 45%
+}
+
+.content .back .boody .right  .sec2 .content .paragraph .top
+{
+    margin-top: 0;
+    margin-bottom:5px;
+    color: #102f43;
+    text-transform:capitalize
+}
+.content .back .boody .right  .sec2 .content .paragraph p 
+{  
+   margin-top:0;
+    margin-bottom:0;
+    line-height: 1.5;
+    text-transform:capitalize
+}
+.content .back .boody .right  .sec2 .content .paragraph .down
+{
+    margin-top: 5px;
+    margin-bottom:0;
+    color: #102f43;
+    text-transform:capitalize;
+    cursor: pointer
+    
+}
+.border
+{
+    border-bottom:3px solid #e2e2e2;
+    margin-top: 50px;
+    margin-bottom:50px
+}
+
+/*strat med section*/
+.med .forma
+{
+    overflow: hidden
+}
+.med .right1
+{
+    overflow:hidden;
+    width:50%;
+    float: left
+}
+.med .right1 .icon
+{
+    width:15%;
+    float:left;
+    margin-right:10%;
+    margin-top:10px
+}
+.med .right1 .icon img
+{
+    max-width: 100%
+}
+.med .right1 .icon .text
+{
+    float:left;
+    
+}
+
+.med .right1 .list
+{
+    margin-left: 20px
+}
+.med .right1 .list i
+{
+    padding-right: 10px;
+    font-weight: normal
+}
+
+.med .forma2
+{
+    overflow: hidden;
+    border-left: 3px solid #ddd;
+    padding-left: 5%
+}
+.med .left1
+{
+    overflow:hidden;
+    float: left
+}
+.med .left1 .icon
+{
+     width:15%;
+    float:left;
+    margin-right:10%;
+    margin-top:10px
+}
+.med .left1 .icon img
+{
+    max-width: 100%
+}
+.med .left1 .icon .text
+{
+    float:left;
+    
+}
+
+.med .left1 .list
+{
+    margin-left: 20px
+}
+.med .left1 .list i
+{
+    padding-right: 10px;
+    font-weight: normal
+}
+/*end med section*/
+
+/*start web project*/
+
+.project h2
+{
+    color:#102f43;
+}
+
+.project .photo1 ,.photo2,.photo3
+{
+    
+    display:inline-block;
+    margin-right:25px;
+    border: 5px solid #676161;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.project .photo1 img
+{
+    width:100%
+}
+
+.project .photo2 img
+{
+    width:100%
+}
+.project .photo3 img
+{
+    width: 100%
+}
+
+.project p
+{
+    text-transform: capitalize;
+    font-weight:bold;
+    padding-top:20px;
+    cursor: pointer;
+    color:#102f43;
+}
+/*end web project*/
+
+/*end right section*/
+
+/*end content*/
+
+
+/*start footer*/
+.footer  .copyright
+{
+    background-color: #333;
+    color:#fff;
+    text-align:center;
+    color:#666666;
+    text-transform:capitalize;
+    padding:10px;
+    
+}
+
+
+
+.footer .copyright .container 
+{
+    
+    
+}
+
+
+/*end footer*/
+
+
+
+
+
+

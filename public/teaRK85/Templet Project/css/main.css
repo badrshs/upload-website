@@ -1,0 +1,62 @@
+body{
+    margin:0px;
+    padding:0px;
+    background: #353F40;
+    color: #eee;
+    font-family:"Helvetica Neue", Helvetica, Arial;
+}
+.bottom-bar {
+	font-family: Arial, sans-serif;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	padding: 10px;
+	font-size: 30px;
+	color: #fff;
+	background-color: #000;
+	text-align: center;
+}
+.hide-btn {
+	position: absolute;
+	top: -36px;
+	right: 100px;
+	height: 40px;
+	width: 40px;
+	line-height: 40px;
+	text-align: center;
+	background-color: #000;
+	cursor: pointer;
+    /*************** Start tables ***********************/
+    
+}
+
+
+.row [class^="col-"] {
+		padding-right: 7px;
+		padding-left: 7px;
+         
+    }
+.bottom-bar input
+{
+      padding: 24px 12px;
+    font-size: 30px;
+}
+/*********************** Start tables ************************/
+
+.container-fluid {
+    padding-right: 30px;
+    padding-left: 30px;
+    
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 20px;
+}
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+    border: 1px solid #000;
+}

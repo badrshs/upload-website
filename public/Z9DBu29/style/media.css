@@ -1,0 +1,67 @@
+@media (max-width:767px)
+{  
+    .container-fluid {
+    padding-left: 50px;
+    padding-right: 50px;
+        }
+    section h2{
+        font-size: 26px;
+    }
+    hr{
+        width:30%;
+    }
+    .cuda{
+        padding-top: 80px;
+        padding-bottom:30px;
+    }
+    .cuda .about_us{
+    margin-bottom: 30px; 
+    margin-top: 0;
+    }
+    .cuda button{
+        padding: 10px 20px;
+    }
+    .our_clints .row .img{
+    margin: auto;
+    float:none;
+    }
+    .our_clints .row .person{
+        text-align: center;
+        margin: auto;
+        float: none;
+        margin-top: 10px;
+    }
+    .contact_us input,textarea{
+        margin-bottom: 10px;
+    }
+    .contact_us .form-group{
+        margin-bottom: 5px;
+    }
+    .skills .row > div {
+        margin-bottom: 20px;
+    }
+    .our_portfolio button{
+        padding: 10px 9px;
+    }
+    .our_portfolio .row > div {
+    width: 70%;
+            }
+    .our_clints .row > div {
+    margin-bottom: 50px;
+    }
+}
+/*small screen*/
+@media (min-width:768px)and (max-width:991px)
+{
+    
+}
+/*medium screen*/
+@media (min-width:992px) and (max-width:1199)
+{
+    
+}
+/*large screen*/
+@media (min-width:1200px)
+{
+    
+}

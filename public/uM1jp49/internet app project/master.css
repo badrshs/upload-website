@@ -1,0 +1,20 @@
+html { 
+  background: URL(../images/nada.jpg)  no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+.content {
+	background-color:rgba(255,0,0,0.3);
+	     color: black;
+	     padding:80px;
+	     height:300 px;
+	     width:300px;
+		 margin: 100px auto;
+}
+
+.profile_pic {
+    border-radius: 50%;
+}

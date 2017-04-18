@@ -1,0 +1,117 @@
+@media(max-width:1199px){
+    .header .header-contact .contact-1{
+        text-align:left;
+        margin-right:5px;
+    }
+    .disease-sec .disease-post{
+        text-align:center;
+    }
+    .disease-sec .disease-post p{
+        margin-bottom:60px;
+    }
+    .testi-sec .testi-title h4{
+        margin-top:40px;
+    }
+    .rates-sec .rates-post-2{
+        margin-bottom:60px;
+    }
+}
+@media(max-width:991px){
+    .header .header-contact .logo img{
+        margin-left:auto;
+        margin-right:auto;
+    }
+    .service .service-post{
+        text-align:center;
+    }
+    .header .header-contact .contact-1{
+        margin-right:10px;
+    }
+    .header .header-contact .contact-1 a{
+        margin-bottom:90px;
+    }
+    .header .img-div img{
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+        top:0px;
+        margin-top:0px;
+        margin-bottom:30px;
+    }
+    .rates-sec .rates-post-2 h4{
+        margin-top:0px;
+    }
+    footer .arrow-to-top a{
+       right:20px;
+        width:30px;
+        height:30px;
+        font-size:13px;
+        line-height:26px;
+    }
+    .testi-sec{
+        text-align:center;
+    }
+    .header .header-content .post .icons{
+        margin-bottom:40px;
+    }
+    .rates-sec .rates-post-2{
+        margin-bottom:20px;
+    }
+}
+@media(max-width:580px){
+    .header .header-contact .contact-1 {
+        display:block;
+        margin-right:auto;
+        margin-left:auto;
+        text-align:center;
+    }
+    .header .header-contact .contact-1 .first{
+        margin-top:50px;
+    }
+    .header .header-contact .contact-1 .last{
+        margin-bottom:50px;
+    }
+    .header .header-contact .contact-1 a{
+        display:block;
+        margin-top:20px;
+        margin-bottom:20px;
+    }
+}
+@media(max-width:420px){
+    .header .header-content .post h4{
+        font-size:30px;
+    }
+    .header .header-content .post h3{
+        font-size:18px;
+    }
+    .header .header-content .post h5,.header .header-content .post p{
+        font-size:16px;
+    }
+    .header .header-content .post .icons a{
+        margin-right:5px;
+        width:45px;
+        height:45px;
+        line-height:45px;
+        font-size:16px;
+    }
+    .disease-sec .disease-post p{
+        font-size:14px;
+    }
+    .rates-sec .table-sec .table-1 h3{
+        font-size:14px;
+    }
+    .rates-sec .table-sec .table-1 ul li{
+        font-size:14px;
+    }
+}
+@media(max-width:340px){
+    .rates-sec .table-sec .table-1 h3{
+        font-size:12px;
+    }
+    .rates-sec .table-sec .table-1 ul li{
+        font-size:12px;
+    }
+    footer .post h3 a{
+        font-size:16px;
+    }
+}

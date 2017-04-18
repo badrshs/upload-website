@@ -1,0 +1,90 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    top: 5%;
+  }
+  50% {
+    top: 0%;
+  }
+  100% {
+    top: 5%;
+  }
+}
+@-moz-keyframes bounce {
+  0% {
+    top: 5%;
+  }
+  50% {
+    top: 0%;
+  }
+  100% {
+    top: 5%;
+  }
+}
+@keyframes bounce {
+  0% {
+    top: 5%;
+  }
+  50% {
+    top: 0%;
+  }
+  100% {
+    top: 5%;
+  }
+}
+html {
+  font-family: Montserrat;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #a5d2ff;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+svg {
+  position: fixed;
+  top: 50%;
+  left: -5%;
+  -webkit-transition: 0.2;
+  -moz-transition: 0.2;
+  transition: 0.2;
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  -o-transform: scale(0.9);
+  transform: scale(0.9);
+}
+@media(max-height: 750px) {
+  svg {
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    transform: scale(0.8);
+    left: -12%;
+  }
+}
+svg#cloud {
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  transform: scale(0.8);
+  top: 5%;
+  left: 0%;
+  -webkit-animation: bounce 4s infinite linear;
+  -moz-animation: bounce 4s infinite linear;
+  animation: bounce 4s infinite linear;
+}

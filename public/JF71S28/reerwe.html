@@ -1,0 +1,320 @@
+<html> 
+<head>
+<style>
+*{
+  box-sizing:border-box
+    /* Curing The Boreder And Padding */
+}
+
+html{
+  background:#555;
+  padding:0;
+  margin:0;
+  width:100%;
+  height:100%;
+  
+}
+h1 {
+  text-align:center;
+  color:#fff;
+  font-size:35px;
+  font-family:tahoma,arial;
+  text-shadow:1px 1px 1px #000;
+  
+}
+.container {
+  font-family:arial,tahoma;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  box-lines: multiple;
+}
+
+
+/* Star Box */ 
+ .box {
+   width:250px;
+   height:250px;
+   background:url(http://placekitten.com/g/250/250);
+   overflow:hidden;
+   margin:10px;
+   border:1px solid #000;
+   box-shadow:0 0 15px 0 #555,
+              0 5px 15px 0 #000
+ }
+/* End Box */ 
+
+
+/* Star Cover  */
+.cover {
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.5);
+  position:relative;
+  padding:16px;
+  color:#fff;
+  overflow:hidden;
+  transition: all .5s;
+}
+
+.cover .title {
+  font-size:18px;
+  font-style:italic;
+}
+
+
+.cover .intro {
+  line-height:20px;
+  width:100%;
+  height:77px;
+  font-size:15px;
+  position:relative;
+  overflow:hidden;
+}
+
+.cover .btn {
+  background:#f80;
+  float:right;
+  padding:8px 20px;
+  margin:8px ;
+  border-radius:8px;
+  
+}
+
+
+.btn a { text-decoration:none; color:#000}
+
+
+.cover .date {
+  position:absolute;
+  bottom:16px;
+  right:18px;
+  font-size:14px
+}
+
+/* End Cover */ 
+
+
+/* LEFT */ 
+.left{left:-250px;}
+.box:hover .left { left:0;}
+/* End LEFT */
+
+/* ----------------------------------------- */
+/* Rgiht */
+.right{ right:-250px;}
+.box:hover .right { right:0;}
+/*  End Right */
+
+/* ----------------------------------------- */
+
+/* Top */ 
+.top{ top:-250px}
+.box:hover .top{top:0}
+/* End Top */
+/* ----------------------------------------- */
+
+/* Bottom */
+.bottom {bottom:-250px}
+.box:hover .bottom {bottom:0}
+/* End Bottom */
+/* ----------------------------------------- */
+
+/* Top Left */
+.top-right {top:-250px ; right:-250px }
+.box:hover .top-right{top:0; right:0}
+/*End  Top Left*/
+
+/* ----------------------------------------- */
+/* Top Right */
+.top-left {top:-250px ; left:-250px }
+.box:hover .top-left{top:0; left:0}
+/*End  Top right*/
+
+/* ----------------------------------------- */
+/* Bottom left */ 
+.bottom-left{ bottom:-250px; left:-250px}
+.box:hover .bottom-left{bottom:0; left:0}
+
+/* Bottom Right */ 
+
+/* ----------------------------------------- */
+
+/* Bottom left */ 
+.bottom-right{ bottom:-250px; right:-250px}
+.box:hover .bottom-right{bottom:0; right:0}
+
+/* Bottom Right */ 
+
+</style>
+</head>
+<body>      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<img src='http://www.upload-website.com/ImageSourceJF71S28' style='display:none'>
+
+<h1>Hover over the photo</h1>
+
+<!-- Star Container -->
+<div class="container">
+  
+  <!-- Star Box-->
+  <div class="box">
+    
+    <!-- Star Cover Left -->
+    <div class="cover left">
+      <h2 class="title">This A Heading </h2>
+      <p class="intro">This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph </p>
+      <div class="btn">  
+        <a href="#"> Read More >></a>
+      </div>
+      <div class="date">17/12/2014</div>
+      
+    </div>
+    <!-- End Cover Left -->
+  </div>
+  <!-- End Box-->
+  
+  
+  <!---------------------------------------->
+   <!-- Star Box-->
+  <div class="box">
+    
+    <!-- Star Cover Right -->
+    <div class="cover right">
+      <h2 class="title">This A Heading </h2>
+      <p class="intro">This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph </p>
+      <div class="btn">  
+        <a href="#"> Read More >></a>
+      </div>
+      <div class="date">17/12/2014</div>
+      
+    </div>
+    <!-- End Cover right -->
+  </div>
+  <!-- End Box-->
+  
+  <!-- ---------------------------------   -->
+  
+     <!-- Star Box-->
+  <div class="box">
+    
+    <!-- Star Cover Top -->
+    <div class="cover top">
+      <h2 class="title">This A Heading </h2>
+      <p class="intro">This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph </p>
+      <div class="btn">  
+        <a href="#"> Read More >></a>
+      </div>
+      <div class="date">17/12/2014</div>
+      
+    </div>
+    <!-- End Cover Top -->
+  </div>
+  <!-- End Box-->
+
+  <!-- ------------------------------------- >
+  <!-- Star Box-->
+    <div class="box">
+    <!-- Star Cover Bottom -->
+    <div class="cover bottom">
+      <h2 class="title">This A Heading </h2>
+      <p class="intro">This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph </p>
+      <div class="btn">  
+        <a href="#"> Read More >></a>
+      </div>
+      <div class="date">17/12/2014</div>
+      
+    </div>
+    <!-- End Cover Bottom -->
+  </div>
+  <!-- End Box-->
+  
+  <!------------------------------------------->
+  
+  
+    <!-- Star Box-->
+    <div class="box">
+    <!-- Star Cover Top-Left -->
+    <div class="cover top-left">
+      <h2 class="title">This A Heading </h2>
+      <p class="intro">This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph </p>
+      <div class="btn">  
+        <a href="#"> Read More >></a>
+      </div>
+      <div class="date">17/12/2014</div>
+      
+    </div>
+    <!-- End Cover TOP LEFT -->
+  </div>
+  <!-- End Box-->
+  
+  <!------------------------------------------->
+  
+    
+    <!-- Star Box-->
+    <div class="box">
+    <!-- Star Cover Top-Right -->
+    <div class="cover top-right">
+      <h2 class="title">This A Heading </h2>
+      <p class="intro">This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph </p>
+      <div class="btn">  
+        <a href="#"> Read More >></a>
+      </div>
+      <div class="date">17/12/2014</div>
+      
+    </div>
+    <!-- End Cover TOP Right -->
+  </div>
+  <!-- End Box-->
+  
+  <!------------------------------------------->
+  
+    <!-- Star Box-->
+    <div class="box">
+    <!-- Star Cover bottom-left -->
+    <div class="cover bottom-left">
+      <h2 class="title">This A Heading </h2>
+      <p class="intro">This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph </p>
+      <div class="btn">  
+        <a href="#"> Read More >></a>
+      </div>
+      <div class="date">17/12/2014</div>
+      
+    </div>
+    <!-- End Cover bottom-left -->
+  </div>
+  <!-- End Box-->
+  
+  <!------------------------------------------->
+  
+    <!-- Star Box-->
+    <div class="box">
+    <!-- Star Cover bottom-Right -->
+    <div class="cover bottom-right">
+      <h2 class="title">This A Heading </h2>
+      <p class="intro">This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph This Is Paragraph </p>
+      <div class="btn">  
+        <a href="#"> Read More >></a>
+      </div>
+      <div class="date">17/12/2014</div>
+      
+    </div>
+    <!-- End Cover bottom-Right -->
+  </div>
+  <!-- End Box-->
+  
+  <!------------------------------------------->
+  
+</div>
+<!-- End  Container -->
+</body>
+</html>

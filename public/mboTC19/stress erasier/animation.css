@@ -1,0 +1,94 @@
+body{
+    font-family: serif;
+    overflow: hidden
+}
+button{
+    width: 160px;
+    height: 40px;
+    background-color: rgba(37, 36, 136, 0.17);
+    color: white;
+    margin-top: 50px
+}
+.nav{
+    background-image: url(http://res.cloudinary.com/dyhahwczx/image/upload/v1492356009/meteor-1869692_960_720_n2apro.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    position: relative; 
+    height: 100%
+}
+.h1{
+    color: white;
+    text-align: center;
+    position: relative;
+    top: 200px;
+    font-size: 100px;
+    font-weight: 900;
+    line-height: 50px
+}
+h1{
+    line-height: 80px;
+    font-size: 70px
+}
+.stress{
+    width: 350px;
+    height: 40px;
+    margin-top: 250px;
+    font-size: 25px;
+    text-align: center
+}
+.handle{
+    width: 100%;
+    text-align: center
+}
+.proplem{
+    color: #ffd600;
+    font-weight: 900;
+    font-size: 100px;
+    display: none
+}
+.ezbot{
+    width: 100%;
+    text-align: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    top: 80%;
+    font-size: 100;
+    font-weight: 900;  
+}
+.motivate{
+    width: 100%;
+    text-align: center;
+    font-size: 140px;
+    color: white;
+    font-weight: 900;
+    position: fixed;
+    top:20%;
+    display: none
+}
+.change{
+    font-size: 0px;
+    animation-name: change;
+    animation-iteration-count: 1;
+    animation-duration: 20s
+}
+@keyframes change {
+    0%{
+        font-size: 100px
+    }
+    100%{
+        font-size: 0px
+    }
+}
+footer{
+    width: 100%;
+    height: 50px;
+    background-color: aqua;
+    position: absolute;
+    bottom: 0px;
+    background-color: #191f1f;
+    color: white;
+    text-align: center;
+    display: none;
+}

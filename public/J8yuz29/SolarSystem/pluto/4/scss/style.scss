@@ -1,0 +1,29 @@
+// DEMO Styles
+html,body {height: 100%;}body{display: flex;flex-direction:column;align-items: center;justify-content:center;width:100%;background:#7b3962;}svg{max-width: 100%;}
+
+
+// REQUIRED Styles
+// Updated post CSS-Tricks article
+// http://css-tricks.com/polylion
+// ===========================================
+
+$cat-height: 1500px;
+
+svg polygon {
+  opacity: 0;
+
+  .no-js & {
+    opacity: 1;
+  }
+}
+
+.cat {
+  height: $cat-height;
+
+  > polygon {
+    .no-cssanimations & {
+      transform: scale(2);
+      opacity: 1;
+    }
+  }
+}

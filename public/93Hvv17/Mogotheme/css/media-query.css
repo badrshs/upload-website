@@ -1,0 +1,1036 @@
+@media(max-width:1199px){
+    .navigation .navigation-post p{
+        font-size:60px !important;
+    }
+    .test-sec-2 .test-sec-2-post p{
+        margin-top:110px !important;
+        margin-bottom:15px !important;
+    }
+    .work-sec .work-title p{
+        margin-left:0px !important;
+        margin-right:0px !important;
+    }
+    .test-sec-human .test-post-5 p{
+        font-size:20px !important;
+    }
+    .blog-sec .blog-img figure figcaption .blog-img-post {
+    width:60px !important;
+    margin-left:30px !important;
+    margin-top:45%;
+}
+.contacts-sec .contact-sec-2 .blog-img-post p{
+    margin-top:30px !important;
+}
+.contacts-sec .contact-sec-2 .blog-img-post h6{
+    margin-bottom:90px !important;
+}
+.contacts-sec .contact-post{
+    text-align:center;
+}
+.contacts-sec .contact-icons{
+    text-align:center;
+}
+.blog-sec .blog-content{
+    text-align:center;
+}
+.blog-sec .blog-rate{
+    text-align:center;
+}
+.blog-sec .blog-img figure figcaption .blog-img-post p{
+    padding-bottom:16px !important;
+}
+.blog-sec .blog-img figure figcaption .blog-img-post h3{
+    margin-top:16px !important;
+}
+    .people-sec .people-post{
+        text-align:center;
+    }
+    .people-sec .people-post .divider{
+        margin-left:auto;
+        margin-right:auto;
+    }
+    .service-sec figure{
+    margin-bottom:70px !important;
+}
+.team-sec figure figcaption .fig-icons{     
+       margin-top:calc(72% - 55px);
+    }
+    .team-sec .team-title p{
+        margin-left:0px !important;
+        margin-right:0px !important;
+    }
+    .navigation .navigation-post h3,.navigation .navigation-post h4{
+        font-size:120px !important;
+    }
+    .about-sec figure figcaption .pic-info{
+    margin-top:22%;
+}
+.about-sec .about-title p{
+    margin-left:0px !important;
+    margin-right:0px !important;
+}
+.work-sec .work-post{
+    text-align:center;
+}
+.service-sec .serv-title p{
+    margin-right:0px !important;
+    margin-left:0px !important;
+}
+}
+@media(max-width:1160px){
+    #demo-b{
+        margin-right:80px !important;
+    }
+}
+@media(max-width:1070px){
+    #demo-b{
+        margin-right:60px !important;
+    }
+    .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand{
+        margin-left:50px !important;
+    }
+}
+@media(max-width:1120px){
+    .work-sec figure figcaption .work-icon{
+        margin-top:20% !important;
+    }
+}
+@media(max-width:1070px){
+    .work-sec figure:first-of-type figcaption .work-icon
+    {
+        margin-top:22% !important;
+    }
+    .work-sec figure:nth-of-type(2) figcaption .work-icon
+    {
+        margin-top:22% !important;
+    }
+    .work-sec figure:nth-of-type(3) figcaption .work-icon{
+        margin-top:22% !important;
+    }
+    .work-sec figure:nth-of-type(4) figcaption .work-icon{
+        margin-top:22% !important;
+    }
+    .work-sec figure:nth-of-type(5) figcaption .work-icon{
+        margin-top:22% !important;
+    }
+    .work-sec figure:nth-of-type(6) figcaption .work-icon{
+        margin-top:22% !important;
+    }
+    .work-sec figure:last-of-type figcaption .work-icon{
+        margin-top:22% !important;
+    }
+    .work-sec figure figcaption .work-icon h5{
+        margin-bottom:10px !important;
+    }
+}
+@media(max-width:991px){
+   .navigation .navigation-post p{
+        font-size:50px !important;
+        margin-top:190px !important;
+    }
+    .test-sec-2 .test-sec-2-post p{
+        margin-top:110px !important;
+        font-size:20px;
+    }
+    .test-sec-human .test-post-5 p{
+        font-size:16px !important;
+        margin-left:30px !important;
+    }
+    .test-sec-human .test-post-5 .divider{
+        margin-left:30px !important;
+    }
+    .contacts-sec .contact-sec-2 .blog-img-post p{
+    margin-top:10px !important;
+}
+.contacts-sec .contact-sec-2 .blog-img-post h6{
+    margin-bottom:60px !important;
+}
+    .blog-sec .blog-img figure figcaption .blog-img-post {
+    width:60px !important;
+    margin-left:30px !important;
+    margin-top:42%;
+}
+    .team-sec figure figcaption .fig-icons{     
+       margin-top:calc(69% - 55px);
+    }
+    .work-sec figure:first-of-type figcaption .work-icon
+    {
+        margin-top:20% !important;
+    }
+    .work-sec figure:nth-of-type(2) figcaption .work-icon
+    {
+        margin-top:18% !important;
+    }
+    .work-sec figure:nth-of-type(3) figcaption .work-icon{
+        margin-top:18% !important;
+    }
+    .work-sec figure:nth-of-type(4) figcaption .work-icon{
+        margin-top:18% !important;
+    }
+    .work-sec figure:nth-of-type(5) figcaption .work-icon{
+        margin-top:18% !important;
+    }
+    .work-sec figure:nth-of-type(6) figcaption .work-icon{
+        margin-top:18% !important;
+    }
+    .work-sec figure:last-of-type figcaption .work-icon{
+        margin-top:18% !important;
+    }
+    .navigation .navigation-post h3,.navigation .navigation-post h4{
+        font-size:100px !important;
+    } 
+    .team-sec .col-lg-4 {
+        padding-right:130px !important;
+        padding-left:130px !important;
+    }
+    .about-sec figure figcaption .pic-info{
+    margin-top:24%;
+}
+.service-sec figure{
+    margin-bottom:70px !important;
+}
+.number-sec .number-post span{
+    padding-top:60px !important;
+}
+.number-sec .number-post p{
+    margin-bottom:60px !important;
+}
+.number-sec .first p{
+    margin-bottom:40px !important;
+}
+}
+@media(max-width:915px){
+    #demo-b{
+        margin-right:40px !important;
+    }
+    .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand{
+        margin-left:30px !important;
+    }
+    .navigation header .navbar-default .navbar-nav > li > a{
+        padding:15px 13px !important;
+    }
+}
+@media(max-width:865px){
+    #demo-b{
+        margin-right:20px !important;
+    }
+    .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand{
+        margin-left:30px !important;
+    }
+    .navigation header .navbar-default .navbar-nav > li > a{
+        padding:15px 13px !important;
+    }
+}
+@media(max-width:825px){
+    #demo-b{
+        margin-right:10px !important;
+    }
+    .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand{
+        margin-left:10px !important;
+        padding:15px 5px !important;
+    }
+    .navigation header .navbar-default .navbar-nav > li > a{
+        padding:15px 13px !important;
+    }
+    .work-sec figure:first-of-type figcaption .work-icon
+    {
+        margin-top:16% !important;
+    }
+    .work-sec figure:nth-of-type(2) figcaption .work-icon
+    {
+        margin-top:16% !important;
+    }
+    .work-sec figure:nth-of-type(3) figcaption .work-icon{
+        margin-top:16% !important;
+    }
+    .work-sec figure:nth-of-type(4) figcaption .work-icon{
+        margin-top:16% !important;
+    }
+    .work-sec figure:nth-of-type(5) figcaption .work-icon{
+        margin-top:16% !important;
+    }
+    .work-sec figure:nth-of-type(6) figcaption .work-icon{
+        margin-top:16% !important;
+    }
+    .work-sec figure:last-of-type figcaption .work-icon{
+        margin-top:16% !important;
+    }
+}
+@media(max-width:790px){
+    #demo-b{
+        margin-right:20px !important;
+    }
+    .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand{
+        margin-left:10px !important;
+        padding:15px 0px !important;
+    }
+    .navigation header .navbar-default .navbar-nav > li > a{
+        padding:15px 10px !important;
+    }
+    .work-sec figure:first-of-type figcaption .work-icon
+    {
+        margin-top:30% !important;
+    }
+    .work-sec figure:nth-of-type(2) figcaption .work-icon
+    {
+        margin-top:30% !important;
+    }
+    .work-sec figure:nth-of-type(3) figcaption .work-icon{
+        margin-top:30% !important;
+    }
+    .work-sec figure:nth-of-type(4) figcaption .work-icon{
+        margin-top:30% !important;
+    }
+    .work-sec figure:nth-of-type(5) figcaption .work-icon{
+        margin-top:30% !important;
+    }
+    .work-sec figure:nth-of-type(6) figcaption .work-icon{
+        margin-top:30% !important;
+    }
+    .work-sec figure:last-of-type figcaption .work-icon{
+        margin-top:30% !important;
+    }
+}
+@media(max-width:767px){
+    .navigation .div-1-p{
+        text-align:center !important;
+    }
+    .test-sec-2 .test-sec-2-post p{
+        margin-top:110px !important;
+        font-size:18px !important;
+    }
+    .navigation .navigation-post p{
+        font-size:50px !important;
+        margin-top:190px !important;
+    }
+    .work-sec .col-lg-3{
+        padding-left:110px !important;
+        padding-right:110px !important;
+    }
+    .contacts-sec .insta-title {
+        text-align:center;
+    }
+    .test-sec-human .test-icon i {
+    display: inline-block;
+    width: 110px;
+    height: 110px;
+    line-height: 110px;
+}
+.team-sec .team-title h4{
+    margin-top:50px !important;
+}
+    .contacts-sec .col-lg-3{
+        text-align:center;;
+    }
+    .contacts-sec .contact-sec-2 .blog-img-post {
+        text-align:center;
+    }
+    .contacts-sec .contact-sec-2 .blog-div {
+        text-align:center;
+    }
+    .blog-sec .blog-img figure figcaption .blog-img-post {
+    width:60px !important;
+    margin-left:30px !important;
+    margin-top:41%;
+}
+.contacts-sec .insta-title p{
+    margin-top:0px !important;
+}
+.contacts-sec .contact-sec-2 .blog-div h5{
+    margin-top:0px !important;
+}
+    .work-sec figure{
+        margin-bottom:60px !important;
+    }
+    .team-sec .col-lg-4 {
+        padding-right:100px !important;
+        padding-left:100px !important;
+    }
+    .navigation header .navbar-nav > li{
+        background:rgba(231,168,124,.95);
+    }
+    .navigation header .navbar-nav > li > a{
+        margin:0px !important;
+        padding-top:10px !important;
+        padding-bottom:10px !important;
+    }
+    .navigation header .navbar-default,.navigation header .collapse{
+        border:none;
+        box-shadow:0px 0px 0px transparent !important;
+        -o-box-shadow:0px 0px 0px transparent !important;
+        -moz-box-shadow:0px 0px 0px transparent !important;
+        -webkit-box-shadow:0px 0px 0px transparent !important;
+    }
+    .navigation header .navbar-default .navbar-nav > li > a {
+    padding: 10px 10px !important;
+}
+    .navigation header .navbar-default .navbar-nav:last-child > li:first-child > a,.navigation header .navbar-default .navbar-nav:last-child > li:first-child > a:hover{
+    border:none !important;
+    padding: 10px 10px !important;
+    margin:0px !important;
+}
+.navigation #demo-b{
+    float:left;
+    margin:0px !important;
+    padding:5px 15px 5px 15px!important; 
+}
+.navigation header .navbar-default .navbar-nav:first-child{
+    margin-top:20px !important;
+    background: rgba(231,168,124,1) !important;
+}
+.navigation header .navbar-default .navbar-nav:first-child > li:last-child{
+    background: rgba(231,168,124,1) !important;
+}
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand{
+    margin-left:100px !important;
+}
+.navigation .navbar-default .navbar-collapse, .navbar-default .navbar-form{
+    border:none !important;
+    box-shadow:0px 0px 0px transparent !important;
+        -o-box-shadow:0px 0px 0px transparent !important;
+        -moz-box-shadow:0px 0px 0px transparent !important;
+        -webkit-box-shadow:0px 0px 0px transparent !important;
+}
+.navigation .navbar-default .navbar-collapse .navbar-nav{
+    margin-top:0px !important;
+    margin-bottom:0px !important;
+    margin-left:40px !important;
+    margin-right:40px !important;
+}
+.number-sec .number-post span{
+    font-size:60px !important;
+}
+.number-sec .number-post p{
+    font-size:13px !important;
+}
+.blog-sec .blog-img figure figcaption .blog-img-post {
+    width:60px !important;
+    margin-left:15px !important;
+    margin-top:40%;
+}
+}
+@media(max-width:660px){
+    .blog-sec .blog-img figure figcaption .blog-img-post {
+    width:60px !important;
+    margin-left:15px !important;
+    margin-top:40%;
+}
+.test-sec-2 .test-sec-2-post p{
+    font-size:16px !important;
+}
+.test-sec-2 .test-sec-2-post h6{
+    font-size:18px !important;
+}
+}
+@media(max-width:640px){
+    .navigation .navigation-post p{
+        font-size:40px !important;
+        margin-top:130px !important;
+    }
+    .test-sec-human .test-post-5 p{
+        font-size:14px !important;
+    }
+    .blog-sec .blog-img figure figcaption .blog-img-post {
+    width:60px !important;
+    margin-left:10px !important;
+    margin-top:40%;
+}
+    .team-sec figure figcaption .fig-icons{     
+       margin-top:calc(70% - 55px);
+    }
+    .navigation .navigation-post h3,.navigation .navigation-post h4{
+        font-size:90px !important;
+    }
+    .feature-sec img{
+        margin-bottom:-40px !important;
+    }
+    .dropdown-sec .dropdown-toggle .icon-arrow-_-down{
+        font-size:13px !important;
+        margin-right: 30px !important;
+    }
+    .work-sec figure:first-of-type figcaption .work-icon
+    {
+        margin-top:28% !important;
+    }
+    .work-sec figure:nth-of-type(2) figcaption .work-icon
+    {
+        margin-top:28% !important;
+    }
+    .work-sec figure:nth-of-type(3) figcaption .work-icon{
+        margin-top:28% !important;
+    }
+    .work-sec figure:nth-of-type(4) figcaption .work-icon{
+        margin-top:28% !important;
+    }
+    .work-sec figure:nth-of-type(5) figcaption .work-icon{
+        margin-top:28% !important;
+    }
+    .work-sec figure:nth-of-type(6) figcaption .work-icon{
+        margin-top:28% !important;
+    }
+    .work-sec figure:last-of-type figcaption .work-icon{
+        margin-top:28% !important;
+    }
+}
+@media(max-width:630px){
+    .test-sec-2 .test-sec-2-post p{
+        font-size:14px !important;
+        margin-top:110px !important;
+    }
+}
+@media(max-width:600px){
+    .blog-sec .blog-img figure figcaption .blog-img-post {
+    width:60px !important;
+    margin-left:10px !important;
+    margin-top:39% !important;
+}
+@media(max-width:584px){
+    .test-sec-human .test-post-5 p{
+        margin-bottom:5px !important;
+    }  
+}
+@media(max-width:570px){
+    .number-sec .number-post span{
+        padding-top:45px !important;
+        font-size:50px !important;
+    }
+    .test-sec-2 .test-sec-2-post{
+        margin-left:20px !important;
+    }
+    .test-sec-2 .test-sec-2-post h6{
+        font-size:14px !important;
+    }
+     .test-sec-2 .test-sec-2-post p{
+        font-size:12px !important;
+        margin-top:110px !important;
+    }
+    .number-sec .number-post p{
+        font-size:12px !important;
+        margin-bottom:40px !important;
+    }
+    .number-sec .first p{
+        margin-bottom:10px !important;
+    }
+    @media(max-width:600px){
+    .blog-sec .blog-img figure figcaption .blog-img-post {
+    width:60px !important;
+    margin-left:10px !important;
+    margin-top:38% !important;
+}
+}
+@media(max-width:560px){
+    .team-sec figure figcaption .fig-icons{     
+       margin-top:calc(71% - 55px);
+    }
+    .team-sec .col-lg-4 {
+        padding-right:50px !important;
+        padding-left:50px !important;
+    }
+    .work-sec figure:first-of-type figcaption .work-icon
+    {
+        margin-top:28% !important;
+    }
+    .work-sec figure:nth-of-type(2) figcaption .work-icon
+    {
+        margin-top:28% !important;
+    }
+    .work-sec figure:nth-of-type(3) figcaption .work-icon{
+        margin-top:28% !important;
+    }
+    .work-sec figure:nth-of-type(4) figcaption .work-icon{
+        margin-top:28% !important;
+    }
+    .work-sec figure:nth-of-type(5) figcaption .work-icon{
+        margin-top:28% !important;
+    }
+    .work-sec figure:nth-of-type(6) figcaption .work-icon{
+        margin-top:28% !important;
+    }
+    .work-sec figure:last-of-type figcaption .work-icon{
+        margin-top:28% !important;
+    }
+    .work-sec .col-lg-3{
+        padding-left:80px !important;
+        padding-right:80px !important;
+    }
+    @media(max-width:600px){
+    .blog-sec .blog-img figure figcaption .blog-img-post {
+    width:60px !important;
+    margin-left:10px !important;
+    margin-top:37% !important;
+}
+}
+@media(max-width:540px){
+    .navigation .navigation-post p{
+        font-size:40px !important;
+    }
+    .navigation .navigation-post h3,.navigation .navigation-post h4{
+        font-size:80px !important;
+    }
+    .test-sec-human .test-post-5 p{
+        font-size:14px !important;
+        margin-bottom:10px !important;
+    }
+    .test-sec-human .test-post-5 h5{
+        font-size:20px !important;
+    }
+}
+@media(max-width:520px){
+    .test-sec-human .test-icon i {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+}
+.test-sec-human .test-post-5 p{
+    font-size:12px !important;
+}
+}
+@media(max-width:500px){
+ @media(max-width:600px){
+    .blog-sec .blog-img figure figcaption .blog-img-post {
+    width:60px !important;
+    margin-left:10px !important;
+    margin-top:35% !important;
+}   
+.test-sec-2 .test-sec-2-post p{
+        font-size:10px !important;
+        margin-top:110px !important;
+    }
+    .test-sec-2 .test-sec-2-img{
+        margin-top:110px !important;
+    }
+}
+
+@media(max-width:495px){
+    .number-sec .number-post p{
+        font-size:9px !important;
+    }
+    .work-sec .col-lg-3{
+        padding-left:60px !important;
+        padding-right:60px !important;
+    }
+}
+@media(max-width:490px){
+    .navigation .navigation-post p{
+        font-size:30px !important;
+    }
+    .navigation .navigation-post h3,.navigation .navigation-post h4{
+        font-size:70px !important;
+    }
+    .feature-sec img{
+        margin-bottom:-30px !important;
+    }
+}
+@media(max-width:450px){
+    .number-sec .number-post span{
+      font-size:40px !important;  
+    }
+    .work-sec .col-lg-3{
+        padding-left:40px !important;
+        padding-right:40px !important;
+    }
+    .test-sec-2 .test-sec-2-img{
+        margin-top:100px !important;
+    }
+}
+@media(max-width:680px){
+    .test-sec-2 .test-sec-2-post p{
+        margin-top:90px !important;
+        font-size:16px !important;
+    }
+}
+@media(max-width:660px){
+    .blog-sec .blog-img figure figcaption .blog-img-post {
+    width:60px !important;
+    margin-left:10px !important;
+    margin-top:33% !important;
+} 
+@media(max-width:435px){
+    .team-sec .col-lg-4 {
+        padding-right:20px !important;
+        padding-left:20px !important;
+    }
+    .blog-sec .blog-img figure figcaption .blog-img-post {
+    width:60px !important;
+    margin-left:10px !important;
+    margin-top:31% !important;
+}
+.test-sec-2 .test-sec-2-img{
+        margin-top:110px !important;
+    }
+}
+@media(max-width:420px){
+    .navigation .navigation-post p{
+        font-size:30px !important;
+    }
+    .navigation .navigation-post h3,.navigation .navigation-post h4{
+        font-size:60px !important;
+    }
+    .service-sec figure figcaption i{
+        margin-top: calc(40% - 50px) !important;
+    }
+    .test-sec-human{
+        display:none !important;
+    }
+}
+@media(max-width:410px){
+    .number-sec .number-post span{
+        padding-top:30px !important;
+    }
+    .number-sec .number-post p{
+        margin-bottom:25px !important;
+    }
+    .number-sec .first p{
+        margin-bottom:0px !important;
+    }
+    .work-sec .col-lg-3{
+        padding-left:35px !important;
+        padding-right:35px !important;
+    }
+    .blog-sec .blog-img figure figcaption .blog-img-post {
+    width:60px !important;
+    margin-left:10px !important;
+    margin-top:29% !important;
+}
+
+
+@media(max-width:400px){
+    .feature-sec img{
+        margin-bottom:-20px !important;
+    }
+    .test-sec-2 .test-sec-2-img{
+        margin-top:100px !important;
+    }
+    .test-sec-2 .test-sec-2-post p{
+        font-size:12px !important;
+    }
+    .work-sec .col-lg-3{
+        padding-left:20px !important;
+        padding-right:20px !important;
+    }
+}
+@media(max-width:390px){
+.navigation .navbar-default .navbar-collapse .navbar-nav{
+    margin-top:0px !important;
+    margin-bottom:0px !important;
+    margin-left:20px !important;
+    margin-right:20px !important;
+}    
+.work-sec figure{
+    margin-bottom:20px !important;
+}
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand{
+    margin-left:60px !important;
+}
+.about-sec figure figcaption .pic-info{
+    margin-top:21%;
+}
+.work-sec .col-lg-3{
+        padding-left:15px !important;
+        padding-right:15px !important;
+    }
+}
+@media(max-width:388px){
+    .number-sec .number-post span{
+        padding-top:20px !important;
+    }
+    .number-sec .number-post p{
+        margin-bottom:20px !important;
+    }
+    .number-sec .second p{
+        margin-bottom:27px !important;
+    }
+    .number-sec .last p{
+        margin-bottom:27px !important;
+    }
+    .number-sec .number-post:nth-last-child(2) p{
+        margin-bottom:20px !important;
+    }
+}
+@media(max-width:380px){
+    .blog-sec .blog-img figure figcaption .blog-img-post {
+    width:60px !important;
+    margin-left:5px !important;
+    margin-top:27% !important;
+}
+@media(max-width:350px){
+    .blog-sec .blog-img figure figcaption .blog-img-post {
+    width:60px !important;
+    margin-left:5px !important;
+    margin-top:25% !important;
+}
+.test-sec-2{
+    display:none !important;
+}
+}
+@media(max-width:344px){
+   .number-sec .number-post p{
+        margin-bottom:15px !important;
+    } 
+    .number-sec .number-post span{
+        font-size:30px !important;
+    }
+    .number-sec .last p{
+        margin-bottom:25px !important;
+    }
+    .number-sec .number-post p{
+        font-size:9px !important;
+    }
+    .dropdown-sec .dropdown-toggle .icon-arrow-_-down{
+        font-size:10px !important;
+        margin-right: 30px !important;
+    }
+    .service-sec figure figcaption i{
+        margin-top: calc(42% - 50px) !important;
+    }
+    
+}
+@media(max-width:330px){
+    .blog-sec .blog-img figure figcaption .blog-img-post {
+    width:50px !important;
+    margin-left:0px !important;
+    margin-top:27% !important;
+}
+.blog-sec .blog-img figure figcaption .blog-img-post h3 {
+    margin-top: 10px !important;
+}
+.blog-sec .blog-img figure figcaption .blog-img-post p {
+    padding-bottom: 10px !important;
+}
+}
+@media(max-width:312px){
+    .number-sec .number-post p {
+    font-size: 8px !important;
+}
+.number-sec .number-post p{
+    margin-bottom:20px !important;
+}
+.number-sec .second p{
+    margin-bottom:25px !important;
+}
+.number-sec .last p{
+    margin-bottom:25px !important;
+}
+.blog-sec .blog-img figure figcaption .blog-img-post {
+    width:50px !important;
+    margin-left:0px !important;
+    margin-top:25% !important;
+}
+}
+@media(max-width:295px){
+    .blog-sec .blog-img figure figcaption .blog-img-post {
+    width:50px !important;
+    margin-left:0px !important;
+    margin-top:23% !important;
+}
+}
+@media(max-width:280px){
+.navigation .navbar-default .navbar-collapse .navbar-nav{
+    margin-top:0px !important;
+    margin-bottom:0px !important;
+    margin-left:10px !important;
+    margin-right:10px !important;
+}    
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand{
+    margin-left:40px !important;
+}
+.feature-sec img{
+    margin-bottom:-10px !important;
+}
+}
+@media(max-width:370px){
+    .about-sec figure figcaption .pic-info{
+    margin-top:23% !important;
+}
+.team-sec figure figcaption .fig-icons{     
+       margin-top:calc(73% - 55px);
+    }
+}
+@media(max-width:350px){
+    .navigation .navigation-post p{
+        font-size:25px !important;
+    }
+    .work-sec .col-lg-3 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+    .navigation .navigation-post h3,.navigation .navigation-post h4{
+        font-size:50px !important;
+    }
+    .team-sec figure figcaption .fig-icons{     
+       margin-top:calc(74% - 55px);
+    }
+    .work-sec figure:first-of-type figcaption .work-icon
+    {
+        margin-top:26% !important;
+    }
+    .work-sec figure:nth-of-type(2) figcaption .work-icon
+    {
+        margin-top:26% !important;
+    }
+    .work-sec figure:nth-of-type(3) figcaption .work-icon{
+        margin-top:26% !important;
+    }
+    .work-sec figure:nth-of-type(4) figcaption .work-icon{
+        margin-top:26% !important;
+    }
+    .work-sec figure:nth-of-type(5) figcaption .work-icon{
+        margin-top:26% !important;
+    }
+    .work-sec figure:nth-of-type(6) figcaption .work-icon{
+        margin-top:26% !important;
+    }
+    .work-sec figure:last-of-type figcaption .work-icon{
+        margin-top:26% !important;
+    }
+}
+@media(max-width:330px){
+    .work-sec figure:first-of-type figcaption .work-icon
+    {
+        margin-top:25% !important;
+    }
+    .work-sec figure:nth-of-type(2) figcaption .work-icon
+    {
+        margin-top:25% !important;
+    }
+    .work-sec figure:nth-of-type(3) figcaption .work-icon{
+        margin-top:25% !important;
+    }
+    .work-sec figure:nth-of-type(4) figcaption .work-icon{
+        margin-top:25% !important;
+    }
+    .work-sec figure:nth-of-type(5) figcaption .work-icon{
+        margin-top:25% !important;
+    }
+    .work-sec figure:nth-of-type(6) figcaption .work-icon{
+        margin-top:25% !important;
+    }
+    .work-sec figure:last-of-type figcaption .work-icon{
+        margin-top:25% !important;
+    }
+}
+@media(max-width:275px){
+    .blog-sec .blog-img figure figcaption .blog-img-post {
+    width:50px !important;
+    margin-left:0px !important;
+    margin-top:20% !important;
+}
+}
+@media(max-width:300px){
+    .navigation .navigation-post p{
+        font-size:20px !important;
+    }
+    .work-sec figure:first-of-type figcaption .work-icon
+    {
+        margin-top:22% !important;
+    }
+    .work-sec figure:nth-of-type(2) figcaption .work-icon
+    {
+        margin-top:22% !important;
+    }
+    .work-sec figure:nth-of-type(3) figcaption .work-icon{
+        margin-top:22% !important;
+    }
+    .work-sec figure:nth-of-type(4) figcaption .work-icon{
+        margin-top:22% !important;
+    }
+    .work-sec figure:nth-of-type(5) figcaption .work-icon{
+        margin-top:22% !important;
+    }
+    .work-sec figure:nth-of-type(6) figcaption .work-icon{
+        margin-top:22% !important;
+    }
+    .work-sec figure:last-of-type figcaption .work-icon{
+        margin-top:22% !important;
+    }
+    .service-sec figure figcaption i{
+        margin-top: calc(45% - 50px) !important;
+    }
+    .navigation .navigation-post h3,.navigation .navigation-post h4{
+        font-size:40px !important;
+    }
+    .dropdown-sec .dropdown-toggle .icon-arrow-_-down{
+        font-size:10px !important;
+    }
+    .team-sec figure figcaption .fig-icons{     
+       margin-top:calc(75% - 55px);
+    }
+    .team-sec figure figcaption .fig-icons i:first-of-type,.team-sec figure figcaption .fig-icons i:nth-of-type(2)
+    ,.team-sec figure figcaption .fig-icons i:nth-of-type(3),.team-sec figure figcaption .fig-icons i:last-of-type
+    {
+        display:inline-block;
+        width:40px;
+        height:40px;
+        line-height:40px;
+        background:#fce38a;
+        color:#f38181;
+        margin:0px;
+        font-size:15px;
+        transition:all .4s ease-in-out;
+        -o-transition:all .4s ease-in-out;
+        -moz-transition:all .4s ease-in-out;
+        -webkit-transition:all .4s ease-in-out;
+    }
+}
+@media(max-width:310px){
+    .about-sec figure figcaption .pic-info{
+    margin-top:21% !important;
+}
+}
+@media(max-width:295px){
+    .team-sec figure figcaption .fig-icons{     
+       margin-top:calc(80% - 55px) !important;
+    }
+    .work-sec figure:first-of-type figcaption .work-icon
+    {
+        margin-top:20% !important;
+    }
+    .work-sec figure:nth-of-type(2) figcaption .work-icon
+    {
+        margin-top:20% !important;
+    }
+    .work-sec figure:nth-of-type(3) figcaption .work-icon{
+        margin-top:20% !important;
+    }
+    .work-sec figure:nth-of-type(4) figcaption .work-icon{
+        margin-top:20% !important;
+    }
+    .work-sec figure:nth-of-type(5) figcaption .work-icon{
+        margin-top:20% !important;
+    }
+    .work-sec figure:nth-of-type(6) figcaption .work-icon{
+        margin-top:20% !important;
+    }
+    .work-sec figure:last-of-type figcaption .work-icon{
+        margin-top:20% !important;
+    }
+}
+@media(max-width:255px){
+    .blog-sec .blog-img figure figcaption .blog-img-post {
+    width:50px !important;
+    margin-left:0px !important;
+    margin-top:18% !important;
+}
+}
+@media(max-width:260px){
+    .about-sec figure figcaption .pic-info{
+    margin-top:19% !important;
+}
+.team-sec figure figcaption .fig-icons{     
+       margin-top:calc(81% - 55px) !important;
+    }
+}
+@media(max-width:330px){
+ .team-sec figure figcaption .fig-icons{     
+       margin-top:calc(74% - 55px);
+    }   
+}
+@media(max-width:281px){
+    .number-sec .number-post p{
+        margin-bottom:22px !important;
+    }  
+    .number-sec .last p{
+        margin-bottom:27px !important;
+    } 
+}

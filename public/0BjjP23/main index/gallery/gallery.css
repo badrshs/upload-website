@@ -1,0 +1,33 @@
+	
+#galint
+	{
+		font-family: geek;
+		color: gold;
+		font-size: 150%;
+		text-shadow: 0 0 20px white;
+	}
+#opt1
+	{
+		background-image: url("gallery/0008.jpg");
+		background-size: cover;
+		background-position: center;
+		transition: background-image 0.5s ease-out;
+		border-top-left-radius: 15%;
+	}
+#opt1:hover
+	{
+		background-position: center;
+		filter: invert(100%);
+	}
+#opt2
+	{
+		background-image: url("gallery/bg/0001.jpg");
+		background-size: cover;
+		border-bottom-right-radius: 10%;
+		transition: background-image 0.5s ease-out;
+	}
+#opt2:hover
+	{
+
+		filter: invert(100%);
+	}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test web school</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+    <div class="forms">
+      <form class="form" action="" method="">
+        <fieldset>
+          <legend>personal inforamtion</legend>
+          Username:
+          <input type="text" name="Name" required="required" placeholder="your name her">
+          Email:
+          <input type="email" name="Email" required="required" placeholder="your email her">
+          Password:
+          <input type="password" name="Password" required="required"placeholder="your password her">
+          Gender:
+          <select class="gender" name="Gender">
+            <option>sexs</option>
+            <option>Male</option>
+            <option>female</option>
+          </select>
+        </fieldset>
+        <fieldset>
+          <legend>your favourite</legend>
+          <label>Your Favourites Text Editor</label>
+          <input type="radio" name="Editor" value="KomodoEdit" required="required" >KomodoEdit <br>
+          <input type="radio" name="Editor" value="Nootpad++" required="required" >Nootpad++ <br>
+          <input type="radio" name="Editor" value="Sublim Text" required="required" >Sublim Text <br>
+          <input type="radio" name="Editor" value="brackets" required="required" >brackets
+          <hr>
+          <label>Your Favourites Browser</label>
+          <input type="radio" name="Browser"value="Google Chrome" required="required" >Google Chrome <br>
+          <input type="radio" name="Browser"value="Mozilla Firefoxr" required="required" >Mozilla Firefox <br>
+          <input type="radio" name="Browser"value="opera" required="required" >opera <br>
+          <input type="radio" name="Browser"value="sfari" required="required" >sfari
+          <hr>
+          <label>Your Favourites Operating System</label>
+          <input type="checkbox" name="System" value="Mac OSX" >Mac OSX <br>
+          <input type="checkbox" name="System" value="Gnu/Linux" >Gnu/Linux <br>
+          <input type="checkbox" name="System" value="Windows" >Windows
+        </fieldset>
+        <fieldset>
+          <legend>your message</legend>
+          <textarea name="Message"></textarea>
+          <input type="submit" value="Send Your Data">
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>

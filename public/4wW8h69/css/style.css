@@ -1,0 +1,69 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+  background: #EFEFEF;
+  font-size: 18px;
+}
+.forms{
+  width: 40%;
+  margin: auto;
+  margin-top: 20px;
+}
+.form{
+
+}
+fieldset{
+  border: 2px solid #25ABE3;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #eaeaea;
+}
+legend{
+  border: 2px solid #25ABE3;
+  padding: 6px;
+  font-variant: small-caps;
+  font-size: 20px;
+  background-color: #d7fd04;
+  color: #066ac3;
+}
+label{
+  font-size: 18px;
+  display: block;
+  margin-bottom: 5px
+}
+input{
+  display: grid;
+}
+input[ type='text'],input[ type='email'],input[ type='password']{
+  width: 95%;
+  padding: 10px;
+  display: block;
+  margin: 8px
+}
+select{
+  width: 20%;
+  padding: 10px;
+  margin: 8px;
+  font-size: 16px
+}
+input[ type='radio'] ,input[ type='checkbox']{
+  margin-right: 5px
+}
+hr{
+  border: 1px solid #47CA2D;
+  margin: 10px 0 10px 0;
+}
+textarea{
+  width: 100%;
+  height: 15em
+}
+input[ type='submit']{
+  width: 30%;
+  padding: 8px;
+  background-color: #47CA2D;
+  margin-top: 10px;
+  border: 1px solid #2E9619;
+  color: #fff
+}

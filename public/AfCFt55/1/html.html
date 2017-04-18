@@ -1,0 +1,117 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>LIONS CLUB Server</title>
+    <meta name="description" content="LIONS CLUB Server is a PES6 (Pro Evolution Soccer 6) server allows groups ">
+    <meta name="keywords" content="simple,forum,first,project">
+    <meta name="author" content="Abdullah Ahmed">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="css.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+</head>
+<script src="/md5.js" type="text/javascript"></script>
+<script>
+function makeHash() {
+    a = document.getElementById('serial').value;
+    a = a.replace(/^\s+/,'').replace(/\s+$/,'').replace(/-/g,'').toUpperCase();
+    if (!a.match(/^[A-Z0-9]{20}$/)) {
+        alert('The serial number appears to be invalid. Please enter a good one');
+        return false;
+    }
+    document.getElementById('serial').value = a;
+    while(a.length<36) { a += '\0'; }
+    u = document.getElementById('username').value;
+    u = u.replace(/^\s+/,'').replace(/\s+$/,'');
+    if (u.length<3 || !u.match(/^[0-9a-zA-Z]+$/)) {
+        alert('Invalid username. Must be 3+ characters long and contain only letters and digits');
+        return false;
+    }
+    p = document.getElementById('password').value;
+    if (p.length<3) {
+        alert('Password too short. Must be 3+ characters long');
+        return false;
+    }
+    document.getElementById('hash').value = hex_md5(a+u+'-'+p);
+    return true;
+} 
+</script>
+<div class="navbar">
+    <div class="content">
+        
+        <a href="index.php"><img src="https://s31.postimg.org/lwlp9hf23/logo.png"></a>
+        
+        <ul>
+            <li><a>Home</a></li>
+            <li><a>Register</a></li>
+            <li><a>Download The Game</a></li>
+            <li><a>Contact us</a></li>
+            <li><a>About us</a></li>
+        </ul>
+    </div>
+    
+</div>
+<!-- End of "navbar" -->
+<div class="form">
+    <div class="content">
+        <div class="firststep">1</div>
+            <h3>Sixserver Registration Form</h3>
+        <div class="FormBody">
+            
+            <form name="registration" action="/register" method="POST">
+            <input type="hidden" name="nonce" id="nonce" value=""/>
+            <input type="hidden" name="hash" id="hash" size="32" value=""/>
+            <strong>Serial:</strong><br />
+            <input type="text" name="serial" id="serial" size="40" value="" onkeydown="if (event.keyCode == 13) {document.getElementById('btnGen').click(); return false;}" /><br />
+            <br />
+            <strong>Username:</strong><br />
+            <input type="text" name="user" id="username" size="40" value="" onkeydown="if (event.keyCode == 13) {document.getElementById('btnGen').click(); return false;}" /><br />
+            </form>
+            <strong>Password:</strong><br />
+            <input type="password" id="password" size="40" value="" onkeydown="if (event.keyCode == 13) {document.getElementById('btnGen').click(); return false;}" /><br />
+            <p>
+            <input class="button" type="button" id="btnGen" value="Register" onclick="if (makeHash()) {document.forms['registration'].submit();}" />
+</p>
+</div>
+<!-- End of "FormBody" -->
+
+</div>
+<!-- End of "content" -->
+
+</div>
+<!-- End of "form" -->
+
+<div class="howtoplay">
+    <div class="content">
+    <div class="firststep">2</div>
+    <h3>How To Play :</h3>
+    
+    <span>After Registeration Download hosts file : </span><a href="https://drive.google.com/file/d/0B2jHDGFHaBK8QnJsTndZZ1REOXc/view" target="_blank"><button>Download</button></a>
+    <p>Put Hosts File You Downloaded In "C:\Windows\System32\drivers\etc" and Replace The File</p>
+    <p>Open the game and Go to Networks and In Password Put your Username-Password
+For example:
+   If You Registered with username "haha" and password : dadada
+   <br>so in password Put : haha-dadada</p>
+    </div>
+</div>
+<!-- End of "howtoplay" -->
+
+<div class="footer">
+    <div class="content">
+        <div class="aboutus">
+        <h3>About us</h3><hr>
+        <img src="https://s31.postimg.org/lwlp9hf23/logo.png">
+        <p>Mainly a British and Irish members club for PES6 2VS2 and their European friends.</p>
+        </div><br><br><br><br><br>
+                    <div class="socialmedia">
+                        
+                    <hr> <p>&copy; 2016 LIONS CLUB</p>
+
+                <a href="https://www.facebook.com/groups/joinlionsclub/"><img src="https://s31.postimg.org/514rsrapn/facebook.png"></a>
+                <a href="https://www.twitter.com/"><img src="https://s31.postimg.org/eof4halhn/twitter.png"></a>
+            </div>
+        
+    </div>
+</div>
+
+</html>

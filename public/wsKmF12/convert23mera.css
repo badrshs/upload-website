@@ -1,0 +1,54 @@
+
+
+
+#mainpar{
+	width: 100%;
+	height: 70px;
+	float: left;
+	background: brown;
+	color: black;
+	margin: 0px auto;
+	
+}
+
+
+/*
+.inpar{
+	padding: 10;
+	margin: 10;
+}
+*/
+
+
+
+
+
+
+
+#head{
+	width: 100%;
+	height: 80px;
+	background: red;
+
+}
+#left{
+
+	width: 50%;
+	height: 400px;
+	float: left;
+	background: gray;
+}
+#right{
+
+	width: 50%;
+	height: 400px;
+	float: left;
+	background: pink;
+}
+#ground{
+	width: 100%;
+	height: 150px;
+	float: left;
+	background: yellow;
+
+}

@@ -1,0 +1,272 @@
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+    /* Blog Section */
+    section.blogs div.blog-collection div.blog-search button{
+        top : 38px;
+    }
+    section.blogs div.blog-collection div.popular-posts div.p-posts div.p-posts-img{
+        width: 35%;
+    }
+    section.blogs div.blog-collection div.follow-us a{
+        height: 111px;
+    }
+    section.blogs div.blog-collection div.popular-posts div.p-posts div.p-posts-img i{
+        width: 100%;
+        height: 100%;
+    }
+    /*// Blog Section */
+    /* Footer */
+    footer div.footer-top div.featured-blog a.footer-blog div.blog-info p{
+        font-size: 10px;
+    }
+    section.blogs div.blog-collection div.tags div.tags-links a {
+        padding: 7px 6px;
+        font-size: 12px;
+    }
+    section.blogs div.blog-collection div.blog-search input{
+        height: 40px;
+    }
+    /*// Footer */
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+    /* Header */
+    .navbar-right~.navbar-right li a.mainlinks{
+        font-size: 11px;
+    }
+    .navbar-form input[type="text"]{
+        width: 76%;
+    }
+    /*// Header */
+    /* Blog Section */
+    section.blogs div.blog-details div.comments div.main-comment div.m-comment-img{
+        padding: 5px 0px;
+    }
+    section.blogs div.blog-details div.comments div.main-comment div.m-comment-img img{
+        width: 50px;
+        height: 50px;
+    }
+    section.blogs div.blog-details div.comments div.main-comment div.m-comment-info a{
+        font-size: 10px;
+    }
+    section.blogs div.blog-details div.comments div.main-comment div.m-comment-info p{
+        font-size: 10px;
+    }
+    section.blogs div.blog-details div.comments div.replay-comment div.m-comment-img{
+        padding: 5px 0px;
+    }
+    section.blogs div.blog-details div.comments div.replay-comment div.m-comment-img img{
+        width: 50px;
+        height: 50px;
+    }
+    section.blogs div.blog-details div.comments div.replay-comment div.m-comment-info a{
+        font-size: 10px;
+    }
+    section.blogs div.blog-details div.comments div.replay-comment div.m-comment-info p{
+        font-size: 10px;
+    }
+    section.blogs div.blog-collection div.popular-posts div.p-posts div.p-posts-img i {
+        width: 100%;
+        height: 100%;
+        line-height: 500%;
+    }
+    section.blogs div.blog-collection div.popular-posts div.p-posts div.p-posts-info{
+        width: 64%;
+    }
+    section.blogs div.blog-collection div.popular-posts div.p-posts div.p-posts-info span{
+        font-size: 10px;
+    }
+    section.blogs div.blog-collection div.popular-posts div.p-posts div.p-posts-img{
+        width: 32%;
+    }
+    section.blogs div.blog-collection div.popular-posts div.p-posts div.p-posts-info h5{
+        font-size: 11px;
+    }
+    section.blogs div.blog-collection div.follow-us a {
+        height: 75px;
+    }
+    section.blogs div.blog-collection div.follow-us a i{
+        width: 30px;
+        line-height: 30px;
+        font-size: 15px;
+        margin: 13px auto 0px auto; 
+    }
+    section.blogs div.blog-collection div.follow-us a span{
+        font-size: 12px;
+    }
+    /*// Blog Section */
+    /* Footer */
+    footer div.footer-top div.about h3,
+    footer div.footer-top div.featured-blog h3,
+    footer div.footer-top div.getnews h3{
+        font-size: 20px;
+    }
+    footer div.footer-top div.about p{
+        font-size: 10px;
+    }
+    footer div.footer-top div.featured-blog a.footer-blog div.blog-img{
+        width: 25%;
+    }
+    footer div.footer-top div.featured-blog a.footer-blog div.blog-info{
+        width: 75%;
+    }
+    footer div.footer-top div.featured-blog a.footer-blog div.blog-info h5{
+        font-size: 10px;
+    }
+    footer div.footer-top div.featured-blog a.footer-blog div.blog-info p{
+        font-size: 6px;
+    }
+    footer div.footer-top div.getnews p{
+        font-size: 10px;
+    }
+    footer div.footer-top div.getnews button{
+        font-size: 15px;
+    }
+    /*// Footer */
+}
+/* Small Devices, Tablets */
+@media only screen and (max-width : 767px) {
+    /* Header */
+    .navbar-default .navbar-toggle,
+    .navbar-default .navbar-toggle:focus,
+    .navbar-default .navbar-toggle:hover {
+        background-color: #f8c34f;
+        border-color: #f8c34f;
+        border-radius: 0px;
+        margin-top: 22px;
+    }
+    .navbar-default .navbar-toggle .icon-bar {
+        background-color: #fff;
+    }
+    .navbar-default .navbar-collapse{
+        height: 300px;
+        background: #fff;
+        margin-top: 15px !important;
+    }
+    .navbar-form{
+        border: none;
+        margin: 0px;
+        padding: 0px;
+        height: 30px;
+    }
+    .navbar-form input[type="text"]{
+        width: 95%;
+    }
+    .navbar-right~.navbar-right li ul.sublinks{
+        position: static;
+        padding-top:0px;
+    }
+    /*// Header */
+    /* Blog Section */
+    section.blogs div.blog-grid div.blog-collection{
+        margin-top: 50px;
+    }
+    section.blogs div.blog-collection div.popular-posts div.p-posts div.p-posts-img img{
+        min-width: 100%;
+    }
+    section.blogs div.blog-collection div.popular-posts div.p-posts div.p-posts-img i{
+        line-height: 300%;
+    }
+    section.blogs div.blog-collection div.popular-posts div.p-posts div.p-posts-info span{
+        font-size: 12px;
+    }
+    section.blogs div.blog-collection div.popular-posts div.p-posts div.p-posts-info h5{
+        font-size: 15px;
+    }
+    /*// Blog Section */
+    /* Footer */
+    footer div.footer-top div.about,
+    footer div.footer-top div.featured-blog,
+    footer div.footer-top div.getnews{
+        margin-bottom: 40px;
+    }
+    footer div.footer-top div.about p{
+        font-size: 15px;
+    }
+    footer div.footer-top div.featured-blog a.footer-blog div.blog-img{
+        width: 20%;
+    }
+    footer div.footer-top div.featured-blog a.footer-blog div.blog-info{
+        width: 80%;
+    }
+    footer div.footer-top div.featured-blog a.footer-blog div.blog-info p{
+        font-size: 10px;
+    }
+    footer div.footer-top div.featured-blog a.footer-blog div.blog-info h5{
+        font-size: 15px;
+    }
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+    /* Page Section */
+    section.page div.col-xs-6{
+        width: 100%;
+        text-align: center; 
+    }
+    /*// Page Section */
+    /* Blog Section */
+    section.blogs div.blog-details div.blog-post div.post-info ul {
+        height: 30px;
+        font-size: 10px;
+    }
+    section.blogs div.blog-details div.blog-post div.post-info p{
+        font-size: 10px;
+    }
+    section.blogs div.blog-details div.about-bloger div.a-bloger-img{
+        float: none;
+    }
+    section.blogs div.blog-details div.about-bloger div.a-bloger-img img{
+        margin: 0 auto;
+    }
+    section.blogs div.blog-details div.about-bloger div.a-bloger-info h4{
+        text-align: center;
+    }
+    section.blogs div.blog-details div.about-bloger div.a-bloger-info p{
+        text-align: center;
+    }
+    section.blogs div.blog-details div.next-and-prev a.previous-post i,
+    section.blogs div.blog-details div.next-and-prev a.next-post i{
+        width: 20px;
+    }
+    section.blogs div.blog-details div.next-and-prev a.previous-post div.prev-info h4,
+    section.blogs div.blog-details div.next-and-prev a.next-post div.next-info h4{
+        font-size: 12px;
+    }
+    section.blogs div.blog-details div.next-and-prev a.previous-post div.prev-info h6,
+    section.blogs div.blog-details div.next-and-prev a.next-post div.next-info h6{
+        font-size: 10px;
+    }
+    section.blogs div.blog-details div.comments div.main-comment div.m-comment-img img{
+        width: 35px;
+        height: 35px;
+    }
+    section.blogs div.blog-details div.comments div.main-comment{
+        padding: 15px;
+    }
+    section.blogs div.blog-details div.comments div.main-comment div.m-comment-info div.m-comment-head h4{
+        font-size: 14px;
+    }
+    section.blogs div.blog-details div.comments div.replay-comment{
+        padding: 15px;
+    }
+    section.blogs div.blog-details div.comments div.replay-comment div.m-comment-img img {
+        width: 35px;
+        height: 35px;
+    }
+    section.blogs div.blog-details div.leave-comment form.l-comment-inputs label{
+        width: 100%;
+    }
+    section.blogs div.blog-details div.leave-comment form.l-comment-inputs label input{
+        width: 100%;
+    }
+    section.blogs div.blog-details div.leave-comment form.l-comment-inputs textarea{
+        font-weight: bolder;
+        padding-left: 20px;
+    }
+    section.blogs div.blog-collection div.popular-posts div.p-posts div.p-posts-img i {
+        line-height: 170%;
+    }
+    /*// Blog Section */
+}

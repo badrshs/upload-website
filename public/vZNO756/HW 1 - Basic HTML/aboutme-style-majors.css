@@ -1,0 +1,21 @@
+a, a:visited {
+	text-decoration:none;
+}
+
+a:hover {
+	text-decoration:underline;
+}
+
+p:first-letter {
+	font-weight: bold;
+	font-size:150%;
+}
+
+dl {
+	font-size:75%;
+}
+
+dt{
+	color:  #FFF86B;
+	font-weight:bold;
+}

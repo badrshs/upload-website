@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html /ang="em">
+<head>
+<title>Developing an ICT Project for Social Change</title>
+	<link rel="icon" type="image/png" href="logo.png" />
+		<meta charset="utf-s" />
+	<title>NAVBAR</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+ 
+<body topmargin="0%" leftmargin="200%" rightmargin="200%">
+<h1 style="color:#D5D8DC;font-size:195%;font-family:Agency FB"><center><a href="logo3.png"><img src="logo2.png" width=95 height=85></a>Developing an ICT Project for Social Changes</center></h1>	<ul class="nav">
+		<li><a href="HOME.html">HOME</a></li>
+		<li><a href="FAQs.html">FAQs</a></li>
+		<li><a href="ABOUTUS.html">ABOUT US</a></li>
+	</ul>
+<div id="second">
+<p>
+<ul>
+	<h5 style="color:#2E4053;font-family:Century Gothic"><i>Where can you usually see the Copywriting for ICT oject?</i></h5>
+	<h6><li><b>It’s usually seen on printed brochure for advertising some products or brochures that aware the people about new products.</b></li></h6>
+	<h6><li><b>Posts on social media for product awareness is also considered as  copywriting. As well as advertising the product online</b></li></h6>
+</ul>	
+</p>
+</div>
+</br>
+<div id="second">
+<p>
+<ul>
+	<h5 style="color:#2E4053;font-family:Century Gothic"><i>What can ICT contribute in our daily life?</i></h5>
+	<h6><li><b>ICT can help us communicate with other people, that could help us in business, transacting online is more convenient these days because not everybody can have their own time and leisure to go outside and shop.</b></li></h6>
+	<h6><li><b>It can also help us spread news or aware people about different things using different social media, because on our current generation it has a big influence on a lot of people.</b></li></h6>
+</ul>	
+</p>
+</div>
+</br>
+</body>
+</html>

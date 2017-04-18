@@ -1,0 +1,234 @@
+html,
+body {
+    margin:0;
+    padding:0;
+    height:100%;
+}
+
+body {
+	/*background: url(../images/bg.png);*/
+	background-color: rgb(252, 254, 251);
+}
+.header {
+	background: #283492;
+}
+
+.logo {
+	width: 130px;
+}
+
+li.newsletter > a, .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a {
+	color: white;
+    padding: 29px 0 0 0;
+    font-size: 22px;
+    display: inline-block;
+    text-align: right;
+}
+
+.sidebar div.sticker_1 {
+	display: inline-block;
+    margin: auto;
+    text-align: left;
+    width: 100%;
+    background: rgb(252, 254, 251);
+}
+
+.sidebar .list-unstyled li span {
+	color: #263391;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 0 0 0 20px;
+    line-height: 34px;
+}
+
+.sidebar .list-unstyled li img {
+    width: 33px;
+    padding-bottom: 7px;
+}
+
+.info .row .col-md-3 a img {
+	max-width: 100%;
+	max-height: 100%;
+	display: inline-block;
+}
+
+.info .row .col-md-9 .col-md-12 a p {
+	color: #293790; font-weight: 500; font-size: 18px;padding: 4px 0 0 0;
+}
+
+.old_price {
+	font-size: 12px;
+	color: #7e7e7e;
+	margin-top: 10px;
+}
+
+.old_price span:first-child {
+	text-decoration: line-through;
+}
+
+.new-price a, .new-price a:hover, .new-price a:active, .new-price a:focus{
+	font-size: 24px;
+	font-weight: 600;
+	color: #CE0112;
+}
+
+.sold-by {
+	padding-top: 7px;
+}
+
+.sold-by img {
+	width: 50px;
+    margin: 0;
+    display: block;
+    margin-top: -14px;
+}
+.detail a, .detail a:hover, .detail a:focus, .detail a:active {
+	float: right;
+    margin: 10px 0 0 0;
+}
+.detail a, .detail a:hover, .detail a:focus, .detail a:active, .nl-detail button, .nl-detail button:hover, .nl-detail button:focus, .nl-detail button:active {
+    font-size: x-large;
+    color: rgb(254, 253, 253);
+    background-color: rgb(40, 52, 146);
+    outline: none;
+}
+
+.nl-detail button {
+	float: none;
+    padding: 15px 35px 15px 35px;
+    margin: 11px auto 100px auto;
+}
+
+a:focus, a:hover {
+	text-decoration: none;
+}
+
+.sidebar li:hover, .selected, .side-responsive li:hover {
+	background-color: #e1e3f5;
+}
+
+.sidebar a {
+	display: inline-block;
+    height: 100%;
+    width: 100%;
+    padding-right: 8px;
+}
+
+.info .row:first-child {
+	margin-top: 0px;
+}
+
+.info .row {
+	margin-top: 20px;
+}
+
+.footer {
+    background-color: #283492;
+    color: #fcfefc;
+    padding-top: 20px;
+}
+
+.footer .row .col-md-4 img {
+	width: 150px;
+	display: inline-block;
+}
+
+.footer hr {
+	width: 67%;
+    border: 1px solid #535da9;
+}
+
+.footer .col-md-12 img {
+	width: 100px;
+    display: inline-block;
+    margin-bottom: 8px
+}
+
+.footer .col-md-12 span, .footer .col-md-12 span a, .footer .col-md-12 span a:hover, .footer .col-md-12 span a:focus, .footer .col-md-12 span a:active {
+	font-size: 15px;
+    color: #fcfefc;
+}
+
+.nl_header {
+	font-size: 40px;
+    color: #283393;
+    margin: 30px 0 10px 0;
+    display: inline-block;
+}
+
+.nl-f-header {
+	font-size: 20px;
+    font-weight: 500;
+    color: rgb(126, 127, 126);
+}
+
+::-webkit-input-placeholder {
+   text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;  
+}
+
+:-ms-input-placeholder {  
+   text-align: center; 
+}
+
+.cd-top.cd-is-visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.cd-top.cd-is-visible, .cd-top.cd-fade-out, .no-touch .cd-top:hover {
+    -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+    -moz-transition: opacity .3s 0s, visibility 0s 0s;
+    transition: opacity .3s 0s, visibility 0s 0s;
+}
+
+.cd-top {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    position: fixed;
+    bottom: 40px;
+    right: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    background: rgba(28,37,104,0.8) url(../images/cd-top-arrow.svg) no-repeat center 50%;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+    -moz-transition: opacity .3s 0s, visibility 0s .3s;
+    transition: opacity .3s 0s, visibility 0s .3s;
+}
+ 
+.navbar-toggle {
+    margin-top: 21.5px;
+}
+
+.side-responsive {
+    display: none;
+}
+
+.side-responsive li a img {
+    width: 33px;
+}
+
+#footer {
+    width: 100%;
+    height: 273px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#wrapper {
+    min-height:100%;
+    position:relative;
+}

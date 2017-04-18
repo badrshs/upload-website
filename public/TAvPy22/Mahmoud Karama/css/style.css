@@ -1,0 +1,352 @@
+/* start main rule */
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+.home
+{
+    background-image: url('../images/home-background.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 700px;
+}
+.container2{
+    width: 95%;
+}
+.mainbar .logo p
+{
+    float: left;
+    margin-left: 70px;
+    margin-top: 30px;
+    color: white;
+    font-size: 40px;
+}
+.mainbar .logo p span
+{
+    color: yellow;
+}
+.mainbar .navbar ul
+{
+    list-style-type: none;
+} 
+.mainbar .navbar ul li
+{
+    float: left;
+    margin-top: 50px;
+    padding-right: 30px
+}
+.mainbar .navbar ul li a
+{   
+    color: white;
+    padding: 10px 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.mainbar .navbar ul li a:hover
+{
+    border-bottom: 2px solid yellow;    
+}
+.navbar
+{
+    margin-left: 370px;
+}
+.searsh form
+{
+    float: right;
+    padding-top: 10px;
+}
+.searsh input
+{
+    width: 180px;
+    padding: 9px; 
+    border: 1px solid blue;
+    border-radius: 5px;
+    background-color: #f1bfd6;
+}
+.define
+{
+    padding-top: 200px;
+    padding-left: 70px;
+    color: white;
+}
+.define .one
+{
+    font-size: 30px;
+    text-transform: capitalize;
+}
+.define .two
+{
+    font-size: 50px;
+    color: yellow;
+    text-transform: capitalize;
+}
+.define .three
+{
+    font-size: 30px;
+    text-transform: capitalize;
+}
+.mainbutton
+{
+    padding-top: 60px;
+    
+}
+.mainbutton button
+{
+    padding: 15px;
+    margin-left: 150px;
+    width: 260px;
+}
+.mainbutton button:hover
+{
+    cursor: pointer;
+}
+.mainbutton .one
+{
+    background-color: blue;
+    border: 0px;
+    border-radius: 5px;
+}
+.mainbutton .two
+{
+    background-color: yellow;
+    border: 0px;
+    border-radius: 5px;
+    width: 200px;
+}
+/* end main rule */
+
+/* start portfolio section */
+
+.mainportfolio
+{
+    background-image: url(../images/portfolio-background.gif);
+    width: 100%;
+    height: 760px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+.mainportfolio h2
+{
+    font-size: 45px;
+    color: #fd0909;
+    font-weight: bold;
+    padding-left: 150px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.mainportfolio .portfolioparagraph p
+{
+    padding-left: 150px;
+    font-size: 25px;
+    float: left;
+    
+}
+.mainportfolio .portfolioimage
+{
+    float: right;
+    padding-right: 100px;
+}
+
+/* end portfolio sectiion */
+
+
+
+
+/* start project section */
+
+.mainproject
+{
+    background-image: url(../images/projects-background.gif);
+    width: 100%;
+    height: 760px;
+    background-repeat: no-repeat;
+    background-position: center;  
+    margin-top: 0px;
+    padding-top: 0px;
+}
+.mainproject h2
+{
+    font-size: 45px;
+    color: #fd0909;
+    font-weight: bold;
+    padding-left: 150px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.mainproject .pro1
+{
+    float: left;
+    padding-left: 150px;
+}
+.mainproject .pro2
+{
+    float: right;
+    padding-right: 150px;
+}
+.mainproject .pro3
+{
+    padding-left: 570px;
+}
+.mainproject .pro4
+{
+    float: left;
+    padding-left: 150px;
+
+}
+.mainproject .pro5
+{
+    float: right;
+    padding-right: 150px;
+}
+.mainproject .pro6
+{
+    padding-left: 570px;
+}
+
+/* end project sectiion */
+
+/* start registration section*/
+.mainregister
+{
+    background-image: url(../images/sign-up-background.gif);
+    width: 1370px;
+    height: 670px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.signup
+{
+    float: left;
+}
+.signup h2
+{
+    padding-left: 100px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    color: #f21b10;
+}
+.signup form
+{
+    padding-left: 100px;
+    line-height: 30px;
+    color: #88fc00;
+    font-weight: bold; 
+}
+.signup input,.signin input
+{
+    width: 400px;
+    padding: 9px; 
+    border: 1px solid blue;
+    border-radius: 5px;
+    background-color: #f1bfd6;
+}
+input:focus
+{
+    background: #bea1cb;
+}
+input[type=date]
+{
+    width: 103px;
+    margin-top: 20px;
+}
+input[type=submit]
+{
+    width: 100px;
+    margin-top: 20px;
+    background-color:#af06fd;
+    color: #88fc00;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.signin
+{
+    float: right;
+    padding-right: 250px;
+}
+
+.signin h2
+{
+    padding-bottom: 30px;
+    padding-top: 30px;
+    color: #f21b10;
+}
+
+.signin form
+{
+    line-height: 30px;
+    color: #88fc00;
+    font-weight: bold; 
+}
+
+
+/*end registration section */
+
+/* start contact section */
+
+.mainsub
+{
+    background-image: url(../images/contacts-background.jpg);
+    width: 1370px;
+    height: 670px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.mainsub h2
+{
+    
+    font-size: 45px;
+    color: #89fd00;
+    font-weight: bold;
+    padding-left: 150px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    
+}
+.one1
+{
+    padding-left: 150px;
+    float: left;
+}
+.two2
+{
+    float: right;
+    color: white;
+    padding-right: 150px;
+    font-size: 40px;
+}
+.mainsub h6
+{
+    padding-top: 500px;
+    color:#89fd00;
+    font-weight: bold;
+    padding-left: 500px;
+}
+.mainsub form input[type=text]
+{
+    margin-bottom: 30px;
+    width: 300px;
+    height: 30px;
+}
+.mainsub form textarea
+{
+    margin-bottom: 10px;
+    width: 400px;
+    height: 300px;
+}
+
+/* end conact section */
+
+
+
+
+
+
+
+
+
+

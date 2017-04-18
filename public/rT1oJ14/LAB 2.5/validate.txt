@@ -1,0 +1,15 @@
+JeriesN;MA;12345;mastercard
+JeriesNas;MC;41111111111;visa
+Jeries;MG;12345123456;visa
+JeriesN;ME;12345;mastercard
+JeriesN;MA;4111111111111111;visa
+JeriesN;MA;5111111111111111;mastercard
+JeriesN;MD;5111111111111111;mastercard
+JeriesN;MA;5111111111111111;mastercard
+JeriesN;MA;5111111111111122;mastercard
+JeriesN;MA;4388576018402626;visa
+JeriesN;MB;4388576018410707;visa
+JeriesN;MA;4532111851303861;visa
+JeriesN;MA;4485262052242056;visa
+;;;
+JeriesNas;ME;12345;visa

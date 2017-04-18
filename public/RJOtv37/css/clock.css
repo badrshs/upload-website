@@ -1,0 +1,30 @@
+body {
+  background-color:#6BB9F0;
+  color:#FFF;
+  text-align:center
+}
+
+svg {
+  width:450px;
+  opacity:0
+}
+
+#second {
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+
+}
+
+#minute {
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+#hour {
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}

@@ -1,0 +1,17 @@
+.content {
+	width: 100%;
+	color: black;	
+}
+
+.sidebar1, aside, nav, footer {
+	display: none;
+	}
+	/*
+.content p:after {
+	content: " paragraf slutar";
+	}*/
+
+.content a:after {
+	content: "[ " attr(href) " ]";
+	}
+	

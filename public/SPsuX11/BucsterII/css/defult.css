@@ -1,0 +1,22 @@
+
+.uparrow ,.sk-rotating-plane , .custom-navbar .navbar-brand .navbar-toggle , .custom-navbar .navbar-toggle .icon-bar
+ , .bx-controls-direction a ,.bx-controls-direction a {
+  background-color: crimson;
+
+  }
+
+#team h3 , #plan small ,#plan .plan-button .btn:hover , #contact .medium-icon , 
+
+   .custom-navbar .nav li.active > a 
+
+ ,  .medium-icon , h5 , .option-box i , .color-white a  {
+  color: crimson;
+  
+}
+
+#plan .plan:hover , #contact .form-control:focus {
+  
+  border-color: crimson;
+}
+
+ 

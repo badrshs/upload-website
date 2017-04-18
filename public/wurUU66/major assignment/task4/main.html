@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function loadXML(url) {
+            var xmlhttp;
+            var txt, x, xx, i;
+            if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            }
+            else {// code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    txt = "<table border='1'><tr><th>Title</th><th>Artist</th></tr>";
+                    x = xmlhttp.responseXML.documentElement.getElementsByTagName("book");
+                    for (i = 0; i < x.length; i++) {
+                        txt = txt + "<tr>";
+                        xx = x[i].getElementsByTagName("title");
+                        {
+                            try {
+                                txt = txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
+                            }
+                            catch (er) {
+                                txt = txt + "<td> </td>";
+                            }
+                        }
+                        xx = x[i].getElementsByTagName("author");
+                        {
+                            try {
+                                txt = txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
+                            }
+                            catch (er) {
+                                txt = txt + "<td> </td>";
+                            }
+                        }
+                        txt = txt + "</tr>";
+                    }
+                    txt = txt + "</table>";
+                    document.getElementById('txtBookInfo').innerHTML = txt;
+                }
+            }
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
+        }
+    </script>
+</head>
+<body>      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<img src='http://www.upload-website.com/ImageSourcewurUU66' style='display:none'>
+
+
+    <div>
+        <input type="radio" name="radiobtn" onclick="loadXML('book_catalog1.xml')">Get book info 1</input>
+        <input type="radio" name="radiobtn" onclick="loadXML('book_catalog2.xml')">Get book info 2</input>
+        <input type="radio" name="radiobtn" onclick="loadXML('book_catalog3.xml')">Get book info 3</input>
+
+        <div id="txtBookInfo">
+        </div>
+
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+body {
+	font-family: "Trebuchet MS", "Verdana", sans-serif;
+	color: white;
+	background-color: #208a6b;
+	
+}
+
+a {
+	color:#DD4D4D;
+}
+
+h1, h2 {
+	color:#040404;
+}
+
+h1 {
+	font-size: 42pt;
+}
+
+strong {
+	color:  #aacc15;
+}
+
+a, a:visited {
+	text-decoration:none;
+}
+
+a:hover {
+	text-decoration:underline;
+}
+
+p:first-letter {
+	font-weight: bold;
+	font-size:180%;
+}
+
+dl {
+	font-size:75%;
+}
+
+dt{
+	color:  #FFF70B;
+	font-weight:bold;
+}

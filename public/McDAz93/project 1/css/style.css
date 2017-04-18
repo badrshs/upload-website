@@ -1,0 +1,93 @@
+/*main rules..............................*/
+body{height:100%}
+.cont{margin:auto;width:1170px}
+.clearfix{clear:both}
+/*header start .........................................*/
+.header{height:450px; background-image:url('../img/banner-web-design.png'); background-size:cover;background-position:50% center;	}
+.header .slider{height:400px;overflow:hidden}
+.header .slider .cont h1{font-family:Axure Handwriting; font-size:80px; margin-left:29%; margin-top:11%; color:#FFF}
+.header .navbar{height:50px;background-color:rgba(0,0,0,0.5);overflow:hidden;} 
+.header .navbar .logo {width:50%;height:50px;float:left;color:#F90;font-size:50px;line-height:0.9;font-family:Axure Handwriting;font-weight:bold}
+.header .navbar .logo .span {color:#3F0;}
+.header .navbar .menue{width:50%;overflow:hidden;height:50px;padding:0;margin:0;float:left}
+.header .navbar ul{overflow:hiden;}
+.header .navbar ul li{color:#FFF;font-family:Axure Handwriting;font-size:30px;font-weight:bold;
+				display:inline-block;width:23%;line-height:1.5;text-align:center;height:100%}
+.header .navbar ul li a{color:#FFF;text-decoration:none;}
+.header .navbar .active ,.header .navbar ul li:hover{color:#F90;cursor:pointer;background-color:#FFF}
+.header .navbar .active a ,.header .navbar ul li a:hover{color:#F90;cursor:pointer;background-color:#FFF}
+
+/*header end  ......................................................................................................*/
+/*about start.......................................................................................................*/
+.about{height:200px;overflow:hidden;}
+.about .cont .object,.about .cont .target,.about .cont .service{width:32%;float:left}
+.about .cont .object h2,.about .cont .target h2,.about .cont .service h2{color:#434343}
+.about .cont .object p,.about .cont .target p,.about .cont .service p{width:80%;float:left;margin:0;color:#868686}
+.about .cont .object{margin-left:4%}
+/*about End..........................................................................................................*/
+/*information  start.........................................................................*/
+.info{height:260;overflow:hidden;background-image:url('../img/cop.png');background-size:cover;background-position:0% center;}
+.info .cont .info-pic{width:20%;background-image:url('../img/pro-jpg.jpg');height:90%;float:left;
+                     background-repeat:no-repeat;margin-left:4%;border-radius:140px ;margin-top:1.3%}		   
+.info .cont .info-data{width:68%;height:100%;float:left}
+.info .cont .info-data .aboutus{width:80%;margin-left:14%;margin-top:6%}
+.info .cont .info-data .aboutus h2{margin-top: 0px; width: 21%; float: left; text-align:
+                                 center; height: 23%; line-height: 2.4; background-color:#D7DD00;border-radius:15px}
+.info .cont .info-data .aboutus p{width:56%;margin-left:26%}
+.info .cont .info-data .info-ratio{width:86%; margin-left:14%;margin-top:6%}
+.info .cont .info-data .info-ratio .html,.info .cont .info-data .info-ratio .css{width:45%; float:left}
+
+.info .cont .info-data .info-ratio .html .icon {width:20%;float:left;}
+.info .cont .info-data .info-ratio .html .icon img{overflow:hidden;width:100%}
+.info .cont .info-data .info-ratio .html p {width:75%;float:left;margin-left:5%;margin-top:0%}
+
+.info .cont .info-data .info-ratio .css{margin-left:10%}
+
+.info .cont .info-data .info-ratio .css .icon {width:20%;float:left;}
+.info .cont .info-data .info-ratio .css .icon img{overflow:hidden;width:100%}
+.info .cont .info-data .info-ratio .css p {width:75%;float:left;margin-left:5%;margin-top:0%}
+
+/*information  end.........................................................................*/
+/*-----------------tips------------------------------*/	
+.tips{background-color:#FF5;height:300px;overflow:hidden;}
+.tips ul{text-align:center;}	
+    /*for slider------------------*/
+ .tips .bx-wrapper   .bx-viewport 	{background:none;border:0px;box-shadow:none;
+                                height:100% !important}
+.tips .bxslider li{display:block;background-color:#FF5;height:200px;overflow:hidden}
+.tips .bxslider li .pic{height:100%;width:17%;background-color:none;float:left;margin-left:25%;
+                     background-image:url('../img/res1.png');}
+
+.tips .bxslider li .pic2{height:100%;width:17%;background-color:none;float:left;margin-left:25%;
+                     background-image:url('../img/html2.png');}
+.tips .bxslider li .pic3{height:100%;width:17%;background-color:none;float:left;margin-left:25%;
+                     background-image:url('../img/css3.png');}					 
+.tips .bxslider li .pic4{height:100%;width:17%;background-color:none;float:left;margin-left:25%;
+                     background-image:url('../img/js6.png');}
+.tips .bxslider li .skills{height:50px%;width:40%;float:left;}
+.tips .bxslider li .skills p {font-size:30px;font-family:Axure Handwriting}
+					 
+
+ /*-----------------tips------------------------------*/				   
+				   
+   /*contact  start.........................................................................*/
+   .contact{height:700px;overflow:hidden;background-color:#0099FF;}
+   .contact .contact-info p{text-align:center;font-family:Axure Handwriting; font-size:40px;font-weight:bold;margin-top:5px}
+      .contact .contact-info label{display:block;font-family:cursive;font-size:30px;font-weight:bold;color:#FFF;margin-top:20px;margin-left:27%}
+      .contact .contact-info input[type="text"]{width:50%;height:40px;border-radius:30px;margin-top:5px;font-family:cursive;font-size:20px;margin-left:26%}
+      .contact .contact-info textarea{width:50%;height:200px;border-radius:30px;margin-top:5px;font-family:cursive;font-size:20px;margin-left:26%}
+      .contact .contact-info button{display:block;width:50%;height:50px;border-radius:30px;margin-top:10px;
+	                             font-family:cursive;font-size:30px;background-color:#FFCC33;border:none;margin-left:26%}
+     .contact .contact-info button:hover{	cursor:pointer;}
+   /*contact  End.........................................................................*/
+/*fotter---------------------------------------------*/
+.fotter{height:100px;overflow:hidden;background-color:#0099FF;}
+.fotter .f-left{float:left;display:inline-block;margin-top:3%;width:20%;color:#FFF;font-size:20px}
+.fotter ul{list-style:none;width:60%;float:right}
+.fotter  i{
+	color:#FFF;float:right;margin-left:10%
+}
+.fotter  i:hover{
+	color:#434343;
+	cursor:pointer;
+	}

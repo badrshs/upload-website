@@ -1,0 +1,115 @@
+/* start main */
+ body {font-family:} 
+.container {width:1170px; margin:auto;}
+ 
+/* end main */
+
+/* start header */
+.header .bar1  {height:45px; background-color:#1E3C48; margin:0;overflow:hidden }
+.header .bar1 .container ul{margin:0; padding-left:10px}
+.header .bar1 .container ul li{list-style:none;color:#e2e2e2; padding-right:30px; padding-top:10px; } 
+.header .bar1 .container .icons li {float:right;  }
+
+.header .slide { background-image:url(../images/Homepage.png); height:500px; background-size:cover;}
+.header .slide .bar2 {overflow:hidden; margin:0; background-color:#fff; background-color: rgba(8,104,132,0.4) ;height:70px}
+.header .slide .bar2 .container h2 {margin-top:5px}
+.header .slide .bar2 .container ul li {float:right; list-style:none; padding-right:20px; color:#fff; margin-top:10px; font-style:bolder}
+/* end header */
+ 
+/* start goals */
+.goals {background-color:#F5F5F5; overflow:hidden;}
+.goals .container  {text-align:center; padding-top:70px; }
+.goals .container .design {width:33.3333%;float:left;color:#1E3C48;padding-bottom:70px}
+.goals .container .design p {color:#1E3C48}
+.goals .container .design hr {width:70px}
+
+/* end goals */
+
+/* start aboutme */
+.about-me   {height:420px; overflow:hidden; background-color:#1E3C48;padding-bottom:30px}
+.about-me  .image{ width:50%;}
+.about-me  .image img {  width:100%; }
+.about-me .container .about {float:right; width:40%; padding-top:30px; color:#e2e2e2; padding-right:30px}
+.about-me .container .about hr {width:50px; color:#1AB6E1; margin:-3px 2px }
+.about-me .container .about h3 {padding-top:30px}
+ 
+/* end aboutme */
+
+/* start skills */
+.skills {background-color:#F5F5F5; overflow:hidden; padding:70px;}
+.skills .container .support {float:right; width:49%; margin-bottom:10px; margin-right:1px  }
+.skills .container .support span { margin-top:25px}
+.skills .container .support h3 {padding-left:90px; margin-right:25px; color:#1E3C48 }
+.skills .container .support p {padding-left:90px; margin-right:25px; color:#1E3C48 }
+/* end skills */
+
+/* start Features */
+.Features { height:250px;overflow:hidden;}
+.Features .box1 {width:33.333333%; background-color:#0C8BB4; height:250px; }
+.Features .box1 h3 {padding-top:50px}
+.Features .box1 h3 , .Features .box1  p {padding-left:40px }
+.Features .box2 { width:33.333333%;background-color:#1E3C48; height:250px;}
+.Features .box2  h3 {padding-left:40px; padding-top:50px}
+.Features .box2  p {padding-left:40px;}
+.Features .box3 {width:33.333333%;background-color:#086884; height:250px;}
+.Features .box3 h3   {padding-left:40px; padding-top:50px}
+ .Features .box3 p {padding-left:40px; } 
+/* end Features */
+
+/* start portfolio */
+.portfolio {background-color:#F5F5F5; overflow:hidden;padding-top:80px}
+.portfolio .bar .container  h2 { color:#0C8BB4}
+ 
+.portfolio .bar .container ul  {float:right}
+.portfolio .bar .container  ul li  {float:left; padding-right:20px; list-style:none; color:#1E3C48}
+
+.portfolio .photos .container {overflow:hidden; padding-top:20px;padding-bottom:70px;}
+.portfolio .photos .container  ul {overflow:hidden;  padding-left:0 }
+.portfolio .photos .container  ul li{ width:33.3333%; list-style:none;}
+.portfolio .photos .container   ul li img {width:97%;padding:3px;background-color:#fff; border:1px solid #ccc; box-shadow:10px 10px 5px #ccc; margin:10 }
+/* end portfolio */
+
+/* start team */
+.team {background-color:#1E3C48; overflow:hidden;text-align:center}
+.team   h2 {padding:70px }
+.team  .images .photos  {overflow:hidden;padding-left:0 }
+.team  .images .photos li { list-style:none;width:20%; }
+.team  .images .photos li img { ;width:100%; }
+
+.team .container .logos {padding-bottom:70px; padding-top:20px;padding-left:0  }
+.team .container .logos li {list-style:none; margin-top:50px; width:15%; padding-left:5%;padding-right:5% }
+.team .container .logos li img {width:100%}
+/* end team */
+
+/* start Test */
+.test {overflow:hidden;height:250px}
+.test .john {background-color:#F5F5F5; width:65%;height:250px;padding-top:70px;text-align:center ;color:#1E3C48}
+.test .john p {color:#1E3C48}
+.test .john span {font-size:12px; color:#1AB6E1}
+.test .Testimonials {background-color:#1E3C48; width:35%;height:250px; color:#F5F5F5;padding-top:70px;}
+.test .Testimonials h3 {color:#1AB6E1}
+.test .Testimonials h3 ,.test .Testimonials p{padding-left:20px; }  
+/* end Test */
+
+/* start tools */
+.tools   {overflow:hidden; padding:80px; background-color:#F5F5F5}
+.tools .container .top {width:310px; padding-left:50px; background-color:#086884;padding-bottom:70px; color:#F5F5F5; }
+.tools .container .top h3{padding-top:30px;}
+.tools .container .top p {padding-right:10px;}
+.tools .container .Ecommerce {width:340px; padding-left:60px;color:#1E3C48 }
+.tools .container .Ecommerce h3 {color:#1E3C48;padding-top:30px}
+.tools .container .Ecommerce p {color:#0C8BB4}
+/* end tools */
+
+/* start footer */
+.footer {overflow:hidden; background:#1E3C48; height:300px; padding-top:50px} 
+.footer .container .Palas {color:#F5F5F5;float:left;}
+.footer .container .Get-social {color:#F5F5F5; padding-left:120px}
+.footer .container .Tweets {color:#F5F5F5;padding-left:200px }
+.footer .container .Tweets .at {color:#1AB6E1} 
+/* end footer */
+
+/* start framwork */
+.fl-left {float:left}
+p , h2, h3 , h3 {color:#F5F5F5}
+/* end framwork */

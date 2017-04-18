@@ -1,0 +1,22 @@
+*{margin: 0;}
+.continer{width: 950px;margin: auto}
+.clear{clear: both;}
+
+/* start slider */
+/* nave bar */ 
+.slider{background-image:url(../images/bg-home.jpg);background-repeat: no-repeat;background-size: cover;height:689px;}
+.slider .navepar{overflow: hidden;background:rgba(25,25,25,0.5);padding: 15px}
+.slider .navepar h2,ul{float: left;color: #FFF}
+.slider .navepar ul{list-style-type: none;margin:0 0 0 300px;}
+.slider .navepar ul li{float: left;margin: 0}
+.slider .navepar ul li a{text-decoration: none;color:#fff; text-align: right;font-weight: bold;padding: 21px}
+.slider .navepar ul li a:hover{background-color: #620031}
+.slider .navepar ul li .active{background-color: #000000}
+.slider .img,.text{float: left;margin-top: 30px}
+.slider .text{margin:180px 0 0 0;color: #FFF;}
+.slider .text h2{font-size:60px ;font-family:cursive;pad}
+.slider .text p{font-size:40px ;text-align: center;margin-top: 15px}
+.slider .text button{background:#000000;padding: 13px 50px;border: none;margin:30px 0 0 150px}
+.slider .text button:hover{background: #AB000B}
+/* end navebar*/ 
+/* end slider

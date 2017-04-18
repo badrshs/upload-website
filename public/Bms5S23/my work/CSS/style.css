@@ -1,0 +1,291 @@
+/* start main rules*/
+body
+{
+   
+    height: 4000px
+}
+.container
+{
+    width: 900px;
+    margin: auto
+}
+.clearfit {clear: both}
+
+/* end main rules*/
+
+/*start header*/
+.header .slider
+ {
+       background-image: url(../Images/slider.jpg.jpg);
+    background-size: cover;
+    height: 600px;}
+.header .slider .intro { margin: 0;
+  height: 900px;text-align: center;
+    color: #FFF;
+    padding-top: 300px;}
+
+.header .slider .intro h2{color: #FFF}
+.header .slider .intro h2  {
+    margin: 0 auto;
+     font-size: 50px;
+    width: 600px;
+    border-top: 3px solid #FFF;
+    border-bottom: 3px solid #FFF
+}
+
+.header .slider .intro button 
+{
+    background:none;
+    width: 140px;
+    margin-top: 30px;
+    font-size: 20px;
+    border: 3px solid #FFF;
+    color: azure;
+    font-weight: bold   
+}
+
+.header .navbar{
+    
+    background-color: #252F31;
+    color: #fff;
+    overflow: hidden;    
+}
+.header .navbar h2{color: #FFF}
+.header .navbar span {color: #39D693}
+.header .navbar ul {
+    
+    list-style: none;
+    padding-left: 0;
+    overflow: hidden;
+    float: right
+}
+.header .navbar ul li{
+    
+    float: left;padding: 10px
+}
+.header .navbar ul li a {
+    color: #FFF;
+    text-decoration: none
+}
+
+.header .navbar ul li.active a,
+.header .navbar ul li a:hover {
+    color: #39D693
+}
+
+/* end header*/
+
+/* start features */
+.features {
+    overflow: hidden;
+    padding-top: 40px;
+    padding-bottom: 10px
+}
+.features .feat {
+    
+    width: 33.3333%;
+    height: 150px;
+   
+}
+
+/* End features */
+
+/* start about me */
+.about-me { background-color: #f2f2f2;overflow: hidden;}
+
+.about-me .image{width: 40%}
+
+.about-me .image img {width: 100%;height: 545px} 
+
+.about-me .info{ width: 60%;}
+
+.about-me .info h2 { margin: 40px 0 20px 40px}
+
+.about-me .info > p {margin: 0 0 10px 40px;}
+
+.about-me .info > p:last-of-type {margin-top: 5%}
+
+.about-me  .Hobbies{overflow: hidden; margin: 15px 0 0 40px } 
+
+.about-me .info .content{width: 50%;overflow: hidden}
+
+.about-me  .content .icon{float: left;width: 12%;margin-right: 5%}
+
+.about-me  .content .icon img {max-width: 100%;margin: 30px 10px 0 30px}  /* top - right - down - left */
+
+.about-me .content .text h3 {margin-bottom: 3px;margin-left: 25px}
+
+.about-me .content .text {width: 70%}
+.about-me .content .text p {margin-top: 0;margin-left: 25px;padding: 0}
+
+/* End about me */
+
+/* start mt skills */ 
+.my-skills{
+    overflow: hidden;
+    padding-top: 30px;
+    padding-bottom: 30px; color: #555   
+}
+.my-skills .skills,
+.my-skills .progress { width: 50%}
+.my-skills .skills p {margin: 20px 15px 15px 0}
+
+
+.my-skills .skills button{margin-top:40px ;margin-bottom:48px }
+.my-skills .progress .technical {margin-left: 30px}
+.my-skills .progress .technical div{background-color: #F2F2F2;height: 25px}
+.my-skills .progress .technical div span 
+{background-color: #2DCC70 ;display: block;height: 25px;text-align: right;color: #FFF;line-height: 25px;
+font-weight: bold;display: block}
+
+/* End mt skills */ 
+
+/* start resume */
+.resume {
+    background-color: #f2f2f2;    
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    height: 230px
+}
+.resume h2 {padding: 20px 0 15px 0 }
+.resume p {padding: 0 40px}
+.resume button {margin-top: 20px}
+
+/* end resume */
+
+/*start my education*/
+
+.my-education{
+    overflow: hidden;
+    padding-top: 30px;
+    padding-bottom: 30px;   
+}
+.my-education .main h2 {margin: 25px 0 20px 40px}
+.my-education .main p {
+    margin: 0 0 10px 40px    
+}
+.my-education .exp h3 {margin-top:70px}
+.my-education .exp span {display: block;margin-bottom: 15px}
+
+.my-education .exp button {background-color: #31CE73;color: #FFFFFF;margin-right: 25px;
+   width:50px;height:23px
+}
+.my-education .exp  hr {margin: 15px 0 20px 0}
+.my-education .main p :last-of-type {margin-top: 25px}
+
+.main
+{width: 50%;margin-right: 5%}   
+
+ .exp { width: 45%}   
+
+/*End my education*/
+
+/* start testmonial */
+.testmonial {
+    background-color: #f2f2f2;    
+    padding-top: 50px;
+    padding-bottom: 80px;
+    text-align: center
+}
+.testmonial q {line-height: 1.7;;color: #666;font-size: 18px}
+
+.testmonial ul{list-style: none;padding-left: 0;text-align: center}
+
+.testmonial ul li{width: 15;
+height:15;
+border: 2px solid #2DCC70 ;display: inline-block;cursor: pointer}
+
+.testmonial ul li.active,
+.testmonial ul li:hover  {background-color:#2DCC70 }
+/* end testmonial */             
+
+/* start portofolio*/  
+
+.portofolio {text-align: center;padding-top: 60px; padding-bottom: 40px;}
+
+.portofolio .our-work {overflow: hidden}
+
+.portofolio .our-work > div { width: 33.33333%; margin-bottom: 10px}
+
+.portofolio .our-work > div img {
+    width: 92%;
+    margin: 10px;
+    padding: 3px;
+    background-color: #FFF;
+    border: 1px soild #CCC
+}
+/* end portofolio*/  
+
+/* start contact me*/
+
+.contact {
+    background-color: #252F31;
+    overflow: hidden;
+}
+
+.contact .info { width: 50%;margin-right: 5%;}
+
+.contact h2
+{color: #FFF;margin: 30px 0 0 30px;
+    font-size: 26px}
+
+.contact p {color: #6A6E71 ;margin-left: 40px}
+.contact p strong {color:#FFFFFF}
+
+.contact .form { width: 45%; }
+
+.contact .form label  {
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    color: #FFF
+}
+.contact .form input[type="text"] {
+    background-color: #4B5557;border: 0;
+    width: 80%;color: #FFF
+}
+.contact .form textarea {
+    background-color: #4B5557;border: 0;
+    width: 80%;color: #FFF;height: 250px
+}
+
+.contact .form input[type="submit"] {
+    background-color: #191E22;
+    color: #FFF;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    border: 0;
+    text-transform: capitalize
+        
+}
+
+/* end contact me*/
+
+/* start footer*/
+
+.footer {
+    background-color: #191E22;
+     color: #6E7678;
+    padding: 20px;
+    text-align: center
+}
+
+.footer img { margin-top: 20px;padding:5px }
+
+/* end footer*/
+
+/* start my framework*/
+.my-button
+{background: none;
+border:3px solid #2DCC70;padding: 10px 30px;
+color: #2DCC70;font-weight: bold}
+.fl-left {float:left }
+
+p {line-height: 1.7;color: #888 }
+
+h2, h3 {color: #777}
+
+/* End my framework*/
+
+

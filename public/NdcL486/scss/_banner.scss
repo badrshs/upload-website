@@ -1,0 +1,184 @@
+/*=====banner-area css====*/
+.banner-area{
+    overflow: hidden;
+    position: relative;
+    padding: 0px;
+    .carousel-inner{
+        .item{
+            .carousel-caption{
+                left: 183px;
+                transform: translateY(-50%);
+                top: 50%;
+                width: 100%;
+                right: auto;
+                bottom: auto;
+                padding: 0px;
+                .content{
+                    width: 443px;
+                    height: 595px;
+                    border: 1px solid #fff;
+                    background: $black;
+                    text-align: center;
+                    padding: 50px 27px 0px 42px;
+                    h2{
+                        font:700 25px/36px $arimo;
+                        color: #fff;
+                        padding: 0px 62px 25px;
+                        position: relative;
+                        text-transform: uppercase;
+                        &:after{
+                            content: '';
+                            width: 107px;
+                            height: 3px;
+                            background: #fff;
+                            position: absolute;
+                            bottom: 0;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            display: block;
+                        }
+                    }
+                    p{
+                        font: 400 14px/30px $loraFont;
+                        color: #fff;
+                        letter-spacing: 0.25px;
+                        padding-top: 22px;
+                    }
+                }
+            }
+            .slider-tittle{
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                top: 50%;
+                color: #fff;
+                font: 700 52px/90px $loraFont;
+                text-transform: uppercase;
+                .middle{
+                    padding-left: 70px;
+                }
+                .bottom{
+                    padding-left: 126px;
+                }
+            }
+        }
+    }
+    .carousel-control{
+        background: none;
+        text-shadow: none;
+        box-shadow: none;
+        opacity: 0;
+    }
+    &:hover{
+        .carousel-control{
+            opacity: 1;
+            z-index: 10;
+        }
+    }
+}
+
+
+/*===== blog-banner-area css ====*/
+.blog-banner-area{
+    text-align: center;
+    background: url(../images/banner1.jpg) no-repeat scroll center 0;
+    background-size: cover;
+    padding: 162px 0px 326px;
+    position: relative;
+    h2{
+        font: 400 90px/90px $loraFont;
+        color: #ffffff;
+    }
+    h3{
+        font:700 36px/45px $arimo;
+        color: #fff;
+        text-transform: uppercase;
+        padding-top: 47px;
+    }
+    .mouse-button{
+        z-index: 99;
+        text-align: center;
+        position: absolute;
+        -webkit-animation: mouseUpDown 2s ease-in-out;
+        animation: mouseUpDown 2s ease-in-out;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        width: 100%;
+        left: 0;
+        bottom: 151px;
+        a{
+            font: 400 12.73px/36.67px $mount;
+            color: #fff;
+            transform: rotate(-90deg);
+            display: inline-block;
+            &:after{
+                content: '';
+                background: #9a9a9a;
+                width: 96px;
+                height: 2px;
+                display: inline-block;
+                margin-bottom: 3px;
+                margin-left: 10px;
+            }
+            i{
+                font-size: 25px;
+                padding-right: 10px;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+/* Main Banner area css
+============================================================================================ */
+.main_banner_area{
+    background: url(../images/main_blog_bg.jpg) no-repeat scroll center center;
+    background-size: cover;
+    .banner_text{
+        padding: 100px 0px 380px 0px;
+        h2{
+            font-family: "myB";
+            font-size: 58px;
+            color: $black;
+            font-weight: bold;
+            line-height: 60px;
+            text-transform: uppercase;
+        }
+        ul{
+            li{
+                display: inline-block;
+                font-family: "myR";
+                text-transform: uppercase;
+                color: $darkgray;
+                font-size: 14px;
+                padding: 0px 15px;
+                border-right: 1px solid #b1b5b7;
+                line-height: 15px;
+                a{
+                    font-family: "myR";
+                    color: $black;
+                    font-size: 14px;
+                }
+                &.date_blog_single{
+                    a{
+                        color: $darkgray;
+                    }
+                }
+                &:first-child{
+                    padding-left: 0px;
+                }
+                &:last-child{
+                    border-right: 0px;
+                }
+            }
+        }
+    }
+}
+.main_banner_area.about_banner{
+    .banner_text{
+        padding: 240px 0px;
+    }
+}
+/* End Main Banner area css
+============================================================================================ */

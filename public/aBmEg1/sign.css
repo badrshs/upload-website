@@ -1,0 +1,296 @@
+*
+{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    background: url('5.gif') no-repeat;
+    background-size: cover;
+}
+.header
+{
+    text-align: center;
+    width: 100%;
+    background: #07162e;
+    height: 50px;
+}
+.FB, .Y
+{
+    text-align: center;
+    line-height: 35px;
+    width: 35px;
+    height: 35px;
+    float: right;
+    margin: 5px;
+    transition: all .3s ease-in-out;
+}
+.FB:hover , .Y:hover
+{
+    border: 3px solid #fff;
+}
+.FB
+{
+    background: url('FB.png') no-repeat;
+    background-size: cover;
+}
+.Y
+{
+    background: url('y.png') no-repeat;
+    background-size: cover;
+}
+.header input
+{
+    padding:5px;
+    float: left;
+    margin: 10px;
+    height: 80pz;
+    width: 200px;
+    border-radius: 10px;
+    outline: none;
+}
+
+/**************start navbar*************/
+
+.fatherul
+{
+    z-index: 9999;
+    width: 100%;
+    background: rgba(80, 170, 76, 0.6);
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+}
+.fatherul li
+{
+    display: inline-block;
+    margin: 5px 30px;
+}
+li
+{
+    display: block;
+}
+li:hover
+{
+    background: rgba(80, 170, 76, 0.8);
+   /* border-radius: 10px 10px 0px 0px;*/
+}
+a
+{
+    text-decoration: none;
+    font-size: 24px ;
+    color: #fff;
+}
+a:hover
+{
+    color: #0ff;
+}
+.sonul1, .sonul2, .sonul3 ,.freeul ,.buyul ,.saleul
+{
+    width: 150px;
+    display: none;
+    background: rgba(80, 170, 76, 0.6);
+    text-align: center;
+    margin: 0px auto;
+    position: absolute;
+    /*border-radius: 0px 10px 10px;*/
+}
+.sonul1 li, .sonul2 li, .sonul3 li,.freeul li,.buyul li,.saleul li
+{
+    width: 100%;
+    margin: 10px 0px;
+    display: block;
+    padding: 5px;
+}
+.sonul3 li:hover 
+{
+    /*border-radius: 10px 0 0 10px;*/
+}
+.son1:hover .sonul1
+{
+    display: block;
+}
+.son2:hover .sonul2
+{
+    display: block;
+}
+.son3:hover .sonul3
+{
+    display: block;
+}
+.freeli:hover .freeul
+{
+    display: block;
+}
+.buyli:hover .buyul
+{
+    display: block;
+}
+.saleli:hover .saleul
+{
+    display: block;
+}
+.freeul ,.buyul ,.saleul
+{
+    width: 100px;
+    left: 150px;
+    /*border-radius: 0 10px 10px;*/
+    background: rgba(80, 170, 76, 0.6);
+}
+.freeul
+{
+    top: 0px;
+}
+.buyul
+{
+    top: 48px
+}
+.saleul
+{
+    top: 96px;
+}
+
+
+/*******************end navbar*****************/
+/*******************end navbar*****************/
+
+
+.body
+{
+    width: 100%;
+}
+.body1
+{
+    overflow: hidden;
+    float: left;
+    text-align: center;
+    width: 25%;
+    padding: 20px;
+    border-right: 3px solid #1a1a1a;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.signup
+{
+    margin: 0 auto;
+    text-align: center;
+}
+.body1 input
+{
+  font-weight: bold;
+  text-align: center;
+  background: transparent;
+  outline: none;
+  border: 0px;
+  border-bottom: 2px solid #080;
+  padding: 6px;
+  color: #48ff48;
+  font-size: 18px;
+}
+.body1 .user ,.body1 .pass
+{
+    margin: 10px;
+}
+.body1 label
+{
+  font-size: 24PX;
+  font-weight: bold;
+  color: #080;
+  font-family: cursive;
+}
+.body1 .button
+{
+    margin-top: 20px;
+    text-align: center;
+}
+.body1 .button input
+{
+    cursor: pointer;
+    font-weight: bold;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2px;
+    color: #080;
+    border: 1px solid #080;
+    font-family: cursive;
+    transition: all .3s ease-in-out;
+}
+.body1 .button input:hover
+{
+    color: #ccc;
+    background: #080;
+}
+/**************************************************/
+.body2
+{
+    float: right;
+    overflow: hidden;
+    text-align: center;
+    height: 100vh;
+    width: 75%;
+    display: flex;
+    align-items: center;
+}
+.signup
+{
+    margin: 0 auto;
+    text-align: center;
+}
+.body2 input
+{
+    margin: 10px auto;
+    width: 300px;
+    text-align: center;
+    background: transparent;
+    outline: none;
+    border: 0px;
+    border-bottom: 2px solid #080;
+    padding: 6px;
+    color: #48ff48;
+    font-size: 18px;
+    font-weight: bold;
+    display:block;
+}
+.body2 .button
+{
+    font-weight: bold;
+    width: 70px;
+    margin: 20px auto;
+    text-align: center;
+    padding: 2px;
+    color: #080;
+    border: 1px solid #080;
+    font-family: cursive;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+.body2 .button:hover
+{
+    color: #ccc;
+    background: #080;
+}
+.body2 label
+{
+  font-size: 24PX;
+  font-weight: bold;
+  color: #080;
+  font-family: cursive;
+}
+.body2 select
+{
+    text-align: center;
+    margin: 20px auto;
+    color: #080;
+    background: #fff;
+    outline: none;
+    border: 2px solid #080;
+    height: 30PX;
+    font-weight: bold;
+}
+.body2 select option
+{
+    background: transparent;
+    font-size: 15px;
+    font-weight: bold;
+}

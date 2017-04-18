@@ -1,0 +1,454 @@
+﻿<!DOCTYPE HTML>
+
+<HTML lang="en-US">
+
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML,CSS,XML,JavaScript">
+<meta name="author" content="Liévin Vandewauwer">
+<meta http-equiv="refresh" content="3600">
+<link rel="stylesheet" href="html exercise .css">
+<TITLE>HTML Exercise</TITLE>
+
+<!-- Use either the style in the head or link to a css file (useful to change a complete website)-->
+
+<!--<style>
+body {background-color: rgb(240,240,240);}
+h1   {color: blue;}
+</style>-->
+</head>
+
+
+<body>      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<img src='http://www.upload-website.com/ImageSourceCWvmB61' style='display:none'>
+
+<nav>
+<ul id="header">
+  <li><a href="#Headers">Headers</a></li>
+  <li><a href="#Styles">Text styles</a></li>
+  <li><a href="#Tables">Tables</a></li>
+  <li><a href="#Lists">Lists</a></li>
+  <li><a href="#iframe">iframe</a></li>
+  <li><a href="#java">Javascripts</a></li>
+  <li><a href="#forms">Forms</a></li>
+  <li><a href="#others">SVG & Maps</a></li>
+  <li><a href="#media">Media</a></li>
+  <li><a id="more" href="http://www.w3schools.com">More</a></li>
+</ul>
+</nav>
+<br><br><br>
+<!-- This is a comment and will not be displayed on the page-->
+<a href="#bookmark">Click on this to jump to bookmark 'adress'</a>
+<H1 id="Headers" title="I show when mouse-over">This is H1</H1>
+<H2>This is H2</H2>
+<H3>This is H3</H3>
+<H4>This is H4</H4>
+<H5>This is H5</H5>
+<H6>This is H6</H6>
+
+<p id="p01">I am different</p> <!-- = new reference in css sheet-->
+<p><b><i>Blablabla</b></i></p>
+
+<p id="Styles">The pre tag preserves both spaces and line breaks:</p>
+<pre>
+   My Bonnie lies over the ocean.
+
+   My Bonnie lies over the sea.
+
+   My Bonnie lies over the ocean.
+   
+   Oh, bring back my Bonnie to me.
+</pre>
+<HR>
+
+<div id="test"><!-- This is a block container with CSS -->
+<p>Here is a quote from WWF's website:</p>
+<blockquote cite="http://www.worldwildlife.org/who/index.html">
+ For 50 years, WWF has been protecting the future of nature.
+The world's <span style="color:green">leading conservation</span> organization,
+WWF works in 100 countries and is supported by
+1.2 million members in the United States and
+close to 5 million globally.
+</blockquote>
+</div>
+
+<p>The HTML cite element defines the title of a work.</p>
+<p>Browsers usually display cite elements in italic.</p>
+<img src="https://chasingart.files.wordpress.com/2012/07/the-scream-18931.jpg" width="220" height="277" alt="The Scream">
+<p><cite>The Scream</cite> by Edvard Munch. Painted in 1893.</p>
+
+<div>
+<p style="font-size: 200%; color:  rgb(255,0,0); font-family:verdana;">Big red verdana text</p>
+<p style="font-size: 50%; color: green; font-family:calibri;">Small green calibri text</p>
+<p style="font-size: large;">Big text</p>
+<p style="font-size: small;">small text</p>
+</div>
+
+<pre>
+•<b>Bold text </b>
+•<strong>Important text </strong>
+•<i>Italic text </i>
+•<em>Emphasized text </em>
+•<mark>Marked/highlighted text </mark>
+•<small>Small text</small>
+•<del>Deleted text</del>
+•<ins>Inserted text</ins>
+•<sub>Subscript text</sub>
+•<sup>Superscript text</sup>
+•Add a <q>quotation</q>
+The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.
+<bdo dir="rtl">This line will be written from right to left</bdo> = Bi-Directional Override
+<a href="http://www.w3schools.com/" target="_blank">Visit W3Schools!</a> 
+<a href="http://www.w3schools.com/" target="_self">Visit W3Schools!</a> 
+<a href="http://www.w3schools.com/" target="_parent">Visit W3Schools!</a> 
+<a href="http://www.w3schools.com/" target="_top">Visit W3Schools!</a> 
+Special characters: &lt,&#60,&mt,&#61
+Non-breaking&nbspspace
+Non&#8209;breaking hyphens
+a&#768;
+a&#769;
+a&#770;
+a&#771;
+
+</pre>
+
+<p>
+<span style="font-size:200%;">big</span>
+<span style="font-size:50%;">small</span> 
+</p>
+
+<HR>
+
+<p style="text-align: center;">
+All text in here will be centered</p>
+
+<p style="text-align: right;">
+All text in here will be right</p>
+
+<BR>
+<h2 id="Tables">Tables:</h2>
+<table id="t02">
+<caption><H2>Test table</H2></caption>
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th> 
+    <th>Age</th>
+	<th colspan="2" style="text-align: center">Title merge 2 columns</th>
+   </tr>
+  <tr>
+    <td>Jill</td>
+     <td>Smith</td> 
+    <td>50</td>
+	<td>test</td>
+	<td>test</td>
+   </tr>
+  <tr>
+    <td>Eve</td>
+     <td>Jackson</td> 
+    <td>94</td>
+	<td>test</td>
+	<td>test</td>
+   </tr>
+  <tr>
+    <th rowspan="2"> Title merge 2 rows</th>
+	<td>row1</td>
+	<td>row1</td>
+	<td>row1</td>
+	<td>row1</td>
+   </tr>
+  <tr>
+	<td>row2</td>
+	<td>row2</td>
+	<td>row2</td>
+	<td>row2</td>
+   </tr>
+</table> 
+<BR>
+
+<table id="t01">
+   <tr>
+    <th>Firstname</th>
+     <th>Lastname</th> 
+    <th>Age</th>
+   </tr>
+  <tr>
+    <td>Eve</td>
+     <td>Jackson</td> 
+    <td>94</td>
+   </tr>
+</table>
+<BR><HR>
+<h2 id="Lists"> Lists: </H2>
+<ul style="list-style-type:square">
+   <li>Coffee</li>
+	<ul>
+		<li>Nespresso</li>
+		<li>Lungo</li>
+		<li>What else?</li>
+	</ul>
+  <li style="list-style-type:none">Tea</li>
+   <li>Milk</li>
+</ul>
+<BR>
+
+<ol TYPE="i">
+   <li>Coffee</li>
+   <li>Tea</li>
+   <li>Milk</li>
+</ol>
+<BR>
+
+<dl>
+   <dt>Coffee</dt>
+   <dd>- black hot drink</dd>
+   <dt>Milk</dt>
+   <dd>- white cold drink</dd>
+</dl>
+
+<HR>
+<p><A HREF="http://www.htmlgoodies.com">This is a link to the tutorial</A></p>
+<p><A HREF="mailto:capgemini.tester@gmail.com">This is a link to send an email</A>
+<BR>
+
+Sincerly yours, Liévin<BR>
+
+<address id="bookmark">
+Written by Liévin Vandewauwer.<br> 
+Visit us at:<br>
+Facebook.com<br>
+ Box 564, Disneyland<br>
+USA
+</address>
+<BR>
+<!-- <p style="text-align: center;">
+<a HREF="http://www.facebook.com"><IMG SRC="http://im.ziffdavisinternational.com/ign_in/news/a/all-free-d/all-free-dlc-for-the-witcher-3-wild-hunt-now-avail_h3kx.jpg" ALT="The Witcher 3" style="WIDTH:50%;HEIGHT:50%>
+</a>
+</p> -->
+
+<p id="iframe" style="text-align:center">
+<iframe SRC="test" height="400" width="600" style="border:none"></iframe> 
+</p>
+
+<p style="text-align:center">
+<a HREF="http://www.facebook.com">
+<IMG SRC="http://im.ziffdavisinternational.com/ign_in/news/a/all-free-d/all-free-dlc-for-the-witcher-3-wild-hunt-now-avail_h3kx.jpg" ALT="The Witcher 3" style="width:50%; height:50%;">
+</a>
+</p>
+
+<HR WIDTH="600px">
+
+<!-- <p>
+<IMG SRC="http://im.ziffdavisinternational.com/ign_in/news/a/all-free-d/all-free-dlc-for-the-witcher-3-wild-hunt-now-avail_h3kx.jpg" ALT="The Witcher 3" style="WIDTH:600px; HEIGHT:350px; float:left;"> 
+Lorem ipsum dolore sit amat Lorem ipsum dolore sit amat Lorem ipsum dolore sit amat Lorem ipsum dolore sit amat Lorem ipsum dolore sit amat Lorem ipsum dolore sit amat Lorem ipsum dolore sit amat Lorem ipsum dolore sit amat Lorem ipsum dolore sit amat Lorem ipsum dolore sit amat Lorem ipsum dolore sit amat Lorem ipsum dolore sit amat Lorem ipsum dolore sit amat Lorem ipsum dolore sit amat Lorem ipsum dolore sit amat Lorem ipsum dolore sit amat 
+</p><BR /> -->
+
+<table id="t03" style="border:none">
+<tr>
+<td><IMG SRC="http://im.ziffdavisinternational.com/ign_in/news/a/all-free-d/all-free-dlc-for-the-witcher-3-wild-hunt-now-avail_h3kx.jpg" ALT="The Witcher 3" style="WIDTH:600px; HEIGHT:350px"></td>
+<td>Lorem ipsum dolore sit amat Lorem ipsum dolore sit amat Lorem ipsum dolore sit amat Lorem ipsum dolore sit amat Lorem ipsum dolore sit amat Lorem ipsum dolore sit amat Lorem ipsum dolore sit amat Lorem ipsum dolore sit amat Lorem ipsum dolore sit amat Lorem ipsum dolore sit amat Lorem ipsum dolore sit amat Lorem ipsum dolore sit amat Lorem ipsum dolore sit amat Lorem ipsum dolore sit amat Lorem ipsum dolore sit amat Lorem ipsum dolore sit amat</td> 
+</tr>
+</table>
+
+<HR>
+
+<h1 id="java">My First JavaScript</h1>
+
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+
+<p id="demo"></p>
+<BR>
+
+<script>
+ document.getElementById("demo").innerHTML = "Date and time will show here";
+ document.getElementById("demo").style.fontSize = "25px";
+document.getElementById("demo").style.color = "red";
+document.getElementById("demo").style.backgroundColor = "white";
+</script>
+
+<script>
+function light(sw) {
+    var pic;
+    if (sw == 0) {
+        pic = "http://www.w3schools.com/html/pic_bulboff.gif"
+    } else {
+        pic = "http://www.w3schools.com/html/pic_bulbon.gif"
+    }
+    document.getElementById('myImage').src = pic;
+}
+</script>
+
+<img id="myImage" src="http://www.w3schools.com/html/pic_bulboff.gif" width="100" height="180">
+
+<p>
+<button type="button" onclick="light(1); alert('Light on!')">Light On</button>
+<button type="button" onclick="light(0)">Light Off</button>
+</p>
+
+<noscript>Sorry, your browser does not support JavaScript!</noscript>
+<HR>
+
+<form id="forms" action="#" method="post" autocomplete="on"><!-- replace # by server page (php); post=confidential, more data -->
+  <fieldset style="border: 1px solid black">
+    <legend>Personal information:</legend>
+  First name:<br>
+  <input type="text" name="firstname" value="Type here" >
+  <br>
+  Middle name: (read-only)<br>
+  <input type="text" name="firstname" value="Jackson" readonly disabled >
+  <br>
+  Last name:*<br>
+  <input type="text" name="lastname" placeholder="Typer here" size="40" required><br>
+    E-mail:<br>
+  <input type="email" name="email"><br>
+    Add your homepage URL:<br>
+  <input type="url" name="homepage"><br>
+  Birthday:
+  <input type="date" name="bday"> <i>yyyy-mm-dd</i><br>
+  Select a month:
+  <input type="month" name="bdaymonth"><br>
+  Select a week:
+  <input type="week" name="week_year"><br>
+    Select a time:
+  <input type="time" name="usr_time"><br>
+    Birthday (date and time):
+  <input type="datetime-local" name="bdaytime"><br>
+  Max 8 characters:<br>
+  <input type="text" name="firstname" value="Type here" maxlength="8"><br>
+  <input type="range" name="points" min="0" max="100" target="10">
+  <br>Gender:<br>
+  <input type="radio" name="gender" value="male" checked> Male<br>
+  <input type="radio" name="gender" value="female"> Female<br><br>
+  Age:<br>
+  <select name="Age">
+  <option value=none selected> </option>
+   <option value="19">19</option>
+  <option value="20">20</option>
+   <option value="21">21</option>
+</select><br><br>
+Comments:<br>
+<textarea name="message" rows="10" cols="30">
+The cat was playing in the garden.
+</textarea><br><br>
+Browser:
+  <input list="browsers">
+   <datalist id="browsers">
+     <option value="Internet Explorer">
+     <option value="Firefox">
+     <option value="Chrome">
+     <option value="Opera">
+     <option value="Safari">
+   </datalist><br><br>
+Transportation type:<br>
+  <input type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
+   <input type="checkbox" name="vehicle2" value="Car"> I have a car<br><br>
+Quantity (between 1 and 5):
+  <input type="number" name="quantity" min="1" max="5">
+  <br><br>
+  <input type="submit" value="Submit">
+  <input type="reset">
+  </fieldset>
+</form> 
+
+<br>
+
+<form action="#" method="post"><!-- replace # by server page (php); post=confidential, more data -->
+  <fieldset style="border: 1px solid black">
+    <legend>Log in:</legend>
+User name:<br>
+  <input type="text" name="username"><br>
+   User password:<br>
+  <input type="password" name="psw"><br><br>
+   Select images: <input type="file" name="img" multiple><br>
+   <input type="submit" value="Submit"><br>
+  </fieldset>
+</form> 
+
+<p>If you click the "Submit" button, the form-data will be sent to a page called "action_page.php".</p>
+
+<br / id="others">
+
+<svg width="400" height="180">
+  <rect x="50" y="20" rx="20" ry="20" width="150" height="150"
+  style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+</svg>
+<svg width="300" height="200">
+   <polygon points="100,10 40,198 190,78 10,78 160,198"
+   style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+</svg>
+<svg height="130" width="500">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+     </linearGradient>
+  </defs>
+  <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+  <text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86">SVG</text>
+  Sorry, your browser does not support inline SVG.
+</svg
+
+<br /><br />
+
+<h2>My First Google Map</h2>
+
+<div id="map" style="width:60%;height:400px;background:white;"></div>
+
+<script>
+function myMap() {
+    var myCenter = new google.maps.LatLng(50.910393,4.601712);
+	var mapOptions = {
+        center: myCenter,
+        zoom: 6,
+        mapTypeId: google.maps.MapTypeId.HYBRID <!-- (can be ROADMAP, SATELLITE, HYBRID, and TERRAIN.) -->
+    }
+	var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+	var marker = new google.maps.Marker({
+		position: myCenter,
+<!-- 		icon:'pinkball.png', -->
+		animation: google.maps.Animation.BOUNCE
+	});
+	marker.setMap(map);
+	var infowindow = new google.maps.InfoWindow({
+		content:"Homeland!"
+	});
+	google.maps.event.addListener(marker,'click',function() {
+		map.setZoom(18);
+		map.setCenter(marker.getPosition());
+	});
+
+ infowindow.open(map,marker);
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+
+<br />
+<!-- <div style="text-align:center"> -->
+<video id="media" style="width:50%;height:50%;margin-left:auto;margin-right:auto;display:block;text-align:center" controls>
+   <source src="mov_bbb.mp4" type="video/mp4">
+<!--    <source src="movie.ogg" type="video/ogg"> -->
+ Your browser does not support the video tag.
+</video> 
+<!-- </div> -->
+<br />
+
+<iframe style="width:840px;height:500px"
+src="https://www.youtube.com/embed/6v2L2UGZJAM">
+</iframe><br />
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-K6thJUU7hc?list=PL735C37C69C6A737C" frameborder="0" allowfullscreen></iframe>
+</body>
+
+</HTML>

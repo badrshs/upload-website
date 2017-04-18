@@ -1,0 +1,212 @@
+/*
+Project Name : Care Up.
+Owners : Mostafa Ehab , Omar Yasser.
+Start in : 8/9/2016. End in : --/--/--
+*/
+
+/*Start Main Rulez*/
+body{
+    height:1350px;
+	
+}
+
+.container{width:1249px; margin: auto;}
+/*End Main Rulez*/
+
+/*Start Header*/
+.header .slid {
+    background-image: url('../images/slid.jpg');
+    height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden; 
+    text-align: center;
+}
+
+.header .slid .nav {
+    background-color: rgba(0,172,219,0.7);
+    overflow: hidden;
+	position: fixed;
+	width: 100%;}
+
+.header .slid .nav ul li.active {
+    color:#fff;
+    border:#fff solid 2px;
+    padding: 8px;
+    transition: all .3s ease-in-out;
+}
+
+.header .slid .nav ul{
+    list-style: none;
+    float: right;
+    padding-right: 20px;
+}
+.header .slid .nav ul li{
+    float: right;
+    text-align: right;
+    padding: 10px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.header .slid .nav ul li.active:hover{
+    border:#ccc solid 2px;
+}
+
+.header .slid .nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    transition: all .3s ease-in-out;
+}
+
+.header .slid .nav ul li a:hover{
+    color:#ccc;
+}
+
+.header .slid .nav .login{
+    float:left;
+	background: #7AC70C;
+    padding: 10px 15px 10px 15px;
+	text-decoration: none;
+	color: white;
+	margin:15px 8px;
+}
+
+.header .slid .nav .reg{
+    float:left;
+	background: #232D36;
+    padding: 10px 15px 10px 15px;
+	text-decoration: none;
+	color: white;
+	margin-top:15px;
+}
+
+
+
+.header .slid h1{
+    color: #fff;
+    margin-top: 230px;
+}
+
+.header .slid button {
+    border: none;
+    background-color:#7EB530;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px 10px 20px;
+    border-radius: 3px 3px 3px 3px;
+    cursor: pointer;
+}
+/*End Header*/
+
+/*Start welcome*/
+.welcome{
+    overflow: hidden;
+    text-align: center;
+    padding: 10px 0 30px 0;
+    background-color: white;
+}
+
+
+.welcome h1{
+    text-align: center;
+    color: #666666;
+    padding: 10px;
+}
+
+.welcome p {
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    color: #A2968B;
+	margin-bottom: 30px;
+}
+
+.welcome a{
+    background: none;
+    border: #7EB530 4px solid;
+    padding: 10px;
+    margin-top: 30px;
+    color:#7EB530;
+    font-size: 20px;
+    transition: all .3s ease-in-out;
+	text-decoration: none;
+}
+
+.welcome a:hover{
+    background-color: #7EB530;
+    color: white;
+}
+/*End welcome*/
+
+/*Start Features*/
+.features {
+    background-color: #F6F6F6;
+}
+.part {
+    padding: 30px;
+    margin:auto;
+    overflow: hidden;
+    background-color: #F6F6F6;
+    width: 1000px;
+    
+}
+.features .feat {
+    float: left;
+    width: 33.3333%;
+    text-align: center;
+}
+
+
+.features .feat h2{
+    text-align: center;
+    color: #514e4e;
+}
+
+.features .feat p{
+    direction: rtl;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    color: #A2968B;
+}
+
+.features .feat i{
+    color: #514e4e;
+}
+/*End Features*/
+
+/*Start Footer*/
+.footer {
+    background-color: #232D36;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.footer img{
+    width: 100px;
+    height: 100px;
+    
+}
+
+.footer i {
+    color: #fff;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+
+.footer .fb:hover{
+    color: #3B5998;
+}
+.footer .tw:hover{
+    color: #62A9E0;
+}
+.footer .go:hover{
+    color: #DC4937;
+}
+.footer p{
+    color: #fff;
+}
+/*End Footer*/

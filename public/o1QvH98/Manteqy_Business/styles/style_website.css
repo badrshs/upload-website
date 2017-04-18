@@ -1,0 +1,598 @@
+*{
+    margin: 0;
+    padding: 0;
+    perspective: 600px;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family:cairo-light;
+    src:url(../fonts/cairo-light.ttf);
+}
+@font-face {
+    font-family:lemonada-light;
+    src:url(../fonts/lemonada-light.ttf);
+}  
+@font-face {
+    font-family:reem-kufi;
+    src:url(../fonts/reem-kufi.ttf);
+}
+@font-face {
+    font-family:font-mobily;
+    src:url(../fonts/mobily.ttf);
+}
+@font-face {
+    font-family:houseplant_DEMO;
+    src:url(../fonts/houseplant_DEMO.otf);
+}
+@font-face {
+    font-family:Vtks-Zamioyn4;
+    src:url(../fonts/Vtks-Zamioyn4.ttf);
+}
+.navbar-default .navbar-toggle {
+    border-color: #fff;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: rgba(33, 150, 243, 0.34);
+}
+.back_img{ 
+    background: url(http://i.imgur.com/0s07Buo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block
+}
+/*          ------------- Start Deing OF MEnu -------------             */
+.navbar-default {
+    background-color: transparent;
+    border-color: transparent;
+}
+ul.nav.navbar-nav {
+    float: right;
+}
+p.logo_write {
+    color: white;
+    font-family: lemonada-light;
+    font-size: x-large;
+    font-weight: bold;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #fff;
+    text-transform: capitalize;
+    font-size: inherit;
+    font-family: cursive, sans-serif;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: rgba(247, 244, 244, 0.9);
+    animation: rotate_words_in_menu .5s ease-in-out;
+}
+@keyframes rotate_words_in_menu{
+    from{
+        transform: rotate(-10deg)
+    }
+    to{
+        transform: rotate(10deg)
+    }
+}
+
+/*          ------------- End// Deing OF MEnu -------------             */
+/*          ------------- Start Deing OF Section home -------------             */
+.section_of_home {
+    text-align: center;
+    color: white;
+    margin-top: 7%
+}
+.section_of_home h2 {
+    font-size: 70px;
+    font-family: reem-kufi;
+}
+.section_of_home p {
+    margin: 1% 13%;
+    line-height: 2;
+    font-family: lemonada-light;
+}
+.box_io_A button.btn.btn-default.btn_sign_up, .box_io_A button.btn.btn-default.btn_contact_Us {
+    margin: 1% 3%;
+    padding: 1% 5%;
+    border-radius: 49px;
+    font-weight: bold;
+    font-size: medium;
+    font-family: lemonada-light;
+}
+.box_io_A button.btn.btn-default.btn_sign_up {
+    background: rgba(0, 188, 212, 0.73);
+    color: white;
+    border: 1px solid rgba(0, 188, 212, 0.73);
+}
+.box_io_A button.btn.btn-default.btn_contact_Us {
+    background: transparent;
+    color: white;
+}
+.box_io_A button.btn.btn-default.btn_contact_Us:hover {
+    background: rgba(21, 162, 193, 0.79);
+    border: 1px solid rgba(21, 162, 193, 0.79);
+}
+.social_media_1 {
+    font-size: xx-large;
+    margin-right: 25px;
+    padding-bottom: 10%;
+}
+.social_media_1 .fa {
+    margin: 3% 2%;
+}
+/*          ------------- End// Deing OF Section home -------------             */
+/*          ------------- Start Deing OF Section TreeD -------------             */
+.section_threeD {
+    text-align: center;
+    background: url(http://i.imgur.com/87h2ibg.jpg);
+    background-size: cover;
+    height: 250px;
+    color: white;
+    margin-top: -7%
+ }
+.section_threeD .col-sm-4.col-md-4.col-lg4.box_01, .section_threeD .col-sm-4.col-md-4.col-lg4.box_03 {
+    margin-top: 6%
+}
+.section_threeD .col-sm-4.col-md-4.col-lg4.box_02{
+    padding-top: 7%;
+}
+.section_threeD .col-sm-4.col-md-4.col-lg4.box_01 .fa, .section_threeD .col-sm-4.col-md-4.col-lg4.box_02 .fa, .section_threeD .col-sm-4.col-md-4.col-lg4.box_03 .fa {
+    font-size: 50px;
+}
+.section_threeD .col-sm-4.col-md-4.col-lg4.box_01 h2, .section_threeD .col-sm-4.col-md-4.col-lg4.box_02 h2, .section_threeD .col-sm-4.col-md-4.col-lg4.box_03 h2 {
+    font-size: large;
+    margin-top: 4%;
+    font-family: lemonada-light;
+}
+.section_threeD .col-sm-4.col-md-4.col-lg4.box_01 p, .section_threeD .col-sm-4.col-md-4.col-lg4.box_03 p {
+    margin: 1% 8%;
+    font-family: cursive;
+}
+.section_threeD .col-sm-4.col-md-4.col-lg4.box_02 {
+    background-image: url(http://i.imgur.com/DVXPsnR.jpg);
+    height: 100%;
+    background-size: cover;
+    transform: translate3d(0,0,70px);
+    box-shadow: 10px 10px 5px rgba(44, 13, 92, 0.78);
+}
+/*  ----------------    media   ----------------  */
+
+@media (max-width: 767px){
+.section_threeD{
+     height: auto;
+}
+.section_threeD .col-sm-4.col-md-4.col-lg4.box_01, .section_threeD .col-sm-4.col-md-4.col-lg4.box_03 {
+     height: 250px;
+     padding-top: 4%;
+}
+ul.nav.navbar-nav {
+    float: left;
+}  
+}
+@media (max-width: 677px){
+.section_threeD{
+    margin-top: -6%;
+}
+}
+/*          ------------- End// Deing OF Section TreeD -------------             */
+/*          ------------- Start Deing OF Section experience_year -------------             */
+.experience_year {
+    margin-top: 5%;
+}
+.experience_year h1 {
+    font-family: cursive;
+    margin-left: 7%;
+    padding: 1%;
+}
+.experience_year p {
+    margin: 2% 8%;
+    line-height: 2;
+    text-align: justify;
+    font-size: larger;
+    font-family: monospace;
+}
+span.num_experience_year {
+    animation: cng_colors_back 10s infinite ease-in-out;
+    color: white;
+    padding: 0px 15px 0px 15px;
+    border-radius: 100px;
+    padding-right: 15px;
+    font-family: lemonada-light;
+}
+.experience_year .col-sm-4.col-md-4.col-lg-4 {
+    background: url(http://i.imgur.com/Aw4Ujrk.png);
+    height: 300px;
+    overflow: hidden;
+    background-size: cover;
+}
+/*          ------------- End// Deing OF Section experience_year -------------             */
+/*          ------------- Start Deing OF Section Our Services -------------             */
+video {
+    display: none;
+}
+ .our_Services .col-sm-4.col-md-4.col-lg-4 {
+    background: url(http://i.imgur.com/lHLoIQK.png);
+    background-size: cover;
+    height: 252px;
+    text-align: center;
+}
+.our_Services .col-sm-4.col-md-4.col-lg-4 span.fa.fa-play {
+    margin-top: 33%;
+    color: white;
+    font-size: 60px;
+    background: rgba(0, 188, 212, 0.72);
+    padding: 16px 17px 16px 28px;
+    border-radius: 77px;
+    cursor: pointer;
+    margin-right: 14%;
+}
+
+.our_Services .col-sm-6.col-md-6.col-lg-6 {
+    text-align: center;
+    padding: 2%;
+}
+.our_Services .col-sm-6.col-md-6.col-lg-6 .fa {
+    font-size: xx-large;
+    color: white;
+}
+.our_Services .col-sm-6.col-md-6.col-lg-6 h3 {
+    font-size: large;
+    font-family: cursive;
+}
+.our_Services .col-sm-6.col-md-6.col-lg-6 p {
+    font-family: cursive;
+}
+.our_Services .col-sm-8.col-md-8.col-lg-8 {
+    background: url(http://i.imgur.com/rnrRpbh.png);
+    background-size: cover;
+    color: white;
+}
+/*          ------------- End// Deing OF Section Our Services -------------             */
+/*          ------------- Start Deing OF Section Our Projects -------------             */
+
+.Our_Projects {
+    display: inline-block;
+    margin-top: 3%;
+    text-align: center;
+}
+.Our_Projects p {
+    margin: 2% 11%;
+    margin-bottom: 1%;
+    line-height: 2;
+    font-family: cursive;
+    font-size: 15px;
+}
+.Our_Projects .items.col-sm-4.col-md-4.col-lg-4 {
+    margin-top: 2%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+}
+.Our_Projects .items.col-sm-4.col-md-4.col-lg-4:hover{
+    animation: fade_show 2s  ease-in-out;
+    animation-fill-mode:both;
+}
+.over {
+    background: rgba(0, 150, 136, 0.48) url(http://i.imgur.com/87h2ibg.jpg);
+    background-size: cover;
+    opacity: .5;
+    color: white;
+    position: absolute;
+    height: 100%;
+    z-index: 2;
+    overflow: hidden;
+    display: none;
+}
+.Our_Projects .items.col-sm-4.col-md-4.col-lg-4 .over h2 {
+    text-align: center;
+    padding-top: 16%;
+    font-family: cursive;
+    transform: rotate(23deg);
+    font-size: 45px;
+}
+.Our_Projects .items.col-sm-4.col-md-4.col-lg-4 img {
+    width: 100%;
+    height: 260px;
+}
+.Our_Projects .items.col-sm-4.col-md-4.col-lg-4:hover .over{
+    display: inline-block;
+}
+@keyframes fade_show{
+    0%{
+        transform: translate3d(0,0,0);
+    }
+    
+    100%{
+        transform: translate3d(0,0,15px);
+    }
+}
+@keyframes cng_colors{
+    
+    0%{
+        color: #408888
+    }
+    20%{
+        color: #9c27b0
+    }
+    40%{
+        color: #2196f3
+    }
+    
+    60%{
+        color: #e91e63
+    }
+    80%{
+        color: #4caf50
+    }
+    100%{
+        color: #009688
+    }
+}
+
+/*          ------------- End// Deing OF Section Our Projects -------------             */
+/*          ------------- Start Deing OF Section Our Pricings -------------             */
+.our_Pricings {
+    text-align: center;
+}
+.some_our_Pricings {
+    background: #E91E63 url(http://i.imgur.com/87h2ibg.jpg);
+    color: white;
+    padding: 3%;
+}
+.some_our_Pricings.active_Feature{
+    background: red;
+    animation: cng_colors_back 15s infinite ease-in-out;
+}
+.some_our_Pricings h3 {
+    font-family: cursive;
+}
+.some_our_Pricings h2 {
+    font-family: "lemonada-light",sans-serif;
+}
+.some_our_Pricings p {
+    font-family: monospace;
+    font-size: large;
+    font-style: italic;
+}
+.Feature {
+    border: 1px solid #ccc;
+}
+.Feature p {
+text-align: center;
+    width: 75%;
+    margin: auto;
+    padding-top: 1%;
+    font-size: medium;
+    font-family: sans-serif;
+    line-height: 2;
+    font-weight: normal;
+    border-bottom: 1px solid #CCC;
+    padding-bottom: 3%;
+    text-transform: capitalize;
+    color: rgb(119, 115, 115);
+}
+.Feature button.btn.btn-default {
+    margin: 4%;
+    padding: 2% 9%;
+    border-radius: 31px;
+    color: rgba(101, 99, 99, 0.84);
+    font-family: cursive;
+}
+.btn-default:hover {
+    background-color: transparent;
+    border-color: rgba(208, 200, 200, 0.4);
+}
+button.btn.btn-default.active_Feature_bt{
+    background-color: crimson;
+    color: white;
+    border:none;
+    animation: cng_colors_back 15s infinite ease-in-out;
+}
+/*          ------------- End// Deing OF Section Our Pricings -------------             */
+/*          ------------- Start Deing OF Section Honorary board -------------             */
+.Honorary_board {
+    font-family: "lemonada-light",sans-serif;
+    background: url(http://i.imgur.com/yfN7thd.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: 6% 4%;
+    margin-top: 2%;
+    
+}
+.Honorary_board .col-sm-3.col-md-3.col-lg-3 h3 {
+    font-size: xx-large;
+}
+/*          ------------- End// Deing OF Section Our Pricings -------------             */
+.colors_nav {
+    background: red;
+    width: 100%;
+    height: 20px;
+    margin-top: -1%;
+    animation: cng_colors_back 20s infinite ease-in-out;
+
+}
+/*          ------------- Start Deing OF Section About Us -------------             */
+.About_Us {
+    text-align: center;
+    padding-top: 4%;
+    background: url(http://i.imgur.com/ZUbPZKQ.jpg);
+    background-size: cover;
+    color: white;
+    animation: cng_back_img 15s infinite ease-in-out;
+}
+.About_Us h2 {
+    font-family: cursive;
+    font-size: 46px;
+}
+.About_Us p {
+    margin: 3% 5%;
+    line-height: 2;
+    font-family: "lemonada-light",sans-serif;
+}
+.so_md .fa {
+    font-size: xx-large;
+    padding: 1% 0%;
+    margin: 2%;
+    cursor: pointer;
+    color: white;
+}
+/*          ------------- End// Deing OF Section About Us -------------             */
+/*          ------------- Start Deing OF Section Contact Us -------------             */
+.Contact_Us {
+    text-align: center;
+}
+input#full_name {
+    width: 49%;
+    text-align: center;
+    margin-left: 52%;
+    margin-bottom: 5%;
+}
+input#emial {
+    width: 49%;
+    text-align: center;
+    margin-left: 14%;
+    margin-bottom: 5%;
+}
+textarea#comment {
+    margin-left: 26%;
+}
+button.btn.btn-default.bt_send {
+    margin: 1%;
+    padding: 1% 7%;
+    border-radius: 38px;
+    color: #8c8c8c;
+}
+@media (max-width: 767px){
+ input#full_name, input#emial{
+        margin-left: 28%
+    }
+}
+.Contact_Us img {
+    width: 100%;
+}
+/*          ------------- End// Deing OF Section Contact Us -------------             */
+/*          ------------- Start Deing OF Section Footer -------------             */
+.Footer {
+    background: url(http://i.imgur.com/G4mcHfg.jpg);
+    background-size: cover;
+    overflow: hidden;
+    color: white;
+}
+span.fa.fa-skyatlas.fa-fw {
+    font-size: 83px;
+    margin-left: 28%;
+    color: white;
+}
+.Footer .col-sm-4.col-md-4.col-lg-4 p {
+    text-align: center;
+    line-height: 2;
+    font-family: cursive;
+}
+.Footer .col-sm-4.col-md-4.col-lg-4 ul.nav {
+    margin-left: 20%;
+}
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color: transparent;
+}
+.Footer .col-sm-4.col-md-4.col-lg-4 ul.nav a {
+    color: white;
+    font-family: monospace;
+    font-style: italic;
+}
+.Footer .col-sm-4.col-md-4.col-lg-4 ul.nav a:hover {
+    color: rgba(255, 255, 255, 0.89);
+}
+.rights {
+    color: white;
+    text-align: center;
+    background: red;
+    font-size: x-large;
+    overflow: hidden;
+    padding-top: 1%;
+    font-family: cursive;
+    font-style: italic;
+    animation: cng_colors_back 20s infinite ease-in-out;
+}
+
+/*          ------------- End// Deing OF Section Footer -------------             */
+
+.our_colors {
+      animation: cng_colors 10s infinite ease-in-out;
+}
+.titles {
+    font-family: cursive;
+    font-size: 45px;
+}
+.text_titles{
+    margin: 2% 11%;
+    margin-bottom: 1%;
+    line-height: 2;
+    font-family: cursive;
+    font-size: 15px;
+}
+@keyframes cng_back_img{ 
+    0%{
+        background-image: url(http://i.imgur.com/ZUbPZKQ.jpg);
+    }
+     50%{
+         animation-delay: 5s;
+         background-image: url(http://i.imgur.com/VzbdR9j.jpg)
+        
+    }
+     100%{
+         animation-delay: 10s;
+         background-image: url(http://i.imgur.com/2Tb45Rf.jpg);
+        
+    }
+}
+@keyframes cng_colors_back{
+    
+        0%{
+        background-color: #408888
+    }
+        20%{
+        background-color: #9c27b0
+    }
+    40%{
+        background-color: #2196f3
+    }
+    
+    60%{
+        background-color: #e91e63
+    }
+    80%{
+        background-color: #4caf50
+    }
+    100%{
+        background-color: #009688
+    }
+}
+@keyframes cng_colors{
+    
+    0%{
+        color: #408888
+    }
+    20%{
+        color: #9c27b0
+    }
+    40%{
+        color: #2196f3
+    }
+    
+    60%{
+        color: #e91e63
+    }
+    80%{
+        color: #4caf50
+    }
+    100%{
+        color: #009688
+    }
+}

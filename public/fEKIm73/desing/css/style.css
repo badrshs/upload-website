@@ -1,0 +1,99 @@
+/*  make the container*/
+
+.cont { width: 1000px;    margin: auto; overflow: hidden}
+.clearfex {clear: both}
+/*start header*/
+.header .slider { background-image: url("great1.jpg") ; background-size:cover ; height:1000px }
+.header .slider .cont .intro {text-align: center ;color: #F8F7FC ;padding-top:700px  }
+.header .slider .cont .intro h2 {margin:0  auto  ;  font-weight: bold; color: #575657;
+                                                        font-size: 50px ; width: 462px ; border-top: 2px solid white
+                                                        ; border-bottom: 2px solid white}
+.header .slider .cont .intro button {padding: 15px 40px ; background: none;color: white ;margin: 30px 0 60px 0 ; font-size: 20px ;font-weight: bold;
+border: 2px solid white}
+/*start The Navabar*/
+.navbar {background-color: #262E31 ;overflow: hidden ;color: white}
+.navbar .cont h1 {float: left ;width: 40% ;color: #9BBA7F}
+.navbar .cont  span {color: white}
+.navbar .cont ul {list-style: none; ;float: right; width: 55%}
+.navbar .cont ul li {float:left ;padding: 2px ;text-transform: capitalize ;margin-right: 5px}
+/*End header*/
+/*start feauture*/
+.feaut {overflow: hidden;  background-color: #6DC8BF ;padding-bottom: 50px ;padding-top: 40px  }
+.feaut .feat { width: 33.33333%; height: 150px ;  }
+.feaut .feat h2 {text-transform: capitalize ;color: #606568}
+.feaut .feat p {color: #E2E2E2 ; font-size:18px ;text-align: left ;padding-left: 5px}
+/*end feauture*/
+/*start about me */
+.about {background-color: #F2F2F2;overflow: hidden ;}
+.about .image { width: 43%; }
+.about .image img {width: 100% ;margin-bottom: -3}
+.about .information  { margin: 40px 0 0 15px ;width: 55% }
+.about .information p {color: green ;line-height: 1.7 ;}
+.about .information .seo {overflow: hidden; }
+.about .information .seo > div {width: 50% ;float: left ;  }
+.about .information .seo .text h2 {margin: 30px 0 0 20px}
+.about .information .seo .text{margin-top: 3px}
+.about .information .seo .text p {margin-top: 0}
+.about .information .cont {overflow: hidden}
+.about .information .seo .icon {width: 10% ;margin-right: 4%}
+.about .information .seo .icon img {max-width: 100% ;margin-top: 50px;   }
+.about .information .seo .text {width:80%}
+/*End about me  end end end about meeeeee*/
+/*start  my skills*/
+.myskills {background-color:#274B59 ; height: 450px;  color: #B4BBBD ; overflow: hidden ;padding-top: 30px ;padding-bottom: 30px;  }
+.myskills .cont .skills button {background: none ;color: #2DCC70 ; border: 2px solid #2DCC70;text-transform: capitalize; padding: 10px 25px}
+
+.myskills .skills {width: 50%; float: left ;height: 450px}
+.myskills .progress {width: 50%; float: left}
+.myskills .progress div {height: 30px ; background-color: #F2F2F2 }
+.myskills .progress div span {height: 30px;width: 80% ;background-color:#2ECB74  ;display:block; color: white; text-align: right ;line-height: 25px }
+/*end my skills*/ 
+/*start  resum*/
+.resum {background-color: #F2F2F2 ;color: black ;text-align: center;padding-top: 30px ;padding-bottom: 30px;}
+.resum .cont h2 {text-transform: capitalize ; color: #5D646A ;margin: 30px 0 0 30px ;}
+.resum .cont p {line-height: 1.7}
+.resum .cont button { margin: 40px 0 40px 0;background: none ;color: #2DCC70 ; border: 2px solid #2DCC70;text-transform: capitalize; padding: 10px 25px}
+/*endresum*/
+/*start  my education*/
+.education {background-color: #274B59 ; color:black ;overflow: hidden;}
+.education .main , .education .exp  {float: left ;width: 40% ;margin-left: 10px}
+.education .exp {padding-top: 40px}
+.education .exp span { background: #2AC76C ;color: #2DCC70 ; border: 2px solid #2DCC70;text-transform: capitalize; padding: 5px 20px;color: white}
+
+/*end  my education*/
+/*start  my note*/
+.note {background-color:#F2F2F2 ; color: #9C9C9C ;text-align: center ;padding: 80px 0 30px 0 ;font-weight: bold }
+.note .cont h3 {color: black ;font-weight: bold ;margin-left: 30px}
+.note .cont  ul { list-style:none;overflow: hidden ;text-align: center}
+.note .cont  ul li { border: 1px solid #26D06D;height: 15px ;width:15px ; display: inline-block ; margin-bottom: 30px }
+.note .cont  ul li:hover {background-color:#26D06D }
+.note .cont  ul li.active {background-color:#26D06D }
+/*end  my note*/
+/*start  portofol*/
+.portfo {background-color:#253B50 ;color: black ;overflow: hidden}
+.portfo .cont .port {text-align: center }
+.portfo .cont .port h2 {padding-top: 40px ; color: #E7E7E7  }
+.portfo .cont .port p {color:#DFDFDF ; padding: 20px 0 50px 0 ; font-style: italic ; font-weight: bold }
+.portfo .cont .pic >div {float: left ; }
+.portfo .cont .pic img { margin: 0 20px 20px 0 ;width: 300px ;background-color: white ;border: 1px solid black ; box-shadow: 10px 10px 12px red}
+
+/*end   portofol*/
+/*start contact me */
+.contact {overflow: hidden ; background-color: #262E31 ;color: #6A7275 ;padding-top: 50px}
+.contact .me strong {color: white}
+.contact .me {float: left ;width: 45% ; }
+.contact .me  h1 {color: #F8FBFF ;text-transform: capitalize}
+.contact .me p {font-style: italic ;font-size: 18px ; font-weight: bold;text-align: left}
+.contact .my {float: left ; width: 45% ;color: #F8FBFF ;padding-top: 50px}
+.contact .my label {display: block ;margin-bottom: 15px ; margin-top: 20px }
+.contact .my input[type="text"] {width:500px ;color: white; height: 30px;background-color: #4C5457;border: 2px solid #4C5457}
+.contact .my textarea {height: 200px ;width: 500px; color: white;background-color:#4C5457 ;border: 2px solid #262E31 }
+.contact .my input[type="submit" ] {width: 150px ;height: 45px ;background-color: #191E22 ;color:#F8FBFF ; border: 0 ;margin-top: 20px ; margin-bottom: 50px}
+/*end contact me */
+.end {background-color: #191E22 ;overflow: hidden;color: white ;text-align: center}
+.end ul {list-style: none; margin: 10px 40px 10px 0 }
+.end ul li {display: inline-block;;  margin-right: 5px ;}
+/*start the Edit */
+ .fl {float: left}
+h2 , h1 ,h3{text-transform: capitalize}
+p {line-height: 1.6;font-style: italic ; font-size: 20px}

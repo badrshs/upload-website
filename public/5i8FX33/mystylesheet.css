@@ -1,0 +1,26 @@
+body {
+    background-image: url(twitter-patterns-3.jpg);
+	background-repeat:repeat-x;
+	repeat-y;
+	no-repeat;
+	background-size: cover; 
+}
+ p { text-align:right;
+ color:red; 
+ font-size:20px;
+ } 
+ #header{
+ text-align:Center;
+ width:1300px;
+ height:90px;
+ font-size:28px; 
+ border: 1px  ;
+ } 
+ #container{
+width:1300px;
+height:700px;
+ text-align:center; }
+ #Advertizing {
+	 text-align:center;
+	 width:1300px;} 
+#footer{ text-align:left;} 	 

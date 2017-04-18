@@ -1,0 +1,166 @@
+
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('../fonts/glyp/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyp/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyp/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyp/glyphicons-halflings-regular.svg#HelveticaNeueLTCom-Cn') format('svg');
+}
+
+
+.button-push
+{
+	text-align: center;
+}
+.data-cnt>md-card>img
+{
+    width: 165px;
+    height: 185px;
+    position: absolute;
+       
+}
+.tag-icon
+{
+        margin-right: 5px;
+}
+.lnk-cont
+{
+        float: left;
+    margin-top: 3px;
+    margin-right: 5px;
+}
+.tag-cont
+{
+        float: none;
+    width: 100%;
+    display: inline-block;
+        margin: 0 0 10px 0;
+}
+.right-cont>p:nth-of-type(3)
+{
+        margin: 0 8px;
+}
+ul.rating li {
+  display: inline;
+  border: 0px;
+  background: none;
+  padding: 5px 10px;
+}
+ul.rating li i {
+  font-size: 30px;
+}
+h2
+{
+    margin-bottom: 0;
+}
+.data-cnt>md-card
+{
+    background: #f0f0f0;
+        height: 185px;
+}
+.right-cont
+{
+	float: left;
+	    padding-left: 183px;
+}
+a,a:hover
+{
+	text-decoration: :none!important;
+}
+.right-cont>p
+{
+	float: left;
+}
+.right-cont>p:nth-of-type(2)
+{
+    letter-spacing: 4px;
+    text-indent: 5px;
+}
+.new
+{
+	color: red;
+    width: 30px;
+    height: 19px;
+    position: absolute;
+    right: 24px;
+    top: 11px;
+    font-size: 12px;
+    font-weight: bold;
+}
+/*md-input-container.md-default-theme label{
+    color:#000 !important;
+}*/
+md-input-container label,md-input-container .md-input
+{
+	color: black;
+}
+.pd
+{
+    padding-bottom: 0;
+}
+.radio-but>*
+{
+    float: left;
+        margin-top: 31px;
+}
+.tot
+{
+        font-size: 22px;
+    margin-top: 26px;
+}
+
+.left
+{
+    float: right;
+}
+.like-icon
+{
+	    font-size: 21px!important;
+    position: absolute !important;
+  right: 32px;
+    bottom: 12px;
+    width: 66px;
+}
+
+
+.like-icon i
+{
+	 font-size: 21px!important;
+	     color: rgb(63,81,181);
+}
+.like-no
+{
+	    float: left;
+    top: 0px;
+    position: absolute;
+   left: 19px;
+}
+a
+{
+	display: block;
+    width: 88%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@media screen and (min-width:300px) and (max-width:479px){
+	.data-cnt>md-card>img
+	{
+		    text-align: center;
+    margin: 0 auto;
+    position: relative;
+	}
+	.right-cont
+	{
+		    width: 100%;
+    padding: 0 15px;
+	}
+.data-cnt>md-card
+{
+    height: auto;
+    }
+	}
+
+    @media screen and (min-width:300px) and (max-width:767px){
+
+
+
+}

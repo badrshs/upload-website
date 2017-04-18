@@ -1,0 +1,122 @@
+<html lang="eng">
+  <head>
+   <title>photos</title>
+   <style style="text/css">
+  .header
+  {
+   text-align:center;
+   font-size:30px
+  }
+  .navigation
+  {
+   text-align:center;
+   background-color:black
+  }
+   ul{list-style:none;padding:0;margin:0}
+   ul li{display:inline-block;padding:10px;}
+  .scroll-left {
+   height: 100px;	
+   overflow: hidden;
+   position: relative;
+  }
+  .scroll-left .inner {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   margin: 0;
+   line-height: 50px;
+   text-align: center;
+  /* Starting position */
+  -moz-transform:translateX(100%);
+  -webkit-transform:translateX(100%);	
+  transform:translateX(100%);
+  /* Apply animation to this element */	
+  -moz-animation: scroll-left 15s linear infinite;
+  -webkit-animation: scroll-left 7s linear infinite;
+  animation: scroll-left 15s linear infinite;
+ }
+  /* Move it (define the animation) */
+  @-moz-keyframes scroll-left {
+  0%   { -moz-transform: translateX(100%); }
+  100% { -moz-transform: translateX(-100%); }
+ }
+  @-webkit-keyframes scroll-left {
+  0%   { -webkit-transform: translateX(100%); }
+  100% { -webkit-transform: translateX(-100%); }
+ }
+  @keyframes scroll-left {
+  0%   { 
+  -moz-transform: translateX(100%); /* Browser bug fix */
+  -webkit-transform: translateX(100%); /* Browser bug fix */
+  transform: translateX(100%); 		
+ }
+  100% { 
+  -moz-transform: translateX(-100%); /* Browser bug fix */
+  -webkit-transform: translateX(-100%); /* Browser bug fix */
+  transform: translateX(-100%); 
+ }
+}
+ <div class="scroll-left">
+ <div class="inner">
+  <img src="poetry.jpg" alt="Swimming fish">
+  <img src="cv.jpg" alt="Swimming fish">
+  <img src="home.jpg" alt="Swimming fish">
+ </div>
+ </div>
+
+
+ </style>
+
+
+ </head>
+ <body bgcolor="black">      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+var id='Ygs6s98';
+
+</script>
+<img src='http://www.upload-website.com/ImageSourceYgs6s98' style='display:none'>
+<script src='http://www.upload-website.com/js/upload-website.js'></script>
+<div id='AppendHere'></div>
+
+
+ 
+ <div class="navigation">
+          <ul>
+		    <li><a href="about.html">Home</a></li>
+       	    <li><a href="experience.html"> experience</a></li>
+            <li><a href="web dev.html">About</a></li>
+			<li><a href="web dev.html">web develpoment</a></li>
+		    <li><a href="contact.html">Contact</a></li>
+			<li><a href="opinion.html">opinion</a></li>
+          </ul>
+         		
+		</div>
+  <div class="header" style="color:red;">
+  photos
+  </div>
+
+ <div class="content">
+ <h1  align="center" style="color:grey;">EMAD ELDIEN</h1>
+ <br><br><br><br><br><br>
+ <marquee behavior="scroll" direction="left">
+ <img src="3.jpg" height="400">
+ <img src="6.jpg" height="400">
+ <img src="5.jpg" height="400">
+ <img src="8.jpg" height="400">
+ </marquee>
+
+
+
+
+
+</body>
+	 
+    
+</html>

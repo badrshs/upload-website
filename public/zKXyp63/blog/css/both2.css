@@ -1,0 +1,92 @@
+
+.r{
+	float : right;
+}
+.l{
+	float : left;
+}
+.te_al{
+	text-align: center;
+}
+.name_user {
+    background-color: #fff;
+    border-radius: 4px;
+    color: #000000;
+    margin-left: 2px;
+    margin-top: 0px;
+    padding-top: 8px;
+    transition :all linear 0.17s;
+    border : solid 2px #3498db;
+}
+.name_user:hover {
+	
+    background-color: #3498db;
+    border-radius: 4px;
+    color: #fff;
+    
+}
+.div_butt a:hover{
+	text-decoration:none;
+}
+.div_butt a:focus{
+	text-decoration:none;
+}
+
+.profil_info_header_box{
+	margin-top : 6%;
+	width : 87%;
+	height: 40px;
+	background-color : #0e5ba9;
+	padding-top : 1.6px;
+	padding-left : 5%;
+	color : #fff;
+	box-shadow: 1px 2px 3px #404244;
+}
+
+.img_profile{
+	margin-top: 2%;
+	width : 30%;
+	margin-right : 4%;
+}
+.info_profile {
+	margin-top: 3%;
+	width : 50%;
+}
+.useri{
+	border-bottom: solid 1px #98999a;
+	height : 33px; 
+	padding-top : 6px;
+}
+.edit_panel{
+  margin-top : 5%;
+  margin-left : 5%;
+}
+.post_titl{
+  margin-bottom: 20px;
+}
+.post_im_g{
+	margin-bottom: 10px;
+}
+.post_sub_hea{
+	margin-bottom: 15px;
+}
+.show_comment{
+	width : 90%;
+	background-color :#fff;
+	margin-bottom: 4px ;
+	padding-top: 7px ;
+}
+.user_comment_date{
+	background-color :#fff;
+	margin-bottom: 10px;
+}
+.info_commenter{
+	padding-right: 17px;
+	padding-left: 17px;
+}
+.head_all_comm{
+	border-bottom: solid 2px #000000 ;
+	margin-bottom: 9px;
+	padding-bottom: 5px;
+	padding-top: 4px;
+}

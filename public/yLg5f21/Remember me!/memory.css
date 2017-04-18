@@ -1,0 +1,123 @@
+@import url(https://fonts.googleapis.com/css?family=Poiret+One|Bangers|Righteous);
+
+body{
+    text-align:center;
+	background: url("images/kaijubkgrnd.jpg"); 
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 50%;
+	width: 100%; 
+	margin: 0 0 60px;
+	/*position: fixed;*/
+	
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		background-size: cover; 
+}
+
+H2{
+    font: 400 100px/1.5 'Pacifico', Helvetica, sans-serif;
+   color: #20B2AA;
+    font-size: 59px;
+}
+
+html {
+    position: relative;
+    min-height: 75%;
+}
+
+.tile {
+
+	background: url("images/starlogo.png") no-repeat;
+	background-position: center;
+	width:115px;
+	height:115px;
+	float:left;
+	margin:10px;
+	padding:20px;
+	text-align:center;
+
+}
+
+h1 {
+text-align: center;
+    font-style:italic;
+	font-family: "Bangers", sans-serif;
+    font-size: 60px;
+  color: #E9967A;
+  text-shadow: 3px 3px 3px #fff;
+	
+}
+
+#player1Div, #player2Div {
+	text-align: center;
+	font-size: 44px;
+	font-family: "Bangers", sans-serif;
+	color:cornsilk;
+	padding-top: 5%;	
+}
+
+.btn {
+	font-family: "Bangers";
+	font-size: 20px;
+	color: black;
+	text-shadow: 1px 1px white;
+}
+
+#launchModalButton {
+	padding: 20px;
+    color: bisque.
+	font-size: 25px;
+	background-color: #77E70D;
+	border: 2px inset #A7EE63;	
+}
+
+#playButton {
+	margin-left: 40px;
+	margin-right: -50px;
+	font-size: 30px;
+	background-color: #E03FCB;
+}
+
+#resetButton {
+   
+font-size: 30px !important;
+background-color: #F36C8C;
+color: #ffffff;
+
+
+}
+.modal-backdrop {
+	z-index: -1;
+}
+
+.modal-title, .modal-body {
+	font-family: "Righteous";
+}
+
+.modal-title {
+	font-size: 20px;
+	color: #E03FCB;
+}
+
+.modal-body {
+	font-size: 18px;
+	color: #00cc00;
+}
+
+.modal-footer {
+	text-align: center;
+}
+
+.footer {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+}
+#p{
+   margin-left: -1220px;
+  font: 400 20px/0.8 'Cookie', Helvetica, sans-serif;
+  color: darkblue;
+  text-shadow: 4px 4px 3px rgba(0,0,0,0.1); 
+}

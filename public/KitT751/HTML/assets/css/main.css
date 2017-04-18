@@ -1,0 +1,1025 @@
+/* import google fonts */
+@import url(google-fonts.css);
+/* Color */
+/* Fonts */
+/* transition */
+/* line 21, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+a.more:hover, .carousel .owl-carousel .item a:hover, .service .service_tab:hover, .pricing .pricing_table:hover, .team .profile:hover, .blog .post:hover, .clients .client_box:hover, a.more, ul.social_media, .search_form .fa-times, .navbar-default .link li a, .carousel .owl-carousel .item a, .service .service_tab, .project .project_tab .project_hover span a, .project .project_tab:hover .project_hover, .project .project_tab:hover span, .pricing .pricing_table, .pricing .pricing_table a, .team .profile, .team .profile .profile_img:hover .profile_hover, .team .profile .profile_img:hover span, .blog .post, .blog .post .discription a, .blog .post .post_footer, .clients .client_box, footer .footer_link ul li a, footer .subscribe form button, .copyright .to_top {
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out; }
+
+/* line 27, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+a.more:hover, .carousel .owl-carousel .item a:hover, .service .service_tab:hover, .pricing .pricing_table:hover, .team .profile:hover, .blog .post:hover, .clients .client_box:hover {
+  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.05);
+  -webkit-transform: translatey(-5px);
+  -ms-transform: translatey(-5px);
+  -o-transform: translatey(-5px);
+  transform: translatey(-5px);
+  cursor: pointer; }
+
+/********************************************************************
+Global Css Cusomize 
+********************************************************************/
+/* "*" will applay for all html element  */
+/* line 45, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 00; }
+
+/* body */
+/* line 56, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+body {
+  font-family: lato, sans-serif; }
+
+/* line 60, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+section,
+footer {
+  padding: 80px 0; }
+
+/* line 65, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+.title {
+  font: bold 2.1em raleway, sans-serif;
+  text-transform: uppercase;
+  position: relative;
+  margin-bottom: 100px; }
+  /* line 70, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .title > i {
+    font-size: 0.5em;
+    position: absolute;
+    bottom: -23px;
+    left: 49.4%;
+    color: #009cff;
+    z-index: 88; }
+  /* line 78, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .title:after, .title:before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 69px;
+    background-color: #cccccc;
+    bottom: -17px; }
+  /* line 87, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .title:before {
+    left: 43%; }
+  /* line 90, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .title:after {
+    right: 43%; }
+
+/* line 95, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+a.more {
+  display: inline-block;
+  padding: 12px 40px;
+  background: #009cff;
+  color: #f9f9f9;
+  border-radius: 100px;
+  font: lighter 1.1em lato, sans-serif;
+  text-transform: capitalize; }
+  /* line 104, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  a.more i {
+    vertical-align: text-bottom;
+    margin-left: 3px; }
+  /* line 108, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  a.more:hover {
+    text-decoration: none;
+    background-color: #007dcc; }
+
+/* line 115, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+ul.social_media {
+  list-style-type: none;
+  padding: 0 10px;
+  border-left: 1px solid #e8e8e8; }
+  /* line 120, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  ul.social_media li {
+    display: inline-block; }
+  /* line 123, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  ul.social_media li a {
+    display: block;
+    color: #8c8c8c; }
+    /* line 126, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    ul.social_media li a i {
+      font-size: 1.3em;
+      display: block; }
+
+/* line 158, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+i[class*="facebook"] {
+  color: #7d7d7d; }
+  /* line 160, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  i[class*="facebook"]:hover {
+    color: #3b5998; }
+
+/* line 158, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+i[class*="twitter"] {
+  color: #7d7d7d; }
+  /* line 160, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  i[class*="twitter"]:hover {
+    color: #1da1f2; }
+
+/* line 158, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+i[class*="instagram"] {
+  color: #7d7d7d; }
+  /* line 160, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  i[class*="instagram"]:hover {
+    color: #e1306c; }
+
+/* line 158, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+i[class*="youtube"] {
+  color: #7d7d7d; }
+  /* line 160, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  i[class*="youtube"]:hover {
+    color: #cd201f; }
+
+/* line 158, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+i[class*="amazon"] {
+  color: #7d7d7d; }
+  /* line 160, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  i[class*="amazon"]:hover {
+    color: #ff9900; }
+
+/* line 158, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+i[class*="google-plus"] {
+  color: #7d7d7d; }
+  /* line 160, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  i[class*="google-plus"]:hover {
+    color: #dd4b39; }
+
+/* line 158, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+i[class*="android"] {
+  color: #7d7d7d; }
+  /* line 160, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  i[class*="android"]:hover {
+    color: #a4c639; }
+
+/* line 158, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+i[class*="behance"] {
+  color: #7d7d7d; }
+  /* line 160, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  i[class*="behance"]:hover {
+    color: #1769ff; }
+
+/* line 158, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+i[class*="dribbble"] {
+  color: #7d7d7d; }
+  /* line 160, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  i[class*="dribbble"]:hover {
+    color: #ea4c89; }
+
+/* line 158, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+i[class*="flickr"] {
+  color: #7d7d7d; }
+  /* line 160, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  i[class*="flickr"]:hover {
+    color: #0063dc; }
+
+/* line 158, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+i[class*="foursquare"] {
+  color: #7d7d7d; }
+  /* line 160, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  i[class*="foursquare"]:hover {
+    color: #f94877; }
+
+/* line 158, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+i[class*="github"] {
+  color: #7d7d7d; }
+  /* line 160, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  i[class*="github"]:hover {
+    color: #4078c0; }
+
+/* line 158, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+i[class*="linkedin"] {
+  color: #7d7d7d; }
+  /* line 160, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  i[class*="linkedin"]:hover {
+    color: #0077b5; }
+
+/* line 158, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+i[class*="medium"] {
+  color: #7d7d7d; }
+  /* line 160, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  i[class*="medium"]:hover {
+    color: #00ab6c; }
+
+/* line 158, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+i[class*="paypal"] {
+  color: #7d7d7d; }
+  /* line 160, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  i[class*="paypal"]:hover {
+    color: #009cde; }
+
+/* line 158, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+i[class*="skype"] {
+  color: #7d7d7d; }
+  /* line 160, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  i[class*="skype"]:hover {
+    color: #00aff0; }
+
+/* line 158, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+i[class*="slideshare"] {
+  color: #7d7d7d; }
+  /* line 160, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  i[class*="slideshare"]:hover {
+    color: #0077b5; }
+
+/* line 158, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+i[class*="snapchat"] {
+  color: #7d7d7d; }
+  /* line 160, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  i[class*="snapchat"]:hover {
+    color: #fffc00; }
+
+/* line 158, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+i[class*="soundcloud"] {
+  color: #7d7d7d; }
+  /* line 160, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  i[class*="soundcloud"]:hover {
+    color: #ff8800; }
+
+/* line 158, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+i[class*="telegram"] {
+  color: #7d7d7d; }
+  /* line 160, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  i[class*="telegram"]:hover {
+    color: #0088cc; }
+
+/* line 158, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+i[class*="tumblr"] {
+  color: #7d7d7d; }
+  /* line 160, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  i[class*="tumblr"]:hover {
+    color: #35465c; }
+
+/* line 158, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+i[class*="vimeo"] {
+  color: #7d7d7d; }
+  /* line 160, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  i[class*="vimeo"]:hover {
+    color: #1ab7ea; }
+
+/* line 158, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+i[class*="whatsapp"] {
+  color: #7d7d7d; }
+  /* line 160, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  i[class*="whatsapp"]:hover {
+    color: #25d366; }
+
+/********************************************************************
+Search Form 
+********************************************************************/
+/* search form section */
+/* line 174, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+.search_form {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: #009cff;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  z-index: 99;
+  /* search input */
+  /* color of input placeholder */
+  /* search button */
+  /* exit icon */
+  /* exit icon hover */ }
+  /* line 185, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .search_form input {
+    width: 70%;
+    margin: auto;
+    background: transparent;
+    color: #f9f9f9;
+    padding: 10px 5px;
+    font: normal 2em raleway, sans-serif;
+    border: 0;
+    border-bottom: 2px solid #32affe;
+    outline: 0; }
+  /* line 197, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .search_form input::-webkit-input-placeholder {
+    color: #e0e0e0; }
+  /* line 200, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .search_form input::-moz-placeholder {
+    color: #e0e0e0; }
+  /* line 203, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .search_form input:-ms-input-placeholder {
+    color: #e0e0e0; }
+  /* line 206, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .search_form input:-moz-placeholder {
+    color: #e0e0e0; }
+  /* line 210, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .search_form button {
+    padding: 10px 5px;
+    background: transparent;
+    border: 0;
+    color: #f9f9f9;
+    position: relative;
+    left: -50px; }
+  /* line 219, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .search_form .fa-times {
+    position: absolute;
+    top: 50px;
+    right: 48%;
+    color: #f9f9f9;
+    cursor: pointer; }
+  /* line 228, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .search_form .fa-times:hover {
+    -webkit-transform: rotate(1turn);
+    -ms-transform: rotate(1turn);
+    -o-transform: rotate(1turn);
+    transform: rotate(1turn); }
+
+/********************
+End Of Search Form 
+*********************/
+/********************************************************************
+Navbar 
+********************************************************************/
+/* navbar bootstrap custoumize */
+/* line 249, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+.navbar-default {
+  background-color: #f9f9f9;
+  box-shadow: 0px 2px 20px 0px #bdbdbd;
+  padding: 10px 0;
+  margin-bottom: 0;
+  z-index: 98;
+  /* nav links */
+  /* navbar link */
+  /* active link and hover */
+  /* active link and hover animation*/
+  /* link hover */
+  /* social media link */
+  /* search icon */
+  /*****************************
+End Navbar 
+******************************/ }
+  /* line 256, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .navbar-default .link {
+    padding-right: 20px;
+    text-align: center; }
+    /* line 259, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    .navbar-default .link li a {
+      color: #8c8c8c;
+      text-transform: uppercase;
+      position: relative; }
+      /* line 264, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+      .navbar-default .link li a .active::before, .navbar-default .link li a:hover::before {
+        content: "";
+        height: 2px;
+        width: 0px;
+        background-color: #009cff;
+        position: absolute;
+        bottom: 10px;
+        -webkit-animation: link_hover 0.5s 1 both ease-in-out;
+        -o-animation: link_hover 0.5s 1 both ease-in-out;
+        animation: link_hover 0.5s 1 both ease-in-out; }
+    /* line 277, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    .navbar-default .link li a:hover,
+    .navbar-default .link .active,
+    .navbar-default .link .search i:hover {
+      color: #00101a !important;
+      position: relative; }
+
+@-webkit-keyframes link_hover {
+  from {
+    width: 0;
+    transform: translateX(-10px); }
+  to {
+    width: 15px;
+    transform: translateX(10px); } }
+
+@-moz-keyframes link_hover {
+  from {
+    width: 0;
+    transform: translateX(-10px); }
+  to {
+    width: 15px;
+    transform: translateX(10px); } }
+
+@-o-keyframes link_hover {
+  from {
+    width: 0;
+    transform: translateX(-10px); }
+  to {
+    width: 15px;
+    transform: translateX(10px); } }
+
+@-webkit-keyframes link_hover {
+  from {
+    width: 0;
+    transform: translateX(-10px); }
+  to {
+    width: 15px;
+    transform: translateX(10px); } }
+  /* line 330, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .navbar-default .search i {
+    display: block;
+    line-height: 50px;
+    font-size: 1.3em;
+    padding-left: 20px;
+    padding-right: 10px;
+    border-left: 1px solid #f9f9f9;
+    cursor: pointer;
+    color: #8c8c8c; }
+
+/* dropdown link */
+/* line 348, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+.navbar-nav > li > .dropdown-menu a {
+  text-transform: capitalize; }
+
+/* line 352, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+.navbar-nav > li > .dropdown-menu a:hover::before {
+  display: none; }
+
+/* line 356, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #00101a;
+  background: #f9f9f9; }
+
+/********************************************************************
+Start carousel 
+********************************************************************/
+/* line 368, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+.carousel {
+  padding: 0;
+  z-index: 1;
+  /* carousel controls position */ }
+  /* line 371, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .carousel .owl-carousel .item {
+    height: 700px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    justify-content: center; }
+    /* line 383, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    .carousel .owl-carousel .item h2 {
+      font: bold 2.8em raleway, sans-serif; }
+    /* line 386, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    .carousel .owl-carousel .item p {
+      margin: 0 auto;
+      padding: 0 10px;
+      font: normal 1.5em/1.5 lato, sans-serif; }
+    /* line 391, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    .carousel .owl-carousel .item a {
+      display: inline-block;
+      margin: 20px auto;
+      padding: 15px 30px;
+      background: #009cff;
+      color: #f9f9f9;
+      border-radius: 100px; }
+      /* line 399, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+      .carousel .owl-carousel .item a:hover {
+        text-decoration: none;
+        background: #009cff; }
+  /* line 408, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .carousel .owl-theme .owl-dots {
+    position: absolute;
+    bottom: 15px;
+    width: 100%; }
+    /* line 413, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    .carousel .owl-theme .owl-dots .owl-dot span {
+      background: #f9f9f9;
+      width: 15px;
+      height: 4px;
+      border-radius: 0px; }
+    /* line 420, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    .carousel .owl-theme .owl-dots .active span,
+    .carousel .owl-theme .owl-dots owl-dot:hover span {
+      background-color: #009cff; }
+
+/*****************************
+End Carousel 
+******************************/
+/* line 433, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+.service {
+  background-color: #f8f8f8;
+  padding-bottom: 70px; }
+  /* line 436, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .service .service_tab {
+    padding: 50px 25px;
+    background-color: #f9f9f9;
+    margin-bottom: 30px; }
+    /* line 441, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    .service .service_tab i {
+      color: #009cff; }
+    /* line 444, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    .service .service_tab h3 {
+      font: bold 1.4em raleway, sans-serif;
+      letter-spacing: 1px; }
+    /* line 448, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    .service .service_tab p {
+      color: #707070;
+      font: normal 1.1em/1.7em lato, sans-serif; }
+
+/* line 458, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+.about {
+  background: url("../img/about_background.png") no-repeat;
+  background-size: cover; }
+  /* line 461, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .about p {
+    font: normal 1.3em/1.9 lato, sans-serif;
+    color: #323232;
+    width: 50%;
+    margin: 0 auto 50px; }
+
+/* line 470, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+.project .non {
+  display: none; }
+
+/* line 473, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+.project .filter {
+  margin-bottom: 60px; }
+  /* line 475, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .project .filter ul {
+    display: inline-block; }
+    /* line 477, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    .project .filter ul .web_design,
+    .project .filter ul .graphic_design,
+    .project .filter ul .logo_design,
+    .project .filter ul .brand_design {
+      overflow: hidden; }
+    /* line 483, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    .project .filter ul li {
+      display: inline-block;
+      padding: 5px;
+      margin: 0 10px;
+      font: normal 1.2em lato, sans-serif;
+      text-transform: uppercase;
+      position: static;
+      cursor: pointer;
+      color: #646464; }
+      /* line 492, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+      .project .filter ul li::after {
+        position: absolute;
+        content: "";
+        height: 8px;
+        width: 8px;
+        background: #009cff;
+        bottom: -10px;
+        left: 40%;
+        border-radius: 20px; }
+  /* line 504, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .project .filter .filtter_active {
+    position: relative;
+    color: #009cff; }
+
+/* line 509, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+.project .project_tab {
+  height: 300px;
+  margin-bottom: 30px;
+  overflow: hidden; }
+  /* line 513, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .project .project_tab img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; }
+  /* line 518, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .project .project_tab .project_hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    padding: 78px 0;
+    opacity: 0; }
+    /* line 528, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    .project .project_tab .project_hover .name {
+      font: bold 1.875em raleway, sans-serif;
+      color: #009cff;
+      text-transform: capitalize; }
+    /* line 533, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    .project .project_tab .project_hover .type {
+      font: normal 1.25em #009cff;
+      color: #003e66;
+      padding: 10px;
+      text-transform: capitalize; }
+    /* line 539, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    .project .project_tab .project_hover span {
+      display: inline-block;
+      background: #000;
+      color: #f9f9f9;
+      margin: 0 10px;
+      border-radius: 100px;
+      -webkit-transform: translateY(200px);
+      -ms-transform: translateY(200px);
+      -o-transform: translateY(200px);
+      transform: translateY(200px); }
+      /* line 549, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+      .project .project_tab .project_hover span a {
+        color: #f9f9f9;
+        text-decoration: none;
+        height: 50px;
+        width: 50px;
+        line-height: 50px;
+        display: inline-block; }
+    /* line 560, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    .project .project_tab .project_hover:hover .view {
+      transition-delay: 0.1s; }
+    /* line 563, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    .project .project_tab .project_hover:hover .explorer {
+      transition-delay: 0.2s; }
+  /* line 568, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .project .project_tab:hover .project_hover {
+    opacity: 1;
+    overflow: hidden; }
+  /* line 573, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .project .project_tab:hover span {
+    -webkit-transform: translatey(0);
+    -ms-transform: translatey(0);
+    -o-transform: translatey(0);
+    transform: translatey(0); }
+
+/* line 583, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+.pricing {
+  background-color: #f8f8f8; }
+  /* line 585, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .pricing .pricing_table {
+    background-color: #f9f9f9;
+    margin-bottom: 10px; }
+    /* line 589, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    .pricing .pricing_table .pricing_table_title {
+      font: normal 1.7em lato, sans-serif;
+      color: #003e66;
+      padding: 50px 0;
+      position: relative; }
+      /* line 594, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+      .pricing .pricing_table .pricing_table_title:after {
+        position: absolute;
+        content: '';
+        height: 1px;
+        width: 30%;
+        background-color: #dbdbdb;
+        bottom: 0;
+        left: 35%; }
+    /* line 604, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    .pricing .pricing_table .price {
+      padding: 30px 0;
+      font: bolder 4em raleway, sans-serif;
+      color: #009cff; }
+      /* line 608, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+      .pricing .pricing_table .price span:first-of-type {
+        font: lighter 0.4em raleway, sans-serif;
+        color: #00101a; }
+      /* line 612, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+      .pricing .pricing_table .price span:last-of-type {
+        display: block;
+        font: lighter 0.4em lato, sans-serif;
+        color: #888;
+        line-height: 1.4; }
+    /* line 619, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    .pricing .pricing_table ul.Features {
+      list-style-type: none;
+      padding: 0; }
+      /* line 622, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+      .pricing .pricing_table ul.Features li {
+        font: normal 1em/3 lato, sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: #646464; }
+    /* line 629, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    .pricing .pricing_table a {
+      border: 3px solid #009cff;
+      display: inline-block;
+      border-radius: 100px;
+      padding: 10px 30px;
+      margin: 30px 0;
+      text-transform: capitalize;
+      font: normal 1.3em lato, sans-serif; }
+      /* line 638, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+      .pricing .pricing_table a:hover {
+        text-decoration: none;
+        background-color: #009cff;
+        color: #ffffff; }
+
+/* line 650, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+.team {
+  background: #f2f2f2;
+  font-family: lato, sans-serif; }
+  /* line 653, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .team .profile {
+    background: #f9f9f9;
+    overflow: hidden;
+    text-transform: capitalize;
+    margin-bottom: 30px; }
+    /* line 659, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    .team .profile .profile_img {
+      width: 100%;
+      height: 40vh;
+      overflow: hidden; }
+      /* line 663, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+      .team .profile .profile_img img {
+        width: 100%;
+        height: auto; }
+      /* line 667, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+      .team .profile .profile_img .profile_hover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.8);
+        cursor: pointer;
+        padding: 20vh 0 0;
+        opacity: 0; }
+        /* line 677, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+        .team .profile .profile_img .profile_hover .name {
+          font: bold 1.875em raleway, sans-serif;
+          color: #009cff;
+          text-transform: capitalize; }
+        /* line 682, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+        .team .profile .profile_img .profile_hover .type {
+          font: normal 1.25em #009cff;
+          color: #003e66;
+          padding: 10px;
+          text-transform: capitalize; }
+        /* line 688, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+        .team .profile .profile_img .profile_hover span {
+          display: inline-block;
+          background: #000;
+          color: #f9f9f9;
+          margin: 0 10px;
+          border-radius: 100px;
+          -webkit-transform: translateY(200px);
+          -ms-transform: translateY(200px);
+          -o-transform: translateY(200px);
+          transform: translateY(200px); }
+          /* line 698, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+          .team .profile .profile_img .profile_hover span:hover {
+            background: #009cff; }
+          /* line 701, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+          .team .profile .profile_img .profile_hover span a {
+            color: #f9f9f9;
+            text-decoration: none;
+            height: 50px;
+            width: 50px;
+            line-height: 50px;
+            display: inline-block; }
+            /* line 708, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+            .team .profile .profile_img .profile_hover span a i {
+              color: #fff; }
+        /* line 714, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+        .team .profile .profile_img .profile_hover:hover .social_link:first-of-type {
+          transition-delay: 0.1s; }
+        /* line 718, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+        .team .profile .profile_img .profile_hover:hover .social_link:nth-of-type(2) {
+          transition-delay: 0.2s; }
+        /* line 722, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+        .team .profile .profile_img .profile_hover:hover .social_link:nth-of-type(3) {
+          transition-delay: 0.3s; }
+        /* line 726, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+        .team .profile .profile_img .profile_hover:hover .social_link:nth-of-type(4) {
+          transition-delay: 0.4s; }
+        /* line 730, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+        .team .profile .profile_img .profile_hover:hover .social_link:nth-of-type(5) {
+          transition-delay: 0.5s; }
+      /* line 735, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+      .team .profile .profile_img:hover .profile_hover {
+        opacity: 1;
+        overflow: hidden; }
+      /* line 740, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+      .team .profile .profile_img:hover span {
+        -webkit-transform: translatey(0);
+        -ms-transform: translatey(0);
+        -o-transform: translatey(0);
+        transform: translatey(0); }
+    /* line 749, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    .team .profile .discription {
+      padding: 10px 0 25px; }
+      /* line 751, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+      .team .profile .discription h3 {
+        color: #191919; }
+      /* line 754, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+      .team .profile .discription span {
+        color: #646464; }
+
+/* line 764, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+.blog {
+  background: #efefef;
+  font-family: lato, sans-serif; }
+  /* line 767, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .blog .post {
+    background: #f9f9f9;
+    overflow: hidden;
+    text-transform: capitalize;
+    margin-bottom: 30px; }
+    /* line 773, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    .blog .post .post_img {
+      width: 100%;
+      position: relative;
+      overflow: hidden; }
+      /* line 777, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+      .blog .post .post_img img {
+        width: 100%; }
+      /* line 780, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+      .blog .post .post_img .tag {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: #f9f9f9;
+        padding: 5px 20px;
+        border-radius: 100px;
+        background: #009cff; }
+      /* line 789, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+      .blog .post .post_img .date {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: black;
+        padding: 5px 20px;
+        border-radius: 100px;
+        background: #f9f9f9;
+        opacity: 0.5; }
+    /* line 800, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    .blog .post .discription {
+      padding: 25px 10px; }
+      /* line 802, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+      .blog .post .discription a {
+        color: #191919;
+        font: bold 1.5em lato, sans-serif; }
+        /* line 806, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+        .blog .post .discription a:hover {
+          color: #009cff;
+          text-decoration: none; }
+      /* line 811, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+      .blog .post .discription span {
+        color: #646464; }
+    /* line 818, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    .blog .post .post_footer {
+      padding: 10px;
+      color: #7d7d7d; }
+      /* line 822, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+      .blog .post .post_footer .name {
+        display: inline-block;
+        width: 3 / 100%;
+        float: left;
+        padding: 10px; }
+        /* line 827, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+        .blog .post .post_footer .name a {
+          color: #323232; }
+          /* line 829, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+          .blog .post .post_footer .name a:hover {
+            color: #009cff;
+            text-decoration: none; }
+      /* line 835, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+      .blog .post .post_footer .like {
+        display: inline-block;
+        width: 3 / 100%;
+        float: right;
+        padding: 10px; }
+        /* line 840, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+        .blog .post .post_footer .like:hover {
+          color: #009cff;
+          text-decoration: none; }
+      /* line 845, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+      .blog .post .post_footer .comment {
+        display: inline-block;
+        width: 3 / 100%;
+        float: right;
+        padding: 10px; }
+        /* line 850, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+        .blog .post .post_footer .comment:hover {
+          color: #323232;
+          text-decoration: none; }
+      /* line 855, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+      .blog .post .post_footer i {
+        padding-right: 1px; }
+
+/* line 862, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+.clients {
+  background: url(../img/Carousel2.png) no-repeat;
+  background-size: cover; }
+  /* line 865, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .clients .client_box {
+    background: #f9f9f9;
+    cursor: pointer;
+    margin-bottom: 30px;
+    height: 150px;
+    line-height: 150px; }
+
+/* line 878, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+footer {
+  background: linear-gradient(to left, rgba(250, 250, 250, 0.5), rgba(250, 250, 250, 0.5)), url(../img/footer.jpeg) no-repeat;
+  background-size: cover;
+  color: #646464; }
+  /* line 883, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  footer .about_company h4 {
+    color: #191919; }
+  /* line 886, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  footer .about_company p {
+    color: #4b4b4b; }
+  /* line 889, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  footer .about_company ul.social_media {
+    border: none;
+    padding-left: 0; }
+    /* line 892, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    footer .about_company ul.social_media li a {
+      display: block;
+      color: #a4a4a4; }
+      /* line 895, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+      footer .about_company ul.social_media li a:hover {
+        text-decoration: none; }
+      /* line 898, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+      footer .about_company ul.social_media li a i {
+        font-size: 1em;
+        padding: 10px;
+        padding-left: 0; }
+  /* line 907, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  footer .footer_link ul {
+    padding: 0;
+    list-style: none; }
+    /* line 910, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    footer .footer_link ul li {
+      line-height: 2; }
+      /* line 912, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+      footer .footer_link ul li a {
+        text-decoration: none;
+        text-transform: capitalize;
+        color: #4b4b4b; }
+        /* line 917, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+        footer .footer_link ul li a:hover {
+          color: black; }
+  /* line 925, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  footer .contact p {
+    color: #4b4b4b; }
+    /* line 927, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    footer .contact p i {
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      color: #191919; }
+  /* line 937, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  footer .subscribe p {
+    color: #191919;
+    text-transform: capitalize; }
+  /* line 941, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  footer .subscribe form {
+    position: relative; }
+    /* line 943, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    footer .subscribe form input {
+      width: 100%;
+      padding: 7px 5px;
+      border: 0; }
+    /* line 948, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    footer .subscribe form button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: transparent;
+      border: 0;
+      padding: 9px 10px;
+      vertical-align: middle;
+      color: #646464; }
+      /* line 958, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+      footer .subscribe form button:hover {
+        color: #191919; }
+
+/* line 967, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+.copyright {
+  padding: 10px 0;
+  background: #000;
+  color: #7d7d7d;
+  text-transform: capitalize; }
+  /* line 972, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .copyright p {
+    float: left; }
+  /* line 975, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .copyright .to_top {
+    float: right;
+    cursor: pointer; }
+    /* line 979, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+    .copyright .to_top:hover {
+      color: #f9f9f9; }
+
+@media (max-width: 980px) and (min-width: 762px) {
+  /* line 986, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .link {
+    width: 100%; }
+  /* line 989, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .social_media {
+    width: 100%; } }
+
+@media screen and (max-width: 766px) {
+  /* line 995, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .search i {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 5px 0; }
+  /* line 999, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  ul.social_media {
+    text-align: center; }
+  /* line 1003, /media/ahmad/Ahmed/themeforest/Marktty/HTML/assets/css/main.scss */
+  .about p {
+    width: 80%; } }
+
+/*# sourceMappingURL=main.css.map */

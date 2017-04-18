@@ -1,0 +1,28 @@
+/**** Start Default Theme ****/
+
+.navbar{background:#8e55ea;}
+.slid{background:rgba(23, 0, 60, 0.7);}
+.slid input[type="submit"]{background :#8e55ea;}
+.about{background:#8e55ea;}
+.about-us{background:rgba(23, 0, 60, 0.7);}
+.about-us input[type="submit"]{background:rgba(142, 85, 234, 0.2)}
+.servis  input[type="submit"]{background:#8e55ea;}
+.servis hr{border: 1px solid #8e55ea;}
+.contact{background: rgba(1, 0, 2, 0.72)}
+.contact h5{color:#8e55ea; }
+.contact .glyphicon{color:#8e55ea; }
+.contact input[type="submit"]{background:#8e55ea;}
+ .footer{background:#8e55ea;}
+ .copyright{background:#8e55ea;}
+ .option-box .gear-check{background:#8e55ea;}
+body::-webkit-scrollbar-thumb {background-color:#8e55ea;}
+
+ .btn-floating.btn-large:hover{background:#8e55ea;}
+ .btn-floating.btn-large{border:2px solid #8e55ea}
+ .b1:hover{background:#8e55ea; color: #fff;}
+ .b2:hover{background:#8e55ea; color: #fff;}
+ .b3:hover{background:#8e55ea; color: #fff;}
+ .b1,.b2,.b3{border: 2px solid #8e55ea;}
+ .sidebar .material-icons{background:#8e55ea}
+
+/**** End Default Theme ****/

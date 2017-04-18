@@ -1,0 +1,29 @@
+#start {
+border: 5px solid green;
+background-color:white;
+}
+
+#one {
+border: 5px solid red;
+}
+
+#two {
+border: 5px solid orange;
+margin:2px;
+}
+
+.three {
+border: 5px solid blue;
+background-color: #E8FBFB;
+padding: 5px;
+margin-top:10px;
+}
+
+.four {
+border: 5px solid purple;
+}
+body {
+margin-left:10%;
+margin-right:10%;
+background-image:url("http://s4.postimg.org/v5hb7uamx/image.jpg");
+}

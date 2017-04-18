@@ -1,0 +1,54 @@
+.main-footer{
+	position: absolute;
+	margin: 0 !important;
+	bottom: 4.5em;
+	left:0;
+
+	> h6{
+		text-align: center;
+		-webkit-text-stroke: 0.3px;
+	}
+}
+
+.social-footer{
+	.clearfix();
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+
+	> li{
+		float: left;
+		margin: 0 7/2px;
+
+		> a{
+			.hide-text();
+			width: 21px;
+			height: 21px;
+			display: block;
+		}
+
+		> a[title=Facebook]{
+			background: url(../img/social-footer.png) 2px 0 no-repeat #3b5998;
+
+			&:hover{
+				background: url(../img/social-footer.png) 2px 0 no-repeat lighten(#3b5998, 10%);
+			}
+		}
+
+		> a[title=Twitter]{
+			background: url(../img/social-footer.png) -20px 0 no-repeat #2489c5;
+
+			&:hover{
+				background: url(../img/social-footer.png) -20px 0 no-repeat lighten(#2489c5, 10%);
+			}
+		}
+
+		> a[title=Pinterest]{
+			background: url(../img/social-footer.png) -42px 0 no-repeat #cb2027;
+
+			&:hover{
+				background: url(../img/social-footer.png) -42px 0 no-repeat lighten(#cb2027, 10%);
+			}
+		}
+	}
+}

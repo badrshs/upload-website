@@ -1,0 +1,147 @@
+/*
+ * GLOBAL JS FOR FIRSTWALD SCHOOLS
+ */
+
+
+var B = {};
+
+requirejs.config({
+    paths: {
+        'jquery-ui': 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min'
+    }
+});
+
+require([
+'jquery'
+,'contrib/jquery.slideViewerPro.1.5'
+,'contrib/jquery.fancybox'
+,'contrib/placeholder'
+,'contrib/bootstrap'
+,'contrib/jquery.bxslider'
+,'contrib/jquery.expander'
+,'contrib/jquery.customSelect'
+
+], function() {
+
+
+
+    B.initialize = function() {
+
+        B.bxslider.initialize();
+        B.fancybox.initialize();
+	    B.shorten.initialize();
+	    B.accordion.initialize();
+	    B.customselect.initialize();
+	    B.pageSwitch.initialize();
+    };
+
+	/**
+	 * init fancybox js
+	 * fancybox is used i.e. in the footer
+	 */
+
+	B.fancybox = {
+
+		initialize : function() {
+
+			var me = this;
+			me.events();
+		}
+		, events : function() {
+
+			$('.bJS_fancybox').fancybox(
+
+			);
+
+		}
+	}
+
+	B.shorten = {
+		initialize : function() {
+			var me = this;
+			me.events();
+		}
+		, events : function() {
+			$('.bJS_showMore').expander({
+				slicePoint: 200
+				, expandText: 'mehr lesen'
+				, userCollapseText: 'weniger Lesen'
+			});
+
+		}
+	}
+
+	B.pageSwitch = {
+		initialize : function() {
+			var me = this;
+			me.events();
+		}
+		, events : function() {
+			$('.bJS_pageSwitch').hover(function() {
+				$(this).parents().find('.bJS_pageSwitchTarget').toggleClass('active');
+				$(this).children().children().children().toggleClass('active');
+			});
+			$('.bJS_pageSwitchTarget').hover(function(){
+				$(this).toggleClass('active');
+				$(this).siblings().find('.bg_navArrow').toggleClass('active');
+			})
+		}
+	}
+
+	B.accordion = {
+		initialize : function() {
+			var me = this;
+			me.events();
+		}
+		, events : function() {
+			$('.bJS_mod_accordionHeadline').click(function() {
+				$(this).toggleClass('active').parents().siblings().children('.bJS_mod_accordionHeadline').removeClass('active');
+			});
+
+		}
+	}
+
+
+    B.bxslider = {
+
+        initialize: function() {
+			$('.bJS_slide').bxSlider({
+				captions: true,
+				pager: false,
+				nextSelector: '#slider-next',
+				prevSelector: '#slider-prev',
+				nextText: '',
+				prevText: '',
+				adaptiveHeight: true
+			});
+
+
+	        $('.bJS_slideImages').each(function() {
+
+		        var
+			        id = $(this).attr('id')
+			        , slidePagesTarget = $(this).data('slidepagestarget');
+
+		        $('#' + id).bxSlider({
+			        captions: false,
+			        pagerCustom: '#' + slidePagesTarget,
+			        controls: false,
+			        adaptiveHeight: true
+		        });
+
+	        });
+	    }
+    };
+
+	B.customselect = {
+
+        initialize: function() {
+	        $('.bJS_selectbox').customSelect();
+	    }
+    };
+
+
+    $(document).ready(function () {
+        B.initialize();
+    });
+});

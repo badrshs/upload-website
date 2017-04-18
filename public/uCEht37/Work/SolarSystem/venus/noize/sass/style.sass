@@ -1,0 +1,88 @@
+@import compass/css3
+
+$star-count: 200
+  
+=circle($radius)
+  width: $radius
+  height: $radius
+  +border-radius($radius)
+    
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
+  
+body
+  position: absolute
+  width: 100%
+  height: 100%
+  padding: 0
+  margin: 0
+  +animation(bgcolor 9s ease-in-out infinite)
+    
+#sun
+  position: absolute
+  top: 50%
+  left: 50%
+  +translate(-50%, -50%)
+  +circle(250px)
+  +border-radius(100%)
+  background: #ffad00
+  z-index: 1
+
+#sun::before
+  content: ""
+  display: block
+  position: absolute
+  top: 3px
+  left: 3px
+  +circle(244px)
+  +animation(bgcolor 9s ease-in-out infinite, moon 9s ease-in-out infinite)
+
+.star
+  background: #fff
+  height: 2px
+  width: 2px
+  position: absolute
+  +border-radius(2px)
+  +animation(twinkle 5s infinite)
+  
+  @for $i from 1 to $star-count+1        
+    $delay: random(20)
+    &:nth-of-type(#{$i})
+      animation-delay: -#{$delay}s
+      top: random(99) + vh
+      left: random(99) + vw
+    
++keyframes(bgcolor)
+  10%
+    background-color: #fff
+  43%, 57%
+    background-color: #002038
+  90%
+    background-color: #fff
+
++keyframes(moon)
+  0%, 10%
+    left: -250px
+  45%, 55%
+    left: 3px
+  90%, 100%
+    left: 250px
+ 
++keyframes(twinkle)
+  5%
+    opacity: 1
+  15%
+    opacity: .3
+  68%
+    opacity: .3
+  74%
+    opacity: 1
+  78%
+    opacity: .3

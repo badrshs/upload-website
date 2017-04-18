@@ -1,0 +1,1 @@
+if(typeof window.ANTS == 'undefined' || (window.ANTS && typeof window.ANTSExcuted != 'undefined'))document.write('<script type="text/javascript" src="//e-vcdn.anthill.vn/delivery-ants/asset/3.285425867/ants.js"></script>');document.write('<div class="512027600" data-ants-zone-id="512027600"></div>')

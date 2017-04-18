@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<head>
+<style>
+body {
+background-image: url(header-background.jpg);background-repeat:no-repeat;background-size:120% 120%;
+}
+
+img.round{
+  border-radius: 50%;
+
+}
+h1{
+color: white;
+font-size: 40px;
+}
+h3{
+color: white; 
+}
+h2{
+color: white;
+}
+</style>
+
+
+   <meta charset="utf-8">
+	<title>Personnal Info</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+  
+</head>
+
+<body>
+
+   
+   
+   <header id="about">
+           
+          <a href="home.html"><center><h2>Home</h2></center></a>
+
+
+      
+ 
+         <center><img src="images/profilepic.jpg" class="round"  /></center>
+
+         <center><h1>About Me</h1></center>
+
+
+            <br/> <center><h3>Iam A 21 years old student,My study takes place in the faculty of BIS(Business Information System)
+                             ,Iam the first son to my parentes and i have 2 small brothers one of them inthe first acdamic year
+                             , and the other one is in the primary school i think he is in the fifth year,my fahther 
+                             mr:Abdelnabi Mahmoud works in Telecome Egypt Company he works in the customer service and management department,
+                              and my mother is a nurse in Al Casr Al Aeiny hospital,thats it for my personnal life and i will tell you more information about my work and education in other pages .
+            </center></h3>
+
+            
+
+   </header>
+</body>
+</html>

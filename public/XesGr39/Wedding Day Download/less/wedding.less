@@ -1,0 +1,353 @@
+/*========== Wedding page ==========*/
+
+.cowntdown{
+	margin: 3em 0 6em;
+
+	> li{
+		background: url(../img/countdown-decor.png) 95% 90% no-repeat @violet;
+		-webkit-background-size: 30%;
+		-moz-background-size: 30%;
+		background-size: 30%;
+		padding: 1.5em 0;
+		text-align: center;
+		position: relative;
+
+		&:last-child{
+			&:after{
+				background: none;
+				width:0;
+				height:0;	
+			}
+		}
+
+		&:after{
+			content: '';
+			background: url(../img/hearts.png) center center no-repeat;
+			width: 36px;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: -60%;
+		}
+
+		> b{
+			display: block;
+			font-size: 3em;
+			color: @white;
+			line-height: 1em;
+		}
+
+		> span{
+			text-transform: uppercase;
+			display: block;
+		}
+	}
+}
+.wedding-hints{
+	background: @people-section;
+	display: table;
+	margin: 3em 0;
+
+	> div{
+		float: none !important;
+		display: table-cell !important;
+		vertical-align: top;
+	}
+}
+
+.dark-section{
+	background: @slider-people;
+	padding: 3%;
+	margin: 0 !important;
+	width: auto !important;
+}
+
+.slider-people{
+	.clearfix();
+
+	> li{
+		float: left;
+		width: 50%;
+		
+		> figure{
+			margin: 0;
+
+			> a{
+				display: block;
+				background: @slider-people;
+
+				> img{
+					.transition();
+					.backface-visibility(hidden);
+				}
+
+				&:hover{
+					> img{.opacity(80)}
+				}
+			}
+		}
+	}
+}
+
+.nav-slider-people{
+	.clearfix();
+	margin: 0;
+
+	> li{
+		float: left;
+		margin-right: 7px;
+
+		> a{
+			background: @black;
+			width: 21px;
+			height: 21px;
+			display: block;
+			color: @light-text;
+			font-size: 1.5em;
+			line-height: 1em;
+			text-align: center;
+			font-family: fixedsys, consolas, monospace;
+
+			&:hover{
+				color: @white;
+				background: lighten(@text-color, 5%);
+			}
+		}
+	}
+}
+
+.round-image{
+	background: @light-line;
+	margin: 0 !important;
+	position: relative;
+
+	> h2{
+		text-align: center;
+		margin: 1.5em 0;
+		padding-left: 3em;
+	}
+
+	> figure {
+		padding: 0 1.5em 0 6em;
+
+		> a{
+			border-radius: 50%;
+			overflow: hidden;
+			position: relative;
+			display: block;
+
+			&:after{
+				content: '';
+				width: 100%;
+				height: 100%;
+				display: block;
+				position: absolute;
+				border-radius: 50%;
+				top: 0;
+				left: 0;
+				.transition(0.4s, linear);
+			}
+
+			&:hover{
+				
+				&:after{
+					box-shadow: inset 0 0 0 200px rgba(0,0,0, 0.5);
+				}
+			}
+		}
+
+		> figcaption{
+			background-color: darken(@light-line, 5%);
+			position: absolute;
+			width: 4.5em;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			.transition(0.2s);
+
+			> span{
+				font-family: fixedsys, consolas, monospace;
+				font-weight: 900;
+				width: 0.5em;
+				display: block;
+				word-break: break-all;
+				white-space: pre-wrap;
+				text-align: center;
+				margin: 1.5em auto 0;
+				line-height: 1em;
+			}
+
+			> b{
+				background: @black;
+				color: @white;
+				display: block;
+				font-size: 2em;
+				line-height: 2.5em;
+				padding-bottom: 0.5em;
+				text-align: center;
+				text-shadow: 	0px 1px 1px @white, 
+								0px 1px 1px @white,
+								0px 1px 1px @white,
+								0px 1px 1px @white,
+								0px 1px 1px @white,
+								0px 1px 1px @white,
+								0px 1px 1px @white,
+								0px 1px 1px @white;
+			}
+		}
+	}
+}
+
+.text-box{
+	padding: 0 1.5em;
+	position: relative;
+
+	> h4{
+		margin: 2.25em 0;
+		color: @violet;
+	}
+
+	> p {margin-bottom: 6em;}
+
+	.social-bar{
+		position: absolute;
+		bottom: 1.5em;
+	}
+}
+
+.social-bar{
+	background: @black;
+	display: inline-block;
+	.clearfix();
+
+	&:hover{
+		background: lighten(@black, 10%);	
+	}
+
+	> input[type=checkbox]{
+		display: none;
+
+		&:checked{
+
+			~ ul{
+				display: block;
+			}
+		}
+	}
+
+	> label{
+		color: @light-text;
+		float: right;
+		padding: 0.75/2em 0.75em;
+		.user-select(none);
+
+		.share-btn{
+			background: url(../img/share-icon.png) 0 2px no-repeat;
+			padding-left: 1.5em;
+		}
+	}
+
+	> ul{
+		margin: 0;
+		float: left;
+		display: none;
+		padding: 0 1em;
+
+		> li{
+			float: left;
+			padding: 0.75/2em 0;
+			margin-right: 7px;
+
+			> a{
+				.hide-text();
+				width: 21px;
+				height: 21px;
+				display: block;
+				border-radius: 50%;
+				-webkit-transition: background-color 0.4s ease-out;
+			    -moz-transition: background-color 0.4s ease-out;
+			    -o-transition: background-color 0.4s ease-out;
+			    -kthml-transition: background-color 0.4s ease-out;
+			    transition:  background-color 0.4s ease-out;
+			}
+
+			> a[title=Facebook]{
+				background: url(../img/social-footer.png) 2px -21px no-repeat lighten(@black, 30%);
+				
+				&:hover{
+					background: url(../img/social-footer.png) 2px 0px no-repeat #4c70ba;
+				}
+			}
+
+			> a[title=Twitter]{
+				background: url(../img/social-footer.png) -19px -21px no-repeat lighten(@black, 30%);
+				
+				&:hover{
+					background: url(../img/social-footer.png) -19px 0px no-repeat #2489c5;
+				}
+			}
+
+			> a[title=Pinterest]{
+				background: url(../img/social-footer.png) -42px -21px no-repeat lighten(@black, 30%);
+				
+				&:hover{
+					background: url(../img/social-footer.png) -42px 0px no-repeat #cb2027;
+				}
+			}
+		}
+	}
+}
+
+.violet-section{
+	margin-top: 2.25em;
+
+	&:first-child{
+		padding-right: 7px;
+	}
+
+	&:last-child{
+		padding-left: 7px;
+	}
+
+	> h1{
+		text-align: center;
+		font-weight: 300;
+
+		> a{
+			color: @black;
+			-webkit-text-stroke: 0.3px;
+
+			&:hover{
+				color: @violet;
+			}
+		}
+	}
+
+	> article{
+		background: @violet;
+		color: @white;
+	}
+}
+
+.meta-article{
+	box-shadow: 0 1px 0 lighten(@violet, 5%);
+
+	> li{
+		padding-left: 2.5em;
+		height: 2.25em;
+		line-height: 2.25em;
+		margin-bottom: 0.75em;
+		text-transform: uppercase;
+		overflow: hidden;
+	}
+}
+
+.calendar-icon{
+	background: url(../img/calendar.png) left center no-repeat transparent;
+}
+
+.clock-icon{
+	background: url(../img/clock.png) left center no-repeat transparent;
+}

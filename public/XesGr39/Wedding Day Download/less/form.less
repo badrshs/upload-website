@@ -1,0 +1,60 @@
+input, textarea, select{
+	&:focus{
+		outline: none;
+	}
+}
+
+form {
+  margin: 0 0 1.5em;
+}
+
+label,
+input,
+button,
+select,
+textarea{
+	  font-family:'Montserrat', sans-serif;
+	  text-decoration: none;
+	  padding: 12/16em;
+	  line-height: 1.5em;
+}
+
+textarea{
+	resize: vertical;
+}
+
+input[type=submit]{
+	background: @violet;
+	border: none;
+	color: @white;
+	.transition();
+	display: inline-block;
+
+	&:hover{
+		background: @black;
+	}
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"]{
+	border: none;
+	line-height: 1.5em;
+	padding: 12/16em;
+	outline: none;
+	vertical-align: middle;
+	
+}

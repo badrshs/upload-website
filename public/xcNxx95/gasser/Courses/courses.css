@@ -1,0 +1,173 @@
+body
+{
+    width: auto;
+    margin: auto;
+    height:auto;
+    background-color: white
+    
+}
+
+header
+{
+    width: auto;
+    height: 170px;
+    background-color:brown; 
+    margin-top: -22px;
+    padding: 5px;
+}
+
+#nav
+{
+ 
+    width: 700px;
+    height: 50px;
+    margin-top: 20px;
+    margin-left: 350px;
+    
+    
+}
+
+
+ul
+{
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    list-style-type: none;
+    
+}
+
+ul li
+{
+    float: left;
+}
+
+ul li a
+{
+    display: block;
+    text-decoration: none;
+    padding: 15px 40px;;
+    color: black;
+    font-family: sans-serif;
+    font-size: 20px;
+    
+}
+
+ul li a:hover
+{
+    color: darkorange;
+}
+
+ul ul
+{
+    display: none;
+    position: relative;
+    position: absolute;
+    box-shadow: 10px 10px 5px #888888;
+    
+}
+
+ul ul li
+{
+    float: none;
+}
+
+ul ul li a
+{
+    background-color: darkgrey;
+}
+
+ul li:hover > ul
+{
+    display: block;
+}
+
+#dropicon
+{
+    width: 13px;
+    height: 13px;
+    margin-left: 3px;
+        
+}
+h1
+{
+    font-size: 40px;
+    font-family: sans-serif;
+}
+
+#para{
+    
+    font-size: 20px;
+    font-family: sans-serif;
+    line-height: 2em;
+}
+article{
+    width: 700px;
+    margin: auto;
+    height: auto;
+}
+
+p
+{
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+#icdl
+{
+    width: 600px;
+    height: 500px;
+}
+
+footer
+{
+    width: auto;
+    height: 150px;
+    background-color: brown;
+    line-height: 2em;
+    padding: 15px;
+    
+}
+
+#foo
+{
+    font-family: sans-serif;
+    color: grey;
+    margin-left: 140px;
+    margin-top: -25px;
+    text-align: left;
+}
+
+#foo1
+{
+    color: hotpink;
+    margin-left: 140px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+#socialdiv
+{
+    width: 200px;
+    height: 50px;
+    float: right;
+    margin-top: -120px;
+    padding: 10px;
+    
+}
+
+#social
+{
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    padding: 10px;
+    
+}
+
+#social:hover
+{
+    width: 50px;
+    height: 50px;
+    transition: 0.5s;
+}

@@ -1,0 +1,311 @@
+/*head menu*/
+*
+{
+	margin: 0px;
+	padding: 0px;
+}
+body
+	{
+		background-image: url("background/1.jpg");
+		background-color: black;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-size: cover;
+	}
+#table
+	{
+		position: fixed;
+		top: 5%;
+		right: 47.5%;
+	}
+#active
+	{
+		background-color: black;
+		cursor: not-allowed;
+	}
+.dlogo
+	{
+		top: 50px;
+		height: 100px;
+	}
+.dtable
+	{
+		text-align: center;
+		color: red;
+		border-radius: 10px;
+	}
+.dcontent
+	{
+		display: none;
+
+	}
+.dhead:hover .dcontent
+	{
+		display: block;
+	}
+.dtable:hover
+	{
+		background-color: black;
+		color: white;
+		cursor: none;
+	}
+/*menu*/
+.waste:hover
+	{
+		text-decoration: line-through;
+		color: red;
+	}
+
+/*main*/
+@font-face
+	{
+		font-family: geek;
+		src:url('fonts/AMERIKA_.ttf');
+	}
+@font-face
+	{
+		font-family: scratch;
+		src:url('fonts/dark.otf');
+	}
+@font-face
+	{
+		font-family: dark;
+		src:url('fonts/gothical.ttf');
+	}
+.regtd
+	{
+		background-color: black;
+	}
+
+#maintable
+	{
+		
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		border-spacing: 0px;
+		text-align: center;
+		color: white;
+	}
+#intro
+	{
+		font-family: geek;
+		color: gold;
+		font-size: 200%;
+		text-shadow: 0 0 20px white;
+	}
+#fade
+	{
+		background-image: url(fade.png);
+		background-position: bottom;
+		background-repeat:no-repeat;
+		background-size: 100%;
+	}
+/*content*/
+
+/* GALLERY code start*/
+.hull
+	{
+		border-radius: 10%;
+	}
+#tbl
+	{
+	}
+#gal
+	{
+		text-align: center;
+		font-family: geek;
+		color: gold;
+	}
+#c
+	{
+		background-image: url(black/c1.jpg);
+		background-size: cover;
+		background-position: center;
+		transition: background-image 1s ease-out;
+
+	}
+/*GALLERY SUB START*/
+#c:hover
+	{
+		background-image: url(black/c2.jpg);
+		background-position: center;
+	}
+#c:hover #gallery
+	{
+		display: block;
+	}
+#c:hover #stories
+	{
+		display: none;
+	}
+#stories
+	{
+		color: #af181b;
+		text-shadow:3px 0px black,0 0 30px #ff001d;
+		font-family: dark;
+		font-size: 250%;
+	}
+#gallery
+	{
+		display: none;
+		font-family: scratch;
+		color: black;
+		text-shadow:3px 0px white,0px 3px 0px red;
+		font-size: 200%;
+	}
+#gallery:hover
+	{
+		cursor: pointer;
+		text-decoration: line-through;
+		text-shadow: 0 0 10px white;
+	}
+/*GALLERY SUB END*/
+#d
+	{
+		background-image: url(black/d1.jpg);
+		background-size: cover;
+		background-position: top center;
+		transition: background-image 1s ease-out;
+	}
+#d:hover
+	{
+		background-image: url(black/d2.jpg);
+		background-position: top center;
+	}	
+#g
+	{
+		background-image: url(black/g1.jpg);
+		background-size: cover;
+		background-position: center;
+		transition: background-image 1s ease-out;
+	}
+#g:hover
+	{
+		background-image: url(black/g2.jpg);
+		background-position: top center;
+	}
+/*MANIFESTO SUB START*/
+#h
+	{
+		background-image: url(black/h1.jpg);
+		background-size: cover;
+		background-position: center;
+		transition: background-image 1s ease-out;
+	}
+#h:hover
+	{
+		background-image: url(black/h2.jpg);
+	}
+
+#h:hover #why
+	{
+		display: none;
+	}
+#h:hover #about
+	{
+		display: block;
+	}
+#why
+	{
+		font-size: 300%;
+		color: gold;
+		font-family: geek;
+		text-shadow:0 0 10px red;
+	}
+#about
+	{
+		font-family: geek;
+		color: black;
+		display: none;
+		font-size: 130%;
+		text-shadow:0 0 10px gold;
+		cursor: default;
+	}
+.manifesto
+	{
+		cursor: pointer;
+		text-shadow:0 0 10px red;
+	}
+.manifesto:hover
+	{
+		text-decoration: line-through;
+		text-shadow:0 0 50px white;
+	}
+/*MANIFESTO SUB END*/
+#i
+	{
+		background-image: url(black/i1.jpg);
+		background-size: cover;
+		background-position: center;
+		transition: background-image 1s ease-out;
+	}
+#i:hover
+	{
+		background-image: url(black/i2.jpg);
+	}
+#j
+	{
+		background-image: url(black/j1.jpg);
+		background-size: cover;
+		background-position: left;
+		transition: background-image 1s ease-out;
+	}
+#j:hover
+	{
+		background-image: url(black/j2.jpg);
+	}
+#k
+	{
+		background-image: url(black/k1.jpg);
+		background-size: cover;
+		background-position: center;
+		transition: background-image 1s ease-out;
+	}
+#k:hover
+	{
+		background-image: url(black/k2.jpg);
+	}
+#l
+	{
+		background-image: url(black/l1.jpg);
+		background-size: cover;
+		background-position: top center;
+		transition: background-image 1s ease-out;
+	}
+#l:hover
+	{
+		background-image: url(black/l2.jpg);
+		background-position: top center;
+	}
+/* GALLERY code end*/
+
+
+/*buttom options*/
+
+#down
+	{
+		background-color:black;
+		font-size: 12px;
+	}
+
+.box
+	{
+  		width: 604px;
+  		height: 340px;
+  		background: url(black/c1.jpg);
+ 		
+ 		transition: background-image 1s ease-out;
+	}
+
+
+
+
+/* TRANSITION RELIC CODES
+
+ 		-webkit-transition: background-image 1s ease-out;
+ 		-moz-transition: background-image 1s ease-out;
+ 		-o-transition: background-image 1s ease-out;
+ 		transition: background-image 1s ease-out;
+*/

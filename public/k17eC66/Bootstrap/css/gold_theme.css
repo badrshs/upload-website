@@ -1,0 +1,42 @@
+/*** Start Default Theme ***/
+
+
+/* Active Link */
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus,
+.dropdown-menu >li>a:hover,
+.dropdown-menu >li>a:focus,
+.option-box .gear-check,
+.carousel-indicators .active,
+#scroll-top {
+    
+    background-color: #F1C23C;
+}
+
+.navbar-default .navbar-brand span,
+.about h1 span,
+.features span.glyphicon,
+.testimonials span,
+.footer span {
+    
+    color: #F1C23C
+}
+
+.price .price-box:hover p,
+.testimonials .carousel-indicators li.active,
+.option-box .color-option {
+    border: 2px solid#F1C23C;
+}
+
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    border-bottom: 1px solid#F1C23C;
+}
+
+
+
+
+/*** End Default Theme ***/

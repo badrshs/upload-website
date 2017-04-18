@@ -1,0 +1,253 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 1366px;
+    margin: auto;
+}
+/*------First Page------*/
+.page1{
+    width: inherit;
+    height: 650px;
+    background: url(iceland-waterfall.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align:center;
+    
+}
+
+.page1 nav ul li{
+    display: inline-block;
+    margin: 30px 40px;
+    list-style: none;
+}
+
+.page1 nav ul li a{
+    color: #FFF4C5;
+    font-size: 20px;
+    font-family: Tahoma,Geneva,sans-serif;
+    text-decoration: none;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.page1 nav ul li a:hover{
+    color:#F7B733; 
+}
+
+.page1 h1{
+    color: #F7B733;
+    font-size: 60px;
+    font-family: Geneva,sans-serif;
+    text-decoration: none;
+    position: relative;
+    top: 200px;
+    text-shadow: 3px 4px 1px black;
+    
+}
+
+.page1 h3{
+    color: #F7B733;
+    font-size: 23px;
+    font-family: Geneva,sans-serif;
+    text-decoration: none;
+    position: relative;
+    top: 210px;
+    text-shadow: 1px 1.5px 0.2px black;
+    
+}
+
+/*-------- 2ed page--------*/
+
+.page2{
+    height: 500px;
+    background: url(pexels-photo-218930.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center  
+}
+
+.page2 .para{
+    width: 400px;
+    height: inherit;
+    background-color: rgba(142,142,144,0.6);
+    position: relative;
+    left: 100px;
+}
+
+.page2 .para h2{
+    display: inline-block;
+    margin-top: 50px;
+    margin-left: 30px;
+    color: #F7B733;
+    font-size: 30px;
+    font-family: Tahoma,Geneva,sans-serif;
+    text-shadow: 2px 2px 1px black;
+}
+
+.page2 .para p{
+    margin: 10px 15px;
+    color: #FFF4C5;
+    font-family: Tahoma,Geneva,sans-serif;
+    font-size: 19.5px;
+    padding: 5px;
+    text-indent: 30px;
+}
+
+/*-------- 3ed page--------*/
+
+.page3{
+    height: 500px;
+    background: url(pexels-photo-259474.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.page3 .para2{
+    width: 400px;
+    height: inherit;
+    background-color: rgba(142,142,144,0.6);
+    position: relative;
+    left: 800px;
+}
+
+.page3 .para2 h2{
+    display: inline-block;
+    margin-top: 50px;
+    margin-left: 55px;
+    color: #F7B733;
+    font-size: 30px;
+    font-family: Tahoma,Geneva,sans-serif;
+    text-shadow: 2px 2px 1px black;
+}
+
+.page3 .para2 p{
+    margin: 10px 15px;
+    color: #FFF4C5;
+    font-family: Tahoma,Geneva,sans-serif;
+    font-size: 19.5px;
+    padding: 5px;
+    text-indent: 30px;
+}
+
+/*-------- 4th page--------*/
+
+.page4{
+    height: 500px;
+    background: url(flower.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align:center;
+}
+
+.side1, .side2, .side3{
+    width: 300px;
+    height: 300px;
+    float: left;
+    margin-left: 110px;
+    margin-top: 141px;
+    background-color: rgba(142,142,144,0.7);
+}
+
+.fig1, .fig2, .fig3{
+    width: 70px;
+    margin-top: 30px;
+}
+
+.p1, .p2, .p3{
+    margin-top: 10px;
+    padding: 10px;
+    color: #FFF4C5;
+    font-family: Tahoma,Geneva,sans-serif;
+    font-size: 18px;
+    
+}
+
+.clear{
+    clear: both;
+}
+
+/*-------- 5th page--------*/
+
+.page5{
+    height: 500px;
+    background: url(new-york-skyline-new-york-city-city-37646.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align:bottom;
+}
+
+form{
+    width: 400px;
+    height: inherit;
+    background-color: rgba(142,142,144,0.6);
+    position: relative;
+    left: 800px;
+}
+
+form h2{
+    display: inline-block;
+    margin-top: 50px;
+    margin-left: 118px;
+    color: #F7B733;
+    font-size: 30px;
+    font-family: Tahoma,Geneva,sans-serif;
+    text-shadow: 2px 2px 1px black;
+}
+
+form .text {
+    text-align: center;
+    font-size: 20px;
+    color: #F7B733;
+    background: rgba(0,0,0,0.5);
+    border: hidden;
+    border-radius: 10px;
+    outline: none;
+    margin-top: 20px;
+    margin-left: 40px;
+    width: 80%;
+    height: 30px;
+}
+
+form textarea{
+    text-align: center;
+    font-size: 20px;
+    color: #F7B733;
+    background: rgba(0,0,0,0.5);
+    border: hidden;
+    border-radius: 10px;
+    outline: none;
+    margin-top: 20px;
+    margin-left: 40px;
+    width: 80%;
+    height: 50%;
+    resize: none;
+}
+
+form .button{
+    text-align: center;
+    font-size: 15px;
+    color: #F7B733;
+    background: rgba(0,0,0,0.5);
+    border: hidden;
+    border-radius: 10px;
+    outline: none;
+    margin-top: 20px;
+    margin-left: 140px;
+    width: 30%;
+    height: 7%;
+    transition: all 0.2s ease-in-out;
+}
+
+form .button:hover{
+    background: #F7B733;
+    color: black;
+}
+
+
+
+

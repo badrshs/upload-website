@@ -1,0 +1,310 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	margin: 0px;
+	padding: 0px;
+    height: 2000px;
+
+}
+.container
+{
+	margin: auto;
+	width: 1150px;
+
+}
+.heading
+{
+ width: 100%;
+ height: 350px;
+ background-color: #7C3875;
+
+}
+.heading .Prism
+{
+  width: 50%;
+  float: left;
+  margin-top: 100px;
+  border-right: 1px solid #ccc;
+}
+.heading .Prism h2
+{
+	width: 49%;
+	color: #fff;
+	line-height: 1.8;
+	font-size: 25px;
+}
+.heading .Prism h2 span:hover
+{
+	color: #00BC8A;
+	cursor: pointer;
+}
+.heading .Lorem
+{
+	width: 40%;
+	float: left;
+	margin-top: 100px;
+    margin-left: 2%;
+}
+.heading .Lorem p
+{
+   color: #9B8B9A;
+   font-size: 18px;
+   font-weight: bold;
+   line-height: 1.7;
+   font-family: tahoma;
+}
+.heading .Lorem button 
+{
+  border:0;
+  width: 200px;
+  color: #fff;
+  font-size: 18px;
+  background: none;
+  background-color: #00BC8A;
+  padding: 10px;
+  margin-top: 30px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  outline: 0;
+  cursor: pointer;
+}
+/* Start  Magna */
+.magna
+{
+  width:100%;
+  height: 350px;
+  border-bottom: 2px solid #ddd;
+  padding-top: 50px;
+
+}
+.magna .Rmagna
+{
+	
+	width: 50%;
+	float: left;
+	border-right: 2px solid #ddd;
+
+}
+.magna .Rmagna h2 
+{
+	font-family: tahoma;
+	color: #777;
+	margin-bottom: 8%;
+}
+
+.magna .Rmagna p {
+		font-family: tahoma;
+		line-height: 1.7;
+		color: #888;
+		margin-bottom: 8%;
+
+}
+.magna .Rmagna button {
+
+	background:none;
+	border: 0;
+	border: 2px solid #ddd;
+	padding: 15px;
+	border-radius: 30px;
+	width: 200px;
+	text-transform: uppercase;
+	color: #888;
+	cursor: pointer;
+	outline: 0;
+}
+
+
+
+.magna .lmagna
+{
+ width: 40%;
+ float: left;
+ margin-left: 7%;
+ visibility: hidden;
+
+}
+.magna .lmagna p 
+{
+ line-height: 3;
+ font-family: tahoma;
+ font-weight: bold;
+ color: #666;
+
+}
+.magna .lmagna i
+{
+  margin-right: 25px;
+  color:#00BC8A; 
+ }
+/* Start  image */
+.imgx{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	padding-top: 5%;
+	padding-bottom: 50px;
+	background-color: #7E5940;
+
+} 
+
+
+.imgx .part {
+margin-bottom: 6%;
+height: 350px;
+
+}
+.imgx .part img{
+	width: 40%;
+    float: left;
+
+}
+.imgx .part .h{
+	width: 40%;
+    float: left;
+    padding-left: 80px;
+    padding-top: 50px;
+    visibility: hidden;
+
+}
+
+.imgx .part .h h2{ 
+    color: #777;
+    font-family: tahoma;
+
+ 
+}
+
+
+.imgx .part .h p{
+
+      font-family: tahoma;
+      font-weight: bold;
+      color: #888;
+      line-height: 2.1;
+}
+
+
+.imgx .part .h button{  
+   background: none;
+   border: 0;
+   border: 1px solid #ddd;
+   width: 200px;
+   padding:15px;
+   color: #777;
+   text-transform: uppercase;
+   border-radius: 20px;
+   font-size: 20px;
+   margin-top: 40px;
+
+}
+.imgx .part .h button:hover{ 
+     background-color: #888;
+     color: #fff;
+     outline: 0;
+
+}
+.clear{
+	clear: both;
+}
+
+.form{
+width: 100%;
+height: 450px;
+overflow: hidden;
+padding-top: 25px;
+padding-bottom: 30px;
+}
+
+
+.form .inputs{ 
+
+	width: 50%;
+    float: left;
+    border-right: 2px solid #ddd;
+}
+
+.form .inputs h2{  
+   font-weight: bold;
+   font-family: tahoma;
+}
+
+
+.form .inputs p{  
+
+	line-height: 2;
+	font-family: tahoma;
+	font-weight: bold;
+	color: #888;
+	margin-top: 5px;
+}
+.form .inputs input[type="text"] , input[type="email"]{
+width: 250px;
+height: 50px;
+line-height: 50px;
+padding-left: 20px;
+margin-bottom: 30px;
+outline: 0;
+margin-top: 20px;
+font-size: 15px;
+}
+
+.form .inputs textarea{
+    font-size: 15px;
+	width: 92%;
+	margin-bottom: 20px;
+    padding-left: 20px;
+    outline: 0;
+
+}
+
+.form .inputs  input[type="submit"]
+{
+width: 200px;
+border-radius: 20px;
+border: 1px solid #ddd;
+background:none;
+padding: 20px;
+text-transform: uppercase;
+background: #fff;
+cursor: pointer;
+
+
+}
+.form .links
+{    width: 40%;
+	float: left;
+	padding-top: 50px;
+    padding-left: 50px;  
+  
+}
+.form .links p{
+
+	line-height: 2.5;
+}
+.form .links p i{
+ padding-right: 45px;
+ color: #00BC8A;
+}
+.footer{
+   background-color: #7C3875;
+	width: 100%;
+	height: 150px;
+	border-top: 1px solid #ccc;
+	
+}
+.footer p
+{
+	text-align: center;
+    text-transform: uppercase;
+	line-height: 150px;
+	color: #888;
+	font-family: tahoma;   
+ }
+
+
+
+
+
+

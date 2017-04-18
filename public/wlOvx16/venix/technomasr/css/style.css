@@ -1,0 +1,555 @@
+/*---------------------------------------
+    Body Style              
+-----------------------------------------*/
+body{
+  font-family: 'Raleway', sans-serif;
+  overflow:hidden;
+    background: rgba(238, 238, 238, 0.71);
+
+
+}
+
+body::-webkit-scrollbar {
+  width: 0.6em;
+  background: #fff
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #3088c7;
+  outline: 1px solid #fff;
+  border-radius: 0px;
+  width: 0.5em
+}
+
+
+/*---------------------------------------
+    Up To page style              
+-----------------------------------------*/
+
+.up i {
+    background: #3088c7;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    position: fixed;
+    right: 9px;
+    bottom: 20px;
+    transition: 0.5s;
+    display: none;
+    cursor: pointer;
+    z-index: 99999
+
+}
+.up i:hover{
+  background: #222
+}
+
+
+/*---------------------------------------
+    Pre Loader Style              
+-----------------------------------------*/
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background: none repeat scroll 0 0 #fff;
+}
+
+.sk-spinner-pulse {
+  width: 60px;
+  height: 60px;
+  background-color:#3088c7;
+  border-radius: 100%;
+  margin: 40px auto;
+  -webkit-animation: sk-pulseScaleOut 1s infinite ease-in-out;
+  animation: sk-pulseScaleOut 1s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-pulseScaleOut {
+  0% {
+    -webkit-transform: scale(0);
+    trans.info: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    trans.info: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes sk-pulseScaleOut {
+  0% {
+    -webkit-transform: scale(0);
+    trans.info: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    trans.info: scale(1);
+    opacity: 0;
+  }
+}
+
+
+/*---------------------------------------
+    container style              
+-----------------------------------------*/
+.container{width: 65%}
+
+
+/*tyoe*/
+.header {
+    font-weight: bold;
+    font-family: sans-serif;
+    margin-top: 0px;
+}
+
+
+.button{
+    border: 1px solid #37a7f7;
+    background: #37a7f7;
+    color: #fff;
+    padding: 7px;
+    font-size: 12px;
+    transition: 0.3s;
+}
+.button:hover{
+  background: #222;
+  border-color: #222
+}
+/*---------------------------------------
+   Home Section style              
+-----------------------------------------*/
+.home{
+  background-image: url(http://res.cloudinary.com/do20temcq/image/upload/v1490981952/home_gfag6q.png);
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+/*nav style*/
+.home nav {
+    background: transparent;
+    box-shadow: none;
+    border-bottom: 1px solid rgba(142, 137, 137, 0.21);
+    transition: 0.5s;
+    height: 55px;
+}
+
+.home nav .brand-logo {
+    font-weight: bold;
+    font-size: 26px;
+    color: #222;
+    margin-left: 2%;
+    letter-spacing: 6px;
+}
+.home nav .brand-logo img {
+    width: 50px;
+    position: relative;
+    top: 7px;
+}
+.home nav li {
+    position: relative;
+    overflow: hidden;
+}
+.home nav li span {
+    position: absolute;
+    background: #799198;
+    width: 95%;
+    bottom: 1px;
+    height: 2px;
+    transform: scale(0);
+    transition: 0.3s;
+}
+.home nav li:hover span{
+  transform: scale(1);
+}
+.home nav ul a {
+    color: #799198;
+    font-weight: bold;
+    font-size: 12px;
+}
+.home nav ul a:hover{
+  background: transparent;
+}
+.home nav .button-collapse i {
+    height: 56px;
+    line-height: 56px;
+    font-size: 35px;
+}
+ #sidenav-overlay{
+  z-index: 1
+}
+.home .side-nav{
+  background: rgb(23, 28, 29);
+}
+.home .side-nav a{
+  color: #fff
+}
+.home .side-nav a:hover {
+    background: #262e30;
+}
+/*the home info style*/
+.home .info{
+    margin: 20% auto;
+    color: #fff;
+}
+.home .info h3{
+  font-weight: bold;
+}
+.home .info p{
+  font-size: 12px
+}
+.home .info button {
+    border: 1px solid #9D5EE0;
+    background: #9D5EE0;
+    font-family: sans-serif;
+    font-weight: bold;
+    padding: 5px;
+    transition: 0.3s;
+    color: #fff;
+    width: 155px;
+    margin-top: 3%;
+}
+.home .info button i{
+  position: relative;
+  top: 5px
+}
+.home .info button:hover{
+   background: transparent;
+}
+.home .info h6 {
+    color: #fff;
+    font-size: 11px;
+    font-family: sans-serif;
+}
+.home .info .fa-chevron-down{
+    position: absolute;
+    bottom: 20px;
+    background: transparent;
+    padding: 10px;
+    font-size: 20px;
+    width: 40px;
+    transition: 0.3s;
+    right: 48%;
+    cursor: pointer;
+}
+.home .info .fa-chevron-down:hover{
+  color: #9D5EE0
+}
+
+
+/*---------------------------------------
+  About Section style              
+-----------------------------------------*/
+.about{
+  padding-top: 80px;
+  padding-bottom: 25px;
+}
+.about p {
+    font-size: 12px;
+    line-height: 1.2em;
+    color:#799198
+}
+
+/*---------------------------------------
+ services Section style              
+-----------------------------------------*/
+.services{
+
+}
+.services .services-cont{
+  width: 65%;
+}
+.services .info {
+    background: #fff;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    transition: 0.3s;
+    margin-bottom: 25px;
+    overflow: hidden;
+    width: 100%;
+    height: 240px;
+    cursor: pointer;
+}
+/*font i style*/
+.services i {
+    font-size: 45px;
+}
+.services .fa-wheelchair-alt{
+  color: #eac335
+}
+.services .material-icons{
+  color: #8fdc55
+}
+.services .fa-comments-o{
+  color: #dc75dc
+}
+.services .fa-heartbeat {
+    color: #569be2;
+}
+.services .fa-clock-o {
+    color: #ed798d;
+}
+.services .fa-times-circle-o {
+    color: #fbcb45;
+}
+.services h6{
+    font-weight: bold;
+    font-family: sans-serif;
+}
+.services p {
+    font-size: 12px;
+    color: #799198;
+    width: 82%;
+    margin: 20px auto;
+    line-height: 1.7em;
+}
+
+
+/*---------------------------------------
+ featured Section style              
+-----------------------------------------*/
+.featured {
+    background: rgba(255, 255, 255, 0.35);
+    padding-top: 80px;
+    padding-bottom: 80px
+}
+.featured .featured-info{
+  padding-bottom: 30px
+}
+.featured .featured-info p {
+    font-size: 12px;
+    line-height: 1.2em;
+    color:#799198
+}
+
+/*start info*/
+.featured .fet-cont{
+  width: 60%
+}
+.featured .fet-cont .info{
+  background: #fff;
+  overflow: hidden;
+  margin-bottom: 30px
+}
+.featured .fet-cont .info .img{
+  width: 100%;
+  overflow: hidden;
+  height: 150px;
+  text-align: left;
+}
+.featured .fet-cont .info .img img{
+  width: 100%;
+  height: 100%
+}
+.featured .fet-cont .info .content {
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+    padding: 10px;
+}
+.featured .fet-cont .info .content h6 {
+    font-size: 15px;
+}
+.featured .fet-cont .info .content p {
+    font-size: 12px;
+    line-height: 1.2em;
+    color:#799198
+}
+.featured .fet-cont .info .content h5 {
+    font-family: sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    color: #e6aa3d;
+}
+.featured .fet-cont .info .content span {
+    font-family: sans-serif;
+    color: #3088c7;
+    font-size: 12px;
+    position: absolute;
+    top: 6%;
+    right: 1%;
+    font-weight: bold;
+}
+.featured .fet-cont .info .content span i{
+  font-size: 12px
+}
+.featured .fet-cont .info .content hr {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.featured .z-depth-3 {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.07),
+     0 1px 18px 0 rgba(0, 0, 0, 0),
+      0 3px 5px -1px rgba(0, 0, 0, 0);
+}
+
+.blog{
+  background-image: url(../imgs/family.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.blog .blog-cont{
+  width: 65%
+}
+.blog .info {
+    background: #fff;
+    padding: 16px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.blog .info h5 {
+    color: #799198;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+}
+.blog .info p {
+    color: #799198;
+    font-size: 13px;
+    line-height: 1.2em;
+}
+.blog .info button {
+    border: 1px solid #9D5EE0;
+    background: #9D5EE0;
+    font-family: sans-serif;
+    font-weight: bold;
+    padding: 5px;
+    transition: 0.3s;
+    color: #fff;
+    width: 155px;
+    margin-top: 3%;
+}
+.blog .info button i{
+  position: relative;
+  top: 5px
+}
+.blog .info button:hover{
+   background: transparent;
+   color: #222
+}
+.blog .info h6 {
+    color: #799198;
+    font-size: 11px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.works{}
+.works .works-info{
+  padding-bottom: 30px
+}
+.works .works-cont{width: 65%}
+.works .info {
+    overflow: hidden;
+    min-height: 210px;
+    background: #fff;
+        margin-bottom: 30px
+}
+.works #info {
+    padding: 14px;
+}
+.works .info img {
+    width: 100%;
+    height: 100%;
+}
+.works p {
+    font-size: 13px;
+    color: #799198;
+}
+.works .info a {
+    border-bottom: 2px dotted;
+    padding: 5px;
+
+}
+.works .info .img{
+  width: 30%;
+  overflow: hidden;
+  height: 100%
+}
+.works .info .img img{
+  width: 100%;
+  height: 200px;
+}
+.works .info .content{
+  width: 65%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.health {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.health p{
+  font-size: 13px;
+    color: #799198;
+}
+.health .icons{
+  margin-top: 50px
+}
+.health .h-cont{
+  width: 65%
+}
+.health img {
+    width: 50px;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: 0.3s
+}
+.health img:hover{
+  opacity: 1
+}
+
+
+.footer {
+    text-align: center;
+    padding-top: 30px;
+    background: rgba(255, 255, 255, 0.59);
+    padding-bottom: 10px
+}
+.footer img {
+    width: 50px;
+    position: relative;
+    top: 5px;
+}
+.footer p{
+  font-size: 13px;
+    color: #799198;
+      margin-bottom: 50px
+}
+.footer p>span{
+    font-size: 13px;
+    font-family: sans-serif;
+    color: #9d5ee0;
+    font-weight: bold;
+}
+.footer ul{
+  text-align: left;
+  margin-bottom: 20px
+}
+.footer a{
+  color: #799198;
+  transition: 0.3s
+}
+.footer a:hover{
+  color: #222
+}
+.footer .copy span{
+  font-size: 13px;
+    color: #799198;
+}

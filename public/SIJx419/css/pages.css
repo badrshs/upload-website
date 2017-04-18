@@ -1,0 +1,73 @@
+@charset "utf-8";
+/***** start CSS Document here *****/
+
+/*** start about us here ***/
+
+/* start body here */
+body{padding-top:61px;font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;}
+/* end body here */
+
+/* start breadcrumb here */
+.NavigationBar{background:#F5F5F5;}
+
+	.NavigationBar .breadcrumb{margin:0;padding:10px 0;}
+	
+	.NavigationBar .breadcrumb a,.active{font-size:16px;}
+/* end breadcrumb here */
+
+/* start section About Us here */
+.AboutUs{padding:30px 0 70px 0;}
+	
+	.AboutUs .h1{font-size:60px;font-weight:700;letter-spacing:-8px;}
+		
+	.AboutUs hr{width:70%;}	
+/* end section About Us here */
+
+/* satar section About Features here */
+.AboutFeatures{padding:10px 0 30px 0;}
+	
+	.AboutFeatures .AboutFeaturesColumns p{margin-bottom:30px;}
+	
+	.AboutFeatures .AboutFeaturesColumns h3{font-weight:700;letter-spacing:-2px;}
+/* end section About Features here */
+
+/* start section About CEO here */
+.AboutCEO{background:#EEE;padding:60px 0 0 0;}
+
+	.AboutCEO .h1{font-weight:700;}
+	
+	.AboutCEO p{text-align:justify;line-height:1.8em;}
+	
+	.AboutCEO .btn-primary{
+		background:#333;
+		border:#333;
+		display:inline-block;
+		margin-bottom:30px;
+		opacity:0.95;}
+		
+	.AboutCEO .btn-primary:hover{opacity:1;}	
+/* end section About CEO here */
+
+/*** end section about us here ***/
+
+/*** start section FAQ here ***/
+.faq{padding:60px 0;}
+
+	.faq .h1{font-weight:700;letter-spacing:-5px;font-size:60px;}
+	
+	.faq .h1 ~ hr{width:70%;}
+/*** end section FAQ here ***/
+
+/*** start section faq questions here ***/
+.faq-questions{padding:0 0 70px 0;}
+
+.faq-questions .panel-heading{padding:20px 10px;}
+
+.faq-questions .panel-heading a:after{font-family:'Glyphicons Halflings';content:"\e114";float:right;color:#444;}
+
+.faq-questions .panel-heading a.collapsed:after{content:"\e080";color:#999;}
+
+.faq-questions .panel-group .lead{font-size:17px;line-height:1.6em;letter-spacing:1px;}
+/*** end section faq questions here ***/
+
+/***** end CSS Document here *****/ 

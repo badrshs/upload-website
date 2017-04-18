@@ -1,0 +1,200 @@
+*{
+ -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -o-box-sizing:border-box;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    height: 2500px;
+}
+.container{
+    width: 1180px;
+    margin:auto;
+}
+.header .nav{
+    background: white;
+    overflow: hidden;
+}
+.header .nav h2{
+    float: left;
+}
+.header .nav  ul{
+    float: right;
+    list-style: none;
+    padding-left: 0px;
+    overflow: hidden;
+}
+.header .nav ul li{
+    float: left;
+    padding: 10px;
+}
+.header .nav ul li a{
+    text-decoration: none;
+    color: black;
+    -webkit-transition: .4s ease-in-out;
+    -moz-transition: .4s ease-in-out;
+    transition: .4s ease-in-out;
+}
+.header .nav ul li a:hover {
+    color: #35c3cc;
+
+}
+ .header .slider{
+     background-image: url(../img/slider.png);
+     -webkit-background-size:cover;
+     -moz-background-size:cover;
+     -o-background-size:cover;
+     background-size: cover;
+    background-color: #eee;
+   height: 600px;
+}
+.header .slider .intro{
+    padding-top: 250px;
+    height: 600px;
+    text-align: center;
+}
+.header .slider .intro h2{
+    color: white;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 50px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    width: 600px;
+}
+.header .slider .intro button {
+    margin-top: 20px;
+    color: white;
+    background: none;
+    border: 1px solid white;
+    width: 138px;
+    height: 50px;
+    -webkit-transition: .7s ease-in-out;
+    -moz-transition: .7s ease-in-out;
+    transition: .7s ease-in-out;
+    cursor: pointer;
+}
+.header .slider .intro button:hover{
+    background-color:rgba(28, 174, 233, 0.43);
+}
+.bottom .blogs{
+    background-color: #eee;
+    height: 590px;
+    margin: 0;
+}
+.bottom .blogs h1 {
+    padding-top: 35px;
+    margin: 0;
+    text-align: center;
+    font-size: 50px;
+}
+.bottom .blogs p {
+    padding-top: 7px;
+    margin: 0;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.bottom .blogs .img-1 {
+    width: 33.3333%;
+    padding: 0;
+    margin: 0;
+    float: left;
+
+}
+.bottom .blogs .img-1 img {
+    width: 308px;
+    height: 172px;
+    border-radius: 5%;
+  margin-left: 49px;
+               -webkit-transition: .7s ease-in-out;
+    -moz-transition: .7s ease-in-out;
+    transition: .7s ease-in-out;
+}
+.bottom .blogs .img-1 img:hover {
+    transform: rotate(-720deg);
+}
+.bottom .blogs .img-1 .p-img1 {
+    padding-left: 49px;
+    width: 86%;
+    text-align: center;
+    margin-left: 9px;
+}
+
+
+.bottom .blogs .img-2 {
+    width: 33.3333%;
+    float: right;
+    padding: 0;
+    margin: 0;
+}
+.bottom .blogs .img-2 img {
+    width: 308px;
+    height: 172px;
+    border-radius: 5%;
+    margin-left: 49px;
+           -webkit-transition: .7s ease-in-out;
+    -moz-transition: .7s ease-in-out;
+    transition: .7s ease-in-out;
+}
+.bottom .blogs .img-2 img:hover {
+    transform: rotate(-720deg);
+}
+p.p-img2 {
+    text-align: center;
+    width: 73%;
+    position: relative;
+    left: 55px;
+}
+
+
+
+
+
+.bottom .blogs .img-3 {
+    width: 33.3333%;
+    float: right;
+    padding: 0;
+    margin: 0;
+}
+
+.bottom .blogs .img-3 img {
+    width: 308px;
+    height: 172px;
+    border-radius: 5%;
+    margin-left: 49px;
+       -webkit-transition: .7s ease-in-out;
+    -moz-transition: .7s ease-in-out;
+    transition: .7s ease-in-out;
+}
+.bottom .blogs .img-3 img:hover{
+    transform: scale(3.3);
+    width: 58%;
+    height: 111px;
+    position: relative;
+    top: -6px;
+}
+.bottom .blogs .img-3 .p-img3 {
+    padding-left: 49px;
+    text-align: center;
+    width: 85%;
+    margin-left: 9px;
+}
+.bottom .blogs button {
+    margin-top: 20px;
+    color: black;
+    background: none;
+    border: 1px solid black;
+    width: 138px;
+    height: 50px;
+    -webkit-transition: .7s ease-in-out;
+    -moz-transition: .7s ease-in-out;
+    transition: .7s ease-in-out;
+    cursor: pointer;
+        margin-left: 135px;
+    margin-top: 2px;
+}
+.bottom .blogs button:hover{
+    background-color:rgba(28, 174, 233, 0.43);
+}

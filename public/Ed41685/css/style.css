@@ -1,0 +1,215 @@
+body{
+height: 4000px;
+}
+
+.container{
+        width: 1170px;
+        margin: auto;
+
+}
+/* start header */
+.header .navbar{
+color:FFF;
+    overflow: hidden;
+    background-color: #252F31;
+}
+
+.header .navbar h2{
+    float: left;
+    color: #32CD81;
+}
+
+
+.header .navbar ul{
+list-style: none;
+ padding-left: 0px;
+overflow: hidden;
+    color: #FFF;
+    float: right;
+    
+}
+.header .navbar ul li{float:left; padding: 10px}
+
+.header .navbar ul li a{
+    color: #FFF;
+    font-size: 20px;
+    text-decoration: none;
+}
+.header .navbar ul li a:hover{
+    color: #05AD80;
+font-size: 25px;
+    text-decoration:underline;
+}
+
+.header .slider{
+    height: 700px;
+background-image:url(../Images/1.jpg);
+    background-size: cover;
+}
+.header .slider .intro{text-align: center; padding-top: 350px;height: 600px;}
+.header .slider .intro h1{
+ width: 500px;
+ margin: 0 auto;
+    border-top: 3px solid #FFF;
+    border-bottom: 3px solid #FFF;
+    padding:10px;
+    color:aqua;
+}
+/* end header */
+
+/* start features */
+
+.features{
+overflow: hidden;
+    margin-bottom: 20px;
+    margin-top: 20px
+}
+
+.features .feat{
+float: left;
+    width: 33.33333%;
+}
+
+
+/* end features */
+
+/* start about-me */
+
+.about-me{
+    overflow: hidden;
+    background-color: #f2f2f1;
+    
+}
+.about-me  .image{
+float:left;
+    width: 40%;
+    
+}
+.about-me .image img{width: 100%;}
+.about-me  .about{
+float:left;
+    width: 60%;
+
+}
+.about-me  .about h1{
+    margin: 50px;
+}
+.about-me  .about p{
+    margin: 50px;
+}
+
+.about-me .about .hobbies {
+    overflow: hidden;
+    margin: 50px
+}
+.about-me .about .hobbies > div {
+    float: left;
+        width: 50%;
+}
+/* end about-me */
+
+
+/* start my-skills */
+
+.my-skills{
+    padding-bottom: 30px;
+    padding-top: 30px;
+    overflow: hidden;
+}
+.my-skills .skills,
+.my-skills .progress{
+    width: 50%;
+        float:left;
+
+}
+.my-skills .skills button{
+background:none;
+    border: 3px solid #00ff72;
+    border-radius: 20%;
+    padding: 20px;
+}
+.my-skills .skills button:hover{
+background-color: aqua;
+    border: 3px solid #00ff72;
+    border-radius: 30%;
+    padding: 20px;
+    color: #FFF;
+    font-size: 20px;
+    font-family:Arial Tahoma;
+}
+.my-skills .progress .tecneek div{
+background-color: #CCC;
+}
+.my-skills .progress .tecneek div span{
+    background-color: #54C686;
+    height: 25px;
+    display: block;
+    text-align: right;
+    line-height: 25px;
+    color: #FFF;
+    
+}
+
+/* end my-skills */
+
+/* start resume */
+
+.resume{
+    background-color: #f2f2f1;
+        padding-bottom: 30px;
+    padding-top: 30px;
+    text-align: center;
+    overflow: hidden;
+}
+
+
+/* end resume */
+
+
+/* start my-education */
+    
+.my-education {
+    overflow: hidden;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.my-education .education,
+.my-education .subjects{
+    width: 50%;
+    float: left;
+}
+.my-education .certificate span{
+    display: block;
+    padding: 8px;
+}
+.my-edutcation .certificate span:first-of-type
+{
+    
+}
+.my-education .certificate span:last-of-type
+{
+    height: 20px;
+    width: 70px;
+    background-color: #2DCC70;
+    color: #FFF;
+}
+.my-education .certificate p{
+padding-bottom: 50px
+}
+
+.my-education .certificate h2 {
+
+    text-transform: uppercase;
+}
+
+
+/* end my-education */
+
+
+
+
+
+
+
+

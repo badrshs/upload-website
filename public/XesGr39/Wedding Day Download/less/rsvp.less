@@ -1,0 +1,79 @@
+/*========== RSVP ==========*/
+
+.rsvp-section{
+	background: url(../img/rsvp_dec.png) 0 center no-repeat transparent;
+	-webkit-background-size: 6%;
+	-moz-background-size: 6%;
+	background-size: 6%;
+}
+
+.rsvp-form{
+	background: @light-line;
+	margin: 3em 0;
+
+	> h1{
+		text-align: center;
+		margin: 21/63em 0;
+		font-family: @glam;
+		text-transform: none;
+		font-size: 4.5em;
+		font-weight: 300;
+	}
+
+	> form input[type=text], textarea{
+		width: 100%;
+		.box-sizing(border-box);
+	}
+
+	> form textarea{
+		min-height: 9em;
+	}
+
+	.span10{
+		padding-left: 0.75em;
+	}
+
+	label{
+		padding-left: 0;
+		padding-right: 1.5em;
+		> input[type=radio]{
+			display: none;
+
+			&:checked{
+
+				+ b:after{
+					content: '\2713';
+					box-shadow: none;
+					background: @violet;
+					color: @white;
+					text-align: center;
+					line-height: 21px;
+					font-size: 16px;
+					-webkit-text-stroke: 0.3px;
+					.scale(1);
+				}
+			}
+		}
+
+		> b{
+			padding-left: 2.25em;
+			display: inline-block;
+			position: relative;
+			font-size: 12px;
+			line-height: 21/12px;
+
+			&:after{
+				content: '';
+				width: 21px;
+				height: 21px;
+				display: block;
+				box-shadow: inset 0 0 0 3px darken(@light-line, 10%);
+				border-radius: 50%;
+				position: absolute;
+				top: -10px;
+				left: 0;
+				.scale(0.6);
+			}
+		}
+	}
+}

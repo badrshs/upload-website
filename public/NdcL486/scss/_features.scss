@@ -1,0 +1,101 @@
+/*===== features area css =====*/
+.feature-area{
+    padding-bottom: 72px;
+    .feature-item{
+        .feature-img{
+            position: relative;
+            &:before{
+                width: 100%;
+                height: 100%;
+                content: '';
+                top: 0;
+                left: 0;
+                bottom:0;
+                position: absolute;
+                background: $black;
+                opacity: 0.20;
+                transform: scaleX(0);
+                transition: all 0.6s ease 0s;
+            }
+            &:after{
+                width: 100%;
+                height: 100%;
+                content: '';
+                top: 0;
+                left: 0;
+                bottom:0;
+                position: absolute;
+                background: $black;
+                opacity: 0.20;
+                transform: scaleY(0);
+                transition: all 0.6s ease 0s;
+            }
+            &:hover{
+                &:before{
+                    transform: scaleX(1);
+                }
+                &:after{
+                    transform: scaleY(1);
+                }
+            }
+            img{
+                max-width: 100%;
+            }
+        }
+        .feature-content{
+            text-align: center;
+            padding-top: 34px;
+            .tittle{
+                font: 700 25px/39px $arimo;
+                letter-spacing: 0.25px;
+                color: $dark-gray;
+                position: relative;
+                padding-bottom: 18px;
+                @include transition;
+                display: inline-block;
+                &:after{
+                    content: '';
+                    width: 70px;
+                    height: 3px;
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: $black;
+                }
+                &:hover{
+                    color: $light-gray;
+                    &:after{
+                       background: $light-gray; 
+                    }
+                }
+            }
+            .date{
+                padding-top: 19px;
+            }
+            p{
+                text-align: left;
+                padding-right: 18px;
+                padding-top: 29px;
+            }
+        }
+        .feature-icon{
+            padding-top: 55px;
+            .social{
+                padding-top: 42px;
+                li{
+                    &:first-child{
+                        a{
+                            padding-left: 0px;
+                        }
+                    }
+                } 
+            }
+            .post-link{
+                padding-top: 42px;
+                float: right;
+                padding-bottom: 0px;
+            }
+        }
+    }
+}

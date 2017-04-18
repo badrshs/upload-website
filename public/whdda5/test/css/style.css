@@ -1,0 +1,9 @@
+body{ background-color:#FFF; padding:200px; }
+section {padding:50px; background-color:#EEE;}
+li{list-style:none; position: absolute; }
+.left{ margin-left:120px; padding:20px}
+.right{ margin-left:50px; padding:20px}
+
+.first-left{margin-left:150px}
+.first-right{margin-right:120px}
+

@@ -1,0 +1,131 @@
+*{
+	padding:0;
+	margin: 0px;
+
+}
+body{
+background-color: #ECEFF1;
+}
+ .na{
+	margin-top: 10px;
+
+}
+.for{
+	animation: form 2s 1 ease;
+}
+ .na >div >a{
+	font-size: 350%;
+	text-shadow: 10px 10px 5px 4px rgba(0,0,0,1);
+	margin: 5px;
+	font-family: 'Reem Kufi', sans-serif;
+}
+.tit{
+	float: right;
+}
+.menu{
+	float: right;
+	direction: rtl;
+}
+.menu li{
+	font-size: 22px;
+	float: right;
+}
+.menu >li>a {
+font-family: 'Reem Kufi', sans-serif;
+font-family: 'Rakkas', cursive;
+font-family: 'Aref Ruqaa', serif;
+}
+
+footer{
+margin-bottom: 10px;
+}
+footer >div{
+	color: #fff;
+	font-size: 18px;
+}
+form{
+	border: 1px solid #ddd;
+	box-shadow:1px 1px 5px 1px rgba(0,0,0,0.6);
+	border-radius: 10px;
+	width: 50%;
+	margin: 0px auto;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	padding: 6%;
+
+}
+form  >a{
+	font-size: 200%;
+	float: right;
+}
+form  >input{
+	margin: 30px;
+}
+.btn{
+	font-size: 25px;
+}
+.btn:hover{
+	background-color: rgba(0,0,0,0.5);
+}
+.row{
+	margin: 20px;
+}
+.text1{
+	float: right;
+	direction: rtl;
+	font-size: 22px;
+	font-family: 'Amiri', serif;
+	margin: 30px;
+}
+.text1 h2{
+	text-decoration: underline;
+}
+.text2{
+	direction: rtl;
+	font-size: 22px;
+	font-family: 'Amiri', serif;
+}
+.photo2{
+	float: right;
+	margin: 20px;
+
+}
+.r1{
+	animation: r1 4s 1 ease;
+}
+.r2{
+	animation: r2 4s 1 ease;
+}
+img{
+	border-radius: 5px;
+	box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.6);
+}
+@keyframes form{
+	from{
+		margin-left:-600px; 
+		width: 1500px;
+		
+	}
+	to{
+		margin-left: 100px;
+		width: 1170px;
+		
+	}
+}
+@keyframes r1{
+	from{
+		margin-left:-1000px; 	
+	}
+	to{
+		
+		margin-left: 0px;	
+	}
+}
+@keyframes r2{
+	from{
+		margin-right:-1000px; 	
+	}
+	to{
+	margin-left: 0px;	
+	}
+}

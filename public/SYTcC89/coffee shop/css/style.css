@@ -1,0 +1,422 @@
+
+
+body
+	{
+		background: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    position: relative;
+	}
+
+.heading {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.subheading {
+  font-size: 16px;
+  padding-bottom: 60px;
+}
+
+p {
+  color: #848484;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.4px;
+  line-height: 20px;
+}
+
+hr {
+	border-top: 2px solid #828282;
+	width: 120px;
+}
+
+section{overflow: hidden;}
+#contact {
+  background: #f0f0f0;
+}
+
+.parallax-section {
+  background-attachment: fixed !important;
+  background-size: cover !important;
+}
+
+/* preloader section */
+.preloader  {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 99999;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-flow: row nowrap;
+            -ms-flex-flow: row nowrap;
+                flex-flow: row nowrap;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        background: none repeat scroll 0 0 #fff;
+    }
+.sk-spinner-pulse {
+  width: 40px;
+  height: 40px;
+  background-color: #F6D76B;
+  border-radius: 100%;
+  -webkit-animation: sk-pulseScaleOut 1s infinite ease-in-out;
+          animation: sk-pulseScaleOut 1s infinite ease-in-out; }
+
+@-webkit-keyframes sk-pulseScaleOut {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0; } }
+
+@keyframes sk-pulseScaleOut {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0; } }
+
+
+/* start navigation */
+.navbar-default {
+  background: #ffffff;
+  box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.04);
+  border: none;
+  margin-bottom: 0;
+
+}
+.navbar-brand, .navbar-nav li a {
+  line-height: 28px;
+}
+.navbar-default .navbar-brand {
+    color: #ff5c5c;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.navbar-default .navbar-nav li a {
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+.navbar-default .navbar-nav li a:hover{background: #ff5c5c;color: #fff}
+/* home section */
+#home {
+  background: url('../images/home-bg.jpg') 50% 0 repeat-y fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+#home .content {
+    background: rgba(34, 34, 34, 0.68);
+    width: 100%;
+    height:100vh;
+    position: absolute;
+
+}
+#home h1 {
+  font-size: 20px;
+  letter-spacing: 8px;
+  font-style: normal;
+  padding-top: 10px;
+}
+#home h2{
+  letter-spacing: 5px;
+  font-weight: bold;
+  font-family: 'Playball', cursive;
+
+}
+#home .btn {
+  background: transparent;
+  border-radius: 0;
+  border: 3px solid #ffffff;
+  color: #ffffff;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 16px 42px;
+  margin-top: 40px;
+  transition: all 0.4s ease-in-out;
+}
+#home .btn:hover {
+  background: #ffffff;
+  color: #202020;
+}
+
+/*about section*/
+.about{
+  background: #fff;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.about p{
+  width: 70%;
+  margin: 5px auto;
+  margin-bottom: 30px;
+}
+.about a{
+    background: #222;
+    color: #fff;
+    padding: 10px;
+    letter-spacing: 4px;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+.about a:hover{background:#ff5c5c;text-decoration: none; }
+
+
+ /*tabels section*/
+.tables{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background: #222;
+}
+.tables h2{color: #fff}
+.tables .info {
+    border: 1px solid #fff;
+    padding: 12px;
+    margin-top: 20px;
+    display: inline-flex;
+    overflow: hidden;
+}
+
+.tables .info .icon i {
+    color: #fff;
+    font-size: 30px;
+    padding: 20px;
+    border-radius: 50%;
+    background: #ff5c5c;
+    transition: all .3s ease;
+    border: 3px solid #ff5c5c;
+
+}
+.tables .info:hover i{background: #222;}
+.tables .info .content{
+    margin-left: 19px;
+}
+.tables .info .content h4 {
+    font-weight: bold;
+    color: #fff
+}
+
+.tables .info .content p{
+    font-size: 12px;
+    color: #9D9D9D
+}
+.tables .info .content a {
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all .3s ease;
+    background: #333;
+    padding: 9px;
+    letter-spacing: 6px;
+}
+.tables .info .content a:hover{
+     background: #ff5c5c;
+    text-decoration: none;
+}
+
+
+/*Team section*/
+.team{
+  background-image: url(../images/team-section.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+
+}
+.team .content{
+  background: rgba(34, 34, 34, 0.79);
+  width: 100%;
+  height: 100%;
+}
+.team .content h2 {
+    color: #fff;
+    margin-top: 0;
+    padding-top: 80px;
+}
+.team .info{position: relative;overflow: hidden;height: 400px;border-radius: 3px;margin-bottom: 80px;}
+.team .info img{
+  width: 100%;
+  height: 100%;
+  transition: 2s
+}
+
+.team .info .caption {
+    position: absolute;
+    bottom: -300px;
+    background: rgba(0, 0, 0, 0.75);
+    width: 100%;
+   transition: 0.5s;
+    text-align: center;
+}
+.team .info .caption h3{color: #fff}
+.team .info .caption button{
+    margin-bottom: 22px;
+    background: #c34848;
+    border: 0;
+    padding: 8px;
+    color: #fff;
+    letter-spacing: 5px;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.team .info .caption button:hover{background: #333;transform: scale(0.9);}
+.team .info:hover .caption{bottom: 0}
+.team .info:hover img{transform: scale(1.5);opacity: 0.6}
+/* contact section */
+#contact {
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+#contact .col-md-8 {
+  margin-bottom: 32px;
+}
+#contact .form-control {
+  background: #ffffff;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition: all 0.4s ease-in-out;
+}
+#contact .form-control:focus {
+  border-color: #f9f9f9;
+}
+#contact input {
+  height: 48px;
+}
+#contact input[type="submit"] {
+  background: transparent;
+  border: 2px solid #999;
+  border-radius: 10px;
+  letter-spacing: 2px;
+  margin-top: 12px;
+  height: 50px;
+}
+#contact input[type="submit"]:hover {
+  background: #999;
+  color: #ffffff;
+}
+
+
+
+/*start footer*/
+.footer{padding-top: 40px;padding-bottom: 40px;background: #222;font-family:'Play', sans-serif}
+.footer .info{}
+.footer .info h3{
+  font-weight: bold;
+ color: #fff;
+  
+}
+.footer .info p{color:rgba(255, 255, 255, 0.64);}
+.footer .info h3>span{color:#f35e5e;}
+.footer .info ul>li {
+    font-size: 18px;
+}
+.footer .info ul a {
+    color: rgba(255, 255, 255, 0.64);
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.footer .info img{
+  width: 40px;
+  transition: 0.3s;
+  opacity: 0.6
+}
+.footer .info img:hover{opacity: 1}
+
+/***********************************
+     *** The Menu Page Style**
+***********************************/
+/*start menu*/
+.menu {
+  overflow: hidden;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background: #eee
+
+}
+
+.menu .info {
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 30px;
+    box-shadow: 1px 1px 8px #222;
+    cursor: pointer;
+    height: 245px;
+}
+.menu .info img {
+    width: 100%;
+    height: 100%;
+    transition: 1.5s
+}
+
+.menu .info .caption {
+    position: absolute;
+    top: 0;
+    background: rgba(34, 34, 34, 0.69);
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+    transform: rotateX(90deg);
+}
+.menu .info .caption .content {
+    padding-top: 9%;
+}
+.menu .info .caption .content h3 {
+    letter-spacing: 8px;
+    font-weight: bold;
+    font-family: 'Playball', cursive;
+}
+.menu .info .caption .content p {
+    color: rgba(255, 255, 255, 0.71);
+    width: 80%;
+    margin: 5px auto;
+}
+.menu .info .caption .content button {
+    background: #a2344e;
+    border: 0;
+    padding: 11px;
+    color: #fff;
+    letter-spacing: 9px;
+    border-radius: 2px;
+    transition: 0.3s
+}
+.menu .info .caption .content button:hover{background: #222}
+.menu .info:hover .caption{transform: rotateX(0deg);}
+.menu .info:hover img{transform: scale(1.5);}
+
+/*End menu*/
+

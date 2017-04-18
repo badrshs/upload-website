@@ -1,0 +1,21 @@
+body {
+    background-color: lime;
+}
+h1 {
+    color: red;
+	font-size: 40px;
+}
+p {
+    color: purple;
+	font-size: 25px;
+	
+}
+a {
+	color: red;
+	font-family: bold;
+	font-size: 20px;
+}
+pre {
+	border: 3px solid black;
+	padding: 2px;
+}

@@ -1,0 +1,219 @@
+% This file was created with JabRef 2.10b2.
+% Encoding: UTF-8
+
+
+@Article{265922,
+  Title                    = {{Real-time vision-based robot localization}},
+  Author                   = {Atiya, S and Hager, G D},
+  Journal                  = {IEEE Transactions on Robotics and Automation},
+  Year                     = {1993},
+  Number                   = {6},
+  Pages                    = {785--800},
+  Volume                   = {9},
+
+  Abstract                 = {This paper describes an algorithm for determining robot location from visual landmarks. This algorithm determines both the correspondence between observed landmarks (in this case vertical edges in the environment) and a stored map, and computes the location of the robot using those correspondences. The primary advantages of this algorithm are its use of a single geometric tolerance to describe observation error, its ability to recognize ambiguous sets of correspondences, its ability to compute bounds on the error in localization, and fast execution. The algorithm has been implemented and tested on a mobile robot system. In several hundred trials it has never failed, and computes location accurate to within a centimeter in less than 0.5 s},
+  Annote                   = {Cited by 73, IEEE},
+  Doi                      = {10.1109/70.265922},
+  File                     = {:home/djole/Desktop/Master/Paper{\_}Collection/Vision{\_}Algorithm.pdf:pdf},
+  ISSN                     = {1042-296X},
+  Keywords                 = {0.5 s,Artificial intelligence,Computer vision,Helium,Intelligent sensors,Mobile robots,Orbital robotics,Robot localization,Robot sensing systems,Sensor systems,System testing,ambiguous correspondence sets,computer vision,mobile robot system,mobile robots,observation error,position measurement,real-time vision-based robot localization,visual landmarks},
+  Owner                    = {djole},
+  Timestamp                = {2016.11.08},
+  Url                      = {http://ieeexplore.ieee.org/document/265922/}
+}
+
+@Article{388775,
+  Title                    = {Inertial navigation systems for mobile robots},
+  Author                   = {B. Barshan and H. F. Durrant-Whyte},
+  Journal                  = {IEEE Transactions on Robotics and Automation},
+  Year                     = {1995},
+
+  Month                    = {Jun},
+  Note                     = {Cited by 316, IEEE},
+  Number                   = {3},
+  Pages                    = {328-342},
+  Volume                   = {11},
+
+  Abstract                 = {A low-cost solid-state inertial navigation system (INS) for mobile robotics applications is described. Error models for the inertial sensors are generated and included in an extended Kalman filter (EKF) for estimating the position and orientation of a moving robot vehicle. Two different solid-state gyroscopes have been evaluated for estimating the orientation of the robot. Performance of the gyroscopes with error models is compared to the performance when the error models are excluded from the system. Similar error models have been developed for each axis of a solid-state triaxial accelerometer and for a conducting-bubble tilt sensor which may also be used as a low-cost accelerometer. An integrated inertial platform consisting of three gyroscopes, a triaxial accelerometer and two tilt sensors is described},
+  Doi                      = {10.1109/70.388775},
+  File                     = {:/home/djole/Downloads/Master/Paper_Collection/Inertial navigation systems for mobile robots.pdf:PDF},
+  ISSN                     = {1042-296X},
+  Keywords                 = {Kalman filters;accelerometers;computerised control;gyroscopes;inertial navigation;mobile robots;position control;sensors;conducting-bubble tilt sensor;error models;extended Kalman filter;gyroscopes;inertial navigation systems;inertial platform;mobile robots;orientation estimation;position control;solid-state triaxial accelerometer;Accelerometers;Error compensation;Gyroscopes;Inertial navigation;Mobile robots;Robot sensing systems;Sensor phenomena and characterization;Solid modeling;Solid state circuits;Vehicles},
+  Owner                    = {djole},
+  Timestamp                = {2016.11.07},
+  Url                      = {http://ieeexplore.ieee.org/document/388775/?arnumber=388775}
+}
+
+@Article{982903,
+  Title                    = {{Vision for mobile robot navigation: a survey}},
+  Author                   = {Desouza, G N and Kak, A C},
+  Year                     = {2002},
+
+  Month                    = {feb},
+  Number                   = {2},
+  Pages                    = {237--267},
+  Volume                   = {24},
+
+  Abstract                 = {Surveys the developments of the last 20 years in the area of vision for mobile robot navigation. Two major components of the paper deal with indoor navigation and outdoor navigation. For each component, we have further subdivided our treatment of the subject on the basis of structured and unstructured environments. For indoor robots in structured environments, we have dealt separately with the cases of geometrical and topological models of space. For unstructured environments, we have discussed the cases of navigation using optical flows, using methods from the appearance-based paradigm, and by recognition of specific objects in the environment},
+  Annote                   = {Cited by 525},
+  Booktitle                = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  Doi                      = {10.1109/34.982903},
+  File                     = {:home/djole/Desktop/Master/Paper{\_}Collection/Vision{\_}navigation{\_}survey.pdf:pdf},
+  ISSN                     = {0162-8828},
+  Keywords                 = {Cameras,Computer vision,Geometrical optics,Image motion analysis,Mobile robots,Navigation,Neural networks,Orbital robotics,Robot vision systems,Solid modeling,appearance-based paradigm,computer vision,geometrical models,image sequences,indoor navigation,indoor robots,mobile robot navigation,mobile robots,object recognition,objects recognition,optical flows,outdoor navigation,path planning,structured environments,topological models,unstructured environments},
+  Owner                    = {djole},
+  Timestamp                = {2016.11.08},
+  Url                      = {http://ieeexplore.ieee.org/document/982903/}
+}
+
+@Article{N.BulusuJ.Heidemann2000,
+  Title                    = {{GPS-less low cost outdoor localization for very small devices. IEEE Personal Communications, 7(5)}},
+  Author                   = {{N. Bulusu, J. Heidemann}, and D. Estrin},
+  Journal                  = {IEEE Personal Communications Magazine},
+  Year                     = {2000},
+  Number                   = {5},
+  Pages                    = {28--34},
+  Volume                   = {7},
+
+  Abstract                 = {Instrumenting the physical world through large networks of wireless sensor nodes, particularly for applications like environmen- tal monitoring of water and soil, requires that these nodes be very small, light, untethered and unobtrusive. The problem of localization, i.e., de- termining where a given node is physically located in a network is a challenging one, and yet extremely crucial for many of these applica- tions. Practical considerations such as the small size, form factor, cost and power constraints of nodes preclude the reliance on GPS (Global Positioning System) on all nodes in these networks. In this paper, we review localization techniques and evaluate the effectiveness of a very simple connectivity-metric method for localization in outdoor environ- ments that makes use of the inherent radio-frequency (RF) communi- cations capabilities of these devices. A fixed number of reference points in the network with overlapping regions of coverage transmit periodic beacon signals. Nodes use a simple connectivity metric, that is more ro- bust to environmental vagaries, to infer proximity to a given subset of these reference points. Nodes localize themselves to the centroid of their proximate reference points. The accuracy of localization is then depen- dent on the separation distance between two adjacent reference points and the transmission range of these reference points. Initial experimen- tal results show that the accuracy for 90{\%} of our data points is within one-third of the separation distance. However future work is needed to extend the technique to more cluttered environments.},
+  Annote                   = {Cited by 995 CiteSeer},
+  File                     = {:home/djole/Desktop/Master/Paper{\_}Collection/LowCost{\_}GPS{\_}OutDoorLocalization.pdf:pdf},
+  Keywords                 = {localization,location,radio-frequency wireless network},
+  Owner                    = {djole},
+  Timestamp                = {2016.11.07},
+  Url                      = {http://citeseer.ist.psu.edu/viewdoc/summary?doi=10.1.1.35.3261{\&}rank=3}
+}
+
+@InProceedings{1641896,
+  Title                    = {Conformable and scalable tactile sensor skin for curved surfaces},
+  Author                   = {Y. Ohmura and Y. Kuniyoshi and A. Nagakubo},
+  Booktitle                = {Proceedings 2006 IEEE International Conference on Robotics and Automation, 2006. ICRA 2006.},
+  Year                     = {2006},
+  Month                    = {May},
+  Note                     = {Cited by 107, IEEE},
+  Pages                    = {1348-1353},
+
+  Abstract                 = {We present the design and realization of a conformable tactile sensor skin (patent pending). The skin is organized as a network of self-contained modules consisting of tiny pressure-sensitive elements which communicate through a serial bus. By adding or removing modules it is possible to adjust the area covered by the skin as well as the number (and density) of tactile elements. The skin is therefore highly modular and thus intrinsically scalable. Moreover, because the substrate on which the modules are mounted is sufficiently pliable to be folded and stiff enough to be cut, it is possible to freely distribute the individual tactile elements. A tactile skin composed of multiple modules can also be installed on curved surfaces. Due to their easy configurability we call our sensors "cut-and-paste tactile sensors." We describe a prototype implementation of the skin on a humanoid robot},
+  Doi                      = {10.1109/ROBOT.2006.1641896},
+  File                     = {:/home/djole/Downloads/Master/Paper_Collection/Conformable and scalable tactile sensor skin for curved surfaces.pdf:PDF},
+  ISSN                     = {1050-4729},
+  Keywords                 = {humanoid robots;motion control;tactile sensors;user interfaces;curved surfaces;humanoid robot;self-contained modules;tactile sensor skin;tiny pressure-sensitive elements;Fabrics;Humanoid robots;Intelligent sensors;Motion control;Motion detection;Robot sensing systems;Sensor systems;Skin;Tactile sensors;Wiring},
+  Owner                    = {djole},
+  Timestamp                = {2016.11.08},
+  Url                      = {http://ieeexplore.ieee.org/document/1641896/}
+}
+
+@InProceedings{1041390,
+  Title                    = {A low cost embedded color vision system},
+  Author                   = {A. Rowe and C. Rosenberg and I. Nourbakhsh},
+  Booktitle                = {Intelligent Robots and Systems, 2002. IEEE/RSJ International Conference on},
+  Year                     = {2002},
+  Note                     = {Cited by 34, IEEE},
+  Pages                    = {208-213 vol.1},
+  Volume                   = {1},
+
+  Abstract                 = {In this paper we describe a functioning low cost embedded vision system which can perform basic color blob tracking at 16.7 frames per second. This system utilizes a low cost CMOS color camera module and all image data is processed by a high speed, low cost microcontroller. This eliminates the need for a separate frame grabber and high speed host computer typically found in traditional vision systems. The resulting embedded system makes it possible to utilize simple color vision algorithms in applications like small mobile robotics where a traditional vision system would not be practical.},
+  Doi                      = {10.1109/IRDS.2002.1041390},
+  File                     = {:/home/djole/Downloads/Master/Paper_Collection/A low cost embedded color vision system.pdf:PDF},
+  Keywords                 = {CMOS image sensors;embedded systems;image colour analysis;microcontrollers;16.7 Hz;CMOS color camera module;color blob tracking;color vision;high-speed low-cost microcontroller;low-cost embedded color vision system;mobile robotics;Application software;CMOS image sensors;CMOS process;Cameras;Color;Computer vision;Cost function;Embedded system;Machine vision;Microcontrollers},
+  Owner                    = {djole},
+  Timestamp                = {2016.11.07},
+  Url                      = {http://ieeexplore.ieee.org/document/1041390/}
+}
+
+@InProceedings{6224638,
+  Title                    = {Kilobot: A low cost scalable robot system for collective behaviors},
+  Author                   = {M. Rubenstein and C. Ahler and R. Nagpal},
+  Booktitle                = {Robotics and Automation (ICRA), 2012 IEEE International Conference on},
+  Year                     = {2012},
+  Month                    = {May},
+  Note                     = {Cited by 51, IEEE},
+  Pages                    = {3293-3298},
+
+  Abstract                 = {In current robotics research there is a vast body of work on algorithms and control methods for groups of decentralized cooperating robots, called a swarm or collective. These algorithms are generally meant to control collectives of hundreds or even thousands of robots; however, for reasons of cost, time, or complexity, they are generally validated in simulation only, or on a group of a few tens of robots. To address this issue, this paper presents Kilobot, a low-cost robot designed to make testing collective algorithms on hundreds or thousands of robots accessible to robotics researchers. To enable the possibility of large Kilobot collectives where the number of robots is an order of magnitude larger than the largest that exist today, each robot is made with only $14 worth of parts and takes 5 minutes to assemble. Furthermore, the robot design allows a single user to easily operate a large Kilobot collective, such as programming, powering on, and charging all robots, which would be difficult or impossible to do with many existing robotic systems.},
+  Doi                      = {10.1109/ICRA.2012.6224638},
+  File                     = {:/home/djole/Downloads/Master/Paper_Collection/KiloBot.pdf:PDF},
+  ISSN                     = {1050-4729},
+  Keywords                 = {decentralised control;multi-robot systems;research and development;Kilobot collective;collective behaviors;decentralized cooperating robots;low cost scalable robot system;robot design;robotics research;testing collective algorithms;Batteries;Collision avoidance;Robot kinematics;Robot sensing systems;Switches},
+  Owner                    = {djole},
+  Timestamp                = {2016.11.07},
+  Url                      = {http://ieeexplore.ieee.org/document/6224638/?arnumber=6224638}
+}
+
+@Article{Thrun2001,
+  Title                    = {{Robust Monte Carlo localization for mobile robots}},
+  Author                   = {Thrun, Sebastian and Fox, Dieter and Burgard, Wolfram and Dellaert, Frank},
+  Journal                  = {Artificial Intelligence},
+  Year                     = {2001},
+  Number                   = {1-2},
+  Pages                    = {99--141},
+  Volume                   = {128},
+
+  Abstract                 = {Mobile robot localization is the problem of determining a robot's pose from sensor data. This article presents a family of probabilistic localization algorithms known as Monte Carlo Localization (MCL). MCL algorithms represent a robot's belief by a set of weighted hypotheses (samples), which approximate the posterior under a common Bayesian formulation of the localization problem. Building on the basic MCL algorithm, this article develops a more robust algorithm called Mixture-MCL, which integrates two complimentary ways of generating samples in the estimation. To apply this algorithm to mobile robots equipped with range finders, a kernel density tree is learned that permits fast sampling. Systematic empirical results illustrate the robustness and computational efficiency of the approach. {\textcopyright} 2001 Published by Elsevier Science B.V.},
+  Annote                   = {Cited by 832},
+  Doi                      = {10.1016/S0004-3702(01)00069-8},
+  File                     = {:home/djole/Desktop/Master/Paper{\_}Collection/MonteCarlo{\_}Localization{\_}Robust.pdf:pdf},
+  ISBN                     = {0-7803-5180-0},
+  ISSN                     = {00043702},
+  Keywords                 = {Kernel density trees,Localization,Mobile robots,Particle filters,Position estimation},
+  Owner                    = {djole},
+  Pmid                     = {1222},
+  Timestamp                = {2016.11.07},
+  Url                      = {http://citeseer.ist.psu.edu/viewdoc/summary?doi=10.1.1.18.8488}
+}
+
+@InProceedings{5509295,
+  Title                    = {{A robust, low-cost and low-noise artificial skin for human-friendly robots}},
+  Author                   = {Ulmen, J and Cutkosky, M},
+  Booktitle                = {Robotics and Automation (ICRA), 2010 IEEE International Conference on},
+  Year                     = {2010},
+  Pages                    = {4836--4841},
+
+  Abstract                 = {As robots and humans move towards sharing the same environment, the need for safety in robotic systems is of growing importance. Towards this goal of human-friendly robotics, a robust, low-cost, low-noise capacitive force sensing array is presented with application as a whole body artificial skin covering. This highly scalable design provides excellent noise immunity, low-hysteresis, and has the potential to be made flexible and formable. Noise immunity is accomplished through the use of shielding and local sensor processing. A small and low-cost multivibrator circuit is replicated locally at each taxel, minimizing stray capacitance and noise coupling. Each circuit has a digital pulse train output, which allows robust signal transmission in noisy electrical environments. Wire count is minimized through serial or row-column addressing schemes, and the use of an open-drain output on each taxel allows hundreds of sensors to require only a single output wire. With a small set of interface wires, large arrays can be scanned hundreds of times per second and dynamic response remains flat over a broad frequency range. Sensor performance is evaluated on a bench-top version of a 4 × 4 taxel array in quasi-static and dynamic cases.},
+  Annote                   = {Cited by 37},
+  Doi                      = {10.1109/ROBOT.2010.5509295},
+  File                     = {:home/djole/Desktop/Master/Paper{\_}Collection/LowCostSkin.pdf:pdf},
+  ISSN                     = {1050-4729},
+  Keywords                 = {Circuit noise,Humans,Immune system,Noise robustness,Robot sensing systems,Safety,Sensor arrays,Skin,Wire,Working environment noise,human friendly robots,human-robot interaction,intelligent sensors,local sensor processing,low cost multivibrator circuit,low cost noise artificial skin,low noise artificial skin,low noise capacitive force sensing array,multivibrators,noise immunity,robust signal transmission,tactile sensors,whole body artificial skin covering},
+  Owner                    = {djole},
+  Timestamp                = {2016.11.01},
+  Url                      = {http://ieeexplore.ieee.org/document/5509295/}
+}
+
+@InProceedings{ulrich2000appearance,
+  Title                    = {Appearance-based obstacle detection with monocular color vision},
+  Author                   = {Ulrich, Iwan and Nourbakhsh, Illah},
+  Booktitle                = {AAAI/Innovative Applications of Artificial Intelligence Conferences},
+  Year                     = {2000},
+  Note                     = {Cited by 311, Google Scholar},
+  Pages                    = {866--871},
+
+  Abstract                 = {This paper presents a new vision-based obstacle detection method for mobile robots. Each individual image pixel is classified as belonging either to an obstacle or the ground based on its color appearance. The method uses a single passive color camera, performs in real-time, and provides a binary obstacle image at high resolution. The system is easily trained by simply driving the robot through its environment. In the adaptive mode, the system keeps learning the appearance of the ground during operation. The system has been tested successfully in a variety of environments, indoors as well as outdoors.},
+  File                     = {:/home/djole/Downloads/Master/Paper_Collection/Appearance-based obstacle detection with monocular color vision.pdf:PDF},
+  Owner                    = {djole},
+  Timestamp                = {2016.11.07},
+  Url                      = {http://www.aaai.org/Papers/AAAI/2000/AAAI00-133.pdf}
+}
+
+@Article{6216365,
+  Title                    = {LOBOT: Low-Cost, Self-Contained Localization of Small-Sized Ground Robotic Vehicles},
+  Author                   = {G. Zhan and W. Shi},
+  Journal                  = {IEEE Transactions on Parallel and Distributed Systems},
+  Year                     = {2013},
+
+  Month                    = {April},
+  Note                     = {Cited by 4, IEEE},
+  Number                   = {4},
+  Pages                    = {744-753},
+  Volume                   = {24},
+
+  Abstract                 = {It is often important to obtain the real-time location of a small-sized ground robotic vehicle when it performs autonomous tasks either indoors or outdoors. We propose and implement LOBOT, a low-cost, self-contained localization system for small-sized ground robotic vehicles. LOBOT provides accurate real-time, 3D positions in both indoor and outdoor environments. Unlike other localization schemes, LOBOT does not require external reference facilities, expensive hardware, careful tuning or strict calibration, and is capable of operating under various indoor and outdoor environments. LOBOT identifies the local relative movement through a set of integrated inexpensive sensors and well corrects the localization drift by infrequent GPS-augmentation. Our empirical experiments in various temporal and spatial scales show that LOBOT keeps the positioning error well under an accepted threshold.},
+  Doi                      = {10.1109/TPDS.2012.176},
+  File                     = {:/home/djole/Downloads/Master/Paper_Collection/LOBOT.pdf:PDF},
+  ISSN                     = {1045-9219},
+  Keywords                 = {mobile robots;path planning;remotely operated vehicles;sensors;GPS-augmentation;Global Positioning System;LOBOT system;localization drift;low-cost self-contained localization system;robot position;sensors;small-sized ground robotic vehicle;Accelerometers;Global Positioning System;Magnetic sensors;Robot sensing systems;Vehicles;GPS;Localization;robot;sensor},
+  Owner                    = {djole},
+  Timestamp                = {2016.11.07},
+  Url                      = {http://ieeexplore.ieee.org/document/6216365/}
+}
+

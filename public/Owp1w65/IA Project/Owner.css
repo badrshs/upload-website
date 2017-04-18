@@ -1,0 +1,26 @@
+body
+{
+    width: auto;
+    height: auto;
+    margin: auto;
+    background-image:url(bg1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+img.profile{
+    width: 230px;
+    height: 300px;
+    margin-top: 100px;
+    margin-left: 550px;
+    border-right-color: aqua;
+}
+
+p.para{
+    font-size:35px;
+    color:white;
+	font-weight: italic;
+    margin-left: 50px;
+    margin-right: 50px;
+}

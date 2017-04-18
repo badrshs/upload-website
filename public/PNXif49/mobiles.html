@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+    
+    <head>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>موبايلات</title>
+        <link rel="icon" href="images/rinka-icon.png">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="slick/slick.css">
+        <link rel="stylesheet" href="slick/slick-theme.css">
+        <link rel="stylesheet" href="css/ion.rangeSlider.css">
+        <link rel="stylesheet" href="css/ion.rangeSlider.skinNice.css">
+        <link rel="stylesheet" href="css/loading-screen.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/small-screen.css" media="(min-width: 767px) and (max-width: 991px)">
+        <link rel="stylesheet" href="css/extra-small-screen.css" media="(max-width: 767px)">
+        
+        
+        <style>
+            
+            .mobiles-page-header .slick-dotted.slick-slider {
+                margin: 20px auto 80px;
+            }
+            
+            .mobiles-page-content .ProductsFilter .UpFilter,
+            .mobiles-page-content .ProductsFilter .DownFilter {
+                display: flex;
+                justify-content: space-around;
+                align-items: baseline;
+                margin-bottom: 30px;
+            }
+            
+            .mobiles-page-content .ProductsFilter .DownFilter {
+                align-items: center;
+            }
+            
+            .mobiles-page-content .ProductsFilter .UpFilter .sort-by-box {
+                margin-bottom: 20px;
+            }
+            
+            .mobiles-page-content .ProductsFilter .UpFilter button {
+                background-color: #d8f1ff;
+                font-size: 14px;
+                padding: 5px 15px;
+                border: 1px solid #bcd8ed;
+                border-radius: 10px;
+                box-shadow: 0 0 10px -7px;
+            }
+            
+            .mobiles-page-content .ProductsFilter .UpFilter button:focus {
+                outline: none;
+            }
+            
+            .mobiles-page-content .ProductsFilter .UpFilter button:hover {
+                background-color: #bbe6ff;
+            }
+            
+            .mobiles-page-content .ProductsFilter .UpFilter button:active {
+                background-color: #afe2ff;
+                border: 1px solid #a6c9e3;
+            }
+            
+            .mobiles-page-content .ProductsFilter .UpFilter button span:last-of-type {
+                width: 92px;
+                display: inline-block;
+            }
+            
+            .mobiles-page-content .ProductsFilter .UpFilter .sort-by-box .sort-by-items {
+                background-color: #d8f1ff;
+                text-align: center;
+                margin-top: 4px;
+                border: 1px solid #bcd8ed;
+                border-radius: 10px;
+                box-shadow: 0 0 10px -7px;
+                display: none;
+            }
+            
+            .mobiles-page-content .ProductsFilter .UpFilter .sort-by-box .sort-by-items > div {
+                font-size: 13px;
+                padding: 3px;
+                cursor: pointer;
+                border-bottom: 1px solid #bcd8ed;
+            }
+            
+            .mobiles-page-content .ProductsFilter .UpFilter .sort-by-box .sort-by-items > div:last-of-type {
+                border-bottom: none;
+            }
+            
+            .mobiles-page-content .ProductsFilter .UpFilter .sort-by-box .sort-by-items > div:hover {
+                background-color: #bbe6ff;
+            }
+            
+            .mobiles-page-content .ProductsFilter .UpFilter .sort-by-box .sort-by-items > div:active {
+                background-color: #afe2ff;
+            }
+            
+            .mobiles-page-content .ProductsFilter .UpFilter i {
+                margin-right: 10px;
+            }
+            
+            .mobiles-page-content .ProductsFilter .DownFilter label {
+                width: 170px;
+                text-align: center;
+                font-size: 15px;
+                background-color: #d8f1ff;
+                color: #1d3b50;
+                padding: 2px 2px 4px;
+                border: 1px solid #bcd8ed;
+                border-radius: 6px;
+                box-shadow: 0 0 10px -7px;
+            }
+            
+            .mobiles-page-content .js-irs-0 {
+                width: 60%;
+            }
+            
+            .mobiles-page-content .js-irs-0 .irs-max {
+                right: -31px;
+                visibility: visible !important;
+            }
+            
+            .mobiles-page-content .js-irs-0 .irs-min {
+                left: -18px;
+                visibility: visible !important;
+            }
+            
+            .mobiles-page-content .all-items .mobile-products {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                padding: 0 10px;
+            }
+            
+            .mobiles-page-content .all-items .mobile-products .item {
+                width: 19%;
+            }
+            
+            .mobiles-page-content .all-items .mobile-products .the-Product a img {
+                display: block;
+            }
+            
+            .mobiles-page-content ul.numbered-page-navigation {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 30px 0 10px;
+                cursor: default;
+            }
+            
+            .mobiles-page-content ul.numbered-page-navigation li {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                height: 30px;
+                width: 30px;
+                background-color: #d8f1ff;
+                margin: 2px;
+                cursor: pointer;
+                border: 1px solid #bcd8ed;
+                border-radius: 10px;
+                box-shadow: 0 0 10px -7px;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -o-user-select: none;
+                user-select: none;
+            }
+            
+            .mobiles-page-content ul.numbered-page-navigation li.active {
+                background-color: #bbe6ff;
+            }
+            
+            .mobiles-page-content ul.numbered-page-navigation li:hover {
+                background-color: #afe2ff;
+                border: 1px solid #a6c9e3;
+            }
+            
+            .mobiles-page-content ul.numbered-page-navigation li:active {
+                background-color: #bbe6ff;
+            }
+            
+            .mobiles-page-content ul.numbered-page-navigation li:first-of-type {
+                margin-left: 7px;
+                border-radius: 15px 100% 100% 15px;
+            }
+            
+            .mobiles-page-content ul.numbered-page-navigation li:last-of-type {
+                margin-right: 7px;
+                border-radius: 100% 15px 15px 100%;
+            }
+            
+            .mobiles-page-content ul.numbered-page-navigation li:nth-of-type(5) {
+                background: none;
+                color: #7aa2b9;
+                font-size: 25px;
+                font-weight: bold;
+                margin-right: 0;
+                margin-left: 0;
+                border: none;
+                box-shadow: none;
+            }
+            
+            .mobiles-page-content ul.numbered-page-navigation li a {
+                color: #142b4e;
+            }
+            
+            @media (max-width: 799px) {
+                .mobiles-page-content .all-items .mobile-products .item {
+                    width: 27%;
+                }
+            }
+            
+            @media (max-width: 767px) {
+                .mobiles-page-content .all-items .mobile-products .item {
+                    width: 39%;
+                }
+            }
+            
+            @media (max-width: 400px) {
+                .mobiles-page-content .all-items .mobile-products .item {
+                    width: 84%;
+                }
+            }
+            
+        </style>
+        
+    </head>
+    
+    
+    <body class="mobiles-page">      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+        
+        <!-- Start Loading Screen -->
+        <div class="rinka-loading-screen">
+            <div class="loading-container">
+                <div class="box-of-centering">
+                    <div class="box-of-car">
+                        <img class="rinka-car" src="images/rinka-loading-screen/rinka-car.png" alt="">
+                        <img class="left-tire" src="images/rinka-loading-screen/car-tire.png" alt="">
+                        <img class="right-tire" src="images/rinka-loading-screen/car-tire.png" alt="">
+                        <img class="smoke-1" src="images/rinka-loading-screen/smoke-1.png" alt="">
+                        <img class="smoke-2" src="images/rinka-loading-screen/smoke-2.png" alt="">
+                        <img class="smoke-3" src="images/rinka-loading-screen/smoke-3.png" alt="">
+                    </div>
+                    <h2>loading...</h2>
+                </div>
+            </div>
+        </div>
+        <!-- End Loading Screen -->
+        
+        <!-- Start Navbar -->
+        <nav>
+            <div class="container">
+                
+                <div class="up-nav">
+                    <div class="navigation">
+                        <a href="index.html">الرئيسية</a>
+                        <a href="about-us.html">عن&nbsp;الموقع</a>
+                        <a href="terms-of-use.html">شروط&nbsp;الإستخدام</a>
+                        <a href="contact-us.html">اتصل&nbsp;بنا</a>
+                    </div>
+                    <div class="social-media">
+                        <a href="#" target="_blank" title="تابعنا علي فيسبوك">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" target="_blank" title="تابعنا علي تويتر">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" target="_blank" title="تابعنا علي انستجرام">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" target="_blank" title="تابعنا علي يوتيوب">
+                            <i class="fa fa-youtube" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                
+                <div class="down-nav">
+                    <div class="mobile-menu-button">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </div>
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="images/rinka-logo.png" alt="logo">
+                        </a>
+                    </div>
+                    <a class="shopping-cart-icon" href="shopping-cart.html">
+                        <span>0</span>
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    </a>
+                    <div class="search-box">
+                        <input type="button" name="search-button" value="بحث">
+                        <input type="search" name="search" placeholder="ابحث في الموقع...">
+                    </div>
+                    <div class="login">
+                        <a href="log-in.html">
+                            <div>
+                                <i class="fa fa-sign-in" aria-hidden="true"></i>
+                                <span>دخول</span>
+                            </div>
+                        </a>
+                        <a href="sign-up.html">
+                            <div>
+                                <i class="fa fa-user-plus" aria-hidden="true"></i>
+                                <span>تسجيل</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                
+            </div>
+            <!-- Start Mobile Menu -->
+            <div class="mobile-menu">
+                <div class="search-box">
+                    <input type="search" name="search" placeholder="ابحث في الموقع...">
+                    <input type="button" name="search-button" value="بحث">
+                </div>
+                <div class="Mobile-Menu-login">
+                    <a href="log-in.html">
+                        <div>
+                            <i class="fa fa-sign-in" aria-hidden="true"></i>
+                            <span>دخول</span>
+                        </div>
+                    </a>
+                    <a href="sign-up.html">
+                        <div>
+                            <i class="fa fa-user-plus" aria-hidden="true"></i>
+                            <span>تسجيل</span>
+                        </div>
+                    </a>
+                    <a class="shopping-cart-icon" href="shopping-cart.html">
+                        <span>0</span>
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <ul>
+                    <li>موبايلات
+                        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                    </li>
+                    <li><a href="mobiles.html">موبايلات</a></li>
+                    <li><a href="#">اكسسوارات موبايلات</a></li>
+                    <li><a href="#">تابلت</a></li>
+                    <li><a href="#">اكسسوارات تابلت</a></li>
+                </ul>
+                <ul>
+                    <li>كمبيوتر
+                        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                    </li>
+                    <li><a href="#">كمبيوتر مكتبي</a></li>
+                    <li><a href="#">لاب توب ونوت بوك</a></li>
+                    <li><a href="#">مستلزمات كمبيوتر</a></li>
+                    <li><a href="#">اكسسوارات</a></li>
+                    <li><a href="#">طابعات</a></li>
+                </ul>
+                <ul>
+                    <li>إلكترونيات
+                        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                    </li>
+                    <li><a href="#">تليفزيونات</a></li>
+                    <li><a href="#">ساتالايت وريسيفر</a></li>
+                    <li><a href="#">كاميرات</a></li>
+                    <li><a href="#">صوتيات</a></li>
+                    <li><a href="#">أجهزة مراقبه</a></li>
+                </ul>
+                <ul>
+                    <li>أدوات منزلية
+                        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                    </li>
+                    <li><a href="#">مطبخ</a></li>
+                    <li><a href="#">أجهزة كهربائية</a></li>
+                    <li><a href="#">مفروشات</a></li>
+                    <li><a href="#">أثاث</a></li>
+                </ul>
+                <ul>
+                    <li>أزياء
+                        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                    </li>
+                    <li><a href="#">ملابس رجال</a></li>
+                    <li><a href="#">ملابس نساء</a></li>
+                    <li><a href="#">ملابس أطفال</a></li>
+                    <li><a href="#">أحذية</a></li>
+                    <li><a href="#">شنط ونظارات</a></li>
+                </ul>
+                <ul>
+                    <li>صحة وجمال
+                        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                    </li>
+                    <li><a href="#">عطور</a></li>
+                    <li><a href="#">ماكياج</a></li>
+                    <li><a href="#">مستحضرات العناية</a></li>
+                    <li><a href="#">إلكترونيات الشعر</a></li>
+                    <li><a href="#">أجهزة رياضية</a></li>
+                </ul>
+                <div class="social-media">
+                    <a href="#" target="_blank">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" target="_blank">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" target="_blank">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" target="_blank">
+                        <i class="fa fa-youtube" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- End Mobile Menu -->
+        </nav>
+        <!-- End Navbar -->
+        
+        <!-- Start Header -->
+        <header class="mobiles-page-header">
+            <div class="container">
+                <div class="single-item">
+                    <div>
+                        <a href="#" target="_blank">
+                            <img src="images/SliderPhotos/SliderPhoto-1.jpg" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#" target="_blank">
+                            <img src="images/SliderPhotos/SliderPhoto-2.jpg" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#" target="_blank">
+                            <img src="images/SliderPhotos/SliderPhoto-3.jpg" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#" target="_blank">
+                            <img src="images/SliderPhotos/SliderPhoto-4.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- End Header -->
+        
+        <!-- Start Content -->
+        <div class="content mobiles-page-content">
+            <div class="container">
+                <div class="all-items">
+                    
+                    <div class="ProductsFilter">
+                        <div class="UpFilter">
+                            <ul class="numbered-page-navigation">
+                                <li title="السابقة"></li>
+                                <li class="active" title="إنتقال إلى">
+                                    <a href="#">1</a>
+                                </li>
+                                <li title="إنتقال إلى">
+                                    <a href="#">2</a>
+                                </li>
+                                <li title="إنتقال إلى">
+                                    <a href="#">3</a>
+                                </li>
+                                <li>...</li>
+                                <li title="إنتقال إلى">
+                                    <a href="#">9</a>
+                                </li>
+                                <li title="التالية"></li>
+                            </ul>
+                            <div class="sort-by-box">
+                                <button>
+                                    <span>ترتيب حسب: </span>
+                                    <span>الأكثر مبيعاً </span>
+                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                </button>
+                                <div class="sort-by-items">
+                                    <div>الأكثر مبيعاً</div>
+                                    <div>الأحدث</div>
+                                    <div>الأقل سعراً</div>
+                                    <div>الأعلى سعراً</div>
+                                    <div>الأفضل تقيماً</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="DownFilter">
+                            <label>تحديد السعر</label>
+                            <input type="text" id="PriceRangeSlider" name="PriceRangeSlider">
+                        </div>
+                    </div>
+                    
+                    <div class="mobile-products">
+                        <div class="item">
+                            <div class="the-Product">
+                                <a href="#"><h4>HTC Desire 826</h4></a>
+                                <a href="#"><img src="images/mobile-products/Blue-Mobile-HTC-Desire-826.jpg" alt="HTC-Desire-826"></a>
+                            </div>
+                            <div class="price-Product">
+                                <div class="Before-discount">
+                                    <span>قبل&nbsp;الخصم:</span>
+                                    <span>389&nbsp;ج</span>
+                                </div>
+                                <div class="after-discount">
+                                    <span>بعد&nbsp;الخصم:</span>
+                                    <span>300&nbsp;ج</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="the-Product">
+                                <a href="#"><h4>Lenovo K900</h4></a>
+                                <a href="#"><img src="images/mobile-products/Lenovo-K900.jpg" alt="Lenovo-K900"></a>
+                            </div>
+                            <div class="price-Product">
+                                <div class="Before-discount">
+                                    <span>قبل&nbsp;الخصم:</span>
+                                    <span>389&nbsp;ج</span>
+                                </div>
+                                <div class="after-discount">
+                                    <span>بعد&nbsp;الخصم:</span>
+                                    <span>300&nbsp;ج</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="the-Product">
+                                <a href="#"><h4>galaxy s7</h4></a>
+                                <a href="#"><img src="images/mobile-products/galaxy-s7-mobile.png" alt="galaxy-s7-mobile"></a>
+                            </div>
+                            <div class="price-Product">
+                                <div class="Before-discount">
+                                    <span>قبل&nbsp;الخصم:</span>
+                                    <span>389&nbsp;ج</span>
+                                </div>
+                                <div class="after-discount">
+                                    <span>بعد&nbsp;الخصم:</span>
+                                    <span>300&nbsp;ج</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="the-Product">
+                                <a href="#"><h4>infinix zero 3</h4></a>
+                                <a href="#"><img src="images/mobile-products/infinix-zero-3.png" alt="infinix-zero-3"></a>
+                            </div>
+                            <div class="price-Product">
+                                <div class="Before-discount">
+                                    <span>قبل&nbsp;الخصم:</span>
+                                    <span>389&nbsp;ج</span>
+                                </div>
+                                <div class="after-discount">
+                                    <span>بعد&nbsp;الخصم:</span>
+                                    <span>300&nbsp;ج</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="the-Product">
+                                <a href="#"><h4>xperia z2</h4></a>
+                                <a href="#"><img src="images/mobile-products/xperia-z2.jpg" alt="xperia-z2"></a>
+                            </div>
+                            <div class="price-Product">
+                                <div class="Before-discount">
+                                    <span>قبل&nbsp;الخصم:</span>
+                                    <span>389&nbsp;ج</span>
+                                </div>
+                                <div class="after-discount">
+                                    <span>بعد&nbsp;الخصم:</span>
+                                    <span>300&nbsp;ج</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="the-Product">
+                                <a href="#"><h4>microsoft lumia 650</h4></a>
+                                <a href="#"><img src="images/mobile-products/microsoft-lumia650.png" alt="microsoft-lumia650"></a>
+                            </div>
+                            <div class="price-Product">
+                                <div class="Before-discount">
+                                    <span>قبل&nbsp;الخصم:</span>
+                                    <span>389&nbsp;ج</span>
+                                </div>
+                                <div class="after-discount">
+                                    <span>بعد&nbsp;الخصم:</span>
+                                    <span>300&nbsp;ج</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="the-Product">
+                                <a href="#"><h4>HTC Desire 826</h4></a>
+                                <a href="#"><img src="images/mobile-products/Blue-Mobile-HTC-Desire-826.jpg" alt="HTC-Desire-826"></a>
+                            </div>
+                            <div class="price-Product">
+                                <div class="Before-discount">
+                                    <span>قبل&nbsp;الخصم:</span>
+                                    <span>389&nbsp;ج</span>
+                                </div>
+                                <div class="after-discount">
+                                    <span>بعد&nbsp;الخصم:</span>
+                                    <span>300&nbsp;ج</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="the-Product">
+                                <a href="#"><h4>Lenovo K900</h4></a>
+                                <a href="#"><img src="images/mobile-products/Lenovo-K900.jpg" alt="Lenovo-K900"></a>
+                            </div>
+                            <div class="price-Product">
+                                <div class="Before-discount">
+                                    <span>قبل&nbsp;الخصم:</span>
+                                    <span>389&nbsp;ج</span>
+                                </div>
+                                <div class="after-discount">
+                                    <span>بعد&nbsp;الخصم:</span>
+                                    <span>300&nbsp;ج</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="the-Product">
+                                <a href="#"><h4>galaxy s7</h4></a>
+                                <a href="#"><img src="images/mobile-products/galaxy-s7-mobile.png" alt="galaxy-s7-mobile"></a>
+                            </div>
+                            <div class="price-Product">
+                                <div class="Before-discount">
+                                    <span>قبل&nbsp;الخصم:</span>
+                                    <span>389&nbsp;ج</span>
+                                </div>
+                                <div class="after-discount">
+                                    <span>بعد&nbsp;الخصم:</span>
+                                    <span>300&nbsp;ج</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="the-Product">
+                                <a href="#"><h4>infinix zero 3</h4></a>
+                                <a href="#"><img src="images/mobile-products/infinix-zero-3.png" alt="infinix-zero-3"></a>
+                            </div>
+                            <div class="price-Product">
+                                <div class="Before-discount">
+                                    <span>قبل&nbsp;الخصم:</span>
+                                    <span>389&nbsp;ج</span>
+                                </div>
+                                <div class="after-discount">
+                                    <span>بعد&nbsp;الخصم:</span>
+                                    <span>300&nbsp;ج</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="the-Product">
+                                <a href="#"><h4>xperia z2</h4></a>
+                                <a href="#"><img src="images/mobile-products/xperia-z2.jpg" alt="xperia-z2"></a>
+                            </div>
+                            <div class="price-Product">
+                                <div class="Before-discount">
+                                    <span>قبل&nbsp;الخصم:</span>
+                                    <span>389&nbsp;ج</span>
+                                </div>
+                                <div class="after-discount">
+                                    <span>بعد&nbsp;الخصم:</span>
+                                    <span>300&nbsp;ج</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="the-Product">
+                                <a href="#"><h4>microsoft lumia 650</h4></a>
+                                <a href="#"><img src="images/mobile-products/microsoft-lumia650.png" alt="microsoft-lumia650"></a>
+                            </div>
+                            <div class="price-Product">
+                                <div class="Before-discount">
+                                    <span>قبل&nbsp;الخصم:</span>
+                                    <span>389&nbsp;ج</span>
+                                </div>
+                                <div class="after-discount">
+                                    <span>بعد&nbsp;الخصم:</span>
+                                    <span>300&nbsp;ج</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="the-Product">
+                                <a href="#"><h4>HTC Desire 826</h4></a>
+                                <a href="#"><img src="images/mobile-products/Blue-Mobile-HTC-Desire-826.jpg" alt="HTC-Desire-826"></a>
+                            </div>
+                            <div class="price-Product">
+                                <div class="Before-discount">
+                                    <span>قبل&nbsp;الخصم:</span>
+                                    <span>389&nbsp;ج</span>
+                                </div>
+                                <div class="after-discount">
+                                    <span>بعد&nbsp;الخصم:</span>
+                                    <span>300&nbsp;ج</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="the-Product">
+                                <a href="#"><h4>Lenovo K900</h4></a>
+                                <a href="#"><img src="images/mobile-products/Lenovo-K900.jpg" alt="Lenovo-K900"></a>
+                            </div>
+                            <div class="price-Product">
+                                <div class="Before-discount">
+                                    <span>قبل&nbsp;الخصم:</span>
+                                    <span>389&nbsp;ج</span>
+                                </div>
+                                <div class="after-discount">
+                                    <span>بعد&nbsp;الخصم:</span>
+                                    <span>300&nbsp;ج</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="the-Product">
+                                <a href="#"><h4>galaxy s7</h4></a>
+                                <a href="#"><img src="images/mobile-products/galaxy-s7-mobile.png" alt="galaxy-s7-mobile"></a>
+                            </div>
+                            <div class="price-Product">
+                                <div class="Before-discount">
+                                    <span>قبل&nbsp;الخصم:</span>
+                                    <span>389&nbsp;ج</span>
+                                </div>
+                                <div class="after-discount">
+                                    <span>بعد&nbsp;الخصم:</span>
+                                    <span>300&nbsp;ج</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="the-Product">
+                                <a href="#"><h4>infinix zero 3</h4></a>
+                                <a href="#"><img src="images/mobile-products/infinix-zero-3.png" alt="infinix-zero-3"></a>
+                            </div>
+                            <div class="price-Product">
+                                <div class="Before-discount">
+                                    <span>قبل&nbsp;الخصم:</span>
+                                    <span>389&nbsp;ج</span>
+                                </div>
+                                <div class="after-discount">
+                                    <span>بعد&nbsp;الخصم:</span>
+                                    <span>300&nbsp;ج</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="the-Product">
+                                <a href="#"><h4>xperia z2</h4></a>
+                                <a href="#"><img src="images/mobile-products/xperia-z2.jpg" alt="xperia-z2"></a>
+                            </div>
+                            <div class="price-Product">
+                                <div class="Before-discount">
+                                    <span>قبل&nbsp;الخصم:</span>
+                                    <span>389&nbsp;ج</span>
+                                </div>
+                                <div class="after-discount">
+                                    <span>بعد&nbsp;الخصم:</span>
+                                    <span>300&nbsp;ج</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="the-Product">
+                                <a href="#"><h4>microsoft lumia 650</h4></a>
+                                <a href="#"><img src="images/mobile-products/microsoft-lumia650.png" alt="microsoft-lumia650"></a>
+                            </div>
+                            <div class="price-Product">
+                                <div class="Before-discount">
+                                    <span>قبل&nbsp;الخصم:</span>
+                                    <span>389&nbsp;ج</span>
+                                </div>
+                                <div class="after-discount">
+                                    <span>بعد&nbsp;الخصم:</span>
+                                    <span>300&nbsp;ج</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="the-Product">
+                                <a href="#"><h4>HTC Desire 826</h4></a>
+                                <a href="#"><img src="images/mobile-products/Blue-Mobile-HTC-Desire-826.jpg" alt="HTC-Desire-826"></a>
+                            </div>
+                            <div class="price-Product">
+                                <div class="Before-discount">
+                                    <span>قبل&nbsp;الخصم:</span>
+                                    <span>389&nbsp;ج</span>
+                                </div>
+                                <div class="after-discount">
+                                    <span>بعد&nbsp;الخصم:</span>
+                                    <span>300&nbsp;ج</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="the-Product">
+                                <a href="#"><h4>Lenovo K900</h4></a>
+                                <a href="#"><img src="images/mobile-products/Lenovo-K900.jpg" alt="Lenovo-K900"></a>
+                            </div>
+                            <div class="price-Product">
+                                <div class="Before-discount">
+                                    <span>قبل&nbsp;الخصم:</span>
+                                    <span>389&nbsp;ج</span>
+                                </div>
+                                <div class="after-discount">
+                                    <span>بعد&nbsp;الخصم:</span>
+                                    <span>300&nbsp;ج</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <ul class="numbered-page-navigation">
+                        <li title="السابقة"></li>
+                        <li class="active" title="إنتقال إلى">
+                            <a href="#">1</a>
+                        </li>
+                        <li title="إنتقال إلى">
+                            <a href="#">2</a>
+                        </li>
+                        <li title="إنتقال إلى">
+                            <a href="#">3</a>
+                        </li>
+                        <li>...</li>
+                        <li title="إنتقال إلى">
+                            <a href="#">9</a>
+                        </li>
+                        <li title="التالية"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- End Content -->
+        
+        <!-- Start Footer -->
+        <footer>
+            <div class="container">
+                
+                <div class="navigation">
+                    <a href="index.html">الرئيسية</a>
+                    <a href="about-us.html">عن&nbsp;الموقع</a>
+                    <a href="terms-of-use.html">شروط&nbsp;الإستخدام</a>
+                    <a href="contact-us.html">اتصل&nbsp;بنا</a>
+                </div>
+                
+                <div class="social-media">
+                    <a href="#" target="_blank" title="تابعنا علي فيسبوك">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" target="_blank" title="تابعنا علي تويتر">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" target="_blank" title="تابعنا علي انستجرام">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" target="_blank" title="تابعنا علي يوتيوب">
+                        <i class="fa fa-youtube" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="clearfix"></div>
+                
+                <div class="copyright">
+                    by: <a href="https://www.facebook.com/profile.php?id=100004796952809" target="_blank">Muhammad Mabrouk</a>
+                </div>
+                
+            </div>
+        </footer>
+        <!-- End Footer -->
+        
+        
+        
+        <div id="Scroll-To-Top">
+            <img src="images/arrow-up.png" alt="">
+        </div>
+        
+        
+        
+        <script src="js/jquery-1.12.0.min.js"></script>
+        <script src="js/jquery.nicescroll.min.js"></script>
+        <script src="slick/slick.min.js"></script>
+        <script src="js/ion.rangeSlider.min.js"></script>
+        <script src="js/plugins.js"></script>
+    </body>
+    
+</html>

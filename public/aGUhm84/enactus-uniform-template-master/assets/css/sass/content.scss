@@ -1,0 +1,88 @@
+.content {
+
+	&:before,
+	&:after {
+	    content: " ";
+	    display: table;
+	}
+
+	&:after {
+	    clear: both;
+	}
+
+	a:not(.btn) {
+		color: #13b5ea;
+		text-decoration: underline;
+	}
+
+	strong, b {
+		font-weight: bold;
+		font-size: 1em;
+	}
+	
+	img,
+	iframe {
+	    max-width: 100%; 
+		width: 100%;
+	}
+	
+	// responsive images fix
+	img[class*="align"],
+	img[class*="wp-image-"] {
+	    height: auto; // Make sure images with WordPress-added height and width >attributes are scaled correctly
+	}
+	
+	img.size-full {
+	    max-width: 100%;
+	    width: auto; // Prevent stretching of full-size images with height and >>width attributes in IE8 
+	}	
+	
+	img.circle {
+		border-radius: 100%;
+	}
+
+	.wp-caption { 
+		max-width: 100%; 
+	}
+
+	.wp-caption-text {
+		font-size: 0.8em;
+		color: $secondary;
+	}	
+
+	ol,ul {
+		margin: .2em 0 1em 1.4em;
+	}	
+
+	li {
+		line-height: 1.8;
+	}
+
+	.alignleft {
+		width: 38%;
+		float: left;
+		margin: .3em 2% 1.2em 0;
+	}
+	
+	.alignright {
+		width: 38%;
+		float: right;
+		margin: .3em 0 1.2em 2%;
+	}
+
+	.aligncenter,		
+	.alignnone {
+		width: 100%;
+		margin: .6em 0;
+	}
+	
+	@include bp-small {
+		.alignleft,
+		.alignright {
+			width: 100%;
+			float: none;
+			margin: .6em 0;
+		}	
+	}
+
+}

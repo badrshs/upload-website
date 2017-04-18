@@ -1,0 +1,181 @@
+body
+{
+    width: auto;
+    margin: auto;
+    height:auto;
+    background-color: white
+    
+}
+
+header
+{
+    width: auto;
+    height: 170px;
+    background-image: url(http://download.4-designer.com/files/20130108/Yellow-background-05-HD-Pictures-41300.jpg);
+    margin-top: -22px;
+    padding: 5px;
+}
+
+#nav
+{
+ 
+    width: 700px;
+    height: 50px;
+    margin-top: 20px;
+    margin-left: 350px;
+    
+    
+}
+
+
+ul
+{
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    list-style-type: none;
+    
+}
+
+ul li
+{
+    float: left;
+}
+
+ul li a
+{
+    display: block;
+    text-decoration: none;
+    padding: 15px 40px;;
+    color: black;
+    font-family: sans-serif;
+    font-size: 20px;
+    
+}
+
+ul li a:hover
+{
+    color: white;
+}
+
+ul ul
+{
+    display: none;
+    position: relative;
+    position: absolute;
+    box-shadow: 10px 10px 5px #888888;
+    
+}
+
+ul ul li
+{
+    float: none;
+}
+
+ul ul li a
+{
+    background-color: darkgrey;
+}
+
+ul li:hover > ul
+{
+    display: block;
+}
+
+#dropicon
+{
+    width: 13px;
+    height: 13px;
+    margin-left: 3px;
+        
+}
+
+article
+{
+    width:700px;
+    height: auto;
+    
+    margin: auto;
+}
+
+h1
+{
+    font-size: 40px;
+    font-family: sans-serif;
+    
+}
+
+p
+{
+    font-family: sans-serif;
+    font-size: 20px;
+    line-height: 2em;
+}
+
+img
+{
+    width: 300px;
+    height: 200px;
+    margin-left: 200px;
+}
+
+#kpmg
+{
+    float: right;
+    margin-right: 200px;
+    
+}
+
+footer
+{
+    width: auto;
+    height: 150px;
+    background-color: #f2f2f2;
+    line-height: 2em;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+#foo
+{
+    font-family: sans-serif;
+    color: darkblack;
+    margin-left: 140px;
+    margin-top: -25px;
+    text-align: left;
+}
+
+#foo1
+{
+    color: darkclack;
+    margin-left: 140px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+#socialdiv
+{
+    width: 200px;
+    height: 50px;
+    float: right;
+    margin-top: -120px;
+    padding: 10px;
+    
+    margin-right: 100px;
+    
+}
+
+#social1
+{
+    width: 30px;
+    height: 30px;
+    float: left;
+}
+
+#social1:hover
+{
+    width: 50px;
+    height: 50px;
+    transition: 0.5s;
+}
+

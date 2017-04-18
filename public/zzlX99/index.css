@@ -1,0 +1,290 @@
+
+ html {
+ font-size: 100%;
+ }
+ 
+ @media all and (max-width: 320px) {
+ #header {
+ position: fixed;
+ background-color: rgba(238, 238, 238, 0.8);
+ top: 0px;
+ left: 0px;
+ height: 5em;
+ width: 100%;
+ z-index: 9999;
+ }
+ }
+ 
+ @media all and (max-width: 320px) {
+ #logo {
+ display: block;
+ position: absolute;
+ height: 3em;
+ top: 1em;
+ left: 1em;
+ z-index: 9999;
+ }
+ }
+ 
+ @media all and (max-width: 320px) {
+ #header-text {
+ display: block;
+ position: fixed;
+ font-family: 'Allerta';
+ font-size: 1.4em;
+ top: 0.5em;
+ left: 3.5em;
+ z-index: 9999;
+ }
+ }
+ 
+ @media all and (max-width: 320px) {
+ #container1 {
+ display: block;
+ position: absolute;
+ background-color: #EC4F36;
+ height: 19em;
+ width: 100%;
+ z-index: -9999;
+ top: 0px;
+ left: 0px; 
+ }
+ }
+ 
+ @media all and (max-width: 320px) {
+ #container1-header {
+ display: block; 
+ position: absolute;
+ font-family: 'Allerta';
+ color: white;
+ font-size: 1.6em;
+ top: 3.4em;
+ left: 0.68em;
+ }
+ }
+
+ @media all and (max-width: 320px) {
+ #content-divider-style1 {
+ display: block;
+ position: absolute;
+ border-top: 4px solid white;
+ width: 14%;
+ top: 9em;
+ left: 1.2em; 
+ }
+ }
+
+ @media all and (max-width: 320px) {
+ #container1-paragraph {
+ display: block; 
+ position: absolute;
+ color: white;
+ font-family: 'Allerta';
+ font-size: 1em;
+ left: 1.1em;
+ top: 9.8em;
+ padding-right: 15px;
+ }
+ }
+ 
+ @media all and (max-width: 320px) {
+ #container2 {
+ display: block;
+ position: absolute;
+ height: 88%;
+ width: 100%;
+ z-index: -9999;
+ top: 19em;
+ left: 0px; 
+ }
+ }
+ 
+ @media all and (max-width: 320px) {
+ #container2-header {
+ display: block;
+ position: relative;
+ text-align: center;
+ font-family: 'Allerta';
+ font-size: 1.5em;
+ color: #424949;
+ top: 0.5em;
+ padding-bottom: 5px;
+ }
+ }
+ 
+ @media all and (max-width: 320px) {
+ #self-image {
+ display: block;
+ position: relative;
+ margin-left: auto;
+ margin-right: auto;
+ top: 0.1em;
+ border-radius: 15px;
+ height: 12em;
+ }
+ }
+ 
+ @media all and (max-width: 320px) {
+ #content-spacing {
+ display: block;
+ position: relative; 
+ border-top: 3px solid #424949;
+ width: 68%;
+ margin-right: auto;
+ margin-left: auto;
+ top: 0.5em;
+ }
+ }
+ 
+ @media all and (max-width: 320px) {
+ #container2-paragraph {
+ display: block; 
+ position: absolute;
+ text-align: center;
+ padding-right: 6%;
+ padding-left: 6%;
+ font-family: 'Allerta';
+ color: #424949;
+ top: 17em;
+ font-size: 1em;
+ }
+ }
+ 
+ @media all and (max-width: 320px) {
+ #container3 {
+ display: block;
+ position: absolute;
+ height: 98%;
+ width: 100%;
+ z-index: -9999;
+ top: 47.3em;
+ left: 0px; 
+ }
+ }
+ 
+ @media all and (max-width: 320px) {
+ #container3-header {
+ display: block;
+ position: relative;
+ text-align: center;
+ font-family: 'Allerta';
+ font-size: 1.5em;
+ color: #424949;
+ top: 0.8em;
+ }
+ }
+ 
+ @media all and (max-width: 320px) {
+ #house-img {
+ display: block;
+ position: relative;
+ margin-left: auto;
+ margin-right: auto;
+ top: 1em;
+ border-radius: 15px;
+ height: 11em;
+ border-bottom-left-radius: 2.5em;
+ border-bottom-right-radius: 2.5em;
+ } 
+ }
+ 
+ @media all and (max-width: 320px) {
+ #content-spacing2 {
+ display: block;
+ position: relative; 
+ border-top: 3px solid #424949;
+ width: 68%;
+ margin-right: auto;
+ margin-left: auto;
+ top: 1.4em;
+ }
+ }
+ 
+ @media all and (max-width: 320px) {
+ #container3-paragraph {
+ display: block; 
+ position: absolute;
+ text-align: center;
+ padding-right: 6%;
+ padding-left: 6%;
+ font-family: 'Allerta';
+ color: #424949;
+ top: 16.5em;
+ font-size: 1em;
+ }
+ }
+ 
+ @media all and (max-width: 320px) {
+ #dog-image {
+ display: block;
+ position: relative;
+ height: 5.5em;
+ top: 13em;
+ left: 13.5em;
+ }
+ }
+ 
+ @media all and (max-width: 320px) {
+ #container4 {
+ display: block;
+ position: absolute;
+ height: 20em;
+ width: 100%;
+ z-index: -9999;
+ top: 81.2em;
+ left: 0px; 
+ background-color: #B0B0B0;
+ }
+ }
+ 
+ @media all and (max-width: 320px) {
+ #container4-header {
+ display: block;
+ position: relative;
+ text-align: center;
+ font-family: 'Allerta';
+ font-size: 1.8em;
+ color: white; /* #424949 */
+ top: 0.6em;
+ }
+ }
+ 
+ @media all and (max-width: 320px) {
+ #contact-info {
+ display: block;
+ position: relative;
+ text-align: center;
+ color: white;
+ font-family: 'Allerta';
+ font-size: 1em;
+ padding-right: 1.2em;
+ padding-left: 1.2em;
+ top: 0.5em;
+ }
+ 
+ @media all and (max-width: 320px) {
+ #Email {
+ display: block;
+ position: relative;
+ color: white;
+ text-align: center;
+ font-family: 'Allerta';
+ font-size: 1.2em;
+ top: 0.8em;
+ }
+ }
+ 
+ @media all and (max-width: 320px) {
+ #iMessage {
+ display: block;
+ position: relative;
+ color: white;
+ text-align: center;
+ font-family: 'Allerta';
+ font-size: 1.2em;
+ top: 0.8em;
+ }
+ }
+ 
+ 
+ 

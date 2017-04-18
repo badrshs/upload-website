@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+    
+    <head>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>عربة التسوق</title>
+        <link rel="icon" href="images/rinka-icon.png">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="slick/slick.css">
+        <link rel="stylesheet" href="slick/slick-theme.css">
+        <link rel="stylesheet" href="css/loading-screen.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/small-screen.css" media="(min-width: 767px) and (max-width: 991px)">
+        <link rel="stylesheet" href="css/extra-small-screen.css" media="(max-width: 767px)">
+        
+        <style>
+            
+            .shopping-cart-page .shopping-cart-page-content {
+                background-color: #e6f6ff;
+                color: #444;
+                margin: 15px 0;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 1px 1px 10px 2px #348cb3;
+            }
+            
+            .shopping-cart-page h1 {
+                text-align: center;
+                color: #00a2ff;
+                margin: 0 0 40px;
+                position: relative;
+            }
+            
+            .shopping-cart-page h1:after {
+                content: "";
+                display: block;
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: -5px;
+                width: 80px;
+                margin: 0 auto;
+                border: 1px solid lightskyblue;
+            }
+            
+            .shopping-cart-page .table {
+                width: 95%;
+                background-color: #d8f1ff;
+                text-align: center;
+                margin: 0 auto 30px;
+                overflow: hidden;
+                border: 1px solid #bcd8ed;
+                border-radius: 8px;
+                box-shadow: 0 0 10px -5px;
+            }
+            
+            .shopping-cart-page .table .thead,
+            .shopping-cart-page .table .tfoot {
+                background-color: #c3e6fa;
+            }
+            
+            .shopping-cart-page .table .thead .col {
+                float: right;
+                width: 15%;
+                font-weight: bold;
+                padding: 10px;
+                border-left: 1px solid #bcd8ed;
+                border-bottom: 1px solid #bcd8ed;
+            }
+            
+            .shopping-cart-page .table .thead .col:last-of-type {
+                border-left: none;
+            }
+            
+            .shopping-cart-page .table .thead .col:first-of-type,
+            .shopping-cart-page .table .thead .col:nth-of-type(2) {
+                width: 20%;
+            }
+            
+            .shopping-cart-page .table .col-container {
+                float: right;
+                width: 15%;
+                border-left: 1px solid #bcd8ed;
+                border-bottom: 1px solid #bcd8ed;
+            }
+            
+            .shopping-cart-page .table .col-container:last-of-type {
+                border-left: none;
+            }
+            
+            .shopping-cart-page .table .col-container:first-of-type,
+            .shopping-cart-page .table .col-container:nth-of-type(2) {
+                width: 20%;
+            }
+            
+            .shopping-cart-page .table .col-container h4 {
+                display: none;
+                background-color: #c3e6fa;
+                margin: 0;
+                padding: 10px;
+                border-left: 1px solid #bcd8ed;
+                border-bottom: 1px solid #bcd8ed;
+            }
+            
+            .shopping-cart-page .table .col-container h4:last-of-type {
+                border-left: none;
+            }
+            
+            .shopping-cart-page .table .col-container .col {
+                padding: 10px;
+            }
+            
+            .shopping-cart-page .table .row .col {
+                height: 160px;
+                font-size: 12px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .shopping-cart-page .table  .col-container:first-of-type .col img {
+                max-width: 100%;
+                height: 90%;
+            }
+            
+            .shopping-cart-page .table .col-container:nth-of-type(3) .col i:first-of-type {
+                float: right;
+                height: 24px;
+                width: 24px;
+                background-color: #c3e6fa;
+                line-height: 24px;
+                cursor: pointer;
+                border: 1px solid #bcd8ed;
+                border-radius: 0 5px 5px 0;
+            }
+            
+            .shopping-cart-page .table .col-container:nth-of-type(3) .col input {
+                float: right;
+                display: inline-block;
+                height: 24px;
+                width: 24px;
+                background-color: #c3e6fa;
+                text-align: center;
+                font-size: 16px;
+                font-weight: bold;
+                line-height: 24px;
+                border: 1px solid #bcd8ed;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -o-user-select: none;
+                user-select: none;
+            }
+            
+            .shopping-cart-page .table .col-container:nth-of-type(3) .col i:last-of-type {
+                float: right;
+                height: 24px;
+                width: 24px;
+                background-color: #c3e6fa;
+                line-height: 24px;
+                cursor: pointer;
+                border: 1px solid #bcd8ed;
+                border-radius: 5px 0 0 5px;
+            }
+            
+            .shopping-cart-page .table .col-container:nth-of-type(3) .col i:hover,
+            .shopping-cart-page .table .col-container:last-of-type .col i:hover {
+                background-color: #afe2ff;
+                border: 1px solid #a6c9e3;
+            }
+            
+            .shopping-cart-page .table .col-container:nth-of-type(3) .col i:active,
+            .shopping-cart-page .table .col-container:last-of-type .col i:active {
+                background-color: #bbe6ff;
+            }
+            
+            .shopping-cart-page .table .col-container:nth-of-type(4) .col,
+            .shopping-cart-page .table .col-container:nth-of-type(5) .col {
+                font-size: 14px;
+                font-weight: bold;
+            }
+            
+            .shopping-cart-page .table .col-container:last-of-type .col i {
+                height: 25px;
+                width: 25px;
+                font-size: 14px;
+                line-height: 22px;
+                cursor: pointer;
+                border: 1px solid #bbb;
+                border-radius: 50%;
+            }
+            
+            .shopping-cart-page .table .message-of-no-Products {
+                height: 160px;
+                border-bottom: 1px solid #bcd8ed;
+                display: none;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .shopping-cart-page .table .message-of-no-Products h3 {
+                margin: 0;
+            }
+            
+            .shopping-cart-page .table .tfoot .col {
+                float: none;
+                width: 100%;
+                background-color: #c3e6fa;
+                padding: 10px 20px;
+                overflow: hidden;
+            }
+            
+            .shopping-cart-page .table .tfoot .col h4,
+            .shopping-cart-page .table .tfoot .col h3 {
+                float: right;
+                margin: 10px;
+            }
+            
+            .shopping-cart-page .table .tfoot .col a {
+                float: left;
+                display: block;
+                height: 37px;
+                width: 120px;
+                background-color: deepskyblue;
+                color: #fff;
+                margin: 10px;
+                padding: 2px;
+                border: 1px solid #4cb3d4;
+                border-radius: 7px;
+                box-shadow: 0px 0px 12px -3px #0d8fd9;
+            }
+            
+            .shopping-cart-page .table .tfoot .col a:hover {
+                background-color: #4aabff;
+                box-shadow: 0px 0px 12px -2px #0d8fd9;
+            }
+            
+            footer {
+                margin: 0;
+            }
+            
+            @media (max-width: 799px) {
+                .shopping-cart-page .table .col-container {
+                    width: 33.33333%;
+                }
+                
+                .shopping-cart-page .table .col-container:first-of-type,
+                .shopping-cart-page .table .col-container:nth-of-type(2) {
+                    width: 33.33333%;
+                }
+                
+                .shopping-cart-page .table .col-container:nth-of-type(3) {
+                    border-left: none; 
+                }
+                
+                .shopping-cart-page .table .thead {
+                    display: none;
+                }
+                
+                .shopping-cart-page .table .col-container h4 {
+                    display: block; 
+                }
+            }
+            
+            @media (max-width: 767px) {
+                .shopping-cart-page .table .col-container {
+                    width: 50%;
+                }
+                
+                .shopping-cart-page .table .col-container:nth-of-type(2) {
+                    width: 50%;
+                }
+                
+                .shopping-cart-page .table .col-container:first-of-type {
+                    width: 100%;
+                }
+                
+                .shopping-cart-page .table .col-container:last-of-type,
+                .shopping-cart-page .table .col-container:nth-last-of-type(2),
+                .shopping-cart-page .table .col-container:nth-last-of-type(3) {
+                    width: 33.33333%;
+                }
+                
+                .shopping-cart-page .table .thead {
+                    display: none;
+                }
+                
+                .shopping-cart-page .table .col-container h4 {
+                    display: block; 
+                }
+                
+                .shopping-cart-page .table .col-container:first-of-type,
+                .shopping-cart-page .table .col-container:nth-of-type(3) {
+                    border-left: none; 
+                }
+                
+                .shopping-cart-page .table .col-container:first-of-type .col {
+                    height: 200px; 
+                }
+            }
+            
+            @media (max-width: 600px) {
+                .shopping-cart-page .table .tfoot .col h4,
+                .shopping-cart-page .table .tfoot .col h3,
+                .shopping-cart-page .table .tfoot .col button {
+                    float: none;
+                }
+            }
+            
+            @media (max-width: 300px) {
+                .shopping-cart-page .table .col-container,
+                .shopping-cart-page .table .col-container:first-of-type,
+                .shopping-cart-page .table .col-container:nth-of-type(2),
+                .shopping-cart-page .table .col-container:last-of-type,
+                .shopping-cart-page .table .col-container:nth-last-of-type(2),
+                .shopping-cart-page .table .col-container:nth-last-of-type(3) {
+                    width: 100%;
+                }
+                
+                .shopping-cart-page .table .thead {
+                    display: none;
+                }
+                
+                .shopping-cart-page .table .col-container h4 {
+                    display: block; 
+                }
+                
+                .shopping-cart-page .table .col-container {
+                    border-left: none; 
+                }
+                
+                .shopping-cart-page .table .col-container:first-of-type .col {
+                    height: 200px; 
+                }
+                
+                .shopping-cart-page .table .tfoot .col {
+                    padding: 10px;
+                }
+                
+                .shopping-cart-page .table .tfoot .col button {
+                    width: 100px;
+                    margin: 10px 0;
+                }
+            }
+            
+        </style>
+    </head>
+    
+    
+    <body>      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+        
+        <!-- Start Loading Screen -->
+        <div class="rinka-loading-screen">
+            <div class="loading-container">
+                <div class="box-of-centering">
+                    <div class="box-of-car">
+                        <img class="rinka-car" src="images/rinka-loading-screen/rinka-car.png" alt="">
+                        <img class="left-tire" src="images/rinka-loading-screen/car-tire.png" alt="">
+                        <img class="right-tire" src="images/rinka-loading-screen/car-tire.png" alt="">
+                        <img class="smoke-1" src="images/rinka-loading-screen/smoke-1.png" alt="">
+                        <img class="smoke-2" src="images/rinka-loading-screen/smoke-2.png" alt="">
+                        <img class="smoke-3" src="images/rinka-loading-screen/smoke-3.png" alt="">
+                    </div>
+                    <h2>loading...</h2>
+                </div>
+            </div>
+        </div>
+        <!-- End Loading Screen -->
+        
+        <!-- Start Navbar -->
+        <nav>
+            <div class="container">
+                
+                <div class="up-nav">
+                    <div class="navigation">
+                        <a href="index.html">الرئيسية</a>
+                        <a href="about-us.html">عن&nbsp;الموقع</a>
+                        <a href="terms-of-use.html">شروط&nbsp;الإستخدام</a>
+                        <a href="contact-us.html">اتصل&nbsp;بنا</a>
+                    </div>
+                    <div class="social-media">
+                        <a href="#" target="_blank" title="تابعنا علي فيسبوك">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" target="_blank" title="تابعنا علي تويتر">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" target="_blank" title="تابعنا علي انستجرام">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" target="_blank" title="تابعنا علي يوتيوب">
+                            <i class="fa fa-youtube" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                
+                <div class="down-nav">
+                    <div class="mobile-menu-button">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </div>
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="images/rinka-logo.png" alt="logo">
+                        </a>
+                    </div>
+                    <a class="shopping-cart-icon" href="shopping-cart.html">
+                        <span>0</span>
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    </a>
+                    <div class="search-box">
+                        <input type="button" name="search-button" value="بحث">
+                        <input type="search" name="search" placeholder="ابحث في الموقع...">
+                    </div>
+                    <div class="login">
+                        <a href="log-in.html">
+                            <div>
+                                <i class="fa fa-sign-in" aria-hidden="true"></i>
+                                <span>دخول</span>
+                            </div>
+                        </a>
+                        <a href="sign-up.html">
+                            <div>
+                                <i class="fa fa-user-plus" aria-hidden="true"></i>
+                                <span>تسجيل</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                
+            </div>
+            <!-- Start Mobile Menu -->
+            <div class="mobile-menu">
+                <div class="search-box">
+                    <input type="search" name="search" placeholder="ابحث في الموقع...">
+                    <input type="button" name="search-button" value="بحث">
+                </div>
+                <div class="Mobile-Menu-login">
+                    <a href="log-in.html">
+                        <div>
+                            <i class="fa fa-sign-in" aria-hidden="true"></i>
+                            <span>دخول</span>
+                        </div>
+                    </a>
+                    <a href="sign-up.html">
+                        <div>
+                            <i class="fa fa-user-plus" aria-hidden="true"></i>
+                            <span>تسجيل</span>
+                        </div>
+                    </a>
+                    <a class="shopping-cart-icon" href="shopping-cart.html">
+                        <span>0</span>
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <ul>
+                    <li>موبايلات
+                        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                    </li>
+                    <li><a href="mobiles.html">موبايلات</a></li>
+                    <li><a href="#">اكسسوارات موبايلات</a></li>
+                    <li><a href="#">تابلت</a></li>
+                    <li><a href="#">اكسسوارات تابلت</a></li>
+                </ul>
+                <ul>
+                    <li>كمبيوتر
+                        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                    </li>
+                    <li><a href="#">كمبيوتر مكتبي</a></li>
+                    <li><a href="#">لاب توب ونوت بوك</a></li>
+                    <li><a href="#">مستلزمات كمبيوتر</a></li>
+                    <li><a href="#">اكسسوارات</a></li>
+                    <li><a href="#">طابعات</a></li>
+                </ul>
+                <ul>
+                    <li>إلكترونيات
+                        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                    </li>
+                    <li><a href="#">تليفزيونات</a></li>
+                    <li><a href="#">ساتالايت وريسيفر</a></li>
+                    <li><a href="#">كاميرات</a></li>
+                    <li><a href="#">صوتيات</a></li>
+                    <li><a href="#">أجهزة مراقبه</a></li>
+                </ul>
+                <ul>
+                    <li>أدوات منزلية
+                        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                    </li>
+                    <li><a href="#">مطبخ</a></li>
+                    <li><a href="#">أجهزة كهربائية</a></li>
+                    <li><a href="#">مفروشات</a></li>
+                    <li><a href="#">أثاث</a></li>
+                </ul>
+                <ul>
+                    <li>أزياء
+                        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                    </li>
+                    <li><a href="#">ملابس رجال</a></li>
+                    <li><a href="#">ملابس نساء</a></li>
+                    <li><a href="#">ملابس أطفال</a></li>
+                    <li><a href="#">أحذية</a></li>
+                    <li><a href="#">شنط ونظارات</a></li>
+                </ul>
+                <ul>
+                    <li>صحة وجمال
+                        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                    </li>
+                    <li><a href="#">عطور</a></li>
+                    <li><a href="#">ماكياج</a></li>
+                    <li><a href="#">مستحضرات العناية</a></li>
+                    <li><a href="#">إلكترونيات الشعر</a></li>
+                    <li><a href="#">أجهزة رياضية</a></li>
+                </ul>
+                <div class="social-media">
+                    <a href="#" target="_blank">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" target="_blank">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" target="_blank">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" target="_blank">
+                        <i class="fa fa-youtube" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- End Mobile Menu -->
+        </nav>
+        <!-- End Navbar -->
+        
+        <!-- Start Shopping Cart Page -->
+        <div class="shopping-cart-page">
+            <div class="container">
+                <div class="shopping-cart-page-content">
+                    <h1>عربة التسوق</h1>
+                    <div class="table">
+                        <div class="thead">
+                            <div class="col">الصورة</div>
+                            <div class="col">المنتج</div>
+                            <div class="col">العدد</div>
+                            <div class="col">السعر</div>
+                            <div class="col">المجموع</div>
+                            <div class="col">حذف</div>
+                            <ul class="clearfix"></ul>
+                        </div>
+                        <div class="row">
+                            <div class="col-container">
+                                <h4>الصورة</h4>
+                                <div class="col">
+                                    <img src="images/item-page/iphone6s-rosegold.png" alt="">
+                                </div>
+                            </div>
+                            <div class="col-container">
+                                <h4>المنتج</h4>
+                                <div class="col">
+                                    ابل ايفون 6s مع فيس تايم - 16 جيجا، الجيل الرابع LTE، وردي
+                                </div>
+                            </div>
+                            <div class="col-container">
+                                <h4>العدد</h4>
+                                <div class="col">
+                                    <div>
+                                        <i class="fa fa-minus" aria-hidden="true"></i>
+                                        <input class="qty" type="text" value="1" disabled>
+                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                        <ul class="clearfix"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-container">
+                                <h4>السعر</h4>
+                                <div class="col">
+                                    <span class="price">8699</span>
+                                    <span>ج</span>
+                                </div>
+                            </div>
+                            <div class="col-container">
+                                <h4>المجموع</h4>
+                                <div class="col">
+                                    <span class="sum">0</span>
+                                    <span>ج</span>
+                                </div>
+                            </div>
+                            <div class="col-container">
+                                <h4>حذف</h4>
+                                <div class="col">
+                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <ul class="clearfix"></ul>
+                        </div>
+                        <div class="message-of-no-Products">
+                            <h3>عربة التسوق فارغة</h3>
+                        </div>
+                        <div class="tfoot">
+                            <div class="col">
+                                <h4>اجمالي المبلغ المستحق الدفع&nbsp;&#58;</h4>
+                                <h3>
+                                    <span id="total"></span>
+                                    <span>جنيه</span>
+                                </h3>
+                                <a href="payment.html">اتمام الدفع</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Shopping Cart Page -->
+        
+        <!-- Start Footer -->
+        <footer>
+            <div class="container">
+                
+                <div class="navigation">
+                    <a href="index.html" class="active">الرئيسية</a>
+                    <a href="about-us.html">عن&nbsp;الموقع</a>
+                    <a href="terms-of-use.html">شروط&nbsp;الإستخدام</a>
+                    <a href="contact-us.html">اتصل&nbsp;بنا</a>
+                </div>
+                
+                <div class="social-media">
+                    <a href="#" target="_blank" title="تابعنا علي فيسبوك">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" target="_blank" title="تابعنا علي تويتر">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" target="_blank" title="تابعنا علي انستجرام">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" target="_blank" title="تابعنا علي يوتيوب">
+                        <i class="fa fa-youtube" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="clearfix"></div>
+                
+                <div class="copyright">
+                    by: <a href="https://www.facebook.com/profile.php?id=100004796952809" target="_blank">Muhammad Mabrouk</a>
+                </div>
+                
+            </div>
+        </footer>
+        <!-- End Footer -->
+        
+        
+        
+        <div id="Scroll-To-Top">
+            <img src="images/arrow-up.png" alt="">
+        </div>
+        
+        
+        
+        <script src="js/jquery-1.12.0.min.js"></script>
+        <script src="js/jquery.nicescroll.min.js"></script>
+        <script src="slick/slick.min.js"></script>
+        <script src="js/plugins.js"></script>
+    </body>
+    
+</html>

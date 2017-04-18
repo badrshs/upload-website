@@ -1,0 +1,86 @@
+*{
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing:border-box;
+}
+body{margin: 0;perspective:600px;width:1170px}
+.container{width:1170px;margin: auto}
+.clearfix{clear:both }
+ 
+ /*start header*/
+header{overflow: hidden;margin-top:20px}
+header .logo{text-align: center;width: 1000px;height: 170px;float: left;display:inline-block}
+header .logo img{position: absolute;left:0px;border-radius:50%;width: 200px;height:200px;margin-bottom: 30px}
+header .logo img:hover{opacity: .7;transition: all 1s ease-in-out}
+header .logo p{position: absolute;top: -300px;text-transform:capitalize;font-size: 40px;font-family:Vijaya;font-weight: bold;color:#496692;line-height:35px;display:inline-block;margin-left:95px;margin-bottom: 10px}
+hr{width: 1514px;height:2px;opacity: .3}
+ /*end header*/
+ 
+ /*start menue*/
+.menue{height: 130px;margin-top: 30px}
+.menue ul{list-style: none;overflow: hidden;width:100%}
+.menue ul li{display: inline-block;float:right;padding: 20px;font-family:monospace;font-size: 20px;color:#9f8f36;margin-left:20px;}
+.menue ul li:hover,.menue ul .active{border: 1px solid #496692;border-radius: 25px;transition: all .5s ease;}
+/*end menue*/
+
+/*start slider*/
+.slider{width: 100%;height: 650px;float: left;display: inline;margin-top: 30px}
+.slider .left{width: 50%;height: 600px;background-color: #d8e36f;float: left}
+.slider .left h2{font-weight: bolder;text-transform: capitalize;text-align: center;padding:36px;font-size:50px;font-family:Vijaya;color:#496692;line-height:60px}
+.slider .left p{width: 37%;text-transform: capitalize;font-size: 30px;font-family:SylfaenSylfaen;color:#796b20;left: -300px;position: absolute;text-align: justify}
+.slider .left button{text-transform:uppercase;background: none;border:2px solid #496692;margin-top: 190px;margin-left:40px;padding: 15px;border-radius:20px;color:#796b20;cursor: pointer }
+.slider .right{width: 50%;height: 600px;float: right}
+.slider .right img{margin-left: 130px;position: absolute;right: 600px;width:1020px;height: 600px}
+/*end slider*/
+
+/*start contents*/
+.content1{margin-top:50px;height:600px;width:1400px;overflow: hidden}
+.content1 .left-content1{width:500px;height: 600px;float:left;}
+.content1 .left-content1 img{width:500px;height:500px;border-radius: 50%;position: absolute;left: -400px }
+.content1 .right-content1{width:580px;float:right;margin-left: 70px;height: 600px}
+.content1 .right-content1 p{margin-left: 50px;margin-top:50px;font-family:Vijaya;font-size:40px;line-height: 40px;color:#796b20}
+
+.content2{margin-top:50px;height:50px;width:1400px}
+.content2 .left-content2{width:500px;height: 600px;float:left;}
+.content2 .left-content2 p{margin-left: 50px;margin-top:50px;font-family:Vijaya;font-size:40px;line-height: 40px;color:#796b20}
+.content2 .right-content2{width:580px;float:right;height: 600px;margin-right:-250px}
+.content2 .right-content2 img{width:500px;height:500px;border-radius: 50%;position: absolute; }
+/*end contents*/
+
+/*start market*/
+.market{margin-top:60px;width: 100%;height: 500px;overflow: hidden}
+.market .each_market{width: 20%;margin-left:155px;text-align: center;float: left}
+.market .each_market i{color:#496692;font-size:60px;margin-top: 20px}
+.market .each_market h2{font-family:SylfaenSylfaen;font-size:30px;color: #796b20 }
+.market .each_market p{color:#496692;font-size:30px;font-family:SylfaenSylfaen;line-height:40px }
+/*end market*/
+
+/*start support*/
+.support{overflow: hidden;width: 100%;height:500px}
+.support .each_partner{width:28%;background-color:#d8e36f;height: 500PX;float: left;text-align: center;margin-left:60px;border-radius:10px}
+.support .each_partner img{margin-top:-100px;width: 200PX;height: 200PX;border-radius: 50%;width:200px;height:200px }
+.support .each_partner h2{margin-top: 50px;font-family:Vijaya;color:#496692;font-size:35px }
+.support .each_partner p{margin-top: 30px;font-family:Vijaya;font-size:35px;line-height:40px}
+/*end support*/
+
+/*start company*/
+.company{width: 100%;overflow: hidden;margin-top:100px;text-align: center;height:350px}
+.company img{width: 300px;height:300px;margin-left:50px;box-shadow:5px 5px 10px #496692,-5px -5px 10px #496692 ;margin-top: 30px}
+.company img:hover{box-shadow:none;transition: all 1s ease-in-out}
+/*end company*/
+
+/*start footer*/
+.footer{width: 100%;background-color:#d8e36f;height: 280px ;margin-top:100px}
+.footer .left{width: 40%;margin-left: 50px ;height: 250px;float: left}
+.footer .left h2{color:#796b20;font-size: 60px;padding-top:25px;font-family:Vijaya }
+.footer .left i{padding: 20px;font-size: 40px;color:#496692;cursor: help}
+.footer .right{float: right;width: 30%;height: 250px}
+.footer .right h2{color:#796b20;font-size: 60px;padding-top:25px;font-family:Vijaya}
+.footer .right i{padding: 20px;font-size: 40px;color:#496692;cursor:pointer}
+/*end footer*/
+
+.copyright{width: 100%;height:25px;background-color:#496692 }
+.copyright span{color:#fff;font-weight: bold;margin-left: 400px}
+
+
+

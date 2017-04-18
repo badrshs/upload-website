@@ -1,0 +1,205 @@
+/*========== Love Story page ==========*/
+
+
+.about-love-story{
+	padding-top: 1.5em;
+	margin-bottom: 0.75em;
+
+	figure{
+		position: relative;
+		.transition(0.2s);
+		overflow: hidden;
+		
+		> a{
+
+			> img{
+				vertical-align: bottom;
+			}
+
+			&:hover{
+				+figcaption{
+					left: -5em;
+				}
+
+			}
+		}
+
+		&:hover{
+			.scale(1.05);
+		}
+
+
+		> figcaption{
+			background-color: @light-line;
+			position: absolute;
+			width: 4.5em;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			.transition(0.2s);
+
+			> span{
+				font-family: fixedsys, consolas, monospace;
+				font-weight: 900;
+				width: 0.5em;
+				display: block;
+				word-break: break-all;
+				white-space: pre-wrap;
+				text-align: center;
+				margin: 1.5em auto 0;
+				line-height: 1em;
+			}
+
+			> b{
+				background: @black;
+				color: transparent;
+				display: block;
+				font-size: 2em;
+				line-height: 2.5em;
+				padding-bottom: 0.5em;
+				text-align: center;
+				text-shadow: 	0px 1px 1px @white, 
+								0px 1px 1px @white,
+								0px 1px 1px @white,
+								0px 1px 1px @white,
+								0px 1px 1px @white,
+								0px 1px 1px @white,
+								0px 1px 1px @white,
+								0px 1px 1px @white;
+			}
+		}
+	}
+
+	h2{
+		text-align: center;
+		color: @light-text;
+
+		+ p{
+			-webkit-text-stroke: 0.3px;
+
+			&:first-letter{
+				color: @violet;
+				font-family: @glam;
+				font-size: 2em;
+				font-weight: 900;
+				-webkit-text-stroke: 0;
+				padding-right: 5px;
+				line-height: 0;
+			}
+		}
+	}
+}
+
+.story-timeline{
+	time{
+		text-align: right;
+		color: @violet;
+		text-transform: uppercase;
+		font-weight: 900;
+	}
+}
+
+.photo-widget{
+	margin-top: 1.5em;
+
+	> h1{
+		text-align: center;
+
+		+ p{
+			text-transform:  uppercase;
+			text-align: center;
+			-webkit-text-stroke: 0.3px;
+		}
+	}
+
+	> ul{
+		.clearfix();
+
+		> li{
+			float: left;
+			width: 100/7%;
+
+			> figure{
+				overflow: hidden;
+				position: relative;
+				margin: 0;
+
+				> a{
+					margin: 0;
+					display: block;
+					line-height: 0;
+
+					&:hover{
+
+						+ figcaption{
+							width: 300%;
+							height: 300%;
+							visibility: visible;
+							top: 50%;
+							left: 50%;
+							margin-top: -150%;
+							margin-left: -150%;
+						}
+					}
+				}
+
+				> figcaption{
+					background: rgba(0,0,0, 0.6);
+					width:  0%;
+					height: 0%;
+					border-radius: 1000px;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					margin-top: 0%;
+					margin-left: 0%;
+					.transition(0.4s);
+					visibility: hidden;
+
+					&:hover{
+						width: 300%;
+						height: 300%;
+						visibility: visible;
+						top: 50%;
+						left: 50%;
+						margin-top: -150%;
+						margin-left: -150%;
+
+						> a{display: block;}
+					}
+
+					> a{
+						position: absolute;
+						top: 50.3%;
+						left: 50%;
+						.hide-text();
+						width: 21px;
+						height: 21px;
+						display: block;
+						margin-top: -21/2px;
+						display: none;
+						.transition(0);					
+					}
+
+					> a.link-image{
+						background: url(../img/photo-helpers.png) 0 0 no-repeat;
+						margin-left: -40px;
+
+						&:hover{
+						background: url(../img/photo-helpers.png) 0 -21px no-repeat;
+						}
+					}
+
+					> a.zoom-image{
+						background: url(../img/photo-helpers.png) -22px 0 no-repeat;
+						margin-left: 10px;
+
+						&:hover{
+						background: url(../img/photo-helpers.png) -22px -21px no-repeat;
+						}
+					}
+				}
+			}
+		}
+	}
+}

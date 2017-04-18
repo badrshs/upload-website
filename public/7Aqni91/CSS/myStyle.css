@@ -1,0 +1,480 @@
+/*start Global*/
+
+body{font-family: 'Open Sans Condensed', sans-serif}
+
+::-webkit-input-placeholder { font-size: 14px }  /*set font-size for all placeholders in the page*/
+::-moz-input-placeholder { font-size: 14px }
+::-o-input-placeholder { font-size: 14px }
+::-ms-input-placeholder { font-size: 14px }
+
+*{
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+         -o-box-sizing: border-box;
+            box-sizing: border-box
+}
+
+/*End Global*/
+
+/*Start Header*/
+
+header {
+    background-image: url('../Images/header.jpg');
+    -webkit-background-size: cover;
+       -moz-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+    color: #FFF
+}
+
+header nav{ overflow: hidden; padding: 20px 0 }
+
+header nav .menu { float: right }
+
+header nav .logo { font-size: 24px }
+
+header nav .menu i { margin-left: 5px }
+
+header .intro h2{
+    margin: 0;
+    font-size: 50px;
+    font-weight: 800
+}
+
+header .intro p{
+    margin: 5px 0 40px 0;
+    line-height: 1.5;
+    font-size: 20px
+}
+
+header .buttons button {
+    background: transparent;
+    padding: 10px 0;
+    width:180px;
+    font-size: 14px;
+    border: 1px solid #999;
+    margin: 10px;
+    border-radius: 8px;
+    color: #FFF;
+    -webkit-transition: all 0.25s ease-in-out;
+       -moz-transition: all 0.25s ease-in-out;
+            transition: all 0.25s ease-in-out;
+    cursor: pointer
+}
+
+header .buttons button:hover { background-color: #F7600E; border: 1px solid #F7600E }
+
+header .arrow{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 0;
+    text-align: center
+}
+
+header .arrow i { /* customize chevron-down arrow <i> */
+    border: 2px solid #F7600E;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    line-height: 35px;
+    cursor: pointer
+}
+
+/*End Header*/
+
+
+/*Start Features*/
+
+.features { padding: 40px 0; overflow: hidden }
+/* overflow: hidden similar to clear: both , should use one of them with float*/
+
+.features .box{  /* [(22% width + 4% margin-right) x 3 boxes] + [22% width for last-child] =100% */
+    width: 22%;  
+    margin-right: 4%;
+    float: left
+}
+
+.features .box:last-child{  margin-right: 0 }
+
+.features .box i {
+    color: #F7600E;
+    border: 1px solid #CCC;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    line-height: 100px;
+    -webkit-transition: all 0.5s ease-in-out;
+       -moz-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out
+}
+
+.features .box i:hover{ background-color: #F7600E; color: #FFF }
+
+.features .box h3{ text-transform: uppercase; color: #555 }
+
+
+.features .box p{ line-height: 1.5; color: #888 }
+
+/*End Features*/
+
+/* Start Subscribe */
+
+.subscribe{
+    background: url(../Images/subscriber.jpg);
+    -webkit-background-size: cover;
+       -moz-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover
+}
+
+.subscribe form {
+    padding: 100px 0;
+    width: 600px;
+    margin: auto
+}
+
+.subscribe form input[type='email']{
+    padding: 0 5px;
+    width: 300px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    height: 32px;
+    position: relative; /*position: relative because we need to set Top: 2px*/
+    top: 2px /* Top: 2px =>to align the input field exactly in-front-of the button */
+}
+
+.subscribe form button {
+    padding: 10px;
+    width: 200px;
+    background-color: #F7600E;
+    color: #FFF;
+    border: none;
+    border-radius: 10px;
+    margin-left: 20px;
+    font-size: 15px
+}
+
+/* End Subscribe */
+
+/* ٍStart our-work */
+
+.our-work { padding: 50px 0 }
+
+.our-work h2 {
+    font-weight: 500px;
+    font-size: 35px;
+    margin-bottom: 0
+}
+
+.our-work p { line-height: 1.5; margin: 10px 0 }
+
+.our-work .show-more-btn {
+    background: transparent;
+    border: 1px solid #CCC;
+    width: 180px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 20px;
+    color: #555;
+    -webkit-transition: all 0.25s ease-in-out;
+       -moz-transition: all 0.25s ease-in-out;
+         -o-transition: all 0.25s ease-in-out;
+            transition: all 0.25s ease-in-out;
+    cursor: pointer
+}
+
+.our-work .show-more-btn:hover {
+    background-color: #F7600E;
+    border: 1px solid #F7600E;
+    color: #FFF
+}
+
+.our-work .items-box { overflow: hidden }
+
+.our-work .items-box .item {
+    float: left;
+    width: 30%;
+    overflow: hidden;
+    margin-left: 1.5%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    position: relative
+}
+
+.our-work .items-box .item .img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(247, 96, 14, 0.8);
+    color: #FFF;
+    display: none /* we will show the image-overlay on hover*/
+}
+
+.our-work .items-box .item:hover .img-overlay { display: block } /* on .item hover => display image-overlay */
+
+.our-work .items-box .item .img-overlay h4 {
+    font-size: 25px;
+    margin-top: 80px;
+    margin-bottom: 0
+ }
+
+.our-work .items-box .item .img-overlay p {
+    margin-top: 10px;
+    margin-bottom: 50px;
+    line-height: 1.5
+}
+
+.our-work .items-box .item .img-overlay button {
+    background-color: transparent;
+    border: 1px solid #FFF;
+    width: 180px;
+    padding: 10px;
+    border-radius: 10px;
+    -webkit-transition: all 0.25s ease-in-out;
+       -moz-transition: all 0.25s ease-in-out;
+         -o-transition: all 0.25s ease-in-out;
+            transition: all 0.25s ease-in-out;
+    cursor: pointer
+}
+
+
+.our-work .items-box .item .img-overlay button:hover {
+    background-color: #FFF;
+    border: 1px solid #FFF;
+    color: #F7600E
+}
+
+/* ٍEnd our work */
+
+
+/* start Testimonials */
+
+.testim {
+    background: url('../Images/testimonials.jpg');
+    -webkit-background-size: cover;
+       -moz-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover
+}
+
+.testim .client {
+    padding: 50px 0;
+    color: #FFF;
+    font-size: 20px
+}
+
+.testim .client img { border-radius: 50% }
+
+.testim .client p {
+    line-height: 1.5px;
+    font-style: italic
+}
+
+/* chevron-right (<) and chevron-left (>) positions will be related to .container class which has positoin:          relative because they should fit in right and left container area not the whole screen aria */ 
+.testim .fa-chevron-right,
+.testim .fa-chevron-left {
+    position: absolute; 
+    top: 50%;           
+    cursor: pointer; 
+    color: #999
+}
+
+.testim .fa-chevron-right:hover,
+.testim .fa-chevron-left:hover { color: #F7600E }
+
+.testim .fa-chevron-right { right: 0 }
+
+.testim .fa-chevron-left { left: 0 }
+
+/* End Testimonials */
+
+
+/* Start our team */
+
+.our-team{ padding: 50px 0}
+
+.our-team h2 { font-size: 35px; margin-bottom: 0 }
+
+.our-team .main {
+    margin: 10px 0;
+    line-height: 1.5;
+    color: #666;
+    font-size: 20px
+}
+
+.our-team .the-team { overflow: hidden }
+
+.our-team .the-team .person {
+    float: left;
+    width: 24%;
+    margin-left: 1%;
+    color: #888
+}
+
+.our-team .the-team .person p { font-size: 15px }
+
+.our-team .the-team .person .social-icons i { /* customize social icons */
+    background-color: #9DA1A5;
+    WIDTH: 30px;
+    height: 30px;
+    line-height: 30px;
+    color: #FFF;
+    border-radius: 50%
+}
+
+.our-team .the-team .person:hover { color: #555 }
+
+.our-team .the-team .person:hover .fa-facebook { background-color: #3B5998 }
+
+.our-team .the-team .person:hover .fa-twitter { background-color: #55acee }
+
+.our-team .the-team .person:hover .fa-google-plus { background-color: #DC4E41 }
+
+.our-team .the-team .person img {
+     width: 250px;
+    height: 250px;
+    filter: gray; /*to make the team pictures in gray scale */
+    -webkit-filter: grayscale(1);
+       -moz-filter: grayscale(1);
+         -o-filter: grayscale(1);
+            filter: grayscale(1)
+}
+
+.our-team .the-team .person:hover img {
+    filter: none; /*to return the team pictures to colored mode*/
+    -webkit-filter: grayscale(0);
+       -moz-filter: grayscale(0);
+         -o-filter: grayscale(0);
+            filter: grayscale(0)   
+}
+
+/* End our team */
+
+
+/*Start Contact Form*/
+
+.contact {
+    background: url('../Images/header.jpg');
+    -webkit-background-size: cover;
+       -moz-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover
+}
+
+.contact .overlay {
+    padding: 30px 0;
+    color: #FFF
+}
+
+.contact h2 { font-size: 35px }
+
+.contact form {
+    width: 700px;
+    margin: 50px auto;
+    overflow: hidden
+}
+
+.contact form input[type="text"] { float: left }
+
+.contact form input[type="email"] { float: right }
+
+.contact form input[type="text"],
+.contact form input[type="email"] {
+    width: 48%;
+    padding: 0 10px;  /* customize placeholder by line-height not by padding height */
+    height: 40px;     /* so that we set padding height = 0 */
+    line-height: 40px;
+    border-radius: 5px;
+    color: #FFF;
+    border: 1px solid #CCC;
+    background-color: transparent
+}
+
+.contact form textarea {
+    margin: 20px 0;
+    width: 100%;
+    height: 140px;
+    color: #FFF;
+    border-radius: 5px;
+    border: 1px solid #CCC;
+    padding: 10px;
+    background-color: transparent
+}
+
+.contact form button {
+    float: left;
+    
+    padding: 10px;
+    width: 200px;
+    background-color: #F7600E;
+    color: #FFF;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px
+}
+
+.contact form .form-social-icons {
+    float: right;
+}
+
+.contact form .form-social-icons i {
+    background-color: #9DA1A5;
+    WIDTH: 40px;
+    height: 40px;
+    line-height: 40px;
+    color: #FFF;
+    border-radius: 50%
+}
+
+.contact form .form-social-icons .fa-facebook { background-color: #3B5998 }
+
+.contact form .form-social-icons .fa-twitter { background-color: #55acee }
+
+.contact form .form-social-icons .fa-google-plus { background-color: #DC4E41 }
+
+/* End Contact Form */
+
+/* Start Footer */
+
+footer {
+    background-color: #3B434C;
+    color: #FFF;
+    overflow: hidden;
+    padding: 30px
+}
+
+footer .copyright {float: left }
+
+footer .design {float: right }
+
+/* End Footer */
+
+
+/*Start our FrameWork*/
+
+.overlay {
+    background: rgba(49,55,61,0.7);
+    width: 100%;
+    height: 100%
+}
+
+.container{ 
+    width: 1200px;
+    margin: 0 auto;
+    position: relative; /* to set chveron-left and right icons as position: absolute in testimonials section */}
+
+.text-center { text-align: center }
+
+.hidden { display: none }
+
+.upper{ text-transform: uppercase }
+
+.main-color{ color: #F7600E }
+
+/*End our FrameWork*/

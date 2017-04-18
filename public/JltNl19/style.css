@@ -1,0 +1,22 @@
+#home1 { 
+  color: grey  ;
+  font-size: 300% ;
+  margin-left: 400px
+}
+
+#home2 { 
+  color: grey  ;
+  font-size: 300% ;
+  margin-left: 500px
+}
+
+#homepic { 
+  width: 400px ;
+  length: 300 px ;
+  margin-left: 400px;
+}
+
+#header { 
+  background-color: #ffffff  ;
+}
+

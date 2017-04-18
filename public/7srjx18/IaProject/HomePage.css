@@ -1,0 +1,122 @@
+body{
+
+	background-image: url(images/BG2.jpg);
+	background-repeat:no-repeat;
+	
+}
+table.main{
+	
+	Width:1340px;
+	Height:700px;
+	
+}
+td.logo{
+	width:200px;
+	height:200px;
+	background-image:url(images/logo.jpg);
+	background-repeat:no-repeat;
+}
+h1.title{
+	color:white;
+	text-align:center;
+	padding-top:-500px;
+}
+UL{
+	margin-right:80px;
+	font-size:30px;
+	color:white;
+	padding-bottom:500px;
+	}
+td.list{
+	width:200px;
+	height:600px;
+	}
+li{
+	float:left;
+	margin-left:40px;
+	}
+A.listi{
+	text-decoration:none;
+	color:white;
+	}	
+a.listi:hover{
+	color:orange;
+	}
+P.bio{
+	color:white;
+	text-align:center;
+	padding-top:50px;
+	font-size:40px;
+	}
+P.about{
+	color:white;
+	text-align:center;
+	padding-top:-50px;
+	font-size:60px;
+	}
+P.contact{
+	color:white;
+	text-align:center;
+	padding-top:-50px;
+	font-size:60px;
+	margin-left:45px;
+	}
+P.contactlist{
+	color:white;
+	text-align:center;
+	padding-left:50px;
+	font-size:40px;
+	margin-left:20px;
+	}
+P.biowrite{
+	color:white;
+	text-align:center;
+	padding-top:50px;
+	font-size:40px;
+}
+P.mylife{
+	color:white;
+	text-align:center;
+	padding-top:50px;
+	font-size:40px;
+	}	
+P.hobby{
+    color:white;
+	text-align:center;
+	padding-top:-50px;
+	font-size:60px
+	}
+P.hobbies{
+	color:white;
+	text-align:left-side;
+	padding-top:-50px;
+	font-size:45px;
+	}
+A.gmail{
+	text-decoration:none;
+	color:red lava
+}
+A.facebook{
+	text-decoration:none;
+	color:red lava
+}
+A.instagram{
+	text-decoration:none;
+	color:red lava;
+	}
+div.tite{
+	color:white;
+	text-align:center;
+	padding-top:-50px;
+	font-size:60px;
+	margin-left:45px
+	}	
+
+div.a{
+	color:white;
+	text-align:left-side;
+	font-size:30px;
+	height:100px;
+    width:500px;
+}
+	

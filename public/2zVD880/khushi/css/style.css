@@ -1,0 +1,563 @@
+/* start the global code */
+
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body{
+    padding:0;
+    margin:0;
+}
+
+h1,h2,h3,h4,h5h,h6,p{
+    padding:0;
+    margin:0;
+}
+
+.container{width:85%; margin:0 auto}
+
+.clear{clear:both}
+
+.text-center{text-align: center}
+
+ul{list-style: none; padding:0; margin: 0}
+
+a{text-decoration:none;color:#000}
+
+h3:after{
+    position:absolute;
+    display: block;
+    content: "";
+    margin-bottom:15px;
+    width:100px;
+    border:2px solid #1cbac8;
+    top: 56px;
+    left: 362px;
+}
+
+h2{text-transform:capitalize; font-size:40px; position:relative; font-weight:500; padding:10px 0}
+
+.fadeInLeft {
+	-webkit-animation-name:fadeInLeft;
+	animation-name:fadeInLeft
+}
+
+/* end the global code */
+
+/* start the file animation */
+@keyframes fadeInDown {
+	from {
+		opacity:0;
+		-webkit-transform:translate3d(0,-80%,0);
+		transform:translate3d(0,-80%,0)
+	}
+	to {
+		opacity:1;
+		-webkit-transform:none;
+		transform:none
+	}
+}
+
+@keyframes fadeInLeft {
+	from {
+		opacity:0;
+		-webkit-transform:translate3d(-15%,0,0);
+		transform:translate3d(-10,0,0)
+	}
+	to {
+		opacity:1;
+		-webkit-transform:none;
+		transform:none
+	}
+}
+
+@keyframes fadeInRight {
+	from {
+		opacity:0;
+		-webkit-transform:translate3d(10%,0,0);
+		transform:translate3d(10,0,0)
+	}
+	to {
+		opacity:1;
+		-webkit-transform:none;
+		transform:none
+	}
+}
+.fadeInLeft{
+    animation: fadeInLeft 1s ease-in-out;
+}
+/* end the file animation */
+
+/* start the navigation bar */
+
+header{
+    background-image:url("../images/iemages.jpg");
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    height:100vh;
+}
+
+header .logo{float: left; width:30%;}
+
+header .logo img{transform:scale(.6);}
+
+header .links{
+    float: right;
+    width:70%;
+    margin-top:20px;
+}
+
+header .container > div{height:125px;}
+
+header .links .nav > li{
+    float: left;
+    padding:30px 15px;
+    text-transform:capitalize;
+    font-family: serif;
+    font-size:18px;
+    position:relative;
+    text-align: center;
+}
+
+header .links .nav{float: right}
+
+header .links .nav .sub{
+    position:absolute;
+    margin-top:7px;
+    opacity: 0;
+    width:130px;
+    transition:all .75s;
+}
+header .links .nav .menu:hover .sub{opacity: 1}
+
+header .links .nav > li a:hover{color:#1cbac8}
+
+header .links .nav > li.active{color:#1cbac8}
+
+
+header .links .nav .sub li{
+    padding:3px 5px;
+    background:#4b6fa8;
+}
+
+
+
+header .links .nav > li a{text-decoration:none;color:#000}
+
+header .slide{text-align: center; color:#fff; padding-top:30px; }
+
+header .fade h2{font-size:70px;display:none; font-family: serif; letter-spacing: 4px; text-transform:capitalize; }
+
+header .fade .active{display: block}
+
+header .slide p{font-size:25px; text-align: center; padding:0 40px; margin-top: 30px;}
+
+header .slide button{width:140px; height:40px; background:#1cbac8; margin-top:30px; font-size:16px; text-transform:capitalize}
+header .slide button:hover{background-color:#fff; animation: fadeInDown .75s linear}
+
+.slide .arrow{
+    margin-top:90px;
+}
+
+.slide .arrow i{
+    font-size:28px;
+}
+
+/* end the nagigation bar */
+
+/* start the section about */
+
+.about{
+    padding-top:30px;
+    padding-bottom:30px;
+}
+
+h2{text-transform:capitalize; font-size:35px; position:relative; font-weight:500; }
+
+.about p{padding:3px 27px; font-size:18px }
+
+.about .ourabout > div{
+    float: left;
+    width:33.333%;
+    margin-top:20px;
+    padding-top:15px;
+    color:aliceblue;
+    padding:20px 0;
+}
+
+.about .ourabout div:first-child{background-color:#C8B273}
+.about .ourabout div.d2{background-color:#222222;}
+.about .ourabout div:last-child{background-color:#083c5a}
+
+.about .ourabout i{
+    font-size: 30px ;
+    padding:13px;
+    border: 1px solid #000;
+    border-radius:50%;
+    background-color:#fff;
+    color:#000
+}
+
+.about .head{transform:scale(0); transition:all 1.5s}
+
+.aboutt .container > div{margin-top:35px;}
+
+.left{float: left; width:50%; height:300px;}
+
+.progress{float: left;width:50%; height:300px}
+
+.progress .prog{padding-top:10px; padding-left:15px}
+
+.progress .prog > div {
+    width:95%;
+    background-color:#ddd;
+    border-radius:15px;
+    height:25px;
+}
+
+.progress .prog span{height:100%; overflow: hidden; border-radius:15px;padding-right:15px;line-height: 25px; text-align: right;}
+
+.progress .prog label{padding-left:5px; padding-bottom:15px}
+
+
+/* end the section about */
+
+/* start the section ptojects */
+
+.projects{padding-top:20px;}
+
+.projects .head h3:after{
+        top: 77px;
+    left: 631px;
+}
+
+.projects .head p{
+    position:relative;
+    top:10px;
+}
+
+.projects .text-center{transform:scale(0); transition:all 1.50s; padding:20px 0; font-size:20px}
+
+.projects .proj{padding-top:10px;}
+
+.projects .proj > div{width:25%; overflow: hidden; height:250px; float: left; position: relative;}
+
+.projects .proj > div:hover .overlay{
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    z-index: 9;
+    background-color:rgba(0,0,0,.8);
+    padding:10px;
+    color:#fff
+    
+}
+.projects .proj > div:hover .overlay span{
+    animation: fadeInLeft 1s linear;
+} 
+
+.projects .proj .overlay h4{
+    color:#b6b6b6;
+    font-size:22px;
+    margin:20px; 
+    letter-spacing: 2px
+}
+
+.projects .proj .overlay span a{color:#b6b6b6; font-size:18px; padding-left:10px;}
+
+.projects .proj img{width:100%; height:100%}
+
+.projects button{padding:5px 15px; background-color:#1cbac8; 
+    margin:30px auto; display: block; text-transform:capitalize; }
+/* end thr section projects */
+
+/* start the section our services */
+
+.service{
+    background-image:url("../images/Stars-wallpapers.jpg");
+    background-size:cover;
+    
+}
+
+.service .head{margin-bottom:25px; transition:all 1.50s; transform:scale(0)}
+
+.service .head h3{top:15px; position:relative}
+
+.service .head h3:after{
+        top: 56px;
+    left: 513px;
+}
+
+.service .head p{position:relative; top:33px}
+
+.service{font-size:18px; color:#b6b6b6;}
+
+.serv{display: flex; flex-wrap: wrap; justify-content: space-between; padding:15px 0;}
+
+.serv > div{
+    width:30%;
+    background-color:rgba(0,0,0,.5);
+    color:#fff;
+    margin-bottom:20px;
+}
+.serv i{padding:10px; border-radius:50%; float: left;margin: 15px 0 0 15px;
+    background-color:#1cbac8; transform:scale(.9);}
+
+.serv h4{font-size:20px; padding:15px 0;}
+
+.serv p{float: left; padding-left:70px;position:relative; top:-12px; text-align: left; color:#b6b6b6}
+
+/* start the process */
+
+.process{
+    padding-top:20px;
+    padding-bottom:30px;
+}
+
+h2 span, h3 span{color:rgba(28,186,200,1)}
+
+h3, h2{
+     text-transform: capitalize;
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom:10px;
+}
+
+.process .cont{width:70%; margin:0 auto; transform:scale(1)}
+
+.process .cont p{margin-top:10px;position:relative; top:15px}
+
+.process .pro{
+    padding-top:15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.process .pro > div{
+    width:45%;
+    background-color:rgba(0,0,0,.5);
+    margin-top:15px;
+    padding:20px 10px;
+}
+
+.process .pro > div h4{color:#fff; font-size:20px;margin-left:10px; }
+
+.process .pro > div i{
+    float: left;
+    font-size:45px;
+    color:rgba(28,186,200,1);
+    padding-right:15px
+}
+
+.process .pro > div p{
+    padding:10px 5px 10px 50px;
+    color:#fff;
+}
+
+/* end the process */
+
+/* end the section our services */
+
+/* start the our process */
+
+.experts{padding-top:35px; padding-bottom:30px;}
+
+.experts .head h3:after{left: 518px;}
+
+.experts .head{transform: scale(0); transition: all 1.20s linear}
+
+.experts .head p{font-size:18px; margin:15px;position:relative; top:15px}
+
+.experts .exper{display:flex; justify-content: space-around; padding:15px 0;}
+
+.experts .exper > div{width:23%; position:relative; height:300px; overflow: hidden; transform:scale(0); transition:all 1.50s linear}
+
+.experts .exper > div:hover .overlay{
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    z-index: 9;
+    background-color:rgba(0,0,0,.5);
+    padding:10px;
+    color:#fff;
+    transition:all .75s linear;
+}
+
+.experts .exper .overlay h4{font-size:22px;margin-bottom:10px; margin-top:10px}
+
+.experts .exper .overlay p{margin-bottom:15px; color:#b6b6b6; font-size:22px}
+
+.experts .exper .overlay i{margin-right:8px; cursor:pointer}
+
+.exper img{width:100%; height:100%}
+
+/* end the our process */
+
+/* start the section chooose */
+
+.choose{
+    padding:25px 0;
+}
+
+.choose .head p{font-size:18px;margin-bottom:15px}
+
+.choose .cho .left > div {border:1px solid #000; margin-top:15px; padding:28px 15px; display: none}
+
+.choose .cho .left h4{font-size:18px;}
+
+.choose .cho .left i{float: left;display: block; margin-right:15px;}
+
+.choose .cho .left p{padding-left:30px;}
+
+/* end the section choose */
+
+/* start the section clients testimonials */
+
+.clients{padding:20px 0;
+    background-image:url("../images/background.jpg");
+    background-size:cover;
+    color:#fff
+}
+
+.clients .head p{color:#b6b6b6; font-size:18px;padding:10px 0;}
+
+.clients .slider{ padding:15px 0;}
+
+.clients .slider .format{display: none;padding:7px; width:70%; margin:0 auto;
+background-color:rgba(0,0,0,.5); padding:18px; color:#b6b6b6}
+
+.clients .slider .format img{height:123px; width:140px; float: left; margin-right:15px; border-radius:50%;}
+
+.clients .slider .active{display: block}
+
+.socail{display: flex; justify-content: space-between; color:rgba(28,186,200,1); margin:20px 0}
+
+.socail img{width:150px; height:130px}
+
+/* end the section clients */
+
+/* start the section latest */
+
+.blog{padding-top:35px; padding-bottom:30px}
+
+.blog .head{padding:15px 0}
+
+.blog .head h3{margin-bottom:10px;}
+
+.blog .latest{
+    display: flex;
+    justify-content: space-between;
+    padding:15px 0;
+}
+
+.blog .latest > div{
+    width:30%;
+    transition:all .75s linear;
+     padding:10px
+}
+
+.blog .latest > div:hover{
+    box-shadow:0px 0px 10px #000;
+    transform:translatey(-10px)
+}
+
+.blog .latest > div img{width:100%; height:300px}
+
+.blog .latest > div h4{font-size:18px; margin:10px 0}
+
+.blog .latest > div a{font-size:18px;font-weight:600; display:inline-block; margin:15px 0; color:rgba(28,186,200,1)}
+
+/* end the section latest */
+
+/* start the section contact */
+
+.contact{
+    padding:20px 0;
+    background-image:url("../images/HNCK3529.jpg");
+    background-size:cover;
+}
+
+.contact span{color:rgb(131, 221, 230);}
+
+.contact p{font-size:18px; margin:15px}
+
+.contact .cont{
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact .cont > div{
+    width:250px;
+    height:120px;
+    background-color:rgba(28,186,200,.2);
+    margin-top:25px;
+    box-shadow:0px 0px 3px #000;
+    display: none;
+    
+}
+
+.contact .cont h4{font-size:21px;margin:10px 0;font-weight:600}
+
+.contact .cont p{font-size:18px}
+
+.contact form{width:70%; margin:0 auto; padding:15px; font-size:16px; font-weight:600}
+
+.contact form input{
+    display: block;
+    width:90%;
+    margin:15px 0;
+    border:0;
+    height:35px;
+    font-weight:600;
+   color:rgba(28,186,200,1);
+    background-color:rgba(255,255,255,.5);
+   border-radius:4px;
+    padding:5px;
+    
+}
+
+form textarea{
+    width:90%;
+    border-radius:15px;
+    color:rgba(28,186,200,1);
+   background-color:rgba(255,255,255,.5);
+    border:0;
+    font-weight:700;
+    
+}
+
+form button{
+    display: block;
+    width:120px;
+    height:40px;
+    background-color:#c0e0e3 ;
+    border-radius:3px;
+    cursor:pointer;
+}
+
+
+/* end the section contact */
+
+/* start the footer */
+
+footer{
+    background:#040e18;
+    padding:30px 0;
+    text-align: center;
+    color:#b6b6b6;
+}
+
+footer p{margin-top:15px}
+
+footer img{transform:scale(0); transition:all .75s linear;}
+
+/* end the footer */

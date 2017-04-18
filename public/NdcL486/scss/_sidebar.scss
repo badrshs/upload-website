@@ -1,0 +1,159 @@
+/* Right sidebar widget css
+============================================================================================ */
+.single_blog_area{
+    
+}
+.bloger_right_sidebar_area{
+    .wedget_tittle{
+        h3{
+            font-family: $arimo;
+            font-size: 20px;
+            text-transform: uppercase;
+            color: $black;
+            letter-spacing: .20px;
+            margin-bottom: 34px;
+            font-weight: bold;
+        } 
+    }
+}
+.right_widget{
+    margin-bottom: 58px;
+}
+.search_widget{
+    input{
+        font-family: $loraFont;
+        color: #999;
+        letter-spacing: .25px;
+        font-style: italic;
+        font-size: 13px;
+        border: none;
+        box-shadow: none;
+        background: #f6f6f6;
+        line-height: 50px;
+        height: 50px;
+        vertical-align: middle;
+        border-radius: 0px;
+        outline: none;
+        @include placeholder{
+            font-size: 13px;
+            font-family: $loraFont;
+            color: #999;
+            letter-spacing: .25px;
+            font-style: italic;
+        }
+        &:focus{
+            box-shadow: none;
+            border: none;
+            outline: none;
+        }
+    }
+}
+.category_widget_list{
+    li{
+        a{
+            color: #666666;
+            font-family: $loraFont;
+            font-size: 14px;
+            letter-spacing: .25px;
+            display: block;
+            line-height: 18px;
+            padding-bottom: 15px;
+            span{
+                float: right;
+                font-family: "myR";
+                font-size: 14px;
+                letter-spacing: .25px;
+            }
+            i{
+                padding-right: 3px;
+            }
+        }
+        &:last-child{
+            a{
+                padding-bottom: 0px;
+            }
+        }
+    }
+}
+.twitter_widget{
+    .twitter_btn{
+        text-transform: uppercase;
+        letter-spacing: .50px;
+        font-size: 13px;
+        font-family: $arimo;
+        font-weight: bold;
+        color: #999;
+        display: block;
+        padding-top: 18px;
+    }
+}
+.twitter_widget_list{
+    li{
+        color: #666666;
+        font-family: $loraFont;
+        letter-spacing: .25px;
+        font-size: 14px;
+        margin-bottom: 30px;
+        a{
+            display: block;
+            color: #0099cc;
+            line-height: 32px;
+        }
+        .twitter_list_time{
+            margin-top: 12px;
+            text-transform: uppercase;
+            display: block;
+            color: #6c6c6c;
+            font-size: 12px;
+            font-family: $loraFont;
+        }
+        &:last-child{
+            margin-bottom: 0px;
+        }
+    }
+}
+.recent_post_list{
+    li{
+        margin-bottom: 40px;
+        .media{
+            .media-left{
+                padding-right: 20px;
+            }
+            .media-body{
+                h4{
+                    font-family: $arimo;
+                    color: #333333;
+                    font-size: 15px;
+                    font-weight: bold;
+                    display: block;
+                    padding-top: 3px;
+                }
+                .date_comment{
+                    color: #999999;
+                    letter-spacing: .25px;
+                    font-family: $loraFont;
+                    font-size: 13px;
+                    padding-top: 4px;
+                    display: block;
+                }
+            }
+        }
+        &:last-child{
+            margin-bottom: 0px;
+        }
+    }
+}
+.tag_list{
+    a{
+        font-family: $arimo;
+        color: #999;
+        font-size: 15px;
+        letter-spacing: .25px;
+        @include transition;
+        &:hover{
+            color: #000;
+        }
+    }
+}
+/* End Right sidebar widget css
+============================================================================================ */

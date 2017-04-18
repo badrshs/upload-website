@@ -1,0 +1,58 @@
+@font-face {font-family: "F-DFontSmall";
+    src: url('../fonts/fdfont-reg.eot') format('embedded-opentype'),
+         url('../fonts/fdfont-reg.ttf') format('truetype')
+}
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+body{
+    font-family: 'F-DFontSmall' , arial;
+    background-color: #f4f4f4;
+}
+header{
+    height: 400px;
+    background-color: #3498db;
+    overflow: hidden;
+    position: relative;
+}
+
+footer{
+    padding: 10px 0px;
+    background:#777;
+    background-size: 5px 5px; 
+    background-position: 10px 10px;
+    color: #fff;
+    font-size: 12px;
+    clear: both;
+}
+footer a {
+    color: #fff;
+    padding: 10px;
+}
+footer a:hover{
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.8;
+}
+.social{
+    margin-top: 20px;
+    font-size: 20px;
+}
+.scroolltop{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    background-color: #3c77db;
+    cursor: pointer;
+    display: none;
+    z-index: 10;
+}

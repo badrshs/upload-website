@@ -1,0 +1,86 @@
+body{margin: 0;}
+.container{width: 1170px;margin: auto}
+.clearfix{clear:both }
+/*start header*/
+.header .slider{background-image: url(../images/slider.jpg);background-size: cover;height: 600px; }
+.header .navbar{background-color: #94a7ad;color: #fff;overflow: hidden;border-bottom:double;border-bottom-right-radius: 15px;border-bottom-left-radius: 15px; }
+.header .navbar ul.left{list-style: none;overflow: hidden;padding-top:10px}
+.header .navbar ul.left li{float: left;padding: 10px;font-size:20px}
+.header .navbar ul.left li a{color: #fff;text-decoration:none}
+.header .navbar ul.left li.active a{font-weight: bold;color: #f1ba82}
+.header .navbar ul.left li  a:hover{color: #f1ba82}
+.header .navbar ul.right{list-style: none;overflow: hidden;text-align: center;margin: 0;margin-right: 25px}
+.header .navbar ul.right li{float:right;padding: 5px;}
+.header .navbar ul.right li i{font-size:35px}
+.header .navbar ul.right li a{color: #fff;text-decoration:none}
+.header .navbar ul.right li  a:hover{color: #f1ba82}
+.header .slider .buttons{text-align: center}
+.header .slider .button_bottom{text-align: center}
+.header .slider .buttons button{background:none;border:5px solid #2b6d8c;padding: 10px 90px;color:#bd834f;margin-top:200px;font-weight: bold;font-size: 30px;margin-left: 25px;border-radius: 10px }
+.header .slider .button_bottom button{padding: 20px 30px;background:none;border:5px solid #2b6d8c;color:#bd834f;font-weight: bold;font-size: 30px;margin-top: 40px;border-radius: 10px}
+.header .slider .button_bottom button:hover,.header .slider .buttons button:hover{color:#fff}
+/*end header*/
+
+/*start about us*/
+.about_us{text-align: center;padding:75px;overflow:hidden;margin-top: 50px}
+.about_us h2{font-family:sans-serif;font-size:25px;color:#bd834f;line-height:30px;margin: 0;text-transform: uppercase}
+.about_us h3{font-family:sans-serif;font-size:20px;line-height: 18px;color: #2b6d8c}
+.about_us p{margin: 0 0 10px 40px;padding-bottom: 10px;font-family: vivaldi;font-size:30px}
+.about_us .button_bottom {padding: 20px 30px;background:none;border:5px solid #2b6d8c;color:#bd834f;font-weight: bold;font-size: 30px;margin-top:20px;border-radius: 10px}
+/*end about us*/
+
+/*start features*/
+.features{height: 530px;text-align: center;margin-top:40px}
+.features h2{font-size:25px;border:3px groove #2b6d8c;font-style: italic;color: #bd834f;cursor: help;text-transform: capitalize;width:250px;height: 50px;padding-top:5px;font-family: tahoma;border-radius:20px}
+.features .each-project{float: left}
+.features .each-project img{width: 330px;height:330px;padding: 30px;border-radius: 5px}
+.features .each-project button{padding:5px 50px;background:none;;text-transform:capitalize;border: 0;border-radius:5px;color:#bd834f;font-weight: bold;box-shadow:3px 3px 3px #2b6d8c,-3px -3px 3px #2b6d8c}
+/*end features*/
+
+/*start testimonal*/
+.testimonal{text-align: center;overflow: hidden;padding-top:70px;height:670px;}
+.testimonal h2{text-transform: uppercase;font-size:25px;color:#93643a;line-height:35px;word-spacing: 5px}
+.testimonal p{font-size: 20px;font-family: sans-serif;color:#1d1e1e;white-space:normal;word-spacing:5px;margin-bottom: 30px;font-weight: bold}
+.testimonal .each_testmonial{width:25%;float: left;box-shadow: 5px 5px 5px #d2a16f,-5px -5px 5px #d2a16f;margin-left:70px;margin-top:60px}
+.testimonal .each_testmonial h1{font-family:vivaldi;font-size:30px;text-align: center;color: #2b6d8c;}
+.testimonal .each_testmonial p{padding:30px;font-size:20px;color:#262525;text-align: left}
+/*end testimonal*/
+
+/*start skills*/
+.skills {padding-top:60px;padding-bottom: 50px;overflow: hidden;margin-top: 40px}
+.skills h2{font-family:vivaldi;font-size:60px;text-align: center;color: #2b6d8c;margin: 0}
+.skills .progress{width:80%;}
+.skills .progress .tecnique {margin-left: 300px;}
+.skills .progress .tecnique h3{color: #d2a16f}
+.skills .progress .tecnique div{background-color: #F2F2F2;height:25px;}
+.skills .progress .tecnique div span{background-color: #2b6d8c;display: block;width: 80%;height: 25px;line-height: 25px;text-align: right;color: #d2a16f;font-weight: bold}
+/*end skills*/
+
+/*start courses*/
+.courses{padding:80px;overflow: hidden}
+.courses h2{font-family:vivaldi;font-size:40px;color: #2b6d8c;margin: 0;margin-bottom: 30px;font-weight: bolder}
+.courses .each-course{float: left;margin-left: 30px}
+.courses .each-course img{display:inline-block;border-radius:5px}
+.courses .each-course button{margin-top: 30px;margin-bottom: 30px;color:#2b6d8c;font-weight: bold;border:2px solid #2b6d8c }
+/*end courses*/
+
+/*start footer*/
+.footer{padding-bottom:70px;padding-top:60px}
+.footer h2{font-family:vivaldi;font-size:40px;text-align: center;color: #2b6d8c;margin:0}
+.footer .form{width:1100px}
+.footer .form label{display: block;color: #2b6d8c;margin: 10px 0;}
+.footer .form input[type="text"]{background-color: #9aadb3;color:#2b6d8c;padding: 10px;border: 0;width:40%;margin-bottom: 10px;border-radius: 10px}
+.footer .form textarea{background-color: #9aadb3;color: #d2a16f;padding: 10px;border: 0;width:30%;margin-bottom: 10px;height:100px;border-radius: 10px}
+.footer .form input[type="submit"]{background-color: #9aadb3;color: #0e3f56;padding: 10px 30px;border: 0;margin-top:10px;border-radius: 10px}
+.footer img{width: 500px;height:500px;float:right;margin-right:30px;margin-top: -350px}
+/*end footer*/
+
+/*start copy right*/
+.copy-right{color:#2b6d8c;margin-top:100px;text-align: center;overflow: hidden;padding-top: 20px }
+.copy-right span{margin-bottom: 20px;font-size:20px;}
+.copy-right ul{list-style: none;padding-left: 0;}
+.copy-right ul li{display: inline-block;font-size: 25px}
+.copy-right ul li:hover{color: #e6a56e}
+/*end copy right*/
+
+

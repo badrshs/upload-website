@@ -1,0 +1,38 @@
+
+.box-option .color-option,.testemonial li.active{border:2px solid #A00}
+
+
+.box-option .gear-check,
+.box-option ul li,
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus,
+.contact-us .btn,
+.skills-btn,
+.btn-prices,
+.subscribe .btn,
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus
+{ background-color: #A00}
+
+.btn-prices:hover{background-color:#333; color: #eee;}
+
+
+
+.testemonial span,
+.footer .copy-right span,
+.skill-bar,
+.features .glyphicon,
+.price-table h2
+{color:#A00}
+
+
+
+.skill-bar-1{background-color:  #ce1126}
+.skill-bar-2{background-color: #A6AC9E}
+.skill-bar-4{background-color:#A91D22}
+.skill-bar-3{background-color:#222}
+
+.skill-bar-1{color: #E6E5D6}
+.skill-bar-2{color: #fff}
+.skill-bar-3{color:#E6E5D6}
+.skill-bar-4{color:#E6E5D6}
+.skills-btn:hover{background-color:#A6AC9E; color:  #A00 }

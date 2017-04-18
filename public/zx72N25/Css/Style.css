@@ -1,0 +1,345 @@
+*{ /*https://jsfiddle.net/*/
+   /* font-family:"comic sans ms",serif,cursive;*/
+    font-family: "comic sans ms";
+}
+body{
+    height: 4000px;
+}
+h2 {
+    font-family: 'Oswald', sans-serif;
+    color: #25365d;
+    font-size: 60px;
+    line-height: 60px;
+}
+h5 { margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+.navbar-inverse .navbar-nav > li > a{
+    color:#fff;
+}
+.dropdown-menu > li > a {
+    color:#fff;
+}
+.navbar-inverse .navbar-nav .open .dropdown-menu > li > a,
+.navbar-inverse .navbar-nav .open .dropdown-menu .divider
+{
+    color:#fff;
+}
+.dropdown-menu .divider,
+.navbar-inverse .navbar-nav .open .dropdown-menu .divider
+{
+    background-color: #fff;
+}
+.dropdown-menu{
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+.navbar-right .dropdown-menu {
+    right: auto;
+    left: 0;
+}
+.back{
+    background: url("../img/banner.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: 1338px;
+}
+.navbar-inverse{
+    background: transparent;
+    border: transparent;
+    box-shadow: none;
+    transition: all 0.4s ease;
+    z-index:10;
+    position: absolute;
+    width: 100%;
+}
+.navbar-inverse .navbar-brand{
+    font-family: arial;
+    color: #fff;
+    padding-left: 50px;
+}
+.navbar-inverse .navbar-brand .glyphicon-triangle-left{
+    color: #f00;
+}
+.real_text {
+    padding-top: 240px;
+    max-width: 825px;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+.the-text .real_text h1{
+    padding-top: 60px;
+    font-size: 60px;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: arial;
+}
+.sticky{
+    position: fixed;
+    width: 100%;
+    background: #0394dd;
+    box-shadow: 3px 1px 0.99px 0.01px rgba(0, 0, 0, 0.05);
+    padding: 20px 0;
+    }
+
+/*.the-text .pp-text{
+ width: 50%;
+margin: auto;
+}*/
+.the-text .real_text p{
+    font-size: 24px;
+    line-height: 42px;
+    color: #bbd8ff;
+    padding: 20px 0 50px;
+}
+.the-text button{
+    font-family:arial;
+    width: 200px;
+    height: 60px;
+    background-color: #444;
+    border: transparent;
+    border-radius: 20%/50%;
+    color: #fbfbfb;
+    font-size: 16px;
+}
+.the-text button .glyphicon-save{
+    padding-right:15px;
+    color: #333;
+}
+/* section info download */
+ .inf_download{
+    overflow:hidden;
+    position: relative;
+    padding-top: 40px;
+    padding-bottom: 140px;
+}
+.info_download h2{ 
+    margin-bottom:45px;
+    text-transform:uppercase;
+}
+.info_download{
+    padding-bottom: 20px;
+}
+.info_download .info_text h5{
+    padding-right: 450px;
+    padding-bottom: 30px;
+    font-size: 17px;
+    font-family: arial;
+    color:#999;
+}
+.info_download .info_etape{
+    padding-bottom: 40px;
+}
+.info_download .info_etape p{
+    color: #588fe4;
+}
+.info_download .info_etape .glyphicon-ok-circle{
+    color: #f00
+}
+.info_download button{
+    font-family:arial;
+    width: 200px;
+    height: 60px;
+    background-color: #444;
+    border: transparent;
+    border-radius: 20%/50%;
+    color: #fbfbfb;
+    font-size: 16px;
+}
+/*.inf_download img{
+    position: absolute;
+    /*right: 150px;*/
+    /*right: -600px;
+    top: 0;
+    display: block;
+}*/
+.inf_download img{position:absolute; right:150px; top:0; display:none;}
+/*Start Section About*/
+.about{
+    padding: 150px 0 110px;
+    background-color:#f7f9fb;
+}
+.about h3{
+    text-transform:uppercase;
+    font-family: arial;
+}
+.about .services{
+    opacity: 0;
+}
+.about h3 i{
+    padding-right: 15px;
+}
+.about h3 .fa-mobile{
+    padding-right: 35px;
+}
+.about p{
+    padding-left:65px;
+}
+/*end Section About*/
+/* Start Section Our Features*/
+.our_features{
+padding: 150px 0 110px;
+}
+.our_features h2{
+    padding-bottom: 40px;
+    text-transform: uppercase;
+    font-family:arial;
+    font-weight:bold;
+    color: #25365d;
+    font-size: 60px;
+}
+.our_features img{
+opacity: 0
+}
+/* End Section Our Features*/
+/* Start Section Plan */
+.plan{
+    padding: 150px 0 110px;
+    text-align:center;
+    background-color:#eaedf1;
+    overflow:hidden;
+}
+.plan .h1,.plan .myfp{
+    opacity: 0;
+}
+.plan h2:first-child{
+    font-weight: bold;
+    color: #25365d;
+    font-size: 60px;
+    line-height: 60px;
+}
+.plan p{
+    color:#777;
+    font-family:tahoma,arial;
+    opacity:1;
+}
+.plan .list_plan{
+   position:relative;
+}
+
+.plan .list_plan .sma2{
+
+    position: relative;
+}
+.plan .list_plan .sma3{
+
+    position: relative;
+}
+.plan .type_plan{
+    background-color: #fff;
+}
+.plan .type_plan h3{
+    text-transform:uppercase;
+    font-family:arial;
+    padding-top: 40px;
+    padding-bottom:40px;
+    vertical-align:baseline;
+}
+.plan .type_plan h2{
+    text-transform:uppercase;
+    font-family:arial;
+    line-height: 60px;
+    font-size: 60px;
+    color: #25365d;
+}
+.plan .type_plan span{
+    text-transform:lowercase;
+    font-family:arial; 
+    line-height: 36px;  
+    font-size: 22px;
+    font-family: 'Open Sans', sans-serif; 
+}
+.plan .type_plan h3:last-of-type{
+    font-size: 18px;
+    line-height: 36px;
+    color: #5a5a5a;
+}
+.plan img{
+    margin-top:60px;
+}
+.plan h2{
+    font-family:arial;
+    text-transform:uppercase;
+    color:#25365d;
+    margin-bottom: 30px;
+}
+.plan p{
+    font-size:16px;
+}
+.plan a{
+    display:inline-block;
+    margin: 50px 30px 0;
+    font-size: 22px;
+    color: #25365d;
+    font-weight: 700;
+}
+.plan a:hover{
+    text-decoration:none;
+}
+/* end Section Plan */
+/* start section download */
+.get_download{
+    margin-top: 140px;
+}
+.get_download h2{
+    text-transform: uppercase;
+    margin-bottom:50px;
+    font-size:60px;
+    opacity: 0;
+}
+.get_download p{
+    margin-bottom: 50px;
+    color: #777;
+    font-size: 16px;
+    font-family: tahoma,arial;
+    line-height: 30px;
+    opacity:0;
+    position: relative;
+}
+.get_download a{
+    border-radius: 20%/50%;
+    border:1px solid #25365d;
+    max-width: 217px;
+    color:#fff;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 10px 0;
+    background-color:#25365d;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+}
+.get_download a:hover{
+    text-decoration: none;
+}
+.get_download a i{
+      margin-right: 20px;
+     color: #bbd8ff;
+     font-size: 20px;
+}
+/* end section download*/
+footer {
+    margin-top: 20px;
+    background:url("../img/bottombanner.jpg") no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    min-height: 701px;
+}
+footer a{
+    color: #337ab7;
+    text-decoration: none;
+    font-family:arial;
+}
+footer p{
+    font-size: 18px;
+    padding-top: 15px;
+    font-family:arial;
+}
+footer a:hover{
+    text-decoration: none;
+}

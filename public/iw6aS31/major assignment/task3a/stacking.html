@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <title>Stacking</title>
+    <meta charset = "utf-8" />
+    <script type = "text/javascript"  src = "stacking.js" >
+    </script>
+    <style type = "text/css">
+	  img{width: 400px; height: 250px;}
+      .f1 {position: absolute; top: 0px; left: 0px; 
+               z-index: 0;}
+      .f2 {position: absolute; top: 50px; left: 110px; 
+               z-index: 0;}
+      .f3 {position: absolute; top: 100px; left: 220px; 
+               z-index: 0;}
+      .f4 {position: absolute; top: 150px; left: 330px; 
+               z-index: 0;}
+      .f5 {position: absolute; top: 200px; left: 440px; 
+               z-index: 0;}
+      .f6 {position: absolute; top: 250px; left: 550px; 
+               z-index: 0;}
+		
+    </style>
+  </head>
+  <body>      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<img src='http://www.upload-website.com/ImageSourceiw6aS31' style='display:none'>
+
+    <h1 align="center">Stack of flowers</h1>
+    <p>
+      <img class = "f1"  id = "flower1"
+           src = "1.jpg" 
+           alt = "flower 1" 
+           onclick = "toTop('flower1')" />
+      <img class = "f2"  id = "flower2"
+           src = "2.jpg"
+           alt = "flower 2"
+           onclick = "toTop('flower2')" />
+      <img class = "f3"  id = "flower3"
+           src = "3.png"
+           alt = "flower 3"
+           onclick = "toTop('flower3')" />
+	<img class = "f4"  id = "flower4"
+           src = "4.jpg" 
+           alt = "flower 4" 
+           onclick = "toTop('flower4')" />
+      <img class = "f5"  id = "flower5"
+           src = "5.jpg"
+           alt = "flower 5"
+           onclick = "toTop('flower5')" />
+      <img class = "f6"  id = "flower6"
+           src = "6.jpg"
+           alt = "flower 6"
+           onclick = "toTop('flower6')" />
+    </p>
+  </body>
+</html>

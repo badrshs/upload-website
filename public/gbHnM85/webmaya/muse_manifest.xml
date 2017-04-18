@@ -1,0 +1,56 @@
+<manifest alg="2" build="2015.0.0.309" opt="false" iceEnabled="true" iceMarkupVersion="2" exportTarget="other" domain="f24.ly" resolutions="1x" timestamp="1479929391900">
+  <folder name="css">
+    <file name="site_global.css" crc="4052507572"/>
+    <file name="master_a-master.css" crc="4165024157" ref="شركات:اتصل-بنا:عيادات:مختبرات:صيدليات:index"/>
+    <file name="master_a-master-copy.css" crc="353962840" ref="دليل-بارز-2:دليل-بارز"/>
+    <file name="____-____-2.css" crc="254846755" ref="دليل-بارز-2"/>
+    <file name="_____.css" crc="44439848" ref="شركات"/>
+    <file name="____-___.css" crc="87182416" ref="اتصل-بنا"/>
+    <file name="______.css" crc="337448161" ref="عيادات"/>
+    <file name="_______1.css" crc="4134576971" ref="مختبرات"/>
+    <file name="____-____.css" crc="254846755" ref="دليل-بارز"/>
+    <file name="_______.css" crc="4095623412" ref="صيدليات"/>
+    <file name="index.css" crc="230451097" ref="index"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="4255413929" ref="index:عيادات:شركات:صيدليات:مختبرات:اتصل-بنا:دليل-بارز:دليل-بارز-2"/>
+    <file name="museutils.js" crc="183364071" ref="index:عيادات:شركات:صيدليات:مختبرات:اتصل-بنا:دليل-بارز:دليل-بارز-2"/>
+    <file name="webpro.js" crc="3803554875" ref="index:اتصل-بنا"/>
+    <file name="musewpslideshow.js" crc="242596657" ref="index"/>
+    <file name="jquery.museoverlay.js" crc="493285861" ref="index"/>
+    <file name="touchswipe.js" crc="4038331989" ref="index"/>
+    <file name="jquery.musemenu.js" crc="3957776250" ref="index:عيادات:شركات:صيدليات:مختبرات:اتصل-بنا"/>
+    <file name="pie.js" crc="3827607177" ref="index"/>
+    <file name="jquery.musepolyfill.bgsize.js" crc="4004268962" ref="index"/>
+    <file name="jquery.watch.js" crc="71412426" ref="index:عيادات:شركات:صيدليات:مختبرات:اتصل-بنا:دليل-بارز:دليل-بارز-2"/>
+    <file name="html5shiv.js" crc="4241844378" ref="index:عيادات:شركات:صيدليات:مختبرات:اتصل-بنا:دليل-بارز:دليل-بارز-2"/>
+    <file name="form_check.php" crc="277267350" ref="اتصل-بنا"/>
+    <file name="form_throttle.php" crc="3908387251" ref="اتصل-بنا"/>
+    <file name="form_process.php" crc="24249335" ref="اتصل-بنا"/>
+    <file name="form-u313.php" crc="447387226" ref="اتصل-بنا"/>
+  </folder>
+  <folder name="images">
+    <file name="logomaya1.png" crc="4187975363" seo="true" ref="index:عيادات:شركات:صيدليات:مختبرات:اتصل-بنا:دليل-بارز:دليل-بارز-2"/>
+    <file name="87_s-crop-u351.jpg" crc="3813160321" ref="index"/>
+    <file name="blank.gif" crc="4208392903" ref="index"/>
+    <file name="157_s-crop-u387.jpg" crc="262507398" ref="index"/>
+    <file name="174_s-crop-u401.jpg" crc="62652318" ref="index"/>
+    <file name="loading.gif" crc="3815509949" ref="index"/>
+    <file name="a2.jpg" crc="3876120408" ref="index"/>
+    <file name="a2-u496-r-fr.png" crc="4216323778" ref="index"/>
+    <file name="شركة-الفيروز-الجديد.jpg" crc="380013725" ref="index"/>
+    <file name="شركة-الفيروز-الجديد-u425-r-fr.png" crc="159015278" ref="index"/>
+    <file name="u318-17.png" crc="440819307" ref="اتصل-بنا"/>
+    <file name="u318-17-r.png" crc="119497236" ref="اتصل-بنا"/>
+    <file name="u318-17-m.png" crc="172426465" ref="اتصل-بنا"/>
+    <file name="u318-17-fs.png" crc="4293442030" ref="اتصل-بنا"/>
+  </folder>
+  <file name="index.html" crc="4015697764" seo="true" mt="1479855276970" redirect="true"/>
+  <file name="عيادات.html" crc="505774717" seo="true" mt="1479854970348" redirect="true"/>
+  <file name="شركات.html" crc="4058344446" seo="true" mt="1479854970348" redirect="true"/>
+  <file name="صيدليات.html" crc="4240562942" seo="true" mt="1479854970348" redirect="true"/>
+  <file name="مختبرات.html" crc="527418874" seo="true" mt="1479854970348" redirect="true"/>
+  <file name="اتصل-بنا.html" crc="3898102658" seo="true" mt="1479929371616" redirect="true"/>
+  <file name="دليل-بارز.html" crc="262515344" seo="true" mt="1479854987023" redirect="true"/>
+  <file name="دليل-بارز-2.html" crc="3808624579" seo="true" mt="1479854987023" redirect="true"/>
+</manifest>

@@ -1,0 +1,170 @@
+/*========== Date and Place ==========*/
+
+.wedding-detail{
+	display: table;
+	margin: 3em 0;
+
+	> div{
+		float: none !important;
+		display: table-cell !important;
+		vertical-align: top;
+	}
+}
+
+.wedding-image{
+	width: auto !important;
+
+	> figure{
+		margin-bottom: 0 !important;
+		position: relative;
+		overflow: hidden;
+
+		> figcaption{
+			position: absolute;
+			top: 0;
+			right: -1000px;
+			width: 100%;
+			height: 100%;
+			.transition();
+
+			> iframe{
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
+
+.info-wedding{
+	margin: 0 !important;
+	position: relative;
+	padding-bottom: 6em;
+	-webkit-box-shadow: inset 0 0 0 1px @light-line;
+	box-shadow: inset 0 0 0 1px @light-line;
+
+	h1{
+		text-align: center;
+		font-weight: 300;
+		padding: 0.5em 0;
+		-webkit-box-shadow: 0 1px 0  @light-line;
+		box-shadow: 0 1px 0 @light-line;
+	}
+
+	.meta-article{
+		background: @violet;
+		padding-top: 0.75em;
+		color: @white;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		margin: 0 !important;
+	}
+	> p, > div, > a{
+		margin-left: 1.5em;
+		margin-right: 1.5em;
+	} 
+}
+
+.get-direction{
+	margin-bottom: 3em;
+
+	> p{
+		background: url(../img/pin.png) left top no-repeat transparent;
+		padding-left: 2em;
+		line-height: 2.25em;
+		margin-bottom: 0;
+	}
+
+	> a{
+		margin-left: 2em;
+		color: @violet;
+		text-transform: uppercase;
+
+		&:hover{
+			color: darken(@violet, 10%);
+		}
+	}
+}
+
+.rsvp-btn{
+	background: @text-color;
+	color: @white;
+	text-transform: uppercase;
+	padding: 0.75em 3em;
+	display: inline-block;
+
+	&:hover{
+		background: @light-text;
+	}
+}
+.accomodation-hint{
+	.round-image figure, h2{
+		padding-left: 2em !important;
+	}
+
+	.round-image h2{
+		padding-left: 0 !important;
+	}
+
+	.text-box{
+		> h4{
+			margin-bottom: 0.25em !important;
+		}
+
+		> p{
+			margin-bottom: 1.5em !important;
+		}
+	}
+}
+
+.hotel-stars{
+	.clearfix();
+
+	> li{
+		float: left;
+		font-size: 14px;
+		font-weight: 900;
+		color: @violet;
+		margin-right: 2px;
+	}
+}
+
+.utilities{
+	.clearfix();
+	padding-bottom: 6em;
+
+	> li{
+		float: left;
+		width: 21px;
+		height: 21px;
+		margin-right: 3px;
+	}
+
+	.tv{
+		background: url(../img/accomodations.png) 0 0 no-repeat transparent;
+	}
+
+	.wash{
+		background: url(../img/accomodations.png) -21px 0 no-repeat transparent;
+	}
+
+	.antena{
+		background: url(../img/accomodations.png) -42px 0 no-repeat transparent;
+	}
+
+	.fork{
+		background: url(../img/accomodations.png) -63px 0 no-repeat transparent;
+	}
+
+	.phone{
+		background: url(../img/accomodations.png) -84px 0 no-repeat transparent;
+	}
+
+	.gym{
+		background: url(../img/accomodations.png) -105px 0 no-repeat transparent;
+	}
+
+	.water{
+		background: url(../img/accomodations.png) -126px 0 no-repeat transparent;
+	}
+}

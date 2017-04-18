@@ -1,0 +1,16 @@
+body{padding-top: 80px} 
+/*start section department*/
+.Departments h3{margin-top: 60px;font-family: cookie;font-size: 50px}
+.Departments h4 {color:#ff5c57 ;font-size: 40px ;font-family: cookie;  margin-top: 161px;}
+
+
+.Departments .image-depart img {margin-left: 428px;
+width: 278px;
+    height: 313px;
+ border: 1px solid #ccc;
+    padding: 3px;
+    background-color: #fff;
+    box-shadow: 10px 10px 10px #ccc;
+}
+
+.Departments .text-depart p{font-size: 16px}

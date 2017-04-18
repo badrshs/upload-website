@@ -1,0 +1,97 @@
+*{
+	padding:0;
+	margin: 0px;
+
+}
+body{
+background-color: #ECEFF1;
+}
+ .na{
+	margin-top: 10px;
+
+}
+.for{
+	animation: form 2s 1 ease;
+}
+ .na >div >a{
+	font-size: 350%;
+	text-shadow: 10px 10px 5px 4px rgba(0,0,0,1);
+	margin: 5px;
+	font-family: 'Reem Kufi', sans-serif;
+}
+.tit{
+	float: right;
+}
+.menu{
+	float: right;
+	direction: rtl;
+}
+.menu li{
+	font-size: 22px;
+	float: right;
+}
+.menu >li>a {
+font-family: 'Reem Kufi', sans-serif;
+font-family: 'Rakkas', cursive;
+font-family: 'Aref Ruqaa', serif;
+}
+.adv{
+	margin-top: 3%;
+	margin-bottom: 3%;
+	background-color: #9E9E9E;
+	padding: 1%;
+	border-top-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+}
+.adv >h1{
+	color: #fff;
+	float: right;
+	direction: rtl;
+}
+.adv >hr{
+	width: 20%;
+	float: right;
+	direction: rtl;
+}
+.adv >p{
+	color: #fff;
+	float: right;
+	font-size: 18px;
+	direction: rtl;
+}
+.v1{
+animation: v1 5s 1 ease;
+}
+.v2{
+animation: v2 5s 1 ease;
+}
+footer{
+margin-bottom: 10px;
+}
+footer >div{
+	color: #fff;
+	font-size: 18px;
+}
+
+@keyframes v1{
+	0%{
+		margin-left:-1000px; 	
+	}
+	50%{
+	margin-left: 180px;	
+	}
+	100%{
+	margin-left: 90px;	
+	}
+}
+@keyframes v2{
+	0%{
+		margin-right:-1000px; 	
+	}
+	50%{
+	margin-right: 180px;	
+	}
+	100%{
+		margin-right: 90px;	
+	}
+}

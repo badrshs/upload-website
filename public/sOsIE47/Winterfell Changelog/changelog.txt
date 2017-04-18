@@ -1,0 +1,21 @@
+Version 1.0.4 - Updated: 08.07.2013
+================================================
+Fixed : Calendar Month Changer Arrows
+Added : Calendar Current Date custom styling
+
+Version 1.0.3 - Updated: 01.07.2013
+================================================
+Fixed : MAC OS .zip extraction issue
+
+Version 1.0.2 - Updated: 24.06.2013
+================================================
+Fixed : Home Page Testimonials back button
+
+
+Version 1.0.1 - Updated: 21.06.2013
+================================================
+Fixed : Layout responsiveness for small screen devices
+Fixed : Horizontal scroll bar
+Fixed : HTML Validation errors
+Fixed : Layout alignment issues
+Added : Calendar Event Preview support for small screen devices

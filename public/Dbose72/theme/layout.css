@@ -1,0 +1,51 @@
+#bg_home {
+	MARGIN: auto; WIDTH: 997px; HEIGHT: 100%
+}
+#seprator {
+	HEIGHT: 10px
+}
+#sep_line {
+	BACKGROUND-IMAGE: url(../images/d_line.gif); WIDTH: 100%; BACKGROUND-REPEAT: repeat-x; HEIGHT: 10px
+}
+#seprato {
+	HEIGHT: 5px
+}
+#bg_header {
+	BACKGROUND-IMAGE: url(../images/bg_top.jpg); POSITION: relative; WIDTH: 100%; BACKGROUND-REPEAT: repeat-x; HEIGHT: 108px
+}
+#bg_top_nav {
+	BACKGROUND-IMAGE: url(../images/bg_top_nav.jpg); BACKGROUND-COLOR: #ffffff; WIDTH: 100%; BACKGROUND-REPEAT: repeat-x; HEIGHT: 35px
+}
+#bg_top_n {
+	BACKGROUND-IMAGE: url(../images/bg_top_n.jpg); POSITION: absolute; WIDTH: 199px; HEIGHT: 29px; TOP: 0px; RIGHT: 24px
+}
+#bg_logo {
+	BACKGROUND-IMAGE: url(../images/header.jpg); WIDTH: 260px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 108px; TOP: 0px; LEFT: 0px
+}
+#bg_body {
+	PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #08222b; PADDING-LEFT: 5px; WIDTH: 987px; PADDING-RIGHT: 5px; HEIGHT: 100%; PADDING-TOP: 5px
+}
+#bg_footer {
+	BACKGROUND-IMAGE: url(../images/bg_footer.jpg); BACKGROUND-COLOR: #08222b; WIDTH: 100%; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: center 50%; HEIGHT: 72px
+}
+#bg_title {
+	BACKGROUND-IMAGE: url(../images/bg_head.jpg); WIDTH: 100%; BACKGROUND-REPEAT: repeat-x; HEIGHT: 27px; COLOR: #0093c9; FONT-SIZE: 13px; FONT-WEIGHT: bold
+}
+#bg_txt {
+	WIDTH: 100%; HEIGHT: 100%
+}
+#cat_art {
+	WIDTH: 100%; HEIGHT: 70px
+}
+#cat_art_title {
+	PADDING-LEFT: 5px; WIDTH: 100%; HEIGHT: 23px
+}
+#cat_art_dtls {
+	PADDING-LEFT: 5px; HEIGHT: 40px; OVERFLOW: hidden
+}
+#cat {
+	BACKGROUND-IMAGE: url(../images/bul_white.jpg); POSITION: relative; PADDING-LEFT: 25px; WIDTH: 150px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 22px; PADDING-TOP: 3px; LEFT: 5px
+}
+#sub_cat {
+	BACKGROUND-IMAGE: url(../images/bul_ylo.jpg); POSITION: relative; PADDING-LEFT: 15px; WIDTH: 275px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 16px; OVERFLOW: hidden; PADDING-TOP: 3px; LEFT: 5px
+}

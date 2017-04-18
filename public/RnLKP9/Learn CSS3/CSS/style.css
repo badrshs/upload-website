@@ -1,0 +1,36 @@
+body {perspective:600px;}
+
+/* Start Box sizing */
+
+*
+{
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -o-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+}
+
+/* End Box sizing */
+
+
+/* S 3D Transform - 3D Backface Visibility */
+
+.tbv3d
+{
+    width:300px;
+    height:300px;
+    line-height:300px;
+    margin:100px auto;
+    text-align:center;
+    font-size:25px;
+    background:#0b5f93;
+    color:#FFF;
+    transition: all .54s ease-in-out;
+}
+
+.tbv3d:hover
+{
+     transform:rotateY(180deg)
+}
+/* E 3D Transform - 3D Backface Visibility */

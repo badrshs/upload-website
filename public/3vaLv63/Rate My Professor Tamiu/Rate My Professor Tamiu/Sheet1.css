@@ -1,0 +1,58 @@
+﻿body {
+    background-color: silver;
+    margin-top: 1.5%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+#section {
+    color: maroon;
+    font-size: 22px;
+    font-family: Calibri;
+    display: inline-block;
+    padding: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-left: 2%;
+}
+.heading {
+    color: maroon;
+    font-size: 35px;
+    font-family: Calibri;
+    text-align: center;
+}
+.introduction{
+    color: maroon;
+    font-size: 18px;
+    text-align: center;
+    margin-left: 7%;
+    margin-right: 7%;
+    font-family: Calibri;
+}
+.blocking{
+    background-color: maroon;
+    margin-left: 3%;
+    margin-right: 3%;
+    width: 94%;
+    height: 20px;
+    text-align: center;
+    margin-top: -0.5%;
+}
+#footer{
+    text-align: center;
+    color: white;
+    font-family: 'Courier New';
+    font-size: 18px;
+    font-weight: 500;
+    font-style: oblique;
+}
+a:link {
+ text-decoration: none;
+ color: maroon;
+}
+a:hover {
+  color: blue;
+  background-color: white;
+} 
+a:visited {
+ color: maroon;
+}

@@ -1,0 +1,1650 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>wazzeh</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" media="all" href="http://mohtaraf.com/wp-content/themes/theme/style.css" />
+<link href="http://mohtaraf.com/wp-content/themes/theme/css/almohtaraf.css" rel="stylesheet" type="text/css" />
+<link href="http://mohtaraf.com/wp-content/themes/theme/css/anythingslider.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="http://mohtaraf.com/wp-content/themes/theme/images/favicon.ico" />
+<script language="javascript" src="http://mohtaraf.com/wp-content/themes/theme/js/jquery-1.4.min.js" type="text/javascript"></script>
+<script language="javascript" src="http://mohtaraf.com/wp-content/themes/theme/js/jquery.easing-1.3.js" type="text/javascript"></script>
+<script language="javascript" src="http://mohtaraf.com/wp-content/themes/theme/js/jquery.easing.compatibility.js" type="text/javascript"></script>
+<script language="javascript" src="http://mohtaraf.com/wp-content/themes/theme/js/jquery.anythingslider.js" type="text/javascript"></script>
+<script language="javascript" src="http://mohtaraf.com/wp-content/themes/theme/js/jquery.pagination.js" type="text/javascript"></script>
+<script language="javascript" src="http://mohtaraf.com/wp-content/themes/theme/js/jquery.parsequery.js" type="text/javascript"></script>
+<script language="javascript" src="http://mohtaraf.com/wp-content/themes/theme/js/init.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+	$(document).ready(function() {
+		$("#midnews").css("display", "block");
+        $('#midnews').anythingSlider({
+            autoPlay        : true,
+            startStopped    : false, // If autoPlay is on, this can force it to start stopped
+            width           : 606,  // Override the default CSS width
+            height          : 305,
+            buildArrows     : false,
+            buildNavigation : false,
+            delay           : 5000
+        });
+	});
+</script>
+
+<link rel='dns-prefetch' href='//s.w.org' />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/mohtaraf.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.3"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='https://api.w.org/' href='http://mohtaraf.com/?rest_route=/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://mohtaraf.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://mohtaraf.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.7.3" />
+<script type="text/javascript">
+(function(url){
+	if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+	var addEvent = function(evt, handler) {
+		if (window.addEventListener) {
+			document.addEventListener(evt, handler, false);
+		} else if (window.attachEvent) {
+			document.attachEvent('on' + evt, handler);
+		}
+	};
+	var removeEvent = function(evt, handler) {
+		if (window.removeEventListener) {
+			document.removeEventListener(evt, handler, false);
+		} else if (window.detachEvent) {
+			document.detachEvent('on' + evt, handler);
+		}
+	};
+	var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+	var logHuman = function() {
+		var wfscr = document.createElement('script');
+		wfscr.type = 'text/javascript';
+		wfscr.async = true;
+		wfscr.src = url + '&r=' + Math.random();
+		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+		for (var i = 0; i < evts.length; i++) {
+			removeEvent(evts[i], logHuman);
+		}
+	};
+	for (var i = 0; i < evts.length; i++) {
+		addEvent(evts[i], logHuman);
+	}
+})('//mohtaraf.com/?wordfence_logHuman=1&hid=B9651F86E162531FC7E2390518FD3486');
+</script></head>
+
+<body class="home blog" >
+<div id="wrapper">
+    <div id="threecolumns">
+        <div id="leftcolumn">
+            <h1><a href="http://mohtaraf.com">almohtaraf</a></h1>
+ 
+            <ul id="menu-side-menu" class="menu"><li id="menu-item-747" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-747"><a href="http://mohtaraf.com/trophies"><b>Mohtaraf Trophies</a></li>
+<li id="menu-item-35" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-35"><a href="#">Media</a>
+<ul class="sub-menu">
+	<li id="menu-item-36" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36"><a href="http://mohtaraf.com/?cat=3">arabic fonts</a></li>
+	<li id="menu-item-37" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-37"><a href="http://mohtaraf.com/?cat=4">books</a></li>
+	<li id="menu-item-38" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-38"><a href="http://mohtaraf.com/?cat=5">branding</a></li>
+	<li id="menu-item-39" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-39"><a href="http://mohtaraf.com/?cat=6">case studies</a></li>
+	<li id="menu-item-40" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-40"><a href="http://mohtaraf.com/?cat=7">editorial</a></li>
+	<li id="menu-item-41" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-41"><a href="http://mohtaraf.com/?cat=8">exhibitions</a></li>
+	<li id="menu-item-42" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-42"><a href="http://mohtaraf.com/?cat=9">identities</a></li>
+	<li id="menu-item-43" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-43"><a href="http://mohtaraf.com/?cat=10">publications</a></li>
+	<li id="menu-item-44" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-44"><a href="http://mohtaraf.com/?cat=11">special events</a></li>
+	<li id="menu-item-59" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-59"><a href="http://mohtaraf.com/?cat=20">all</a></li>
+</ul>
+</li>
+<li id="menu-item-504" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-504"><a href="#">OFFICES</a>
+<ul class="sub-menu">
+	<li id="menu-item-500" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-500"><a href="http://mohtaraf.com/?tag=beirut">BEIRUT</a></li>
+	<li id="menu-item-502" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-502"><a href="http://mohtaraf.com/?tag=jeddah">jeddah</a></li>
+	<li id="menu-item-503" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-503"><a href="http://mohtaraf.com/?tag=khobar">khobar</a></li>
+	<li id="menu-item-501" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-501"><a href="http://mohtaraf.com/?tag=riyadh">riyadh</a></li>
+	<li id="menu-item-505" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-505"><a href="http://mohtaraf.com/index.php">all</a></li>
+</ul>
+</li>
+<li id="menu-item-52" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-52"><a href="http://mohtaraf.com/?cat=18">Extras</a>
+<ul class="sub-menu">
+	<li id="menu-item-53" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-53"><a href="http://mohtaraf.com/?cat=17">awards</a></li>
+	<li id="menu-item-54" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54"><a href="http://mohtaraf.com/?cat=19">exhibitions</a></li>
+	<li id="menu-item-55" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-55"><a href="http://mohtaraf.com/?cat=22">interviews</a></li>
+	<li id="menu-item-56" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-56"><a href="http://mohtaraf.com/?cat=23">lectures</a></li>
+	<li id="menu-item-57" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-57"><a href="http://mohtaraf.com/?cat=24">published works</a></li>
+	<li id="menu-item-58" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58"><a href="http://mohtaraf.com/?cat=18">ALL</a></li>
+</ul>
+</li>
+<li id="menu-item-740" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-740"><a href="http://mohtarafshop.com">e-Shop</a></li>
+</ul> 
+        </div>
+        
+       
+      
+     
+
+    <div id="maincontent">
+      <div id="maincontent-header">
+
+         
+         <table width="360" border="0" cellspacing="0" cellpadding="0" align="right">
+          <tr>
+            <td align="right"><br />
+              <a href="http://mohtaraf.com/?page_id=5">Who We Are?</a></td>
+            <td width="20">&nbsp;</td>
+            <td align="right"><br />
+              <a href="http://mohtaraf.com" class="on">Our News</a></td>
+            <td width="20" align="right">&nbsp;</td>
+            <td align="right"><!-- <img src="images/asterix.png" width="17" height="12" alt="" align="right" /> --><br />
+              <a href="">Arabic Fonts</a></td>
+          </tr>
+          <tr>
+            <td height="5"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" alt="" /></td>
+            <td height="5"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" alt="" /></td>
+            <td height="5"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" alt="" /></td>
+            <td height="5"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" alt="" /></td>
+            <td height="5"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" alt="" /></td>
+          </tr>
+          <tr>
+            <td align="right"><a href="http://mohtaraf.com/?page_id=9">Our Clients</a></td>
+            <td width="20">&nbsp;</td>
+            <td align="right"><a href="http://mohtaraf.com/?page_id=11">Contact Us</a></td>
+            <td width="20">&nbsp;</td>
+            <td align="right"><a href="http://www.mohtarafbooks.com/" target="_blank">Mohtaraf Books</a></td>
+          </tr>
+        </table>
+      </div>
+      <br clear="all" />
+      <div class="thick-line"></div>  
+ 
+      <h2>our latest</h2>
+      <br clear="all" />
+            <div class="thick-line"></div>
+      <ul id="midnews">
+ 
+             
+             
+             
+      
+                
+                
+        <li>
+          <div class="mainimg-container"><img src="http://mohtaraf.com/wp-content/uploads/2005/02/DOUAIHYBRAND–00.jpg" width="606" alt="" /></div>
+          <div class="intpub">
+            <table width="606" border="0" cellspacing="0" cellpadding="0" class="slideshow">
+              <tr>
+                <td width="10"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="10" height="1" alt="" /></td>
+                <td class="main-news-title" valign="middle" width="500"><a href="http://mohtaraf.com/?p=216" >
+                   The form of the Douaihy ‘haa’ provides a fresh twist to the logo, while inspired by the family</a></td>
+                <td width="20"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="20" height="1" alt="" /></td>
+ 
+              </tr>
+            </table>
+          </div>
+        </li>
+        
+ 
+            
+                
+                
+        <li>
+          <div class="mainimg-container"><img src="http://mohtaraf.com/wp-content/uploads/2016/03/KAP_00.jpg" width="606" alt="" /></div>
+          <div class="intpub">
+            <table width="606" border="0" cellspacing="0" cellpadding="0" class="slideshow">
+              <tr>
+                <td width="10"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="10" height="1" alt="" /></td>
+                <td class="main-news-title" valign="middle" width="500"><a href="http://mohtaraf.com/?p=692" >
+                   Inauguration event of Kapsarc & Yasref in Riyadh is handled by AlMohtaraf</a></td>
+                <td width="20"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="20" height="1" alt="" /></td>
+ 
+              </tr>
+            </table>
+          </div>
+        </li>
+        
+ 
+            
+                
+                
+        <li>
+          <div class="mainimg-container"><img src="http://mohtaraf.com/wp-content/uploads/2016/03/HAKAYA_00.jpg" width="606" alt="" /></div>
+          <div class="intpub">
+            <table width="606" border="0" cellspacing="0" cellpadding="0" class="slideshow">
+              <tr>
+                <td width="10"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="10" height="1" alt="" /></td>
+                <td class="main-news-title" valign="middle" width="500"><a href="http://mohtaraf.com/?p=673" >
+                   Hakaya Festival catches the imagination and creativity of children of all ages through the art of storytelling</a></td>
+                <td width="20"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="20" height="1" alt="" /></td>
+ 
+              </tr>
+            </table>
+          </div>
+        </li>
+        
+ 
+            
+                
+                
+        <li>
+          <div class="mainimg-container"><img src="http://mohtaraf.com/wp-content/uploads/2016/03/WAMD_00.jpg" width="606" alt="" /></div>
+          <div class="intpub">
+            <table width="606" border="0" cellspacing="0" cellpadding="0" class="slideshow">
+              <tr>
+                <td width="10"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="10" height="1" alt="" /></td>
+                <td class="main-news-title" valign="middle" width="500"><a href="http://mohtaraf.com/?p=653" >
+                   A pulse of Light, Wamd, is the title of Badr Bin AbdelMohsen's new poetry book.</a></td>
+                <td width="20"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="20" height="1" alt="" /></td>
+ 
+              </tr>
+            </table>
+          </div>
+        </li>
+        
+ 
+            
+                
+                
+        <li>
+          <div class="mainimg-container"><img src="http://mohtaraf.com/wp-content/uploads/2016/03/FANN-00.jpg" width="606" alt="" /></div>
+          <div class="intpub">
+            <table width="606" border="0" cellspacing="0" cellpadding="0" class="slideshow">
+              <tr>
+                <td width="10"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="10" height="1" alt="" /></td>
+                <td class="main-news-title" valign="middle" width="500"><a href="http://mohtaraf.com/?p=645" >
+                   Al Mohtaraf produces high-end and artistic CORPORATE GIFTS & TROPHIES for your special occasions & events</a></td>
+                <td width="20"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="20" height="1" alt="" /></td>
+ 
+              </tr>
+            </table>
+          </div>
+        </li>
+        
+ 
+            
+                
+                
+        <li>
+          <div class="mainimg-container"><img src="http://mohtaraf.com/wp-content/uploads/2015/08/event-5b-e1439064784692.jpg" width="606" alt="" /></div>
+          <div class="intpub">
+            <table width="606" border="0" cellspacing="0" cellpadding="0" class="slideshow">
+              <tr>
+                <td width="10"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="10" height="1" alt="" /></td>
+                <td class="main-news-title" valign="middle" width="500"><a href="http://mohtaraf.com/?p=511" >
+                   Beirut, the typographic design of the name of the Lebanese capital stands tall in front of St. George marina</a></td>
+                <td width="20"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="20" height="1" alt="" /></td>
+ 
+              </tr>
+            </table>
+          </div>
+        </li>
+        
+ 
+            
+                
+                
+        <li>
+          <div class="mainimg-container"><img src="http://mohtaraf.com/wp-content/uploads/2015/08/poster_lecture-724x1024-e1439065538204.jpg" width="606" alt="" /></div>
+          <div class="intpub">
+            <table width="606" border="0" cellspacing="0" cellpadding="0" class="slideshow">
+              <tr>
+                <td width="10"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="10" height="1" alt="" /></td>
+                <td class="main-news-title" valign="middle" width="500"><a href="http://mohtaraf.com/?p=526" >
+                   Mohtaraf font by Kameel Hawa wins the TDC Certificate of Typographic Excellence.</a></td>
+                <td width="20"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="20" height="1" alt="" /></td>
+ 
+              </tr>
+            </table>
+          </div>
+        </li>
+        
+ 
+            
+                
+                
+        <li>
+          <div class="mainimg-container"><img src="http://mohtaraf.com/wp-content/uploads/2015/08/Shiir_00.jpg" width="606" alt="" /></div>
+          <div class="intpub">
+            <table width="606" border="0" cellspacing="0" cellpadding="0" class="slideshow">
+              <tr>
+                <td width="10"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="10" height="1" alt="" /></td>
+                <td class="main-news-title" valign="middle" width="500"><a href="http://mohtaraf.com/?p=523" >
+                   A new poetry festival of modernist trends, started in the eastern province of Saudi Arabia</a></td>
+                <td width="20"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="20" height="1" alt="" /></td>
+ 
+              </tr>
+            </table>
+          </div>
+        </li>
+        
+ 
+            
+                
+                
+        <li>
+          <div class="mainimg-container"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/109hekma1-00.jpg" width="606" alt="" /></div>
+          <div class="intpub">
+            <table width="606" border="0" cellspacing="0" cellpadding="0" class="slideshow">
+              <tr>
+                <td width="10"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="10" height="1" alt="" /></td>
+                <td class="main-news-title" valign="middle" width="500"><a href="http://mohtaraf.com/?p=414" >
+                   Al Mohtaraf was among the 21 lecturers and workshop leaders in the Dar Al Hekma Design Symposium</a></td>
+                <td width="20"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="20" height="1" alt="" /></td>
+ 
+              </tr>
+            </table>
+          </div>
+        </li>
+        
+ 
+            
+                
+                
+        <li>
+          <div class="mainimg-container"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/107ATF-sculpt-2012-00.jpg" width="606" alt="" /></div>
+          <div class="intpub">
+            <table width="606" border="0" cellspacing="0" cellpadding="0" class="slideshow">
+              <tr>
+                <td width="10"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="10" height="1" alt="" /></td>
+                <td class="main-news-title" valign="middle" width="500"><a href="http://mohtaraf.com/?p=351" >
+                   The Arab Thought Foundation permanently endorse last year's Fikr trophies designed by Al Mohtaraf</a></td>
+                <td width="20"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="20" height="1" alt="" /></td>
+ 
+              </tr>
+            </table>
+          </div>
+        </li>
+        
+ 
+            
+                
+                
+        <li>
+          <div class="mainimg-container"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/108BAF-2012-00.jpg" width="606" alt="" /></div>
+          <div class="intpub">
+            <table width="606" border="0" cellspacing="0" cellpadding="0" class="slideshow">
+              <tr>
+                <td width="10"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="10" height="1" alt="" /></td>
+                <td class="main-news-title" valign="middle" width="500"><a href="http://mohtaraf.com/?p=319" >
+                   Al Mohtaraf designs the Beirut Art Fair logo and various applications</a></td>
+                <td width="20"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="20" height="1" alt="" /></td>
+ 
+              </tr>
+            </table>
+          </div>
+        </li>
+        
+ 
+            
+                
+                
+        <li>
+          <div class="mainimg-container"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/106161-01.jpg" width="606" alt="" /></div>
+          <div class="intpub">
+            <table width="606" border="0" cellspacing="0" cellpadding="0" class="slideshow">
+              <tr>
+                <td width="10"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="10" height="1" alt="" /></td>
+                <td class="main-news-title" valign="middle" width="500"><a href="http://mohtaraf.com/?p=357" >
+                   16 of the best-known international designers use Fedrigoni papers</a></td>
+                <td width="20"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="20" height="1" alt="" /></td>
+ 
+              </tr>
+            </table>
+          </div>
+        </li>
+        
+ 
+            
+                
+                
+        <li>
+          <div class="mainimg-container"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/105suleymani-00.jpg" width="606" alt="" /></div>
+          <div class="intpub">
+            <table width="606" border="0" cellspacing="0" cellpadding="0" class="slideshow">
+              <tr>
+                <td width="10"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="10" height="1" alt="" /></td>
+                <td class="main-news-title" valign="middle" width="500"><a href="http://mohtaraf.com/?p=178" >
+                   With the help of AlMohtaraf, Istanbul is getting a heartfelt renovation of its historic central area</a></td>
+                <td width="20"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="20" height="1" alt="" /></td>
+ 
+              </tr>
+            </table>
+          </div>
+        </li>
+        
+ 
+            
+                
+                
+        <li>
+          <div class="mainimg-container"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/102autozone-00.jpg" width="606" alt="" /></div>
+          <div class="intpub">
+            <table width="606" border="0" cellspacing="0" cellpadding="0" class="slideshow">
+              <tr>
+                <td width="10"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="10" height="1" alt="" /></td>
+                <td class="main-news-title" valign="middle" width="500"><a href="http://mohtaraf.com/?p=182" >
+                   Al Mohtaraf is commissioned to create a new concept for a multi-brand automotive retail company</a></td>
+                <td width="20"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="20" height="1" alt="" /></td>
+ 
+              </tr>
+            </table>
+          </div>
+        </li>
+        
+ 
+            
+                
+                
+        <li>
+          <div class="mainimg-container"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/101BAF-00.jpg" width="606" alt="" /></div>
+          <div class="intpub">
+            <table width="606" border="0" cellspacing="0" cellpadding="0" class="slideshow">
+              <tr>
+                <td width="10"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="10" height="1" alt="" /></td>
+                <td class="main-news-title" valign="middle" width="500"><a href="http://mohtaraf.com/?p=307" >
+                   Al Mohtaraf designs the identity for the Beirut Art Fair 2012 and builds a 5m sculpture for entrance</a></td>
+                <td width="20"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="20" height="1" alt="" /></td>
+ 
+              </tr>
+            </table>
+          </div>
+        </li>
+        
+ 
+            
+                
+                
+        <li>
+          <div class="mainimg-container"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/100kh-nuqat00.jpg" width="606" alt="" /></div>
+          <div class="intpub">
+            <table width="606" border="0" cellspacing="0" cellpadding="0" class="slideshow">
+              <tr>
+                <td width="10"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="10" height="1" alt="" /></td>
+                <td class="main-news-title" valign="middle" width="500"><a href="http://mohtaraf.com/?p=440" >
+                   Questioning the value of calligraphy in modern painting, Kameel Hawa says "We are our Heritage"</a></td>
+                <td width="20"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="20" height="1" alt="" /></td>
+ 
+              </tr>
+            </table>
+          </div>
+        </li>
+        
+ 
+            
+                
+                
+        <li>
+          <div class="mainimg-container"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/74ITSY-00.jpg" width="606" alt="" /></div>
+          <div class="intpub">
+            <table width="606" border="0" cellspacing="0" cellpadding="0" class="slideshow">
+              <tr>
+                <td width="10"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="10" height="1" alt="" /></td>
+                <td class="main-news-title" valign="middle" width="500"><a href="http://mohtaraf.com/?p=183" >
+                   Two little spiders hang on strings from a cursive, neon-style inspired sign by the kindergarten song</a></td>
+                <td width="20"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="20" height="1" alt="" /></td>
+ 
+              </tr>
+            </table>
+          </div>
+        </li>
+        
+ 
+            
+                
+                
+        <li>
+          <div class="mainimg-container"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/84alzheimer-00.jpg" width="606" alt="" /></div>
+          <div class="intpub">
+            <table width="606" border="0" cellspacing="0" cellpadding="0" class="slideshow">
+              <tr>
+                <td width="10"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="10" height="1" alt="" /></td>
+                <td class="main-news-title" valign="middle" width="500"><a href="http://mohtaraf.com/?p=352" >
+                   Saudi Alzheimer's Disease Association commissions AlMohtaraf earlier this year to design a trophy</a></td>
+                <td width="20"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="20" height="1" alt="" /></td>
+ 
+              </tr>
+            </table>
+          </div>
+        </li>
+        
+ 
+            
+                
+                
+        <li>
+          <div class="mainimg-container"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/85km-arabiyyah-00.jpg" width="606" alt="" /></div>
+          <div class="intpub">
+            <table width="606" border="0" cellspacing="0" cellpadding="0" class="slideshow">
+              <tr>
+                <td width="10"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="10" height="1" alt="" /></td>
+                <td class="main-news-title" valign="middle" width="500"><a href="http://mohtaraf.com/?p=413" >
+                   Al Arabiyah TV hosts artist and designer Kameel Hawa on the Rawafed show hosted by Ahmad Ali El Zein</a></td>
+                <td width="20"><img src="http://mohtaraf.com/wp-content/themes/theme/images/000.gif" width="20" height="1" alt="" /></td>
+ 
+              </tr>
+            </table>
+          </div>
+        </li>
+        
+ 
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+              </ul>
+            <div class="thick-line"></div>
+      <ul class="article-listing">
+        <li class="innerlisting">
+          <input type='hidden' id='current_page' />
+          <input type='hidden' id='show_per_page' />
+          <ul id="content">
+
+           
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>identities</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=216"><img src="http://mohtaraf.com/wp-content/uploads/2005/02/DOUAIHYBRAND–00.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=216">Douaihy Sweets becomes the fresh new brand in market</a></div>
+                        <div class="identity-date">12. 02. 2005</div>
+                        <div class="identity-summary">
+                             The form of the Douaihy ‘haa’ provides a fresh twist to the logo, while inspired by the family...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=216" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>special events</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=692"><img src="http://mohtaraf.com/wp-content/uploads/2016/03/KAP_00.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=692">Kapsarc and Yasref get the Royal and Presidential tour</a></div>
+                        <div class="identity-date">23. 03. 2016</div>
+                        <div class="identity-summary">
+                             Inauguration event of Kapsarc & Yasref in Riyadh is handled by AlMohtaraf...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=692" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>special events</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=673"><img src="http://mohtaraf.com/wp-content/uploads/2016/03/HAKAYA_00.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=673">Hakaya Festival starts right from the beginning</a></div>
+                        <div class="identity-date">22. 03. 2016</div>
+                        <div class="identity-summary">
+                             Hakaya Festival catches the imagination and creativity of children of all ages through the art of storytelling...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=673" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>identities</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=653"><img src="http://mohtaraf.com/wp-content/uploads/2016/03/WAMD_00.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=653">A poetic flash of Light: Wamd</a></div>
+                        <div class="identity-date">22. 03. 2016</div>
+                        <div class="identity-summary">
+                             A pulse of Light, Wamd, is the title of Badr Bin AbdelMohsen's new poetry book....
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=653" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>identities</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=645"><img src="http://mohtaraf.com/wp-content/uploads/2016/03/FANN-00.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=645">Fann Miniature Sculptures, NOW AVAILABLE</a></div>
+                        <div class="identity-date">21. 03. 2016</div>
+                        <div class="identity-summary">
+                             Al Mohtaraf produces high-end and artistic CORPORATE GIFTS & TROPHIES for your special occasions & events...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=645" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>events</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=511"><img src="http://mohtaraf.com/wp-content/uploads/2015/08/event-5b-e1439064784692.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=511">Beirut&#8217;s name stands high</a></div>
+                        <div class="identity-date">08. 08. 2015</div>
+                        <div class="identity-summary">
+                             Beirut, the typographic design of the name of the Lebanese capital stands tall in front of St. George marina...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=511" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>jeddah</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=526"><img src="http://mohtaraf.com/wp-content/uploads/2015/08/poster_lecture-724x1024-e1439065538204.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=526">Another Mohtaraf Arabic typeface wins the TDC</a></div>
+                        <div class="identity-date">08. 08. 2015</div>
+                        <div class="identity-summary">
+                             Mohtaraf font by Kameel Hawa wins the TDC Certificate of Typographic Excellence....
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=526" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>riyadh</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=523"><img src="http://mohtaraf.com/wp-content/uploads/2015/08/Shiir_00.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=523">Few letters that say: poetry!</a></div>
+                        <div class="identity-date">08. 08. 2015</div>
+                        <div class="identity-summary">
+                             A new poetry festival of modernist trends, started in the eastern province of Saudi Arabia...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=523" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>lectures</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=414"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/109hekma1-00.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=414">Al Mohtaraf at the annual Design Symposium of Dar Al Hekma College</a></div>
+                        <div class="identity-date">23. 02. 2013</div>
+                        <div class="identity-summary">
+                             Al Mohtaraf was among the 21 lecturers and workshop leaders in the Dar Al Hekma Design Symposium...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=414" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>special events</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=351"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/107ATF-sculpt-2012-00.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=351">Fikr trophies become a permanent fixture of Fikr Conferences</a></div>
+                        <div class="identity-date">21. 11. 2012</div>
+                        <div class="identity-summary">
+                             The Arab Thought Foundation permanently endorse last year's Fikr trophies designed by Al Mohtaraf...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=351" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>identities</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=319"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/108BAF-2012-00.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=319">Beirut Art Fair identity</a></div>
+                        <div class="identity-date">21. 11. 2012</div>
+                        <div class="identity-summary">
+                             Al Mohtaraf designs the Beirut Art Fair logo and various applications...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=319" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>special events</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=357"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/106161-01.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=357">Kameel Hawa and Fedrigoni team up in celebration of paper &#038; art</a></div>
+                        <div class="identity-date">18. 10. 2012</div>
+                        <div class="identity-summary">
+                             16 of the best-known international designers use Fedrigoni papers...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=357" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>branding</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=178"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/105suleymani-00.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=178">Istanbul gets a new identity for its throbbing heart center</a></div>
+                        <div class="identity-date">17. 08. 2012</div>
+                        <div class="identity-summary">
+                             With the help of AlMohtaraf, Istanbul is getting a heartfelt renovation of its historic central area...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=178" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>branding</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=182"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/102autozone-00.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=182">Autozone hits the roads strong</a></div>
+                        <div class="identity-date">16. 07. 2012</div>
+                        <div class="identity-summary">
+                             Al Mohtaraf is commissioned to create a new concept for a multi-brand automotive retail company...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=182" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>exhibitions</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=307"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/101BAF-00.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=307">Full participation for AlMohtaraf in the annual Beirut Art Fair</a></div>
+                        <div class="identity-date">06. 07. 2012</div>
+                        <div class="identity-summary">
+                             Al Mohtaraf designs the identity for the Beirut Art Fair 2012 and builds a 5m sculpture for entrance...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=307" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>lectures</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=440"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/100kh-nuqat00.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=440">Kameel Hawa at Nuqat Conference, Dubai, 2012</a></div>
+                        <div class="identity-date">18. 03. 2012</div>
+                        <div class="identity-summary">
+                             Questioning the value of calligraphy in modern painting, Kameel Hawa says "We are our Heritage"...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=440" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>branding</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=183"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/74ITSY-00.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=183">‘Itsy Bitsy Baby’ hangin’ from two strings</a></div>
+                        <div class="identity-date">23. 02. 2012</div>
+                        <div class="identity-summary">
+                             Two little spiders hang on strings from a cursive, neon-style inspired sign by the kindergarten song...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=183" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>special events</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=352"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/84alzheimer-00.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=352">Alzheimer Society gets a new trophy</a></div>
+                        <div class="identity-date">22. 02. 2012</div>
+                        <div class="identity-summary">
+                             Saudi Alzheimer's Disease Association commissions AlMohtaraf earlier this year to design a trophy...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=352" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>interviews</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=413"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/85km-arabiyyah-00.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=413">Interview with Kameel Hawa on Arabiyyah TV</a></div>
+                        <div class="identity-date">08. 02. 2012</div>
+                        <div class="identity-summary">
+                             Al Arabiyah TV hosts artist and designer Kameel Hawa on the Rawafed show hosted by Ahmad Ali El Zein...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=413" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>books</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=110"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/98yusri-00.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=110">Ayman Yusri, an artist&#8217;s perspective</a></div>
+                        <div class="identity-date">31. 01. 2012</div>
+                        <div class="identity-summary">
+                             'I am Anything, I am Everything', a book designed by AlMohtaraf for an Ayman Yusri exhibition...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=110" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>special events</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=378"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/72ATF-sculpt-2011-01.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=378">What is Thought but a question?</a></div>
+                        <div class="identity-date">07. 12. 2011</div>
+                        <div class="identity-summary">
+                             Al Mohtaraf designs the trophy commemorating the 10th anniversary for the Arab Thought Foundation...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=378" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>exhibitions</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=409"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/78ABF-2011-01.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=409">Standing out from the crowd</a></div>
+                        <div class="identity-date">02. 12. 2011</div>
+                        <div class="identity-summary">
+                             Having been behind the posters of the Beirut International Arab Book Fair for more than 15 years...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=409" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>books</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=111"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/79turath-bk-00.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=111">Designing Research and Heritage</a></div>
+                        <div class="identity-date">15. 11. 2011</div>
+                        <div class="identity-summary">
+                             After the success of last year's book, the Saudi Commission for Tourism and Antiquities commissions...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=111" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>published works</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=462"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/77artnews-01.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=462">The Art Newspaper reviews AlMohtaraf books</a></div>
+                        <div class="identity-date">05. 11. 2011</div>
+                        <div class="identity-summary">
+                             The Art Newspaper features a smashing review on two of Al Mohtaraf's books...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=462" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>identities</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=317"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/83multaqadareen-00.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=317">Dareen’s First Literary Forum</a></div>
+                        <div class="identity-date">20. 10. 2011</div>
+                        <div class="identity-summary">
+                             The Sharqiyya region's Literary Club have commissioned us to design the identity of its first forum...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=317" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>awards</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=393"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/73istd-2011-02.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=393">ISTD awards Almohtaraf twice</a></div>
+                        <div class="identity-date">05. 10. 2011</div>
+                        <div class="identity-summary">
+                             We are happy to announce that two of our books: Sabab Akhar and Saudi Artists Today won ISTD awards!...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=393" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>published works</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=463"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/70ARABESQUE-00.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=463">Arabesque features some of our work</a></div>
+                        <div class="identity-date">09. 09. 2011</div>
+                        <div class="identity-summary">
+                             AlMohtaraf is featured in Arabesque, a book that investigates the current Arab graphic design sce...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=463" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>published works</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=465"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/63newtypo-00.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=465">New Typographic Design features Al Mohtaraf work</a></div>
+                        <div class="identity-date">08. 09. 2011</div>
+                        <div class="identity-summary">
+                             AlMohtaraf's work is featured in Roger Fawcett-Tang and David Jury's New Typographic Design...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=465" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>published works</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=464"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/61fontspecimen-bk-00.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=464">Arabic Font Specimen Book</a></div>
+                        <div class="identity-date">08. 09. 2011</div>
+                        <div class="identity-summary">
+                             A substantial section for our Arabic type design is in Edo Smitshuijzen's "Arabic Font Specimen"...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=464" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>case studies</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=257"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/52PUBLICATIONCALLIART13.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=257">Calligraphic Art Calendars</a></div>
+                        <div class="identity-date">06. 09. 2011</div>
+                        <div class="identity-summary">
+                             It all started with AlMohtaraf ‘s passion for calligraphy and a drive to carry this great...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=257" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>special events</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=353"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/27EVENTMJU5.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=353">Malakiyya Jbeil and Yunbu</a></div>
+                        <div class="identity-date">02. 09. 2011</div>
+                        <div class="identity-summary">
+                             Al Mohtaraf took out the word 'Malakiyya' and made it the centrepiece of the identity of the event...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=353" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>branding</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=217"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/87jan-00.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=217">Jan Burger is back in Town with a new taste!</a></div>
+                        <div class="identity-date">02. 09. 2011</div>
+                        <div class="identity-summary">
+                             Our revamped identity for Jan Burger, a saudi fast-food burger joint, made its debut in end 2011...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=217" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>exhibitions</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=410"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/92menasart-00.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=410">Al Mohtaraf at the Menasart Fair 2011; Word Art in 3D</a></div>
+                        <div class="identity-date">13. 08. 2011</div>
+                        <div class="identity-summary">
+                             AlMohtaraf participates with 3d word sculptures in the internationally acclaimed Menasart Fair 2011...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=410" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>lectures</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=433"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/81menasart-lecture-01.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=433">Kameel Hawa talks at Menasart 2011</a></div>
+                        <div class="identity-date">25. 07. 2011</div>
+                        <div class="identity-summary">
+                             Kameel Hawa, in a special seminar as part of the MENASART Exhibition discussing ‘Art and Identity'...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=433" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>publications</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=337"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/75kaust-corelabs-bro1.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=337">KAUST Core Labs are in AlMohtaraf hands</a></div>
+                        <div class="identity-date">30. 06. 2011</div>
+                        <div class="identity-summary">
+                             KAUST commissiones AlMohtaraf to design a comprehensive profile about their 6 core labs...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=337" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>editorial</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=264"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/80khatwa-00.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=264">Khotwa Magazine hits the stands</a></div>
+                        <div class="identity-date">15. 06. 2011</div>
+                        <div class="identity-summary">
+                             Al Mohtaraf has been commissioned to develop the master maquette and journalistic concept of Khotwa...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=264" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>identities</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=318"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/76hala-000.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=318">Hala w 7ala: Sugar, spice, and everything nice</a></div>
+                        <div class="identity-date">10. 06. 2011</div>
+                        <div class="identity-summary">
+                             How do you convey the above qualities in a sweets shop without turning sticky?...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=318" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>lectures</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=415"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/93Sharjah2011-00.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=415">AlMohtaraf Participates in Design Week in Sharjah</a></div>
+                        <div class="identity-date">21. 03. 2011</div>
+                        <div class="identity-summary">
+                             AlMohtaraf participated in the annual Design Week held by the American University of Sharjah...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=415" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>exhibitions</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=411"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/96abudhabi-bookfair-00.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=411">AlMohtaraf at the Abu Dhabi 2011 International Book Fair</a></div>
+                        <div class="identity-date">19. 03. 2011</div>
+                        <div class="identity-summary">
+                             As newcomers to the publishing scene, AlMohtaraf books participate in their first book fair...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=411" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>books</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=112"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/91SAT-V1-00.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=112">Saudi Artists Today (volume 1)</a></div>
+                        <div class="identity-date">22. 02. 2011</div>
+                        <div class="identity-summary">
+                             Compiled and curated by prominent Saudi artist Abdul-Aziz Ashour to capture the richness and variety...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=112" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>books</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=113"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/89ysl-00.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=113">Young Saudi Lenses</a></div>
+                        <div class="identity-date">21. 02. 2011</div>
+                        <div class="identity-summary">
+                             Young Saudi Lenses presents a new vision of Saudi Arabia as experienced by its youth...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=113" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>awards</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=400"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/94dubailynx11-00.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=400">‘Sabab Akhar’ wins a Dubai Lynx Award</a></div>
+                        <div class="identity-date">28. 01. 2011</div>
+                        <div class="identity-summary">
+                             One of AlMohtaraf's books within the newly launched publishing activity wins its first award...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=400" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>awards</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=401"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/95dubaiprint11-00.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=401">‘Fann al Kalima’ (Word Art) Reaps the Dubai International Award for Print</a></div>
+                        <div class="identity-date">26. 01. 2011</div>
+                        <div class="identity-summary">
+                             ‘Fann al Kalima’ (Word Art), wins the Dubai International Award for Print in its fifth round...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=401" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>case studies</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=260"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/57ADVERTISEDESIGN14.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=260">Advertising design</a></div>
+                        <div class="identity-date">01. 01. 2011</div>
+                        <div class="identity-summary">
+                             Al Mohtaraf has made its greatest impact in advertising for special occasions for newsprint in KSA...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=260" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>books</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=114"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/90OKAZ-01.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=114">Souk Okaz; Phoenix of the Arabian Desert</a></div>
+                        <div class="identity-date">24. 12. 2010</div>
+                        <div class="identity-summary">
+                             A book on Souk Okaz traces the story of the famous pre-Islamic poetry contest of the sixth century...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=114" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+        
+  
+  
+  
+            <li>
+                <dl>
+                    <dt>editorial</dt>
+                    <dd>
+                        <div class="identity-thumb"><a href="http://mohtaraf.com/?p=265"><img src="http://mohtaraf.com/wp-content/uploads/2015/07/60EDITORIALTOKYO6.jpg" width="160" height="80" alt="" /></a></div>
+                        <div class="identity-title"><a href="http://mohtaraf.com/?p=265">Tokyo—Riyadh Magazine</a></div>
+                        <div class="identity-date">08. 09. 2010</div>
+                        <div class="identity-summary">
+                             A tri-lingual magazine is uniquely designed for the Tokyo book fair 2010...
+                            <p class="pte3readmore"><a href="http://mohtaraf.com/?p=265" class="readmore">read more</a></p>
+                        </div>
+                    </dd>
+                </dl>
+            </li>        
+              
+        
+ 
+             
+                                
+               
+            </ul>
+          <br clear="all" />
+          <div id='page_navigation'></div>
+        </li>
+      </ul>
+ 
+  
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
+   
+   <div id="rightcolumn">
+	
+    
+
+
+
+    
+
+    
+    
+         				<div id="text-3" class="widget widget-border widget_text">			<div class="textwidget"><dl>
+        <dt>Message of the day</dt>
+        <dd>
+            <p>This November the King Fahad National Library revealed its new identity designed by AlMohtaraf&nbsp;in a large press conference at the library's new headquarters. More details <a target="_blank" href="http://alhayat.com/OpinionsDetails/569473">here</a>.</p>
+            <p>&nbsp;</p>
+            <p>Beirut sculpture takes center stage and opens the <a target="_blank" href="http://www.menasart-fair.com/beirut-art-week.html">Beirut Art Week </a>in front of Le Grey Hotel in the presence of the artist Kameel Hawa, the Lebanese minister of culture and the the director of the <a target="_blank" href="http://www.menasart-fair.com/">Beirut Art Fair</a> Laure D'Hauteville among others.</p>
+            <p>&nbsp;</p>
+            <p>On April 13, 2013, Al Mohtaraf Beirut studio will be hosting the launch of the book<a target="_blank" href="http://www.khtt.net/page/37693/en"> 'Arabic Type Design for Beginners'</a> from the Khatt foundation. Book your copy: khtt.foundation@gmail.com&nbsp;&nbsp;</p> <span></span>
+        </dd>
+    </dl></div>
+		</div><div id="text-5" class="widget widget-border widget_text">			<div class="textwidget"><dl>
+        <dt>Subscribe to our newsletter</dt>
+        <dd>
+            <form action="newsletter" method="get"> 
+                <input type="text"  required="" name="email" style="width: 138px; height: 25px; background-color: #EEE; padding-left: 5px; color: #333;" />
+
+                <button type="submit"   style="background: #999; width: 22px; height: 25px; color:black" >GO</button>
+            </form>
+        </dd> 
+    </dl>
+
+    <br></div>
+		</div><div id="text-4" class="widget widget-border widget_text">			<div class="textwidget"><dl>
+        <dt>Featured</dt>
+        <dd>Arabic Calligraphy in Modern art; a case by Kameel Hawa
+            <br />
+            <br />
+     
+        </dd>
+        <dd>Mohtaraf will be at the annual 56th Beirut Arab Book Fair with its newest book collection, Stand C28
+            <br />
+            <br />
+        
+        </dd>
+        <dd>ISTD awards AlMohtaraf two Certificates of Excellence for the design of the books:
+            <br />
+            <br />
+             
+        </dd>
+    </dl></div>
+		</div> 		    
+    
+</div>
+</div>
+<br clear="all" />
+<div id="footer"> 
+    
+    
+    
+    
+    
+    
+		 				<div id="text-2" class="widget widget-border widget_text">			<div class="textwidget">Copyright © MOHTARAF 2016 |  All Rights Reserved  | <a href="./?page_id=106">Privacy Policy</a> | <a href="./?page_id=104">Terms of Use</a></div>
+		</div> 		</div>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-47245728-1', 'mohtaraf.com');
+    ga('send', 'pageview');
+</script>
+</div>
+
+<script type='text/javascript' src='http://mohtaraf.com/wp-includes/js/wp-embed.min.js?ver=4.7.3'></script>
+</body>
+
+</html>

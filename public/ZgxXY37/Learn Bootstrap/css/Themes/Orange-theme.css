@@ -1,0 +1,134 @@
+/*** Start Defaul Theme ***/
+
+/* Start grouping */
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus,
+.tools-box .color-option ul li,
+.tools-box .gearchk,
+.dropdown-menu > li > a:hover, 
+.dropdown-menu > li > a:focus,
+.dropdown-menu .divider,
+.carousel-indicators .active,
+.subscribe button,
+.contact-us .field button
+{
+    background-color:#cb4f12;
+}
+
+.navbar-inverse .navbar-brand span,
+.about .lead span,
+.about h1 #crb,
+.about h1 #ic,
+.testimonials span,
+.pricest h1
+{
+    color:#cb4f12;
+}
+
+.subscribe button,
+.subscribe button:hover,
+.skills-info button,
+.skills-info button:hover
+{
+    border-color:#cc4908;
+}
+
+.subscribe button:hover,
+.our-skills .progress .prog3,
+.skills-info button:hover,
+.contact-us .field button:hover
+{
+    background-color:#cb4f12;
+}
+
+.ourteam .team h1,
+.ourteam .team .person p,
+.contact-us .field i
+{
+    color:#cb4f12;
+}
+
+
+.pricest .prices_box p,
+.tools-box .color-option
+{
+    border:3px solid #ce5418;
+}
+
+/* End grouping */
+
+.dropdown-menu
+{
+    border-top:3px solid #ce5418;
+}
+
+.pricest .prices_box
+{
+    border:5px solid #ce5418;
+}
+
+.carousel-caption
+{
+    background-color:rgba(203, 79, 18, 0.3);
+}
+
+
+.features
+{
+    background-color:rgba(191, 79, 24,0.9);
+}
+
+.features .feat p
+{
+    color:#8d3409;
+}
+
+.stats .data
+{
+    background-color:rgba(191, 79, 24,0.77);
+}
+
+.skills-info button
+{
+    background-color:#bc480f;
+}
+
+.contact-us .field button
+{
+    border-color:#cb4f12;
+}
+
+.footer h3
+{
+    color:#cb4f12;
+}
+
+.footer .img-thumbnail
+{
+    background-color:rgba(203, 79, 18, 0.2);
+}
+
+.footer .img-thumbnail:hover
+{
+    
+    background-color:rgba(203, 79, 18, 0.8);
+    border-color:rgba(203, 78, 17, 0.3);
+}
+
+.footer .copyright #ss1
+{
+    color:rgba(191, 79, 24, 0.8);
+}
+
+.footer .copyright #ss1:hover
+{
+    color:rgba(172, 64, 11, 1);
+}
+
+.navbar-inverse .navbar-brand span:hover
+{
+    color:#d64d09;
+}
+
+/*** End Defaul Theme ***/

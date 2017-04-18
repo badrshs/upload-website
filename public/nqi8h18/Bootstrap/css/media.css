@@ -1,0 +1,54 @@
+/* Smart Phones And Tablets */
+
+@media (max-width:767px) {
+    .navbar-default .navbar-nav > li > a {
+        padding-top: 10px;
+        padding-bottom: 10px
+    }    
+    
+    .subscribe .form-control {
+        width: 90%;
+        margin: 20px auto;
+    }
+    
+    .subscribe .btn-lg, .btn-group-lg > .btn {
+        width: 90%
+    }
+    
+    .navbar-fixed-top .navbar-collapse,
+    .navbar-fixed-bottom .navbar-collapse {
+        max-height: none;
+    }
+    
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
+        background-color: #E41B17;
+        padding-left: 35px
+    }
+
+
+
+}
+
+
+/* Small Screen */
+
+@media (min-width:768px) and (max-width:991px) {
+    
+    
+}
+
+
+/* Medium Screen */
+
+@media (min-width:992px) and (max-width:1199px) {
+    
+    
+}
+
+
+/* Large Screen */
+
+@media (min-width:1200px) {
+    
+    
+}

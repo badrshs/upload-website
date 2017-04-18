@@ -1,0 +1,902 @@
+body{
+  background-color: #f9f9fb
+
+}
+
+/*element grube*/
+
+h2{
+    font-weight: bold
+}
+
+h3,h4,h5{
+    font-weight: 400;
+}
+
+h1,h2,h3,h4,h5{
+    font-family: 'Oswald', sans-serif;
+}
+
+p,span,button,input,li,a{
+    font-family: 'Roboto', sans-serif;
+}
+a:hover,a:focus{
+	text-decoration: none;
+}
+
+/*The nav========================================== (Start)*/
+nav{
+	background-color: #212429;
+	color: #fff
+}
+/*The nav========================================== (End)*/
+/*======================================================*/
+/*Botton Toggle=============================(start)*/
+
+nav .btn-mune{
+float: left;
+height: 50px;
+cursor: pointer;
+}
+
+
+nav .btn-mune{
+	background-color: transparent;
+	border: 0;
+	border-right: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	padding: 10px;
+}
+nav .btn-mune span{
+	height: 3px;
+	width: 21px;
+	border: 0;
+	background-color: #FFF;
+	display: block;
+	margin: 5px;
+
+}
+nav .btn-mune:hover{
+    background-color: #cc2127;
+    color: #fff;
+    border-right: 1px solid #fff;
+	border-left: 1px solid #fff;
+}
+/*Botton Toggle============================= (End)*/
+
+/*Brand_name ================================= (Start)*/
+nav .brand{
+margin-top: 7px;
+display: inline-block;
+    font-family: 'Coiny', cursive;
+}
+
+nav .brand a{
+	color: #fff;
+	font-size: 20px;
+    padding: 12px 21px;
+}
+
+nav .brand:hover a{
+     background-color: #cc2127;
+}
+/*Brand_name ================================= (End)*/
+/*======================================================*/
+/*social-icons ================================== (Start)*/
+nav .social-icons{
+	float: right;
+	margin: 0;
+	    border-right: 1px solid #ccc;
+}
+
+nav .social-icons li{
+	color: #fff;
+    float: left;
+    border-left: 1px solid #ccc;
+    padding-left: 5px;
+    height: 130%;
+    padding-right: 5px;
+}
+nav .social-icons li a{
+	color: #fff;
+    display: inline-flex;
+    padding-top: 21px;
+    padding-bottom: 16px;
+    padding-left: 13px;
+    padding-right: 13px;
+}
+
+nav .social-icons li a:hover{
+	color: #cc2127
+}
+/*social-icons ================================== (End)*/
+
+/*======================================================*/
+/*form ================================== (Start)*/
+
+
+.sub-email{
+    background-color: #f9f9fb;
+        padding: 100px 0 50px 0;
+}
+.sub-email h2{
+    margin-top: -3px;
+    font-family: 'Coiny', cursive;
+    line-height: 1;
+
+}
+
+.sub-email input{
+    border: 0;
+    border-radius: 0;
+    height: 47px;
+    box-shadow: 0px 0px 11px rgba(51, 51, 51, 0.09);
+    margin-top: 11px;
+}
+
+.sub-email button{
+    height: 47px;
+    width: 100%;
+    margin-top: 11px;
+    border-radius: 0;
+    background-color: #212121;
+    color: #fff;
+
+}
+
+.sub-email button:hover,.sub-email button:focus ,aside .search-asi form button:hover{
+    background-color: #cc2127;
+    color: #fff;
+}
+
+/*form ================================== (end)*/
+/*======================================================*/
+/*Start the Image post ================================== (start)*/
+
+
+.image-post{
+    position: relative;
+    background-color: #fff;
+    box-shadow: 0 0 13px rgba(51, 51, 51, 0.18);
+}
+
+.image-post > span:first-child{
+   
+    background-color: #cc2127;
+    position: absolute;
+    padding: 5px 17px;
+    color: #fff;
+    right: 0;
+    top: 0;
+    font-size: 32px;
+    z-index: 2;
+}
+
+.image-post img{
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.image-post > span:last-child{
+    background-color: #cc2127;
+    position: absolute;
+    padding: 0px 13px;
+    color: #fff;
+    left: calc(50% - 8px);
+    bottom: -9px;
+    font-size: 32px;
+    z-index: 3;
+}
+/*Start the Image post ================================== (end)*/
+
+/*======================================================*/
+
+/*Start Text Post ================================== (Start)*/
+
+.text-post{
+    padding-top: 60px;
+    padding-bottom: 30px;
+    overflow: hidden
+    
+}
+.text-post > span{
+    font-size: 16px;
+    color: rgb(153, 153, 153);
+    text-transform: uppercase;
+}
+
+
+.text-post .date span{
+    color: rgb(153, 153, 153);
+    font-size: 15px;
+    margin-top: 20px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.text-post .date span > i{
+    margin-right: 9px;
+    margin-left: 9px;
+    color: #212121
+}
+
+.text-post >  p{
+    padding-right: 29px;
+    padding-left: 29px;
+    line-height: 25px;
+    font-size: 1em;
+    margin-bottom: 30px
+}
+
+.text-post > button{
+    background-color:transparent;
+    padding: 10px 15px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    font-weight: bold;
+}
+
+.text-post > hr{
+    border: 0;
+    height: 2px;
+    background-color: #efefef;
+}
+
+.text-post > .comment-like{
+    float: left;
+}
+
+.text-post > .comment-like > span{
+       margin-left: 20px;
+    margin-right: 20px;
+    color: rgb(153, 153, 153);
+}
+
+.text-post > .comment-like > span i{
+    margin-right: 6px;
+    color: #212121
+}
+
+.text-post .social{
+    float: right;
+     margin-right: 40px
+}
+.text-post .social ul li{
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.text-post .social ul li a{
+    color: #464646
+}
+
+/*Start Text Post================================== (end)*/
+
+/*======================================================*/
+/*Start Gallery Post ================================== (Start)*/
+
+.gallery-post{
+    background-color: #fff;
+    box-shadow: 0 0 13px rgba(51, 51, 51, 0.18);
+}
+
+.gallery-post .all-image{
+    margin-bottom: 20px;
+    overflow: hidden;
+    margin-bottom: 20px
+}
+
+.gallery-post .all-image .img-div  div{
+    position: relative;
+    transition: all .5s ease-in-out;
+    overflow: hidden
+}
+
+.gallery-post .all-image .img-div > div  .overlay{
+   width: 100%;
+    height: 100%;
+    background-color: rgba(19, 29, 28, 0.58);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    display: none;
+    transition: all .5s ease-in-out;
+}
+
+
+.gallery-post .all-image .img-div > div:hover .overlay{
+    display: block
+}
+.gallery-post .all-image .img-div > div:hover img{
+-moz-transform: rotate(10deg) scale(1.3, 1.2) skewX(0deg) skewY(0deg) translate(0px, 0px);/* FF3.5+ */
+-webkit-transform: rotate(10deg) scale(1.3, 1.2) skew(0deg, 0deg) translate(0px, 0px);/*Saf3.1+, Chrome*/
+-o-transform: rotate(10deg) scale(1.3, 1.2) skew(0deg, 0deg) translate(0px, 0px);/* Opera 10.5 */
+-ms-transform: rotate(10deg) scale(1.3, 1.2) skew(0deg, 0deg) translate(0px, 0px);/* IE 9 */
+transform: rotate(10deg) scale(1.3, 1.2) skew(0deg, 0deg) translate(0px, 0px);
+
+
+}
+
+.gallery-post .all-image > .col-lg-4 , .gallery-post .all-image  .col-md-4{
+    padding: 0
+}
+.gallery-post .contents-gall{
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+}
+
+.gallery-post .all-image > .col-lg-4 img , .gallery-post .all-image  .col-md-4 img{
+    width: 100%;
+     transition: all .5s ease-in-out;
+}
+
+.gallery-post .contents-gall > .image {
+    overflow: hidden
+}
+
+.gallery-post .contents-gall > .image img{
+    width: 100%
+}
+
+
+/*Start Text Gallery  Post ================================== (Start)*/
+
+
+.contents-gall .text-gallery{
+    padding-top: 60px;
+    padding-bottom: 30px;
+    overflow: hidden
+    
+}
+.contents-gall .text-gallery > span{
+    font-size: 16px;
+    color: rgb(153, 153, 153);
+    text-transform: uppercase;
+}
+
+
+
+.contents-gall .text-gallery .date span{
+    color: rgb(153, 153, 153);
+    font-size: 15px;
+    margin-top: 20px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.contents-gall .text-gallery .date span > i{
+    margin-right: 9px;
+    margin-left: 9px;
+    color: #212121
+}
+
+.contents-gall .text-gallery >  p{
+    padding-right: 29px;
+    padding-left: 29px;
+    line-height: 25px;
+    font-size: 1em;
+    margin-bottom: 30px
+}
+
+.contents-gall .text-gallery > button{
+    background-color:transparent;
+    padding: 10px 15px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    font-weight: bold;
+}
+
+.contents-gall .text-gallery > hr{
+    border: 0;
+    height: 2px;
+    background-color: #efefef;
+}
+
+.contents-gall .text-gallery > .comment-like{
+    float: left;
+}
+
+.contents-gall .text-gallery> .comment-like > span{
+       margin-left: 20px;
+    margin-right: 20px;
+    color: rgb(153, 153, 153);
+}
+
+.contents-gall .text-gallery > .comment-like > span i{
+    margin-right: 6px;
+    color: #212121
+}
+
+.contents-gall .text-gallery .social{
+    float: right;
+    margin-right: 40px
+}
+.contents-gall .text-gallery .social ul li{
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.contents-gall .text-gallery .social ul li a{
+    color: #464646
+}
+
+/*Start Text Gallery  Post==========(end)*/
+
+/*End Gallery Post ================================== (Start)*/
+
+/*======================================================*/
+
+/*Start Block Quote  ================================== (Start)*/
+
+.block-qu{
+    padding: 50px 0;
+    background-color: #131d1c;
+    margin-bottom: 30px;
+    margin-top: 30px
+}
+
+.block-qu > p{
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+     text-transform: uppercase;
+     line-height: 1.8;
+}
+
+.block-qu > h3{
+    font-size: 16px;
+    color: rgb(153, 153, 153);
+  text-transform: uppercase;
+}
+
+
+/*End Block Quote  ================================== (end)*/
+
+
+/*======================================================*/
+/*Startvideo Post ================================== (Start)*/
+
+.vid {
+    margin-top: 60px;
+    background-color: #fff;
+    box-shadow: 0 0 13px rgba(51, 51, 51, 0.18);
+    margin-bottom: 30px
+}
+.vid video{
+    width: 100%
+}
+
+
+
+/*Start Text Gallery  Post ========= (Start)*/
+
+
+.vid .text-video{
+    padding-top: 60px;
+    padding-bottom: 30px;
+    overflow: hidden
+    
+}
+.vid .text-video > span{
+    font-size: 16px;
+    color: rgb(153, 153, 153);
+    text-transform: uppercase;
+}
+
+
+
+.vid .text-video .date span{
+    color: rgb(153, 153, 153);
+    font-size: 15px;
+    margin-top: 20px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.vid .text-video .date span > i{
+    margin-right: 9px;
+    margin-left: 9px;
+    color: #212121
+}
+
+.vid .text-video >  p{
+    padding-right: 29px;
+    padding-left: 29px;
+    line-height: 25px;
+    font-size: 1em;
+    margin-bottom: 30px
+}
+
+.vid .text-video > button{
+    background-color:transparent;
+    padding: 10px 15px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    font-weight: bold;
+}
+
+.vid .text-video > hr{
+    border: 0;
+    height: 2px;
+    background-color: #efefef;
+}
+
+.vid .text-video > .comment-like{
+    float: left;
+}
+
+.vid .text-video > .comment-like > span{
+       margin-left: 20px;
+    margin-right: 20px;
+    color: rgb(153, 153, 153);
+}
+
+.vid .text-video > .comment-like > span i{
+    margin-right: 6px;
+    color: #212121
+}
+
+.vid .text-video .social{
+    float: right;
+    margin-right: 40px
+}
+.vid .text-video .social ul li{
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.vid .text-video .social ul li a{
+    color: #464646
+}
+
+/*Start Text Gallery  Post===(end)*/
+
+/*End video Post ================================== (end)*/
+
+/*======================================================*/
+/*Start Sound Cloud Post ================================== (Start)*/
+
+.soun-cloud{
+    background-color: #fff;
+    box-shadow: 0 0 13px rgba(51, 51, 51, 0.18);
+}
+
+.soun-cloud > iframe{
+    margin-bottom: 
+}
+
+
+
+/*Start Text Gallery  Post ========= (Start)*/
+
+
+.soun-cloud .text-sound-cloud{
+    padding-top: 60px;
+    padding-bottom: 30px;
+    overflow: hidden;
+    
+    
+}
+.soun-cloud .text-sound-cloud > span{
+    font-size: 16px;
+    color: rgb(153, 153, 153);
+    text-transform: uppercase;
+}
+
+
+
+.soun-cloud .text-sound-cloud .date span{
+    color: rgb(153, 153, 153);
+    font-size: 15px;
+    margin-top: 20px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.soun-cloud .text-sound-cloud .date span > i{
+    margin-right: 9px;
+    margin-left: 9px;
+    color: #212121
+}
+
+.soun-cloud .text-sound-cloud >  p{
+    padding-right: 29px;
+    padding-left: 29px;
+    line-height: 25px;
+    font-size: 1em;
+    margin-bottom: 30px
+}
+
+.soun-cloud .text-sound-cloud > button{
+    background-color:transparent;
+    padding: 10px 15px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    font-weight: bold;
+}
+
+.vid .text-video > hr{
+    border: 0;
+    height: 2px;
+    background-color: #efefef;
+}
+
+.soun-cloud .text-sound-cloud > .comment-like{
+    float: left;
+}
+
+.soun-cloud .text-sound-cloud > .comment-like > span{
+       margin-left: 20px;
+    margin-right: 20px;
+    color: rgb(153, 153, 153);
+}
+
+.soun-cloud .text-sound-cloud > .comment-like > span i{
+    margin-right: 6px;
+    color: #212121
+}
+
+.soun-cloud .text-sound-cloud .social{
+    float: right;
+    margin-right: 40px
+}
+.soun-cloud .text-sound-cloud .social ul li{
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.soun-cloud .text-sound-cloud .social ul li a{
+    color: #464646
+}
+
+/*Start Text Gallery  Post===(end)*/
+
+
+/*End Sound CloudPost ======================= (end)*/
+
+/*======================================================*/
+/*Start link  Post ================================== (Start)*/
+
+.link-post{
+    background-color: #000000;
+    color: #fff;
+    padding: 70px 0 50px 0;
+}
+
+.link-post > p{
+    text-decoration: underline;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+/*End link  Post ================================== (end)*/
+
+/*======================================================*/
+
+
+
+/*Start Side bar   ================================== (Start)*/
+aside{
+       
+    
+}
+
+aside .bac-color{
+     background-color: #fff;
+    box-shadow: 0 0 13px rgba(51, 51, 51, 0.18);
+    padding-left: 17px;
+    padding-right: 17px;
+     padding-top: 40px;
+     padding-bottom: 40px;
+   overflow: hidden;
+}
+
+/* start Search =========== 8*/
+aside .search-asi{
+    background-color: #f9f9fb;
+    overflow: hidden
+}
+
+aside .search-asi form input{
+   width: 85%;
+    float: left;
+    border: 0;
+    background-color: transparent;
+    height: 47px;
+    
+}
+
+aside .search-asi form button{
+    width: 15%;
+    float: left;
+    border-radius: 0;
+    background-color: #212121;
+    color: #fff;
+    height: 47px;
+}
+/* End Search =========== 8*/
+
+/* start Adsens =========== 8*/
+aside .adsens{
+  background-color: #f9f9fb;
+        margin-top: 30px;
+    
+}
+
+aside .adsens > img{
+    width: 100%;
+}
+
+
+/* End Adsens =========== 8*/
+
+
+aside .catag ul li{
+    
+  display: block;
+    text-align: left;
+    padding: 21px 0 4px 0;
+    font-weight: bold;
+    border-top: 1px solid #e5e5e5;
+    margin-top: 13px;
+    text-transform: uppercase;
+}
+
+aside .catag ul li:last-child{
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 16px
+}
+
+aside .catag ul li span{
+        float: right;
+}
+
+/* slider Adsens */
+aside .slider-one .item img{
+    width: 100%;
+}
+
+aside .slider-one .carousel-indicators li{
+    visibility: hidden
+}
+
+/* slider Adsens */
+
+aside .latest-post{
+        margin-top: 34px;
+}
+
+aside .latest-post .media{
+    margin-top: 28px
+}
+
+aside .latest-post .media .media-heading{
+    text-align: left;
+}
+
+aside .latest-post .media-body span{
+       float: left;
+    margin-left: 21px;
+    margin-top: 24px;
+}
+
+
+/*End  Side bar ================================== (end)*/
+
+/*======================================================*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Start Footer  ================================== (Start)*/
+
+footer{
+    background-color: #212429;
+    color: #fff;
+    padding-top: 50px;
+     margin-top: 100px
+}
+
+footer  h3{
+    margin-bottom: 20px
+}
+
+footer .about > p{
+    line-height: 25px;
+    font-size: 1em;
+    color: #77797d
+    
+}
+
+footer .about > img{
+    margin-bottom: 20px;
+   
+} 
+
+
+/*======================== */
+
+footer .latest-tweets > span{
+      font-size: 15px;
+    color: rgb(249, 249, 251);
+    margin-bottom: 3px;
+    display: block;
+    margin-top: 15px;
+}
+
+footer .latest-tweets > span i{
+    margin-right: 10px
+}
+
+footer .latest-tweets{
+     font-size: 15px;
+    line-height: 1.867;
+    color: rgb(255, 255, 255);
+}
+
+
+/*========================================*/
+
+
+footer .follow  img{
+      width: 30%;
+    margin: 1%;
+    display: inline-block;
+    margin-bottom: 2%;
+}
+
+
+/*===================*/
+
+footer .latest-comment > span{
+    margin-top: 0
+}
+
+footer .latest-latest-comment hr{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+footer .latest-comment p{
+    font-size: 12px;
+}
+
+/** Down footer bar ***/
+
+footer .down-bar{
+    background-color: #17191c;
+    padding: 20px 0
+}
+
+footer .down-bar > span {
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+/*End Footer ================================== (end)*/
+
+
+
+
+
+

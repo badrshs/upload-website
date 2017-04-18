@@ -1,0 +1,37 @@
+#manifesto
+	{
+		text-align: center;
+		color: white;
+		margin-right: 30%;
+		margin-left: 30%;
+		border: 20px solid;
+		border-image: url(frame/floral-portrait.png) 50 round;
+		padding: 20px;
+		background-color: black;
+		height: 30%;
+		width: 30%;
+	}
+#area
+	{
+		text-align: center;
+		color: white;
+		margin-right: 30%;
+		margin-left: 30%;
+	}
+#words
+	{
+		margin-top: 25%;
+		margin-bottom: 25%;
+	}
+#down
+	{
+		margin-top: 50%;
+	}
+#up
+	{
+		margin-bottom:	100%;
+	}
+#say
+	{
+		cursor: pointer;
+	}

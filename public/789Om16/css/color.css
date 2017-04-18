@@ -1,0 +1,55 @@
+::selection{background-color: #91d152;color: #fff}
+::-moz-selection{background-color: #91d152;color: #fff}
+body{background-color: #f8f8f8;color: #797979;}
+header{background-color: #f5f5f5}
+header > h1 {color: #439ed2;}
+header > p {color: #878787;}
+nav a{color: #757575;}
+nav a:hover{border-bottom: 3px solid #439ed2;color:#439ed2;}
+nav a.active_nav{border-bottom: 3px solid #439ed2;color:#439ed2;}
+aside,
+footer{background-color: #fff}
+.follow_me a{color: #fff;}
+.follow_me a:hover{opacity: 0.9}
+.follow_me a:nth-child(2){background-color: #3b5998;}
+.follow_me a:nth-child(3){background-color: #007bb6;}
+.follow_me a:nth-child(4){background-color: #55acee;}
+.follow_me a:nth-child(5){background-color: #0ca8aa;}
+.follow_me a:nth-child(6){background-color: #bf8360;}
+.single_post,.article_post,.link_post,.img_post{background-color: #fff;}
+.post_footer a {color: #6c6c6c}
+.share a{color: #ddd}
+h4 a {color: #6c6c6c}
+.post a{color: #6c6c6c}
+footer a{color: #989898;}
+/* hover */
+.single_post:hover {box-shadow: 0px 0px 2px 1px rgba(0,100,0,.7);}
+.single_post:hover a{color: #91d152;}
+.single_post:hover .courses_post_ul li a{color: #467eb2;}
+.single_post:hover .post .courses_post_a{color: #fff;}
+.article_post:hover {box-shadow: 0px 0px 2px 1px rgba(0,100,0,.7);}
+.article_post:hover a{color: #91d152;}
+.img_post:hover {box-shadow: 0px 0px 2px 1px rgba(0,100,0,.7);}
+.img_post:hover a{color: #91d152;}
+.link_post:hover {box-shadow: 0px 0px 2px 1px rgba(0,100,0,.7);}
+.link_post:hover a{color: #91d152;}
+footer a:hover{color: #444;}
+/* blog nav */
+.blog_nav li:first-child a{background-color: #fff;box-shadow: 0px 0px 10px 1px rgba(0,0,0,.1);}
+.blog_nav li:last-child a{background-color: #fff;box-shadow: 0px 0px 2px 1px rgba(0,0,0,.1);}
+.active{background-color: #fff;box-shadow: 0px 0px 10px 1px rgba(0,0,0,.1);}
+.blog_nav li a:hover{box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.2);background-color: #fff;}
+/* about page */
+.about_article{background-color: #fff;}
+/* end about page */
+/* courses page */
+.courses_post_ul li a{color: #5294d1;}
+.post .courses_post_a{background-color: #5294d1;color: #fff;}
+.post .courses_post_a:hover{opacity: 0.9;}
+/* end courses page */
+/* contact me page */
+form  input{background-color: #f5f5f5}
+form  textarea{background-color: #f5f5f5}
+form button{background-color: #5294d1;color: #fff;}
+form button:hover{opacity: 0.9;}
+/* end contact me page */

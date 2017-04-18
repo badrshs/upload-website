@@ -1,0 +1,47 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #F5CBA7;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+   
+}
+
+li a:hover {
+    background-color:#EDBB99 ;
+}
+
+body {
+background-repeat: no repeat;
+background-size: cover;
+}
+
+h1 {
+text-shadow: 4px 4px 4px #666;
+}
+
+#phone_inside_footer
+{
+    margin-left: 1190px;
+}
+
+#footer
+{
+    color: white;
+    background-color: #EDBB99;
+	margin-top:360px ;
+}
+#resume {
+ h1, h2 { display: inline; 
+ }

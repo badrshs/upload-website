@@ -1,0 +1,36 @@
+/*========font===========*/
+$loraFont:'Lora', serif;
+$arimo:'Arimo', sans-serif;
+$mount:'Montserrat', sans-serif;
+
+/*====color====*/
+$light-gray:#4b4b4b;
+$darkgray:#606263;
+$dark-gray:#262626;
+$black:#000;
+
+
+// Mixins
+@mixin transition($property: all, $duration: 300ms, $animate: linear, $delay:0s){
+    transition: $property $duration $animate $delay;
+}
+
+//contact-form-mixin
+@mixin placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+
+
+
+@font-face {
+    font-family: "myR";
+    src: url(../fonts/theme-font/MyriadPro-Regular.woff);
+}
+
+@font-face {
+    font-family: "myB";
+    src: url(../fonts/theme-font/MyriadPro-Bold.woff);
+}

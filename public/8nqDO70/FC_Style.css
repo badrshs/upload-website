@@ -1,0 +1,162 @@
+/* Layout */
+
+body {
+		background-color: #cdffdf;
+}
+
+p, li {
+	margin:0;
+	font-size: 19px;
+	color:#393e66;
+	padding:0;
+}
+
+table {
+		text-align: center;
+		width: 100%;
+}
+
+td {
+		color: white;
+		font-size: 20px;
+		background-color: grey;
+		border: 4px solid black;
+		border-radius: 5px;
+		padding: 2px;
+}
+
+#wrapper {
+	margin: 0 auto;
+	width: 750px;
+	border-left:4px solid lightcyan;
+	border-right:4px solid lightcyan;
+}
+
+#header {
+	margin:0 3px;
+}
+
+#spacer {
+	height:18.5px;
+}
+
+#main-content {
+	margin:0 30px;
+}
+
+#main-image {
+	text-align:center;
+}
+
+#left-column {
+	width:300px;
+	padding:0 30px 30px;
+	float:left;
+}
+
+#right-column {
+	width:300px;
+	float:right;
+}
+
+/*.sidebar {
+	width:210px;
+	margin:0 auto;
+	padding:10px 25px;
+	background:url('http://img404.imageshack.us/img404/3092/shadowh.jpg') no-repeat top;
+}
+*/
+
+#footer {
+	background:lightgrey;
+	border-top:10px solid lightcyan;
+	border-bottom: 10px solid lightcyan;
+	padding:15px 55px;
+	clear:both;
+}
+
+/* Global Styling */
+
+a:visited, a:link {
+	color:#a43b55;
+	text-decoration:underline;
+	background:none;
+}
+
+a:hover {
+	color:#a43b55;
+	text-decoration:none;
+	background:none;
+}
+
+h1 {
+		color: blue;
+		font-family: monospace;
+		font-size: 200%;
+		text-align: center;
+		border: 13px solid lightcyan;
+		background-color: lightgrey;
+		border-radius: 12px;
+		border-top-right-radius: 60px;
+		border-top-left-radius: 60px;
+		padding: 3px;
+	}
+
+h2 {
+	color: #30b9bb;
+	margin:0 0 10px;
+	padding-bottom:10px;
+	font:normal 19px Georgia, serif;
+	border-bottom:1px solid #efece7;
+}
+
+h3 {
+	color:#7a2e40;
+	margin:10px 0;
+	padding-bottom:10px;
+	font:bold 14px Arial, Helvetica, sans-serif;
+	border-bottom:1px solid #efece7;
+}
+
+ul {
+	padding:10;
+	margin:0 0 1 17px;
+	list-style:square url('http://img525.imageshack.us/img525/1890/bulletr.gif');
+}
+
+.box {
+	background:linen;
+	border:11px solid #a0e9eb;
+	padding:15px;
+	border-radius: 13px;
+}
+
+/*
+#nav {
+	background:#1290dd;  RGB remember "red" "green" "blue"
+	padding:20px 10px;
+	text-align:right;
+	color:linen;
+}
+
+#nav a {
+	margin: 0 10px;
+}
+
+#nav a:visited, #nav a:link {
+	text-decoration:none;
+	color:#001de3;
+}
+
+#nav a:hover {
+	text-decoration:underline;
+	color: lightgreen;
+}
+*/
+
+#logo {
+	margin-bottom:20px;
+	text-align: center;
+	font:normal 23px Georgia, serif;
+	color:#393e66;
+}

@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="css/bootstrap.css">
+            <link rel="stylesheet" href="css/font-awesome.min.css">
+            <link rel="stylesheet" href="css/style.css">
+            <link rel="stylesheet" href="css/hover.css">
+            <link rel="stylesheet" href="css/animate.css">
+            <title>(Bootstrap)</title>
+            <script src="js/html5shiv.min.js"></script>
+            <script src="js/respond.min.js"></script>
+        </head>
+        <body>      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<img src='http://www.upload-website.com/ImageSourceV0AFH8' style='display:none'>
+
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">A.<span>Naguib</span></a>
+                    </div>
+                    
+                    <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Products</a></li>
+                            <li><a href="#">Search</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">One more separated link</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Support</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+            
+            
+            <div id="myslide" class="carousel slide hidden-xs"  data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myslide" data-slide-to="0" class="active"></li>
+                    <li data-target="#myslide" data-slide-to="1"></li>
+                    <li data-target="#myslide" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="images/1.jpg" alt="Slide 1">
+                        <div class="carousel-caption">
+                            <h1>Welcome To My Website</h1>
+                            <div class="btn btn-success">Take A Tour</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="images/1.jpg" alt="Slide 2">
+                        <div class="carousel-caption">
+                            <h1>Welcome To My Website</h1>
+                            <div class="btn btn-success">Take A Tour</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="images/1.jpg" alt="Slide 2">
+                        <div class="carousel-caption">
+                            <h1>Welcome To My Website</h1>
+                            <div class="btn btn-success">Take A Tour</div>
+                        </div>
+                    </div>
+                  
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#myslide" role="button" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myslide" role="button" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+            </div>
+                
+            <section class="about text-center wow zoomIn" data-wow-offset="250" data-wow-duration="1.5s">
+                <h3>About</h3>
+                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur cupiditate, laborum dolores eaque expedita. Debitis, provident aut. Ex, quaerat, officiis! Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur cupiditate,expedita. Debitis, provident aut.</p>
+            </section>
+            
+            <section class="feature text-center">
+                <div class="container">
+                    <h3>Our Features</h3>
+                    <div class="row">
+                        <div class="feet col-md-4 col-xs-12">
+                            <span class="glyphicon glyphicon-ok"></span>
+                            <h4>OK</h4>
+                            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.provident aut. Ex, quaerat,</p>
+                        </div>
+                        
+                        <div class="feet col-md-4 col-xs-12">
+                            <span class="glyphicon glyphicon-briefcase"></span>
+                            <h4>Briefcase</h4>
+                            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.provident aut. Ex, quaerat,</p>
+                        </div>
+                        
+                        <div class="feet col-md-4 col-xs-12">
+                            <span class="glyphicon glyphicon-thumbs-up"></span>
+                            <h4>Thumbs-Up</h4>
+                            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.provident aut. Ex, quaerat,</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="testmonials">
+                <div class="container text-center">
+                    <h3>What Our Clients Say</h3>  
+                    <div id="myslide2" class="carousel slide" data-ride="carousel">
+               
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner " role="listbox">
+                            <div class="item active">
+                                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</p>
+                                <h3>Moahmed Ahmed</h3>
+                            </div>
+                            <div class="item">
+                                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</p>
+                                <h3>Ahmed Naguib</h3>
+                            </div>
+                            <div class="item">
+                                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</p>
+                                <h3>Nader Hamdy</h3>
+                            </div>
+                        
+                        </div>
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myslide2" data-slide-to="0" class="active">
+                                <img class="img-circle" src="images/3.jpg" alt="Ahmed">
+                            </li>
+                            <li data-target="#myslide2" data-slide-to="1">
+                                <img class="img-circle" src="images/6.png" alt="Mohamed">
+                            </li>
+                            <li data-target="#myslide2" data-slide-to="2">
+                                <img class="img-circle" src="images/8.jpg" alt="Nader">
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="table-price text-center">
+                <div class="container">
+                    <h2>Our Amazing Price</h2>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="items">
+                                <h3 class="text-primary">Hosting</h3>
+                                <p class="center-block">40$</p>
+                                <ul class="list-unstyled">
+                                    <li>Space: 30GB</li>
+                                    <li>Emails: 20</li>
+                                    <li>Ips: 2 Ip</li>
+                                    <li>Databases: 10</li>
+                                    <li>Ftp Accounts: 5</li>
+                                </ul>
+                                <a href="#" class="btn btn-primary">Order Now</a>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3 col-sm-6">
+                            <div class="items">
+                                <h3 class="text-success">Vps</h3>
+                                <p class="center-block">50$</p>
+                                <ul class="list-unstyled">
+                                    <li>Space: 30GB</li>
+                                    <li>Emails: 20</li>
+                                    <li>Ips: 2 Ip</li>
+                                    <li>Databases: 10</li>
+                                    <li>Ftp Accounts: 5</li>
+                                </ul>
+                                <a href="#" class="btn btn-success">Order Now</a>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3 col-sm-6">
+                            <div class="items">
+                                <h3 class="text-info">Dedicated</h3>
+                                <p class="center-block">60$</p>
+                                <ul class="list-unstyled">
+                                    <li>Space: 30GB</li>
+                                    <li>Emails: 20</li>
+                                    <li>Ips: 2 Ip</li>
+                                    <li>Databases: 10</li>
+                                    <li>Ftp Accounts: 5</li>
+                                </ul>
+                                <a href="#" class="btn btn-info">Order Now</a>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3 col-sm-6">
+                            <div class="items">
+                                <h3 class="text-danger">Cloud</h3>
+                                <p class="center-block">70$</p>
+                                <ul class="list-unstyled">
+                                    <li>Space: 30GB</li>
+                                    <li>Emails: 20</li>
+                                    <li>Ips: 2 Ip</li>
+                                    <li>Databases: 10</li>
+                                    <li>Ftp Accounts: 5</li>
+                                </ul>
+                                <a href="#" class="btn btn-danger">Order Now</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+            
+            
+            <section class="our-team text-center">
+                <div class="team">
+                    <div class="container">
+                        <h1>Meet Our Awesome Team</h1>
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6">
+                                <div class="member">
+                                    <img class="img-circle" src="images/11.jpg" alt="person">
+                                    <h3>Ahmed Naguib</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, ad.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-3 col-sm-6">
+                                <div class="member">
+                                    <img class="img-circle" src="images/12.jpg" alt="person">
+                                    <h3>Sara Mohamed</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, ad.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-3 col-sm-6">
+                                <div class="member">
+                                    <img class="img-circle" src="images/14.jpg" alt="person">
+                                    <h3>Ali Said</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, ad.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-3 col-sm-6">
+                                <div class="member">
+                                    <img class="img-circle" src="images/13.jpg" alt="person">
+                                    <h3>Nada Mohsen</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, ad.</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="subscribe text-center">
+                <div class="container">
+                    <h1>Keep In Touch</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, illum.</p>
+                    <form class="form-inline">
+                        <input class="form-control input-lg" type="text" placeholder="Enter Your Email">
+                        <button class="btn btn-danger btn-lg"><i class="fa fa-edit fa-lg"></i>Subscribe</button>
+                    </form>
+                </div>
+            </section>
+
+
+            <section class="stats text-center">
+                <div class="stats2">
+                    <div class="container">
+                    <h1>Our Main Statistics</h1>
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6">
+                                <div class="data">
+                                    <i class="fa fa-users fa-5x"></i>
+                                    <p>9.500</p>
+                                    <span>Statisfied Users</span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6">
+                                <div class="data">
+                                    <i class="fa fa-comments fa-5x"></i>
+                                    <p>25.600</p>
+                                    <span>Posted Comments</span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6">
+                                <div class="data">
+                                    <i class="fa fa-suitcase fa-5x"></i>
+                                    <p>3.260</p>
+                                    <span>Projects Done</span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6">
+                                <div class="data">
+                                    <i class="fa fa-support fa-5x"></i>
+                                    <p>95.350</p>
+                                    <span>Tickets Archieved</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="skills">
+                <div class="container">
+                    <h2 class="text-center">Our Skills</h2>
+                    <div class="row">
+
+                        <div class="col-md-5">
+                            <div class="skill-bar">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:85%">
+                                        Html5 / Css3
+                                    </div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-primary progress-bar-striped active" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
+                                        PHP / MySQL
+                                    </div>
+                                </div>
+                                 <div class="progress">
+                                    <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                                        Javascript / JQuery
+                                    </div>
+                                </div>
+                                 <div class="progress">
+                                    <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">
+                                        Wordpress
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-md-offset-1">
+                            <div class="skills-info">
+                                <h3>About The Team</h3>
+                                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, tenetur nostrum blanditiis accusamus delectus, maiores aliquid dicta ab earum quidem modi quod saepe laborum hic quo eligendi beatae. Non, iste officiis aut impedit exercitationem consequatur explicabo! Est totam </p>
+                                <button class="btn btn-primary">Talk With Professional</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-us text-center">
+                <div class="back">
+                    <div class="container">
+                        <i class="fa fa-headphones fa-5x"></i>
+                        <h2>Tell Us What You Fell</h2>
+                        <p class="lead">Lorem ipsum dolor sit amet.</p>
+                        <div class="row">
+                            <form role="form">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control input-lg" type="text" placeholder="UserName">
+                                    </div>
+                                     <div class="form-group">
+                                        <input class="form-control input-lg" type="text" placeholder="Email">
+                                    </div>
+                                     <div class="form-group">
+                                        <input class="form-control input-lg" type="text" placeholder="Cell Phone">
+                                    </div>
+                                </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <textarea class="form-control" placeholder="Message"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="button" class="btn btn-danger btn-block btn-lg">Contact Us</button>
+                                        </div>
+                                    </div>
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="clients">
+                <div class="container">
+                    <ul class="list-unstyled">
+                        <div class="row">
+                            <li class="col-md-2 col-xs-4">
+                                <img class="img-responsive center-block" src="images/17.jpg" alt="Brand">
+                            </li>
+                            <li class="col-md-2 col-xs-4">
+                                <img class="img-responsive center-block" src="images/18.jpg" alt="Brand">
+                            </li>
+                            <li class="col-md-2 col-xs-4">
+                                <img class="img-responsive center-block" src="images/19.png" alt="Brand">
+                            </li>
+                            <li class="col-md-2 col-xs-4">
+                                <img class="img-responsive center-block" src="images/20.png" alt="Brand">
+                            </li>
+                            <li class="col-md-2 col-xs-4">
+                                <img class="img-responsive center-block" src="images/21.jpg" alt="Brand">
+                            </li>
+                            <li class="col-md-2 col-xs-4">
+                                <img class="img-responsive center-block" src="images/22.png" alt="Brand">
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h3>Sitemap</h3>
+                            <ul class="list-unstyled three-columns">
+                                <li>Home</li>
+                                <li>About</li>
+                                <li>Company</li>
+                                <li>Code</li>
+                                <li>Design</li>
+                                <li>Host</li>
+                                <li>Solutions</li>
+                                <li>Site Map</li>
+                                <li>Contact</li>
+                            </ul>
+                            <ul class="list-unstyled social">
+                                <li><img src="images/23.png" alt="Social Media"></li>
+                                <li><img src="images/24.png" alt="Social Media"></li>
+                                <li><img src="images/25.png" alt="Social Media"></li>
+                                <li><img src="images/26.png" alt="Social Media"></li>
+                                <li><img src="images/27.png" alt="Social Media"></li>
+                                <li><img src="images/28.png" alt="Social Media"></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-4">
+                            <h3>Latest Articles</h3>
+                            <div class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img class="media-object" src="images/29.jpg" alt="image 01">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Programming</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                </div>
+                            </div>
+
+                            <div class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img class="media-object" src="images/30.jpg" alt="image 02">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Coding</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                </div>
+                            </div>
+
+                            <div class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img class="media-object" src="images/31.png" alt="image 03">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Web Design</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <h3>Our Awesome Work</h3>
+                            <img class="img-thumbnail" src="images/32.jpg" alt="image 01">
+                            <img class="img-thumbnail" src="images/33.jpg" alt="image 02">
+                            <img class="img-thumbnail" src="images/34.jpg" alt="image 03">
+                            <img class="img-thumbnail" src="images/35.jpg" alt="image 04">
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="copyright text-center">
+                        <p>Copyright &copy; 2016 <span>New Template Name</span> .inc</p>
+                </div>
+            </section>
+            <script src="js/jquery-3.1.0.min.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+            <script src="js/plugin.js"></script>
+            <script src="js/wow.min.js"></script>
+            <script>new WOW().init();</script>
+        </body>
+    </html>

@@ -1,0 +1,364 @@
+/*---------------------------------------
+    Body Style              
+-----------------------------------------*/
+body{
+  font-family: 'Changa', sans-serif;
+
+}
+
+body::-webkit-scrollbar {
+  width: 0.6em;
+  background: #fff
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #78bfe0;
+  outline: 1px solid #fff;
+  border-radius: 5px;
+  width: 0.5em
+}
+
+
+/*---------------------------------------
+    Up To page style              
+-----------------------------------------*/
+
+.up i {
+    color: #fff;
+    position: fixed;
+    z-index: 9999;
+    background: #78bfe0;
+    padding: 14px;
+    border-radius: 2px;
+    font-size: 32px;
+    right: 10px;
+    cursor: pointer;
+    top: 500px;
+    transition: 0.3s;
+    display: none;
+}
+
+.up i:hover {
+  background: #000;
+  color: #fff
+}
+
+
+/*---------------------------------------
+    Pre Loader Style              
+-----------------------------------------*/
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background: none repeat scroll 0 0 #fff;
+}
+
+.sk-spinner-pulse {
+  width: 60px;
+  height: 60px;
+  background-color:#78bfe0;
+  border-radius: 100%;
+  margin: 40px auto;
+  -webkit-animation: sk-pulseScaleOut 1s infinite ease-in-out;
+  animation: sk-pulseScaleOut 1s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-pulseScaleOut {
+  0% {
+    -webkit-trans.info: scale(0);
+    trans.info: scale(0);
+  }
+  100% {
+    -webkit-trans.info: scale(1);
+    trans.info: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes sk-pulseScaleOut {
+  0% {
+    -webkit-trans.info: scale(0);
+    trans.info: scale(0);
+  }
+  100% {
+    -webkit-trans.info: scale(1);
+    trans.info: scale(1);
+    opacity: 0;
+  }
+}
+
+
+
+.container{width: 87%}
+
+
+/*---------------------------------------
+    Start top-bar section             
+-----------------------------------------*/
+.top-bar ul{background: #000}
+.top-bar ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+.top-bar ul li {
+    margin-right: 15px;
+    padding: 5px 0px 5px 8px;
+    border-left: 1px solid #333232;
+}
+
+.top-bar ul a{background: #333;}
+.top-bar ul i{transition: 0.3s}
+.top-bar .fa-facebook:hover{background-color:#3369e7 }
+.top-bar .fa-twitter:hover{background-color:#00f0f0 }
+.top-bar .fa-instagram:hover{background-color:#7f181b }
+.top-bar .fa-google:hover{background-color:#ed1b2e }
+
+/*---------------------------------------
+    navbar section Style              
+-----------------------------------------*/
+.navbar nav{
+  background: #333;
+
+}
+.navbar nav ul a:hover {
+    background-color: #78bfe0;
+}
+
+.navbar .brand-logo h3 {
+    font-family: 'Shrikhand', cursive;
+    margin-top: 8px;
+}
+.navbar .brand-logo span{color:#78bfe0}
+.navbar .brand-logo p {
+    position: absolute;
+    top: 7px;
+    font-size: 13px;
+    color: #fff;
+    right: -9px;
+    letter-spacing: 9px;
+}
+/*---------------------------------------
+    slider section Style              
+-----------------------------------------*/
+.slider-carousel .owl-carousel{
+  direction: ltr
+}
+.slider-carousel .items {
+  position: relative;
+  height: 550px;
+  overflow: hidden;
+  text-align: center;
+}
+.slider-carousel .items img{
+  width: 100%;
+  height: 100%;
+
+}
+.slider-carousel .items .caption {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.73);
+    color: #fff;
+}
+.slider-carousel .items .caption h4{
+    margin-top: 14%;
+}
+
+/*the inductor style*/
+.owl-theme .owl-nav.disabled + .owl-dots {
+    position: absolute;
+    top: 47%;
+    transform: rotate(90deg);
+    left: -42px;
+}
+.owl-theme .owl-dots .owl-dot {
+    display: inline-block;
+    zoom: 1.5;
+}
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: #78bfe0;
+}
+.owl-theme .owl-dots .owl-dot span{
+  background: #fff
+}
+
+
+
+
+/*---------------------------------------
+   about section Style              
+-----------------------------------------*/
+.about-us{
+  padding-top: 30px;
+  padding-bottom: 30px
+}
+.about-us .info{
+    width: 63%;
+    margin: 0 auto;
+}
+.about-us .info h4 {
+    margin-top: 0;
+    color: #78bfe0;
+    font-weight: bold;
+}
+
+
+/*---------------------------------------
+   offers section Style              
+-----------------------------------------*/
+
+.offers {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: #eee;
+    margin-bottom: -16px;
+}
+offers .col {
+  margin-bottom: 30px
+}
+
+
+
+/*---------------------------------------
+   works section Style              
+-----------------------------------------*/
+.works{
+  background-image: url(../imgs/3.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 400px;
+  margin-bottom: -21px;
+  
+
+}
+.works .content{
+  background: rgba(0, 0, 0, 0.73);
+  min-height: 400px;
+  width: 100%
+}
+
+.works h4{
+    color: #fff;
+    padding-top: 33px;
+}
+.works hr {
+    width: 29%;
+    margin-top: 25px;
+    border-color: #78bfe0;
+}
+.works .info{
+  overflow: hidden;
+  height: 170px;
+  margin-top: 40px;
+}
+.works .info .details{
+  width: 60%;
+  height: 100%;
+  background: #333;
+  color: #fff
+}
+.works .info .details p{
+  color: rgba(255, 255, 255, 0.47)
+}
+.works .info .details a{
+  background:#78bfe0;
+  transition: 0.3s 
+}
+.works .info .details a:hover{
+  background: #000;
+
+}
+.works .info .img{
+  width: 40%;
+  height: 100%;
+  overflow: hidden;
+}
+.works .info .img img{
+  width: 100%;
+  height: 100%
+}
+.works .content .see-more{padding-bottom: 50px}
+.works .content .see-more a{background:#78bfe0;transition: 0.5s }
+.works .content .see-more a:hover{background: #000}
+.works #info{display: none;}
+.works .see-more .span-2{display: none;}
+
+/*---------------------------------------
+  contact-us section Style              
+-----------------------------------------*/
+.contact-us{
+  overflow: hidden;
+  background: #eee;
+  padding-top: 40px;
+  margin-top: 0
+}
+.contact-us .info{
+  margin-bottom: 25px
+}
+
+.contact-us .info i{
+    color: #78bfe0;
+    position: relative;
+    top: 10px;
+}
+.contact-us .info h5{
+    margin-top: 0px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #78bfe0;
+    width: 50%;
+}
+.contact-us .info input{
+    background: #fff;
+    border: 0;
+    text-indent: 10px;
+    font-size: 13px;
+}
+.contact-us .info textarea{
+    border: 0;
+    background: #fff;
+    height: 150px;
+    resize: none;
+    margin-bottom: 10px;
+}
+.contact-us .info a{
+    background: #78bfe0;
+    transition: 0.5s
+}
+.contact-us .info a:hover{
+  background: #222
+}
+
+
+.footer {
+  background: #222;
+  color: #fff;
+  margin-top: -15px;
+  padding-top:25px;
+  padding-bottom: 25px
+}
+.footer ul{
+    display: inline-flex;
+    padding: 0;
+}
+.footer ul li {
+    margin-right: 26px;
+    font-size: 21px;
+}

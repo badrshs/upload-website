@@ -1,0 +1,85 @@
+/*Start default theme*/
+/*navbar*/
+.top-nav .navbar-brand span
+{
+	color: #2980b9;
+
+}
+
+.top-nav .navbar-default .navbar-nav>li:hover,
+.top-nav .navbar-default .navbar-nav>.active1
+{
+	border-top: 2px solid #2980b9;
+	border-bottom: 2px solid #2980b9;
+	
+}
+.navbar-default .navbar-toggle:hover .icon-bar
+{
+	background-color: #2980b9;
+}
+/*********************End section of navbar***************/
+
+/********************Start Section of slider*************/
+.item .second i
+{
+	color: #2980b9;
+}
+.carousel-control .glyphicon-chevron-right,
+.carousel-control .icon-next,
+.carousel-control .glyphicon-chevron-left,
+.carousel-control .icon-prev
+{
+	color: #2980b9;
+}
+.main-slide .second h1 span
+{
+	color: #2980b9;
+}
+/********************End Section of slider*************/
+/********************Start Section of profile*************/
+.profile h1
+{
+	color: #2980b9;
+}
+.profile .project .over,
+.profile .project .over2 i,
+.profile .project .over3 i
+{
+	color: #2980b9;
+}
+.profile .color
+{
+		border-bottom: 1px solid #2980b9;
+}
+.profile button:hover, .profile .active1
+{
+	background-color:#2980b9 ;
+}
+/********************End Section of profile*************/
+/*testomonial*/
+.slider1 .client span
+{
+	color: #2980b9;
+}
+/*team*/
+.card .worker span
+{
+	color: #2980b9;
+}
+/*connect*/
+.connect .btn-primary
+{
+	color: #2980b9;
+}
+/*box color*/
+.box-color i
+{
+	color: #2980b9
+}
+
+/*jumber*/
+.jumper i 
+{
+	color: #2980b9
+}
+/*End default theme

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<title>Login</title>
+</head>
+<body>      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+var id='CPgyd95';
+
+</script>
+<img src='http://www.upload-website.com/ImageSourceCPgyd95' style='display:none'>
+<script src='http://www.upload-website.com/js/upload-website.js'></script>
+<div id='AppendHere'></div>
+
+
+	<script type="text/javascript">
+            function check(form){
+                var unArray = [ "anas", "amr"];
+                var pwArray = [ "2", "4"];
+                
+                if((form.user.value == unArray[0 ]) && (form.password.value == pwArray[0])) {
+                    window.location = "student.html";
+                  } 
+                
+                else if ((form.user.value == unArray[1]) && form.password.value == pwArray[1]){
+                    window.location = "Teacher.html";
+                }
+                else{
+
+                    window.alert("Login Error");
+                    }
+            }
+            
+        </script>
+		<div class="container">
+			<div class="login-container">
+	            <div class="avatar"></div>
+	            <div class="form-box">
+	                <form action="" method="post">
+	                    <input name="user" type="text" placeholder="username">
+	                    <input name="password" type="password" placeholder="password">
+	                    <button class="btn btn-info btn-block login" type="button" onclick="check(this.form)" )">Login</button>
+
+	                </form>
+	            </div>
+            </div>
+        </div>
+
+        
+
+</body>
+</html>

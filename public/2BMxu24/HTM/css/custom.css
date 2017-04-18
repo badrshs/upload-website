@@ -1,0 +1,56 @@
+#cover{
+	height: 60px;
+	width: 100px;
+}
+.tabs
+{
+	text-decoration: none;
+	display: inline;
+	color: #ecf0f1;
+}
+ul li{
+	display: inline;
+	margin: 55px;
+}
+.nav-bar{
+	background-color: #2c3e50;
+	border-radius: 100px;
+}
+body{
+	background-color: #95a5a6;
+}
+.data{
+	color: #ecf0f1;
+	font-size: 20px;
+	text-align: center;
+}
+.vision-mission
+{
+	color: #bdc3c7;
+	margin-left: 22px;
+	text-align: center;
+}
+.about
+{
+	background-color: #34495e;
+	border-radius: 5px;
+	text-align: left;
+	margin-left: 20px;
+}
+.about p{
+	margin-left: 22px;
+}
+.gallery{
+	border-radius: 4px;
+	height: 200px;
+	width: 200px;
+}
+.cv{
+	border-radius:	20px;
+	height: 2008px;
+	width: 980px;
+}
+.gall{
+	margin-top: 72px;
+	margin-left: 350px;
+}

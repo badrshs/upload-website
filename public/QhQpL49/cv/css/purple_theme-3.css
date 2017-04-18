@@ -1,0 +1,28 @@
+/**** Start Default Theme ****/
+.option-box .glyphicon-cog{border: 2px solid #ab3939;}
+#logo{background-color:#ab3939;}
+#Features .a .glyphicon{color:#ab3939;}
+.nav li:hover {color:#ab3939;}
+#Features .material-icons, #Features .fa{color:#ab3939}
+#my-work .all{background-color:#ab3939; color: #fff;}
+#my-work button{color:#ab3939; }
+#contact input[type="submit"]{background-color:#ab3939;}
+#contact input[type="submit"]:hover{background:#ab3939}
+.footer span{color:#ab3939}
+.option-box .color-option{border: 1px solid #ab3939;}
+.option-box  li{background:#ab3939; }
+.head h1{border-bottom: 1px solid #ab3939;}
+.sidebar .material-icons{color:#ab3939 }
+.side-nav span{color:#ab3939}
+body::-webkit-scrollbar-thumb {
+ background:color:#ab3939;}
+
+.btn-floating.btn-large:hover{background:#ab3939}
+.btn-floating.btn-large{border: 2px solid #ab3939}
+.b1:hover{background:#ab3939;}
+.b2:hover{background:#ab3939;}
+.b3:hover{background:#ab3939;}
+.b1,.b2,.b3{border: 2px solid #ab3939;}
+
+
+/**** End Default Theme ****/

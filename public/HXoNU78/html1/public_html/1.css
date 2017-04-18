@@ -1,0 +1,32 @@
+body {
+    background-image: url("http://cdn.wallpapersafari.com/17/47/jY9PK0.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: auto;
+}
+.head {
+    color:#ff7507;
+    text-align: center;
+    font-size: 50px;
+    font-style: italic;
+    
+}
+
+.content ul {
+  padding:0px 50px 0px 80px;
+}
+.content{
+    text-align: center;
+    font-size: 40px;
+    color:#ff7507;
+}
+li {
+    display: inline;
+    margin: 0px 40px 0px 60px;
+}
+.a, .b, .c {
+    text-decoration: none;
+    color:#ff7507;
+    font-size: larger;
+}
+// https://images8.alphacoders.com/367/367792.jpg

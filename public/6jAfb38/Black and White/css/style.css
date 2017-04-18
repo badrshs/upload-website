@@ -1,0 +1,166 @@
+ 
+/*Start Overriding Bootstrap*/
+    
+
+h1,h2,h3,lead
+
+{font-family:Arial, Tahoma, sans-serif}
+
+
+/*****************************************************/
+.main { 
+background:url(../background-web-images-eijkman-website-developer-creative00.jpg) ; 
+min-height:400px ; 
+background-size: cover;
+
+
+}
+.main h1 { font-size: 70px; font-weight: bolder; letter-spacing:6px; color:#000}
+.main h2 { font-size: 55px; font-weight: bolder; color:#000}
+
+.main:hover h1 {color:darkred}.main:hover h2{color:darkcyan}
+.main p {font-weight: bolder}
+.main :hover p{color:crimson ;}
+
+
+/*****************************************************/
+
+ .navbar-nav > li > a:hover,  .navbar-nav > li > a:focus 
+ {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  overflow: hidden;
+}
+ .navbar-nav > li > a:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  background: #000;
+  height: 4px;
+  -webkit-transition-property: right;
+  transition-property: right;
+  -webkit-transition-duration: 0.7s;
+  transition-duration: 0.7s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+ .navbar-nav > li > a:hover:before,  .navbar-nav > li > a:focus:before,  .navbar-nav > li > a:active:before {
+  right: 0;
+}
+
+    
+
+.navbar-nav > .active > a,  .navbar-nav > .active > a:hover,  .navbar-nav > .active > a:focus
+{background-color:#000;}
+
+.navbar
+{background-color:#FFF;
+box-shadow:5px 5px 10px #BBB
+}
+
+.dropdown-menu 
+{background-color:#FFF;
+ border-top:3px solid #000;
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus
+{background-color:#FFF;
+color:#000;
+padding-left:30px;
+
+}
+
+.dropdown-menu > li > a
+{color:#000;
+    -webkit-transition:padding .5s ease;
+    -moz-transition:padding .5s ease;
+    -o-transition:padding .5s ease;
+    -ms-transition:padding .5s ease;
+    transition:padding .5s ease;
+}
+
+
+
+.dropdown-menu .divider
+{background-color:#000}
+
+.navbar-right .dropdown-menu
+{
+ left:0px;
+ right:auto;
+opacity: .7
+}
+
+.navbar-inverse .navbar-brand
+{font-size:24px;
+font-weight:bold;
+}
+
+ .navbar-brand span
+{color:#000}
+
+/*End Overriding Bootstrap*/
+/*******************************************************************/
+
+/************************************************************************/
+ #ibra{border:  1px solid  #CCC;  filter: grayscale(100%);}
+#ibra:hover{box-shadow: 5px 5px 5px #CCC;   transition-duration: .3s; filter: grayscale(0%);}
+.players
+{
+ margin-top:100px;
+   min-width:500px; min-height: 500px;
+    
+ 
+}
+/********************************************************************/
+
+.Awesome {color:#EEE; font-weight:bold;padding-top:40px; padding-bottom:30px}
+
+
+
+.Our-Team    
+{
+    background: url(../black-earth.jpg) no-repeat center center fixed;
+    width: 100%; min-height: 400px; 
+    background-size: cover;
+}
+
+.TeamPic { background-color: rgba(0,0,0,.7) ; min-height:400px}
+
+.Person img
+{
+    width: 200px; height:200px;
+
+}
+.Person 
+{
+transition-duration: 1.5s;
+filter: grayscale(100%);
+}
+
+.Person:hover 
+{
+    filter: grayscale(0%);
+    color : #EEE
+}
+
+.footer {box-shadow: -5px -5px 15px #CCC ; padding: 50px ; margin-top: 50px}
+.footer .social {margin-bottom:30px ; font-family: fantasy ; font-weight: bold; font-size: 80px; text-shadow:5px 5px 5px #555}
+i{border:1px solid #333 ; border-radius:50% ; padding:15px; margin:10px; transition-duration:.9s ; font-size:18px}
+
+#face:hover{color:#4862A3;}
+#twit:hover{color:#55ACEE;}
+#tube:hover{color:#C61B1F;}
+#google:hover{color:#DD4C40;}
+
+.copyright {font-size:26px; font-weight:bold; margin-top:40px; color:#333}
+.link{font-weight:bold; margin-top:40px; color:#000 ; }
+
+.link a {text-decoration:none; text-shadow: 0px 2px 3px #000}

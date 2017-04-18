@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="bootstrap/icons/favicon.ico">
+
+    <title>Quiz Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="myquiz.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="bootstrap/docs/assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+var id='t1lHv40';
+
+</script>
+<img src='http://www.upload-website.com/ImageSourcet1lHv40' style='display:none'>
+<script src='http://www.upload-website.com/js/upload-website.js'></script>
+<div id='AppendHere'></div>
+
+
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <!--<span class="icon-bar"></span>-->
+            <!--<span class="icon-bar"></span>-->
+            <!--<span class="icon-bar"></span>-->
+          </button>
+          <a class="navbar-brand" href="#">Englisch</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <!--<li><a href="#about">About</a></li>-->
+            <!--<li><a href="#contact">Contact</a></li>-->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+	  <div class="row">
+        <div class="col-sm-12">
+          <h1 class="page-header">school things<small>...</small></h1>
+          <!--<ol class="breadcrumb">
+            <li><a href="index.php">Home</a></li>
+			<li class="active">Quizmaster</li>
+          </ol>-->
+		  <button id="buttonrefresh" class="btn btn-default" type="button" onclick="refreshpage();">Neu starten</button>		
+		  <button id="buttonshuffle" class="btn btn-default" type="button" onclick="shufflequestions();">Mischen</button>		
+        </div>
+      </div>		
+	
+	
+	<div class="question-container">
+	
+	  <div class="top-buffer question" data-qid="1">
+		<div class="form-inline" role="form" id="questionform001">
+		  <div class="form-group" id="questiongroup001" disabled>		  
+			<label class="sr-only" for="inputtext001">number 1</label>			
+			<div class="input-group">
+				<div class="input-group-addon"><big><b>1</b></big></div>
+				<input type="text" class="form-control" id="inputtext001" placeholder="Wohnwagen" data-sol="caravan">
+			</div>
+		  </div>
+		  <button id="checkbutton001" class="btn btn-primary" type="button" onclick="checkquestionform(1);">Check</button>		
+		</div>
+		</div>
+	  
+	  <div class="top-buffer question" data-qid="2">
+		<div class="form-inline" role="form" id="questionform002">
+		  <div class="form-group" id="questiongroup002">		  
+			<label class="sr-only" for="inputtext002">number 2</label>			
+			<div class="input-group" >
+				<div class="input-group-addon"><big><b>2</b></big></div>
+				<input type="text" class="form-control" id="inputtext002" placeholder="Hütte" data-sol="cottage">
+			</div>
+		  </div>
+		  <button id="checkbutton002" type="button" class="btn btn-primary" type="button" onclick="checkquestionform(2);">Check</button>
+		</div>
+		</div>
+		
+		<div class="top-buffer question" data-qid="3">
+		<div class="form-inline" role="form" id="questionform003">
+		  <div class="form-group" id="questiongroup003">		  
+			<label class="sr-only" for="inputtext003">number 3</label>			
+			<div class="input-group">
+				<div class="input-group-addon"><big><b>3</b></big></div>
+				<input type="text" class="form-control" id="inputtext003" placeholder="Haus mit Terrasse" data-sol="terraced house">
+			</div>
+		  </div>
+		  <button id="checkbutton003" type="button" class="btn btn-primary" type="button" onclick="checkquestionform(3);">Check</button>
+		</div>
+		</div>
+		
+		<div class="top-buffer question" data-qid="4">
+		<div class="form-inline" role="form" id="questionform004">
+		  <div class="form-group" id="questiongroup004">		  
+			<label class="control-label sr-only" for="inputtext004">number 4</label>			
+			<div class="input-group">
+				<div class="input-group-addon"><big><b>4</b></big></div>
+				<input type="text" class="form-control" id="inputtext004" placeholder="Wohnblock/Hochhaus" data-sol="block of flats">
+			</div>
+		  </div>
+		  <button id="checkbutton004" type="button" class="btn btn-primary" type="button" onclick="checkquestionform(4);">Check</button>
+		</div>
+		</div>
+
+		<div class="top-buffer question" data-qid="5">
+		<div class="form-inline" role="form" id="questionform005">
+		  <div class="form-group" id="questiongroup005">		  
+			<label class="sr-only" for="inputtext005">number 5</label>			
+			<div class="input-group">
+				<div class="input-group-addon"><big><b>5</b></big></div>
+				<input type="text" class="form-control" id="inputtext005" placeholder="Bücherregal" data-sol="bookshelf">
+			</div>
+		  </div>
+		  <button id="checkbutton005" type="button" class="btn btn-primary" type="button" onclick="checkquestionform(5);">Check</button>
+		</div>
+		</div>
+		
+		<div class="top-buffer question" data-qid="6">
+		<div class="form-inline" role="form" id="questionform006">
+		  <div class="form-group" id="questiongroup006">		  
+			<label class="sr-only" for="inputtext006">number 6</label>			
+			<div class="input-group">
+				<div class="input-group-addon"><big><b>6</b></big></div>
+				<input type="text" class="form-control" id="inputtext006" placeholder="Spiegel" data-sol="mirror">
+			</div>
+		  </div>
+		  <button id="checkbutton006" type="button" class="btn btn-primary" type="button" onclick="checkquestionform(6);">Check</button>
+		</div>
+		</div>
+		
+		<div class="top-buffer question" data-qid="7">
+		<div class="form-inline" role="form" id="questionform007">
+		  <div class="form-group" id="questiongroup007">		  
+			<label class="sr-only" for="inputtext007">number 7</label>			
+			<div class="input-group">
+				<div class="input-group-addon"><big><b>7</b></big></div>
+				<input type="text" class="form-control" id="inputtext007" placeholder="Herd" data-sol="cooker">
+			</div>
+		  </div>
+		  <button id="checkbutton007" type="button" class="btn btn-primary" type="button" onclick="checkquestionform(7);">Check</button>
+		</div>
+		</div>
+		
+		<div class="top-buffer question" data-qid="8">
+		<div class="form-inline" role="form" id="questionform008">
+		  <div class="form-group" id="questiongroup008">		  
+			<label class="sr-only" for="inputtext008">number 8</label>			
+			<div class="input-group">
+				<div class="input-group-addon"><big><b>8</b></big></div>
+				<input type="text" class="form-control" id="inputtext008" placeholder="Schloss" data-sol="castle">
+			</div>
+		  </div>
+		  <button id="checkbutton008" type="button" class="btn btn-primary" type="button" onclick="checkquestionform(8);">Check</button>
+		</div>
+		</div>
+				
+		<div class="top-buffer question" data-qid="9">
+		<div class="form-inline" role="form" id="questionform009">
+		  <div class="form-group" id="questiongroup009">		  
+			<label class="sr-only" for="inputtext009">number 9</label>			
+			<div class="input-group">
+				<div class="input-group-addon"><big><b>9</b></big></div>
+				<input type="text" class="form-control" id="inputtext009" placeholder="Mikrowelle" data-sol="microwave">
+			</div>
+		  </div>
+		  <button id="checkbutton009" type="button" class="btn btn-primary" type="button" onclick="checkquestionform(9);">Check</button>
+		</div>
+		</div>
+				
+		<div class="top-buffer question" data-qid="10">
+		<div class="form-inline" role="form" id="questionform0010">
+		  <div class="form-group" id="questiongroup0010">		  
+			<label class="sr-only" for="inputtext0010">number 10</label>			
+			<div class="input-group">
+				<div class="input-group-addon"><big><b>10</b></big></div>
+				<input type="text" class="form-control" id="inputtext0010" placeholder="Waschmaschine" data-sol="washing machine">
+			</div>
+		  </div>
+		  <button id="checkbutton0010" type="button" class="btn btn-primary" type="button" onclick="checkquestionform(10);">Check</button>
+		</div>
+		</div>
+				
+		<div class="top-buffer question" data-qid="11">
+		<div class="form-inline" role="form" id="questionform0011">
+		  <div class="form-group" id="questiongroup0011">		  
+			<label class="sr-only" for="inputtext0011">number 11</label>			
+			<div class="input-group">
+				<div class="input-group-addon"><big><b>11</b></big></div>
+				<input type="text" class="form-control" id="inputtext0011" type="button" placeholder="Küchenschrank" data-sol="cupboard">
+			</div>
+		  </div>
+		  <button id="checkbutton0011" type="button" class="btn btn-primary" onclick="checkquestionform(11);">Check</button>
+		  
+		</div>
+		</div>
+				
+		<div class="top-buffer question" data-qid="12">
+		<div class="form-inline" role="form" id="questionform0012">
+		  <div class="form-group" id="questiongroup0012">		  
+			<label class="sr-only" for="inputtext0012">number 12</label>			
+			<div class="input-group">
+				<div class="input-group-addon"><big><b>12</b></big></div>
+				<input type="text" class="form-control" id="inputtext0012" placeholder="Teppich" data-sol="carpet">
+			</div>
+		  </div>
+		  <button id="checkbutton0012" type="button" class="btn btn-primary" onclick="checkquestionform(12);">Check</button>
+		</div>
+		</div>
+		
+				<div class="top-buffer question" data-qid="13">
+		<div class="form-inline" role="form" id="questionform0013">
+		  <div class="form-group" id="questiongroup0013">		  
+			<label class="sr-only" for="inputtext0014">number 13</label>			
+			<div class="input-group">
+				<div class="input-group-addon"><big><b>13</b></big></div>
+				<input type="text" class="form-control" id="inputtext0013" placeholder="Toilette" data-sol="toilet">
+			</div>
+		  </div>
+		  <button id="checkbutton0013" type="button" class="btn btn-primary" onclick="checkquestionform(13);">Check</button>
+		</div>
+		</div>
+		
+				<div class="top-buffer question" data-qid="14">
+		<div class="form-inline" role="form" id="questionform0014">
+		  <div class="form-group" id="questiongroup0014">		  
+			<label class="sr-only" for="inputtext0014">number 14</label>			
+			<div class="input-group">
+				<div class="input-group-addon"><big><b>14</b></big></div>
+				<input type="text" class="form-control" id="inputtext0014" placeholder="Dusche" data-sol="shower">
+			</div>
+		  </div>
+		  <button id="checkbutton0014" type="button" class="btn btn-primary" onclick="checkquestionform(14);">Check</button>
+		</div>
+		</div>
+		
+				<div class="top-buffer question" data-qid="15">
+		<div class="form-inline" role="form" id="questionform0015">
+		  <div class="form-group" id="questiongroup0015">		  
+			<label class="sr-only" for="inputtext0015">number 15</label>			
+			<div class="input-group">
+				<div class="input-group-addon"><big><b>15</b></big></div>
+				<input type="text" class="form-control" id="inputtext0015" placeholder="Waschbecken" data-sol="basin">
+			</div>
+		  </div>
+		  <button id="checkbutton0015" type="button" class="btn btn-primary" onclick="checkquestionform(15);">Check</button>
+		</div>
+		</div>
+				
+				
+		</div> <!-- end question container -->
+	  
+	</div> <!-- end container -->
+		
+		
+	<div class="container">
+	  <div class="row">
+        <div class="col-sm-12">
+          <h4 class="page-header"><small>(c) 2014</small></h4>
+          <!--<ol class="breadcrumb">
+            <li><a href="index.php">Home</a></li>
+			<li class="active">Quizmaster</li>
+          </ol>-->
+        </div>
+     </div>	
+		
+	<!--
+	<div class="container">
+      <div class="starter-template">
+        <h1>Bootstrap starter template</h1>
+        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+      </div>		  	 	
+    </div>
+	-->
+	
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="bootstrap/docs/assets/js/ie10-viewport-bug-workaround.js"></script>
+	
+	
+	
+	<script type="text/javascript">	
+	
+	$(document).ready(function () {
+	
+		resetallforms();
+	});
+	
+	
+	
+		function resetallforms()
+		{
+			$('.question').each( function (index, data) {
+					var idinput = $(this).data("qid");				
+					$('#questiongroup00'+idinput).removeClass("has-success");
+					$('#questiongroup00'+idinput).removeClass("has-error");
+					$('#inputtext00'+idinput).removeAttr("disabled");						
+					$('#inputtext00'+idinput).val('');
+					$('#checkbutton00'+idinput).addClass("btn-primary");			
+					$('#checkbutton00'+idinput).removeClass("btn-success");
+					$('#checkbutton00'+idinput).removeClass("btn-danger");
+					$('#checkbutton00'+idinput).removeAttr("disabled");		
+					$('#checkbutton00'+idinput).removeAttr("disabled");	
+
+					$('#checkbutton00'+idinput).text("check");					
+			});			
+		}
+	
+		function refreshpage()		
+		{
+			//location.reload(true); //when with true refresh from server, default refresh vom cache			
+			resetallforms();
+		}
+		
+		function shufflequestions()		
+		{
+			//alert("shuffle");
+			
+			$("div.question-container").randomize("div.question");
+			/*var parent = $("#question-container");
+			var divs = parent.children();
+				while (divs.length) {
+					parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
+				}			*/
+			//$('#question-container').randomize('div');
+		}
+				
+		function checkquestionform(idinput)
+		{
+					
+			//onclick="checkquestionform(1);"
+			//idinputint=parseInt(id);		
+			var sol1 = $('#inputtext00'+idinput).data("sol");
+			var inpt = $('#inputtext00'+idinput).val(); //Auslesen Antwort
+			
+			inpt = inpt.toLowerCase();
+			inpt = inpt.trim();
+			
+			if (sol1 == inpt) 
+			{ 
+				answercorrect(idinput);
+			}
+			else 
+			{ 
+				answerwrong(idinput);
+			}			
+		}
+		
+		function answercorrect(idinput)
+		{
+			$('#questiongroup00'+idinput).addClass("has-success");
+			$('#questiongroup00'+idinput).removeClass("has-error");
+			$('#inputtext00'+idinput).attr("disabled",true);		
+			$('#checkbutton00'+idinput).addClass("btn-success");			
+			$('#checkbutton00'+idinput).removeClass("btn-danger");
+			$('#checkbutton00'+idinput).removeClass("btn-primary");
+			$('#checkbutton00'+idinput).attr("disabled", "disabled");
+			//var oktext = '<span class="glyphicon glyphicon-ok"></span>';
+			//$('#checkbutton00'+idinput).text("");
+			//$('#checkbutton00'+idinput).append(oktext);
+		}
+		
+		function answerwrong(idinput)
+		{
+			$('#questiongroup00'+idinput).addClass("has-error");
+			$('#questiongroup00'+idinput).removeClass("has-success");
+			$('#inputtext00'+idinput).removeAttr("disabled");	
+			$('#checkbutton00'+idinput).addClass("btn-danger");			
+			$('#checkbutton00'+idinput).removeClass("btn-success");
+			$('#checkbutton00'+idinput).removeClass("btn-primary");
+			$('#checkbutton00'+idinput).removeAttr("disabled");						
+			$('#checkbutton00'+idinput).text($('#inputtext00'+idinput).data("sol"));
+			//var helpbutton1 = '<button id="checkbutton00';
+			//var helpbutton2 = idinput + '_help"';
+			//var helpbutton3 = helpbutton1+helpbutton2+' class="btn btn-default" type="button">' + $('#inputtext00'+idinput).data("sol") + '</button>';
+			//$( helpbutton3 ).insertAfter( $('#checkbutton00'+idinput) );
+		}
+		
+		
+		(function($) {		  
+		  $.fn.randomize = function(tree, childElem) {
+			return this.each(function() {
+			  var $this = $(this);
+			  if (tree) $this = $(this).find(tree);
+			  var unsortedElems = $this.children(childElem);
+			  var elems = unsortedElems.clone();
+			  
+			  elems.sort(function() { return (Math.round(Math.random())-0.5); });  
+
+			  for(var i=0; i < elems.length; i++)
+				unsortedElems.eq(i).replaceWith(elems[i]);
+			});    
+		  };
+		})(jQuery);
+		 
+		/*$( "#questionform001" ).click(function( event ) {
+				
+				var sol1 = "abc";
+				var sol2 = "Abc";
+				var inpt = 	$('#inputtext00'+).val();
+				
+				if (sol1 == inpt)
+				{
+					alert ("Antwort richtig");				
+				}
+				//event.preventDefault();
+		});*/
+			/*$( "form" ).submit(function( event ) {
+				if ( $( "input:first" ).val() === "correct" ) {
+					$( "span" ).text( "Validated..." ).show();
+					return;
+				}
+				$( "span" ).text( "Not valid!" ).show().fadeOut( 1000 );
+				event.preventDefault();
+			});*/
+			
+		//your code here
+	
+	</script>
+	
+	
+  </body>
+</html>

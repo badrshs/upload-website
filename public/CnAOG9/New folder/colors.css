@@ -1,0 +1,53 @@
+
+
+
+/*Main color*/
+
+.wrapper ,#app  {
+ 
+  background: #174ef1;
+
+}
+
+
+/* This is the Color of text and the background color of the 2 buttons at the fotter */
+#app #req-pay button {
+  
+  /* This is the Color of text*/
+  color: blue;
+
+   /* This is the Color of the background color of the 2 buttons at the fotter */
+  background-color: red; 
+
+}
+
+/* This is the Color of The result*/
+#app #display {
+    color: yellow;
+  }
+
+
+  /* This is the Color of The label*/
+
+  .dis ul li{
+  	color: grey;
+  }
+
+
+    /* This is the Color of The result2*/
+.dis ul li h4{
+  	color: green;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+

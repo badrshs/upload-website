@@ -1,0 +1,117 @@
+.red-text{
+	color:red !important;
+	font-size:16px !important;	
+	}
+
+.bk
+{ background:url(../img/1.png) no-repeat top center fixed ;
+background-size:cover;
+height:800px;
+color:#FFF;
+
+
+
+	}
+.bk2
+{ background:url(../img/2.png) no-repeat top center fixed  ;
+background-size:cover;
+height:800px;
+color:#FFF;
+
+
+	}
+	.bk3
+{ background:url(../img/3.jpg) no-repeat top center fixed  ;
+background-size:cover;
+height:800px;
+color:#FFF;
+
+
+	}
+	.bk4
+{ background:url(../img/4.jpg) no-repeat top center fixed  ;
+background-size:cover;
+height:800px;
+color:#FFF;
+
+
+	}
+	
+	.bk5
+{ background:url(../img/9.jpg) no-repeat top center fixed  ;
+background-size:cover;
+height:800px;
+color:#FFF;
+
+
+	}
+		.bk6
+{ background:url(../img/nike.jpg) no-repeat top center fixed  ;
+background-size:cover;
+height:1000px;
+color:#FFF;
+
+
+	}	
+	
+			.bk7
+{ background:url(../img/11.jpg) no-repeat top center  ;
+background-size:cover;
+height:1000px;
+color:#FFF;
+
+
+	}
+	
+	
+	
+		
+			.bk8
+{ background:url(../img/12.jpg) no-repeat top center  ;
+background-size:cover;
+height:1000px;
+color:#FFF;
+
+
+	}
+	
+	
+	
+	
+	
+	
+.jumbotron
+{
+	margin-bottom:0 !important;
+	
+	
+	}
+	
+	
+		 			@font-face {
+    font-family: myFirstFont;
+	src:url(../fonts/Digitalt.ttf);
+	
+	
+}
+		
+.fo {
+    font-family: myFirstFont;
+	font-size:24px;
+	
+ 
+}
+
+
+
+footer {
+            background-color: black;
+        }
+        
+#justpushtobottom {
+  
+}
+
+	
+	
+	

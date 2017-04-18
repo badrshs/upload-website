@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* CSS Document */
+
+@media(max-width:767px)
+{
+	.navbar-nav .open .dropdown-menu
+	{
+		position: absolute;
+		top: 39px;
+		background-color: #eeeeee;
+	}
+	.navbar-nav .open .dropdown-menu>li>a:hover,
+	 .navbar-nav .open .dropdown-menu>li>a:focus
+	 {
+	 	background-color: #FFF;
+	 }
+	 /*slider*/
+	 .slider .content
+	 {
+	 	display: none;
+	 }
+	 .slider .carousel-control .glyphicon-chevron-left
+	 {
+		left: 10px;
+	 }
+	.slider .carousel-control .glyphicon-chevron-right
+	{
+		right: 10px;
+	}
+	/*after and befor*/
+	.latest h1:after
+	{
+		right: 72%;
+	}
+	.latest h1:before
+	{
+		left: 72%;
+	}
+	.latest .product
+	{		
+		margin-top: 70px;
+		
+	}
+	.latest .pay
+	{
+		margin-right: 20%;
+	}
+	.latest .pay a
+	{
+		display: inline-block;
+		
+	}
+}
+/*small screen*/
+@media(min-width:768px) and (max-width:991px)
+{
+
+	.latest .pay a 
+	{
+		padding: 0;
+	}
+
+	
+}
+
+/*medium screen*/
+@media(min-width:992px) and (max-width:1199px)
+{
+	 
+}
+/*large screen*/
+@media(min-width:1200px)and (max-width:1320px)
+{
+		
+		
+		  
+}
+/*End Media Query*/

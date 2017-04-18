@@ -1,0 +1,28 @@
+	
+
+*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box; box-sizing:border-box}
+body {background: url(../images/hintergrund.png)}
+.container{width:1024px;height: 2000px;margin: auto;}
+.header{margin-top: 0px;padding-top: 0px}
+.nav{height: 43px;background-color: chocolate;margin-top: -14px;padding-top: 0px}
+.nav p{float: right;margin-right: 20px;}
+.nav ul {list-style-type: none;margin-left: 20px;text-transform: uppercase}
+.nav ul li a
+{float: left;margin-left: 50px;display: inline;margin-top: 15px;color:#bbb;font-size: 16px;text-decoration: none}
+.nav ul li.active a,
+.nav ul li a:hover{color:#232}
+.slogan img{margin-left: 400px}
+.skitter-large{max-width: 100%;}
+.content {overflow: hidden;width: 100%;}
+.classes .kind{width: 33%;float: left;margin-bottom: 15px; }
+.classes .kind img {margin-left: 17px;border-top:2px solid #ddd ;padding-top: 50px }
+.classes  {width: 100%;float: left;}
+.classes  h2 {text-align: center;color:#777 ;margin-top: 40px}
+.classes kind hr {margin-left: 40px;width: 100%;margin-bottom: 10px;padding-left: 10px}
+.classes  hr {width: 94%;margin-bottom: 45px}
+.content .describtion p{text-align:center;line-height: 1.7;font-size:20px;padding-left: 10px;padding-right: 10px}
+.describtion { margin:auto;overflow: hidden;background: #fed;width:100%;text-align: center}
+.bigslogan {overflow: hidden;height: 493px;background:url(../images/slider-holder%202.png);margin-top: 70px }
+.footer{background:#5d1f06;height: 62px;margin-top: 40px;text-align: center;color:#fff;}
+.footer p{padding-top: 20px}
+ 

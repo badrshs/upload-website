@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html /ang="em">
+<head>
+<title>Developing an ICT Project for Social Change</title>
+	<link rel="icon" type="image/png" href="logo.png" />
+		<meta charset="utf-s" />
+	<title>NAVBAR</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+ 
+<body topmargin="0%" leftmargin="200%" rightmargin="200%">
+<h1 style="color:#D5D8DC;font-size:195%;font-family:Agency FB"><center><a href="logo3.png"><img src="logo2.png" width=95 height=85></a>Developing an ICT Project for Social Changes</center></h1>	
+<ul class="nav">
+		<li><a href="HOME.html">HOME</a></li>
+		<li><a href="FAQs.html">FAQs</a></li>
+		<li><a href="ABOUTUS.html">ABOUT US</a></li>
+	</ul>
+	<div id="fourth">
+<p>
+	<center><th><h5 style="color:#2E4053;font-family:Century Gothic"><i>Queencess M. Peralta</i></h5></th></center>
+	<ul>
+	<h6><b>Email Address:</b> Queencess357@gmail.com</h6>
+	<h6><b>Contact Number:</b> 09153153573</h6>
+	<h6><b>Age:</b> 17</h6>
+	</ul>
+</p>
+</div>
+<div class="page">
+
+  <ul class="pager">
+    <li><a href="ABOUTUS.html">←</a></li>
+    <li><a href="next1.html">→</a></li>
+  </ul>
+</div>
+
+ 
+</body>
+</html>

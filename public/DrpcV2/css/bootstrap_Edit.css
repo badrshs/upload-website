@@ -1,0 +1,10 @@
+.navbar-inverse{
+    background-color: #3e464c;
+    border-radius: 0;
+}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus{
+    background-color: #30363a;
+}
+.carousel-caption{
+    bottom: 35%;
+}

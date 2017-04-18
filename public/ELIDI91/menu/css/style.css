@@ -1,0 +1,197 @@
+body{font-family: 'Play', sans-serif;}
+
+h2 {
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+hr {
+    width: 30%;
+    margin: 20px auto;
+    border: 1px solid #c56767;
+    margin-bottom: 40px;
+}
+a,a:hover{color: #fff;text-decoration: none;}
+/*start menu*/
+.menu {
+	overflow: hidden;
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+}
+
+.menu .info {
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 30px;
+    box-shadow: 1px 1px 8px #222;
+    cursor: pointer;
+    height: 245px;
+}
+.menu .info img {
+    width: 100%;
+    height: 100%;
+    transition: 1.5s
+}
+
+.menu .info .caption {
+    position: absolute;
+    top: 0;
+    background: rgba(34, 34, 34, 0.69);
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+    transform: rotateX(90deg);
+}
+.menu .info .caption .content {
+    padding-top: 9%;
+}
+.menu .info .caption .content h3 {
+    letter-spacing: 8px;
+    font-weight: bold;
+    font-family: 'Playball', cursive;
+}
+.menu .info .caption .content p {
+    color: rgba(255, 255, 255, 0.71);
+    width: 80%;
+    margin: 5px auto;
+}
+.menu .info .caption .content button {
+    background: #a2344e;
+    border: 0;
+    padding: 11px;
+    color: #fff;
+    letter-spacing: 9px;
+    border-radius: 2px;
+    transition: 0.3s
+}
+.menu .info .caption .content button:hover{background: #222}
+.menu .info:hover .caption{transform: rotateX(0deg);}
+.menu .info:hover img{transform: scale(1.5);}
+
+/*End menu*/
+
+
+
+/*start tabels*/
+
+.button {
+  width: 100px;
+  min-width: 48px;
+  min-height: 48px;
+  border-radius: 5px;
+  text-align: center;
+  color: #fff;
+  transition: all 100ms ease-in-out;
+  cursor:pointer;
+
+  margin-bottom: 30px;
+}
+.button:hover {
+  opacity: .9;
+  -webkit-transition: all 100ms ease;
+  transition: all 100ms ease;
+}
+.tables .num {
+    background: rgb(40, 92, 148);
+    padding: 3px;
+    border-radius: 5px;
+}
+/*animate*/
+.btn-animate {
+  background: transparent;
+  border: 2px solid #11355C;
+  color: #11355C;
+}
+.btn-animate:hover, 
+.btn-animate:focus {
+  box-shadow: 0 0 0 2px #11355C;
+  -webkit-transition-timing-function: cubic-bezier(0.6, 4, 0.3, 0.8);
+  transition-timing-function: cubic-bezier(0.6, 4, 0.3, 0.8);
+  -webkit-animation: animate 0.5s 1;
+  animation: animate 0.5s 1;
+}
+.btn-animate {
+  background: #11355C;
+  color: #FFF;
+}
+.btn-animate:hover {
+  box-shadow: 0 0 0 2px #196ABE, 0 0 0 4px #196ABE;
+}
+.btn-animate:active,
+.btn-animate:active {
+  background: #196ABE;
+  -webkit-transition-duration: 0;
+  transition-duration: 0;
+  box-shadow: 0 0 0 2px #196ABE, 0 0 0 4px #196ABE;
+}
+@keyframes animate {
+  from,to {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  25% {
+    -webkit-transform: scale(0.9, 1.1);
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    -webkit-transform: scale(1.1, 0.9);
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    -webkit-transform: scale(0.95, 1.05);
+    transform: scale(0.95, 1.05);
+  }
+  from,to {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  25% {
+    -webkit-transform: scale(0.9, 1.1);
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    -webkit-transform: scale(1.1, 0.9);
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    -webkit-transform: scale(0.95, 1.05);
+    transform: scale(0.95, 1.05);
+  }
+}
+@-webkit-keyframes animate {
+  from,to {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  25% {
+    -webkit-transform: scale(0.9, 1.1);
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    -webkit-transform: scale(1.1, 0.9);
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    -webkit-transform: scale(0.95, 1.05);
+    transform: scale(0.95, 1.05);
+  }
+  from,to {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  25% {
+    -webkit-transform: scale(0.9, 1.1);
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    -webkit-transform: scale(1.1, 0.9);
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    -webkit-transform: scale(0.95, 1.05);
+    transform: scale(0.95, 1.05);
+  }
+}
+
+/*End tabels*/

@@ -1,0 +1,27 @@
+body
+{
+    width: auto;
+    height: auto;
+    margin: auto;
+    background-color: darkred;
+    
+}
+
+#head{
+    font-family: sans-serif;
+    font-size: 70px;
+    margin-left: 250px;
+    margin-top: 200px;
+    
+}
+
+ul{
+    font-family: monospace;
+    font-size: 40px;
+    color: whitesmoke;
+    margin-left: 550px;
+    margin-top: 200px;
+}
+a{
+    color: whitesmoke;
+}

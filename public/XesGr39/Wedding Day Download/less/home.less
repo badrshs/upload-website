@@ -1,0 +1,129 @@
+/*========== Home ==========*/
+
+.slider-content{
+	padding: 3em 0;
+	overflow: hidden;
+	min-height: 900px;
+	position: relative;
+
+	> a{
+		position: absolute;
+		top: 9em;
+		color: @white;
+		text-transform: uppercase;
+		text-shadow: 0 1px 0 @light-text;
+		background: rgba(0,0,0, 0.05);
+
+		&:hover{
+			background: rgba(0,0,0, 0.2);
+		}
+
+		> b{
+			width: 100px;
+			display: inline-block;
+		}
+
+		> i{
+			font-size: 4.5em;
+			font-family: fixedsys, consolas, monospace;
+		}
+	}
+
+	.prev-slider{
+		left: -300px;
+
+		&:hover{
+			left: 0;
+		}
+	}
+
+	.next-slider{
+		right: -300px;
+
+		&:hover{
+			right: 0;
+		}
+
+		> b{
+			text-align: right;
+		}
+	}
+
+	> ul{
+		.clearfix();
+		width:10000px;
+		.transition();
+
+		&:hover{
+
+			~ .prev-slider{
+				left: 0;
+			}
+
+			~ .next-slider{
+				right: 0;
+			}
+		}
+
+		> li{
+			padding: 1.5em;
+			background: @white;
+			float: left;
+			margin-right: 1.5em;
+			.box-sizing(border-box);
+
+			&:last-child{
+				margin-right: 0;
+			}
+
+			> figure{
+				position: relative;
+				margin-bottom: 0;
+				overflow: hidden;
+
+				a:hover{
+					.opacity(60);
+
+					+ figcaption{
+						margin-left: -125px;
+						left: 50%;
+						.rotate(0deg);
+					}
+				}
+
+
+				> figcaption{
+					position: absolute;
+					bottom: 25px;
+					left: -500px;
+					.rotate(-360deg);
+					.transition(0.4s);
+					border-radius: 50%;
+					width: 250px;
+					height: 250px;
+					box-shadow: 0 0 0 15px rgba(255,255,255, 0.3);
+					background: url(../img/slider-dec.png) 0 0 no-repeat rgba(255,255,255, 0.5);
+					
+					&:hover{
+						margin-left: -125px;
+						left: 50%;
+						.rotate(0deg);
+					}
+
+					> h2{
+						padding: 100px 30px 0 30px;
+						text-align: center;
+
+						> a{
+							color: @text-color;
+
+							&:hover{
+								color: @violet;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,73 @@
+/* start global for all browsers */
+    *{
+  
+    -webkit- box-sizing: border-box;
+    -moz-    box-sizing: border-box;
+    -o-      box-sizing: border-box;
+             box-sizing: border-box;
+      }
+/* end global for all browsers */
+
+/*start  body */
+  body{
+    background-image: url(hope.jpg);
+    background-size: cover;
+    font-family: tahoma  arial;
+    width: 100%
+      }
+/*end  body */ 
+
+/*start  form */
+  form{
+    background-color: #ddd;
+    opacity: .7;
+    width: 40%;
+    margin: auto; 
+    padding: 2%;
+    border-radius:30px;
+    min-width: 300px;
+      }
+/*end  form */
+
+/*start  a,p */
+  a,p{
+    text-align: center;
+    display: block;
+    font-size: 30px;
+     }
+/*end  a,p */
+
+/*start input */
+  input{
+    font-size: 30px;
+    margin:7% auto;
+    text-align: center;
+    display: block;
+    width: 90%;
+    min-width: 80px;
+    font-family:tahoma;  
+    color:black;
+    font-style: italic;
+    background-color: antiquewhite;
+      }
+/*end input */
+  #submit{
+    background-color:#f00;
+    font-size: 50px;
+    border-radius:30px;
+         }
+
+  .agree{
+  	margin:0;
+  	padding:0;
+  	width:1px;
+  	display: inline;
+        }
+
+  details{
+     margin-left:30px
+         }
+  .copyright{
+    margin:10px auto;
+    font-size: 1.5em
+    }

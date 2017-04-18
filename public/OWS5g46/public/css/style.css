@@ -1,0 +1,80 @@
+/* DS Website Tutorial */
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	font-family: verdana;
+}
+#wrapper{
+	width: 1024px;
+	margin: auto;
+}
+#black-bar{
+	height:10px;
+	background-color: #000;
+}
+#header{
+	height: 100px;
+}
+#logo{
+	width: 70px;
+	height: 60px;
+	float: left;
+	margin-top:20px;
+}
+#logo h1{
+	font-size:50px;
+	font-family: Times;
+}
+#navbar{
+	width: 500px;
+	float: left;
+	margin-left: 20px;
+	margin-top: 40px;
+}
+#navbar ul{
+	list-style-type: none;
+}
+#navbar ul li{
+	display:inline;
+	margin-left: 40px;
+}
+#navbar ul li a{
+	text-decoration: none;
+	color:#000;
+	font-size: 17px;
+}
+#navbar ul li a:hover{
+	color:#ff6600;
+	transition: all 0.5s;
+}
+#banner img{
+	width:100%;
+}
+#page-info{
+	margin-top: 50px;
+}
+#page-info h1{
+	margin-bottom: 10px;
+}
+#col-wrapper{
+	margin-top: 20px;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+.col{
+	width:316px;
+	float:left;
+}
+.col img{
+	width:100%;
+	margin-top: 10px;
+}
+.custom{
+	margin-left: 37px;
+}
+.col p{
+	margin-top: 10px;
+	font-size: 14px;
+}

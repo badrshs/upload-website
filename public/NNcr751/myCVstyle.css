@@ -1,0 +1,74 @@
+
+.start
+{
+	height:600px;
+	width:4900px;
+	background-image:url('moon-1.jpg');
+	background-repeat:no-repeat;
+	background-position:100% 100%;
+	font-family:"comic sans ms";
+	font-style:italic;
+	font-size:32px;
+	font-weight:bold;
+	color:#DDD;
+	line-height:50px;
+	
+}
+.start1
+{
+	text-indent:550px;
+	line-height:100px;
+}
+.cl1
+{
+	text-indent:30px;
+	
+}
+.ul
+{
+	background:#00f;
+}
+li
+{
+float:left;/*be8ly al 7gat ely ze b3d gnb b3d*/
+background:#DDD;
+color:black;
+width:140;	
+padding:10px;
+margin:10px;
+position:relative;
+}
+ul
+{
+	
+	list-style-type:disc;/*?????? ??? ??????*/
+	list-style-position:outside;/*be8lely al n2ta ale adam alklam gowa wla bra*/
+	
+}
+ul li , ol li
+{
+	border-width:1px 2px 3px 4px/* m3nah al7dod fw2 ymen t7t shemal ao aktbha 1px 2px al 1 fw2 w t7t w 2 ymen w shemal*/
+	border-style:solid;
+	bolder-color:black;
+	border:1px solid black;
+	padding:5px;
+	margin-left:20px;
+}
+#EDUCATION ,#PROJECTS ,#QUALIFICATIONS , #Language , #Personal_Information , #skills
+{
+	background:#001;
+	color:white;
+}
+.footer
+{
+	background:#321;
+	color:#FFF;
+	text-align:center;
+	padding:10px 0
+}
+span
+{
+	top:100px;
+	right:20px;
+	
+}

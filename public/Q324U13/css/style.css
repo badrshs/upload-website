@@ -1,0 +1,104 @@
+.container{width:1100px;margin:auto}
+
+.clear{clear:both}
+
+/* Start The Header */
+
+.header{background-color:#02918D;height:70px}
+.header h3{float:left;color:#FFF;font-size:25px;font-weight:900;padding:20px 0 0 0;margin:0}
+.header h3 a{color:#FFF;text-decoration:none;cursor:pointer}
+.header h3 a:hover{color:#5f5f5f}
+.header h3 a span:hover{color:#5f5f5f}
+.header h3 span{color:#D1C920}
+.header ul{float:right;list-style:none}
+.header ul li{float:left;padding-left:20px;color:#FFF;font-size:13px;font-weight:bold;padding-top:17px}
+.header ul li a{color:#FFF;text-decoration:none;cursor:pointer}
+.header ul li a:hover{color:#5f5f5f}
+
+/* End The Header */
+
+/* Start The Picture */
+
+.picture{height:600px;text-align:center;background-size:cover}
+.picture h3{padding:180px 0 0 0;margin:0;color:#FFF;font-size:30px}
+.picture h2{padding:0;margin:0;color:#FFF;font-size:60px;font-weight:900;letter-spacing:13px}
+.picture h3:last-of-type{padding:0;margin:0;font-size:20px}
+.picture p{transform:rotate(270deg);position:absolute;font-size:130px;color:#FFF;font-weight:100;font-family:serif;padding:0;margin:0 0 0 490px}
+.picture button{border:none;background-color:#CFC91D;padding:10px 30px;font-weight:800;margin:140px 15px 0 0;letter-spacing:1px}
+
+/* End The Picture */
+
+/* Start The About */
+
+.about h1{color:#02918F;text-align:center;font-weight:bolder;font-size:45px;font-family:tahoma;padding-top:50px;margin-bottom:0}
+.about p{text-align:center;color:#7E8285;padding-top:20px}
+.about p:last-of-type{padding-left:70px}
+.about p span{color:#7E8387;font-weight:bold;font-size:30px}
+
+
+.about .feet{float:left;width:22%;margin-top:40px;border-right:1px solid #7E8285;padding-right:21px;padding-left:11px}
+.about .feet img{width:35px;padding-left:90px;padding-top:30px}
+.about .feet h3{color:#7F8488;padding:20px 0 0 50px;margin:0}
+.about .feet p{padding:22px 0 50px ;margin:0;font-size:13px}
+.about .feet:last-of-type{border:none}
+
+/* End The About */
+
+/* Start The Services */
+
+.services{background-color:#F0F0E8;height:700px;margin-top:50px}
+.services .one{width:50%;padding:0;float:left}
+.services .two{width:50%;float:left;padding:0;margin:0;height:700px;background-size:cover}
+.services .one h1{color:#04918B;font-size:45px;font-weight:900;font-family:tahoma;padding:50px 0 0 0;margin:0}
+.services .one p{color:#7E8285;padding-top:20px;margin:0}
+.services .one p:last-of-type{line-height:2.2}
+.services .one .feet{float:left;width:48%;padding-top:50px;padding-right:10px}
+.services .one .feet i{color:green;font-size:25px}
+.services .one .feet h3{color:#7F8488;padding:10px 0 0 0;margin:0}
+.services .one .feet p{line-height:1.3}
+
+/* End The Services */
+
+/* Start The Work */
+
+.work{text-align:center}
+.work h1{color:#04918B;font-size:45px;font-weight:900;font-family:tahoma;padding:80px 0 0 0;margin:0}
+.work p{color:#7E8285;padding-top:25px;margin:0;line-height:1.8;font-size:20px}
+.work p:last-of-type{padding-bottom:60px}
+
+/* End The Work */
+
+/* Start The Title */
+
+.title{height:600px;padding:0}
+.title .feet{width:25%;float:left;padding:0;margin:0;height:300px;background-size:cover}
+.title .feet .hover{width:80%;margin:auto;background-color:rgba(36,157,150,0.8);height:250px;margin-top:25px}
+.title .feet .hover h3{color:#FFF;margin-top:20px;font-size:15px;padding:80px 0 0 60px}
+.title .feet .hover p{color:#FFF;font-size:13px;padding:0 0 0 10px;line-height:1.5;text-align:center}
+
+/* End The Title */
+
+/* Start The Contact */
+
+.contact{text-align:center}
+.contact h1{color:#04918B;font-size:45px;font-weight:900;font-family:tahoma;padding:80px 0 0 0;margin:0}
+.contact p{color:#7E8285;padding-top:25px;margin:0;line-height:1.8;font-size:20px}
+.contact p:last-of-type{padding-bottom:60px}
+
+/* End The Contact */
+
+/* Start The Register */
+
+.register{background-color:#0B0B0B;height:600px;text-align:center}
+.register input{background:none;border:none;border-bottom:2px solid #484C4F;margin:80px 0 0 0;color:#FFF}
+.register button{background-color:#CFC91D;border:none;padding:15px 60px;margin-top:70px;font-weight:bolder}
+
+/* End The Register */
+
+/* Start The Navbar */
+
+.navbar{background-color:#000000;text-align:center;height:70px}
+.navbar p{color:#7E8285;margin:0;padding:25px 0 0 0}
+
+/* End The Navbar */
+

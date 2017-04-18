@@ -1,0 +1,160 @@
+/* startup.css */
+
+html,
+body{
+    height:100%;
+    
+}
+body{
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    color: #6c6f73 
+}
+
+body {
+    -webkit-animation-delay: 0.1s;
+    -webkit-animation-name: fontfix;
+    -webkit-animation-duration: 0.1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+}
+
+@-webkit-keyframes fontfix {
+    from { opacity: 1; }
+    to   { opacity: 1; }
+}
+nav{
+  font-family: 'Playfair Display', serif;  
+}
+h1,h2,h3,h4,h5{
+    color: #333;
+    font-family: 'Playfair Display', serif;
+}
+h6{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+    font-family: 'Playfair Display', serif;
+}
+img{
+    max-width: 100%
+}
+li button{
+    margin-right: 0.5cm; 
+}
+.blockquote{
+    font-size: 1.6rem;
+    color: #333;
+    border: none;
+    padding: 0;
+}
+p{
+    font-family: 'Playfair Display', serif;
+}
+.blockquote-footer{
+    margin: 1rem 0 0;
+}
+#stage{
+    background: url('busy-street-in-the-center-of-san-francisco-picjumbo-com.jpg') center center no-repeat;
+    background-size: cover;
+    color: white;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 1cm;
+}
+#stage-caption{
+    font-size: 1.4rem;
+    font-weight:200;
+    max-width: 60rem;
+    text-align:center;
+    margin-top; 2rem;
+}
+#stage-caption h1{
+    font-size: 10rem;
+    color: white;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+}
+#stage-caption p{
+    color: white;
+    font-size: 1.5rem
+}
+.feature-content{
+    padding: 9rem 0;
+    overflow: hidden;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    
+}
+.feature-content img{
+    margin-bottom: -12rem;
+    
+}
+.btn {
+    font-family: 'Playfair Display', serif;
+}
+.feature-dark{
+    background:#262F36;
+    color:white;
+}
+.feature-dark h3{
+    color:white;
+}
+.feature-light{
+    background:#D3D3D3;
+}
+.feature-content2 h2{
+    text-align: center;
+    margin-bottom: 2%;
+    font-size: 6rem;
+}
+.feature-content2 p{
+      text-align: center;
+}
+.access-justice{
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+.video{	
+    display: block;
+    margin: 0 auto;
+}
+/*Media Queries*/
+
+@media screen and ( min-width : 991px){
+    
+    .feature-dark{
+        display: flex;
+        align-items: center;
+    }
+    .feature-content{
+        display:flex
+    }
+}
+.last{
+    margin-bottom: 4rem;
+}
+#main-footer{
+    background: #262F36;
+    color: white;
+    padding: 6rem 0;
+    font-size: 1rem;
+}
+#main-footer h5{
+    color: #718FA9;
+}
+#main-footer a{
+    color: #6CSF73
+}
+.col-md-3{
+    margin-top: -0.65%;
+}
+.col-md-6{
+    font-family: 'Playfair Display', serif;
+}
+.list-unstyled{
+    font-family: 'Playfair Display', serif;
+}

@@ -1,0 +1,377 @@
+/*main rulez*/
+@import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+
+body{
+	direction: rtl;
+	height: 1600px; /*for test*/
+	width: 1349px;
+	font-family: "Droid Arabic Kufi" , serif;
+	line-height: 1.15;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+	
+	margin: 0;
+	padding: 0;
+	font-family: "Droid Arabic Kufi" , serif;
+}
+
+ul,li{
+	
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: inline-block
+}
+
+a{
+	text-decoration: none;
+	color: #000
+}
+
+/*start header*/
+.header{
+	width: 1349px;
+	height: 144px;
+	font-family: "Droid Arabic Kufi" , serif;
+}
+
+.header .logo{
+	
+	float: right;
+	padding: 30px 75px;
+	cursor: pointer
+}
+
+.header .top-list{
+	
+	float: left
+}
+
+.header .top-list ul li{
+	
+	margin-top: 35px;
+	color: #333;
+	
+}
+
+.header .top-list ul li:hover{
+	
+	color: rgb(51, 122, 183);
+	cursor: pointer
+}
+
+.header .top-list  .eng{
+	
+	padding-left: 70px;
+	padding-right: 7px;
+	border-right: 1px solid #666;
+	color: #666;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.header .top-list .call{
+	
+	padding-left: 5px;
+	padding-right: 9px;
+	border-right: 1px solid #666;
+	color: #666
+}
+
+.header .top-list .map{
+	
+	padding-left: 5px;
+	color: #666
+	
+}
+
+.header .top-list .map i{
+	
+	margin-left: 3px
+}
+
+.header .search-box{
+	
+	float: left;
+    margin-top: 85px;
+    margin-left: -230px;
+	font-family: "Droid Arabic Kufi" , serif;
+
+}
+.header form{
+	
+	width: 208px
+}
+
+.header form .search
+{
+	
+	position: relative;
+    font-size: 14px;
+    font-family: "ns";
+    color: #333;
+    font-weight: 400;
+}
+
+.header form.search input{
+	
+	background: #e6eaed;
+    border: 0;
+    border-radius: 100px;
+    padding: 0 15px;
+    width: 210px;
+    outline: none;
+    font-size: 12px;
+    height: 32px;
+	font-family: "Droid Arabic Kufi" , serif;
+	font-size: 13px;
+
+}
+	
+.header form.search button {
+    position: absolute;
+    left: 75px;
+    color: #fff;
+    border: 0;
+    width: 26px;
+    height: 26px;
+    top: 88px;
+    outline: none;
+    font-size: 13px;
+    text-align: center;
+	background: #004080;
+	border-radius: 50%;
+	cursor: pointer
+
+}
+
+/*end header*/
+
+
+/*start slide show section*/
+
+
+.my-slide .background{
+	
+	height: 500px;
+	width: 1349px;
+	background-image:url(../images/1.jpg);
+	background-size: cover;
+	cursor: pointer;
+}
+
+.my-slide .background:hover{
+	
+	opacity: 0.8
+}
+
+.my-slide .navbar{
+	
+	width: 1212px;
+	height: 20px;
+	background-color: #004080 !important;
+	color: #feffff;
+	margin-right: 70px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-family: ns;
+	cursor: pointer
+
+}
+
+.my-slide .navbar ul li{
+	
+	font-weight: 700;
+	padding-right: 25px;
+	font-family: "Droid Arabic Kufi" , serif;
+	font-size: 14px;
+}
+
+.my-slide .navbar #main{
+	
+	margin-right: 20px
+}
+
+
+.my-slide #right{
+	
+	float: right;
+	color: #fff;
+	opacity: 0.7;
+	margin-top: 200px;
+	margin-right: 60px;
+	cursor: pointer
+}
+
+.my-slide #left{
+	
+	float: left;
+	direction: ltr;
+	color: #fff;
+	opacity: 0.7;
+	margin-left: 60px;
+	margin-top: 200px;
+	cursor: pointer;
+	
+}
+
+/*end slide show section*/
+
+/*start mid-white box*/
+
+.all-box{
+	
+	margin-bottom: 50px;
+	font-family: "Droid Arabic Kufi" , serif;
+	font-size: 14px
+}
+.all-box .container {
+	
+	padding-right: 70px;
+    padding-left: 70px;
+	width:1209px;
+	height:403px;
+	overflow: hidden
+}
+
+.all-box .container .two-boxs{
+	
+	width: 63%;
+	height: 403px;
+	float: right;
+	margin-top: 40px;
+	font-family: "Droid Arabic Kufi" , serif;
+	font-size: 14px
+}
+
+.all-box .container .two-boxs #h3
+{
+	font-weight: 700;
+    margin: 0;
+    padding: 0;
+	font-size: 22px;
+	display: inline
+}
+
+.all-box .container .two-boxs #more{
+	
+	font-weight: 600;
+	float: left;
+	margin-top: 5px;
+	direction: ltr;
+	display: inline;
+	color: #004080;
+	cursor: pointer
+}
+
+.all-box .container .two-boxs #more span{
+	
+	margin-right: 5px;
+	
+}
+
+.all-box .container .two-boxs #hr{
+	
+	border: 1px solid #ddd;
+	margin: 25px 0 20px 0;
+}
+
+.all-box .container .two-boxs .pic1{
+	
+	width: 48%;
+	float: right;
+	margin-left: 1.5%
+}
+
+.all-box .container .two-boxs .pic2{
+	
+	width: 48%;
+	float: left;
+	margin-right: 1.5%
+	
+}
+
+.all-box .container .two-boxs .pic1 img,.all-box .container .two-boxs .pic2 img{
+	
+	width: 100%;
+	height: 290px;
+	cursor: pointer
+}
+
+.all-box .container .two-boxs .pic1 img:hover,.all-box .container .two-boxs .pic2 img:hover{
+	
+	-webkit-box-shadow: 6px 8px 7px #888888;
+	opacity: 0.7
+}
+
+.all-box .container .alone-box{
+	
+	width: 35%;
+	height: 330px;
+	margin-top: 40px;
+	float: left;
+}
+
+.all-box .container .alone-box #h3{
+	font-weight: 600;
+	font-size: 22px;
+	display: inline;
+	direction: rtl;
+	color: #000;
+	cursor: pointer
+	
+}
+
+.all-box .container .alone-box #more{
+	
+	font-weight: 600;
+	float: left;
+	direction: ltr;
+	margin-top: 5px;
+	display: inline;
+	color: #004080;
+	cursor: pointer;
+}
+.all-box .container .alone-box #more span{
+	margin-right: 5px;
+	
+}
+
+.all-box .container .alone-box #hr{
+	
+	border: 1px solid #ddd;
+	margin: 25px 0 20px 0;
+}
+
+.all-box .container .alone-box .list{
+	
+	line-height: 1.5;
+	font-size: 13px
+	
+}
+
+.all-box .container .alone-box .list li{
+	
+	margin-bottom: 20px
+}
+
+
+.all-box .container .alone-box .list a:hover{
+	
+	color: #337ab7
+}
+
+.all-box .container .alone-box .list #red{
+	
+	color: #f9191f;
+}
+
+.all-box .container .alone-box .list #black:hover{
+	
+	color: #000;
+}
+
+/*end mid-white box*/
+
+/*start mid-black box*/
+/*end mid-black box*/

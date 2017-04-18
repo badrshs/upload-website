@@ -1,0 +1,115 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+body{
+  padding: 5px;
+  background-color: #04668C;
+}
+header{
+  text-align: center;
+  background-color: #033F73;
+  border-radius: 5px;
+  font-size: 50px;
+}
+fieldset{
+  margin: 5px;
+  padding: 5px;
+  width: 60%;
+  margin-right: 5px;
+  background-color: darkcyan;
+}
+legend{
+  background-color: darkcyan;
+  padding: 3px;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+form{
+  margin-left: -23%;
+  width: 35%;
+  display: inline-block;
+  position: fixed;
+
+}
+.x{
+  float: right;
+  width: 35%;
+}
+.x .xx{
+  padding-left: 5px;
+}
+.buttons{
+  padding-top: 3px;
+  padding-left: 30%;
+}
+.buttons input{
+  width: 20%;
+}
+.photo{
+  width: 95%;
+  height: 550px;
+  border-radius: 10px;
+  margin-top: 50px;
+  margin-left: 2.5%;
+}
+.photo img{
+  width: 100%;
+  height: 100%;
+  border-radius: px;
+}
+.gallery{
+  background-color: #033F73;
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 15px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+.gallery h2{
+  text-align: center;
+  font-size: 60px;
+}
+.gallery img{
+  width: 19%;
+  border-radius: 30px;
+  height: 200px;
+  margin: .3%;
+}
+.comment{
+  margin: 0 auto;
+  padding: 10px;
+  width: 95%;
+  background-color: #0468BF;
+  border-radius: 5px;
+
+}
+textarea{
+  resize: none;
+  height: 200px;
+  width: 100%;
+  border-radius: 5px;
+}
+button{
+  width: 15%;
+  height: 30px;
+  font-size: 25px;
+}
+.contact{
+  margin: 15px;
+  font-size: 30px;
+}
+#googleMap{
+  width: 90%;
+  height: 380px;
+  margin: 25px 5%;
+  background-color: #CCC;
+}
+.icon{
+  height: 30px;
+  width: 30px;
+  margin-top: 5px;
+  margin-left: 35px;
+  margin-right: 5px;
+}
+#033F73 #0468BF #04668C #05AFF2 #05C7F2

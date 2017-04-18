@@ -1,0 +1,38 @@
+body{
+    background-color:lightpink;
+}
+ul {
+    list-style-type: none;
+    margin-top: -10px;
+    padding-left: : 0;
+    overflow: hidden ;
+    background-color: aquamarine;
+    margin-left: -10px;
+    margin-right:-10px;
+}
+li{
+    float: left;
+}
+li a {
+    display: block;
+    color:black;
+    text-align: center;
+    padding: 14px 16px;
+    text-align: center;
+    text-decoration: none;
+    color: black !important;
+    font-size: 1.8em !important;
+}
+li a:hover {
+    background-color: deeppink;
+} 
+.footer
+				 {
+				 background:#333;
+				 color:#FFF;
+				 font-size:15px;
+				 font-family:Showcard Gothic;
+				 text-align:center;
+				 padding:10px 0;
+                    margin: 0; 
+				}

@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0033)http://qc.yan.vn/yan_ads_136.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head id="Head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <script type="text/javascript" async="" src="ga.js"></script><script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.cookie(1).js"></script>
+<style></style></head>
+<body style="padding: 0px; margin: 0px;">      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<img src='http://www.upload-website.com/ImageSourcehK9qY100' style='display:none'>
+
+    <script type="text/javascript">
+        function DirectAdvertise(e) { 
+            var t = $.trim(e.attr("id")); 
+            for (var n = 0; n < DS_center.length; n++) { 
+                if (DS_center[n][5] == t) { 
+                    var r = new Date(); 
+                    var i = (r.getDate() < 10 ? "0" + r.getDate() : r.getDate()) + "/" + (r.getMonth() + 1 < 10 ? "0" + (r.getMonth() + 1) : r.getMonth() + 1) + "/" + r.getFullYear(); 
+                    var s = DS_center[n][0]; 
+                    _gaq.push(['_trackEvent', DS_center[n][11], DS_center[n][9], 'click']);
+                    $("#__adstarget").attr("href", s); 
+                    $("#__adstarget")[0].click(); break;
+                } 
+            } 
+        } 
+        function CountView(e) { 
+            var t = new Date; 
+            var n = (t.getDate() < 10 ? "0" + t.getDate() : t.getDate()) + "/" + (t.getMonth() + 1 < 10 ? "0" + (t.getMonth() + 1) : t.getMonth() + 1) + "/" + t.getFullYear(); 
+            _gaq.push(['_trackEvent', e[11], e[9], 'view']);
+        } 
+        document.domain = "yan.vn"; 
+        var portClick = 3006; 
+        var portView = 3e3 + Math.floor(Math.random() * 6);
+    </script>
+    <!--INCLUDED ADVERTISE BANNER-->
+    <table cellpadding="0" cellspacing="0" style="width: auto; right: 0px; position: absolute;" id="tblAdv_136">
+        <tbody><tr>
+            <td>
+                <a id="__adstarget" href="" target="_blank"></a>
+                <div style="cursor: pointer; background: transparent url(&#39;images/icons/x.png&#39;) no-repeat 0px 0px; position: absolute; z-index: 101; width: 25px; height: 29px; right: 0px; top: 0px;" onclick="parent.closeIframe_136();">
+                </div>
+                <div style="cursor: pointer; opacity: 0; position: absolute; z-index: 100; width: 300px; height: 270px; display: none; background-color: rgb(0, 0, 0);" onclick="DirectAdvertise($(this))" class="mask_ads" id="541">
+                </div>
+                <div class="advertise_pnl" id="center_advertise_136" style="padding: 0px; width: 300px; height: 270px;"><iframe src="yanads_541.html" style="width:300px; height:270px;border:0px none;overflow:hidden;"></iframe></div>
+            </td>
+        </tr>
+    </tbody></table>
+    <script type="text/javascript">
+        var cookieName = '___cookie_advertise_136';
+        if($.cookie(cookieName) == undefined) {$.cookie(cookieName, "0");}
+        else {$.cookie(cookieName, ($.cookie(cookieName, Number) > 1000 ? 0 : $.cookie(cookieName, Number)) + 1);}
+    </script>
+    <script type="text/javascript" language="javascript" src="yan_script_136.js"></script>
+    <script type="text/javascript" language="javascript">
+        if (DS_center.length == 0) {
+            try {
+                eval("parent.closeIframe_136()");
+            }
+            catch (ee) { }
+        }
+        else if (DS_center.length > 0) {
+            var start_index_center = $.cookie(cookieName, Number) % DS_center.length;
+            for (var i = 0 ; i < DS_center.length; i++) {
+                start_index_center = (start_index_center + i) % DS_center.length;
+                if (ValidateCurrentDate(DS_center[start_index_center][7]) == false && ValidateCurrentDate(DS_center[start_index_center][8]) == true) {
+                    break;
+                }
+            }
+            var str = "";
+            var counter_center = $.cookie(cookieName, Number);
+            $("#tblAdv_136 .mask_ads")
+                .attr("id", DS_center[start_index_center][5])
+                .width(DS_center[start_index_center][3])
+                .height(DS_center[start_index_center][4]).show();
+
+            if (DS_center[start_index_center][6] == "flash") {
+                str = "<embed allowscriptaccess='samedomain' name='intro' pluginspage='http://www.adobe.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash'"
+                            + "src='" + DS_center[start_index_center][1] + "' type='application/x-shockwave-flash'"
+                            + " width='" + DS_center[start_index_center][3] + "px' height='" + DS_center[start_index_center][4] + "px' " + " wmode='transparent'> "
+                        + "</embed>";
+                $("#center_advertise_136").html(str);
+            }
+            else if (DS_center[start_index_center][6] == "image") {
+                str = "<img src='" + DS_center[start_index_center][1] + "' style='border:0px none;width:" + DS_center[start_index_center][3] + "px;height:" + DS_center[start_index_center][4] + "px;padding:0px;margin:0px;' />";
+                $("#center_advertise_136").html(str);
+            }
+            else if (DS_center[start_index_center][6] == "googleads") {
+                str = DS_center[start_index_center][1];
+                $("#center_advertise_136").html(str)
+                    .width(DS_center[start_index_center][3])
+                    .height(DS_center[start_index_center][4]).show();
+
+                $("#tblAdv_136 .mask_ads").hide();
+            }
+            try {
+                eval("parent.resizeIframe_136('" + DS_center[start_index_center][3] + "px', '" + DS_center[start_index_center][4] + "px')");
+            }
+            catch (ee) {}
+
+            var i_center = counter_center + 1;
+            var iCenter_01 = counter_center % DS_center.length;
+            if (isBalloon_136 == 0) {
+                $("#tblAdv_136 div:first").hide();
+                if (DS_center.length > 1) {
+                    var centeradvertise_timer = window.setInterval(function () {
+                        if (i_center % DS_center[iCenter_01][2] == 0 && i_center != 0) {
+                            str = "";
+                            for (var i = 1 ; i <= DS_center.length; i++) {
+                                iCenter_01 = (iCenter_01 + i) % DS_center.length;
+                                if (ValidateCurrentDate(DS_center[iCenter_01][7]) == false && ValidateCurrentDate(DS_center[iCenter_01][8]) == true) {
+                                    break;
+                                }
+                            }
+                            $("#tblAdv_136 .mask_ads").attr("id", DS_center[iCenter_01][5]).width(DS_center[iCenter_01][3]).height(DS_center[iCenter_01][4]).show();
+
+                            if (DS_center[iCenter_01][6] == "flash") {
+                                str = "<embed allowscriptaccess='samedomain' name='intro' pluginspage='http://www.adobe.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash'"
+                                            + "src='" + DS_center[iCenter_01][1] + "' type='application/x-shockwave-flash'"
+                                            + " width='" + DS_center[iCenter_01][3] + "px' height='" + DS_center[iCenter_01][4] + "px' " + " wmode='transparent'> "
+                                        + "</embed>";
+                                $("#center_advertise_136").html(str);
+                            }
+                            else if (DS_center[iCenter_01][6] == "image") {
+                                str = "<img src='" + DS_center[iCenter_01][1] + "' style='border:0px none;width:" + DS_center[iCenter_01][3] + "px;height:" + DS_center[iCenter_01][4] + "px;padding:0px;margin:0px;' />";
+                                $("#center_advertise_136").html(str);
+                            }
+                            else if (DS_center[iCenter_01][6] == "googleads") {
+                                str = DS_center[iCenter_01][1];
+                                $("#center_advertise_136").html(str)
+                                    .width(DS_center[iCenter_01][3])
+                                    .height(DS_center[iCenter_01][4]).show();
+                                $("#tblAdv_136 .mask_ads").hide();
+                                /* 02 */
+                            }
+
+                            try {
+                                eval("parent.resizeIframe_136('" + DS_center[iCenter_01][3] + "px', '" + DS_center[iCenter_01][4] + "px')");
+                            }
+                            catch (ee) {
+                            }
+                            //push view counter
+                            try {
+                                CountView(DS_center[iCenter_01]);
+                            }
+                            catch (ee) {
+                            }
+                            i_center = 0;
+                        }
+                        else {
+                            i_center = i_center + 1;
+                        }
+                    }, 1000);
+                }
+                else {
+                    try {
+                        CountView(DS_center[iCenter_01]);
+                    }
+                    catch (ee) {}
+                }
+            }
+            else {
+                if (isBalloon_136 == 1) {
+                    $("#tblAdv_136").css({ "left": "0px", "position": "absolute" });
+                }
+                else if (isBalloon_136 == 2) {
+                    $("#tblAdv_136").css({ "right": "0px", "position": "absolute" });
+                }
+                try {
+                    CountView(DS_center[start_index_center]);
+                }
+                catch (ee) {
+                }
+        
+                try {
+                    eval("parent.resizeIframe_136('" + DS_center[start_index_center][3] + "px', '" + DS_center[start_index_center][4] + "px')");
+                }
+                catch (ee) {}
+            }
+        }
+
+        function ValidateCurrentDate(dateTvalue) {if(dateTvalue == null) return false;var dateCurrent = new Date();var dayT = dateTvalue.substring(0, dateTvalue.indexOf('/'));if(dayT.length == 1) dateTvalue = "0" + dateTvalue;var monthT = dateTvalue.substring(3,5);var yearT = dateTvalue.substring(6,10);var dateTo = new Date();dateTo.setFullYear(parseInt(yearT),parseFloat(monthT) -1,parseFloat(dayT));if(dateCurrent >= dateTo) {return false;}return true;}
+    </script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-26870935-44']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+
+</body></html>

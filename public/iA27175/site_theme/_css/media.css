@@ -1,0 +1,116 @@
+/* Smart Phones And Tablets */
+
+@media (max-width: 767px)
+{
+    .navbar-inverse .navbar-nav > li > a
+    {
+       color: ;
+
+    }
+    
+    .subscribe .form-control
+    {
+        
+    }
+    
+    .work-work .work img
+    {
+        width: 100%;
+
+    }
+    .sell-now .sel
+    {
+        width: 100%;
+    }
+    .features .fee h1
+    {
+        
+    }
+    .sell-now .sel .buttons .show-more
+    {
+        width: 350px;
+        font-size: 15px;
+    }
+
+
+    
+}
+
+/* Small Screen */
+
+@media (min-width: 768px) and (max-width: 991px)
+{
+
+}
+
+/* Medium Screen */
+
+@media (min-width:992px) and (max-width: 1199px)
+{
+   
+}
+
+/* Large Screen */
+
+@media (max-width:1073px)
+{
+    .carousel-inner .item .carousel-caption
+    {
+        display: none;
+    }
+
+
+}
+@media(max-width:500px)
+{
+    .sell-now .sel .buttons .show-more
+    {
+        width: 250px;
+        font-size: 15px;
+    }
+    .sell-now .sel .buttons i
+    {
+        font-size: 25px;
+    } 
+    .sell-now .sel h2
+    { 
+        font-size: 2em; font-weight: bold;
+    }
+    .sell-now .sel h3
+    { 
+         font-weight: bold; font-size: 25px; 
+    }
+    .our-team h2
+    {
+        padding-top: 40px;
+
+    }
+    .testmonials
+    {
+        padding-bottom: 40px;
+        height: 500px;
+    }
+    .testmonials .tee
+    {
+        height: 500px;
+    }
+    .work-work .work img
+    {
+        
+    }
+    .footer .media-body .more a
+    {
+        margin-left: 50px;
+    }
+  
+}
+@media(max-width:320px)
+{
+      .footer .sicial-site i
+    {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 22px;
+    }
+}

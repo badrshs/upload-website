@@ -1,0 +1,350 @@
+/* 440 lines */
+/* start main rulez */
+.container{
+    width:1170px;
+    margin:auto;
+
+    
+}
+.clearfix{clear:both;}
+/* end maian rulez */
+
+/* start header */
+.header .slider{
+    background-image:url('../image/digital.jpg');
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    height:600px;
+}
+.header .slider .intro {
+    padding-top:275px;
+    height:600px;
+    text-align:center;
+    color:#fff;
+}
+.header .slider .intro h2{
+    font-size:50px;
+    margin:0 auto;
+    width:600px;
+    border-top:3px solid #fff;
+    border-bottom:3px solid #fff;
+    padding:5px 0;
+}
+.header .slider .intro button{
+    background:none;
+    margin-top:30px;
+    font-size:20px;
+    border:2px solid #fff;
+    font-weight:bold;
+    color:#fff;
+    padding:20px 30px;
+}
+.header .navbar{
+    background-color:#252F31;
+    color:#fff;
+    overflow:hidden; 
+}
+.header .navbar h2{float:left;text-transform:uppercase;}
+.header .navbar h2 span{color:#1FE878;}
+.header .navbar ul{
+    list-style-type:none;
+    padding-left:0;
+    overflow:hidden;
+    float:right;
+}
+.header .navbar ul li{float:left;padding:10px;}
+.header .navbar ul li a{
+    color:#fff;
+    text-decoration:none;
+}
+.header .navbar ul li.active a{
+    color:#34A263;
+}
+.header .navbar ul li a:hover{ color:#34A263;}
+
+/* end header */
+
+/* start features */
+
+.features{ overflow:hidden; padding-top:40px; padding-bottom:50px;}
+.features .feat{
+    float:left;
+    width:33.333%;
+    height:250px;
+}
+.features .feat h2{color:#555;}
+.features .feat p{
+    float:left;
+    padding:5px;
+    line-height:1.6;
+    color:#888;
+}
+
+/* end features */
+/* start about me */
+.about-me{background-color:#F2F2F2; overflow:hidden;}
+
+.about-me .image {float:left; width:40%;}
+
+.about-me .image img {width:100%;}
+
+.about-me .info{float:left; width:60%;}
+
+.about-me .info h2{margin:40px 0 20px 40px;color:#555;}
+.about-me .info > p{ margin:0px 0 10px 40px;}
+.about-me .info > p:last-of-type{margin-top:30px;}
+.about-me .info p{line-height:1.6;color:#666;}
+.about-me .info .hobbies{
+    margin:10px 0 0 40px;
+    width:120%;
+    overflow:hidden;
+}
+.about-me .info .hobbie .content{
+    float:left;
+    widht:50%;
+    min-height:100%;
+    overflow:hidden;      
+}
+.about-me .info .hobbies > div{float:left;width:50%;}
+.about-me .info .hobbies .icon{
+    float:left;
+    margin-right:5%;
+    width:12%;
+    margin-top:15px;
+}
+.about-me .info .hobbies .icon img{max-width:100%;}
+.about-me .info .hobbies .text{float:left;width:83%;}
+.about-me .info .hobbies .text h3 ,p{margin-top:15px;}
+/* end about me */
+
+/* start my skills */
+.my-skills{
+    padding-top:30px;
+    padding-bottom:60px;
+    overflow:hidden;
+}
+.my-skills .skills ,.my-skills .progress { width:50%;float:left;}
+.my-skills .progress{height:400px}
+.my-skills .skills p ,.my-skills .skills button {float:left;}
+.my-skills .skills h2{margin:40px 0 20px 40px;color:#555;}
+.my-skills .skills p{line-height:1.6;color:#666;margin:0px 0 10px 40px; }
+
+.my-skills .skills  p:last-of-type{margin-top:30px;}
+.my-skills .skills button{margin:20px 0 0 40px;}
+.my-skills .progress .technique{margin-left:50px;}
+.my-skills .progress .technique h3{color:#555;}
+.my-skills .progress .technique div{background-color:#F2F2F2;height:25px;}
+.my-skills .progress .technique div span{
+    background-color:#2DCC70;
+    height:25px;
+    display:block;
+    line-height:25px;
+    text-align:right;
+    color:white;
+    font-wight:bold;
+}
+
+/* end my skills */
+/* start resume */
+.resume {
+    background-color:#F2F2F2;
+    padding-top:50px;
+    padding-bottom:70px;
+    text-align:center;  
+}
+.resume h2{font-weight:bold;color:#666;}
+.resume p{
+    line-height:1.7;
+    color:#666;
+    margin:0 40px 0 40px;  
+}
+.resume button{margin-top:15px;}
+/* end resume */
+
+/* start my education */
+.my-education{
+    padding-top:40px;
+    padding-bottom:30px;
+    overflow:hidden;
+}
+
+.my-education .main{
+    width:50%;
+    margin-right:5%;
+    float:left;   
+}
+
+.my-education .main h2{margin:40px 0 20px 40px;color:#555;}
+.my-education .main p{
+    line-height:1.6;
+    color:#666;
+    margin:0px 0 10px 40px; 
+}
+
+.my-education .main p:last-of-type{margin-top:30px;}
+.my-education .main p{float:left;}
+.my-education .exp {width:45%;float:left;}
+.my-education .exp h3{margin-top:85px; margin-bottom:10px;}
+.my-education .exp span{display:block;margin-bottom:10px;}
+.my-education .exp span:first-of-type{color:#999;}
+.my-education .exp span:last-of-type{
+    background-color:#22C96D;
+    color:white;
+    width:60px;
+    padding:2px;
+}
+.my-education .exp hr{margin:20px 0;background-color:#999;height:1px;border:0;}
+.my-education .exp p{line-height:1.7;color:#777;}
+
+/* end my education */
+/* start Testmonials */
+.Testmonials {
+    padding-top:80px;
+    padding-bottom:70px;
+    text-align:center;
+    background-color:#F2F2F2;
+}
+.Testmonials q{
+    line-height:1.8;
+    color:#888;
+    font-size:15px;
+    font-style:italic;
+    font-weight:bold;
+}
+.Testmonials h3{color:#666;}
+.Testmonials ul{
+    list-style:none;
+    padding-left:0;
+    text-align:center;
+}
+.Testmonials ul li{
+    width:15px;
+    height:15px;
+    border:2px solid #2dcc70;
+    display:inline-block;
+    cursor:pointer;
+}
+.Testmonials ul li.active{background-color:#2dcc70}
+.Testmonials ul li:hover{background-color:#2dcc70}
+
+/* end Testmonials */
+
+/* start portoflio */
+.portoflio{
+    padding-top:50px;
+    padding-bottom:70px;
+    text-align:center;    
+}
+.portoflio h2{color:#777;text-transform:uppercase;}
+.portoflio p{
+    line-height:1.7;
+    color:#666;
+    margin-bottom:30px;
+}
+.portoflio .our-work {overflow:hidden;}
+.portoflio .our-work > div{
+    float:left;
+    width:33.333%;
+    margin-bottom:10px;
+}
+.portoflio .our-work > div img{
+    width:92%;
+    margin:10px;
+    padding:3px;
+    background-colo:#fff;
+    border:1px solid #ccc;
+    box-shadow:10px 10px 12px #ccc;
+}
+/* end portofolio */
+
+
+/* start contact me */
+
+.contact-me{
+    background-color:#252F31;
+    height:700px;
+    overflow:hidden;
+    padding-bottom:70px;
+}
+.contact-me .info{
+    width:50%;
+    float:left;
+    margin-right:5%;
+}
+
+.contact-me .info h2{
+    color:#F3F4F6;
+    text-transform:uppercase;
+    margin-left:40px;
+    margin-top:60px;
+}
+.contact-me p{
+    color:#7B7F82;
+    margin-left:40px;
+    line-height:1.7;
+}
+.contact-me p strong{color:#CED3D6;}
+
+.contact-me .form{width:45%;float:left; }
+.contact-me .form label{
+    display:block;
+    color:#CED3D6;
+    margin:10px 0 10px 0;
+}
+.contact-me .form input[type="text"]{
+    background-color:#4B5557;
+    color:#fff;
+    padding:10px;
+    border:0;
+    width:80%;
+    margin-bottom:10px;
+}
+.contact-me .form textarea{
+    background-color:#4B5557;
+    color:#fff;
+    padding:11px;
+    border:0;
+    width:81%;
+    margin-bottom:10px;
+    height:200px;
+    resize:none; 
+}
+.contact-me .form input[type="submit"]{
+    background-color:#191E22;
+    margin-bottom:50px;
+    color:#fff;
+    padding:10px 20px;
+    border:none;
+    margin-top:10px;
+
+}
+/* end contact me */
+/* start footer */
+.footer{
+    background-color:#191E22;
+    padding:20px 0;
+    overflow:hidden;
+}
+.footer span{color:#52575B;font-size:16px;}
+.footer ul {
+    list-style:none;
+    padding:0;
+    margin:10px 0 0 0;
+    float:right;
+}
+.footer ul li{display:inline-block;margin-left:15px;}
+.footer ul li img{width:20px;}
+
+/* end footer */
+
+/* start my framework */
+.my-button{
+    background:none;
+    border:3px solid #5BD08A;
+    padding:10px 30px;
+    color:#5BD08A;
+    font-weight:bold;}
+
+.fl-left{float:left;}
+/* end my framework */

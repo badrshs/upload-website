@@ -1,0 +1,393 @@
+/*---------------------------------------
+    Body Style              
+-----------------------------------------*/
+body{
+  font-family: 'Changa', sans-serif;
+
+}
+
+body::-webkit-scrollbar {
+  width: 0.6em;
+  background: #fff
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(#0776a2, #0EB3D4);
+  outline: 1px solid #fff;
+  border-radius: 0px;
+  width: 0.5em
+}
+
+
+/*---------------------------------------
+    Up To page style              
+-----------------------------------------*/
+
+.up i {
+    color: #fff;
+    position: fixed;
+    z-index: 9999;
+    background: linear-gradient(#0776a2, #0EB3D4);
+    padding: 14px;
+    border-radius: 2px;
+    font-size: 32px;
+    right: 10px;
+    cursor: pointer;
+    top: 500px;
+    transition: 0.3s;
+    display: none;
+}
+
+.up i:hover {
+  background: linear-gradient( #0EB3D4, #0776a2);
+  color: #fff
+}
+
+
+/*---------------------------------------
+    Pre Loader Style              
+-----------------------------------------*/
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background: none repeat scroll 0 0 #fff;
+}
+
+.sk-spinner-pulse {
+  width: 60px;
+  height: 60px;
+  background-color:#78bfe0;
+  border-radius: 100%;
+  margin: 40px auto;
+  -webkit-animation: sk-pulseScaleOut 1s infinite ease-in-out;
+  animation: sk-pulseScaleOut 1s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-pulseScaleOut {
+  0% {
+    -webkit-transform: scale(0);
+    trans.info: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    trans.info: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes sk-pulseScaleOut {
+  0% {
+    -webkit-transform: scale(0);
+    trans.info: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    trans.info: scale(1);
+    opacity: 0;
+  }
+}
+
+
+
+.container{width: 87%}
+
+
+/*---------------------------------------
+    Start top-bar section             
+-----------------------------------------*/
+.top-bar ul {
+    background: #fff;
+}
+.top-bar ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+.top-bar ul li {
+    margin-right: 15px;
+    padding: 5px 0px 5px 8px;
+    border-left:1px solid rgba(0, 0, 0, 0.22);
+}
+
+.top-bar ul a{background: #333;}
+.top-bar ul i{transition: 0.3s}
+.top-bar .fa-facebook:hover{background-color:#3369e7 }
+.top-bar .fa-twitter:hover{background-color:#1da1f2 }
+.top-bar .fa-instagram:hover{background-color:#d22e79 }
+.top-bar .fa-google:hover{background-color:#ed1b2e }
+.top-bar .btn-floating{background: #333}
+.top-bar .btn-floating {
+    background: linear-gradient(#0776a2, #0EB3D4);
+}
+
+/*---------------------------------------
+    navbar section Style              
+-----------------------------------------*/
+.navbar nav {
+    background: linear-gradient(#0776a2, #0EB3D4);
+}
+.navbar nav ul a:hover {
+    background: linear-gradient(#0EB3D4,#0776a2);
+}
+.navbar nav ul{float: left;}
+.navbar nav ul li{
+  float: right;
+}
+.navbar img{
+    width: 226px;
+    position: relative;
+    top: 4px;
+}
+  .navbar .side-nav li{width: 100%;}
+  .navbar .side-nav a{color: #fff}
+    .navbar .side-nav{
+      background: linear-gradient(#0776a2, #0EB3D4); 
+    }
+
+/*---------------------------------------
+    slider section Style              
+-----------------------------------------*/
+.slider-carousel .owl-carousel{
+  direction: ltr
+}
+.slider-carousel .items {
+  position: relative;
+  height: 550px;
+  overflow: hidden;
+  text-align: center;
+}
+.slider-carousel .items img{
+  width: 100%;
+  height: 100%;
+
+}
+.slider-carousel .items .caption {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+
+.slider-carousel .items .caption .content {
+    position: absolute;
+    text-align: -webkit-auto;
+    left: 40px;
+    width: 50%;
+    top: 21%;
+}
+.slider-carousel .items .caption .content hr {
+    border-color: rgba(255, 255, 255, 0.38);
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 66%;
+    position: relative;
+    right: 17%;
+}
+.slider-carousel .items .caption .content a{
+ background: linear-gradient(#0776a2, #0EB3D4);
+ margin-top: 3% 
+}
+
+/*the inductor style*/
+.owl-theme .owl-nav.disabled + .owl-dots {
+    position: absolute;
+    bottom: 1px;
+    right: 44%;
+}
+.owl-theme .owl-dots .owl-dot {
+    display: inline-block;
+    zoom: 1.5;
+}
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: linear-gradient(#0776a2, #0EB3D4);
+}
+.owl-theme .owl-dots .owl-dot span {
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 0px;
+}
+
+
+
+
+/*---------------------------------------
+   about section Style              
+-----------------------------------------*/
+.about-us{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background: linear-gradient(to bottom,#0097d8 0%,#0eb3d4 75%)
+}
+.about-us .info{
+    width: 63%;
+    margin: 0 auto;
+}
+.about-us .info h5 {
+    margin-top: 0;
+    color: #fff;
+    font-weight: bold;
+}
+.about-us .info h6 {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7em;
+    font-size: 17px;
+}
+
+
+
+/*---------------------------------------
+   offers section Style              
+-----------------------------------------*/
+
+.offers {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: #fff;
+    margin-bottom: -16px;
+}
+offers .col {
+  margin-bottom: 30px
+}
+
+.offers a{
+ background: linear-gradient(#0776a2, #0EB3D4);
+ margin-top: 3% 
+}
+
+/*---------------------------------------
+   works section Style              
+-----------------------------------------*/
+.works{
+  min-height: 400px;
+  margin-bottom: -21px;
+  background: linear-gradient(to bottom,#0097d8 0%,#0eb3d4 75%)
+  }
+
+
+.works h5{
+    color: #fff;
+    padding-top: 33px;
+}
+.works hr {
+    width: 29%;
+    margin-top: 25px;
+    border-color: #78bfe0;
+}
+.works .info{
+  overflow: hidden;
+  height: 170px;
+  margin-top: 40px;
+}
+.works .info .details{
+  width: 60%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.51);
+  color: #fff
+}
+.works .info .details p{
+  color: rgba(255, 255, 255, 0.47)
+}
+.works .info .details a{
+  background: linear-gradient(#0776a2, #0EB3D4);
+  transition: 0.3s 
+}
+.works .info .details a:hover{
+  background: linear-gradient(#0EB3D4, #0776a2);
+
+}
+.works .info .img{
+  width: 40%;
+  height: 100%;
+  overflow: hidden;
+}
+.works .info .img img{
+  width: 100%;
+  height: 100%
+}
+.works .see-more{padding-bottom: 50px}
+.works .see-more a{background: linear-gradient(#0776a2, #0EB3D4);transition: 0.5s }
+.works .see-more a:hover{ background: linear-gradient(#0EB3D4, #0776a2);}
+.works #info{display: none;}
+.works .see-more .span-2{display: none;}
+
+/*---------------------------------------
+  contact-us section Style              
+-----------------------------------------*/
+.contact-us{
+  overflow: hidden;
+  background-image: url(../imgs/contact.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 40px;
+  margin-top: 0;
+
+}
+.contact-us .info{
+  margin-bottom: 25px
+}
+
+.contact-us .info p{color: #fff}
+.contact-us .info i {
+    color: #0eb3d4;
+    position: relative;
+    top: 10px;
+}
+.contact-us .info h5 {
+    margin-top: 0px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ffffff;
+    width: 50%;
+    color: #fff;
+}
+.contact-us .info input {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.53);
+    text-indent: 10px;
+    font-size: 13px;
+    color: #fff;
+}
+.contact-us .info textarea{
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.53);
+    height: 150px;
+    resize: none;
+    margin-bottom: 10px;
+    color: #fff
+}
+.contact-us .info a{
+    background: linear-gradient(#0776a2, #0EB3D4);
+    transition: 0.5s
+}
+
+
+
+.footer {
+  background: linear-gradient(to bottom,#0097d8 0%,#0eb3d4 75%);
+  color: #fff;
+  margin-top: -15px;
+  padding-top:25px;
+  padding-bottom: 25px
+}
+.footer ul{
+    display: inline-flex;
+    padding: 0;
+}
+.footer ul li {
+    margin-right: 26px;
+    font-size: 21px;
+}

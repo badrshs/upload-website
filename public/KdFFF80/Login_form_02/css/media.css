@@ -1,0 +1,68 @@
+/*Smart Phones And Tablets*/
+
+@media (max-width: 767px)
+{
+    .body
+    {
+        overflow: hidden;
+    }
+    .contant .wel
+    {
+        margin:0 auto;
+        margin-top: 50px;
+        overflow: hidden;
+    }
+    .contant .wel h1
+    {
+        margin: 0 auto;
+        font-size: 30px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    .contant .wel p
+    {
+        margin:0 auto;
+        font-size: 15px
+    }
+    .contant .login
+    {
+        margin: 0 auto;
+        margin-top: 50px;
+        overflow: hidden;
+        
+    }
+    .modalContant
+    {
+        width: 300px;
+        overflow: hidden;
+    }
+    .logInForm .form
+    {
+        width: 250px;
+    }
+    .logInForm .btn
+    {
+        width: 250px;
+    }
+}
+
+/*Small Screen*/
+
+@media (min-width: 768px) and (max-width: 991px)
+{
+    
+}
+
+/*Medium Screen*/
+
+@media (min-width: 992px) and (max-width: 1199px)
+{
+    
+}
+
+/*Large Screen*/
+
+@media (min-width: 1200px)
+{
+    
+}

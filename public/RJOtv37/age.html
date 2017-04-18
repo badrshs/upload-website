@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="icon" href="images/Logo.png">
+	<title>Calculate Age</title>
+    <style type="text/css">
+        body{
+            text-align: center;
+            margin-top: 70px;
+            font-family: sans-serif;
+            font-size: 25px;
+            padding: 10px;
+            background-color: #eee;
+        }
+        button{
+            cursor: pointer;
+            margin-top: 10px;
+            padding: 5px;
+            font-weight: bold;
+            font-size: 25px;
+            width: 300px;
+        }
+        input{
+           margin: 5px;
+           width: 230px;
+           padding: 5px;
+           text-align: center;
+           color: blue;
+           font-weight: bold; 
+           font-size: 20px;  
+        }
+        label{
+            color: green;
+        }
+        h3{
+            color: red;
+        }
+        div{
+            background-color: #ccc;
+        }
+    </style>
+    
+</head>
+   
+<body>      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+   
+        <div>
+            <h3>Calculate Age </h3>
+            Enter Birth Year : &nbsp;&nbsp;&nbsp; <input type="text" name="year" id="y">
+            <br>
+            Enter Birth Month : &nbsp;<input type="text" name="month" id="m">
+            <br>
+            Enter Birth Day : &nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="day" id="d">
+            <br>
+            <button name="calc" onclick="get_your_age()">Calculate</button>
+            <hr>
+            <label id="r"> Your Age Is : </label>
+            <hr>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <footer>
+            Copyright 2016 &copy; All Reserved - <mark>By Eng. Mahmoud Badry</mark> - <a href="https://www.facebook.com/m.b55533" target="_blank">Facebook</a>
+            </footer>
+    </div>
+     <script src="js/age.js"></script>
+</body>
+</html>

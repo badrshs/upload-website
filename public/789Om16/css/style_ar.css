@@ -1,0 +1,294 @@
+/*
+ * Droid Arabic Kufi (Arabic) http://www.google.com/fonts/earlyaccess
+ */
+@font-face {
+  font-family: 'Droid Arabic Kufi';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/DroidKufi-Regular.eot);
+  src: url(../fonts/DroidKufi-Regular.woff2) format('woff2'),
+       url(../fonts/DroidKufi-Regular.woff) format('woff'),
+       url(../fonts/DroidKufi-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Droid Arabic Kufi';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/DroidKufi-Bold.eot);
+  src: url(../fonts/DroidKufi-Bold.woff2) format('woff2'),
+       url(../fonts/DroidKufi-Bold.woff) format('woff'),
+       url(../fonts/DroidKufi-Bold.ttf) format('truetype');
+}
+/*
+ * End Droid Arabic Kufi (Arabic) http://www.google.com/fonts/earlyaccess
+ */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'open sans' , sans-serif;
+    transition: all 0.2s;
+    font-family: 'Droid Arabic Kufi', sans-serif;
+}
+body{padding-bottom: 35px;}
+a:hover{text-decoration: none}
+
+
+/* Header */
+
+header{
+    width: 100%;
+    text-align: center;
+    box-shadow: 0px 2px 5px rgba(0,0,0,.2);
+}
+.profile{
+    width: 139px;
+    height: 144px;
+    border-radius: 10px;
+    border: 5px solid #f1f1f1;
+    margin: 20px auto;
+    position: relative;
+    box-shadow: 0px 2px 8px rgba(0,0,0,.2);
+}
+.profile > img {width: 100%;}
+.profile:before{
+    content: "_________________________";
+    position: absolute;
+    left: 160px;
+    top: 38%;
+    color: #d6d6d6;
+}
+.profile:after{
+    content: "_________________________";
+    position: absolute;
+    right: 160px;
+    top: 35%;
+    color: #d6d6d6;
+}
+h1{padding: 0px 4px;}
+header p{
+    position: relative;
+    margin-bottom: 30px;
+    padding: 0px 4px;
+}
+header p:after{
+    content: "_______________________________________________________";
+    position: absolute;
+    right: 36%;
+    bottom: -95%;
+    color: #d6d6d6;
+}
+nav {
+    display: inline-block;
+    margin: 0 auto;
+}
+nav ul{
+    list-style: none;
+}
+nav li{
+    float: right;
+    margin: 10px;
+}
+nav a{
+    padding-bottom: 12px;
+}
+nav a:hover{
+    text-decoration: none
+}
+.nav_icon{
+    font-size: 40px;
+    display: none;
+}
+.nav_icon:hover .nav_menu{
+    display: block;
+}
+/* End Header */
+
+/* Aside */
+aside h4{margin-bottom: 16px;}
+aside,
+footer{
+    margin-top: 25px;
+    box-shadow: 0px 0px 2px 1px rgba(0,0,0,.2);
+}
+.about_me,
+.follow_me,
+.last_twit,
+footer{
+    padding: 20px 15px;
+    border-bottom: 1px solid #e0e0e0;
+    display: inline-block;
+    width: 100%;
+}
+.follow_me{}
+.follow_me a{ 
+    float: right;
+    display: inline-block;
+    height: 38px;
+    width: 97px;
+    text-align: center;
+    line-height: 38px;
+    margin-top: 1px;
+    margin-left: 1px;
+}
+.last_article{
+    padding: 22px 0px;
+}
+.last_article {
+    padding: 22px 15px;
+}
+.last_article img{
+    width: 100%;
+    margin-bottom: 10px;
+}
+/* End Aside */
+
+/* article_posts */
+.article,
+.about_article{
+    margin-top: 25px;
+}
+.single_post,
+.article_post,
+.link_post,
+.img_post,
+.about_article{
+    padding: 22px 0px;
+    margin-bottom: 25px;
+    box-shadow: 0px 0px 2px 1px rgba(0,0,0,.2);
+    line-height: 25px
+
+}
+h4{
+    line-height: 35px;
+}
+.post_type img{
+    float: right;
+    margin-left: 15px;
+    padding: 10px 0px;
+    margin-right: 22px;
+}
+.post{
+    padding: 10px 15px;
+    font-weight: 500;
+}
+.post_footer{
+    padding: 20px 0px;
+    border-top: 1px solid #eee;
+}
+.date_editor{
+    float: right;
+    padding-right: 22px;
+}
+.date_editor a:nth-child(2){margin-right: 10px}
+.share{
+    float: left;
+    margin-left: 22px;
+    margin-top: -4px;
+    display: inline-block;
+}
+.share a{
+    margin-right: 10px;
+    font-size: 18px;
+}
+.article_p,
+.article_img{
+    clear: both;
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px 0px;
+}
+.read_more,
+.source_link{
+    display: inline-block;
+    margin-right: 50px;
+}
+/* End article_posts */
+
+/* footer */
+
+footer p {
+    text-align: left;
+    margin-left: 10px;
+}
+footer ul{
+    list-style: none;
+    display: inline-block;
+}
+footer li{
+    float: right;
+    margin-right: 5px;
+    line-height: 30px;
+}
+
+
+/* blog nav */
+
+.blog_nav{text-align: center;margin-top: 45px}
+.blog_nav ul{list-style: none;display: inline-block;}
+.blog_nav li{
+    float: left;
+    margin-right: 15px;
+}
+.blog_nav a{padding: 5px 15px;}
+
+
+/* about page */
+.about_article{
+    padding-right: 30px;
+    padding-left: 30px;
+    text-align: right;
+    line-height: 25px;
+}
+br{
+    line-height: 40px;
+}
+/* end about page */
+
+/*  courses page */
+.courses_post_ul{
+    list-style: none;
+    clear: both;
+    width: 80%;
+    margin: auto;
+}
+.courses_post_ul li{
+    margin-bottom: 10px;
+}
+.post .courses_post_a{
+    padding: 10px 20px;
+    margin: 5px 70px;
+    display: inline-block;
+}
+/* courses page */
+
+/* contact me page */
+form{
+    clear: both;
+    margin-top: 30px;
+}
+form label{display: block;}
+form input{
+    display: block;
+    margin-bottom: 15px;
+    width: 40%;
+    height: 50px;
+    border: 0;
+    padding: 10px;
+    font-size: 1.4em
+}
+form textarea{
+    display: block;
+    margin-bottom: 15px;
+    width: 65%;
+    height: 210px;
+    border: 0;
+    padding: 10px;
+    font-size: 1.4em
+}
+form button{
+    padding: 10px 25px;
+    display: inline-block;
+    border: 0;
+}
+/* end contact me page */

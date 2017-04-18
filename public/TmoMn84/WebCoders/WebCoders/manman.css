@@ -1,0 +1,104 @@
+/*Navigation Bar  */
+    .all-every {
+    	position: relative;
+    	bottom: 55px;
+    }
+    .navbar {
+    font-size: 20px;
+    
+  }
+  .navbar ul li a {
+    text-decoration: none;
+    color: #9E9E9E;
+  }
+ .navbar ul li {
+    list-style: none;
+    float: left;
+    margin: 5px;
+    position: relative;
+    right: 25px;
+    top: -10px;
+    font-family: 'Comic Sans Ms';
+  }
+  .navbar ul li a:hover {
+   transition: all .3s ease;
+    color: black;
+  }
+
+
+  /*SignUp  / Login */
+  .navbarls ul li {
+    list-style: none;
+    float: left;
+    margin: 5px;
+    position: relative;
+    top: -13px;
+    left: 47%;
+    font-family: 'Ranga', cursive;
+
+  }
+  .navbarls ul li a {
+    font-size: 30px;
+    text-decoration: none;
+    color: black;
+    
+    }
+    .navbarls ul li a:hover {
+      color: #9E9E9E;
+      transition: all .3s ease;
+    }
+    .sidenav {
+    display: none;
+    height: 100%;
+    
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: grey;
+    overflow-x: hidden;
+    padding-top: 60px;
+}
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    font-family: 'Poiret One', cursive;
+    display: block;
+    padding: 7px;
+    transition: 0.3s
+}
+.sidenav a:hover, .offcanvas a:focus{
+    color: wheat;
+    text-decoration: none;
+
+}
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 2px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.sidenav h1
+{
+  color: white;
+  padding: 5px;
+}
+.head {
+	background-color: #EFEFEF;
+	visibility: hidden;
+
+}
+.head h2 {
+	position: relative;
+	bottom: 56px;
+	top: -50px;
+	font-family: 'Pacifico', cursive;
+} 
+

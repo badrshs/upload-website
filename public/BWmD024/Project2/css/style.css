@@ -1,0 +1,350 @@
+/* Main Rulex */
+
+body{
+    margin: 0;
+    padding: 0;
+}
+.container{
+   width: 1300px;
+    padding: 0;
+    margin: 0px auto;
+}
+
+/* End Main Rulz */
+
+/* Start Header */
+
+header{
+    margin: 0;
+    padding: 0px;
+    background: rgba(0,0,0,0.7);
+    height: 80px;
+    width: 100%;
+}
+
+header .logo {
+    width: 20%;
+    float: left;
+    padding-left: 30px;
+}
+
+header .logo h2 {
+    color: white;
+    font-family: arial, tahoma;
+}
+
+header .logo h2 span {
+    color: greenyellow;
+    font-family: arial, tahoma;
+}
+
+header nav {
+    width: 50%;
+    float: right;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 32px;
+}
+
+header nav ul li {
+    float: left;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    margin: 12px;
+    padding: 2px;
+    color: white;
+    -webkit-transition: .1s;
+    -moz-transition: .1s;
+    transition: .1s;
+}
+
+header ul li a:hover{
+    color: #e74c3c;
+}
+/* End Header */
+
+/* start slider */
+
+.slider{
+    width: 100%;
+}
+
+.slider img {
+    width: 100%;
+    height: 670px;
+}
+
+.cloud{
+    
+}
+
+.slider-text{
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.slider-text h1 {
+    position: relative;
+    bottom: 423px;
+    font-size: 68px;
+    padding: 0;
+    margin: 0;
+    left: 24px;
+}
+.slider-text p {
+    position: relative;
+    bottom: 396px;
+    margin: 0;
+    padding: 0;
+    left: 18px;
+}
+
+.input-slider {
+    position: relative;
+    bottom: 364px;
+    margin: 0;
+    padding: 0;
+}
+
+input[type="button"] {
+    color: #00ffe9;
+    background: transparent;
+    border: 1px solid #eee;
+    width: 11%;
+    height: 53px;
+    font-size: 15px;
+     transition: .5s;
+}
+input[type="button"]:hover{
+    background: white;
+    color: black;
+}
+/* end slider */
+
+/* start porto */
+
+.porto {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+}
+
+.porto-text {
+    color: white;
+    margin-top: -189px;
+}
+
+.porto-text h1 {
+  text-align: center;
+    font-size: 51px;
+    position: relative;
+    top: 21px;
+}
+
+.porto-text p {
+       text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 3px;
+}
+
+.porto img {
+    width: 300px;
+    height: 300px;
+        text-align: center;
+    margin-left: 81px;
+    margin-bottom: 17px;
+    position: relative;
+    left: 33px;
+}
+
+
+/* end porto */
+.socile{
+       text-align: center;
+    background: #a91a1a;
+    height: 130px;
+    position: relative;
+    top: -22px;
+            }
+.socile .container img {
+    position: relative;
+    bottom: -18px;
+}
+            .socile a{
+                    padding: 130px;
+            }
+
+.contact .container {
+    text-align: center;
+    padding: 0;
+    width: 100%;
+    background: #503838;
+    height: 370px;
+    position: relative;
+    top: -21px;
+}
+.contact .container h2 {
+    color: white;
+    font-size: 47px;
+    margin: 0;
+    padding: 33px;
+}
+
+input[type="text"] {
+    border: none;
+    border-radius: 10px;
+    width: 24%;
+    height: 5%;
+    padding: 6px;
+    margin: 5px;
+}
+input[type="email"] {
+    border: none;
+    border-radius: 10px;
+    width: 21%;
+    height: 3%;
+    padding: 6px;
+    margin: 5px;
+}
+textarea {
+    border-radius: 10px;
+    width: 21%;
+    height: 6%;
+    padding: 24px;
+    margin: 5px;
+}
+input[type="submit"] {
+    color: white;
+    background: transparent;
+    border: 1px solid #bf6d6d;
+    width: 7%;
+    height: 35px;
+    font-size: 15px;
+    transition: .5s;
+}
+input[type="submit"]:hover {
+    background: #a76868;
+    color: black;
+}
+
+.blogs {
+    width: 100%;
+    height: 650px;
+    background: #a2a2a2;
+    position: relative;
+    top: -1px;
+}
+
+.blog {
+    width: 33.3333%;
+    float: right;
+    overflow: hidden;
+}
+.blog img {
+    width: 74%;
+    height: 207px;
+    border-radius: 10%;
+    margin: 87px;
+    margin-left: 50px;
+}
+.blog h3 {
+    margin-top: -79px;
+    margin-left: 87px;
+}
+.blog p {
+    margin-left: 13px;
+    text-align: center;
+}
+
+
+
+
+
+.blog2 {
+   width: 33.3333%;
+    float: right;
+    overflow: hidden;
+}
+.blog2 img {
+    width: 74%;
+    height: 207px;
+    border-radius: 10%;
+    margin: 87px;
+    margin-left: 50px;
+}
+.blog2 h3 {
+    margin-top: -79px;
+     margin-left: 87px;
+}
+.blog2 p {
+    margin-left: 13px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+.blog3 {
+   width: 33.3333%;
+    float: right;
+    overflow: hidden;
+}
+.blog3 img {
+   width: 74%;
+    height: 207px;
+    border-radius: 10%;
+    margin: 87px;
+    margin-left: 50px;
+}
+.blog3 h3 {
+    margin-top: -78px;
+    margin-left: 87px;
+}
+
+.blog3 p {
+    margin-left: 13px;
+    text-align: center;
+}
+
+
+button {
+    margin-left: 145px;
+    background: transparent;
+    border: 1px solid red;
+    color: white;
+    height: 55px;
+    width: 134px;
+    transition: .5s;
+}
+
+button:hover{
+    background: red;
+    color: black;
+}
+
+footer {
+    width: 100%;
+    height: 250px;
+    background: #1e1e1e;
+    position: relative;
+    top: -72px;
+}
+
+footer p {
+    color: #716565;
+    position: relative;
+    bottom: -220px;
+    left: 19px;
+    font-size: 9px;
+}

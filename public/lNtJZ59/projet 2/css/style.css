@@ -1,0 +1,381 @@
+body {
+   
+}
+.clearfix {
+    clear:both;
+}
+.container {
+    width:1170px;
+    margin:auto;  
+}
+.header .slider{
+    height: 600px;
+     background-image: url(../image/slider.jpg);
+    background-size:cover;
+}
+.header .slider .intro {
+   
+    padding-top: 250px;
+    text-align:center;
+    color: #FFF;
+    
+}
+.header .slider .intro h2 {
+    margin:0px  auto;
+    color:#FFF;
+    font-size:50px;
+    width: 450px;
+    border-bottom: 4px solid #FFF;
+    border-top: 4px solid #FFF;
+}
+.header .slider .intro button {
+    background: none;
+   font-weight:bold;
+  color: #FFF;
+    margin-top:30px;
+    font-size:20px;
+    border:2px solid #FFF;
+    padding: 10px 20px ;
+}
+.header .navbar {
+    background:#252F31;
+    color:#FFF;
+    overflow: hidden;
+    text-transform:uppercase;
+}
+.header .navbar h2 {
+    color:#FFF;
+    float: left;
+}
+.header .navbar h2 span {
+    color: #36D77A;
+}
+
+.header .navbar ul {
+    list-style:none;
+    padding-left:0px;
+    overflow: hidden;
+    float: right;
+}
+.header .navbar ul li {
+    float:left;
+    padding:10px;
+} 
+.header .navbar ul li a {
+    color: #FFF;
+    text-decoration:none; 
+}
+
+.header .navbar ul li a:hover {
+    color: #2CCC71;
+}
+.features{
+    overflow: hidden;
+    padding-bottom: 30px;
+    padding-top: 30px;
+     
+}
+.features .feat {
+    float:left;
+    width: 33.3333%;
+    height: 150px;
+}
+.features .feat h2 {
+    text-transform:uppercase;
+}
+.features .feat p {
+    line-height:1.7;
+}
+.aboutme {
+    background-color:#F2F2F2;
+    overflow: hidden;
+}
+.aboutme .image {
+    float:left;
+    width:40%;
+}
+.aboutme .image img {
+    
+   width:100%;
+    right: 60%;
+}
+.aboutme .info {
+    float:left;
+    text-align:left;
+    width:60%;
+   
+}
+.aboutme .info > h2 {
+    text-transform:uppercase;
+    margin: 20px 0 20px 40px;
+}
+.aboutme .info > p {
+    margin:0 0 20px 40px;
+    line-height:1.7;
+}
+.aboutme .info > p:last-of-type {
+    margin:40px;
+   
+}
+.aboutme .info .hobbies {
+    overflow:hidden;
+    margin:20px 0 0 40px;
+    
+}
+.aboutme .info .hobbies .cont {
+    float:left;
+    width: 50%;
+    overflow:hidden;
+    min-height: 100px;
+   
+}
+.aboutme .info .hobbies .cont .icon {
+    float:left;
+   width: 12%;
+    margin-right: 5%;
+}
+.aboutme .info .hobbies .cont .text {
+    float:left;
+   width:83%;
+   
+}
+
+.aboutme .info .hobbies .cont .icon img {
+    max-width:100%;
+    margin: 15px 20px 0 0;
+        
+}
+
+.myskills {
+    padding-top:30px;
+    padding-bottom:30px;
+    overflow:hidden;
+}
+.myskills .skills h2 {
+    text-transform:uppercase;
+    margin: 20px 0 20px 40px;
+}
+.myskills .skills p {
+     margin:0 0 20px 40px;
+    line-height:1.7;
+}
+.myskills .skills p:last-of-type {
+    margin:40px;
+}
+.myskills .skills button {
+    background:none;
+    border:3px solid #2DCC70;
+    padding:10px 30px;
+    color:#2DCC70;
+    margin-top:30px;
+    margin-left:40px;
+    
+}
+.myskills .skills, .myskills .progresse {
+    width:50%;
+    float:left;
+}
+.myskills .progresse .technique {
+    margin-left:40px;
+}
+.myskills .progresse .technique h3 {
+   
+}
+.myskills  .progresse .technique div {
+    height: 25px;
+    background-color:#F2F2F2;
+    
+}
+.myskills .progresse .technique div span {
+    background-color:#2DCC70; 
+    height:25px;
+    display: block;
+    line-height:1.5;
+    text-align:right;
+   color:#FFF;
+    font-weight:bold;
+}
+.resume {
+    background-color:#F2F2F2;
+    text-align:center;
+    padding-bottom: 70px;
+    padding-top:50px;
+}
+.resume p {
+    margin:40px;
+}
+.resume button {
+     background:none;
+    border:3px solid #2DCC70;
+    padding:10px 30px;
+    color:#2DCC70;
+    margin-top:30px;
+    margin-left:40px;
+}
+.myeducation {
+    padding-top:30px;
+    padding-bottom:30px;
+    overflow:hidden;
+}
+.myeducation .education h2 {
+    margin-left: 40px;
+    
+}
+.myeducation .education p {
+    margin-left: 40px;
+    margin-right:40px;
+}
+.myeducation .education p:last-of-type {
+    margin-top:40px;
+}
+
+.myeducation .education, .myeducation .exper {
+    width:50%;
+    float:left;
+}
+.myeducation .exper .exp span:first-of-type{
+    display: block;
+}
+.myeducation .exper .exp span:last-of-type {
+    display: inline-block;
+    background-color:#2DCC70;
+    margin-top:10px;
+    color: #FFF;
+    
+}
+.myeducation .exper .exp1 span:first-of-type{
+    display: block;
+}
+.myeducation .exper .exp1 span:last-of-type {
+    display: inline-block;
+    background-color:#2DCC70;
+    margin-top:10px;
+    color: #FFF;
+    
+}
+.work h2, .work p {
+    margin-left:40px;
+}
+.test {
+    background-color:#F2F2F2;
+    text-align:center;
+    padding-bottom: 30px;
+    padding-top:30px;
+}
+.test p {
+    margin:40px;
+}
+.test ul {
+    list-style:none;
+    border-left:0;
+}
+.test ul li {
+    width:20px;
+   height:20px;
+    border: 1px solid #2DCC70;
+    display:inline-block;
+    cursor:pointer;
+}
+.test ul li:active , .test ul li:hover {
+    background-color:#2DCC70;
+}
+.portfolio {
+    padding-top:30px;
+    padding-bottom:30px;
+    text-align:center;
+    overflow:hidden;
+}
+.portfolio nouswork {
+    overflow:hidden;
+}
+.portfolio .nouswork > div {
+    float:left;
+    width:33.333%;
+    margin-bottom:15px;
+        
+}
+.portfolio .nouswork > div img {
+    width: 92%;
+    margin: 10px;
+    padding:3px;
+    border:1px solid #CCC;
+    background-color: #FFF;
+    box-shadow: 10px 10px 10px #CCC;
+        
+}
+.contact {
+    background-color:#252F31;
+  overflow:hidden;
+    padding-top:50px;
+    padding-bottom:70px;
+    overflow:hidden;
+}
+.contact .info {
+    width:45%;
+    float:left;
+    margin-right:5%;
+}
+.contact h2 {
+    color: #FFF;
+    text-transform:uppercase;
+    margin-left:40px;
+}
+.contact p {
+    color:#6A644F;
+    margin-left:40px;
+}
+.contact p strong {
+    color:#FFF;
+}
+.contact .form {
+    width:50%;
+    float:left;
+}
+
+.contact .form label {
+    display:block;
+    color:#FFF;
+    margin-bottom:10px;
+    margin-top: 30px;
+    
+    
+}
+.contact .form input[type="text"] {
+    background-color:#4B5557;
+    margin-bottom:10px;
+    border:0;
+    color: #FFF;
+    width:80%;
+    height:25px;
+} 
+.contact .form textarea {
+    background-color:#4B5557;
+    margin-bottom:10px;
+       border:0;
+    color: #FFF;
+    width:80%;
+    height: 200px;
+} 
+.contact .form input[type="submit"] {
+    background-color:#191E22;
+    margin:10px 0;
+    color: #FFF;
+    padding:10px;
+    border:0;
+    display:block;
+    cursor:pointer;
+        
+}
+.footer {
+    background-color:#191E22;
+color: #536E5A;
+    text-align:center;
+    padding:20px;
+}
+.footer ul {
+    list-style:none;
+    margin: 10px 0;
+}
+.footer ul li {
+    display:inline-block;
+}

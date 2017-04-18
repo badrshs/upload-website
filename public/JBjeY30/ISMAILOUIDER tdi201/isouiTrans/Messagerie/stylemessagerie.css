@@ -1,0 +1,106 @@
+
+body
+{
+    background-color: aliceblue;
+}
+/*barre de recherche*/
+.bar_rech
+{
+      display: block;
+       margin-top: -8px;
+    margin-left: 360px;
+    text-decoration: none;
+    font-size: 25px;
+}
+.suiv
+{
+    margin-right: 30px;
+    height: 20px;
+    width: 5%;
+    margin-bottom: -5px;
+   
+}
+/*image de header logo+image*/
+.logo
+{
+    margin-top: -10px;
+    width: 100%;
+    
+         }
+.DIVLOGOimg
+{
+    margin-left: -7px;
+}
+.DIVLOGOimg1
+{
+   margin-left: 2px;
+   
+}
+/*NAV*/
+nav ul
+{
+    list-style-type: none;
+    display: flex;
+    background-color:cyan;
+    height: 50%;   
+     
+}
+
+nav li
+{
+    margin-right: 20px;
+    
+}
+
+nav a
+{
+    font-size: 25px;
+    color: black;
+    text-decoration:none; 
+    border: 20px;
+}
+
+nav a:hover
+{
+    color:blue;
+    border-bottom: 10px;
+   
+}
+nav
+{
+    margin-top: -20px;
+    margin-right: -8px;
+    margin-left: -8px;
+}
+/*section*/
+
+section
+{
+    font-size: 18px;
+    margin-right: -20px;
+    
+}
+thead
+{
+    font-size: 18px;
+    background-color: aqua;
+    text-align: center;
+    font-style:oblique;
+}
+tbody
+{
+    font-size: 18px;
+    text-align:left;
+}
+
+/*footer*/
+footer
+{
+    background-color: dodgerblue;
+    margin-bottom:-7px;
+    margin-left: -8px;
+    margin-right: -10px;
+    font-size:  25px;
+    text-align: center;
+    height: 60px;
+}

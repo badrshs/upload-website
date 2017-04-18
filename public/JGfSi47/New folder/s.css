@@ -1,0 +1,40 @@
+body {
+  font-family: fantasy,helvetica;
+  color: #00BFFF;
+  background-color: #eee;
+}
+
+.text {
+  width: 100%;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  font-size: 45px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.text .content {
+  display: inline;
+}
+.text .cursor {
+  display: inline-block;
+  height: 3px;
+  width: 20px;
+  background-color: rgb(9, 76, 181);
+  animation: blink .4s infinite linear;
+}
+
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}

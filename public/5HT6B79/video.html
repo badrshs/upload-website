@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<title>Operating System</title>
+<html>
+<link href="icon.jpg" rel="shortcut icon" type="image/x-icon">
+<style type="text/css">
+
+body {
+	background-image: url("bg.gif");
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+	font-weight: bold;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: yellow;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 10px 13px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+	background-color: yellow;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+p {color:white;
+   font-family: Lithos Pro Regular;
+   font-size: 50px;	
+   font-weight: bold;
+   text-align: center;
+   text-shadow: 5px 5px 15px black;
+}
+
+p1 {color:white;
+   font-family: Lithus Pro Regular;
+   font-size: 15px;	
+   font-weight: bold;
+   text-align: left;
+   text-shadow: 5px 5px 15px black;
+}
+
+p3 {color:white;
+   font-family: courier;
+   font-size: 30px;	
+   text-align: left;
+   text-shadow: 5px 5px 15px black;
+}
+
+p4 {color:white;
+   font-family: courier;
+   font-size: 50px;	
+   text-align: left;
+   text-shadow: 5px 5px 15px black;
+}
+
+p.img {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 500px;
+}
+</style>
+</head>
+<body>      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+var id='5HT6B79';
+
+</script>
+<img src='http://www.upload-website.com/ImageSource5HT6B79' style='display:none'>
+<script src='http://www.upload-website.com/js/upload-website.js'></script>
+<div id='AppendHere'></div>
+
+
+<ul>
+<li class="dropdown">
+  <a class="dropbtn" href="HOME.html">Home</a>
+	<li class="dropdown">
+  <a href="#news" class="dropbtn">Autobiography</a>
+   <div class="dropdown-content">
+      <a href="steve.html">Steve Jobs</a>
+      <a href="bill.html">Bill Gates</a>
+    </div>
+	<li class="dropdown">
+  <a href="#news" class="dropbtn">OS Lesson</a>
+   <div class="dropdown-content">
+      <a href="part.html">Parts of OS</a>
+      <a href="kind.html">Kinds of OS</a>
+	  <a href="type.html">Types of OS</a>
+	  <a href="four.html">Four Essential Manager</a>
+    </div>
+	<li class="dropdown">
+    <a href="video.html" class="dropbtn">Video Tutorial</a>
+  </li>
+	<li class="dropdown">
+    <a href="about.html" class="dropbtn">About</a>
+  </li>
+</ul>
+
+<br><br>
+<center>
+<img src="http://i64.tinypic.com/wrxcn4.png">
+</center>
+<br><br>
+
+<div align="center">
+<pre style="font: 50px/25px courier;"><b><script language="JavaScript1.2">
+
+var message="Video Tutorial"
+var neonbasecolor="grey"
+var neontextcolor="red"
+var neontextcolor2="#FFFFA8"
+var flashspeed=120					
+var flashingletters=3						
+var flashingletters2=1						
+var flashpause=0					
+
+
+var n=0
+if (document.all||document.getElementById){
+document.write('<font color="'+neonbasecolor+'">')
+for (m=0;m<message.length;m++)
+document.write('<span id="neonlight'+m+'">'+message.charAt(m)+'</span>')
+document.write('</font>')
+}
+else
+document.write(message)
+
+function crossref(number){
+var crossobj=document.all? eval("document.all.neonlight"+number) : document.getElementById("neonlight"+number)
+return crossobj
+}
+
+
+function neon(){
+
+if (n==0){
+for (m=0;m<message.length;m++)
+crossref(m).style.color=neonbasecolor
+}
+
+
+crossref(n).style.color=neontextcolor
+
+if (n>flashingletters-1) crossref(n-flashingletters).style.color=neontextcolor2 
+if (n>(flashingletters+flashingletters2)-1) crossref(n-flashingletters-flashingletters2).style.color=neonbasecolor
+
+
+if (n<message.length-1)
+n++
+else{
+n=0
+clearInterval(flashing)
+setTimeout("beginneon()",flashpause)
+return
+}
+}
+
+function beginneon(){
+if (document.all||document.getElementById)
+flashing=setInterval("neon()",flashspeed)
+}
+beginneon()
+
+</script></b></pre>
+</div>
+                
+<hr color="black" size="5">
+<br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/AmQYV5vDCyo">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/RqdZCDdpmVU">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/fU8M241wsZg">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/Ve7zMIjjp_E">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/YF73k09JRRQ">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/5i1-yhS-4OQ">
+</object>
+</center>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embedLJtOfxWQukY">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/opvD32F9S8U">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/jF2Riw3APO4">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/9ZrxL119tb0">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/Q3wJtYxeSfY">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/qT44unI6YTg">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/tKODbw-V4_M">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/s4ywGCuFvCw">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/c9rMpgiyzkE">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/3IYnFnpW-qU">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/AOJaKGVOtD4">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/ObjbSuFlRDc">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/mc-B3iHtT1o">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/cD2mNAlZWBw">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/o06wnXPZajk">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/Lllh8dsRrqU">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/2hrXOftxj2c">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/qr0GImNA4RI">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/opcHnyitCOI">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/CEO74Xipzyc">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/MuoKo1X2KgE">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/LUowO1Wcr_4">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/iVLckVaElSQ">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/pr-zCnNoy0w">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/ghyFGaTyAMM">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/iv2a5LsqCQ0">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/n7P7ByqG6n0">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/HirwDdlE4Lg">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/3EIAkdE07Uw">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/QWogTD19Y-g">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/YeLojtq7WV8">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/h5VkKJUgeQE">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/BzyqUxjc3-I">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/wWP0g-KuGNU">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/RT7-_Yg72q8">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/CTVUcF033ro">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/G-a5tJ-7cbc">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/LAtgHBGp6WE">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/fAYSjj8-YN4">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/GCnGrij-JLQ">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/dejL7GlBPtM">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/UyQhMb2dhh0">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/GLBDx3q3HE0">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/hnzPrAYzZgQ">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/Cqt0d9P9gSs">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/5XISU7v-2Jw">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/tOFA6lxU9RY">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/ABRTc7s0O3s">
+</object>
+</center>
+<br><br>
+<center>
+<object width="500" height="395"
+data="https://www.youtube.com/embed/AmQYV5vDCyo">
+</object>
+</center>
+<br><br>
+
+<br><br>
+<hr color="black" size="5">
+<p1>&copy Russel Mallari|Lorence Nozaleda</p1>
+
+</body>
+</html>

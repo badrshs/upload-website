@@ -1,0 +1,452 @@
+/*---------------------------------------
+    Body Style              
+-----------------------------------------*/
+body{
+  font-family: 'Changa', sans-serif;
+
+  background: #e9ebee
+
+}
+
+body::-webkit-scrollbar {
+  width: 0.6em;
+  background: #fff
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #1976d2;
+  outline: 1px solid #fff;
+  border-radius: 0px;
+  width: 0.5em
+}
+
+
+/*---------------------------------------
+    Up To page style              
+-----------------------------------------*/
+
+.up  {
+    color: #fff;
+    position: fixed;
+    z-index: 9999;
+    background:linear-gradient(#66b8ff, #051d35);
+     width: 60px;
+     height: 30px;
+    border-radius: 4px;
+    font-size: 32px;
+    right: 10px;
+    cursor: pointer;
+    top: 500px;
+    transition: 0.3s;
+    display: none;
+    text-align: center;
+}
+.up i{position: relative;bottom: 7px}
+.up:hover {
+  background: #0960b5;
+  color: #fff
+}
+
+
+/*---------------------------------------
+    Pre Loader Style              
+-----------------------------------------*/
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background: none repeat scroll 0 0 #fff;
+}
+
+.sk-spinner-pulse {
+  width: 60px;
+  height: 60px;
+  background-color:#66b8ff;
+  border-radius: 100%;
+  margin: 40px auto;
+  -webkit-animation: sk-pulseScaleOut 1s infinite ease-in-out;
+  animation: sk-pulseScaleOut 1s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-pulseScaleOut {
+  0% {
+    -webkit-transform: scale(0);
+    trans.info: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    trans.info: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes sk-pulseScaleOut {
+  0% {
+    -webkit-transform: scale(0);
+    trans.info: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    trans.info: scale(1);
+    opacity: 0;
+  }
+}
+
+
+/*---------------------------------------
+    container style              
+-----------------------------------------*/
+.container{width: 90%}
+/*---------------------------------------
+    cover section style              
+-----------------------------------------*/
+.cover{
+    background-image: url(http://res.cloudinary.com/do20temcq/image/upload/v1489611865/cover_sh34xy.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    background-position: center;
+    overflow: hidden;
+    min-height: 450px;
+    position: relative;
+    border: 5px solid rgba(12, 11, 11, 0.2);
+}
+.cover .content{
+    background: rgba(0, 0, 0, 0.48);
+    min-height: 450px
+}
+.cover .profile {
+    text-align: center;
+    position: absolute;
+    overflow: hidden;
+    bottom: 4%;
+    left: 2%;
+    color: #fff
+}
+.cover .profile img {
+    width: 230px;
+    height: 230px;
+    border: 8px solid #fff;
+}
+.cover .profile h5{font-weight: bold;}
+.cover .profile h5>i{
+    color: #298cd8;
+}
+.cover .profile p {
+    color: rgba(255, 255, 255, 0.69);
+    margin-top: -2px;
+}
+.cover .profile ul {
+    display: inline-flex;
+    padding: 0;
+    margin: 0;
+}
+.cover .profile ul li{margin-right: 8px}
+.cover .profile .info{
+    background: #fff;
+    width: 43px;
+    height: 42px;
+    color: #000;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: 0.7s
+}
+.cover .profile .info i {
+    position: absolute;
+    top: 29%;
+    right: 29%;
+    font-size: 22px;
+}
+.cover .profile .info .caption{
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 110%;
+    transition: 0.7s;
+}
+.cover .profile .info:hover .caption{top: 0}
+.cover .profile .info:hover{color: #fff}
+.cover .profile .facebook:hover{background:rgb(59, 89, 152) }
+.cover .profile .twitter:hover{background: rgb(29, 161, 242)}
+.cover .profile .instagram:hover{background:#d20962 }
+.cover .profile .google:hover{background:#ff0000}
+
+/*---------------------------------------
+   skills and works section style              
+-----------------------------------------*/
+.s-w .info {
+    background: #fff;
+    margin-top: 26px;
+    border-radius: 5px;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    min-height: 770px;
+}
+.s-w .info h4 {
+    padding: 10px;
+    text-align: -webkit-auto;
+    margin-left: 5%;
+    font-size: 24px;
+}
+.s-w .info .material-icons {
+    background: linear-gradient(#66b8ff, #051d35);
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    position: relative;
+    top: 5px;
+}
+/*start skills*/
+.s-w .info .progress-circle span {
+    color: #8b8b8b;
+    position: absolute;
+    left: 38%;
+    top: 38%;
+    width: 90px;
+    height: 90px;
+    line-height: 90px;
+    margin-left: -31px;
+    margin-top: -30px;
+    font-size: 20px;
+}
+.s-w .info .skills-p{
+    font-size: 20px;
+    margin-top: -1px;
+    font-weight: bold;
+    letter-spacing: 6px;
+}
+
+.s-w .info .about-me{
+    padding: 23px;
+    margin-left: 6px;
+}
+/*start works*/
+.s-w .info .img {
+    width: 22%;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    display: inline-block;
+    box-sizing: border-box;
+    border: 3px solid #66b8ff;
+}
+.s-w .info .img img{
+    width: 100%
+}
+.s-w .info .img .caption {
+    position: absolute;
+    top: 103%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.56);
+    text-align: center;
+    transition: 0.7s;
+}
+.s-w .info .img .caption i{
+    background:rgb(102, 184, 255);
+    padding: 13px;
+    font-size: 22px;
+    color: #fff;
+    border-radius: 50%;
+    position: relative;
+    top: 35%;
+    transition: 0.7s;
+}
+.s-w .info .img .caption i:hover{background: #fff;color: #000}
+.s-w .info .img:hover .caption{top: 0%}
+
+
+
+/*---------------------------------------
+   services section style              
+-----------------------------------------*/
+.services{}
+.services #info {
+    background: #fff;
+    border-radius: 5px;
+    height: 370px;
+    overflow: hidden;
+    margin-bottom: 26px
+}
+.services #info h4 {
+    margin-top: 18px;
+    margin-bottom: 45px;
+    font-size: 27px;
+}
+.services #info h4>i {
+    background: linear-gradient(#66b8ff, #051d35);
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+}
+.services #info #services-icons i {
+    background: linear-gradient(#66b8ff, #051d35);
+    color: #fff;
+    font-size: 47px;
+    padding: 22px;
+    border-radius: 50%;
+    transition: 0.7s
+}
+.services #info #services-icons i:hover{background: linear-gradient(#051d35, #66b8ff);}
+.services #info #services-icons h5 {
+    font-size: 20px;
+    font-weight: bold;
+}
+.services #info #services-icons p {
+    color: rgba(51, 51, 51, 0.77);
+}
+.services #img{
+    overflow: hidden;
+    height: 370px;
+    margin-bottom: 26px;
+}
+.services #img img{width: 100%;height: 100%}
+/*---------------------------------------
+   contact section style              
+-----------------------------------------*/
+.contact{
+  background-image: url(../imgs/contact.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  overflow: hidden;
+}
+.contact .content {
+    background: rgba(0, 0, 0, 0.57);
+    width: 100%;
+    height: 100%;
+}
+.contact .content h4 {
+    margin: 0px;
+    color: #fff;
+    font-size: 25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.contact .content .material-icons {
+    background: linear-gradient(#66b8ff, #051d35);
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    position: relative;
+    top: 5px;
+}
+.contact .content form{
+    width: 70%;
+    margin: auto;
+}
+.contact .content input {
+    background: rgba(255, 255, 255, 0.28);
+    text-indent: 10px;
+    border: 0;
+    outline: none;
+}
+.contact .content textarea {
+    background: rgba(255, 255, 255, 0.28);
+    border: 0;
+    height: 196px;
+    margin-bottom: 10px;
+    outline: none;
+}
+.contact .content button{
+    background: #fff;
+    color: #000;
+    font-size: 18px;
+    width: 49%;
+    padding: 10px;
+    letter-spacing: 13px;
+    text-align: center;
+}
+
+/*---------------------------------------
+      footer section style              
+-----------------------------------------*/
+.footer{background: #222}
+.footer #profile{
+  overflow: hidden;
+  text-align: center;
+}
+.footer #profile img {
+    width:100%
+}
+.footer #profile p{
+    color: rgba(255, 255, 255, 0.53);
+}
+.footer #profile ul {
+    display: inline-flex;
+    padding: 0;
+    margin: 0;
+}
+.footer #profile ul li{margin-right: 8px}
+.footer #profile .info{
+    background: #fff;
+    width: 43px;
+    height: 42px;
+    color: #000;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: 0.7s
+}
+.footer #profile .info i {
+    position: absolute;
+    top: 29%;
+    right: 29%;
+    font-size: 22px;
+}
+.footer #profile .info .caption{
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 110%;
+    transition: 0.7s;
+}
+.footer #profile .info:hover .caption{top: 0}
+.footer #profile .info:hover{color: #fff}
+.footer #profile .facebook:hover{background:rgb(59, 89, 152) }
+.footer #profile .twitter:hover{background: rgb(29, 161, 242)}
+.footer #profile .instagram:hover{background:#d20962 }
+.footer #profile .google:hover{background:#ff0000}
+
+.footer #contact h5{
+    color: #fff;
+}
+.footer #contact h5>i {
+    background: linear-gradient(#66b8ff, #051d35);
+    color: #fff;
+    padding: 6px;
+    border-radius: 50%;
+}
+.footer #contact ul li{
+    color: rgba(255, 255, 255, 0.66);
+    padding-top: 14px;
+}
+.footer #contact li i{
+    position: relative;
+    top: 5px;
+}
+.footer .copy-right{
+    background: #333;
+    padding: 2px;
+    color: rgba(255, 255, 255, 0.41);
+}

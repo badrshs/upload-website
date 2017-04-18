@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+<style>
+body {
+    background-color: lightblue;
+    
+}
+
+h1 {
+    color: maroon;
+    margin-left: 40px;
+    font-family: verdana;
+} 
+p  {
+    color: red;
+    font-family: lato;
+    font-size: 160%;
+}
+
+</style>
+</head>
+<h1 style="text-align:center;">MARKETING RESUME</h1>
+
+<table style="width:100%">
+  
+  <tr>   
+  <h1 style="text-align:center;">2015</h1>
+  </tr>
+  
+
+</table>
+<p style="color:maroon;">
+•	Assisted client with business plan, purchase, branding, advertising, remodeling, and marketing of Wayne’s Pet Grooming Co., increasing gross monthly sales from $8,000 to $25,000 in ten months
+</p>
+<p style="color:maroon;">
+•	Increased followers on social media by 150% on average (Twitter, G+, Facebook, and Linkedin), resulting in $4,5000 in increased sales via the Internet and significant increase in brand awareness
+</p>
+•	•	Designed & crafted marketing & e-marketing materials on a range of projects, for brochures and advertisements; ensured uniformity in the brand language for the promotional brands
+
+
+</body>
+</html>

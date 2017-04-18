@@ -1,0 +1,444 @@
+*{
+    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*helping things*/
+.clear{
+ clear: both;   
+}
+/*second tool after */
+
+.special-heading {
+    position: relative;
+    margin-bottom: 107px;
+}
+.special-heading:after{
+    content: "";
+    position: absolute;
+    top: 37px;
+    left: 0;
+    width: 100px;
+    border-bottom: 3px solid #F2F2F2;
+    margin-bottom: 50px;
+}
+
+
+p,h2 ,h3 span ,h3 ,li,q {
+    font-family: cursive;
+    text-transform: capitalize;
+}
+/*start the cont*/
+.cont{
+    width: 1000px;
+    margin: auto;
+   
+   
+}
+/* finish he container*/
+
+/*start navbar*/
+
+.nav{
+    
+    text-align: center;
+    color: snow;
+    height: 0px;
+    position: relative;
+    z-index: 3 ;
+   
+   
+}
+.nav h3{
+    
+    float: left;
+    width: 40%;
+    font-weight: bold;
+    font-size: 31px;;
+    margin-top: 20px;
+    
+}
+.nav h3 span {
+    color: #1abc9c;
+}
+.nav ul {
+    list-style: none;
+    float: left;
+    width: 55%;
+    padding-top: 20px;
+    
+}
+.nav ul li {
+    display: inline-block;
+    margin-left: 10px;
+    text-transform: capitalize;
+    border-bottom: 1px solid transparent;
+    
+}
+.nav ul li a:hover,
+.nav ul li:hover,
+.nav ul li.active
+{
+    color: #1abc9c;
+    border-bottom: 2px solid #1abc9c;
+}
+ 
+.nav ul li a {
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 18px;
+}
+
+
+/*finsih the navbar*/
+/*start the header*/
+.header{
+    
+    background-image: url('../imag/web3.jpg');
+    position: relative;
+    
+    
+}
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.4);
+    z-index: 1;
+    
+}
+.header .bx-viewport{
+    height: 100%;
+}
+.header .bx-wrapper .bx-viewport{
+    background: none;
+    box-shadow: none;
+    height: 100% !important;
+    border: 0;
+    text-align: center;
+    color: aliceblue;
+    
+    
+}
+.header .bxslider {
+    height: 100%;
+    
+    
+}
+.header .bxslider li {
+    display: block;
+    background: none;
+    
+}
+.header .bxslider li{
+    padding: 30px;
+    text-align: center;
+    text-transform: capitalize;
+    
+    
+}
+.header .bxslider li h2{
+    font-size: 25px;
+}
+.header .bxslider li h2 span {
+    color: #1abc9c;
+    font-size: 32px;
+    text-transform: capitalize;
+}
+.bx-wrapper .bx-controls-direction a {
+    
+    margin-top: 0!important;
+}
+/*end the header*/
+/*start the services*/
+.services {
+    
+   
+    
+    background-color: #6DC8BF;
+    padding: 10px 0px 65px 1px;
+    
+    
+}
+.services h2 {
+    margin-bottom: 65px;
+    text-transform: capitalize;
+}
+
+.services .items {
+    width: 31%;
+    float: left;
+    text-align: center;
+    margin-bottom: 10px; 
+    background-color: cadetblue;
+    
+}
+.services .it {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.services .items p {
+    text-align: left;
+    margin-left: 13px;
+    
+}
+.services .items .icon{
+    width: 20%;
+    float: left;
+    margin-right: 3%;
+    
+}
+.services .items .icon i{
+    position: relative;
+    top: 25px;
+    left: 0; 
+    color: #F2F2F2;
+    height: 70%;
+    margin-top: -8px;
+}
+
+
+.services .items .info {
+    width: 70%;
+    float: left;
+    
+}
+/*end the services */
+/*start the our team*/
+
+.ourteam{
+   text-align: center;
+    padding: 50px;
+    background: #F2F2F2;
+}
+.team h2 {
+    text-align: center;
+    
+    font-size: 23px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.team {
+    width: 40%;
+    float: left;
+    text-align: justify;
+    margin-top: -55px;
+}
+.box {
+    width: 13%;
+    float: left;
+    
+    margin-left: 10px;
+    position: relative;
+    
+}
+.box img{
+    
+    width: 100%;
+    height: 100%;
+}
+.box .overla {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(2, 8, 10,.5);
+    display: none;
+    line-height: 150px;
+    color: #1abc9c;
+}
+.box:hover .overla {
+    display: block; 
+}
+/*end the our team*/
+/*start testmonial*/
+.testmonial{
+    background-image: url('../imag/adele.jpg');
+    background-size: cover;
+    height: 400px;
+    color: aliceblue;
+    font-size: 20px;
+    text-align: center;
+    position: relative
+}
+.testmonial .overtest {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+}
+.testmonial h2 {
+    padding-top: 50px;
+}
+.testmonial q {
+    display: block;
+    padding-top: 20px;
+}
+.testmonial span {
+    display: block;
+    padding-top: 24px;
+    color: cyan;
+}
+
+.testmonial .slider > div {
+    display: none;
+}
+.testmonial .slider .acty {
+    
+display: block;
+}
+/*end the estmonial*/
+/*start support us*/
+.projects {
+    height: 650px;
+    background: #00305B;
+    padding-top: 10px;
+    color: white;
+}
+.projects ul {
+    margin-left: -50px;
+}
+.projects ul li {
+    list-style: none;
+    display: inline-block;
+    border: 2px solid white;
+    padding: 4px 25px 6px 25px;
+    text-align: center;
+    margin: 10px;
+    background-color: #00305B;
+    
+}
+.projects ul li:hover {
+    border-radius: 10px;
+    background-color: #1abc9c;
+}
+.projects .gallary .pic > div {
+    
+    width: 32%;
+    float: left;
+    
+    display: inline-block;
+    text-align: center;
+}
+.projects .gallary {
+    background-color: grey;
+    margin-top:30px;
+}
+.projects .gallary .pic > div img {
+    width: 100%;
+    
+}
+.projects .gallary .pic  div:nth-child(2){
+    margin: 0 15px 0 15px;
+    
+    
+}
+
+#Container .mix {display: none;}
+
+
+/*the foooteeeeeeeeeeeerrrrrrrrr*/
+.footer {
+    height: 400px;
+    overflow: hidden;
+    background-color: black;
+    
+}
+.footer .one {
+    width: 25%;
+    float: left;
+    margin-top: 50px;
+    
+}
+
+.footer .one h2 {
+    text-transform: capitalize;
+    color: #F8FBFF;
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+.footer .one p {
+    text-transform: capitalize;
+    color: #6A7275;
+    margin: 10px 18px 16px 0px;
+    text-align: justify;
+    font-size: 14px;
+    font-weight: bold;
+    
+}
+
+.footer .one i {
+    border: 1px solid #3c2f2f;
+    width: 48px;
+    text-align: center;
+    padding: 7px;
+    color: #6A7275;
+    display: inline-block;
+}
+
+.footer .sp span {
+    border: 1px solid #6A7275;
+    width: 75px;
+    text-align: center;
+    padding: 7px;
+    color: #6A7275;
+    display: inline-block;
+}
+
+.footer .for ul li {
+    list-style: none;
+    border-bottom: 2px solid #6A7275;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    text-transform: capitalize;
+    color: #6A7275;
+}
+.footer .one .last {
+    overflow: hidden;
+    
+}
+.footer .one .last img {
+    float: left;
+    margin: 5px 12px 5px 4px;
+    width: 40px;
+}
+
+.footer .one .last h3 {
+   color: #6A7275;
+    margin: 5px 0 6px;
+    font-size: inherit;
+}
+.footer .one .last span{
+    color: dimgray;
+}
+.footer .for h2 {
+        padding-left: 40px;
+
+}
+.spa {
+    width: 555px;
+    margin: auto;
+    margin-top: 24px;
+    margin-bottom: -10px;   
+}
+
+.footer .copyright {
+    margin: 35px auto;
+    text-align: center;
+    text-transform: capitalize;
+    
+    color: #6A7275;
+}

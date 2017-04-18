@@ -1,0 +1,566 @@
+/*start my framework*/
+
+
+
+* {
+-webkit-box-sizing:border-box;
+-moz-box-sizing:border-box;
+box-sizing:border-box;
+
+	
+}
+
+body{
+	font-family: 'Open Sans', sans-serif;
+	
+	height: 6000px;
+}
+
+.overlay {
+	
+background: rgba(49,55,61,.8);
+	width: 100%;
+	height: 100%;
+	
+}
+
+.container{
+	width: 1200px;
+	margin: auto;
+	position: relative;
+	
+}
+
+.table{
+	height: 100%;
+	display: table;
+	
+}
+
+.row{
+	display: table-row;
+}
+
+.text-center{
+	text-align: center;
+}
+
+.upper{
+	text-transform: uppercase;
+}
+
+.main-color{
+	color: #f7600e;
+}
+
+.background-color{
+	background-color: #f7600e;
+}
+
+.hidden{
+	display: none;
+}
+/*end my framework*/
+
+/*start header*/
+
+.header{
+	background: url("../images/13533211_1015291945234037_7036299451921991263_n.jpg");
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover;
+	color: #fff;
+}
+
+
+.header .navbar{
+	overflow: hidden;
+	padding: 20px 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+.header .navbar .links{
+	float: right;
+}
+
+.header .navbar .links i{
+	margin-left: 5px;
+}
+
+.header .intro h1 {
+	margin: 0;
+	font-size: 50px;
+	font-weight: 800;
+}
+
+.header .intro p {
+	margin: 10px 0 40px;
+	font-size: 20px;
+	line-height: 1.9;
+	color: #e2e2e2;
+}
+
+.header .buttons button{
+	background: transparent;
+	padding: 5px 0;
+	width: 140px;
+	margin: 0px 8px;
+	font-size: 14px;
+	border: 1px solid #909090;
+	border-radius: 10px;
+	transition: all .5s ease-in-out
+}
+
+.header .buttons button:hover{
+	background-color: #f7600e;
+	border: 1px solid #f7600e;
+     color: #fff;	
+	
+}
+
+.header .arrow {
+	
+	position: absolute;
+	bottom: 0;
+	left: 0px;
+	right: 80px;
+	width: 100%;
+	text-align: center;
+	padding: 40px;
+	
+}
+
+.header .arrow i {
+	border: 1px solid #787878;
+	border-radius: 50%;
+	height: 33px;
+	width: 33px;
+	line-height: 33px;
+	cursor: pointer;
+	transition: all .5s ease-in-out
+}
+.header .arrow i:hover{
+	background-color: #f7600e;
+	border: 1px solid #f7600e;
+	color: #fff;
+}
+
+/*end header*/
+
+
+/*start features*/
+.fea {
+	padding: 80px;
+    overflow: hidden;
+}
+
+.fea .box {
+	width: 22%;
+	float: left;
+	margin-right: 4%;	
+}
+.fea .box i {
+	color: #f7600e;
+	border: 1px solid #ccc;
+	width: 50%;
+	height: 100%;
+	border-radius: 50%;
+	line-height: 100px;
+
+	
+	
+}
+.fea .box h3{
+ text-transform: uppercase;
+	font-weight: normal;
+	color: #505050;
+}
+
+.fea .box p {
+	line-height: 2;
+	color: #888;
+}
+
+
+.fea .box:last-child{
+	margin-right: 0;
+}
+/*end features*/
+
+/*start subscribe*/
+.sub {
+background: url(../images/download.jpg);
+		-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover;
+}
+
+.sub form{
+	padding: 100px 0;
+	width: 700px;
+	margin: auto;
+ text-align: center
+}
+.sub form input[type="email"] {
+	padding: 5px;
+	width: 270px;
+	font-size: 15px;
+	border-radius: 10px;
+	
+}
+.sub form button {
+    padding: 8px;
+    width: 170px;
+    font-size: 15px;
+    border: none;
+	background:  #f7600e;
+    color: #fff;
+    border-radius: 10px;
+    margin-left: 20px;	
+	
+ }
+/*end subscribe*/
+
+/*start our work*/
+
+.our-work{
+	padding: 50px 0;
+}
+
+
+
+.our-work h2 {
+	font-weight: 500px;
+	font-size: 28px;
+	margin: 0;
+}
+
+.our-work  p {
+	line-height: 2;
+margin: 10px 0 40px;
+
+}
+
+.our-work .item-box{
+	overflow: hidden;
+}
+
+
+.our-work .item-box .item {
+	float: left;
+	width: 30%;
+	overflow: hidden;
+	margin-left: 1.33333%;
+	margin-bottom: 20px;
+	border-radius: 10px;
+	position: relative;
+	height: 403px;
+}
+
+.our-work .item-box .item img{
+	width: 100%;
+	height: 100%;
+}
+.our-work .item-box .item .over {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(247,96,14,.9);
+	color: #fff;
+	display: none;
+}
+
+
+.our-work .item-box .item .over h4 {
+	padding: 10px;
+	margin-top: 70px;
+	
+}
+
+.our-work .item-box .item .over p {
+	line-height: 2;
+    margin-top: 50px;
+	margin-bottom: 40px;
+}
+
+.our-work .item-box .item .over button {
+	    margin-top: 50px;
+}
+
+.our-work .item-box .item:hover .over{
+	display: block;
+}
+
+.our-work .item-box .item .over button{
+	background: transparent;
+	padding: 10px;
+	width: 180px;
+	border: 1px solid #fff;
+	border-radius: 10px;
+	transition: all .5s ease-in-out
+
+}
+
+.our-work .item-box .item .over button:hover {
+	background-color: #fff;
+	border: 1px solid #fff;
+    color: 	#f7600e;
+}
+
+.our-work .show-more{
+	background: transparent;
+	width: 180px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	margin-top: 20px;
+	padding: 10px;
+	color: #555;
+	transition: all .5s ease-in-out
+}
+
+.our-work .show-more:hover {
+	background-color: #f7600e;
+	border: 1px solid #f7600e;
+	color: #fff;
+}
+
+/*end our work*/
+
+
+/*start testmonialz*/
+
+.testm{
+	background: url(../images/download.jpg);
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover;
+	color: #fff;
+}
+.testm .client {
+	padding: 50px 0;
+	font-size: 20px;
+	text-align: center;
+}
+
+.testm .client img {
+	padding: 10px;
+	height: 150px;
+	
+}
+.testm .client p {
+	font-style: italic;
+	line-height: 2;
+	
+}
+
+.testm  .fa-chevron-left,
+.testm  .fa-chevron-right {
+	position: absolute;
+	top: 50%;
+   color: #999;
+	cursor: pointer;
+}
+
+.testm  .fa-chevron-left:hover ,
+.testm  .fa-chevron-right:hover{
+		color: #f7600e;
+
+}
+
+
+.testm  .fa-chevron-left {
+	left: 0;
+	
+	
+}
+.testm  .fa-chevron-right {
+	
+	right: 0;
+} 
+
+/*end testmonialz */
+
+/*start our team*/
+
+.our-team {
+	padding: 50px 0;
+}
+
+.our-team h2 {
+	font-size: 35px;
+	margin-bottom: 0;
+}
+.our-team .main {
+	margin: 10px 0 40px ;
+	line-height: 2;
+	color: #666;
+}
+
+.our-team .the-team {
+	overflow: hidden;
+}
+.our-team .the-team .person:hover img {
+	filter: none;
+	filter: grayscale(0);
+	-webkit-filter: grayscale(0);
+}
+
+.our-team .the-team .person:hover h3 {
+	color: #555;
+}
+.our-team .the-team  .person:hover .fa-facebook {
+	background-color: #3b5998;
+}
+.our-team .the-team  .person:hover .fa-twitter {
+	background-color: #1da1f2;
+}
+.our-team .the-team  .person:hover .fa-google-plus{
+	background-color: #dd4b39;
+}
+
+.our-team .the-team .person img {
+	filter: gray;
+	filter: grayscale(1);
+	-webkit-filter: grayscale(1);
+}
+
+.our-team .the-team .person {
+	float: left;
+	width: 24%;
+	color: #888;
+}
+
+.our-team .the-team  .socialicons i {
+	background-color: #9da1a5;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	color: #fff;
+	border-radius: 50%;
+}
+
+/*end our team */
+
+/*satrt contact*/
+.contact {
+	background: url(../images/13533211_1015291945234037_7036299451921991263_n.jpg);
+		-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover;
+}
+
+.contact .overlay {
+	padding: 50px 0;
+	color: #fff;
+	
+}
+.contact h2 {
+	font-size: 35px;
+}
+.contact form {
+	overflow: hidden;
+	width: 700px;
+	margin: 50px auto;
+	text-align: center;
+}
+
+.contact form input[type="text"], 
+.contact form input[type="email"] {
+	width: 48%;
+	border-radius: 10px;
+	border: 1px solid #666;
+	padding: 0 10px;
+	height: 40px;
+	line-height: 40px;
+	background-color: transparent;
+}
+
+
+.contact form input[type="email"] {
+	float: left;
+}
+.contact form input[type="text"] {
+		float: right;
+	
+
+	
+}
+
+.contact form textarea {
+	margin-top: 20px;
+	width: 100%;
+	border-radius: 10px;
+	border: 1px solid #666;
+	padding:  10px;
+	height: 140px;
+	background-color: transparent;
+
+}
+
+.contact form .info {
+	overflow: hidden;
+	margin-top: 10px;
+}
+
+.contact form button {
+	float: left;
+	background:  #f7600e;;
+	font-size: 15px;
+	color: #fff;
+	border-radius: 10px;
+	padding: 8px;
+    width: 170px;
+	border: none;
+
+	
+	
+}
+
+.contact form .form-icons {
+	float: right;
+	
+}
+
+.contact form .form-icons i {
+	background-color: #9da1a5;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	color: #fff;
+	border-radius: 50%;
+}
+.contact form .form-icons .fa-facebook {
+	background-color: #3b5998;
+}
+.contact form .form-icons .fa-twitter {
+	background-color: #1da1f2;
+}
+.contact form .form-icons .fa-google-plus{
+	background-color: #dd4b39;
+}
+
+/*end contact*/
+
+.footer {
+	background-color: #3b434c;
+	color: #fff;
+	overflow: hidden;
+	padding: 30px;
+}
+
+.footer .copy {
+	float: left;
+}
+
+.footer .design {
+	float: right;
+}

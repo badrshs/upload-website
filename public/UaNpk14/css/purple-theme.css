@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+
+/***** start default theme here *****/
+
+
+.navbar-inverse .navbar-nav > .active > a, 
+.navbar-inverse .navbar-nav > .active > a:hover, 
+.navbar-inverse .navbar-nav > .active > a:focus,
+.navbar-inverse .navbar-nav > .active > a, 
+.navbar-inverse .navbar-nav > .active > a:hover, 
+.navbar-inverse .navbar-nav > .active > a:focus,
+.OptionBox .GearChech,
+.carousel-indicators .active,
+.dropdown-menu > li > a:hover, 
+.dropdown-menu > li > a:focus,
+#ScrollTop{
+	background-color:#763C72;}
+	
+	
+.navbar-brand span,
+.about h1 span,.testimonials span,
+.testimonials span,
+.footer h3,
+.footer .CopyRights span a{
+	color:#763C72;}
+	
+
+.testimonials .carousel-indicators li.active,
+.OptionBox .ColorBox{
+	border:3px solid #763C72;}
+	
+
+.navbar-nav > li > .dropdown-menu{
+	border-top:3px solid #763C72;}
+
+
+/***** end default theme here *****/
+

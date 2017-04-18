@@ -1,0 +1,141 @@
+@charset "utf-8";
+/* CSS Document */
+
+header{background-image:url(image/header_background.jpg);
+	  min-height:700px;
+	  width:100%;
+	  padding-top:50px;
+	  }
+	  
+header img{
+	width:150px;
+	height:60px;
+}
+.navbar{background: 0;
+		padding:0;
+		border:0;}
+		
+.navbar-nav{
+	margin:10px;
+}
+		
+.navbar ul li a{font-size:18px;
+			color:#F00;
+			text-decoration:none;
+			padding:5px 15px;
+			font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+			
+			}
+.navbar ul li a:hover{color:#F00;
+				background-color:#000;}
+
+.btn-default{
+	background-color:transparent;
+	color:#777;	
+}
+.btn-default:hover{
+	background-color:transparent;
+	color:#000000;
+}
+.form-control{
+	background-color:transparent;
+	color:#777;
+}
+				
+.articl{margin-top:5%;}
+				
+	.articl h1 ,h3{font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+				font-size:50px;
+				color:#00F;
+				font-weight: bold;
+				font-style:normal;}
+	.articl p{font-size:24px;
+			  color:#0F9;
+			  margin-top:6%;}
+			  .butoons{background:#FFF;
+			           color:#00F;}
+					   
+.portfolio{background-image:url(image/ground.jpg);
+			width:100%;
+			}
+.portfolio h1{color:#F00;
+}
+.portfolio p{font-size:18px;
+			 color:#960;
+			 direction:ltr;
+			 text-align:justify;}
+.adverting{margin-top:8%;
+	       background:#000;
+			min-width:500px;
+			width:100%}
+.adverting h1,h2{color:#F00;
+border-radius: 3px 3px 0 0;
+height:40px;
+width:100%;
+margin:0;
+padding: o;
+text-align:center;
+font-size:18px;}
+.adverting h1{color:#009;
+border-radius: 3px 3px 0 0;
+height:40px;
+width:100%;
+text-align:center;
+font-size:40px;}
+
+.adverting pr{margin: 40px 0;}		
+
+background-color:#00C;}
+.crs span{font-size:60px;
+				 color:#0F6;
+}
+.prenext{margin: 40px 0;}
+
+.crc span{font-size:50px;
+		  color:#C00;
+		  margin-top:8%;
+		  margin-left:60px;}
+		  
+		  
+		  .Gellery{background:#093;
+		  		   min-height:500px;
+				   width:100%;}
+				   
+				.slides{padding-left:94px;}   
+				.arrows{width:55px;
+				        height:70px;
+				}
+				.student{background:#000;
+						 font-size:36px;
+						 color:#0F0;
+				}
+				
+				.clearfix{background:#009;
+						height:500px;
+											
+				}
+				.clearfix img{border-radius: 12px;
+				margin-bottom:35px;
+				
+				}
+				.btn btn-default{color:#F00;
+								margin: 60px 0;}
+								
+								
+				.contacts{background:#000;
+						 min-height:1000px;
+						 width:100%}	
+				.contacts h1{color:#F00;
+							font-size:36px;}
+				.contacts textarea{height:333px;
+				}
+				
+				.mycontant{clear:both;
+				           margin-bottom:50px;}
+						   .mycontant h3{
+							   font-size:18px;
+							   font-weight:500;
+							   line-height: 42px;}
+							   .mycontant img{float:left;
+							                   margin-right:20px;}
+											   

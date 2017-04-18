@@ -1,0 +1,95 @@
+/* Author: Sheikh Nasrullah Khan */
+*{
+	padding:0;
+	margin:0;
+}
+body{
+	background:#006600;
+	font-family:arial;
+}
+#wrapper{
+	width:837px;
+	margin:10px auto;
+	background:#fff;
+	padding:20px;
+}
+#header{
+	width:837px;
+	height:168px;
+	border-bottom:1px solid #006600;
+}
+#h-navbar{
+	height:30px;
+	text-align:center;
+	padding:5px 0;
+	border-bottom:1px solid #006600;
+}
+#h-navbar ul{
+	list-style-type:none;
+	margin-top:5px;
+}
+#h-navbar ul li{
+	display:inline;
+}
+#h-navbar ul li a{
+	text-decoration:none;
+	padding:5px 20px;
+	background:#006600;
+	color:#fff;
+	transition:background 0.5s;
+	transition-delay:0.3s;
+}
+#h-navbar ul li a:hover{
+	background: #009000;
+}
+#content{
+	overflow:hidden;
+	padding:20px 0;
+}
+#v-navbar{
+	width:22%;
+	float:left;
+
+}
+#v-navbar h3{
+	background:#006600;
+	color:#fff;
+	font-weight: normal;
+	text-align:center;
+	padding:12px 0;
+}
+#v-navbar ul{
+	list-style-type: none;
+	margin-top: 10px;
+}
+#v-navbar ul li{
+	margin-top:2px;
+}
+#v-navbar ul li a{
+	display:block;
+	text-decoration:none;
+	color:#fff;
+	padding:5px 5px 5px 10px;
+	background:#006600;
+	transition:background 0.5s;
+	transition-delay:0.3s;
+}
+#v-navbar ul li a:hover{
+	background: #009000;	
+}
+#main-content{
+	width:74%;
+	float:right;
+	background: #ccffcc;
+	padding:0 10px 10px 10px;
+}
+#main-content h1{
+	margin-bottom:15px;
+	color:#006600;
+}
+#main-content p{
+	font-size:13px;
+	margin-bottom:10px;
+	text-align:justify;
+	color:#006600;
+}

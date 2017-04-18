@@ -1,0 +1,465 @@
+/* Start of css reset  ***/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    font-family: "droidarabicnaskh";
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* Fonts */
+
+@import url(https://fonts.google.com/specimen/Cabin);
+
+/*********************** */
+
+
+/* colors  :  (#EC4035 a7mar) () */
+
+
+/*********************** */
+
+
+/* End of css reset  ***/
+
+
+/* Class container */
+
+.container {
+    width: 85%;
+    margin: auto
+}
+
+
+/*   * clear **/
+
+.clear {
+    clear: both
+}
+
+
+/***********************/
+
+
+/**** Start Header ***/
+
+.header {
+    width: 100%;
+    height: 188px;
+    overflow: hidden;
+    border-bottom: 2px solid #ED1A36;
+}
+
+.header .headmain {
+    width: 100%;
+    height: 28px;
+    border-bottom: 4px solid #ED1A36;
+    background-color: #444;
+    position: relative
+}
+
+.header .headmain h2 {
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    padding: 5px;
+    color: #ddd;
+    font-weight: 700;
+    font-family: 'Oswald', sans-serif;
+}
+
+.header .headmain .headh2 {
+    position: absolute;
+    top: 2px;
+    left: 85%;
+    padding: 5px;
+    color: #ddd;
+    font-weight: 700;
+    font-family: 'Oswald', sans-serif;
+}
+
+
+/*   Start logo */
+
+.header .logodad {
+    width: 100%;
+    overflow: hidden
+}
+
+.header .logodad .logo {
+    float: left;
+}
+
+.header .logodad .nlogo {
+    float: right;
+    padding-top: 3%;
+}
+
+.header .logodad .container .nlogo h1 {
+    font-size: 40px;
+    color: #444;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #444
+}
+
+.logo img {
+    transition: 3s all ease-in-out
+}
+
+.logo img:hover {
+    transform: rotate(360deg)scale(1.5) translate(0, 25px);
+}
+
+
+/* ****************  /
+/* Main Head Ul **************/
+
+.header .navbar {
+    overflow: hidden;
+    width: 100%;
+    padding: 25px;
+    background-color: #444;
+}
+
+.header .navbar .container .mainHeadul {
+    overflow: hidden;
+    position: relative;
+    top: -4px;
+}
+
+.header .navbar .container .mainHeadul ul {
+    list-style: none;
+    padding: 0;
+}
+
+.header .navbar .container .mainHeadul ul li {
+    float: right;
+    padding: 0 0 2% 0;
+    margin: 0 4%;
+}
+
+.header .navbar .container .mainHeadul ul li a:first-of-type {
+    color: #fff
+}
+
+.header .navbar .container .mainHeadul ul li,
+.header .navbar .container .mainHeadul ul li a {
+    color: #DDD;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 2s all ease-in-out
+}
+
+.header .navbar .container .mainHeadul ul li:hover {
+    padding-bottom: 0.5%;
+    border-bottom: 2px solid #ED1A36;
+}
+
+.header .navbar .container .mainHeadul ul li a:hover {
+    color: #ED1A36;
+}
+
+
+/**********End of Header************/
+
+
+/**********Start of Content*********/
+
+.content1 {
+    overflow: hidden;
+    width: 100%;
+    padding: 18px 0;
+    margin: 0 0 -3px 0
+}
+
+.content1 .container .upContent .SonContent1 h1,
+.content1 .container .upContent .SonContent1 p {
+    text-align: center;
+    color: #000;
+    font-size: 24px;
+    line-height: 39px;
+    font-family: 'Katibeh', cursive;
+    text-shadow: 1px 1px 2px #444;
+}
+
+.content1 .container .upContent .SonContent1 ul {
+    padding: 0;
+}
+
+.content1 .container .upContent .SonContent1 li {
+    text-align: center;
+    color: #444;
+    font-weight: bold
+}
+
+.content1 .container .upContent .SonContent2 marquee h1 strong {
+    color: #ED1A36;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 0 10px 0;
+    line-height: 50px;
+    font-family: 'Lemonada', cursive;
+    text-shadow: 1px 1px 2px #444;
+}
+
+
+/**********End of Content***********/
+
+
+/**********Start of Footer***********/
+
+.footer {
+    overflow: hidden;
+    padding: 15px;
+    background-color: #444
+}
+
+.footer .left h3 {
+    color: #FFF;
+    font-weight: bold;
+    text-align: center;
+    float: left;
+    font-size: 10px;
+    font-family: 'Lemonada', cursive;
+    text-shadow: 1px 1px 2px #444;
+}
+
+.footer .right {
+    float: right
+}
+
+.footer .right ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer .right ul li {
+    float: left;
+    padding-left: 20px;
+}
+
+.footer .right ul li a {
+    text-decoration: none;
+}
+
+.footer .right ul li a i {
+    color: #FFF;
+}
+
+
+/**********End of Footer***********/
+
+
+/*
+.ul {
+    list-style: none;
+    word-spacing: 10px;
+    margin-top: 0px;
+    padding: 0px;
+}
+
+.uli {
+    display: inline-block;
+    margin-top: 15px;
+    margin-left: 50px;
+    background-color: #0000CC;
+}
+
+.a {
+    text-decoration: none;
+    color: floralwhite;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.a:hover {
+    color: firebrick;
+    -webkit-transition: 2.2s;
+    transition: 2.2s;
+    background-color: #00FFFF;
+}
+
+h1 {
+    margin-left: 400px;
+    color: dodgerblue;
+}
+
+h1:hover {
+    color: firebrick;
+    -webkit-transition: 2.2s;
+    transition: 2.2s;
+}
+
+.Content1 {
+    width: 950px;
+    height: 800px;
+    background-color: firebrick;
+    border-radius: 10px;
+    margin-left: 393px;
+    background-image: url(file:///E|/Local%20Disk/%D8%A7%D9%84%D9%81%D9%84%D8%A7%D8%A7%D8%A7%D8%B4/BUHISA%27A/%C2%A0/%E2%80%8E/Buhisa%20M%20S/%D9%85%D9%88%D9%82%D8%B91/12.%D8%A8%D8%A7.%D8%A8%D8%A7.GIF);
+}
+
+.Content2 {
+    width: 363px;
+    height: 800px;
+    background-color: dodgerblue;
+    border-radius: 10px;
+    margin-left: -395px;
+    background-image: url(file:///E|/Local%20Disk/%D8%A7%D9%84%D9%81%D9%84%D8%A7%D8%A7%D8%A7%D8%B4/BUHISA%27A/%C2%A0/%E2%80%8E/Buhisa%20M%20S/%D9%85%D9%88%D9%82%D8%B91/10968559_900989299965942_16232071193417908_n%20-%20Copy.jpg);
+}
+
+.ul {
+    word-spacing: 10px;
+    margin-top: 0px;
+}
+
+.uli {
+    display: inline-block;
+    margin-top: 15px;
+    margin-left: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: #000066;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #000066;
+    -webkit-transition: 2.2s;
+    transition: 2.2s
+}
+
+.Footer {
+    width: 1343px;
+    height: 300px;
+    margin-top: 20px;
+}

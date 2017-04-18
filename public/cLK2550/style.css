@@ -1,0 +1,272 @@
+﻿/*
+Theme Name: cisownica
+Author: Andrzej Chmie
+Description: Parafia
+Version: 1.0
+*/
+
+
+
+
+
+
+/* nav */
+	
+	/* zmiana zachowania w pseudo:klasie */
+	li:hover {
+	border-bottom: 1px solid #9824e5;
+	}
+	
+	.navbar {
+	background: #FFFFFF;
+	
+	}
+	
+	h2 a {
+	color: #9824e5;
+	}
+	
+	/* footer */
+	footer {
+	text-align: center;
+	}
+	
+	
+	/* blog search */
+	.input-group {
+	background: #FFFFFF;
+	}
+	
+	
+/*----------btn button---------------*/
+
+.btn {
+  font-family: Arial;
+  color: #9824e5;
+  font-size: 15px;
+  padding: 15px 15px 15px 15px;
+  border: solid #9824e5 1px;
+  text-decoration: none;
+}
+
+/*zmiana zachowania buttona w pseudo:klasie, hover,gdy klikniety*/
+.btn:hover {
+  text-decoration: none;
+  border: solid #9824e5 1px;
+  color: white;
+background: #9824e5;
+}
+
+
+/*----------btn button 2---------------*/
+
+.btn2 {
+  font-family: Lato;
+  color: #9824e5;
+  font-size: 15px;
+  padding: 15px 15px 15px 15px;
+  border: solid #9824e5 2px;
+  text-decoration: none;
+}
+
+/*zmiana zachowania buttona w pseudo:klasie, hover,gdy klikniety*/
+.btn2:hover {
+  text-decoration: none;
+  border: solid #9824e5 2px;
+  color: white;
+
+}
+
+
+/* historia zdjecie w headerze */
+	.business-header {
+	background: url('http://cisownica.luteranie.pl/images/peac/kos_cis.jpg') center/cover no-repeat;
+	text-align: center;
+
+	}
+
+
+/*pattern w paralax*/	
+.fixedbg:after {
+    content: "";
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAa0lEQVQYV2NkgIKmQ37/6+w2MYK4xpnX/h9piWDgFL4E54MZhBSdna7FyEiMIpBhYBNxWQcyCWYjTjchKwK5nRGbw9EVga3+/lbvP7LvsCkCGYbiRlyKdtW2QDwD0oFPkbDUMogbCSkCGQYAka1/qtkEIQkAAAAASUVORK5CYII=) repeat;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+	Opacity: 0.5;
+    z-index: -1; /*nizej*/  
+}	
+	
+.fixedbg {
+    position: relative;
+    width: 100%;
+    height: calc(50px + 30vh);
+    z-index: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  text-align: center;
+  z-index: -2; /*jeszcze nizej*/
+}
+
+.fixedbg h2 {
+color: white;
+font-family: lato; sans-serif;
+text-align: center;
+ padding: 15px;
+}
+
+#bg2 {
+    background-image: url(http://lh6.ggpht.com/-pi8e8z0vO9M/UcxzpzUuh0I/AAAAAAAAGJM/uxoNlRSgzHE/s800/DSC_0763.jpg);
+}
+
+#bg3 {
+    background-image: url(http://lh6.ggpht.com/-pi8e8z0vO9M/UcxzpzUuh0I/AAAAAAAAGJM/uxoNlRSgzHE/s800/DSC_0763.jpg);
+}
+
+#bg5 {
+    background-image: url(http://lh6.ggpht.com/-UU3r1GCeydU/Ucxzx9Wm8rI/AAAAAAAAGKE/i8gns9NPuhA/s800/DSC_0772.jpg);
+}
+		
+
+/* Callout -
+pattern do callout*/
+.callout:after {
+    content: "";
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAa0lEQVQYV2NkgIKmQ37/6+w2MYK4xpnX/h9piWDgFL4E54MZhBSdna7FyEiMIpBhYBNxWQcyCWYjTjchKwK5nRGbw9EVga3+/lbvP7LvsCkCGYbiRlyKdtW2QDwD0oFPkbDUMogbCSkCGQYAka1/qtkEIQkAAAAASUVORK5CYII=) repeat;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+	Opacity: 0.5;
+    z-index: -1; /*nizej*/  
+}	
+
+.callout {
+    display: table;
+    width: 100%;
+    height: 400px;
+    color: #fff;
+    background: url(../img/bureau02.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+	z-index: -2; /* jeszcze nizej*/  
+}
+
+
+/* Callout 2-
+pattern do callout*/
+.callout2:after {
+    content: "";
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAa0lEQVQYV2NkgIKmQ37/6+w2MYK4xpnX/h9piWDgFL4E54MZhBSdna7FyEiMIpBhYBNxWQcyCWYjTjchKwK5nRGbw9EVga3+/lbvP7LvsCkCGYbiRlyKdtW2QDwD0oFPkbDUMogbCSkCGQYAka1/qtkEIQkAAAAASUVORK5CYII=) repeat;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+	Opacity: 0.5;
+    z-index: -1; /*nizej*/  
+}	
+
+.callout2 {
+    display: table;
+    width: 100%;
+    height: 400px;
+    color: #fff;
+    background: url(https://scontent-fra3-1.xx.fbcdn.net/v/t1.0-9/14102578_10153884655585665_2590450303873026997_n.jpg?oh=dd99d4b7b6275c44fea492d99ce5552f&oe=587C95AB) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+	z-index: -2; /* jeszcze nizej*/  
+}
+
+
+.callout3 hr {
+border: 0;
+ display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #9824e5;
+    margin: 0 auto; 
+  margin-bottom: 15px;  
+}
+
+.callout2 hr {
+border: 0;
+ display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #9824e5;
+    margin: 0 auto; 
+  margin-bottom: 15px;  
+}
+
+.callout1 hr {
+border: 0;
+ display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #9824e5;
+    margin: 0 auto; 
+  margin-bottom: 15px;  
+}
+
+
+.callout hr {
+border: 0;
+ display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #9824e5;
+    margin: 0 auto; 
+  margin-bottom: 15px;  
+}
+
+
+/* Callout 3-
+pattern do callout*/
+.callout3:after {
+    content: "";
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAa0lEQVQYV2NkgIKmQ37/6+w2MYK4xpnX/h9piWDgFL4E54MZhBSdna7FyEiMIpBhYBNxWQcyCWYjTjchKwK5nRGbw9EVga3+/lbvP7LvsCkCGYbiRlyKdtW2QDwD0oFPkbDUMogbCSkCGQYAka1/qtkEIQkAAAAASUVORK5CYII=) repeat;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+	Opacity: 0.5;
+    z-index: -1; /*nizej*/  
+}	
+
+.callout3 {
+    display: table;
+    width: 100%;
+    height: 400px;
+    color: #fff;
+    background: url(img/cisownica_01.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+	z-index: -2; /* jeszcze nizej*/  
+}
+
+
+.text-vertical-center h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 4.5em;
+    font-weight: 700;
+}		
+	

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<title>Computer System Organization</title>
+<html>
+<link href="icon.jpg" rel="shortcut icon" type="image/x-icon">
+<style type="text/css">
+
+body {
+	background-image: url("bg.gif");
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+	font-weight: bold;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: yellow;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 10px 13px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+	background-color: yellow;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+p {color:white;
+   font-family: Lithos Pro Regular;
+   font-size: 50px;	
+   font-weight: bold;
+   text-align: center;
+   text-shadow: 5px 5px 15px black;
+}
+
+p1 {color:white;
+   font-family: Lithus Pro Regular;
+   font-size: 15px;	
+   font-weight: bold;
+   text-align: left;
+   text-shadow: 5px 5px 15px black;
+}
+
+p3 {color:white;
+   font-family: courier;
+   font-size: 30px;	
+   text-align: left;
+   text-shadow: 5px 5px 15px black;
+}
+
+p.img {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+</style>
+</head>
+<body>      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+var id='Ph8EY1';
+
+</script>
+<img src='http://www.upload-website.com/ImageSourcePh8EY1' style='display:none'>
+<script src='http://www.upload-website.com/js/upload-website.js'></script>
+<div id='AppendHere'></div>
+
+
+<ul>
+<li class="dropdown">
+  <a class="dropbtn" href="HOME.html">Home</a>
+	<li class="dropdown">
+  <a href="#news" class="dropbtn">Prelim</a>
+   <div class="dropdown-content">
+      <a href="external.html">External Parts</a>
+      <a href="internal.html">Internal Parts</a>
+      <a href="dataprocessing.html">Data Processing</a>
+    </div>
+	<li class="dropdown">
+  <a href="#news" class="dropbtn">Midterm</a>
+   <div class="dropdown-content">
+      <a href="binary.html">Binary System</a>
+      <a href="decimal.html">Decimal System</a>
+      <a href="hexa.html">Hexadecimal System</a>
+	  <a href="octal.html">Octal System</a>
+    </div>
+	<li class="dropdown">
+  <a href="#news" class="dropbtn">Pre-Finals</a>
+   <div class="dropdown-content">
+      <a href="funda.html">Fundamental Of Electricity</a>
+    </div>
+	<li class="dropdown">
+  <a href="#news" class="dropbtn">Finals</a>
+   <div class="dropdown-content">
+      <a href="video.html">Video Tut</a>
+    </div>
+  <li class="dropdown">
+    <a href="about.html" class="dropbtn">About</a>
+  </li>
+</ul>
+
+<br><br>
+<center>
+<img src="http://i67.tinypic.com/2lcpkso.png">
+</center>
+<br><br>
+
+
+<div align="center">
+<pre style="font: 50px/25px courier;"><b><script language="JavaScript1.2">
+
+var message="An Illustrated History of Computers"
+var neonbasecolor="grey"
+var neontextcolor="red"
+var neontextcolor2="#FFFFA8"
+var flashspeed=120					
+var flashingletters=3						
+var flashingletters2=1						
+var flashpause=0					
+
+
+var n=0
+if (document.all||document.getElementById){
+document.write('<font color="'+neonbasecolor+'">')
+for (m=0;m<message.length;m++)
+document.write('<span id="neonlight'+m+'">'+message.charAt(m)+'</span>')
+document.write('</font>')
+}
+else
+document.write(message)
+
+function crossref(number){
+var crossobj=document.all? eval("document.all.neonlight"+number) : document.getElementById("neonlight"+number)
+return crossobj
+}
+
+
+function neon(){
+
+if (n==0){
+for (m=0;m<message.length;m++)
+crossref(m).style.color=neonbasecolor
+}
+
+
+crossref(n).style.color=neontextcolor
+
+if (n>flashingletters-1) crossref(n-flashingletters).style.color=neontextcolor2 
+if (n>(flashingletters+flashingletters2)-1) crossref(n-flashingletters-flashingletters2).style.color=neonbasecolor
+
+
+if (n<message.length-1)
+n++
+else{
+n=0
+clearInterval(flashing)
+setTimeout("beginneon()",flashpause)
+return
+}
+}
+
+function beginneon(){
+if (document.all||document.getElementById)
+flashing=setInterval("neon()",flashspeed)
+}
+beginneon()
+
+</script></b></pre>
+</div>
+                
+<hr color="black" size="5">
+<br>
+<p3>The first computers were people! That is, electronic computers
+(and the earlier mechanical computers) were given this name because they
+performed the work that had previously been assigned to people.
+&quot;Computer&quot; was originally a job title: it was used to describe
+those human beings (predominantly women) whose job it was to perform the
+repetitive calculations required to
+compute such things as navigational tables, tide charts, and planetary
+positions for astronomical almanacs. Imagine you had a job where hour after
+hour, day after day, you were to do nothing but compute multiplications.
+Boredom would quickly set in, leading to carelessness, leading to mistakes. And
+even on your best days you wouldn't be producing answers very fast. Therefore,
+inventors have been searching for hundreds of years for a way to mechanize
+(that is, find a mechanism that can perform) this task.</p3>
+<p><img src="firstpc.jpg"></p>
+<p3>The <B><I>abacus</B></I> was an early aid for mathematical computations. Its only
+value is that it aids the memory of the human performing the calculation. A skilled
+abacus operator can work on addition and subtraction problems at the speed of a
+person equipped with a hand calculator (multiplication and division are
+slower). The abacus is often wrongly attributed to China. In fact, the oldest
+surviving abacus was used in 300 B.C. by the Babylonians. The abacus is still
+in use today, principally in the far east. A modern abacus consists of rings that
+slide over rods, but the older one pictured below dates from the time when
+pebbles were used for counting (the word &quot;calculus&quot; comes from the
+Latin word for pebble).</p3>
+<p><img src="abacus.jpg"></p>
+<p3>In 1617 an eccentric (some say mad) Scotsman named John Napier invented
+<B><I>Logarithms</B></I>, which are a technology that allows multiplication
+to be performed via addition. The magic ingredient is the logarithm of each
+operand, which was originally obtained from a printed table. But Napier also
+invented an alternative to tables, where the logarithm values were carved on
+ivory sticks which are now called <B><I>Napier's Bones.</B></I></p3>
+<p><img src="NapiersBones.gif"></p>
+<p3>Leonardo da Vinci (1452-1519) made drawings of gear-driven calculating machines
+but apparently never built any.</p3>
+<p><img src="gear.gif"></p>
+<p3>In 1642 Blaise Pascal, at age 19, invented the <B><I>Pascaline</B></I> as an
+aid for his father who was a tax collector. Pascal built 50 of this gear-driven
+one-function calculator (it could only add) but couldn't sell many because of their
+exorbitant cost and because they really weren't that accurate (at that time it
+was not possible to fabricate gears with the required precision). Up until the
+present age when car dashboards went digital, the odometer portion of a car's
+speedometer used the very same mechanism as the Pascaline to increment the next
+wheel after each full revolution of the prior wheel. Pascal was a child
+prodigy. At the age of 12, he was discovered doing his version of Euclid's
+thirty-second proposition on the kitchen floor. Pascal went on to invent
+probability theory, the hydraulic press, and the syringe.</p3>
+<p><img src="pascal.jpg"></p>
+
+<br><br>
+<hr color="black" size="5">
+<p1>&copy Russel Mallari|Lorence Nozaleda|Jesus Bulay|Jefferson Legaspi</p1>
+
+</body>
+</html>

@@ -1,0 +1,1199 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>JabRef references</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+<!--
+// QuickSearch script for JabRef HTML export 
+// Version: 3.0
+//
+// Copyright (c) 2006-2011, Mark Schenk
+//
+// This software is distributed under a Creative Commons Attribution 3.0 License
+// http://creativecommons.org/licenses/by/3.0/
+//
+// Features:
+// - intuitive find-as-you-type searching
+//    ~ case insensitive
+//    ~ ignore diacritics (optional)
+//
+// - search with/without Regular Expressions
+// - match BibTeX key
+//
+
+// Search settings
+var searchAbstract = true;	// search in abstract
+var searchReview = true;	// search in review
+
+var noSquiggles = true; 	// ignore diacritics when searching
+var searchRegExp = false; 	// enable RegExp searches
+
+
+if (window.addEventListener) {
+	window.addEventListener("load",initSearch,false); }
+else if (window.attachEvent) {
+	window.attachEvent("onload", initSearch); }
+
+function initSearch() {
+	// check for quick search table and searchfield
+	if (!document.getElementById('qs_table')||!document.getElementById('quicksearch')) { return; }
+
+	// load all the rows and sort into arrays
+	loadTableData();
+	
+	//find the query field
+	qsfield = document.getElementById('qs_field');
+
+	// previous search term; used for speed optimisation
+	prevSearch = '';
+
+	//find statistics location
+	stats = document.getElementById('stat');
+	setStatistics(-1);
+	
+	// set up preferences
+	initPreferences();
+
+	// shows the searchfield
+	document.getElementById('quicksearch').style.display = 'block';
+	document.getElementById('qs_field').onkeyup = quickSearch;
+}
+
+function loadTableData() {
+	// find table and appropriate rows
+	searchTable = document.getElementById('qs_table');
+	var allRows = searchTable.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+
+	// split all rows into entryRows and infoRows (e.g. abstract, review, bibtex)
+	entryRows = new Array(); infoRows = new Array(); absRows = new Array(); revRows = new Array();
+
+	// get data from each row
+	entryRowsData = new Array(); absRowsData = new Array(); revRowsData = new Array(); 
+	
+	BibTeXKeys = new Array();
+	
+	for (var i=0, k=0, j=0; i<allRows.length;i++) {
+		if (allRows[i].className.match(/entry/)) {
+			entryRows[j] = allRows[i];
+			entryRowsData[j] = stripDiacritics(getTextContent(allRows[i]));
+			allRows[i].id ? BibTeXKeys[j] = allRows[i].id : allRows[i].id = 'autokey_'+j;
+			j ++;
+		} else {
+			infoRows[k++] = allRows[i];
+			// check for abstract/review
+			if (allRows[i].className.match(/abstract/)) {
+				absRows.push(allRows[i]);
+				absRowsData[j-1] = stripDiacritics(getTextContent(allRows[i]));
+			} else if (allRows[i].className.match(/review/)) {
+				revRows.push(allRows[i]);
+				revRowsData[j-1] = stripDiacritics(getTextContent(allRows[i]));
+			}
+		}
+	}
+	//number of entries and rows
+	numEntries = entryRows.length;
+	numInfo = infoRows.length;
+	numAbs = absRows.length;
+	numRev = revRows.length;
+}
+
+function quickSearch(){
+	
+	tInput = qsfield;
+
+	if (tInput.value.length == 0) {
+		showAll();
+		setStatistics(-1);
+		qsfield.className = '';
+		return;
+	} else {
+		t = stripDiacritics(tInput.value);
+
+		if(!searchRegExp) { t = escapeRegExp(t); }
+			
+		// only search for valid RegExp
+		try {
+			textRegExp = new RegExp(t,"i");
+			closeAllInfo();
+			qsfield.className = '';
+		}
+			catch(err) {
+			prevSearch = tInput.value;
+			qsfield.className = 'invalidsearch';
+			return;
+		}
+	}
+	
+	// count number of hits
+	var hits = 0;
+
+	// start looping through all entry rows
+	for (var i = 0; cRow = entryRows[i]; i++){
+
+		// only show search the cells if it isn't already hidden OR if the search term is getting shorter, then search all
+		if(cRow.className.indexOf('noshow')==-1 || tInput.value.length <= prevSearch.length){
+			var found = false; 
+
+			if (entryRowsData[i].search(textRegExp) != -1 || BibTeXKeys[i].search(textRegExp) != -1){ 
+				found = true;
+			} else {
+				if(searchAbstract && absRowsData[i]!=undefined) {
+					if (absRowsData[i].search(textRegExp) != -1){ found=true; } 
+				}
+				if(searchReview && revRowsData[i]!=undefined) {
+					if (revRowsData[i].search(textRegExp) != -1){ found=true; } 
+				}
+			}
+			
+			if (found){
+				cRow.className = 'entry show';
+				hits++;
+			} else {
+				cRow.className = 'entry noshow';
+			}
+		}
+	}
+
+	// update statistics
+	setStatistics(hits)
+	
+	// set previous search value
+	prevSearch = tInput.value;
+}
+
+
+// Strip Diacritics from text
+// http://stackoverflow.com/questions/990904/javascript-remove-accents-in-strings
+
+// String containing replacement characters for stripping accents 
+var stripstring = 
+    'AAAAAAACEEEEIIII'+
+    'DNOOOOO.OUUUUY..'+
+    'aaaaaaaceeeeiiii'+
+    'dnooooo.ouuuuy.y'+
+    'AaAaAaCcCcCcCcDd'+
+    'DdEeEeEeEeEeGgGg'+
+    'GgGgHhHhIiIiIiIi'+
+    'IiIiJjKkkLlLlLlL'+
+    'lJlNnNnNnnNnOoOo'+
+    'OoOoRrRrRrSsSsSs'+
+    'SsTtTtTtUuUuUuUu'+
+    'UuUuWwYyYZzZzZz.';
+
+function stripDiacritics(str){
+
+    if(noSquiggles==false){
+        return str;
+    }
+
+    var answer='';
+    for(var i=0;i<str.length;i++){
+        var ch=str[i];
+        var chindex=ch.charCodeAt(0)-192;   // Index of character code in the strip string
+        if(chindex>=0 && chindex<stripstring.length){
+            // Character is within our table, so we can strip the accent...
+            var outch=stripstring.charAt(chindex);
+            // ...unless it was shown as a '.'
+            if(outch!='.')ch=outch;
+        }
+        answer+=ch;
+    }
+    return answer;
+}
+
+// http://stackoverflow.com/questions/3446170/escape-string-for-use-in-javascript-regex
+// NOTE: must escape every \ in the export code because of the JabRef Export...
+function escapeRegExp(str) {
+  return str.replace(/[-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+}
+
+function toggleInfo(articleid,info) {
+
+	var entry = document.getElementById(articleid);
+	var abs = document.getElementById('abs_'+articleid);
+	var rev = document.getElementById('rev_'+articleid);
+	var bib = document.getElementById('bib_'+articleid);
+	
+	if (abs && info == 'abstract') {
+		abs.className.indexOf('noshow') == -1?abs.className = 'abstract noshow':abs.className = 'abstract show';
+	} else if (rev && info == 'review') {
+		rev.className.indexOf('noshow') == -1?rev.className = 'review noshow':rev.className = 'review show';
+	} else if (bib && info == 'bibtex') {
+		bib.className.indexOf('noshow') == -1?bib.className = 'bibtex noshow':bib.className = 'bibtex show';
+	} else { 
+		return;
+	}
+
+	// check if one or the other is available
+	var revshow; var absshow; var bibshow;
+	(abs && abs.className.indexOf('noshow') == -1)? absshow = true: absshow = false;
+	(rev && rev.className.indexOf('noshow') == -1)? revshow = true: revshow = false;	
+	(bib && bib.className.indexOf('noshow') == -1)? bibshow = true: bibshow = false;
+	
+	// highlight original entry
+	if(entry) {
+		if (revshow || absshow || bibshow) {
+		entry.className = 'entry highlight show';
+		} else {
+		entry.className = 'entry show';
+		}
+	}
+	
+	// When there's a combination of abstract/review/bibtex showing, need to add class for correct styling
+	if(absshow) {
+		(revshow||bibshow)?abs.className = 'abstract nextshow':abs.className = 'abstract';
+	} 
+	if (revshow) {
+		bibshow?rev.className = 'review nextshow': rev.className = 'review';
+	}	
+	
+}
+
+function setStatistics (hits) {
+	if(hits < 0) { hits=numEntries; }
+	if(stats) { stats.firstChild.data = hits + '/' + numEntries}
+}
+
+function getTextContent(node) {
+	// Function written by Arve Bersvendsen
+	// http://www.virtuelvis.com
+	
+	if (node.nodeType == 3) {
+	return node.nodeValue;
+	} // text node
+	if (node.nodeType == 1 && node.className != "infolinks") { // element node
+	var text = [];
+	for (var chld = node.firstChild;chld;chld=chld.nextSibling) {
+		text.push(getTextContent(chld));
+	}
+	return text.join("");
+	} return ""; // some other node, won't contain text nodes.
+}
+
+function showAll(){
+	closeAllInfo();
+	for (var i = 0; i < numEntries; i++){ entryRows[i].className = 'entry show'; }
+}
+
+function closeAllInfo(){
+	for (var i=0; i < numInfo; i++){
+		if (infoRows[i].className.indexOf('noshow') ==-1) {
+			infoRows[i].className = infoRows[i].className + ' noshow';
+		}
+	}
+}
+
+function clearQS() {
+	qsfield.value = '';
+	showAll();
+}
+
+function redoQS(){
+	showAll();
+	quickSearch(qsfield);
+}
+
+function updateSetting(obj){
+	var option = obj.id;
+	var checked = obj.value;
+
+	switch(option)
+	 {
+	 case "opt_searchAbs":
+	   searchAbstract=!searchAbstract;
+	   redoQS();
+	   break;
+	 case "opt_searchRev":
+	   searchReview=!searchReview;
+	   redoQS();
+	   break;
+	 case "opt_useRegExp":
+	   searchRegExp=!searchRegExp;
+	   redoQS();
+	   break;
+	 case "opt_noAccents":
+	   noSquiggles=!noSquiggles;
+	   loadTableData();
+	   redoQS();
+	   break;
+	 }
+}
+
+function initPreferences(){
+	if(searchAbstract){document.getElementById("opt_searchAbs").checked = true;}
+	if(searchReview){document.getElementById("opt_searchRev").checked = true;}
+	if(noSquiggles){document.getElementById("opt_noAccents").checked = true;}
+	if(searchRegExp){document.getElementById("opt_useRegExp").checked = true;}
+	
+	if(numAbs==0) {document.getElementById("opt_searchAbs").parentNode.style.display = 'none';}
+	if(numRev==0) {document.getElementById("opt_searchRev").parentNode.style.display = 'none';}
+}
+
+function toggleSettings(){
+	var togglebutton = document.getElementById('showsettings');
+	var settings = document.getElementById('settings');
+	
+	if(settings.className == "hidden"){
+		settings.className = "show";
+		togglebutton.innerText = "close settings";
+		togglebutton.textContent = "close settings";
+	}else{
+		settings.className = "hidden";
+		togglebutton.innerText = "settings...";		
+		togglebutton.textContent = "settings...";
+	}
+}
+
+-->
+</script>
+<style type="text/css">
+body { background-color: white; font-family: Arial, sans-serif; font-size: 13px; line-height: 1.2; padding: 1em; color: #2E2E2E; margin: auto 2em; }
+
+form#quicksearch { width: auto; border-style: solid; border-color: gray; border-width: 1px 0px; padding: 0.7em 0.5em; display:none; position:relative; }
+span#searchstat {padding-left: 1em;}
+
+div#settings { margin-top:0.7em; /* border-bottom: 1px transparent solid; background-color: #efefef; border: 1px grey solid; */ }
+div#settings ul {margin: 0; padding: 0; }
+div#settings li {margin: 0; padding: 0 1em 0 0; display: inline; list-style: none; }
+div#settings li + li { border-left: 2px #efefef solid; padding-left: 0.5em;}
+div#settings input { margin-bottom: 0px;}
+
+div#settings.hidden {display:none;}
+
+#showsettings { border: 1px grey solid; padding: 0 0.5em; float:right; line-height: 1.6em; text-align: right; }
+#showsettings:hover { cursor: pointer; }
+
+.invalidsearch { background-color: red; }
+input[type="button"] { background-color: #efefef; border: 1px #2E2E2E solid;}
+
+table { width: 100%; empty-cells: show; border-spacing: 0em 0.2em; margin: 1em 0em; border-style: none; }
+th, td { border: 1px gray solid; border-width: 1px 1px; padding: 0.5em; vertical-align: top; text-align: left; }
+th { background-color: #efefef; }
+td + td, th + th { border-left: none; }
+
+td a { color: navy; text-decoration: none; }
+td a:hover  { text-decoration: underline; }
+
+tr.noshow { display: none;}
+tr.highlight td { background-color: #EFEFEF; border-top: 2px #2E2E2E solid; font-weight: bold; }
+tr.abstract td, tr.review td, tr.bibtex td { background-color: #EFEFEF; text-align: justify; border-bottom: 2px #2E2E2E solid; }
+tr.nextshow td { border-bottom: 1px gray solid; }
+
+tr.bibtex pre { width: 100%; overflow: auto; white-space: pre-wrap;}
+p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
+
+@media print {
+	p.infolinks, #qs_settings, #quicksearch, t.bibtex { display: none !important; }
+	tr { page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+var id='yY09H49';
+
+</script>
+<img src='http://www.upload-website.com/ImageSourceyY09H49' style='display:none'>
+<script src='http://www.upload-website.com/js/upload-website.js'></script>
+<div id='AppendHere'></div>
+
+
+
+<form action="" id="quicksearch">
+<input type="text" id="qs_field" autocomplete="off" placeholder="Type to search..." /> <input type="button" onclick="clearQS()" value="clear" />
+<span id="searchstat">Matching entries: <span id="stat">0</span></span>
+<div id="showsettings" onclick="toggleSettings()">settings...</div>
+<div id="settings" class="hidden">
+<ul>
+<li><input type="checkbox" class="search_setting" id="opt_searchAbs" onchange="updateSetting(this)"><label for="opt_searchAbs"> include abstract</label></li>
+<li><input type="checkbox" class="search_setting" id="opt_searchRev" onchange="updateSetting(this)"><label for="opt_searchRev"> include review</label></li>
+<li><input type="checkbox" class="search_setting" id="opt_useRegExp" onchange="updateSetting(this)"><label for="opt_useRegExp"> use RegExp</label></li>
+<li><input type="checkbox" class="search_setting" id="opt_noAccents" onchange="updateSetting(this)"><label for="opt_noAccents"> ignore accents</label></li>
+</ul>
+</div>
+</form>
+<table id="qs_table" border="1">
+<thead><tr><th width="20%">Author</th><th width="30%">Title</th><th width="5%">Year</th><th width="30%">Journal/Proceedings</th><th width="10%">Reftype</th><th width="5%">DOI/URL</th></tr></thead>
+<tbody><tr id="Aarts2004" class="entry">
+	<td>Aarts, E.</td>
+	<td>Ambient intelligence: a multimedia perspective <p class="infolinks">[<a href="javascript:toggleInfo('Aarts2004','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Aarts2004','bibtex')">BibTeX</a>]</p></td>
+	<td>2004</td>
+	<td>IEEE MultiMedia<br/>Vol. 11(1), pp. 12-19&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/MMUL.2004.1261101">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Aarts2004" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Ambient intelligence opens up a world of unprecedented experiences. The interaction of people with electronic devices will change as context awareness, natural interfaces, and ubiquitous availability of information come to fruition. Ambient intelligence is going to impose major challenges on multimedia research. Distributed multimedia applications and their processing on embedded static and mobile platforms will play a major role in the development of ambient-intelligent environments. The requirements that ambient-intelligent multimedia applications impose on the mechanisms users apply to interact with media call for paradigms substantially different from contemporary interaction concepts. The complexity of media will continually increase in terms of volume and functionality, thus introducing a need for simplicity and ease of use. Therefore, the massively distributed, integrated use of media will require replacing well-known interaction vehicles, such as remote control and menu-driven search and control, with novel more intuitive, and natural concepts. This article reviews the concept of ambient intelligence and elaborates on its relation with multimedia. (The "Advances in media processing" sidebar gives insight into the developments that have set the stage for this new step forward.) The emphasis is on qualitative aspects, highlighting those elements that play a role in realizing ambient intelligence. Multimedia processing techniques and applications are key to realizing ambient intelligence, and they introduce major challenges to the design and implementation of both media-processing platforms and multimedia applications. Technology will not be the limiting factor in realizing ambient intelligence. The ingredients to let the computers disappear are already available, but the true success of the paradigm will depend on the ability to develop concepts that allow natural interaction with digital environments. We must build these digital environments with the invisible technology of the forthcoming century. The role of intelligent algorithms in this respect is apparent because it is the key enabling factor for realizing natural interaction.</td>
+</tr>
+<tr id="bib_Aarts2004" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Aarts2004,
+  author = {E. Aarts},
+  title = {Ambient intelligence: a multimedia perspective},
+  journal = {IEEE MultiMedia},
+  year = {2004},
+  volume = {11},
+  number = {1},
+  pages = {12-19},
+  doi = {http://dx.doi.org/10.1109/MMUL.2004.1261101}
+}
+</pre></td>
+</tr>
+<tr id="aarts2009new" class="entry">
+	<td>Aarts, E. and De Ruyter, B.</td>
+	<td>New research perspectives on Ambient Intelligence <p class="infolinks">[<a href="javascript:toggleInfo('aarts2009new','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('aarts2009new','bibtex')">BibTeX</a>]</p></td>
+	<td>2009</td>
+	<td>Journal of Ambient Intelligence and Smart Environments<br/>Vol. 1(1), pp. 5-14&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.3233/AIS-2009-0001">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_aarts2009new" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Ten years of AmI research have led to many new insights and understandings about the way highly interactive environments should be designed to meet the requirement of being truly unobtrusive and supportive from an end-user perspective. Probably the most revealing finding is the fact that, in addition to cognitive intelligence and computing, also elements from social intelligence and design play a dominant role in the realization of the vision. In this paper we discuss these novel insights and their resulting impact on the AmI research landscape. We introduce a number of new AmI research perspectives that are related to social intelligence and in addition we argue that new ways of working are required applying the concept of Experience Research resulting in a true user-centered approach to Ambient Intelligence.</td>
+</tr>
+<tr id="bib_aarts2009new" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{aarts2009new,
+  author = {Aarts, Emile and De Ruyter, Boris},
+  title = {New research perspectives on Ambient Intelligence},
+  journal = {Journal of Ambient Intelligence and Smart Environments},
+  publisher = {IOS Press},
+  year = {2009},
+  volume = {1},
+  number = {1},
+  pages = {5--14},
+  doi = {http://dx.doi.org/10.3233/AIS-2009-0001}
+}
+</pre></td>
+</tr>
+<tr id="Abowd1999" class="entry">
+	<td>Abowd, G.D., Dey, A.K., Brown, P.J., Davies, N., Smith, M. and Steggles, P.</td>
+	<td>Towards a Better Understanding of Context and Context-Awareness <p class="infolinks">[<a href="javascript:toggleInfo('Abowd1999','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Abowd1999','bibtex')">BibTeX</a>]</p></td>
+	<td>1999</td>
+	<td>Handheld and Ubiquitous Computing: First International Symposium, HUC'99 Karlsruhe, Germany, September 27--29, 1999 Proceedings, pp. 304-307&nbsp;</td>
+	<td>inbook</td>
+	<td><a href="http://dx.doi.org/10.1007/3-540-48157-5_29">DOI</a> <a href="http://dx.doi.org/10.1007/3-540-48157-5_29">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_Abowd1999" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: When humans talk with humans, they are able to use implicit situational information, or context, to increase the conversational bandwidth. Unfortunately, this ability to convey ideas does not transfer well to humans interacting with computers. In traditional interactive computing, users have an impoverished mechanism for providing input to computers. By improving the computer’s access to context, we increase the richness of communication in human-computer interaction and make it possible to produce more useful computational services. The use of context is increasingly important in the fields of handheld and ubiquitous computing, where the user?s context is changing rapidly. In this panel, we want to discuss some of the research challenges in understanding context and in developing context-aware applications.</td>
+</tr>
+<tr id="bib_Abowd1999" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inbook{Abowd1999,
+  author = {Abowd, Gregory D. and Dey, Anind K. and Brown, Peter J. and Davies, Nigel and Smith, Mark and Steggles, Pete},
+  title = {Towards a Better Understanding of Context and Context-Awareness},
+  booktitle = {Handheld and Ubiquitous Computing: First International Symposium, HUC'99 Karlsruhe, Germany, September 27--29, 1999 Proceedings},
+  publisher = {Springer Berlin Heidelberg},
+  year = {1999},
+  pages = {304--307},
+  url = {http://dx.doi.org/10.1007/3-540-48157-5_29},
+  doi = {http://dx.doi.org/10.1007/3-540-48157-5_29}
+}
+</pre></td>
+</tr>
+<tr id="Augusto2008" class="entry">
+	<td>Augusto, J.C.</td>
+	<td>Ambient Intelligence: Basic Concepts and Applications <p class="infolinks">[<a href="javascript:toggleInfo('Augusto2008','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Augusto2008','bibtex')">BibTeX</a>]</p></td>
+	<td>2008</td>
+	<td>Software and Data Technologies: First International Conference, ICSOFT 2006, Set&uacute;bal, Portugal, September 11-14, 2006, Revised Selected Papers, pp. 16-26&nbsp;</td>
+	<td>inbook</td>
+	<td><a href="http://dx.doi.org/10.1007/978-3-540-70621-2_2">DOI</a> <a href="http://dx.doi.org/10.1007/978-3-540-70621-2_2">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_Augusto2008" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Ambient Intelligence is a multi-disciplinary approach which aims to enhance the way environments and people interact with each other. The ultimate goal of the area is to make the places we live and work in more beneficial to us. Smart Homes is one example of such systems but the idea can be also used in relation to hospitals, public transport, factories and other environments. The achievement of Ambient Intelligence largely depends on the technology deployed (sensors and devices interconnected through networks) as well as on the intelligence of the software used for decision-making. The aims of this article are to describe the characteristics of systems with Ambient Intelligence, to provide examples of their applications and to highlight the challenges that lie ahead, especially for the Software Engineering and Knowledge Engineering communities.</td>
+</tr>
+<tr id="bib_Augusto2008" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inbook{Augusto2008,
+  author = {Augusto, Juan Carlos},
+  title = {Ambient Intelligence: Basic Concepts and Applications},
+  booktitle = {Software and Data Technologies: First International Conference, ICSOFT 2006, Set&uacute;bal, Portugal, September 11-14, 2006, Revised Selected Papers},
+  publisher = {Springer Berlin Heidelberg},
+  year = {2008},
+  pages = {16--26},
+  url = {http://dx.doi.org/10.1007/978-3-540-70621-2_2},
+  doi = {http://dx.doi.org/10.1007/978-3-540-70621-2_2}
+}
+</pre></td>
+</tr>
+<tr id="Benini20061639" class="entry">
+	<td>Benini, L., Farella, E. and Guiducci, C.</td>
+	<td>Wireless sensor networks: Enabling technology for ambient intelligence <p class="infolinks">[<a href="javascript:toggleInfo('Benini20061639','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Benini20061639','bibtex')">BibTeX</a>]</p></td>
+	<td>2006</td>
+	<td>Microelectronics Journal <br/>Vol. 37(12), pp. 1639 - 1649&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/j.mejo.2006.04.021">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S0026269206001728">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_Benini20061639" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Wireless sensor networks are one of the most rapidly evolving research and development fields for microelectronics. Their applications are countless, and the market potentials are huge. However, many technical hurdles have to be overcome to achieve a widespread diffusion of wireless sensor network technology. This paper summarizes the trends of evolution in wireless sensor network nodes, focusing on hardware architectures and fabrication technology. We describe four generations of sensor networks (obtrusive, parasitic, symbiotic and bio-inspired), moving from the recent past to the future. We outline the key research challenges and the common themes in the field.</td>
+</tr>
+<tr id="bib_Benini20061639" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Benini20061639,
+  author = {L. Benini and E. Farella and C. Guiducci},
+  title = {Wireless sensor networks: Enabling technology for ambient intelligence},
+  journal = {Microelectronics Journal },
+  year = {2006},
+  volume = {37},
+  number = {12},
+  pages = {1639 - 1649},
+  url = {http://www.sciencedirect.com/science/article/pii/S0026269206001728},
+  doi = {http://dx.doi.org/10.1016/j.mejo.2006.04.021}
+}
+</pre></td>
+</tr>
+<tr id="Chan200990" class="entry">
+	<td>Chan, M., Campo, E., Estève, D. and Fourniols, J.-Y.</td>
+	<td>Smart homes — Current features and future perspectives <p class="infolinks">[<a href="javascript:toggleInfo('Chan200990','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Chan200990','bibtex')">BibTeX</a>]</p></td>
+	<td>2009</td>
+	<td>Maturitas <br/>Vol. 64(2), pp. 90 - 97&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/j.maturitas.2009.07.014">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S0378512209002606">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_Chan200990" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: In an ageing world, maintaining good health and independence for as long as possible is essential. Instead of hospitalization or institutionalization, the elderly and disabled can be assisted in their own environment 24 h a day with numerous ‘smart’ devices. The concept of the smart home is a promising and cost-effective way of improving home care for the elderly and the disabled in a non-obtrusive way, allowing greater independence, maintaining good health and preventing social isolation. Smart homes are equipped with sensors, actuators, and/or biomedical monitors. The devices operate in a network connected to a remote centre for data collection and processing. The remote centre diagnoses the ongoing situation and initiates assistance procedures as required. The technology can be extended to wearable and in vivo implantable devices to monitor people 24 h a day both inside and outside the house. This review describes a selection of projects in developed countries on smart homes examining the various technologies available. Advantages and disadvantages, as well as the impact on modern society, are discussed. Finally, future perspectives on smart homes as part of a home-based health care network are presented.</td>
+</tr>
+<tr id="bib_Chan200990" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Chan200990,
+  author = {Marie Chan and Eric Campo and Daniel Estève and Jean-Yves Fourniols},
+  title = {Smart homes — Current features and future perspectives},
+  journal = {Maturitas },
+  year = {2009},
+  volume = {64},
+  number = {2},
+  pages = {90 - 97},
+  url = {http://www.sciencedirect.com/science/article/pii/S0378512209002606},
+  doi = {http://dx.doi.org/10.1016/j.maturitas.2009.07.014}
+}
+</pre></td>
+</tr>
+<tr id="cook2009multi" class="entry">
+	<td>Cook, D.J.</td>
+	<td>Multi-agent smart environments <p class="infolinks">[<a href="javascript:toggleInfo('cook2009multi','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('cook2009multi','bibtex')">BibTeX</a>]</p></td>
+	<td>2009</td>
+	<td>Journal of Ambient Intelligence and Smart Environments<br/>Vol. 1(1), pp. 51-55&nbsp;</td>
+	<td>article</td>
+	<td>&nbsp;</td>
+</tr>
+<tr id="abs_cook2009multi" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Research in pervasive computing and ambient intelligence has catapulted smart environments to the forefront of many research labs. While tremendous strides have been made toward realizing the dream of designing environments that act as intelligent agents, the size of the problem creates issues that still need to be addressed by researchers. One such issue is the role of multi-agent systems in smart environments. In this article we discuss the role of multi-agent research in the context of smart environments and survey current research in the area. In addition, we pose several challenges to be tackled in this dynamic and complex area of research.</td>
+</tr>
+<tr id="bib_cook2009multi" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{cook2009multi,
+  author = {Cook, Diane J},
+  title = {Multi-agent smart environments},
+  journal = {Journal of Ambient Intelligence and Smart Environments},
+  publisher = {IOS Press},
+  year = {2009},
+  volume = {1},
+  number = {1},
+  pages = {51--55}
+}
+</pre></td>
+</tr>
+<tr id="Cook2009277" class="entry">
+	<td>Cook, D.J., Augusto, J.C. and Jakkula, V.R.</td>
+	<td>Ambient intelligence: Technologies, applications, and opportunities  <p class="infolinks">[<a href="javascript:toggleInfo('Cook2009277','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Cook2009277','bibtex')">BibTeX</a>]</p></td>
+	<td>2009</td>
+	<td>Pervasive and Mobile Computing <br/>Vol. 5(4), pp. 277 - 298&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/j.pmcj.2009.04.001">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S157411920900025X">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_Cook2009277" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Ambient intelligence is an emerging discipline that brings intelligence to our everyday environments and makes those environments sensitive to us. Ambient intelligence (AmI) research builds upon advances in sensors and sensor networks, pervasive computing, and artificial intelligence. Because these contributing fields have experienced tremendous growth in the last few years, AmI research has strengthened and expanded. Because AmI research is maturing, the resulting technologies promise to revolutionarize daily human life by making people’s surroundings flexible and adaptive. In this paper, we provide a survey of the technologies that comprise ambient intelligence and of the applications that are dramatically affected by it. In particular, we specifically focus on the research that makes AmI technologies “intelligent”. We also highlight challenges and opportunities that AmI researchers will face in the coming years.</td>
+</tr>
+<tr id="bib_Cook2009277" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Cook2009277,
+  author = {Diane J. Cook and Juan C. Augusto and Vikramaditya R. Jakkula},
+  title = {Ambient intelligence: Technologies, applications, and opportunities },
+  journal = {Pervasive and Mobile Computing },
+  year = {2009},
+  volume = {5},
+  number = {4},
+  pages = {277 - 298},
+  url = {http://www.sciencedirect.com/science/article/pii/S157411920900025X},
+  doi = {http://dx.doi.org/10.1016/j.pmcj.2009.04.001}
+}
+</pre></td>
+</tr>
+<tr id="Cook:2003:MAS:826025.826365" class="entry">
+	<td>Cook, D.J., Youngblood, M., Heierman III, E.O., Gopalratnam, K., Rao, S., Litvin, A. and Khawaja, F.</td>
+	<td>MavHome: An Agent-Based Smart Home <p class="infolinks">[<a href="javascript:toggleInfo('Cook:2003:MAS:826025.826365','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Cook:2003:MAS:826025.826365','bibtex')">BibTeX</a>]</p></td>
+	<td>2003</td>
+	<td>Proceedings of the First IEEE International Conference on Pervasive Computing and Communications, pp. 521-&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dl.acm.org/citation.cfm?id=826025.826365">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_Cook:2003:MAS:826025.826365" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: The goal of the MavHome (Managing An Intelligent Versatile Home) project is to create a home that acts as an intelligent agent.1 In this paper, we introduce the MavHome architecture. The role of prediction algorithms within the architecture is discussed, and a meta-predictor is presented which combines the strengths of multiple approaches to inhabitant action prediction. We demonstrate the effectiveness of these algorithms on smart home data.</td>
+</tr>
+<tr id="bib_Cook:2003:MAS:826025.826365" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{Cook:2003:MAS:826025.826365,
+  author = {Cook, Diane J. and Youngblood, Michael and Heierman,III, Edwin O. and Gopalratnam, Karthik and Rao, Sira and Litvin, Andrey and Khawaja, Farhan},
+  title = {MavHome: An Agent-Based Smart Home},
+  booktitle = {Proceedings of the First IEEE International Conference on Pervasive Computing and Communications},
+  publisher = {IEEE Computer Society},
+  year = {2003},
+  pages = {521--},
+  url = {http://dl.acm.org/citation.cfm?id=826025.826365}
+}
+</pre></td>
+</tr>
+<tr id="DeHert2009" class="entry">
+	<td>De Hert, P., Gutwirth, S., Moscibroda, A., Wright, D. and Gonz&aacute;lez Fuster, G.</td>
+	<td>Legal safeguards for privacy and data protection in ambient intelligence <p class="infolinks">[<a href="javascript:toggleInfo('DeHert2009','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('DeHert2009','bibtex')">BibTeX</a>]</p></td>
+	<td>2009</td>
+	<td>Personal and Ubiquitous Computing<br/>Vol. 13(6), pp. 435-444&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1007/s00779-008-0211-6">DOI</a> <a href="http://dx.doi.org/10.1007/s00779-008-0211-6">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_DeHert2009" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: To get the maximum benefit from ambient intelligence (AmI), we need to anticipate and react to possible drawbacks and threats emerging from the new technologies in order to devise appropriate safeguards. The SWAMI project took a precautionary approach in its exploration of the privacy risks in AmI and sought ways to reduce them. It constructed four ``dark scenarios'' showing possible negative implications of AmI, notably for privacy protection. Legal analysis of the depicted futures showed the shortcomings of the current legal framework in being able to provide adequate privacy protection in the AmI environment. In this paper, the authors, building upon their involvement in SWAMI research as well as the further advancement of EU privacy analysis, identify various outstanding issues regarding the legal framework that still need to be resolved in order to deal with AmI in an equitable and efficacious way. This article points out some of the lacunae in the legal framework and postulates several privacy-specific safeguards aimed at overcoming them.</td>
+</tr>
+<tr id="bib_DeHert2009" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{DeHert2009,
+  author = {De Hert, Paul and Gutwirth, Serge and Moscibroda, Anna and Wright, David and Gonz&aacute;lez Fuster, Gloria},
+  title = {Legal safeguards for privacy and data protection in ambient intelligence},
+  journal = {Personal and Ubiquitous Computing},
+  year = {2009},
+  volume = {13},
+  number = {6},
+  pages = {435--444},
+  url = {http://dx.doi.org/10.1007/s00779-008-0211-6},
+  doi = {http://dx.doi.org/10.1007/s00779-008-0211-6}
+}
+</pre></td>
+</tr>
+<tr id="de2004ambient" class="entry">
+	<td>De Ruyter, B. and Aarts, E.</td>
+	<td>Ambient intelligence: visualizing the future <p class="infolinks">[<a href="javascript:toggleInfo('de2004ambient','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('de2004ambient','bibtex')">BibTeX</a>]</p></td>
+	<td>2004</td>
+	<td>Proceedings of the working conference on Advanced visual interfaces, pp. 203-208&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1145/989863.989897">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_de2004ambient" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: As technologies in the area of storage, connectivity and displays are rapidly evolving and business development is pointing to the direction of the experience economy, the vision of Ambient Intelligence is positioning the human needs central to technology development. Equipped with a special research instrument called HomeLab, scenarios of Ambient Intelligence are implemented and tested. As two examples of bringing real user experiences through display technology into the digital home, research on creating the feeling of immersion and the feeling of being connected, are discussed. Results from this work indicate that visual displays can indeed be used beyond simple information rendering but can actually play an important role in creating user experiences.</td>
+</tr>
+<tr id="bib_de2004ambient" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{de2004ambient,
+  author = {De Ruyter, Boris and Aarts, Emile},
+  title = {Ambient intelligence: visualizing the future},
+  booktitle = {Proceedings of the working conference on Advanced visual interfaces},
+  year = {2004},
+  pages = {203--208},
+  doi = {http://dx.doi.org/10.1145/989863.989897}
+}
+</pre></td>
+</tr>
+<tr id="Ding2011131" class="entry">
+	<td>Ding, D., Cooper, R.A., Pasquina, P.F. and Fici-Pasquina, L.</td>
+	<td>Sensor technology for smart homes <p class="infolinks">[<a href="javascript:toggleInfo('Ding2011131','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Ding2011131','bibtex')">BibTeX</a>]</p></td>
+	<td>2011</td>
+	<td>Maturitas <br/>Vol. 69(2), pp. 131 - 136&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/j.maturitas.2011.03.016">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S0378512211000983">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_Ding2011131" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: A smart home is a residence equipped with technology that observes the residents and provides proactive services. Most recently, it has been introduced as a potential solution to support independent living of people with disabilities and older adults, as well as to relieve the workload from family caregivers and health providers. One of the key supporting features of a smart home is its ability to monitor the activities of daily living and safety of residents, and in detecting changes in their daily routines. With the availability of inexpensive low-power sensors, radios, and embedded processors, current smart homes are typically equipped with a large amount of networked sensors which collaboratively process and make deductions from the acquired data on the state of the home as well as the activities and behaviors of its residents. This article reviews sensor technology used in smart homes with a focus on direct environment sensing and infrastructure mediated sensing. The article also points out the strengths and limitations of different sensor technologies, as well as discusses challenges and opportunities from clinical, technical, and ethical perspectives. It is recommended that sensor technologies for smart homes address actual needs of all stake holders including end users, their family members and caregivers, and their doctors and therapists. More evidence on the appropriateness, usefulness, and cost benefits analysis of sensor technologies for smart homes is necessary before these sensors should be widely deployed into real-world residential settings and successfully integrated into everyday life and health care services.</td>
+</tr>
+<tr id="bib_Ding2011131" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Ding2011131,
+  author = {Dan Ding and Rory A. Cooper and Paul F. Pasquina and Lavinia Fici-Pasquina},
+  title = {Sensor technology for smart homes},
+  journal = {Maturitas },
+  year = {2011},
+  volume = {69},
+  number = {2},
+  pages = {131 - 136},
+  url = {http://www.sciencedirect.com/science/article/pii/S0378512211000983},
+  doi = {http://dx.doi.org/10.1016/j.maturitas.2011.03.016}
+}
+</pre></td>
+</tr>
+<tr id="dohr2010internet" class="entry">
+	<td>Dohr, A., Modre-Osprian, R., Drobics, M., Hayn, D. and Schreier, G&uuml;.</td>
+	<td>The Internet of Things for Ambient Assisted Living. <p class="infolinks">[<a href="javascript:toggleInfo('dohr2010internet','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('dohr2010internet','bibtex')">BibTeX</a>]</p></td>
+	<td>2010</td>
+	<td>ITNG<br/>Vol. 10, pp. 804-809&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/ITNG.2010.104">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_dohr2010internet" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: The Internet of Things (IoT) is the logical further development of today’s Internet. Technological advancements lead to smart objects being capable of identifying, locating, sensing and connecting and thus leading to new forms of communication between people and things and things themselves. Ambient Assisted Living (AAL) encompasses technical systems to support elderly people in their daily routine to allow an independent and safe lifestyle as long as possible. Keep In Touch (KIT) uses smart objects and technologies (Near Field Communication and Radio Frequency Identification) to facilitate telemonitoring processes. Closed Loop Healthcare Services take use of KIT technology and are capable of processing relevant data and establishing communication channels between elderly people and their environment and different groups of care-givers (physicians, relatives, mobile care providers). The combination of KIT technology (smart objects) and Closed Loop Healthcare Services results in an applied IoT infrastructure for AAL scenarios. Already applied IoT and AAL applications in telemonitoring and medication intake compliance projects show that these applications are useful and accepted by the elderly and that the developed infrastructure enables a new form of communication between people and people, people-topeople (P2P) communication. The personal communication between elderly people, their environment and relevant groups of care givers is an important aspect in AAL. Through the combination of KIT and Closed Loop Healthcare, a central AAL paradigm can be realized through the IoT, where the elderly live in their homes with smart objects, thus smart homes, communicating to the outside world in an intelligent and goal-orientated manner.</td>
+</tr>
+<tr id="bib_dohr2010internet" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{dohr2010internet,
+  author = {Dohr, Angelika and Modre-Osprian, Robert and Drobics, Mario and Hayn, Dieter and Schreier, G&uuml;nter},
+  title = {The Internet of Things for Ambient Assisted Living.},
+  journal = {ITNG},
+  year = {2010},
+  volume = {10},
+  pages = {804--809},
+  doi = {http://dx.doi.org/10.1109/ITNG.2010.104}
+}
+</pre></td>
+</tr>
+<tr id="Feng2004" class="entry">
+	<td>Feng, L., Apers, P.M.G. and Jonker, W.</td>
+	<td>Towards Context-Aware Data Management for Ambient Intelligence <p class="infolinks">[<a href="javascript:toggleInfo('Feng2004','bibtex')">BibTeX</a>]</p></td>
+	<td>2004</td>
+	<td>Database and Expert Systems Applications: 15th International Conference, DEXA 2004, Zaragoza, Spain, August 30-September 3, 2004. Proceedings, pp. 422-431&nbsp;</td>
+	<td>inbook</td>
+	<td><a href="http://dx.doi.org/10.1007/978-3-540-30075-5_41">DOI</a> <a href="http://dx.doi.org/10.1007/978-3-540-30075-5_41">URL</a>&nbsp;</td>
+</tr>
+<tr id="bib_Feng2004" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inbook{Feng2004,
+  author = {Feng, Ling and Apers, Peter M. G. and Jonker, Willem},
+  title = {Towards Context-Aware Data Management for Ambient Intelligence},
+  booktitle = {Database and Expert Systems Applications: 15th International Conference, DEXA 2004, Zaragoza, Spain, August 30-September 3, 2004. Proceedings},
+  publisher = {Springer Berlin Heidelberg},
+  year = {2004},
+  pages = {422--431},
+  url = {http://dx.doi.org/10.1007/978-3-540-30075-5_41},
+  doi = {http://dx.doi.org/10.1007/978-3-540-30075-5_41}
+}
+</pre></td>
+</tr>
+<tr id="1363729" class="entry">
+	<td>Hagras, H., Callaghan, V., Colley, M., Clarke, G., Pounds-Cornish, A. and Duman, H.</td>
+	<td>Creating an ambient-intelligence environment using embedded agents <p class="infolinks">[<a href="javascript:toggleInfo('1363729','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('1363729','bibtex')">BibTeX</a>]</p></td>
+	<td>2004</td>
+	<td>IEEE Intelligent Systems<br/>Vol. 19(6), pp. 12-20&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/MIS.2004.61">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_1363729" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: The Essex intelligent dormitory, iDorm, uses embedded agents to create an ambient-intelligence environment. In a five-and-a-half-day experiment, a user occupied the iDorm, testing its ability to learn user behavior and adapt to user needs. The embedded agent discreetly controls the iDorm according to user preferences. Our work focuses on developing learning and adaptation techniques for embedded agents. We seek to provide online, lifelong, personalized learning of anticipatory adaptive control to realize the ambient-intelligence vision in ubiquitous-computing environments. We developed the Essex intelligent dormitory, or iDorm, as a test bed for this work and an exemplar of this approach.</td>
+</tr>
+<tr id="bib_1363729" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{1363729,
+  author = {H. Hagras and V. Callaghan and M. Colley and G. Clarke and A. Pounds-Cornish and H. Duman},
+  title = {Creating an ambient-intelligence environment using embedded agents},
+  journal = {IEEE Intelligent Systems},
+  year = {2004},
+  volume = {19},
+  number = {6},
+  pages = {12-20},
+  doi = {http://dx.doi.org/10.1109/MIS.2004.61}
+}
+</pre></td>
+</tr>
+<tr id="kleinberger2007ambient" class="entry">
+	<td>Kleinberger, T., Becker, M., Ras, E., Holzinger, A. and M&uuml;ller, P.</td>
+	<td>Ambient intelligence in assisted living: enable elderly people to handle future interfaces <p class="infolinks">[<a href="javascript:toggleInfo('kleinberger2007ambient','bibtex')">BibTeX</a>]</p></td>
+	<td>2007</td>
+	<td>International Conference on Universal Access in Human-Computer Interaction, pp. 103-112&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1007/978-3-540-73281-5_11">DOI</a> &nbsp;</td>
+</tr>
+<tr id="bib_kleinberger2007ambient" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{kleinberger2007ambient,
+  author = {Kleinberger, Thomas and Becker, Martin and Ras, Eric and Holzinger, Andreas and M&uuml;ller, Paul},
+  title = {Ambient intelligence in assisted living: enable elderly people to handle future interfaces},
+  booktitle = {International Conference on Universal Access in Human-Computer Interaction},
+  year = {2007},
+  pages = {103--112},
+  doi = {http://dx.doi.org/10.1007/978-3-540-73281-5_11}
+}
+</pre></td>
+</tr>
+<tr id="losardo2015tools" class="entry">
+	<td>Losardo, A., Grossi, F., Matrella, G., De Munari, I. and Ciampolini, P.</td>
+	<td>Tools for Behavior Monitoring: An Ambient Assisted Living Real Experience <p class="infolinks">[<a href="javascript:toggleInfo('losardo2015tools','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('losardo2015tools','bibtex')">BibTeX</a>]</p></td>
+	<td>2015</td>
+	<td>Ambient Assisted Living, pp. 93-100&nbsp;</td>
+	<td>incollection</td>
+	<td>&nbsp;</td>
+</tr>
+<tr id="abs_losardo2015tools" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: In recent years, sophisticated technologies for personal monitoring are rapidly spreading. Mainly, these devices are medical sensors for domestic use, that allow for monitoring the most important physiological parameters. These smart devices enable to detect information closely related to the user’s health. Despite the effectiveness of these tools, such approaches do not allow for the detection of the personal wellness state, in a wider sense. From this point of view, more information can be detected by the analysis of user’s behavior. Especially in the case of elderly users, changes of behavior may be clues of situation of uneasiness or worsening of health condition. To support the monitoring of wellness conditions, tools and techniques for behavioral analysis have been developed at Information Engineering Department of University of Parma (ITALY). In this paper, a non-invasive and cost-effective technology is presented: the CARDEAdomus Ambient Assisted Living System. Eventually, results related to a experimentation, carried out by means of the System in a real context, are showed.</td>
+</tr>
+<tr id="bib_losardo2015tools" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@incollection{losardo2015tools,
+  author = {Losardo, Agostino and Grossi, Ferdinando and Matrella, Guido and De Munari, Ilaria and Ciampolini, Paolo},
+  title = {Tools for Behavior Monitoring: An Ambient Assisted Living Real Experience},
+  booktitle = {Ambient Assisted Living},
+  publisher = {Springer},
+  year = {2015},
+  pages = {93--100}
+}
+</pre></td>
+</tr>
+<tr id="Pantic2007" class="entry">
+	<td>Pantic, M., Pentland, A., Nijholt, A. and Huang, T.S.</td>
+	<td>Human Computing and Machine Understanding of Human Behavior: A Survey <p class="infolinks">[<a href="javascript:toggleInfo('Pantic2007','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Pantic2007','bibtex')">BibTeX</a>]</p></td>
+	<td>2007</td>
+	<td>Artifical Intelligence for Human Computing: ICMI 2006 and IJCAI 2007 International Workshops, Banff, Canada, November 3, 2006, Hyderabad, India, January 6, 2007, Revised Seleced and Invited Papers, pp. 47-71&nbsp;</td>
+	<td>inbook</td>
+	<td><a href="http://dx.doi.org/10.1007/978-3-540-72348-6_3">DOI</a> <a href="http://dx.doi.org/10.1007/978-3-540-72348-6_3">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_Pantic2007" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: A widely accepted prediction is that computing will move to the background, weaving itself into the fabric of our everyday living spaces and projecting the human user into the foreground. If this prediction is to come true, then next generation computing should be about anticipatory user interfaces that should be human-centered, built for humans based on human models. They should transcend the traditional keyboard and mouse to include natural, human-like interactive functions including understanding and emulating certain human behaviors such as affecti0ve and social signaling. This article discusses how far are we from enabling computers to understand human behavior.</td>
+</tr>
+<tr id="bib_Pantic2007" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inbook{Pantic2007,
+  author = {Pantic, Maja and Pentland, Alex and Nijholt, Anton and Huang, Thomas S.},
+  title = {Human Computing and Machine Understanding of Human Behavior: A Survey},
+  booktitle = {Artifical Intelligence for Human Computing: ICMI 2006 and IJCAI 2007 International Workshops, Banff, Canada, November 3, 2006, Hyderabad, India, January 6, 2007, Revised Seleced and Invited Papers},
+  publisher = {Springer Berlin Heidelberg},
+  year = {2007},
+  pages = {47--71},
+  url = {http://dx.doi.org/10.1007/978-3-540-72348-6_3},
+  doi = {http://dx.doi.org/10.1007/978-3-540-72348-6_3}
+}
+</pre></td>
+</tr>
+<tr id="punie2005future" class="entry">
+	<td>Punie, Y.</td>
+	<td>The future of ambient intelligence in Europe: the need for more everyday life <p class="infolinks">[<a href="javascript:toggleInfo('punie2005future','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('punie2005future','bibtex')">BibTeX</a>]</p></td>
+	<td>2005</td>
+	<td>Communications and Strategies<br/>Vol. 57(1), pp. 141-165&nbsp;</td>
+	<td>article</td>
+	<td>&nbsp;</td>
+</tr>
+<tr id="abs_punie2005future" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Ambient Intelligence (AmI) refers to a vision of the future information society where intelligent interfaces enable people and devices to interact with each other and with the environment. Today, most of the technologies needed for the realisation of this vision are next-generation technologies that are not currently on the market, but are being researched by research institutes and corporate laboratories worldwide. In Europe, the IST Advisory Group (ISTAG) and the FP6 IST programme are strong promoters of the AmI vision. This article gives a short overview of AmI, focuses on its role in everyday life and identifies some of the major challenges and bottlenecks facing the concept. The paper argues that, although people are presented as at the core of the vision, AmI would benefit from a more substantial everyday life perspective that confronts users in their everyday lives with future visions and technologies. Some of the key issues raised by such an approach are identified and discussed.</td>
+</tr>
+<tr id="bib_punie2005future" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{punie2005future,
+  author = {Punie, Yves},
+  title = {The future of ambient intelligence in Europe: the need for more everyday life},
+  journal = {Communications and Strategies},
+  year = {2005},
+  volume = {57},
+  number = {1},
+  pages = {141--165}
+}
+</pre></td>
+</tr>
+<tr id="ramos2008ambient" class="entry">
+	<td>Ramos, C., Augusto, J.C. and Shapiro, D.</td>
+	<td>Ambient intelligence—the next step for artificial intelligence <p class="infolinks">[<a href="javascript:toggleInfo('ramos2008ambient','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('ramos2008ambient','bibtex')">BibTeX</a>]</p></td>
+	<td>2008</td>
+	<td>IEEE Intelligent Systems<br/>Vol. 23(2), pp. 15-18&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/MIS.2008.19">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_ramos2008ambient" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Ambient intelligence (AmI) deals with a new world of ubiquitous computing devices, where physical environments interact intelligently and unobtrusively with people. These environments should be aware of people's needs, customizing requirements and forecasting behaviors. AmI environments can be diverse, such as homes, offices, meeting rooms, schools, hospitals, control centers, vehicles, tourist attractions, stores, sports facilities, and music devices. Artificial intelligence research aims to include more intelligence in AmI environments, allowing better support for humans and access to the essential knowledge for making better decisions when interacting with these environments. This article, which introduces a special issue on AmI, views the area from an artificial intelligence perspective.</td>
+</tr>
+<tr id="bib_ramos2008ambient" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{ramos2008ambient,
+  author = {Ramos, Carlos and Augusto, Juan Carlos and Shapiro, Daniel},
+  title = {Ambient intelligence—the next step for artificial intelligence},
+  journal = {IEEE Intelligent Systems},
+  publisher = {IEEE},
+  year = {2008},
+  volume = {23},
+  number = {2},
+  pages = {15--18},
+  doi = {http://dx.doi.org/10.1109/MIS.2008.19}
+}
+</pre></td>
+</tr>
+<tr id="6399501" class="entry">
+	<td>Rashidi, P. and Mihailidis, A.</td>
+	<td>A Survey on Ambient-Assisted Living Tools for Older Adults <p class="infolinks">[<a href="javascript:toggleInfo('6399501','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('6399501','bibtex')">BibTeX</a>]</p></td>
+	<td>2013</td>
+	<td>IEEE Journal of Biomedical and Health Informatics<br/>Vol. 17(3), pp. 579-590&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/JBHI.2012.2234129">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_6399501" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: In recent years, we have witnessed a rapid surge in assisted living technologies due to a rapidly aging society. The aging population, the increasing cost of formal health care, the caregiver burden, and the importance that the individuals place on living independently, all motivate development of innovative-assisted living technologies for safe and independent aging. In this survey, we will summarize the emergence of `ambient-assisted living” (AAL) tools for older adults based on ambient intelligence paradigm. We will summarize the state-of-the-art AAL technologies, tools, and techniques, and we will look at current and future challenges.</td>
+</tr>
+<tr id="bib_6399501" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{6399501,
+  author = {P. Rashidi and A. Mihailidis},
+  title = {A Survey on Ambient-Assisted Living Tools for Older Adults},
+  journal = {IEEE Journal of Biomedical and Health Informatics},
+  year = {2013},
+  volume = {17},
+  number = {3},
+  pages = {579-590},
+  doi = {http://dx.doi.org/10.1109/JBHI.2012.2234129}
+}
+</pre></td>
+</tr>
+<tr id="1369340" class="entry">
+	<td>Remagnino, P. and Foresti, G.L.</td>
+	<td>Ambient Intelligence: A New Multidisciplinary Paradigm <p class="infolinks">[<a href="javascript:toggleInfo('1369340','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('1369340','bibtex')">BibTeX</a>]</p></td>
+	<td>2005</td>
+	<td>IEEE Transactions on Systems, Man, and Cybernetics - Part A: Systems and Humans<br/>Vol. 35(1), pp. 1-6&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/TSMCA.2004.838456">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_1369340" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Ambient intelligence (AmI) is a new multidisciplinary paradigm rooted in the ideas of NormanAuthor of the Invisible Computer [32]. and Ubiquitous Computing. AmI fosters novel anthropomorphic human–machine models of interaction. In AmI, technologies are deployed to make computers disappear in the background, while the human user moves into the foreground in complete control of the augmented environment. AmI is a user-centric paradigm, it supports a variety of artificial intelligence methods and works pervasively, nonintrusively, and transparently to aid the user. AmI supports and promotes interdisciplinary research encompassing the technological, scientific and artistic fields creating a virtual support for embedded and distributed intelligence.</td>
+</tr>
+<tr id="bib_1369340" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{1369340,
+  author = {P. Remagnino and G. L. Foresti},
+  title = {Ambient Intelligence: A New Multidisciplinary Paradigm},
+  journal = {IEEE Transactions on Systems, Man, and Cybernetics - Part A: Systems and Humans},
+  year = {2005},
+  volume = {35},
+  number = {1},
+  pages = {1-6},
+  doi = {http://dx.doi.org/10.1109/TSMCA.2004.838456}
+}
+</pre></td>
+</tr>
+<tr id="saffiotti2005peis" class="entry">
+	<td>Saffiotti, A. and Broxvall, M.</td>
+	<td>PEIS ecologies: Ambient intelligence meets autonomous robotics <p class="infolinks">[<a href="javascript:toggleInfo('saffiotti2005peis','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('saffiotti2005peis','bibtex')">BibTeX</a>]</p></td>
+	<td>2005</td>
+	<td>Proceedings of the 2005 joint conference on Smart objects and ambient intelligence: innovative context-aware services: usages and technologies, pp. 277-281&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1145/1107548.1107615">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_saffiotti2005peis" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: A common vision in the field of autonomous robotics is to create a skilled robot companion that is able to live in our homes and perform physical tasks to help us in our everyday life. Another vision, coming from the field of ambient intelligence, is to create a network of intelligent home devices that provide us with information, communication, and entertainment. We propose to combine these two visions into the new concept of an ecology of networked Physically Embedded Intelligent Systems (PEIS). In this paper, we define this concept, and illustrate it by describing an experimental system that involves real robotic devices.</td>
+</tr>
+<tr id="bib_saffiotti2005peis" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{saffiotti2005peis,
+  author = {Saffiotti, Alessandro and Broxvall, Mathias},
+  title = {PEIS ecologies: Ambient intelligence meets autonomous robotics},
+  booktitle = {Proceedings of the 2005 joint conference on Smart objects and ambient intelligence: innovative context-aware services: usages and technologies},
+  year = {2005},
+  pages = {277--281},
+  doi = {http://dx.doi.org/10.1145/1107548.1107615}
+}
+</pre></td>
+</tr>
+<tr id="schmidt2005interactive" class="entry">
+	<td>Schmidt, A.</td>
+	<td>Interactive context-aware systems interacting with ambient intelligence <p class="infolinks">[<a href="javascript:toggleInfo('schmidt2005interactive','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('schmidt2005interactive','bibtex')">BibTeX</a>]</p></td>
+	<td>2005</td>
+	<td>Ambient intelligence<br/>Vol. 159&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.109.4530">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_schmidt2005interactive" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Interactive systems have been the dominant computing paradigm over recent years. This paradigm is characterized by the fact that human user and the system communicate and interact explicitly using different modalities. However to come closer to visions of Ambient Intelligence, Calm Computing, Disappearing Computing, and Ubiquitous Computing new forms of interaction are required. Observing humans interacting with each other and new possibilities given by emerging technologies indicate that a new interaction model is needed. In this chapter we present the concept of implicit human computer interaction (iHCI) that takes the users context into account when creating new user interfaces for ambient intelligence. Beyond the model examples are given, application areas are described and basic implementation issues are discussed. Our research leads to a more general discussion on disappearing and invisible user interfaces. In the invisibility dilemma we explain that in many application areas there may be an inherent conflict. The transparent user interface and the added value gained by introducing technology are often opposing goals, especially combined with users that are creative in appropriating their tools.</td>
+</tr>
+<tr id="bib_schmidt2005interactive" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{schmidt2005interactive,
+  author = {Schmidt, Albrecht},
+  title = {Interactive context-aware systems interacting with ambient intelligence},
+  journal = {Ambient intelligence},
+  publisher = {Citeseer},
+  year = {2005},
+  volume = {159},
+  url = {http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.109.4530}
+}
+</pre></td>
+</tr>
+<tr id="schmidt2005interactive" class="entry">
+	<td>Schmidt, A.</td>
+	<td>Interactive context-aware systems interacting with ambient intelligence <p class="infolinks">[<a href="javascript:toggleInfo('schmidt2005interactive','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('schmidt2005interactive','bibtex')">BibTeX</a>]</p></td>
+	<td>2005</td>
+	<td>Ambient intelligence<br/>Vol. 159&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.109.4530">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_schmidt2005interactive" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Interactive systems have been the dominant computing paradigm over recent years. This paradigm is characterized by the fact that human user and the system communicate and interact explicitly using different modalities. However to come closer to visions of Ambient Intelligence, Calm Computing, Disappearing Computing, and Ubiquitous Computing new forms of interaction are required. Observing humans interacting with each other and new possibilities given by emerging technologies indicate that a new interaction model is needed. In this chapter we present the concept of implicit human computer interaction (iHCI) that takes the users context into account when creating new user interfaces for ambient intelligence. Beyond the model examples are given, application areas are described and basic implementation issues are discussed. Our research leads to a more general discussion on disappearing and invisible user interfaces. In the invisibility dilemma we explain that in many application areas there may be an inherent conflict. The transparent user interface and the added value gained by introducing technology are often opposing goals, especially combined with users that are creative in appropriating their tools.</td>
+</tr>
+<tr id="bib_schmidt2005interactive" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{schmidt2005interactive,
+  author = {Schmidt, Albrecht},
+  title = {Interactive context-aware systems interacting with ambient intelligence},
+  journal = {Ambient intelligence},
+  publisher = {Citeseer},
+  year = {2005},
+  volume = {159},
+  url = {http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.109.4530}
+}
+</pre></td>
+</tr>
+<tr id="Shi:2003:SCM:858630.858837" class="entry">
+	<td>Shi, Y., Xie, W., Xu, G., Shi, R., Chen, E., Mao, Y. and Liu, F.</td>
+	<td>The Smart Classroom: Merging Technologies for Seamless Tele-education <p class="infolinks">[<a href="javascript:toggleInfo('Shi:2003:SCM:858630.858837','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Shi:2003:SCM:858630.858837','bibtex')">BibTeX</a>]</p></td>
+	<td>2003</td>
+	<td>IEEE Pervasive Computing<br/>Vol. 2(2), pp. 47-55&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/MPRV.2003.1203753">DOI</a> <a href="http://dx.doi.org/10.1109/MPRV.2003.1203753">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_Shi:2003:SCM:858630.858837" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: The Smart Classroom lets teachers simultaneously instruct remote and local students. It provides a pen-based user interface on a projected display and a computer-vision-based module for selecting remote students using a laser pointer. A speech-capable computer-animated virtual assistant lets the teacher control the presentation of lecture materials and informs the teacher of classroom events. In addition, a context-aware Smart Cameraman module automatically switches between several cameras so the live video for remote students always follows the class focus. The system's underlying software infrastructure, the Smart Platform, has a multi-agent based architecture with a loosely coupled publish-subscribe coordination model and a well-defined wire protocol. The Smart Platform's development interface is fairly simple, so developers can easily understand and use the system.</td>
+</tr>
+<tr id="bib_Shi:2003:SCM:858630.858837" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Shi:2003:SCM:858630.858837,
+  author = {Shi, Yuanchun and Xie, Weikai and Xu, Guangyou and Shi, Runting and Chen, Enyi and Mao, Yanhua and Liu, Fang},
+  title = {The Smart Classroom: Merging Technologies for Seamless Tele-education},
+  journal = {IEEE Pervasive Computing},
+  publisher = {IEEE Educational Activities Department},
+  year = {2003},
+  volume = {2},
+  number = {2},
+  pages = {47--55},
+  url = {http://dx.doi.org/10.1109/MPRV.2003.1203753},
+  doi = {http://dx.doi.org/10.1109/MPRV.2003.1203753}
+}
+</pre></td>
+</tr>
+<tr id="stokic2006ambient" class="entry">
+	<td>Stokic, D., Kirchhoff, U. and Sundmaeker, H.</td>
+	<td>Ambient intelligence in manufacturing industry: control system point of view <p class="infolinks">[<a href="javascript:toggleInfo('stokic2006ambient','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('stokic2006ambient','bibtex')">BibTeX</a>]</p></td>
+	<td>2006</td>
+	<td>The Eighth IASTED International Conference on Control And Applications, pp. 24-26&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://www.actapress.com/Abstract.aspx?paperId=26695">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_stokic2006ambient" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: The paper intends to contribute to understanding and definition of the paradigm of Ambient Intelligence (AmI). The paper specifically focuses upon AmI application in manufacturing industry. The new definition of AmI systems in industry is proposed intending to indicate a clear correlation between AmI systems and ‘classical intelligent control’. The so-called Reference Architecture for AmI systems, serving as a tool for the development of the AmI based control systems, is initially proposed as well. The typical control schemes for AmI based control system (in industry) are defined and analysed intending to identify the key aspects that differentiate the AmI control systems from classical schemes. The analysis has indicated that an increased observability of the whole system and specifically of human operator and his/her environment (ambience) is the key element leading to a more effective control and higher intelligence of AmI systems. The possible applications of the proposed Reference Architecture for different processes and plants in industry are considered.</td>
+</tr>
+<tr id="bib_stokic2006ambient" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{stokic2006ambient,
+  author = {Stokic, Dragan and Kirchhoff, Uwe and Sundmaeker, Harald},
+  title = {Ambient intelligence in manufacturing industry: control system point of view},
+  booktitle = {The Eighth IASTED International Conference on Control And Applications},
+  year = {2006},
+  pages = {24--26},
+  url = {http://www.actapress.com/Abstract.aspx?paperId=26695}
+}
+</pre></td>
+</tr>
+<tr id="5070788" class="entry">
+	<td>Sun, H., Florio, V.D., Gui, N. and Blondia, C.</td>
+	<td>Promises and Challenges of Ambient Assisted Living Systems <p class="infolinks">[<a href="javascript:toggleInfo('5070788','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('5070788','bibtex')">BibTeX</a>]</p></td>
+	<td>2009</td>
+	<td>2009 Sixth International Conference on Information Technology: New Generations, pp. 1201-1207&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1109/ITNG.2009.169">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_5070788" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: The population of elderly people keeps increasing rapidly, which becomes a predominant aspect of our societies. As such, solutions both efficacious and cost-effective need to be sought. Ambient assisted living (AAL) is a new approach which promises to address the needs from elderly people. Ambient intelligence technologies are widely developed in this domain aiming to construct safe environments around assisted peoples and help them maintain independent living. However, there are still many fundamental issues in AAL that remain open. Most of the current efforts still do not fully express the power of human being, and the importance of social connections and social activities is less noticed. Our conjecture is that such features are fundamental prerequisites towards truly effective AAL services. This paper reviews the current status of researches on AAL, discusses the promises and possible advantages of AAL, and also indicates the challenges we must meet in order to develop practical and efficient AAL systems for elderly people. In this paper, we also propose an approach to construct effective home-care system for the elderly people.</td>
+</tr>
+<tr id="bib_5070788" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{5070788,
+  author = {H. Sun and V. D. Florio and N. Gui and C. Blondia},
+  title = {Promises and Challenges of Ambient Assisted Living Systems},
+  booktitle = {2009 Sixth International Conference on Information Technology: New Generations},
+  year = {2009},
+  pages = {1201-1207},
+  doi = {http://dx.doi.org/10.1109/ITNG.2009.169}
+}
+</pre></td>
+</tr>
+<tr id="tapia2010agents" class="entry">
+	<td>Tapia, D.I., Abraham, A., Corchado, J.M. and Alonso, R.S.</td>
+	<td>Agents and ambient intelligence: case studies <p class="infolinks">[<a href="javascript:toggleInfo('tapia2010agents','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('tapia2010agents','bibtex')">BibTeX</a>]</p></td>
+	<td>2010</td>
+	<td>Journal of Ambient Intelligence and Humanized Computing<br/>Vol. 1(2), pp. 85-93&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1007/s12652-009-0006-2">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_tapia2010agents" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: The significance that ambient intelligence (AmI) has acquired in recent years requires the development of innovative solutions. In this sense, the development of AmI-based systems requires the creation of increasingly complex and flexible applications. One of the most important aspects in AmI is the use of context-aware technologies in order to perceive stimuli from both the users and the environment. Thus, the information obtained must be managed by intelligent and self-adaptable technologies in order to provide an adequate interaction between the users and their environment. Agents and multiagent systems are one of these technologies. The agents have characteristics such as autonomy, reasoning, reactivity, social abilities and pro-activity which make them appropriate for developing dynamic and distributed systems based on AmI, as they possess the capability of adapting themselves to the users and environmental characteristics. This paper presents several case studies where agents and context-aware technologies have been implemented to build AmI-based systems. These case studies expand the possibilities of AmI and get closer to its vision.</td>
+</tr>
+<tr id="bib_tapia2010agents" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{tapia2010agents,
+  author = {Tapia, Dante I and Abraham, Ajith and Corchado, Juan M and Alonso, Ricardo S},
+  title = {Agents and ambient intelligence: case studies},
+  journal = {Journal of Ambient Intelligence and Humanized Computing},
+  publisher = {Springer},
+  year = {2010},
+  volume = {1},
+  number = {2},
+  pages = {85--93},
+  doi = {http://dx.doi.org/10.1007/s12652-009-0006-2}
+}
+</pre></td>
+</tr>
+<tr id="4475858" class="entry">
+	<td>Vainio, A.M., Valtonen, M. and Vanhala, J.</td>
+	<td>Proactive Fuzzy Control and Adaptation Methods for Smart Homes <p class="infolinks">[<a href="javascript:toggleInfo('4475858','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('4475858','bibtex')">BibTeX</a>]</p></td>
+	<td>2008</td>
+	<td>IEEE Intelligent Systems<br/>Vol. 23(2), pp. 42-49&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/MIS.2008.33">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_4475858" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Proactive, context-aware computing isn't new. In 2000, David Tennenhouse called for a change in the boundary between the physical and virtual worlds. He identified proactive computing as an alternative to interactive computing and defined how future systems should become more involved with the real world. He also considered context-aware control systems with online adaptation especially promising. Today, ambient-intelligence researchers show increasing interest in both proactive applications and context-aware applications. Using different context-recognition methods, researchers can easily gather application-specific information from the environment and enable context-triggered actions. According to Hee Eon Byun and Keith Cheverst, a context-aware home can serve its inhabitants more flexibly and adaptively than an ordinary home. They also claim that proactive systems can be built using machine-learning algorithms with context recognition. In addition to context recognition, adaptivity is essential in intelligent environments. In terms of computing systems, the environment can adjust itself using adaptation mechanisms to comply with user preferences; it can become unobtrusive and better support user activities. A home adapting to its inhabitants' living style is much more convenient than a user adapting to the home's behavior. In this article, we show how to develop a proactive, adaptive, fuzzy home-control system, present the algorithm we used for adaptation, and evaluate the test results we obtained.</td>
+</tr>
+<tr id="bib_4475858" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{4475858,
+  author = {A. M. Vainio and M. Valtonen and J. Vanhala},
+  title = {Proactive Fuzzy Control and Adaptation Methods for Smart Homes},
+  journal = {IEEE Intelligent Systems},
+  year = {2008},
+  volume = {23},
+  number = {2},
+  pages = {42-49},
+  doi = {http://dx.doi.org/10.1109/MIS.2008.33}
+}
+</pre></td>
+</tr>
+</tbody>
+</table>
+<footer>
+ <small>Created by <a href="http://jabref.sourceforge.net">JabRef</a> on 23/02/2017.</small>
+</footer>
+<!-- file generated by JabRef -->
+</body>
+</html>

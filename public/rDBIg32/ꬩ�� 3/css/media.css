@@ -1,0 +1,92 @@
+@charset "utf-8";
+/* CSS Document */
+/*md + big screen*/
+@media (min-width:992px ) {
+	/*start fremwork*/
+	  
+	.container  {width: 100% }
+	/*start nav*/
+ 
+ header .dropdown-menu { min-width:600px ; left:-200px ; text-align:center}
+ header .dropdown-menu>li>a {   display:inline-block ; float:left; clear:none 
+ ;     padding: 3px 42px  ; margin-bottom:10px}
+ .uldaf li { display: block    ; padding-left:23px ; padding-right:20px ; margin-bottom:10px   }
+ header .uldaf { margin:4px     } 
+ header .uldaf ul  { border-right:1px solid #ddd  ; padding:3px }
+ header .uldaf ul:first-child{ float:left ; margin:0px 10px 0px 5px  }
+ header .uldaf ul:nth-child(2){ float:left ;  margin:0px 5px 0px 5px}
+ header .uldaf ul:nth-child(3){ float:left ; margin:0px 5px 0px 5px }
+ header .uldaf ul:last-child{ float:left ;  margin:0px 5px 0px 0px }
+ header .navbar-nav>li>a {
+    padding-top: 23px;
+    padding-bottom: 21px
+	; font-size:20px
+	 }
+	 		header  .navbar-form .form-control , header .searchicon {  margin-top:10px}
+  .dropdown-menu>li>a { color:#1DA1F2}
+  	   header .navbar-form .form-control { width:170px}
+	   	 header  .navbar-inverse .navbar-brand { font-size:30px  ; letter-spacing:2px ; 
+		    padding: 23px 15px;}
+     /*start proudct*/
+	 .product img:hover { transform:scale(1.1)}
+	
+	     /* icon awsome 1*/
+	      
+		.icon .row > div {border-left:1px  solid #0064FF} 
+		/*start slider*/
+	   	 .item img {  max-height:450px ; min-height:450px ; min-width:100%}
+		 /* start information */
+		 .information .row > div { min-height:500px ; border-width:0px 1px 0px 0px  ; border-style:solid
+		  ; border-color:#0074FF }
+		  /* start footer */
+	 footer .row  > div
+	  { border-width:0px 1px 0px 0px ; border-style:solid ; border-color:#B7B7B7 ; min-height:300px}
+
+		 
+ }
+ /*sm  + md screen*/
+ @media (min-width: 0px) and (max-width:991px){
+	 
+	 header .uldaf ul { display:none}
+	 header .navbar-inverse .navbar-nav .open .dropdown-menu>li>a 
+	 { color:#fff ; margin-bottom:5px}
+	 .ss { margin:0px ; display:inline-block ; float:left   }
+	  header .nav>li>a { padding:15px 8px} 
+ 
+	 }
+	 /*sm screen*/
+	  @media (min-width: 768px) and (max-width:991px){
+   .container {
+    width: 100%
+   }
+   .product img:hover { transform:scale(1.1)}
+   header .navbar-form  , header .searchicon {
+   
+	margin-bottom: 1px
+} header .navbar-form {
+ padding-top: 2px;}
+header .navbar-form .form-control { width:160px}
+header .navbar-inverse .navbar-nav .open .dropdown-menu>li>a 
+	 { color:#1DA1F2 ; margin-bottom:5px}
+	 .icon .row > div { border-width:1px 1px 0px 0px ; border-style:solid; border-color:#0064FF} 
+	 .item img {  max-height:300px ; min-height:300px ; min-width:100%}
+	 .twoimage .upimage .button { width:60% ; margin-left:20% ; margin-bottom:10px}
+	 
+	 footer .row > div
+	  { border-width:0px 0px 1px 0px ; border-style:solid ; border-color:#B7B7B7 ; min-height:200px}
+	   
+}
+ /*xs screen*/
+@media (max-width:767px)
+{
+		 .icon .row > div { border-width:1px 1px 0px 0px ; border-style:solid; border-color:#0064FF}
+		 header .form-control { display:inline-block ; width:80%} 
+		 header .btn { margin-bottom:2px }
+		 .item img { max-height:300px; min-height:300px ; min-width:100%}
+		 .twoimage .upimage h2 { margin-left:0px }
+		 .twoimage .upimage .button { width:90% ; margin-left:5%}
+		 footer .row div
+	  { border-width:0px 0px 1px 0px ; border-style:solid ; border-color:#B7B7B7}
+	}
+	
+	 

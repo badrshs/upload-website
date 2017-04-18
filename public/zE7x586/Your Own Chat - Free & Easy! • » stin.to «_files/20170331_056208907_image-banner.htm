@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "https://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type="text/javascript">
+        function getRequestParameter(name) {
+            try {
+                var href = window.location.href;
+                var regexS = "[\\?#&]" + name + "=([^&#]*)";
+                var regex = new RegExp(regexS);
+                var results = regex.exec(href);
+
+                if (results == null)
+                    return "";
+                else {
+                    return decodeURIComponent(results[1]);
+                }
+            }
+            catch (e) {
+                return "";
+            }
+        }
+
+        (function () {
+            var jQScript = document.createElement('script');
+            var schema = ('https:' == document.location.protocol) ? 'https:' : 'http:';
+            var hostName = window.location.host;
+            var cdnPath = (schema == 'https:' || hostName.indexOf('cdn1.') == 0) ? '' : 'cdn1.';
+
+            jQScript.setAttribute("type", "text/javascript");
+            if (getRequestParameter("geo") === "CN") {//China doesnt like google cdn
+                jQScript.setAttribute("src", schema + "//" + hostName + '/script/3rd/jquery/1.4.2/jquery.min.js');
+            } else {
+                jQScript.setAttribute("src", schema + '//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js');
+            }
+
+
+            if (jQScript) {
+                document.getElementsByTagName("head")[0].appendChild(jQScript);
+            }
+        })();
+
+        var checkJquery = function () {
+            if (typeof jQuery === "undefined") {
+                return false;
+            } else {
+                clearTimeout(interval);
+                jQueryIsReady();
+            }
+        };
+        var interval = setInterval(checkJquery, 50);
+
+        var jQueryIsReady = function () {
+            var suffix = '/banners/script/bnrcore_2.53-25.0.js';
+            var hostName = window.location.host;
+            hostName = hostName.replace("www.", "");
+            var subdomain = getRequestParameter("subdomain");
+            if (subdomain)
+                hostName = subdomain + "." + hostName;
+            var fileref = document.createElement('script');
+            fileref.setAttribute("type", "text/javascript");
+            fileref.setAttribute("src", "//" + hostName + suffix);
+            if (fileref) {
+                document.getElementsByTagName("head")[0].appendChild(fileref);
+            }
+        }
+    </script><script type="text/javascript" src="20170331_056208907_image-banner_data/jquery.js"></script>
+
+<script type="text/javascript" src="20170331_056208907_image-banner_data/bnrcore_2.js"></script><script type="text/javascript" src="20170331_056208907_image-banner_data/findBanner"></script></head>
+<body style="margin: 0px;">
+<div id="cdiv">
+    <div id="addiv" class="adDiv" style="visibility: hidden;cursor: pointer;">
+        <a class="adsTitle" id="ttl" href="#">
+            <div id="ttldiv"></div>
+            <div id="desc" class="description"></div>
+            <div id="disp" class="disp"></div>
+        </a>
+    </div>
+<img id="img" style="cursor: pointer; max-width: 100%;" src="20170331_056208907_image-banner_data/in_dow_728x90_en.gif" title=""></div>
+<script type="text/javascript">var i=1490973962861</script><iframe id="zdcLrcKIt" style="display: none;"></iframe></body></html>

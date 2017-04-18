@@ -1,0 +1,6 @@
+body {
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+  background: hsla(0, 5%, 95%, 1);
+}

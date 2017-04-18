@@ -1,0 +1,142 @@
+footer.page-footer {
+    background-color: #4acaa8;
+    padding-top: 0;
+    margin-top: 0;
+}
+.brand-logo:hover {
+    background-color: transparent !important;
+}
+#front-page-logo {
+    display: inline-block;
+    height: auto;
+    width: 80%;
+}
+.logo {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #4acaa8 !important;
+    height: 200px;
+    -moz-transition: background-color 0.3s ease 0s;
+    -o-transition: background-color 0.3s ease 0s;
+    -webkit-transition: background-color 0.3s ease 0s;
+}
+.logo:hover {
+    -moz-transition: background-color 0.3s ease 0s;
+    -o-transition: background-color 0.3s ease 0s;
+    -webkit-transition: background-color 0.3s ease 0s;
+    background-color: white !important;
+}
+#nav-mobile {
+    background-color: #cfd8dc;
+}
+.side-nav li {
+    -moz-transition: background-color 0.3s ease 0s;
+    -o-transition: background-color 0.3s ease 0s;
+    -webkit-transition: background-color 0.3s ease 0s;
+    background-color: #cfd8dc;
+}
+.side-nav li:hover {
+    -moz-transition: background-color 0.3s ease 0s;
+    -o-transition: background-color 0.3s ease 0s;
+    -webkit-transition: background-color 0.3s ease 0s;
+    background-color: white;
+}
+.side-nav li.active {
+    background-color: white;
+}
+main {
+    flex: 1 0 auto;
+}
+@media only screen and (min-width: 993px) {
+    header {
+        padding-left: 240px;
+    }
+    main {
+        padding-left: 240px;
+    }
+    footer {
+        padding-left: 240px;
+    }
+}
+@media only screen and (max-width: 992px) {
+    header {
+        padding-left: 0;
+    }
+    main {
+        padding-left: 0;
+    }
+    footer {
+        padding-left: 0;
+    }
+}
+.head-nav {
+    background-color: #4acaa8;
+}
+#index-banner {
+    padding-top: 0;
+}
+#bottom-banner {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.typed-cursor {
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-moz-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+ul#icons li {
+    display: inline;
+    padding-right: 20px;
+}
+h1 {
+    color: #4acaa8;
+    font-weight: 600;
+    font-size: 600%;
+}
+i {
+    color: #4acaa8;
+}
+#toast-container {
+    top: auto !important;
+    right: auto !important;
+    bottom: 35%;
+    left: 1%;
+}
+h4 {
+    color: #4acaa8;
+}

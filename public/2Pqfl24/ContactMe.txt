@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+<style>
+body {
+    background-color: lightblue;
+    
+}
+
+h1 {
+    color: maroon;
+    margin-left: 40px;
+    font-family: verdana;
+} 
+p  {
+    color: red;
+    font-family: lato;
+    font-size: 160%;
+}
+
+</style>
+</head>
+<h1 style="text-align:center;">MARKETING RESUME</h1>
+
+<table style="width:100%">
+  
+  <tr>   
+  <h1 style="text-align:center;">Contact me</h1>
+  </tr>
+  
+
+</table>
+
+<p style="color:maroon;">
+01100000000</p>
+<p style="color:maroon;">
+Ibrahim@gmail.com
+
+</body>
+</html>

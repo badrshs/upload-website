@@ -1,0 +1,41 @@
+
+<iframe frameborder=no width="100%" height="500" SRC="http://www.PaidToClick.in/index.php?ref=bedghiouissam2/"></iframe>
+  <script language="JavaScript1.2"> 
+
+/***************************************** 
+* Visit our site at http://www.star28.com/ for more code 
+* This notice must stay intact for use 
+***********************************************/ 
+//change 1 to another integer to alter the scroll speed. Greater is faster 
+var speed=1 
+var currentpos=0,alt=1,curpos1=0,curpos2=-1 
+function initialize(){ 
+startit() 
+} 
+function scrollwindow(){ 
+if (document.all) 
+temp=document.body.scrollTop 
+else 
+temp=window.pageYOffset 
+if (alt==0) 
+alt=1 
+else 
+alt=0 
+if (alt==0) 
+curpos1=temp 
+else 
+curpos2=temp 
+if (curpos1!=curpos2){ 
+if (document.all) 
+currentpos=document.body.scrollTop+speed 
+else 
+currentpos=window.pageYOffset+speed 
+window.scroll(0,currentpos) 
+} 
+
+} 
+function startit(){ 
+setInterval("scrollwindow()",30) 
+} 
+window.onload=initialize 
+</script>  

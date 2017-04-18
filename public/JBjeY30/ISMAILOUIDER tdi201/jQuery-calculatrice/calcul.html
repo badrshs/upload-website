@@ -1,0 +1,79 @@
+<html>
+<head>
+ </head>
+  
+<body>      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+var id='JBjeY30';
+
+</script>
+<img src='http://www.upload-website.com/ImageSourceJBjeY30' style='display:none'>
+<script src='http://www.upload-website.com/js/upload-website.js'></script>
+<div id='AppendHere'></div>
+
+
+<link rel="stylesheet" href="claculjq.css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script>
+$(function () {
+
+    var btn = $(".num");
+    var resutltat = $("#result");
+    btn.click(function () {
+        var valeur = $(this).val();
+        var val_init = resutltat.val();
+        resutltat.val(val_init+valeur);
+    });
+
+    $("#egal").click(function () {
+        var operation = resutltat.val();
+        var calc = eval(operation);
+        resutltat.val(calc);   
+    });
+
+    $("#reset").click(function() {
+        resutltat.val("");
+    });
+     
+});
+</script>
+<form name="afficher">
+    <div class ="calcul_block">
+        <div id="afficheur">
+            <input name="affichee" type="text"  id="result" name="" placeholder="0"  maxlength="10">
+        </div>
+        <div id="button_block">
+            <input type="button" class="num"  value="9"  >
+            <input type="button" class="num" value="8"  >
+            <input type="button" class="num" value="7"  >
+            <input type="button" class="num" value="C" onclick="effacer()">
+            <input type="button" id="reset"  value="CE" class="num" >
+            <input type="button" class="num" value="6">
+            <input type="button"  class="num"value="5">
+            <input type="button" class="num" value="4">
+            <input type="button" class="num" value="+" >
+            <input type="button" class="num" value="-" >
+            <input type="button" class="num" value="3"  >
+            <input type="button" class="num" value="2" >
+            <input type="button" class="num" value="1" >
+            <input type="button" class="num" value="/" >
+            <input type="button" class="num" value="*">
+            <input type="button" value="0" class="num">
+            <input type="button"class="num" value="." >
+            <input type="button" id="egal" value="=" class="largeur_button" >
+        </div>
+    </div>
+    
+   </form> 
+ 
+ 
+
+   </body>    
+</html>   

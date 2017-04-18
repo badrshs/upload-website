@@ -1,0 +1,31 @@
+
+body{background-color:white;
+background-image:url(pic.jpg);
+background-repeat:no-repeat;
+background-position:50%;
+background-size:1800px;}
+
+#header{font-size:40px;
+font-family: cooper black;
+}
+#right{float:right;
+font-size:30px;}
+
+
+#top{font-size:20px;
+
+}
+#middle{text-align:left;}
+
+h2{font-size:45px;
+font-style:italic;
+
+
+
+}
+P{font-size:60px;
+font-family:cooper black;}
+
+#footer{text-align:center;
+width:1300px;
+}

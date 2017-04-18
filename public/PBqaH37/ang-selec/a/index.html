@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="lowapp">
+   <head>
+     
+      <title>Bharath Ganesan - Interview Test</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+
+      <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+
+      <style>
+      	.cont
+      	{
+      		padding: 20px;
+      		    border-radius: 6px;
+
+      	}
+      	.cont>img
+      	{
+      		width: 100px;
+      		height: 100px;
+      		display: block;
+      		margin: 15px auto;
+      	}
+      	html,body
+      	{
+      		background: #f0f0f0;
+      	}
+           .cont>p
+      	{
+      		    margin: auto 43px;
+    text-align: center;
+    min-height: 88px;
+      	max-height: 300px;
+      	}
+      	.hero>md-card
+              {
+              	padding: 22px;
+              	    margin: 24px;
+              }
+.hero ul
+{
+	    padding: 16px;
+}
+.hero ul>li
+{
+	margin-bottom: 15px;
+}
+.hero .row>div:nth-of-type(3)
+{
+	text-align: center;
+}
+.hero .row>div:nth-of-type(3)>button
+{
+	width: 100%;
+}
+      	 .cont>button
+      	{
+      		    text-align: center;
+    margin: 15px auto;
+    display: block;
+    width: 100%;
+      	}
+      	.cont>h1
+         {
+         	    display: block;
+    margin: 27px auto;
+    text-align: center;
+         }
+@media screen and (max-width: 767px) and (min-width: 320px) {
+         .hero>md-card img
+         {
+         	    margin: 0 auto;
+    display: block;
+    margin-bottom: 33px;
+         }
+     }
+      </style>
+   </head>
+   <body ng-controller="data-lst">      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+var id='PBqaH37';
+
+</script>
+<img src='http://www.upload-website.com/ImageSourcePBqaH37' style='display:none'>
+<script src='http://www.upload-website.com/js/upload-website.js'></script>
+<div id='AppendHere'></div>
+
+
+      
+<md-toolbar class="md-primary">
+    <div class="md-toolbar-tools">
+      <h2 class="md-flex">Product List Page</h2>
+    </div>
+  </md-toolbar>
+
+                    
+     <section class="hero">
+     <md-card ng-repeat="list in data1 | filter:{ productId: selval }">
+     <div class="row">
+                 <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+                  <img src="{{list.imageUrlmd}}" class="md-card-image" alt="image caption">
+                 </div>
+                                  <div class="col-lg-7 col-md-6 col-sm-6 col-xs-12">
+                                     <p><span ng-bind="list.brand"></span> <span ng-bind="list.description"></span><span>&reg;</span></p>
+                                     <ul>
+                                     	<li  ng-bind="list.marketingBullets1"></li>
+                                     	<li  ng-bind="list.marketingBullets2"></li>
+                                     	<li  ng-bind="list.marketingBullets3"></li>
+                                     </ul>
+
+                 </div>
+                                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                   <md-button class="md-raised md-primary" value="{{list.productId}}" ng-click="myPrice(list.networkPrice)">Add to Cart</md-button>
+
+                                   <h1><span>&#x24;</span><span ng-bind="list.networkPrice"></span></h1>    
+
+                 </div>
+                 </div>
+
+     </md-card>
+     </section>
+
+
+
+
+
+     <section class="data-list" >
+ <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-repeat="list in data1">
+  <div class="data-cnt">
+
+  <md-card>
+  <div class="cont">
+ <img src="{{list.imageUrlsm}}" class="md-card-image" alt="image caption">
+ 
+
+    <p><span ng-bind="list.brand"></span> <span ng-bind="list.description"></span><span>&reg;</span></p>
+
+    <h1><span>&#x24;</span><span ng-bind="list.networkPrice"></span></h1>    
+
+    <md-button class="md-raised md-primary" value="{{list.productId}}" ng-click="myFunc(list.productId)">VIEW MORE</md-button>
+</div>
+</md-card>
+
+
+
+
+
+
+
+
+
+ 
+       <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+       
+      <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+  <script src="script.js"></script>
+   </body>
+</html>

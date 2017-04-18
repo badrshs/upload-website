@@ -1,0 +1,122 @@
+/*========== Menu styles ==========*/
+
+.menu-side{
+	background-color: @white;
+	-webkit-box-shadow: 1px 0 4px rgba(0,0,0,0.2), 6px 0 0 @white, 7px 0 4px rgba(0,0,0,0.2), 13px 0 0 @white, 14px 0 4px rgba(0,0,0,0.2);
+	box-shadow: 1px 0 4px rgba(0,0,0,0.2), 6px 0 0 @white, 7px 0 4px rgba(0,0,0,0.2), 13px 0 0 @white, 14px 0 4px rgba(0,0,0,0.2);
+	position: absolute;
+	top: 0;
+	left:0;
+	bottom: 0;
+	margin-left: 0 !important;
+	min-height: 600px;
+}
+
+.her-and-him{
+	margin-top: 2em;
+	text-transform: none;
+	text-align: center;
+	background: url(../img/logo_glam.png) top center no-repeat;
+	padding-top: 2em;
+
+	> a{
+		font-family: @glam;
+		letter-spacing: 5px;
+		color: @text-color;
+
+		> span{
+			display: block;
+			width: 100%;
+		}
+	}
+
+}
+.ribbon-event{
+	padding: 0 4em;
+	position: relative;
+	text-align: center;
+
+	> h3{
+		background: @black;
+		font-family: fixedsys, consolas, monospace;
+		color: @white;
+		font-size: 16px;
+		line-height: 21/16em;
+		padding: 21/16em 0;
+		position: relative;
+		z-index: 10;
+		margin: 0;
+
+		+ p{
+			text-transform: uppercase;
+			-webkit-text-stroke: 0.5px;
+		}
+
+		&:before, &:after{
+			content: '';
+			display: block;
+			width: 0;
+			height: 0;
+			border-top: 20px solid transparent;
+			position: absolute;
+			top: -20px;
+			z-index: 0;
+		}
+
+		&:before{
+			border-right: 20px solid @violet;
+			left: 0px;
+		}
+
+		&:after{
+			border-left: 20px solid @violet;
+			right: 0px;
+		}
+	}
+
+	&:before, &:after{
+		content: '';
+		display: block;
+		width: 0;
+		height: 0;
+		border: 30px solid @black;
+		position: absolute;
+		top: -20px;
+		z-index: 0;
+	}
+
+	&:before{
+		border-left: 30px solid transparent;
+		left: 15px;
+	}
+
+	&:after{
+		border-right: 30px solid transparent;
+		right: 15px;
+	}
+}
+
+.main-navigation{
+	margin-top: 3em;
+	text-align: center;
+	
+	> ul > li{
+		margin-bottom: 1.5em;
+
+		a{
+			color: @text-color;
+			text-transform: uppercase;
+			-webkit-text-stroke: 0.5px;
+
+			&:hover{
+				color: @violet;
+			}
+		 }
+	}
+	 
+}
+.current-menu-item{
+	> a{
+		color: @violet !important;
+	}
+}

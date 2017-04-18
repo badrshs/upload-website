@@ -1,0 +1,147 @@
+/*
+Project Name : Care Up.
+Owners : Mostafa Ehab , Omar Yasser.
+Start in : 8/9/2016. End in : --/--/--
+*/
+
+/*Start Main Rulez*/
+body{
+    height:600px;
+	background: #F1F1F1;
+}
+
+.container{width:1249px; margin: auto;}
+/*End Main Rulez*/
+
+/*Start Header*/
+
+.header .slid .nav {
+    background-color: rgba(0,172,219,0.7);
+    overflow: hidden;
+	width: 100%;}
+
+.header .slid .nav ul li.active {
+    color:#fff;
+    border:#fff solid 2px;
+    padding: 8px;
+    transition: all .3s ease-in-out;
+}
+
+.header .slid .nav ul{
+    list-style: none;
+    float: right;
+    padding-right: 20px;
+}
+.header .slid .nav ul li{
+    float: right;
+    text-align: right;
+    padding: 10px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.header .slid .nav ul li.active:hover{
+    border:#ccc solid 2px;
+}
+
+.header .slid .nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    transition: all .3s ease-in-out;
+}
+
+.header .slid .nav ul li a:hover{
+    color:#ccc;
+}
+
+.header .slid .nav .login{
+    float:left;
+	background: #7AC70C;
+    padding: 10px 15px 10px 15px;
+	text-decoration: none;
+	color: white;
+	margin:15px 8px;
+}
+
+.header .slid .nav .reg{
+    float:left;
+	background: #232D36;
+    padding: 10px 15px 10px 15px;
+	text-decoration: none;
+	color: white;
+	margin-top:15px;
+}
+/*Log in form*/
+
+.login-form{
+	height: 300px;
+	width: 500px;
+	border: solid 2px #ccc;
+	padding: 10px;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background: white;
+}
+
+.login-form input{
+	
+	display: block;
+	margin: 0 auto;
+	margin-top: 10px;
+	padding: 10px;
+	width: 300px;
+	direction: rtl;
+}
+
+.login-form .box{
+	
+	display: inline;
+	float: right;
+}
+
+.login-form .sub{
+	
+	width: 130px;
+	float: right;
+	margin-right: 39px;
+	background-color: #7AC70C;
+	border: none;
+	color: white;
+}
+
+
+/*Start Footer*/
+.footer {
+    background-color: #232D36;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.footer img{
+    width: 100px;
+    height: 100px;
+    
+}
+
+.footer i {
+    color: #fff;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+
+.footer .fb:hover{
+    color: #3B5998;
+}
+.footer .tw:hover{
+    color: #62A9E0;
+}
+.footer .go:hover{
+    color: #DC4937;
+}
+.footer p{
+    color: #fff;
+}
+/*End Footer*/

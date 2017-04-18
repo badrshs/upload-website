@@ -1,0 +1,150 @@
+body{
+   background-color: #78909C;
+     font-family: 'spirax';
+}
+.handle{
+    width: 50%;
+    margin: 8% auto 0px auto;
+    text-align: center
+}
+.loading{
+    height: 80px;
+    width: 65px;
+    background-color: #26A69A;
+    display: inline-block;;
+    margin: 8px;
+    border-radius: 5px;
+    box-shadow: 1px;
+    box-shadow: 0 15px 10px -6px #777;
+}
+h1{
+    width: 28%;
+    font-size: 65px;
+    color: white;
+    margin: 10% auto 0px auto;
+    
+}
+h2{
+    color: white;
+    font-size: 30px;
+}
+.l{
+    animation-name: first;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-timing-function: 5s;
+    
+}
+.o{
+    animation-name: two;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-delay: 0.7s
+}
+.a{
+    animation-name: three;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-delay: 1.4s
+}
+.d{
+    animation-name: four;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-delay: 2.1s
+}
+.i{
+    animation-name: five;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-delay: 2.8s;
+}
+.n{
+    animation-name: six;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-delay: 3.5s
+}
+.g{
+    animation-name: seven;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-delay: 4.2s;
+}
+@keyframes first{
+    0%{
+        transform: scale(1)
+    }
+    10%{
+        transform: scale(1.5)
+    }
+    20%{
+        transform: scale(1)
+    }
+}
+@keyframes two{
+    0%{
+        transform: scale(1)
+    }
+    10%{
+        transform: scale(1.5)
+    }
+    20%{
+        transform: scale(1)
+    }
+}
+@keyframes three{
+    0%{
+        transform: scale(1)
+    }
+    10%{
+        transform: scale(1.5)
+    }
+    20%{
+        transform: scale(1)
+    }
+}
+@keyframes four{
+    0%{
+        transform: scale(1)
+    }
+    10%{
+        transform: scale(1.5)
+    }
+    20%{
+        transform: scale(1)
+    }
+}
+@keyframes five{
+    0%{
+        transform: scale(1)
+    }
+    10%{
+        transform: scale(1.5)
+    }
+    20%{
+        transform: scale(1)
+    }
+}
+@keyframes six{
+    0%{
+        transform: scale(1)
+    }
+    10%{
+        transform: scale(1.5)
+    }
+    20%{
+        transform: scale(1)
+    }
+}
+@keyframes seven{
+    0%{
+        transform: scale(1)
+    }
+    10%{
+        transform: scale(1.5)
+    }
+    20%{
+        transform: scale(1)
+    }
+}

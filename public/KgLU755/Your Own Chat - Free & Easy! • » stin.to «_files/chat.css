@@ -1,0 +1,428 @@
+@import url(//fonts.googleapis.com/css?family=Righteous);
+
+@font-face {
+    font-family: emoji;
+    src: url(../fonts/emojione-svg.otf) format("opentype");
+}
+
+.chat-header {
+    background: #0c4497 linear-gradient(#0b3d88, #0e4ead);
+    height: 80px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.chat-header-content {
+    Xwidth: 910px;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+#chat-content {
+    Xbackground-color: blue;
+    Xheight: 100%;
+    height: calc(100vh - 80px - 70px - 90px - 2em);
+}
+
+#chat-footer {
+    Xbackground-color: red;
+    Xbackground: rgba(0, 0, 0, .1);
+    height: 70px;
+}
+
+#right {
+    width: 200px;
+    float: right;
+    overflow-y: auto;
+}
+
+#left {
+    Xmargin-right: 200px;
+    /* Change this to whatever the width of your left column is*/
+    overflow-y: hidden;
+    height: 100%;
+}
+
+.clear {
+    clear: both;
+}
+
+#messages {
+    margin: 2em;
+    background: #fff;
+    border: 1px solid #aaa;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, .3);
+    overflow-y: scroll;
+    height: 85%;
+    height: calc(100% - 4em);
+}
+
+#users {
+    margin: 2em;
+    margin-left: 0em;
+    background: #fff;
+    border: 1px solid #aaa;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, .3);
+    overflow-y: scroll;
+}
+
+#chat-content, #chat-footer, #chat-header-content {
+    max-width: 1380px;
+    min-height: 50px;
+    margin: auto;
+}
+
+#chat-bar {
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(to bottom, rgba(149, 149, 149, 1) 0%, rgba(13, 13, 13, 1) 46%, rgba(1, 1, 1, 1) 50%, rgba(10, 10, 10, 1) 53%, rgba(56, 56, 56, 1) 87%, rgba(27, 27, 27, 1) 100%);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, .3);
+    border: 1px solid #333333;
+    border-radius: 5px;
+    margin: 0 2em;
+    Xmargin-right: calc(2em + 200px - 17px);
+    margin-right: 2em;
+    padding: 8px;
+}
+
+#chat-bar-input {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: row;
+}
+
+#chat-bar-input-submit {
+    flex: 0 0 auto;
+}
+
+#chat-bar-buttons {
+    flex: 0 0 auto;
+    margin-left: 2em;
+}
+
+input#msg {
+    font-family: emoji, sans-serif;
+
+    flex: 1 1 auto;
+
+    display: inline-block;
+    /*width: 50%;*/
+    /*max-width: 800px;*/
+    height: 32px;
+    padding: 4px;
+    margin: 0;
+    Xline-height: 18px;
+
+    border-radius: 3px;
+
+    font-size: 15px;
+    color: #009;
+
+    border: none;
+    outline: none;
+}
+
+.chat-bar-button {
+    margin: 0 2px;
+    width: 32px;
+    height: 32px;
+    Xbackground: #fff;
+
+    display: inline-block;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 1px rgba(0, 0, 0, .1), inset 0 -5px 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+
+    color: #777;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .8);
+    background: #fff;
+
+    vertical-align: top;
+    Xfloat: right;
+
+    line-height: 32px;
+    text-align: center;
+    font-size: 24px;
+    border: 1px solid #ddd;
+}
+
+.chat-bar-button.pressed, .chat-bar-button.pressed:hover {
+    box-shadow: inset 0 1px 4px 1px rgba(0, 0, 0, .5);
+    background: #aaa;
+    color: #333;
+    line-height: 30px;
+    text-align: center;
+    font-size: 22px;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, .8);
+    border: 1px solid #000;
+}
+
+.chat-bar-button:hover {
+    background: #fff;
+    border: 1px solid #fff;
+}
+
+.emojione {
+    /* Emoji Sizing */
+    font-size: inherit;
+    height: 3ex;
+    width: 3.1ex;
+    min-height: 20px;
+    min-width: 20px;
+
+    /* Inline alignment adjust the margins  */
+    display: inline-block;
+    margin: -.2ex .15em .2ex;
+    line-height: normal;
+    vertical-align: middle;
+}
+
+img.emojione {
+    /* prevent img stretch */
+    width: auto;
+}
+
+#users h1 {
+    margin: 0 0 .1em 0;
+    padding: .2em;
+    background: #eee;
+    font-size: 100%;
+    border-bottom: 1px solid #999;
+    color: #000;
+    line-height: normal;
+}
+
+#users ul {
+    list-style: none outside;
+    margin: 0;
+    padding: 0;
+}
+
+#users li {
+    list-style: none outside;
+    margin: 0;
+    padding: 0.125em 0;
+    padding-left: .5em;
+    white-space: nowrap;
+}
+
+#users li.inactive {
+    text-decoration: line-through;
+}
+
+.name {
+    width: 100px;
+    text-align: right;
+    background: #DDD;
+    display: inline;
+    padding: .3em .5em .3em .3em;
+    margin-right: .5em;
+}
+
+.name a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.message {
+    margin: 0;
+    padding: .3em;
+    /*border-bottom: 1px solid #F8F8F8;*/
+    clear: both;
+}
+
+.sysmessage {
+    padding: .3em;
+    /*border-bottom: 1px solid #F8F8F8;*/
+    font-variant: small-caps;
+    font-size: 90%;
+    background: #EEE;
+    border-bottom: 1px solid #ddd;
+}
+
+.text {
+    font-family: Georgia;
+}
+
+.sysmessage .text {
+    font-family: Arial;
+    font-style: italic;
+    /*font-weight: bold;*/
+}
+
+.alt {
+    background-color: #FFFEFD;
+}
+
+body {
+    background: #CDC8B4;
+    background: linear-gradient(#cdc8b4, #ffffff);
+    background-repeat: no-repeat;
+}
+
+h1, h2, h3 {
+    font-family: Righteous, sans-serif;
+}
+
+.push-button, .push-button:hover {
+    font-size: 18px;
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    padding: 10px 20px;
+    background-color: #0069cc;
+    background-image: linear-gradient(#0055cc, #0088cc);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0055cc', endColorstr='#0088cc', GradientType=0);
+    border-radius: 5px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #004488, 0px 10px 5px #999999;
+}
+
+.push-button:hover {
+    color: #FFA;
+}
+
+.push-button:active, .push-button:hover:active {
+    top: 3px;
+    box-shadow: inset 0px 1px 0px #0088cc, 0px 2px 0px 0px #004488, 0px 5px 3px #999999;
+}
+
+.headline {
+    border-bottom: 1px dotted #666666;
+    border-top: 1px dotted #666666;
+    font-size: 230%;
+    margin: 1em 0;
+    padding: 0.5em 0;
+    text-align: center;
+    background: #FAFAFA;
+}
+
+.header-button {
+    color: #333333;
+    float: none;
+    font-family: Righteous, sans-serif;
+    font-size: 26px;
+    margin: 15px 0 0;
+    padding: 5px 10px;
+    text-decoration: none;
+    text-shadow: 0 3px 2px #999999;
+    background: #EEEEEE linear-gradient(#aaaaaa, #ffffff) repeat-x;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 1px 0 #FFFFFF inset, 0 5px 0 0 #888888, 0 10px 5px #000066;
+    line-height: 19px;
+}
+
+.header-button:hover {
+    text-decoration: none;
+    color: #444;
+    background: #FFF linear-gradient(#eeeeee, #ffffff);
+}
+
+#footer {
+    background: #e9e9e5 linear-gradient(#dddddd, #fafaf0);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dddddd', endColorstr='#fafaf0', GradientType=0);
+    color: #666666;
+    padding: 0.5em;
+    text-align: center;
+    margin-top: 1em;
+}
+
+input.chatUrl {
+    font-size: 200%;
+    cursor: pointer;
+    display: inline-block;
+    padding: 4px;
+    margin-bottom: 9px;
+    line-height: 18px;
+    color: #555555;
+    border-radius: 3px;
+    background-color: #eeeeee;
+    border: 1px solid #ddd;
+    width: 90%;
+    max-width: 700px;
+}
+
+#ad {
+    width: 100%;
+    height: 90px;
+    margin-top: 2em;
+}
+
+#headAd {
+    margin: 1em auto;
+    width: 100%;
+    max-width: 728px;
+    height: 90px;
+    vertical-align: middle;
+    padding: 0 1em;
+}
+
+#headAd img {
+    width: 100% !important;
+    height: auto !important;
+}
+
+.page-container {
+    background: #fff;
+    border-radius: 1em;
+    margin-top: 2em;
+    border: 1em solid #FFF
+}
+
+/* DARK - THEME */
+body.dark-theme {
+    background: #222;
+    background: linear-gradient(#222, #000);
+    background-repeat: no-repeat;
+    color: #AAA;
+}
+
+body.dark-theme #messages {
+    background-color: #333;
+    border-color: #000;
+}
+
+body.dark-theme #users {
+    background: #333;
+    border-color: #000;
+}
+
+body.dark-theme #messages .alt {
+    background-color: #333;
+}
+
+body.dark-theme #messages .sysmessage {
+    background-color: #444;
+    border-color: #000;
+}
+
+body.dark-theme input#msg {
+    background-color: #222;
+    color: #ccc;
+}
+
+body.dark-theme .name {
+    background-color: #444;
+}
+
+
+body.dark-theme #users h1 {
+    background: #444;
+    color:#aaa;
+    border-color: #000;
+}
+
+/* XS devices */
+@media (max-width: 767px) {
+    #right
+    {
+        width: 120px;
+    }
+}
+/* --- */
+
+body.admin input#msg
+{
+    background: #D99;
+}

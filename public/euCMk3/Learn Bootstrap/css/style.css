@@ -1,0 +1,242 @@
+body
+{
+    padding-top:70px;
+}
+
+
+
+
+/* Start Overwriting Bootstrap */
+
+/* Main Navbar */ 
+.navbar
+{
+    min-height:70px;
+}
+
+/* Active Link + Brand name hover */
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus
+{
+    background-color:#620594;
+    font-weight:bold;
+}
+
+/* Navbar Link */
+.navbar-inverse .navbar-nav > li > a
+{
+    color:#bebebe;
+    padding-top:25px;
+    padding-bottom:25px;
+    font-size:17px;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover
+{
+    font-weight:bold;
+    background-color:#080808;
+}
+
+/* Brand name */
+.navbar-inverse .navbar-brand
+{
+    font-size:20px;
+    text-transform:uppercase;
+    font-family:monospace;
+    color:#FFF;
+    line-height:35px;
+}
+
+.navbar-inverse .navbar-brand span
+{
+    color:#8714c5;
+    font-size:20px;
+    font-weight:bold;
+    text-transform:lowercase;
+}
+
+.navbar-inverse .navbar-brand span:hover
+{
+    color:#900bd8;
+}
+
+.navbar-inverse .navbar-brand:hover
+{
+    font-weight:bold;
+}
+
+/* Dropdown Menu */
+.dropdown-menu
+{
+    background-color:#333;
+    border-top:5px solid #620594;
+}
+
+.navbar-right .dropdown-menu
+{
+    left:0;
+    right:auto;
+}
+
+.dropdown-menu > li > a
+{
+    color:#FFF;
+    padding:11px 25px;
+    min-width:185px;
+    transition:padding 0.4s ease;
+    -webkit-transition:padding 0.4s ease;
+    -moz-transition:padding 0.4s ease;
+    -o-transition:padding 0.4s ease;
+    -ms-transition:padding 0.4s ease;
+}
+
+.dropdown-menu > li > a:hover, 
+.dropdown-menu > li > a:focus
+{
+    background-color:#620594;
+    color:#FFF;
+    font-weight:bold;
+    padding-left:30px;
+}
+
+.dropdown-menu .divider
+{
+    background-color:#6b1b96;
+}
+
+
+/* Navbar Toggle */
+
+.navbar-toggle
+{
+    margin-top:18px;
+}
+
+/* Carousel */
+
+.carousel-caption
+{
+    bottom:265px;
+    background-color:rgba(98,5,148,0.3);
+    border:3px solid #FFF;
+    padding:60px 10px;
+}
+
+.carousel-indicators
+{
+    bottom:0;
+    
+}
+
+.carousel-indicators li
+{
+    height:14px;
+    width:14px;
+    border:3px solid #FFF;
+}
+
+.carousel-indicators .active
+{
+    height:16px;
+    width:16px;
+    background-color:#6b1b96;
+    border:3px solid #FFF;
+}
+
+/* About Section */
+
+.about
+{
+    padding-top:40px;
+    padding-bottom:40px;
+}
+
+.about .lead
+{
+    color:#555;
+    font-size:25px;
+    margin-top:17px;
+    font-family:cursive;
+}
+
+.about .lead span
+{
+    text-transform:uppercase;
+    color:#6b1b96;
+    font-weight:bold;
+    font-size:24px;
+}
+
+.about h1
+{
+    display:inline;
+    font-size:25px;
+    color:#555;
+    font-weight:bold;
+    font-family:monospace;
+}
+
+.about h1 #crb,
+.about h1 #ic
+{   
+    color:#6b1b96;
+    font-weight:bold;
+    font-size:24px;
+    text-transform:uppercase;
+}
+
+.about h1 #ic
+{
+    text-transform:lowercase;
+}
+
+/* Features Section */
+
+.features
+{
+    background-color:#fafafa;
+    padding-top:55px;
+    padding-bottom:55px;
+}
+
+.features .feat
+{
+    margin:0 5px 60px 0;
+    
+}
+
+.features .feat p
+{
+    line-height:2em;
+}
+
+.features .feat h4  
+{
+    font-size:17px;
+    font-weight:bold;
+}
+
+.features h1
+{
+    margin-bottom:55px;
+}
+
+.features .feat span.glyphicon
+{
+    color:#6b1b96;
+    font-size:30px;
+    margin-bottom:15px;
+    padding:5px;
+}
+
+/* End Overwriting Bootstrap */
+
+.footer
+{
+    max-width:100%;
+    background-color:#333;
+    padding:15px;
+    color:#FFF;
+    font-weight:bold;
+}

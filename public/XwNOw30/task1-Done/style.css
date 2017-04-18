@@ -1,0 +1,239 @@
+*
+{
+	/* outline: 1px solid red; */
+	box-sizing: border-box;
+	font-family: sans-serif;
+	text-transform: capitalize;
+}
+body
+{
+    background: linear-gradient(#EAE2D2 5%,#fff 95%);
+	min-height: 500px;
+}
+.container
+{
+	width: 1170px;
+	margin: auto;
+}
+.container header 
+{
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 20px;
+}
+.container header h1
+{
+	color: #D20015;
+	padding: 20px 0 0 5px;
+	font-size: 40px;
+	font-weight: 550;
+}
+.container header h1 span
+{
+	color: black;
+	font-weight: bolder;
+}
+.container header label
+{
+	padding: 10px 5px 0 0;
+}
+.container header label span
+{
+	float: right;
+	padding: 0 5px 5px 0;
+}
+.container header label input
+{
+	background-image: url(1477580109_icon-111-search.png);
+    background-repeat: no-repeat;
+	background-position: right;
+    overflow: hidden;
+	padding: 5px;
+	border: 1px solid #EAE2D2;
+	border-radius: 5px;
+}
+.container nav ul
+{
+	display: flex;
+	justify-content: space-between;
+	background: linear-gradient(#FDF7F2 40%,#EAE2D2 60%);
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	text-align: center;
+}
+.container nav ul li
+{
+	padding: 20px;
+	width: 14em;
+	border-left: 1px solid #D0CABE;
+}
+.container nav ul li:hover
+{
+	background: linear-gradient(#FDF7F2,#D20015);
+}
+.container nav ul li:first-child
+{
+	border: none;
+}
+.container nav ul li a
+{
+	font-size: 20px;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: black;
+}
+.container .slider img
+{
+	border-radius: 10px;
+}
+.container main
+{
+	display: flex;
+	justify-content: space-between;
+}
+.conainer main aside
+{
+	width: 20%;
+	display: flex;
+	align-content: space-around;
+}
+.container main aside .detail
+{
+	background: #EAE2D2;
+	padding: 10px;
+	margin: 10px 0;
+	border-radius: 10px;
+}
+.container main aside .detail h1
+{
+	color: #D20015;
+	padding: 10px 0 10px 0;
+	font-weight: 600;
+}
+.container main aside .detail ul li
+{
+	padding: 5px;
+}
+.container main aside .detail ul li:hover
+{
+	background: linear-gradient(#FDF7F2 ,#EAE2D2 );
+}
+.container main aside .detail ul li a
+{
+	text-decoration: none;
+	color: #333;
+}
+.container main aside .detail table th
+{
+	padding: 10px 30px 10px 10px;
+	font-weight: bold;
+}
+.container main aside .detail table td
+{
+	padding: 10px 20px 5px 10px;
+	color: #333;
+}
+.container main aside .events
+{
+	background: #D50017;
+	padding: 15px;
+	color: white;
+	font-size: 30px;
+	border-radius: 10px;
+	animation: blink 1s ease-in-out infinite alternate ;
+}
+.container main aside .events:hover
+{
+	animation: none;
+}
+.container main aside .events a
+{
+	color: white;
+	font-size: 14px;
+}
+.conainer main section
+{
+	width: 60%;
+}
+.welcome h1
+{
+	font-size: 25px;
+	font-weight: 550;
+	padding: 10px 0;
+}
+.lectures h1
+{
+	font-size: 28px;
+	font-weight: 550;
+	padding: 10px 0 3px 0;
+}
+.welcome .center-img img
+{
+	border-radius: 10px;
+}
+.det
+{
+	width:600px;
+	margin-top: 15px;
+}
+.det p
+{
+	text-transform: lowercase;
+	margin-bottom: 5px;
+	font-size:18px;
+	color: #333;
+}
+.det p::first-letter
+{
+	text-transform: capitalize;
+}
+.det a
+{
+	color: red;
+}
+.lectures
+{
+	margin-top: 15px;
+}
+.lectures hr
+{
+	width: 100%;
+	height: 2px;
+	background: #ccc;
+	border: none;
+}
+.lectures span
+{
+	text-transform: lowercase;
+}
+.lectures h2
+{
+	color: #999;
+}
+footer
+{
+	width: 100%;
+	background: #EAE2D2;
+	margin-top: 40px;
+	text-align: center;
+}
+footer h1
+{
+	padding: 20px;
+}
+footer h1 a
+{
+	color: red;
+}
+@keyframes blink
+{
+	0%
+	{
+		opacity: 1;
+	}
+	100%
+	{
+		opacity: 0.7;
+	}
+}
+

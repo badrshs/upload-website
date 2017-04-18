@@ -1,0 +1,69 @@
+body{
+font-family: 'lucida grande' , tahoma , verdana , arian , sans-serif;
+Background-color : #dbc589; 
+}
+#container 
+{
+Width:1080px;
+margin: 0 auti;
+padding;1px;
+background-color#000;
+}
+
+#logo{
+margin-top:0px;
+    margin-bottom:-20px;
+    margin-right: 0px;
+    margin-left: 200px;
+}
+
+#navigation
+{
+height:60px;
+border:0px solid  ;
+margin-top:0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-left: 150px;
+background-image:url(../images/background.png );
+}
+ul#navmenu
+{
+list-style-type:none;
+font-size:20px;
+}
+ul#navmenu li{
+width:200px;
+float:left;
+Text-align:center;
+}
+ul#navmenu a {
+text-decoration:none;
+display:block;
+color:#ffffff;
+}
+ul#navmenu2
+{
+list-style-type:none;
+font-size:20px;
+}
+ul#navmenu2 li{
+width:200px;
+float:left;
+Text-align:center;
+}
+ul#navmenu2 a {
+text-decoration:none;
+display:block;
+color:#ffffff;
+}
+ul#navmenu2{
+margin-left:70px ;
+margin-top:20px ;
+}
+#banner {
+height:150px;
+background-image:url(../images/qoute.png);
+margin-left:-70px ;
+}
+

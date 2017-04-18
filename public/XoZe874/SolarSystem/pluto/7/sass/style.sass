@@ -1,0 +1,64 @@
+@import bourbon
+@import neat
+
+$black: black
+$white: white
+$gray: #9b9b9b
++keyframes(bounce)
+  0%
+    top: 5%
+  50%
+    top: 0%
+  100%
+    top: 5%
+html
+  font-family: Montserrat
+  width: 100%
+  margin: 0
+  padding: 0
+  background-color: #a5d2ff
+
+ul
+  list-style: none
+  margin: 0
+  padding: 0
+
+svg
+  position: fixed
+  top: 50%
+  left: -5%
+  +transition(0.2)
+  +transform(scale(0.9))
+  @media(max-height: 750px)
+    +transform(scale(0.8))
+    left: -12%
+  &#cloud
+    +transform(scale(0.8))
+    top: 5%
+    left: 0%
+    +animation(bounce 4s infinite linear)
+
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,86 @@
+/*Start default theme*/
+/*navbar*/
+.top-nav .navbar-brand span
+{
+	color: #ffa500;
+
+}
+
+.top-nav .navbar-default .navbar-nav>li:hover,
+.top-nav .navbar-default .navbar-nav>.active1
+{
+	border-top: 2px solid #ffa500;
+	border-bottom: 2px solid #ffa500;
+	
+}
+.navbar-default .navbar-toggle:hover .icon-bar
+{
+	background-color: #ffa500;
+}
+/*********************End section of navbar***************/
+
+/********************Start Section of slider*************/
+.item .second i
+{
+	color: #ffa500;
+}
+.carousel-control .glyphicon-chevron-right,
+.carousel-control .icon-next,
+.carousel-control .glyphicon-chevron-left,
+.carousel-control .icon-prev
+{
+	color: #ffa500;
+}
+.main-slide .second h1 span
+{
+	color: #ffa500;
+}
+/********************End Section of slider*************/
+/********************Start Section of profile*************/
+.profile h1
+{
+	color: #ffa500;
+}
+.profile .project .over,
+.profile .project .over2 i,
+.profile .project .over3 i
+{
+	color: #ffa500;
+}
+.profile .color
+{
+		border-bottom: 1px solid #ffa500;
+}
+.profile button:hover, .profile .active1
+{
+	background-color:#ffa500 ;
+}
+
+/********************End Section of profile*************/
+/*testomonial*/
+.slider1 .client span
+{
+	color: #ffa500;
+}
+/*team*/
+.card .worker span
+{
+	color: #ffa500;
+}
+/*connect*/
+.connect .btn-primary
+{
+	color: #ffa500;
+}
+/*box color*/
+.box-color i
+{
+	color: #ffa500
+}
+
+/*jumber*/
+.jumper i 
+{
+	color: #ffa500
+}
+/*End default theme

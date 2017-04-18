@@ -1,0 +1,157 @@
+*{margin: 0}
+*{box-sizing: border-box}
+/*.center{margin:auto;width: 1000px;background:none;}*/
+.continer{width: 1000px;margin: auto;}
+.clear{clear: both;}
+/* start haed */
+.head .slider{height: 600px;background-image: url("1 (167).jpg");background-size:cover;}
+.head .slider .entro {color: #8e961e;text-align: center;padding-top:200px; }
+.head .slider .entro h2{margin: 0 auto;width: 1000px;font-size: 50px;padding: 15px;border-top:10px solid #2ccc71;color:#fff;
+text-shadow: 2px 4px 3px #F00,2px -4px 3px #00F }
+.head .slider .entro button{
+background: none;font-size: 40px;margin-top:30px;font-weight: bold;
+padding: 20px 30px;border: 2px solid #2ccc71;color: #fff;}
+/* start haed*/
+
+/* start navbar */
+.head .navbar{background-color:#252F31;overflow: hidden;color: #FFF;}
+.head .navbar h1 p{background:#515A5B;padding:2px 7px 2px ;margin-right: 10px;display: inline;color: #FFF} 
+.head .navbar span{color:#2ccc71;}
+.head .navbar .links ul{list-style: none;float:right;padding-top:30px;font-weight:bold; }
+.head .navbar .links ul li{padding: 10px;}
+.head .navbar ul a{text-decoration: none;color: #FFF;padding: 10PX;}
+.head .navbar ul a:hover{background:#2ccc71;border-radius: 5px;}
+/*.head .navbar ul a:visited{color:#2ccc71;}*/
+/* End navbar */
+
+/* Start Goals */
+.goals .start div{width:33%;margin:30px 0 0 3px;overflow: hidden;}
+.goals .start div h2{text-align: center;color: #555;}
+.goals .start div p{margin: 10px;padding-left: 30px;}
+/* End Goals */
+
+/* start about me */
+.about-me{margin-top: 30px;background-color:#44ADA8;overflow: hidden;color: #FFF}
+.about-me .image, .info{overflow: hidden;float: left;}
+.about-me .image{width: 40%;}
+.about-me .image img{ width:90%;border-radius:20% 50%;margin-top: 20px;padding:5px;background:#DDD;border:3px solid #FFF}
+.about-me .image img:hover{border-radius: 50% 20%;background:#FFF;border:3px solid #EEE }
+.about-me .info{width:60%;}
+.about-me .info h2{margin: 10px 0 5px 40px;color: #444;}
+.about-me .info > p{color:#444;padding: 5px 0 0 40px;line-height: 1.6;}
+.about-me .info  > p:last-of-type{margin: 10px 0;}
+.about-me .info .main{margin:10px 0 0 40px;overflow: hidden;}
+.about-me .info .main .content{float:left;width: 44%;min-height: 100px;overflow: hidden;}
+.about-me .info .content h3{color:#344;margin:10px 0 0 40px;}
+.about-me .info .content p{margin:10px 0 0 40px;}
+.about-me .info .content .icon{float: left;width:12%;margin-right:5%;}
+.about-me .info.content .text{float: left;width:83%;}
+.about-me .info.content .text{float: left;width:83%;}
+.about-me .info .content .icon i{color:#2D552D;margin: 10px 10px 0 2px; }
+.about-me .info .content .icon i:hover{transform: scale(1.1);color: #2D992D}
+/* End about me */
+
+/* start my skills& progres */
+.myskills .main div{float: left;width:48%;margin-top:30px;}
+.buttons {margin:30px 0 0 40px;border: 3px solid #2dcc70;background: none;padding: 10px 30px;}
+.myskills .skills h2{margin: 10px 0 5px 40px;color: #666;}
+.myskills .skills > p{color:#444;padding: 5px 0 0 40px;line-height: 1.6;}
+.myskills .skills  > p:last-of-type{margin: 10px 0;}
+.myskills .main .progres {margin-left:40px;margin-top:2px}
+.myskills .main .progres .tech h3{color:#777;}
+.myskills .main .progres .tech{width: 100%}
+.myskills .main .progres .tech div {background: #DDD;height: 20px;width: 100%;}
+.myskills .main .progres .tech div span{
+color:#fff;line-height: 20px;background: #2dcc70;font-weight: bold;display: block;text-align: right;}
+/* End my skills& progres 
+
+/* start  resume */
+.resume {background-color:#44ADA8;text-align:center;padding: 35px;margin: 20px 0 50px 0;}
+.resume h2{margin: 10px;color: #445;text-transform: uppercase;font-weight: bold;}
+.resume p{padding: 0 30px;}
+.resume button{color: #FFF;border:3px solid #753C3C;}
+/* End  resume */
+
+
+/* start my-education */
+.my-education{padding: 30px 0 ;overflow: hidden;}
+.my-education .main{float: left;width:50%;margin-right:3%;background:#FFF;}
+.my-education .exp{float: left;width:47%;background:#FFF;}
+.my-education .main h2{margin: 10px 0 5px 40px;color: #666;}
+.my-education .main > p{color:#444;padding: 5px 0 0 40px;line-height: 1.6;}
+.my-education .main  > p:last-of-type{margin: 10px 0;}
+.my-education .exp h2{margin: 48px 0 5px ;color: #777;}
+.my-education .exp span{display: block;}
+.my-education .exp span:first-of-type{color: #888;}
+.my-education .exp span:last-of-type{color: #FFF;background:#2ccc71;display: inline-block;padding:4px 15px;margin: 5px 0}
+.my-education .exp hr{background:red;border: 0;height: 1px;margin:20px 0; }
+/* END my-education */
+
+/* start work-experianc*/						
+.work-experianc{margin:20px;overflow:hidden;}
+.work-experianc .main{float: left;width: 50%;margin-right:3%; }
+.work-experianc .worker{float: left;width: 45%;}
+.work-experianc h2{color: #555; padding:20px 0;}
+.work-experianc .main h2{margin: 10px 0 5px 40px;color: #666;}
+.work-experianc .main > p{color:#444;padding: 5px 0 0 40px;line-height: 1.6;}
+.work-experianc .main  > p:last-of-type{margin: 10px 0;}
+.work-experianc .worker span{display: block;}
+.work-experianc .worker span:first-of-type{color: #888;}
+.work-experianc .worker span:last-of-type{color: #FFF;background:#2ccc71;display: inline-block;padding:4px 15px;margin: 5px 0}
+.work-experianc .worker hr{background:red;border: 0;height: 1px;margin:20px 0; }
+/* End work-experianc*/
+
+/* start test*/
+.test{margin: 50px 0;background-image: url("../images/1 (202).jpg");background-size:cover;}
+.test div{padding: 20px 30px;text-align: center;}
+.test div q{line-height: 1.7;font-size: 18px;font-style: italic;color: #555;font-weight: bold;}
+.test div h2{margin: 10px 0 15px 0;color: #FFF}
+.test ul{list-style: none;text-align: center;padding-left: 0;cursor: pointer;}
+.test ul li{display: inline-block;border:1px solid #f00;width: 10px;height: 10px;border-radius: 8px}
+.test ul .active,
+.test ul li:hover{background:#f00;}
+/* End test*/
+
+/* start portfolio*/
+.portfolio{text-align: center;}
+.portfolio h1{color: #555}
+.portfolio .img {overflow: hidden;margin:40px 0}
+.portfolio .img > div{float: left;width: 32%;}
+.portfolio .img > div img{width:95%;margin:10px;border-radius: 7px;
+padding: 3px;border: 1px solid #ccc;background: #FFF;box-shadow: 8px 8px 10px #2d772d;}
+.portfolio .img > div :hover{border-radius: 50%}
+/* End portfolio*/
+
+/*Start contact me*/
+.contact_me{background:#252F31; }
+.continer .contact {overflow: hidden;}
+.continer .contact .info{width:50%;float: left;margin-right:3%; }
+.continer .contact .form{width: 47%;float: left;}
+.contact h1{color: #FFF;padding-left:20px; }
+.contact p{color:#6A6E71;padding-left:20px;}
+.contact p:last-of-type{padding-bottom: 15px;}
+.contact p strong{color: #FFF}
+.contact .form{color: #FFF;}
+.contact .form label{display: block;margin: 10px 0 10px 0;color: #FFF;}
+.contact .form input[type="text"]{background:#4B5557;width: 80%;border: 0;padding: 5px}
+.contact .form textarea{background:#4B5557;width: 80%;border: 0;padding: 5px;height: 250px;margin-bottom: 20px;}
+.contact .form input[type="submit"]{background: #191E22;border: 0;color: #fff;padding: 5px 25px;margin-bottom:50px}
+.contact .form input[type="submit"]:hover{background: #4B5557}
+/* End contact me*/
+
+/*start copyright*/
+.foter{background:#191E22;text-align: center;color: #777;padding: 10px 0 ;overflow: hidden;background-image: url("../images/1 (202).jpg");}
+.foter span{ float: left;margin-top: 20px}
+.foter ul{list-style: none;padding-left: 0;margin-top: 20px;float: right;}
+.foter ul li{display: inline;}
+.foter ul li i{margin-right: 10px;padding:5px; transition: all .25s ease-in-out}
+.foter ul li i:hover{color: #FFF;padding:5px;cursor: pointer;transform: scale(1.5)}
+.foter ul li i.plus:hover{color:#C73C2F;transform: scale(1.25)}
+.foter ul li i.tube:hover{color:#D02020;transform: scale(1.25)}
+.foter ul li i.face:hover{color:#36609F;transform: scale(1.25);transform}
+.foter ul li i.twi:hover{color:#2AA9E0;transform: scale(1.25)}
+/* End copyright*/
+
+.fl-left{float: left;}
+p{line-height: 1.7;color:#666;}
+button:hover{background:#4B5557;color: #FFF;border: 3px solid #2DCC70}

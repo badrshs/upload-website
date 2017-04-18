@@ -1,0 +1,152 @@
+@charset "utf-8";
+/* CSS Document */
+/*start fremwork login in iconuser */
+ 
+.iconuser { position:absolute ; left:470px ; top:0px ;  background-color:#FEAE02  ; padding:10px
+ ; cursor:pointer ; z-index:10002}
+.iconuser i { color:#fff  }
+
+/*start fremwork login in fixleft */
+.userfix img {width:106px ; height:36}
+
+ .userfix .brand 
+ { font-size:40px  ; color:#1DA1F2 ; text-align:center 
+ ; text-transform:capitalize; letter-spacing:2px }
+.userfix { border:1px solid #1DA1F2 ; border-radius:10px ; padding:30px 50px ; position:fixed ; z-index:10000
+ ;top:200px ; left:-522px   ; background-color:#fff   ; min-width:380px}
+ .userfix > div { position:relative}
+ .userfix  .closee { position:absolute ; top:-30px ; right:-30px ; cursor:pointer}
+  .userfix .brand span { color:#FEAE02}
+ .userfix input { margin:10px 0px} 
+ .userfix .btn { background-color:#1DA1F2 ; color:#fff ; display:inline-block ; margin:10px 0px  } 
+ .userfix h2 { color:#FEAE02}
+/*start fremwork login in animate */
+.user img {width:106px ; height:36}
+.user h2 { color:#FEAE02}
+ .user .brand { font-size:40px  ; color:#1DA1F2 ; text-align:center ; text-transform:capitalize
+	  ; letter-spacing:2px }
+.user { border:1px solid #1DA1F2 ; border-radius:10px ; padding:30px 50px ; position:absolute ; z-index:10000
+ ; top:-400px ; left:20%   ; background-color:#fff   ; min-width:400px}
+ .user > div { position:relative}
+ .user  .closee { position:absolute ; top:-30px ; right:-30px ; cursor:pointer}
+ .user .brand  {display:none} 
+  .user .brand span { color:#FEAE02}
+ .user input { margin:10px 0px} 
+ .user .btn { background-color:#1DA1F2 ; color:#fff ; display:inline-block ; margin:10px 0px  } 
+/*start bootstarp*/
+     /*start navbar*/
+	  header .brand { font-size:40px  ; color:#1DA1F2 ; text-align:center ; text-transform:capitalize
+	  ; letter-spacing:2px }
+	  header .brand img { width:106px  ; height:36px}
+	  header .brand span { color:#FEAE02}
+	       .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus,      .navbar-inverse .navbar-nav>.active>a:hover ,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse     .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover{
+		  color:#1DA1F2 ; background-color:#fff
+		  }
+		  header .active:before {content:"" ; position:absolute ; left:0px ; top:0px ; z-index:10
+		  ; width:100% ; height:4px ; background-color:#FEAE02  }
+		  header .hvr-overline-from-center:before { background-color:#FEAE02}
+		  .navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover
+		  { background-color:#fff ; color:#1DA1F2 ; transition:all .7s ease}
+		 
+		  header .navbar {margin-bottom:0px }
+		   header .nav>li>a {      padding: 10px 8px }
+		     header .navbar-inverse
+	   { background-color:#1DA1F2  ; border:none}
+	   header .navbar-inverse .navbar-toggle { border:1px solid #fff}
+	   header .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover
+	   { background-color:#fff ; color:#1DA1F2}
+	   header .navbar-inverse .navbar-toggle:focus  .icon-bar, .navbar-inverse .navbar-toggle:hover       .icon-bar
+	   { background-color:#1DA1F2}
+	   header .navbar-brand span {color:#FEAE02} 
+	    header  .navbar-inverse .navbar-brand
+	  { font-weight:bold; text-transform:capitalize}
+	    header .navbar-inverse .navbar-nav>li>a  ,header .navbar-inverse .navbar-brand{ color: #fff}
+	    header .btn { border-radius:0px}
+		header .form-control { border-radius:0px  } 
+	  
+	   header .searchicon { background-color:#FEAE02  ; margin-left:-5px }
+	  
+	 
+	  
+	 
+	  .dafaluta li a
+	  { text-decoration:none ; margin:0px  ; text-align:right}
+	  .dafaluta li:hover
+	  { background:#f5f5f5  ; cursor:pointer}
+	  header .strong 
+	  { font-size:20px ; color:#1DA1F2}
+	  header .navbar-default .navbar-collapse, .navbar-default .navbar-form { border-color:#fff}
+	  header .btn-primary:hover { background-color:#1DA1F2 ; border:1px solid #FFFFFF}
+	  /*end navbar*/
+	  /*start carousel*/
+	  .slider1 .carousel-indicators .active { background-color:#1DA1F2 ; border:none}
+	  .slider1 .carousel-indicators li { border:1px solid #1DA1F2} 
+	  .slider1 .carousel-control { color:#1DA1F2}
+	   /*end carousel*/
+	    /*start iconfont*/ 
+		.icon {  background-color:#1DA1F2 ; color:#fff }
+		.icon .row > div { padding:30px 10px ; text-align:center ; cursor:pointer
+		 ;  transition:all 1s ease}
+		  
+		 .icon i { font-size:80px ; padding:10px 
+		   ; border-radius:5px}
+		   .icon .row > div:hover { background-color:#0064FF}
+		   .icon .row div div { font-size:20px}
+		   .slider1 span div{ width:1902px ; height:423px}
+		/*end iconfont*/
+		/*start proudct*/
+		.product h2 { margin:5px 3px 2px  ; color:#1DA1F2 ; transition:all 1s ease}
+		 .product img  { cursor:pointer ; transition:all 1s ease}
+		 .product .fiximg {height:300px ; width:300px}
+		 .contimage { position:relative}
+		 .product span {display:block ; position:absolute ; top:0px ; left:0px ; width:40px
+		 ; background-color:#FEAE02 ; height:40px ; color:#FFFFFF ; text-align:center ; 
+		 border-radius:20px  ; padding-top:10px }
+		 /*start btn down proudct*/
+		 .btnn { text-align:center  ; margin:10px ; padding:10px }
+		 .btnn div div { border-color:#1DA1F2 ; color:#1DA1F2 ; padding:10px ; width:40%
+		 ; margin-top:20px ; transition:all 1s ease}
+		 .btnn div div:hover { background-color:#1DA1F2 ; color:#fff}
+		 .product .btn-primary {background-color:#1DA1F2 ; border:none ; transition:all 1s ease }
+		 .product .btn-primary:hover {background-color:#FEAE02 }
+		  
+		 /*two image*/
+		 .twoimage div { padding:0px}
+	     .twoimage .container { overflow:hidden} 
+		 .twoimage img { width:100% ; position:relative  ; min-height:300px  }
+		 .twoimage .upimage 
+		 {
+			  position:absolute ; z-index:2 ; top:10px  ; padding:10px 
+			   ; color:#ccc ; width:100% ; padding-left:20px 
+			  }
+			 
+			   .twoimage .upimage h2 { margin-left:30% ; font-weight:bold}
+			   .twoimage .upimage p { margin-left:10% ; font-size:20px}
+			   .twoimage .button { display:inline-block; padding:10px ; border:1px solid #fff
+			    ; margin-left:30% ; width:30% ; text-align:center ; font-size:30px ; margin-top:20px
+			    ; transition:all 1s ease
+			    }
+				.twoimage .button:hover { background-color:#1DA1F2 ; color:#fff ; border:none 
+				; cursor:pointer}
+				/*start information*/
+				.information .row div { background-color:#1DA1F2 ; color:#fff ; padding:50px 10px 20px}
+				.information .row i { color:#FEAE02 }
+				.information .row p { font-size:18px  ; font-family:Baskerville, "Palatino Linotype", Palatino,                  "Century Schoolbook L", "Times New Roman", serif ; font-style:italic }
+				 
+				.information .row div div i { color:#fff ; transition:all 1s ease ; cursor:pointer}
+				.information .row div div i:hover {color:#FEAE02  }
+				/*start footer*/
+				footer { background-color:#eee ; padding:30px 10px 10px}
+				footer ul { list-style-type:none   ; margin-bottom:10px }
+				footer ul li { line-height:30px ; color:#1DA1F2}
+				footer .active { color:#FEAE02}
+				footer ul li a { color:inherit  ; transition:all 1s ease}
+				footer ul li a:hover { color:#FEAE02 ; text-decoration:none}
+				footer ul li a i { margin-right:10px;}
+				footer .row div > i { border:1px solid #1DA1F2  ; color:#1DA1F2 ; padding:10px
+				; width:70px  ; margin:10px; cursor:pointer ; transition:all 1s ease }
+				footer .social { text-align:center}
+				footer .row div > i:hover { color:#fff; background-color:#1DA1F2 }
+				#Container .mix{
+	display: none;
+}

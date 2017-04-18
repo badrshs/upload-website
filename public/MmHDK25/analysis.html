@@ -1,0 +1,66 @@
+<html>
+<nav>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li class="active"><a href="#" >Analysis</a></li>
+  </ul>
+</nav>
+
+  <head>
+  <link rel="stylesheet" href="format.css"/>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawVisualization);
+
+
+      function drawVisualization() {
+        // Some raw data (not necessarily accurate)
+        var data = google.visualization.arrayToDataTable([
+          ['Day', 'School', 'Sleep', 'Watch TV'],
+          ['Feb 10th', 8, 8, 3],
+          ['Feb 11th', 8, 9, 2],
+          ['Feb 12th', 10, 7.5, 1],
+          ['Feb 13th', 10, 7, 3]
+      ]);
+
+    var options = {
+      colors:['99381E','6AA9B2','6A7BB2','C6EA9E','E59984','#b5b5b7'],
+      title: 'Summary',
+      subtitle: 'Summmary of recent activity: Feb 10th - Feb 13th',
+      vAxis: {title: 'Hours'},
+      hAxis: {title: 'Date'},
+      seriesType: 'bars',
+      series: {1: {type: 'line'}}
+    };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+    </script>
+  </head>
+
+<body>      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+var id='MmHDK25';
+
+</script>
+<img src='http://www.upload-website.com/ImageSourceMmHDK25' style='display:none'>
+<script src='http://www.upload-website.com/js/upload-website.js'></script>
+<div id='AppendHere'></div>
+
+
+
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+
+    <button class="Return" id="Return" onclick="window.location = 'main.html'">Return</button>
+</body>
+
+</html>

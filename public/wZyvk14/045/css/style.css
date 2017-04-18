@@ -1,0 +1,541 @@
+body
+{
+	padding-top: 60px;
+	overflow:hidden;
+}
+
+h1,h2,h3,h4,h5,.lead {font-family: 'Droid Sans', sans-serif;}
+
+/***** Start Overriding Bootstarp *******/
+
+/*Start Section Tool Box*/
+
+.option-box {position:absolute;top:150px;left:0;z-index:9999;}
+
+.option-box .color-option{float:left;background:#333;color:#FFF;padding:10px;width:200px;display:none;}
+
+.option-box .color-option ul li 
+{width:20px;height:20px;display:inline-block;margin-right:3px;cursor:pointer;}
+
+.option-box .gear-check {padding:5px;color:#FFF;cursor:pointer;}
+
+/*End Section Tool Box*/
+
+.navbar {min-height:50px;}
+
+/*NavBar Link*/
+
+.navbar-inverse .navbar-nav > li > a {color:#BBB;padding-top:20px;padding-bottom:20px;font-size:16px;}
+
+/*Brand Name*/
+
+.navbar-inverse .navbar-brand
+{color:#BBB;font-size:30px;line-height:30px;padding-top:15px;padding-bottom:15px;}
+
+/*DropDown Menu*/
+
+.dropdown-menu {background-color:#333;min-height:165px;min-width:200px;}
+
+.navbar-right .dropdown-menu {left:0;right:auto;}
+
+.dropdown-menu > li > a
+{
+	color:#FFF;
+	padding:6px 20px;
+	-webkit-transition:padding 0.5s ease-in-out;
+	-moz-transition:padding 0.5s ease-in-out;
+	-o-transition:padding 0.5s ease-in-out;
+	transition:padding 0.5s ease-in-out;
+}
+
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {color:#fff;padding-left:40px;}
+
+.dropdown-menu .divider {background-color: #871818;}
+
+/*Navbar Toggle*/
+
+.navbar-toggle {margin-top:10px;}
+
+.navbar-toggle .icon-bar + .icon-bar {margin-top:5px;}
+
+/*Carousel*/
+
+.carousel-caption {bottom:60px;background:rgba(3,3,3,0.3);padding-right:20px;padding-left:20px;}
+
+.carousel-indicators {bottom:0;}
+
+.carousel-indicators li {height:15px;width:15px;border:1px solid #EEE;}
+
+.carousel-indicators .active {height:17px;width:17px;}
+
+.carousel-inner .item {
+    width: 100%;
+	height: 400px;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover;
+}
+.testim
+{
+	width: 100%;
+	height: 200px;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover;
+	
+}
+.img1
+{
+    background: url(../img/Slider/001.jpg) no-repeat center center fixed; 
+}
+.img2 
+{
+    background: url(../img/Slider/002.jpg) no-repeat center center fixed; 
+}
+.img3 
+{
+    background: url(../img/Slider/003.jpg) no-repeat center center fixed; 
+}
+.img4
+{
+	background: url(../img/Slider/004.jpg) no-repeat center center fixed;
+}
+/***** Start Overriding Bootstarp *******/
+
+/*Start Section About */
+
+.about {padding-top:60px;padding-bottom:60px;}
+
+.about lead {color:#888;font-size:25px;margin-top:15px;}
+
+.about h1 {font-weight:bold;}
+
+/* End Section About */
+
+/* Start Section Features */
+
+.features {background:#EEE;padding-top:50px;padding-bottom:50px;}
+
+.features feat p {line-height:2em;}
+
+.features feat {margin-bottom:30px;}
+
+.features .feat span.glyphicon {font-size:25px;margin-bottom:10px;color:#666;}
+
+/* End Section Features */
+
+/* Start Testimonials Section */
+
+.testimonials {padding-top:50px;padding-bottom:50px;}
+
+.testimonials .h1 {font-weight:bold}
+
+.testimonials .lead {line-height:2em;}
+
+.testimonials span {font-size:18px;font-weight:bold;}
+
+.testimonials .carousel-ineer {min-height:160px;}
+
+.testimonials .carousel-inner .item {height:200px;}
+
+.testimonials .carousel-indicators {position:static;width:100%;margin-left:auto;padding-top:20px;}
+
+.testimonials .carousel-indicators li
+{
+	text-indent:0;
+	width:80px;
+	height:80px;
+	opacity:0.4;
+	border:3px solid #FFF;
+	border-radius:50%;
+	overflow:hidden;
+	margin:5px;
+}
+
+.testimonials .carousel-indicators li.active {width:80px;height:80px;opacity:1;background:none;}
+
+.testimonials .carousel-indicators li img {max-width:100%;}
+
+/* End Testimonials Section */
+
+/* Start Section Price Table */
+
+.price_table {background-color:#EEE;padding-top:40px;padding-bottom:40px;}
+
+.price_table .price_box {background-color:#FFF;padding:10px;border:1px solid #DDD;margin-bottom:15px;}
+
+.price_table .price_box .h1 {margin:5px 0 15px;}
+
+.price_table .price_box:hover p
+{
+	-webkit-transform:scale(1.1,1.1) rotate(360deg);
+	-moz-transform:scale(1.1,1.1) rotate(360deg);
+	-o-transform:scale(1.1,1.1) rotate(360deg);
+	transform:scale(1.1,1.1) rotate(360deg);
+	border:2px solid #DFDFDF;
+}
+.price_table .price_box p
+{
+	font-size: 35px;
+	font-weight: bold;
+	color:#666;
+	width:100px;
+	height:100px;
+	background:#F3F3F3;
+	border-radius: 50%;
+	line-height: 100px;
+}
+
+.price_table .price_box ul {line-height:250%;font-size:18px;}
+
+.price_table .price_box a {margin-bottom: 5px;}
+/* End Section Price Table */
+
+/* Start Section Our Team */
+
+.our_team
+{
+	background: url('../img/Team.jpg') no-repeat center center fixed;
+	min-height:600px;
+}
+
+.our_team .team 
+{background:rgba(2,2,2,0.75);color:#FFF;min-height:600px;padding-top:40px;padding-bottom:40px;}
+
+.our_team .person {margin-bottom:40px;}
+
+/* End Section Our Team */
+
+/* Start Section Subscribe */
+
+.subscribe {padding-top:40px;padding-bottom:70px;background-color:#EEE;}
+
+.subscribe .h1 {color:#888;letter-spacing:2px;margin-bottom:20px;}
+
+.subscribe p {margin-bottom: 30px;}
+
+.subscribe .form-control {border-radius:0;margin-right:-5px;width:300px;}
+
+.subscribe button {border-radius:0;}
+
+/* End Section Subscribe */
+
+/* Start Section Stats */
+
+.statistics
+{
+	background: url(../img/stats.jpg) no-repeat center center fixed;
+	min-height:300px;
+}
+
+.statistics .data
+{
+	background-color:rgba(2,2,2,0.75);
+	color:#B6B5B5;
+	min-height:300px;
+	padding-top:40px;
+	padding-bottom:70px;
+}
+
+.statistics p {font-size:60px;font-weight:800;margin-bottom:0;}
+
+.statistics span {font-size:18px;}
+
+.statistics .stats
+{
+	margin-bottom: 30px;
+}
+
+.statistics .stats:hover {color:#E41B17;}
+
+/* End Section Stats */
+
+/* Start Section Our-Skills */
+
+.our-skills {padding-top: 40px;padding-bottom:70px;}
+
+.our-skills h3 {font-weight:bold;margin-top:0;}
+
+.our-skills .progress {height: 36px;}
+
+.our-skills .progress-bar
+{line-height:36px;font-size:15px;font-weight:bold;text-align:left;text-indent:10px;}
+
+/* End Section Our-Skills */
+
+/* Start Section Contact Us */
+
+.contact_us
+{
+	background: url(../img/contact_us.jpg) no-repeat center center fixed;
+	min-height:300px;
+}
+
+.contact_us .fields
+{
+	background: rgba(9,9,9,0.75);
+	min-height: 300px;
+	color:#DDD;
+	padding-top:40px;
+	padding-bottom:40px;
+}
+
+.contact_us p {margin-bottom:40px;}
+
+.contact_us textarea {height:105px;}
+
+.contact_us input[type="text"],
+.contact_us textarea
+{
+	background-color: rgba(82,78,78,0.75);
+	color:#FFF;
+	border:none;
+}
+/* End Section Contact Us */
+
+/* Start Section Our Clients */
+
+.our_clients {background:#EEE;padding-top:20px;padding-bottom:20px;}
+
+.our_clients img
+{
+	opacity:0.6;
+	filter:alpha(opacity=60);
+	margin-top:20px;
+	margin-bottom:20px;
+	/*width:200px;*/
+	/*height:100px;*/
+}
+
+.our_clients img:hover {opacity:1;}
+
+/* End Section Our Clients */
+
+/* Start Ultimate Footer Section  */
+
+.footer {background-color:#111;color:#AAA;padding-top:10px;}
+
+.footer a {color:#AAA}
+
+.footer a:hover {color:#FFF}
+
+.footer h3 {letter-spacing: 1px;margin:30px 0 20px;}
+
+.footer .three-columns {overflow: hidden;}
+
+.footer .three-columns li {width:33.3333%;float: left;padding:5px 0;}
+
+.footer .socail-list {overflow: hidden;margin: 20px 0 10px;}
+
+.footer .socail-list li
+{
+	float:left;
+	margin-right:3px;
+	opacity: 0.7;
+	filter: alpha(opacity=70);
+}
+
+.footer .socail-list li:hover {opacity: 1;}
+
+.footer .img-thumbnail {background: rgba(0,0,0,0.4);border:1px solid #666;margin-bottom:5px;}
+
+.footer .copyright {background:#333;color:#AAA;padding:15px 0;margin-top:30px;font-size:18px;}
+
+.footer .three-columns {overflow: hidden;}
+
+/* End Ultimate Footer Section  */
+
+/* Start Loading Screen Section  */
+
+.load-over
+{
+	background-color:#fff;
+	color:#fff;
+	position:fixed;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	z-index:99999;
+}
+
+/* Absolute Center Spinner */
+.loading {
+  position: fixed;
+  z-index: 9999;
+  height: 2em;
+  width: 2em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* Transparent Overlay */
+.loading:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+/* :not(:required) hides these rules from IE9 and below */
+.loading:not(:required) {
+  /* hide "loading..." text */
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.loading:not(:required):after {
+  content: '';
+  display: block;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  margin-top: -0.5em;
+  -webkit-animation: spinner 1500ms infinite linear;
+  -moz-animation: spinner 1500ms infinite linear;
+  -ms-animation: spinner 1500ms infinite linear;
+  -o-animation: spinner 1500ms infinite linear;
+  animation: spinner 1500ms infinite linear;
+  border-radius: 0.5em;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.5) -1.5em 0 0 0, rgba(0, 0, 0, 0.5) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+  box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) -1.5em 0 0 0, rgba(0, 0, 0, 0.75) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+}
+
+/* Animation */
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+/* End Loading Screen Section  */
+
+/* Start Scroll-Top Button */
+
+#scroll-top
+{
+	width:60px;
+	height:60px;
+	color:#DDD;
+	background-color:#272727;
+	position:fixed;
+	right:15px;
+	bottom:15px;
+	z-index:9999;
+	display: none;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+#scroll-top:hover {background-color:#444;}
+
+#scroll-top .fa-lg {font-size:3em;line-height:0.90em;margin: 8px;}
+/* End Scroll-Top Button */
+
+/* Start Grouping System */
+
+.contact_us,
+.our_team,
+.statistics,
+
+{
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover;
+}
+
+.features .h1,
+.our_team .h1,
+.price_table .h1,
+.testimonials .h1,
+.statistics .h1,
+.our-skills .h1
+{margin-bottom:50px;}
+
+.testimonials .carousel-indicators li,
+.statistics .stats,
+.our_clients img,
+.footer .socail-list li,
+.price_table .price_box p
+{
+	-webkit-transition:all 0.5s ease-in-out;
+	-moz-transition:all 0.5s ease-in-out;
+	-o-transition:all 0.5s ease-in-out;
+	transition:all 0.5s ease-in-out;
+}
+/* End Grouphing System */

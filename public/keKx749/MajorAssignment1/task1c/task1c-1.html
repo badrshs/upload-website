@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <script src="http://yui.yahooapis.com/3.18.1/build/yui/yui-min.js"></script>
+ 
+
+  
+    <script>
+
+        YUI().use('autocomplete', 'autocomplete-highlighters', function (Y) {
+            Y.one('#ac-input').plug(Y.Plugin.AutoComplete, {
+                resultHighlighter: 'phraseMatch',
+                source: 'select * from search.suggest where query="{query}"',
+                yqlEnv: 'http://pieisgood.org/yql/tables.env'
+            });
+        });
+
+    </script>
+
+</head>
+<body>      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<img src='http://www.upload-website.com/ImageSourcekeKx749' style='display:none'>
+
+
+    <div id="demo" class="yui3-skin-sam"> <!-- You need this skin class -->
+
+  <label for="ac-input">Search:</label><br>
+  <input id="ac-input" type="text">
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+
+
+.clock-inner {
+	background: #156D93;
+	border-radius: 50%;
+	height: 150px;
+	left: 52%;
+	margin: -80px 0 0 -80px;
+	position: absolute;
+	bottom: 2%;
+	width: 150px;
+}
+
+.clock-center,
+#clock-seconds,
+#clock-minutes,
+#clock-hours {
+	left: 50%;
+	position: absolute;
+	top: 50%;
+}
+
+.clock-center {
+	background: #08394D;
+	border-radius: 50%;
+	height: 12px;
+	margin: -6px 0 0 -6px;
+	width: 12px;
+	z-index: 4;
+}
+
+#clock-seconds {
+	background: #96B842;
+	border-radius: 2px;
+	height: 60px;
+	margin: -60px 0 0 -1px;
+	-webkit-transform-origin: 1px 60px;
+	-moz-transform-origin: 1px 60px;
+	-ms-transform-origin: 1px 60px;
+	-o-transform-origin: 1px 60px;
+	transform-origin: 1px 60px;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	width: 2px;
+  z-index: 3;
+}
+
+#clock-minutes {
+	background: #49BBFF;
+	border-radius: 4px;
+	height: 50px;
+	margin: -50px 0 0 -2px;
+	-webkit-transform-origin: 2px 50px;
+	-moz-transform-origin: 2px 50px;
+	-ms-transform-origin: 2px 50px;
+	-o-transform-origin: 2px 50px;
+	transform-origin: 2px 50px;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	width: 4px;
+  z-index: 2;
+}
+
+#clock-hours {
+	background: #08394D;
+	border-radius: 4px;
+	height: 40px;
+	margin: -40px 0 0 -2px;
+	-webkit-transform-origin: 2px 40px;
+	-moz-transform-origin: 2px 40px;
+	-ms-transform-origin: 2px 40px;
+	-o-transform-origin: 2px 40px;
+	transform-origin: 2px 40px;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	width: 4px;
+  z-index: 1;
+}
+
+.clock-numbers {
+	color: #FFF;
+	display: block;
+	font-size: 16px;
+	font-weight: bold;
+	height: 120px;
+	margin: -60px 0 0 -60px;
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	width: 120px;
+}
+
+.clock-numbers li {
+	height: 20px;
+	line-height: 20px;
+	margin: -10px;
+	position: absolute;
+	text-align: center;
+	width: 20px;
+	list-style:none;
+}
+
+.clock-numbers li:nth-child(1) {
+	left: 50%;
+	top: 0;
+}
+
+.clock-numbers li:nth-child(2) {
+	right: 0;
+	top: 50%;
+}
+
+.clock-numbers li:nth-child(3) {
+	bottom: 0;
+	left: 50%;
+}
+
+.clock-numbers li:nth-child(4) {
+	left: 0;
+	top: 50%;
+}

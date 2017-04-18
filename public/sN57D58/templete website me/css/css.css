@@ -1,0 +1,236 @@
+*
+{
+ text-transform:capitalize;
+     font-family:ABeeZee-Italic;
+    font-weight: bold
+}
+.continar
+{
+    width: 1170px;
+        margin: 0 auto;
+}
+ul li
+{
+    list-style: none;
+}
+.clear
+{
+    clear: both
+}
+/* star header */
+.header .nivbar h2
+{
+    padding 10px;
+    float: left;
+    margin-left: 10px;
+}
+.header .nivbar
+{
+    overflow: hidden;
+}
+.header .nivbar ul li
+{
+    float:  right;
+    padding: 10px;
+     margin-right: 10px;
+}
+
+.header .nivbar a
+{
+    text-decoration: none;
+    color: black;   
+}
+.header .nivbar ul a:hover
+{
+    color: rebeccapurple;
+}
+.header .slidar
+{
+    background-image: url('http://giffiles.alphacoders.com/501/5013.gif');
+    background-size: cover;
+    height: 600px;
+}
+.header .slidar h2
+{
+    margin: 0 auto;
+    padding-left: 10%;
+    padding-top: 18%;
+    font-size: 60px;
+    color: aliceblue;;
+    width: 800px;
+    border-bottom: 2px solid #fff;
+}
+/* end header */
+/* star about me */
+.about-me
+{
+    padding: 50px;
+      background-image: url('https://cdn2.scratch.mit.edu/get_image/user/8258460_90x90.png?v=1465047121.49')
+}
+.about-me .feat
+{
+    float: left;
+    width: 31.33333%;
+    margin-left: 1%;
+    background: #fff;
+    min-height: 250px;
+}
+.about-me .feat:hover
+{
+    float: left;
+    width: 31.33333%;
+    border: 2px solid red
+}
+.about-me .feat i
+{
+    padding-left: 35%;
+}
+.about-me .feat i:hover
+{
+  color: blueviolet
+}
+.about-me .feat p
+{
+    font-size: 20px;
+    line-height: 1.7;
+    text-align: center;
+    font-family:Aclonica;
+}
+.about-me  button
+{
+    margin-top: 30px;
+    background: none;
+    color: lemonchiffon;
+    padding:5px 20px 8px 15px
+}
+.about-me  button:hover
+{
+    background:#000016;
+    color:white;
+    padding:5px 20px 8px 15px
+}
+.ourwork
+{
+
+}
+.ourwork .drawings
+{
+   overflow: hidden;
+    text-align: center
+}
+.ourwork .drawings h2 
+{
+    font-size: 30px;
+}
+.ourwork .drawings > div
+{
+    float: left;
+    width: 24%;
+    margin-left:3px;
+    margin-bottom:2px 
+}
+.ourwork .drawings > div:hover
+{
+       float: left;
+    width: 24%;
+    margin-left:3px;
+    margin-bottom:2px ;
+    transform:scale(1.5);
+    background: #fff;
+    color: aqua;
+}
+.ourwork .drawings img 
+{
+    width: 100%;
+}
+/* end about me */
+/* star top drawing */
+.top-drawing
+{
+    background-image: url('http://www.tsamakis.gr/wp-content/uploads/pink.jpg');
+    background-size: cover;
+    padding: 30px;
+}
+.top-drawing .best-drawing
+{
+     overflow: hidden;
+    text-align: center;
+}
+.top-drawing .best-drawing h2
+{
+    padding-bottom: 20px;
+}
+.top-drawing .best-drawing div
+{
+    float: left;
+    width: 23%;
+    margin-left: 3px
+}
+.top-drawing .best-drawing div img
+{
+width: 100%;
+    height: 380px;
+}
+.top-drawing .best-drawing div button
+{
+    background: #444;
+    color: aliceblue;
+    padding: 5px 10px 5px 10px;
+    border: 2px solid #001A24
+}
+/* end top drawing */
+/* star testimonials */
+.testimonials
+{
+    overflow: hidden;
+    text-transform: capitalize;
+         text-align: center;
+}
+.testimonials h2
+{
+    margin: 0 auto;
+    font-size: 50px;
+    font-family: inherit;
+    border-bottom: 1px  solid black;
+    width: 400px
+        
+}
+.testimonials .widget
+{
+    margin: 2%;
+    float: left;
+    background: white;
+    margin-left: 1%;
+    float: left;
+    text-align: center;
+    width: 20%;
+ border: 2px solid black
+}
+.testimonials .widget .tittle
+{
+    height: 30%;
+    background: #240024;
+    font-size: 20px;
+    padding: 5px;
+    color: aliceblue;
+      border: 2px solid black
+}
+.testimonials .widget .data 
+{
+   height:80%  
+}       
+/* end testimonials */
+/* star footar */
+.footar
+{
+    background: #001A24;
+    height: 30px;
+    color:deepskyblue;
+    padding-top: 6px;
+}
+.footar a
+{
+    text-decoration: none;
+    color: cornsilk;
+}
+/* star footar */

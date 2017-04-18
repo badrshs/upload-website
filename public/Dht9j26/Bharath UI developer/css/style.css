@@ -1,0 +1,93 @@
+.button-push
+{
+	text-align: center;
+}
+.data-cnt>md-card>img
+{
+width: 93px;
+    height: 93px;
+    position: absolute;
+        border-radius: 84px;
+}
+.data-cnt>md-card
+{
+    background: #f0f0f0;
+}
+.right-cont
+{
+	float: left;
+	    padding-left: 107px;
+}
+a,a:hover
+{
+	text-decoration: :none!important;
+}
+.right-cont>p
+{
+	float: left;
+}
+.right-cont>p:nth-of-type(2)
+{
+    letter-spacing: 4px;
+    text-indent: 5px;
+}
+.new
+{
+	color: red;
+    width: 30px;
+    height: 19px;
+    position: absolute;
+    right: 24px;
+    top: 11px;
+    font-size: 12px;
+    font-weight: bold;
+}
+/*md-input-container.md-default-theme label{
+    color:#000 !important;
+}*/
+md-input-container label,md-input-container .md-input
+{
+	color: black;
+}
+.like-icon
+{
+	    font-size: 21px!important;
+    position: absolute !important;
+    right: 40px;
+    bottom: 36px;
+}
+.like-icon i
+{
+	 font-size: 21px!important;
+	     color: rgb(63,81,181);
+}
+.like-no
+{
+	    float: left;
+    top: 0px;
+    position: absolute;
+    left: -28px;
+}
+a
+{
+	display: block;
+    width: 74%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@media screen and (min-width:300px) and (max-width:479px){
+	.data-cnt>md-card>img
+	{
+		    text-align: center;
+    margin: 0 auto;
+    position: relative;
+	}
+	.right-cont
+	{
+		    width: 100%;
+    padding: 0 15px;
+	}
+
+	}

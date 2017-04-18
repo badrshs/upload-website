@@ -1,0 +1,108 @@
+.breadcrumb-holder  {
+	background-color: #F5F5F5;
+	margin-top: 44px;
+}
+
+.breadcrumb-holder .breadcrumb {
+	margin-top: 10px;
+	margin-right: 0px;
+	margin-bottom: -1px;
+}
+.about-us {
+	padding-top: 40px;
+	padding-bottom: 70px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.about-us h1 {
+	font-family: raleway;
+	font-style: normal;
+	font-weight: 800;
+	letter-spacing: -1px;
+	font-size: 62px;
+}
+.about-us hr {
+	width: 70px;
+}
+.about-us .lead {
+	font-family: raleway;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 36px;
+}
+
+.about-features.text-center {
+	padding-right: 0px;
+	padding-bottom: 70px;
+	padding-top: 0px;
+
+}
+.about-features .row .col-sm-4 h3 {
+	font-family: raleway;
+	font-style: normal;
+	font-weight: 800;
+}
+.row .col-sm-4 p {
+	margin-bottom: 26px;
+}
+.about-CEO {
+	background-color: #EEEEEE;
+	padding-top: 40px;
+	padding-right: 0px;
+}
+.row .col-sm7 .h1 {
+	font-family: raleway;
+	font-style: normal;
+	font-weight: 800;
+}
+.row .col-sm7 .lead {
+	padding-top: 29px;
+	font-family: raleway;
+	font-style: normal;
+	font-weight: 500;
+	max-width: none;
+	max-height: 17px;
+	line-height: 37px;
+}
+.row .col-sm7 .btn.btn-primary  {
+	background-color: #222222;
+	border-radius: 9px;
+	border: thin solid #FFFFFF;
+	margin-top: 279px;
+
+}
+.breadcrumb-holder-Faq {
+	padding-top: 72px;
+	padding-bottom: 27px;
+
+}
+
+.faq-intro.text-center .container h1 {
+	font-family: raleway;
+	font-style: normal;
+	font-weight: 800;
+	font-size: 62px;
+}
+.faq-intro.text-center .container p {
+	font-family: raleway;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 27px;
+	color: #747474;
+}
+.panel-heading .panel-title a {
+	color: #1674EE;
+	font-family: raleway;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 22px;
+}
+.panel-body {
+	font-family: raleway;
+	font-style: normal;
+	font-weight: 400;
+	color: #767676;
+	line-height: 23px;
+	letter-spacing: 1px;
+}

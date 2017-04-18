@@ -1,0 +1,216 @@
+*
+{
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+}
+body
+{
+    height:600px;
+    font-family: 'Titillium Web';
+}
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Titillium Web'), local('TitilliumWeb-Regular'), url(https://fonts.gstatic.com/s/titilliumweb/v4/7XUFZ5tgS-tD6QamInJTcSo_WB_cotcEMUw1LsIE8mM.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+.container
+{
+    width:1770px;
+    margin:auto;
+}
+.clearfix
+{
+    clear: both;
+}
+.header .slider
+{
+    background-color:#555;
+    width:324px;
+    height:775px;
+    text-align:right;
+    margin-top:-10px;
+    margin-right:0;
+    margin-bottom:-50px;
+    margin-left:-10px;
+}
+.header2
+{
+    background-color:#e8e8e8;
+    width:324px;
+    height:122px;
+    text-align:right;   
+}
+.header2 img
+{
+    margin-top:-9px;
+    margin-right:1535px;
+    margin-bottom:-87px;
+    margin-left:70px;
+}
+.word
+{
+    width:324px;
+    height:70px;
+    background-color:#007384;
+    margin-bottom:-30px;
+    text-align:center;
+    color:#FFF;
+    font-size:1.56em;
+    text-shadow:.55px 0px 3.75px #ccc;
+}
+.header .slider .navbar .fa-home
+{
+    color:#FFF;
+    margin:0 0 0 6px;
+}
+.header .navbar ul
+{
+    list-style:none;
+    margin-top:0px;
+    overflow:hidden;
+    float:right;
+}
+.header .navbar ul li
+{
+    padding:1em;
+    transition:all .39s ease-in-out;
+    cursor: pointer;
+    font-size:1.2em;
+}
+.header .navbar ul li:hover
+{
+    transform-origin:-324px;
+    background-color:#24aeae;
+    transition:all .39s ease-in-out;
+}
+.header .navbar .home
+{
+    background-color:#24aeae;
+    width:324px;
+    height:62px;
+    padding-top:12.5px;
+    padding-right:10px;
+}
+.header .navbar .work
+{
+    background-color:#30373d;
+    width:324px;
+    height:62px;
+    padding-top:12.5px;
+    padding-right:10px;
+}
+.header .navbar .about
+{
+    background-color:#30373d;
+    width:324px;
+    height:62px;
+    padding-top:12.5px;
+    padding-right:10px;
+}
+.header .navbar .blog
+{
+    background-color:#30373d;
+    width:324px;
+    height:62px;
+    padding-top:12.5px;
+    padding-right:10px;
+}
+.header .navbar .services
+{
+    background-color:#30373d;
+    width:324px;
+    height:62px;
+    padding-top:12.5px;
+    padding-right:10px;
+}
+.header .navbar .contact
+{
+    background-color:#30373d;
+    width:324px;
+    height:62px;
+    padding-top:12.5px;
+    padding-right:10px;
+}
+.header .navbar ul a
+{
+    color:#FFF;
+    text-decoration:none;
+}
+.socialicons
+{
+    list-style:none;
+    background-color:#444444;
+    width:324px;
+    height:40px;
+    margin-top:18px;
+    margin-right:0;
+    margin-bottom:-50px;
+    margin-left:-10px;
+    text-align:center;
+}
+.socialicons .rights
+{
+    color:#FFF;
+    font-size:.70em;
+}
+.socialicons .facebook
+{
+    margin-top: -4px;
+    margin-right: -12px;
+    margin-bottom: 18px;
+    margin-left: 43px;
+    color:#FFF;
+    transition:all .20s ease-in-out;
+    cursor:pointer;
+}
+.socialicons .facebook:hover
+{
+    color:#3d5b99;
+    cursor:pointer;
+}
+.socialicons .twitter
+{
+    margin-top: -42px;
+    margin-right: -24px;
+    margin-bottom: 18px;
+    margin-left: -7px;
+    color:#FFF;
+    transition:all .20s ease-in-out;
+    cursor:pointer;
+}
+.socialicons .twitter:hover
+{
+    color:#33bef1;
+}
+.socialicons .google
+{
+    margin-top: -42px;
+    margin-right: -24px;
+    margin-bottom: 18px;
+    margin-left: -44px;
+    color:#FFF;
+    transition:all .20s ease-in-out;
+    cursor:pointer;
+}
+.socialicons .google:hover
+{
+    color:#bb3d2d;
+}
+.socialicons .inlinkedin
+{
+    margin-top: -42px;
+    margin-right: -24px;
+    margin-bottom: 18px;
+    margin-left: -81px;
+    color:#FFF;
+    transition:all .20s ease-in-out;
+    cursor:pointer;
+}
+.socialicons .inlinkedin:hover
+{
+    color:#0177b5;
+
+}

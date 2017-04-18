@@ -1,0 +1,150 @@
+/*start main rules*/
+.container {width:1050px;margin:auto}
+.clearfix {clear: both}
+/* end main rules*/
+/*start nav*/
+.navbar {height:0}
+.navbar section {float:left;color:#fff;font-family: serif;font-size:14px;
+margin-top:-2px}
+.navbar section strong {font-size:50px;color:#F1600E;font-family:serif}
+.navbar section h2 {margin-top:12px;color:#fff}
+.navbar ul {list-style:none;float:right}
+.navbar ul li {float: left;font-size: 18px;color:#F7600E;display:inline-block;
+margin-left:10px;margin-top:2px;padding:10px 15px}
+.navbar ul .active {border-bottom:1px solid #F7600E}
+.navbar ul li:hover {cursor:pointer;background-color:brown;
+border-radius:5px;transition:.75s;color:#fff;border-bottom:1px solid #F7600E}
+/*end nav */
+/*start head*/
+header {background-image:url(../image/xa.jpg);height:794px;
+background-size:cover}
+.overplay {height:100%;width:100%;background-color:rgba(49, 55, 61, .55);
+text-align:center}
+.overplay div {position:absolute;top:100px;right:210px}
+.overplay div h1 {color:#F7600E;font-family: serif;font-size:70px;
+opacity: .7}
+.overplay div p {font-size:30px;font-family:serif;opacity:.8;
+color: #FFFFFF}
+.overplay div button {width:170px;padding:10px;border:1px solid #ddd
+;border-radius:8px;font-size:14px;background-color:rgba(49, 55, 61, .9)
+;color:#fff;margin:40px;margin-right:30px}
+.overplay div button:hover {background-color:#F7600E;
+border:0;cursor:pointer;transition:1.3s}
+.overplay i {color:#F7600E;opacity:.9;position:absolute;top:658px;left:530px}
+.overplay i:hover {transform:rotate(360deg);transition:3s;cursor:pointer}
+/*end head */
+/*start step*/
+.step {height:400px;background-color:#fff;overflow:hidden}
+.step .ban {width:23%;text-align:center;float:left;margin-right: 2%;padding-top:40px;margin-top:15px}
+.step div img {height:150px;width:150px;border:1px solid #222;border-radius:50%;padding:3px}
+.step div img:hover {box-shadow:2px 2px 5px #CB5916,-2px -2px 5px #CB5916;transition:1s;transform:rotate(360deg);cursor:pointer}
+.step .ban h3 {font-size:30px;color:#CB5916;font-family:serif}
+.step .ban p {font-size:18px;color:#8C8A62}
+/*end step*/
+/*start marquee*/
+.mark {height:320px;overflow:hidden;text-align: center;background-image: url(../image/oil%20lamp.jpg);background-size:1500px 320px;position:relative}
+.mark .wverplay {width:100%;height:100%;background-color:#262221;opacity:.8 }
+.mark marquee {border:1px solid #fff;border-radius:20px;margin-right:30px;font-family:cursive;font-size:10px;color: #fff;background-color:firebrick}
+.mark marquee ul {list-style: none}
+.mark marquee ul li {margin-right:250px;display:inline-block}
+.mark input {width:500px;height:30px;border:1px solid #fff;background-color: #fff;border-radius: 30px;position:absolute;top:200px;left:300px;color:black;padding-left:20px}
+.mark button {width:160px;padding:8px;border:1px solid #ddd
+;border-radius:8px;font-size:14px;background-color:#F7600E
+;color:#fff;position: absolute;top: 200px;right:360px}
+/*end marquee*/
+/*start vision*/
+.vision {height:650px;overflow: hidden;text-align:center;background-image: url(../image/Untitled.png);background-size:cover}
+.vision h2 {font-size:30px;font-family:serif;margin-top:15px;color:darkcyan}
+.vision .vis1 {width:460px;height:460px;border:1px solid #222;border-radius:50%;float:left;margin-right:100px;margin-top:30px;position:relative;perspective:600px;transform-style:preserve-3d;box-shadow:20px 20px 90px #6b4630,-20px -20px 90px #6b4630}
+.vision .vis2 {width:460px;height:460px
+;border:1px solid #936a4e;float:left;margin-top:35px;text-align:center;position:relative;perspective:600px;transform-style:preserve-3d;border-radius:50%;box-shadow:20px 20px 90px #6b4630,
+-20px -20px 90px #6b4630}
+.vision .vis1 > div {width:200px;height:200px;position: absolute;top:130px;left:130px;transition:2s;border-radius:10px
+;box-shadow:1px 1px 1px #F7600E,-1px -1px 1px #F7600E;box-sizing:border-box }
+.vision .vis2 > div {width:160px;height:160px;position: absolute;top:150px;left:150px;transition:2s;border-radius:10px;
+box-shadow:1px 1px 1px #F7600E,-1px -1px 1px #F7600E;box-sizing:border-box}
+.vision .vis1 .e1 {z-index:5;background-color:#7D1424}
+.vision .vis1 .e2 {z-index:4;background-color:#4B5942}
+.vision .vis1 .e3 {z-index:3;background-color:#CE8948}
+.vision .vis1 .e4 {z-index:2;background-color:#F24D16}
+.vision .vis1 .e5 {z-index:1;background-color:#9C410A}
+.vision .vis1:hover .e1 {display:none}
+.vision .vis1:hover .e2 {transform:translate(212px,0) rotate(720deg);border-radius:50%;}
+.vision .vis1:hover .e3 {transform:translate(-212px) rotate(720deg);border-radius:50%}
+.vision .vis1:hover .e4 {transform:translatey(212px)rotate(720deg);border-radius:50%}
+.vision .vis1:hover .e5 {transform:translatey(-212px)rotate(720deg);border-radius:50%}
+.vision .vis2 .e1 {background-color:#1F9EA3;z-index:1}
+.vision .vis2 .e2 {background-color:#FF8B55;z-index:2}
+.vision .vis2 .e3 {background-color:#FF7055;z-index:3}
+.vision .vis2 .e4 {background-color:#9E5428;z-index:4}
+.vision .vis2 .e5 {background-color:#005057;z-index:5}
+.vision .vis2 .e6 {background-color:#E36937;z-index:6}
+.vision .vis2 .e7 {background-color:#D04E33;z-index:7}
+.vision .vis2 .e8 {background-color:#BBA900;z-index:8}
+.vision .vis2 .e9 {background-color:#7D1424;z-index:9}
+.vision .vis2:hover .e1 {transform:translate(212px)rotate(720deg);border-radius:50%}
+.vision .vis2:hover .e2 {transform:translate(-212px)rotate(720deg);border-radius:50%}
+.vision .vis2:hover .e3 {transform:translatey(212px)rotate(720deg);border-radius:50%}
+.vision .vis2:hover .e4 {transform:translatey(-212px)rotate(720deg);border-radius:50%}
+.vision .vis2:hover .e5 {transform:translate(163px,161px)rotate(720deg);border-radius:50%}
+.vision .vis2:hover .e6 {transform:translate(-163px,161px)rotate(720deg);border-radius:50%}
+.vision .vis2:hover .e7 {transform:translate(-163px,-161px)rotate(720deg);border-radius:50%}
+.vision .vis2:hover .e8 {transform:translate(163px,-161px)rotate(720deg);border-radius:50%}
+.vision .vis2:hover .e9 {display:none}
+/*end vision*/
+/*start team*/
+.team {overflow:hidden;height:580px;text-align: center;background-image:url(../image/sa.JPG);background-size:1450px 580px;opacity: .8}
+.team h1 {font-size:50px;font-family:serif;color:saddlebrown}
+.card:hover {transform:rotatey(180deg);transition:2s}
+.team .card {width:300px;height:400px;background-color:#303841;text-align: center;padding: 20px;box-sizing:border-box;position: relative;margin-top:10px;perspective:600px;transform-style: preserve-3d;border:1px solid #222;border-radius:10px;float:left;margin-right:30px}
+.card .font {position:absolute;top:0;left:0;height:100%;width:100%;padding:20px;z-index:1;transition: 1s;backface-visibility:hidden;box-sizing: border-box}
+.card span {width:100%;height:100px;background-color:#3A4750;position:absolute;top: 0;left: 0;border-radius:10px;box-sizing: border-box;backface-visibility: hidden}
+.card img {width:120px;height:120px;border-radius:50%;position: absolute;top:36px;left:90px}
+.card h2 {font-size:25px;margin-top:160px;color:#fff}
+.card .font p {color:#D72323;font-size:18px;font-family:cursive}
+.card .font .geha {color:darkgoldenrod;font-size:23px}
+.back {width: 100%;height: 100%;position: absolute;top: 0;left: 0;background-color:#900C27;padding:20px;box-sizing: border-box;z-index:2;transform:rotateY(180deg);border-radius:10px;backface-visibility: hidden}
+.back p {margin-top:70px;margin-bottom: 50px;color:#C70039}
+.back ul {list-style:none;margin-right:10px}
+.back ul li {display:inline-block}
+.back ul li i {padding:10;px;color:darkgray;margin:10px}
+.back ul li i:hover {color:#fff;cursor:pointer}
+/*end team*/
+/*start footer*/
+footer {height:752px;overflow:hidden;text-align: center;position:relative;
+;background-size:1450px 752px;background-image:url(../image/u.jpg)}
+.ver {width:100%;height:100%;background-color:#3E4142;;opacity:.8}
+footer h4 {font-size:18px;color:#fff;margin-right:55px;margin-top:0px;padding-top: 34px}
+footer h4 i {margin-left:9px;color:darkgoldenrod}
+footer input {width:300px;height:30px;background-color:#ffffff;padding-left:8px;padding:6px;margin-right:60px;margin-bottom:30px;border:1px solid #F7600E;border-radius:10px
+}
+footer textarea {width:690px;margin-right:60px;padding:20px;box-sizing: border-box;height:300px;border:1px solid #F7600E;border-radius:10px;margin-bottom:127px;
+opacity:1}
+footer span {color: #fff;font-size: 13px;font-weight: bold;position:absolute;top:473px;right:614px}
+footer article {position:absolute;top:468px;left:340px}
+footer label {width:50px;height:20px;position:relative;display:inline-block;
+cursor:pointer}
+footer label div {position:absolute;top: 0;left:0;right:0;border-radius: 30px; bottom:0;width:100%;height:100%;background-color: #fff}
+footer label div:before {content:"";position:absolute;background-color:#ddd;width:16px;height:16px;border-radius: 50%;left:2px;top:1px;border:1px solid #222}
+footer label div:after {content:"√";position:absolute;display:none}
+input:checked + div:after {left:10px;top:3px;color:#fff;display:inline-block}
+footer label input {display: none}
+input:checked + div:before {left:30px;background-color:#fff;transition:.65s}
+input:checked + div {background-color:limegreen}
+footer button {width:160px;padding:8px;border:1px solid #ddd
+;border-radius:8px;font-size:16px;background-color:#F7600E
+;color:#fff;position: absolute;top:528px;left:334px;cursor:pointer}
+footer button:hover {border:1px solid brown}
+footer hr {background-color:#ccc;height:1px;border:1px solid #363535 }
+footer h5 {font-size:18px;color:darkgray;font-family:serif;margin-top:15px}
+footer ul {margin-right: 20px;list-style: none;margin-top:-13px;margin-bottom:26px}
+footer ul li {display: inline-block;padding-right:20px
+;color:goldenrod}
+footer ul li:hover {color:#00C7FB;cursor: pointer}
+footer p {color:#a1cea1;margin-top:16px;font-size:12px;display: inline-block}
+footer p:hover {color:#fff;cursor:pointer}
+footer bre {color:#fff;font-size:12px;position:absolute;top:718px;
+right: 187px}
+footer bre i {color:#fd5a01;margin-left:6px }
+footer bre i:hover {color:#ccc;cursor:pointer;padding:1px}
+/*end footer*/

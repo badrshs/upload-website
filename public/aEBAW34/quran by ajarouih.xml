@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:version='2' class='v2' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+  <head>
+<meta content='مصحف إلكتروني مع تلاوة تفاعلية يساعدك في تصفح وقراءة القرآن الكريم من متصفح الانترنت مباشرة بمميزات كثيرة مثل روايات وترجمات وتظليل ونسخ وحفظ موضع القراءة. تجد في قرآن فلاش المصاحف الشهيرة لتختار منها المصحف الذي اعتدت التلاوة منه لنقلل الفرق بين المصحف الورقي لديك والمصحف الالكتروني، ولنؤمّن لك الراحة في التلاوة والشكل المألوف لديك في مواضع الآيات والسور. ' name='description'/>
+<meta content='قرآن, قرآن فلاش, القرآن الكريم, القران الكريم, قراءة القران الكريم, تصفح القران الكريم, المصحف الالكتروني, مصحف ورش, مصحف قالون' name='keywords'/>
+    <meta content='IE=EmulateIE7' http-equiv='X-UA-Compatible'/>
+    <b:if cond='data:blog.isMobile'>
+      <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0' name='viewport'/>
+    <b:else/>
+      <meta content='width=1100' name='viewport'/>
+    </b:if>
+    <b:include data='blog' name='all-head-content'/>
+    <title><data:blog.pageTitle/></title>
+<link href='http://redhillmosque.com/media/19125/1g.png' rel='shortcut icon' type='image/x-icon'/>
+    <b:skin><![CDATA[/*
+-----------------------------------------------
+قرآن فلاش هو مصحف الكتروني تفاعلي يساعدك في تلاوة القرآن الكريم من متصفح الانترنت مباشرة
+----------------------------------------------- */
+
+body{background: url(https://dl.dropbox.com/u/8049464/default.png);color:#1F2635;font-family:DroidKufi-Regular,Helvetica,Sans-serif;font-size:14px;margin:0px;padding:0px 0px 0px 0px;}
+
+]]></b:skin>
+
+  
+  </head>
+<iframe src='http://quran.ksu.edu.sa/index.php?l=ar' style='min-width:1000px;width:100%;height:890px;border:none;overflow:hidden'/>  <body>
+  <b:section class='navbar' id='navbar' maxwidgets='1' showaddelement='no'>
+    <b:widget id='Navbar1' locked='true' title='Navbar' type='Navbar' visible='true'>
+      <b:includable id='main'>&lt;script type=&quot;text/javascript&quot;&gt;
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener(&#39;load&#39;,
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent(&#39;onload&#39;, function(){ object[attribute] = val; });
+      }   
+    }
+  &lt;/script&gt;
+&lt;div id=&quot;navbar-iframe-container&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://apis.google.com/js/plusone.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+      gapi.load(&quot;gapi.iframes:gapi.iframes.style.bubble&quot;, function() {
+        if (gapi.iframes &amp;&amp; gapi.iframes.getContext) {
+          gapi.iframes.getContext().openChild({
+              url: &#39;https://www.blogger.com/navbar.g?targetBlogID\x3d2939529518359190316\x26blogName\x3d%D8%A7%D9%84%D9%82%D8%B1%D8%A7%D9%86+%D8%A7%D9%84%D9%83%D8%B1%D9%8A%D9%85\x26publishMode\x3dPUBLISH_MODE_BLOGSPOT\x26navbarType\x3dLIGHT\x26layoutType\x3dLAYOUTS\x26searchRoot\x3dhttps://quurantv.blogspot.com/search\x26blogLocale\x3dar\x26v\x3d2\x26homepageUrl\x3dhttps://quurantv.blogspot.com/\x26vt\x3d-6622932028222492887&#39;,
+              where: document.getElementById(&quot;navbar-iframe-container&quot;),
+              id: &quot;navbar-iframe&quot;
+          });
+        }
+      });
+    &lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;
+(function() {
+var script = document.createElement(&#39;script&#39;);
+script.type = &#39;text/javascript&#39;;
+script.src = &#39;//pagead2.googlesyndication.com/pagead/js/google_top_exp.js&#39;;
+var head = document.getElementsByTagName(&#39;head&#39;)[0];
+if (head) {
+head.appendChild(script);
+}})();
+&lt;/script&gt;
+</b:includable>
+    </b:widget>
+  </b:section> 
+</body>
+
+</html>

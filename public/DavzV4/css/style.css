@@ -1,0 +1,182 @@
+*{
+    padding: 0;
+    margin: 0
+}
+
+body{
+    font-family: 'DroidArabicKufiRegular' , arial;
+    direction: rtl;
+}
+
+.container{
+    width: 90%;
+    margin: auto
+}
+
+.clearfix{
+    clear:both
+}
+
+header{
+    background: #2d2d2d;
+    overflow: hidden;
+}
+
+header nav{
+    margin-right: 30px
+}
+
+header nav ul{
+    list-style: none 
+}
+
+header nav ul li{
+    float: right;
+    padding: 10px 0;
+    
+}
+
+header nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    padding: 15px 20px;
+}
+
+header nav ul li a:hover{
+    background: #569eca;
+    color: #2d2d2d
+}
+
+header nav,header .logo{
+    float: right
+}
+
+header .logo h2{
+    color: #fff;
+    
+}
+
+header .logo h2 span{
+    background: #569eca;
+    padding: 3px 15px;
+    font-size: 30px
+}
+
+/* End Header */
+
+.slider{
+    background: url("../images/GProxpt.jpg") center center fixed;
+    background-size: cover;
+    height: 600px;
+    color: #fff;
+    text-align: center;
+}
+
+.slider .data{
+    line-height: 500px;
+}
+
+.slider .data-slider{
+    background: rgba(5,5,5,0.5);
+    height: 100%
+}
+
+/* End slider */
+
+.about{
+    text-align: center;
+    background: #e2eaef;
+    overflow: hidden;
+    color: #2d2d2d;
+    padding: 10px 0 0 0 ;
+}
+
+.about .content , .about .image{
+    width: 50%;
+    float: right
+}
+
+.about .content{
+    margin: 15px 0
+}
+
+.about .content p{
+    padding: 15px;
+    color: #8c7f7f;
+    text-align: right
+}
+
+.about .image img{
+    width: 100%
+}
+
+/* End slider */
+
+.resume{
+    padding: 50px 0;
+    text-align: center
+}
+
+.resume p{
+    line-height: 2;
+    margin: 20px 0
+}
+
+.resume a{
+    text-decoration: none;
+    background: #569eca;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.resume a:hover{
+    background: #2d2d2d
+}
+
+/* End resume */
+
+.portfolio{
+    padding: 50px 0;
+    text-align: center;
+    background: #eee;
+    overflow: hidden
+}
+
+.portfolio .container>div{
+    width: 32.3333333%;
+    float: right;
+    margin-left: 10px
+}
+
+.portfolio .container>div img{
+    width: 100%;
+}
+
+/* End portfolio */
+
+footer{
+    padding: 40px 0;
+    background: #2d2d2d;
+    color: #fff;
+    overflow: hidden
+}
+
+footer .container>div{
+    width: 30.333333%;
+    float: right;
+    margin-left: 20px
+}
+
+footer .container .about-me{
+    
+}
+
+footer .container .port>div{
+    width: 40%;
+    float: right;
+    margin: 10px
+}
+
+footer .container .port div img {
+    width: 100%
+}

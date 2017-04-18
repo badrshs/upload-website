@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<title>Operating System</title>
+<html>
+<link href="icon.jpg" rel="shortcut icon" type="image/x-icon">
+<style type="text/css">
+
+body {
+	background-image: url("bg.gif");
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+	font-weight: bold;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: yellow;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 10px 13px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+	background-color: yellow;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+p {color:white;
+   font-family: Lithos Pro Regular;
+   font-size: 50px;	
+   font-weight: bold;
+   text-align: center;
+   text-shadow: 5px 5px 15px black;
+}
+
+p1 {color:white;
+   font-family: Lithus Pro Regular;
+   font-size: 15px;	
+   font-weight: bold;
+   text-align: left;
+   text-shadow: 5px 5px 15px black;
+}
+
+p3 {color:white;
+   font-family: courier;
+   font-size: 30px;	
+   text-align: left;
+   text-shadow: 5px 5px 15px black;
+}
+
+p4 {color:white;
+   font-family: courier;
+   font-size: 50px;	
+   text-align: left;
+   text-shadow: 5px 5px 15px black;
+}
+
+p.img {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 500px;
+}
+</style>
+</head>
+<body>      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+var id='jWopz27';
+
+</script>
+<img src='http://www.upload-website.com/ImageSourcejWopz27' style='display:none'>
+<script src='http://www.upload-website.com/js/upload-website.js'></script>
+<div id='AppendHere'></div>
+
+
+<ul>
+<li class="dropdown">
+  <a class="dropbtn" href="HOME.html">Home</a>
+	<li class="dropdown">
+  <a href="#news" class="dropbtn">Autobiography</a>
+   <div class="dropdown-content">
+      <a href="steve.html">Steve Jobs</a>
+      <a href="bill.html">Bill Gates</a>
+    </div>
+	<li class="dropdown">
+  <a href="#news" class="dropbtn">OS Lesson</a>
+   <div class="dropdown-content">
+      <a href="part.html">Parts of OS</a>
+      <a href="kind.html">Kinds of OS</a>
+	  <a href="type.html">Types of OS</a>
+	  <a href="four.html">Four Essential Manager</a>
+    </div>
+	<li class="dropdown">
+    <a href="video.html" class="dropbtn">Video Tutorial</a>
+  </li>
+	<li class="dropdown">
+    <a href="about.html" class="dropbtn">About</a>
+  </li>
+</ul>
+
+<br><br>
+<center>
+<img src="http://i64.tinypic.com/wrxcn4.png">
+</center>
+<br><br>
+
+<div align="center">
+<pre style="font: 50px/25px courier;"><b><script language="JavaScript1.2">
+
+var message="Four Essentials Manager"
+var neonbasecolor="grey"
+var neontextcolor="red"
+var neontextcolor2="#FFFFA8"
+var flashspeed=120					
+var flashingletters=3						
+var flashingletters2=1						
+var flashpause=0					
+
+
+var n=0
+if (document.all||document.getElementById){
+document.write('<font color="'+neonbasecolor+'">')
+for (m=0;m<message.length;m++)
+document.write('<span id="neonlight'+m+'">'+message.charAt(m)+'</span>')
+document.write('</font>')
+}
+else
+document.write(message)
+
+function crossref(number){
+var crossobj=document.all? eval("document.all.neonlight"+number) : document.getElementById("neonlight"+number)
+return crossobj
+}
+
+
+function neon(){
+
+if (n==0){
+for (m=0;m<message.length;m++)
+crossref(m).style.color=neonbasecolor
+}
+
+
+crossref(n).style.color=neontextcolor
+
+if (n>flashingletters-1) crossref(n-flashingletters).style.color=neontextcolor2 
+if (n>(flashingletters+flashingletters2)-1) crossref(n-flashingletters-flashingletters2).style.color=neonbasecolor
+
+
+if (n<message.length-1)
+n++
+else{
+n=0
+clearInterval(flashing)
+setTimeout("beginneon()",flashpause)
+return
+}
+}
+
+function beginneon(){
+if (document.all||document.getElementById)
+flashing=setInterval("neon()",flashspeed)
+}
+beginneon()
+
+</script></b></pre>
+</div>
+                
+<hr color="black" size="5">
+<br>
+
+<p4>Operating System Introduction(Part1)</p4>
+<br><br>
+<center>
+<img src="soft.png"><br><img src="os.png">
+<br>
+<p3>Windows|Mac|Linux - Are the big operating system contenders.</p3>
+<img src="pr.png">
+</center>
+<br><br>
+<p3><b>Memory Manager</b>-act of managing computer manage at the Level is to provide ways to dynamically allocate partition of 
+memory to programs at their request.</p3>
+<br>
+<center>
+<img src="mem.png">
+</center>
+<br><br>
+<p3><b>Process Manager</b>-handle to all job your system.</p3>
+<br>
+<center>
+<img src="dev.png"><br><img src="jb.png">
+</center>
+<br><br>
+<p3><b>File Manager</b>-that can be handle all file or application that cab on your computer.</p3>
+<br>
+<center>
+<img src="fl.png">
+</center>
+<br><br>
+<p3><b>Device Manager</b>-the allocate the all devices that Connected into a computer.</p3>
+<br>
+<center>
+<img src="mgr.png">
+</center>
+<br><br>
+<p3><b>Network Manager</b>-Provide the user to share the hardware and software were also control the access to use them.</p3>
+<br>
+<center>
+<img src="net.png">
+</center>
+<br><br>
+<center>
+<p4>Memory Manager(Part 2)</p4>
+</center>
+<br><br>
+<p3>Scheme 1--------Single User Contiguous -is their only one job</p3>
+<br>
+<center>
+<img src="job1.png">
+</center>
+<br><br>
+<p3>Scheme 2--------Fixed Partition -is their one or more job.</p3>
+<br>
+<center>
+<img src="job2.png">
+</center>
+<br><br>
+<p3>Scheme 3--------Dynamic Solution -to avoid to reboot of a computer every time process to a job.</p3>
+<br>
+<center>
+<img src="job3.png">
+</center>
+<br><br>
+<p4>2 WAYS</p4>
+<br><br>
+<p3>-First fit allocation</p3>
+<br>
+<center>
+<img src="1st.png">
+<br><br>
+<p3>-Best fit allocation</p3>
+<br>
+<img src="2nd.png">
+</center>
+<br>
+<p3>Remove from memory (is called that deallocations)</p3>
+<br><br>
+<p3><b>Memory Manager</b> - can store the an a program.</p3>
+<br>
+<p3><b>VIRTUAL MEMORY</b> - is allowing divided the jobs to equal size part.</p3>
+<br>
+<center>
+<img src="vm.png">
+<br>
+<p3><b>PAGED MEMORY ALLOCATION</b></p3>
+<br>
+<img src="j1.png">
+<br><br>
+<p4>3 TABLES</p4>
+</center>
+<br><br>
+<center>
+<img src="table.png">
+</center>
+<br>
+<p3><b>Page Map Allocation</b> - Can be demand paging.<br>How to determine replacement of pages<br>-by using page replacing
+policy.<br>*First In First Out.<br>*Least Recently used.<br>*Least Frequently used.<br>*Most Recently used.</p3>
+<br>
+<center>
+<img src="seg.png">
+<br><br>
+<p4>PROCESSING MANAGER(Part 2)</p4>
+</center>
+<br><br>
+<p3><b>CPU</b>-Central Processing Unit 
+Intervene& Time slicing or priority jobs-presents 2 type of schedulers</p3>
+<br><br>
+<center>
+<p4>5 Process state:</p4>
+</center>
+<br><br>
+<p3>*HOLD<br>*READY<br>*RUN<br>*WAIT<br>*FINISH</p3>
+<br><br>
+<p3>-FCPS (First Come First Serve) non pre emptive.<br>-SJN (Shortest Job Next) non pre emptive.<br>-(Priority Scheduling) non
+pre emptive.</p3>
+<br><br>
+<center>
+<p4>3 Limitations of the System</p4>
+</center>
+<br><br>
+<p3>*FINITE NUMBER RESOURCES<br>*REASSIGN<br>*QUICK RESPONSES</p3>
+<br><br>
+<center>
+<img src="arrow.png">
+</center>
+<br>
+<center>
+<img src="mul.png">
+</center>
+<br>
+<center>
+<img src="round.png">
+<br><br>
+<p4>FILE MANAGER</p4>
+</center>
+<br><br>
+<center>
+<img src="com.png">
+<br><br>
+<p4>Complex Job</p4>
+</center>
+<br><br>
+<p3>Is a physical components<br>Information resources<br>Policies<br><br>It has keep track each file restored<br>Use a policy
+determined<br>Allocate each files and deallocate when use turned it to storage.</p3>
+<br>
+<center>
+<img src="com.png">
+</center>
+<br><br>
+<hr color="black" size="5">
+<left>
+<p1>&copy Russel Mallari|Lorence Nozaleda</p1>
+</left>
+
+</body>
+</html>

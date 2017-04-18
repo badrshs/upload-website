@@ -1,0 +1,30 @@
+/*start about page*/
+
+.breadcrump-holder{ background-color: #000; }
+.breadcrump{ padding: 10px 0;  }
+.breadcrump-holder .breadcrump ol{  }
+.breadcrump-holder .breadcrump li { float: left; padding-right: 28px; margin-bottom: 15px; font-size: 16px; }
+.breadcrump-holder .breadcrump li a{ text-decoration: none; color: #59E04A; }
+.breadcrump-holder .breadcrump li a:hover{ color: #1FF407; }
+
+
+.about-us{ height:525px; padding-bottom: ; padding-top: ; background:url('../_images/100.jpg') no-repeat center center fixed; -webkit-background-size:cover; -moz-background-size:cover; -o-background-size:cover; background-size:cover; }
+.about-us .abou-u{ background: rgba(2,2,2,0.7); height: 525px; }
+.about-us h1{ font-weight: bold; color: #fff; }
+.about-us hr{ width: 70%; }
+.about-us p{ color: #fff; font-size: 17px; }
+
+.about-features{ padding-bottom: ; background:url('../_images/100.jpg') no-repeat center center fixed; -webkit-background-size:cover; -moz-background-size:cover; -o-background-size:cover; background-size:cover;   }
+.about-features .abou-feat{  background: rgba(2,2,2,0.7);}
+.about-features h3 { font-weight: bold; color: #fff; }
+.about-features p{ color: #fff; }
+.about-features .abou-feat:hover{ color: #fff; }
+
+.about-ceo{ background:url('../_images/100.jpg') no-repeat center center fixed; -webkit-background-size:cover; -moz-background-size:cover; -o-background-size:cover; background-size:cover; }
+.about-ceo .abou-ceo{  background: rgba(2,2,2,0.7);}
+.about-ceo h2{ font-weight: bold; color: #fff; }
+.about-ceo .lead{ line-height: 1.7; color: #fff; font-size: 18px;  }
+.about-ceo a{ width: 100px; margin-bottom: 10px; }
+
+
+/*End about page*/

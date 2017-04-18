@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Mohd-hd portfolio</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- JQuery google cdn -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+	
+	<link rel="stylesheet" href="assets/social_btns.css">
+	
+	<script>
+		$(function(){
+			$(".clickable").click(function(){
+				console.log("Click");
+			});
+		});
+		
+		function createModal(header_, body_, id_){
+			
+			var block = '<div class="modal fade" id='+id_+'>\
+						 <div class="modal-dialog">\
+							<div class="modal-content">\
+								<div class="modal-header">\
+									<button class="close" data-dismiss="modal">&times;</button>\
+									<h4>'+header_+'</h4>\
+								</div>\
+								<div class="modal-body">\
+									<p>'+body_+'</p>\
+								</div>\
+								<div class="modal-footer">\
+								</div>\
+							</div>\
+						</div>\
+					</div>'
+			
+			$('#projects').append(block);
+		}
+		
+		function createGithubBtn(link_to, parent_id){
+			var btn = '<a class="btn btn-block btn-github" href='+link_to+'>\
+							<span class="fa fa-github" ></span> | Check On Github\
+						</a>'
+			$('#'+parent_id).append(btn);
+		}
+		
+		function createYoutubeBtn(link_to, parent_id){
+			var btn = '<a class="btn btn-block btn-youtube" href='+link_to+'>\
+							<span class="fa fa-youtube" ></span> | Check On Youtube\
+						</a>'
+			$('#'+parent_id).append(btn);
+		}
+		function createLinkBtn(link_to, parent_id, text){
+			var btn = '<a class="btn btn-block btn-success" href='+link_to+'>'+text+'</a>'
+			$('#'+parent_id).append(btn);
+		}
+		
+	
+	</script>
+	
+	<style>
+		section{
+			width: 100vw;
+			height: 100vh;
+			padding: 50px;
+			display: block;
+		}
+		
+		.cl_white{
+			color: white;
+		}
+		
+		.cl_green{
+			color: green;
+		}
+		
+		img{
+			transition: opacity .5s ease-in-out;
+			width: 250px;
+		}
+		
+		img:hover{
+			opacity: .5;
+		}
+		
+		.col-text{
+			-webkit-column-count: 3;
+		}
+		
+		#projects{
+			background-color: rgba(245, 245, 245, 0.4);
+		}
+		
+	</style>
+</head>
+
+	<body data-spy="scroll" data-target=".navbar">      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<img src='http://www.upload-website.com/ImageSourceXCDYZ40' style='display:none'>
+
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<ul class="nav navbar-nav">
+				<li><a href="#home">Home</a></li>
+				<li><a href="#projects">Projects</a></li>
+			</ul>
+		</nav>
+		
+		<section id="home" style="background: url(assets/images/bg1.jpg); background-size: 100% 100%;)" class="cl_white text-center">
+			
+			<div class="container text-center">
+				<h1 class="btn-primary"> Feel free to check out my projects</h1>
+			</div>
+		
+		</section>
+		
+		<section id="projects" class="text-center">
+			<div class="page-header">
+				<h2>Projects & Contributions</h2>
+			</div>
+			
+		<div class="container" >
+			
+			<div class="row" >
+				
+				<div class="col-md-4 text-center" >					
+					<div class="img-thumbnail">
+						<img class="img-thumbnail" src="assets/images/p1.jpg" data-toggle="modal" data-target="#m1"/>
+					</div>
+					<div class="caption" id="c1">
+						<h4>Arduino robot control via voice commands</h4>
+						
+						<script>createYoutubeBtn('https://www.youtube.com/watch?v=PvgEJFw1W3o', 'c1');
+						createLinkBtn('http://www.instructables.com/id/Arduino-Robot-Controll-Via-Voice-Commands','c1',
+						'Check On Instructables');</script>
+					</div>
+				</div>	
+				
+				<div class="col-md-4 text-center" >					
+					<div class="img-thumbnail">
+						<img class="img-thumbnail" src="assets/images/p2.jpg" data-toggle="modal" data-target="#m2"/>
+					</div>
+					<div class="caption" id="c2">
+						<h4>(HCI): pong game </h4>
+						
+						<script>createYoutubeBtn('https://www.youtube.com/watch?v=UjIeBirI9dA', 'c2');
+						createLinkBtn('http://www.instructables.com/id/Arduino-softwarehardware-pong-game','c2',
+						'Check On Instructables');</script>
+					</div>
+				</div>	
+				
+				<div class="col-md-4 text-center" >					
+					<div class="img-thumbnail">
+						<img class="img-thumbnail" src="assets/images/p3.jpg" data-toggle="modal" data-target="#m3"/>
+					</div>
+					<div class="caption" id="c3">
+						<h4>Robotic arm control & interfacing </h4>
+						
+						<script>createYoutubeBtn('https://www.youtube.com/watch?v=vl4CR_Q1aHs', 'c3');
+						createLinkBtn('http://www.instructables.com/id/Robotic-Arm-Controll-Automation','c3',
+						'Check On Instructables');</script>
+					</div>
+				</div>	
+			</div>
+			
+			<br /> <br />
+			
+			<div class="row">
+				<div class="col-md-4 text-center" >					
+					<div class="img-thumbnail">
+						<img class="img-thumbnail" src="assets/images/p4.jpg" data-toggle="modal" data-target="#m4"/>
+					</div>
+					<div class="caption" id="c4">
+						<h4>LinkArchiever</h4>
+						
+						<script>createGithubBtn('https://github.com/Mohamad1994HD/LinkArchiever.git', 'c4');</script>
+					</div>
+				</div>	
+				
+				<div class="col-md-4 text-center" >					
+					<div class="img-thumbnail">
+						<img class="img-thumbnail" src="assets/images/p5.jpg" data-toggle="modal" data-target="#m5"/>
+					</div>
+					<div class="caption" id="c5">
+						<h4>SolveIt Android Calculator </h4>
+						<a class="btn btn-block"  href='https://play.google.com/store/apps/details?id=advanced.calculator.solveit&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
+							<img style="width:100%;" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/>
+						</a>
+					</div>
+				</div>	
+				
+				<div class="col-md-4 text-center" >					
+					<div class="img-thumbnail">
+						<img class="img-thumbnail" src="assets/images/p6.jpg" data-toggle="modal" data-target="#m4"/>
+					</div>
+					<div class="caption" id="c6">
+						<h4>NCYservice Website <br />development + design</h4>
+						
+						<script>createLinkBtn('https://www.ncyservice.com','c6','Visit Website');</script>
+					</div>
+				</div>	
+				
+			</div>
+			
+				
+			
+			
+			<div class="text-right">
+				<p class="col-sm-12">&copy; 2016 Mohd-HD</p>
+			</div>
+		</div>
+			
+		</section>
+	</body>
+</html>

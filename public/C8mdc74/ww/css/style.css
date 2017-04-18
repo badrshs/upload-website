@@ -1,0 +1,78 @@
+
+/* style geranel page */
+body{direction: rtl;
+	width:90%;margin: 0 auto}
+
+/* Start Header */
+.header{ height: 70px;background: #000;padding-top: 7px}
+.header .logo{float: right}
+.header .navbar{float: left}
+.header .navbar li{display: inline-block;padding: 10px 0px;margin: 0 15px;}
+.header .navbar li a{text-decoration: none;color:#fff;padding-left: 30px;font-weight: 700}
+/* End Header */
+
+/* Start sliders */
+.sliders{}
+.sliders div{display: none}
+.sliders .active{display: block}
+/* End sliders */
+
+/* Start cats */
+.cats{text-align: center}
+.cats div{display: inline-block;padding-left:10px;border: 1px solid #ddd }
+/* End cats */
+
+/* Start items */
+.items{padding-bottom: 30px;padding-top: 30px;text-align: center}
+.items .item{display: inline-block;margin-left: 10px;margin-bottom: 15px}
+ .price{color:#16a5e0}
+.items .item a{text-decoration: none;color: #000}
+/* End items */
+
+/* Start feader */
+.footer{padding-top: 30px;background: #111;text-align: center;color:#fff;margin-top: 10px}
+.footer p{width: 80%;margin: 10px auto}
+.footer .copy{background: #000;padding-bottom: 10px;padding-top: 10px}
+/* End feder */
+
+
+/* Start  Style Aboutus Page */
+.aboutus{padding-top: 40px}
+.aboutus div{display: inline-block}
+.aboutus .about{width: 50%;padding:20px 15px;font-size: 18px}
+.aboutus .logo{width: 40%;float: left}
+.adv{text-align: center;margin-bottom: 30px}
+/* End Style Aboutus Page */
+
+/* Start Style Details-cats Page */
+.details-cat{}
+.details-cat div{display: inline-block}
+.details-cat .nav-cat{list-style: none;text-align: center}
+.nav-cat li {
+    background-color: rgba(229, 229, 229, 0.54);
+    margin-bottom: 1px;
+    padding: 10px;width: 200px;}
+
+.details-cat .nav-cat a{text-decoration: none;color: #000}
+.nav-cat .active a{color:#16a5e0 }
+.details-cat .nav-cat .main{background:#16a5e0; }
+.details-cat .nav-cat .main a{color: #fff; }
+.details-cat .type{margin-right: 100px}
+/* End Style Details-cats Page */
+
+/* Start Style Details-items Page */
+.details-item{padding: 30px 10px 100px}
+.details-item div{display: inline-block}
+.details-item .details{margin-right: 50px;width: 30%}
+.details-item .advs{float: left}
+/* End Style Details-items Page */
+
+/* Start Style Contactus Page */
+.contactus{text-align: center;padding-top: 40px}
+.contactus .contact{margin: 5px}
+.contactus .contact div{display:inline-block;margin-bottom: 10px}
+.contactus .contact h3{float: right;margin-left: 30px}
+.contactus .contact .contact-text{padding: 10px ;float: left;width: 400px}
+.contactus .contact textarea{height: 150px}
+.btn{background: #16a5e0;padding: 10px 60px;color:#fff;border: 2px solid #16a5e0}
+/* End Style Contactus Page */

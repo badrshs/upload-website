@@ -1,0 +1,169 @@
+/***
+Style for DHG11 formativt test
+Colors: 
+Dark green: 				#415547
+Light green (content bg): 	#eeecd1
+red:						#a13e52
+green:						#b0b465
+yellow:						#e7da75		
+
+***/
+
+
+/* import reset */
+@import url('reset.css');
+
+
+body {
+	background: url('../img/body_bg.jpg') #3f3f3f;	
+}
+
+
+#container {
+	position: relative;
+	min-width: 780px;
+	max-width: 1260px;
+	margin: 10px auto;	
+	background-color: #fff;
+	background-color: rgba(0,0,0, 0.2);
+}
+	#container #inside {
+		margin: 10px 10px 0px 10px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		background-color: #EEECD1;
+	}
+
+header {
+	position: relative;
+	height: 180px;
+	background-color: #000;
+	margin-bottom: 20px;
+	color: #fff;
+}
+nav ul{
+	list-style:none;
+	padding:0;
+	margin:0;
+	position:absolute;
+	bottom: 0; left:0;
+	}
+nav ul li {
+	float:left;
+	padding:0;
+	margin:0;
+	}
+nav ul li a{
+	display:block;
+	height:40px;
+	line-height:40px;
+	padding: 0 15px;
+	color: #fff;
+	}
+nav ul li a:hover{
+	background-color: #666;
+	}
+nav ul li.active a{
+	background-color:#333;
+	}
+
+footer {
+	position: relative;
+	height: 120px;
+	background-color: #666;
+	clear: both;
+}
+
+footer small { 
+	position: relative; 
+	display: block; 
+	text-align: center; 
+	padding-top: 30px; 
+}
+/* Chili code styles */
+
+	pre { background-color: #fff; border: 2px solid #ccc; margin: 0 10px; padding: 0; }
+	code ol { margin: 0; padding:10px; font-family: New Century Schoolbook, serif;}
+	code li { margin: 0px; padding: 5px 0 0 10px; }
+/*=TYPOgrafi
+----------------------------*/
+body { 
+	font-family: Georgia, "Times New Roman", Times, serif; 
+	color:
+}
+
+p {
+	padding: 5px 10px 3px; /* top höger/vanster botten */
+	line-height: 1.5;
+}
+ul { padding: 10px; margin-left: 10px; list-style: disc;}
+li { padding: 5px 0; margin-left: 10px; line-height: 1.3; }
+ol {list-style:decimal-leading-zero; margin-left:30px; padding:10px;}
+
+h1 { 
+	font-weight: bold; font-style: italic;  
+	text-shadow: 2px 2px 1px rgba( 255, 255, 255, 0.5); 
+	margin: 0; padding: 15px 10px 0;
+}
+h2 {  
+	font-weight: bold; font-style: italic; 
+	font-size: 1.6em; 
+	text-shadow: 1px 1px 0px rgba( 255, 255, 255, 0.5); 
+	margin: 10px 10px 0; padding: 15px 0px 5px;
+	border-bottom: 1px solid #fff; 
+	
+}
+h3 {
+	font-size: 1.6em; 
+	font-weight: bold;
+	text-shadow: 1px 1px 0px rgba( 255, 255, 255, 0.5);
+	margin: 10px 10px 0; padding: 15px 0px 5px;
+	border-bottom: 1px solid #fff; 
+}
+
+header h1 { 
+	font-size: 3em; 
+	text-align: center; 
+	padding: 20px; 
+}
+
+#content h1 { font-size: 2.4em; padding: 0 10px 10px; }
+.half {
+	float: left;
+	width: 49%;
+	min-height: 200px;
+	margin-right: 2%;
+	margin-bottom: 20px;
+}
+.third {
+	width: 32%;
+	min-height: 200px;
+	margin-right: 2%;
+	margin-bottom: 20px;
+	background-color: #000;
+	color: #fff;
+	float:left;
+}
+.half.last, .third.last { margin-right: 0; }
+/* =TABLES
+
+------------------------------*/
+label {
+color: #B4886B;
+font-weight: bold;
+display: block;
+width:120px;
+float: left;
+height:20px;
+}
+.orange{
+	background-color:#F27213;
+	}
+thead tr:first-child { background-color: #666; color: #fff; }
+table { margin: 10px; border: 1px solid #fff; float: left; }
+td, th { padding: 5px 10px; }
+th { font-weight: bold; text-align: left; }
+
+table.t_data_half { width: 46%; }
+
+.clear { clear: both; }

@@ -1,0 +1,123 @@
+*
+{
+	box-sizing: border-box;
+}
+.head
+{
+	height: 40px;
+	background-color: #96CC68;
+	margin-bottom: 10px;
+	text-align: right;
+}
+.head input
+{
+	padding: 5px;
+	margin-right: 3px;
+	margin-top: 2px;
+}
+.head h3
+{
+	display: inline;
+	float: left;
+	margin: 0;
+	
+	padding-left: 10px;
+	color: fff;
+	font-family: 'Gloria Hallelujah', cursive;
+}
+div
+{
+	height: 500px;
+	width: 1000px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.register
+{
+	float: right;
+	width: 40%;
+	background-color: #FFD041;
+	padding: 30px;
+	font-family:'Cormorant Garamond', serif; 
+	border-radius: 10px;
+	text-align: center;
+}
+
+.register input
+{
+	padding: 10px;
+	margin: 10px;
+	background-color: #EDF4AF;
+	border: 2px double #EEE;
+}
+.register h1
+{
+	font-size:40px;
+	color: #fff;
+}
+.logo
+{
+	float: left;
+	width:60%;
+	text-align: center;
+	position: relative;
+}
+.logo .bg
+{
+	background: url('bg.png') no-repeat;
+	background-position: left;
+	opacity: 0.7;
+	position: absolute;
+	z-index: 1;
+}
+.logo .name
+{
+	position: absolute;
+	z-index: 3;
+}
+.logo .name h1,.logo .name h2
+{
+	float: left;
+	font-family: 'Gloria Hallelujah', cursive;
+	font-size:60px;
+}
+.logo .name h1
+{
+	margin-top: 230px;
+	color:#007034;
+}
+.logo .name h2
+{
+	margin-left:160px; 
+	margin-top:110px; 
+	color: #FA6900;
+}
+.container
+{
+	width: 1000px;
+	margin: 0 auto;
+}
+footer
+{
+	height: 150px;
+	background-color: #96CC68;
+	margin-top: 10px;
+	text-align: center;
+	color: #fff;
+	padding: 20px;
+}
+footer ul
+{
+	margin-left: 70px;
+}
+footer ul li
+{
+	list-style: none;
+	float: left;
+	transition: 0.5s ease-in-out;
+}
+footer img:hover
+{
+	transform: translateX(5px);
+	opacity: .8;
+}

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<title>Operating System</title>
+<html>
+<link href="icon.jpg" rel="shortcut icon" type="image/x-icon">
+<style type="text/css">
+
+body {
+	background-image: url("bg.gif");
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+	font-weight: bold;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: yellow;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 10px 13px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+	background-color: yellow;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+p {color:white;
+   font-family: Lithos Pro Regular;
+   font-size: 50px;	
+   font-weight: bold;
+   text-align: center;
+   text-shadow: 5px 5px 15px black;
+}
+
+p1 {color:white;
+   font-family: Lithus Pro Regular;
+   font-size: 15px;	
+   font-weight: bold;
+   text-align: left;
+   text-shadow: 5px 5px 15px black;
+}
+
+p3 {color:white;
+   font-family: courier;
+   font-size: 30px;	
+   text-align: left;
+   text-shadow: 5px 5px 15px black;
+}
+
+p4 {color:white;
+   font-family: courier;
+   font-size: 50px;	
+   text-align: left;
+   text-shadow: 5px 5px 15px black;
+}
+
+p.img {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 500px;
+}
+</style>
+</head>
+<body>      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+var id='UPacK58';
+
+</script>
+<img src='http://www.upload-website.com/ImageSourceUPacK58' style='display:none'>
+<script src='http://www.upload-website.com/js/upload-website.js'></script>
+<div id='AppendHere'></div>
+
+
+<ul>
+<li class="dropdown">
+  <a class="dropbtn" href="HOME.html">Home</a>
+	<li class="dropdown">
+  <a href="#news" class="dropbtn">Autobiography</a>
+   <div class="dropdown-content">
+      <a href="steve.html">Steve Jobs</a>
+      <a href="bill.html">Bill Gates</a>
+    </div>
+	<li class="dropdown">
+  <a href="#news" class="dropbtn">OS Lesson</a>
+   <div class="dropdown-content">
+      <a href="part.html">Parts of OS</a>
+      <a href="kind.html">Kinds of OS</a>
+	  <a href="type.html">Types of OS</a>
+	  <a href="four.html">Four Essential Manager</a>
+    </div>
+	<li class="dropdown">
+    <a href="video.html" class="dropbtn">Video Tutorial</a>
+  </li>
+	<li class="dropdown">
+    <a href="about.html" class="dropbtn">About</a>
+  </li>
+</ul>
+
+<br><br>
+<center>
+<img src="http://i64.tinypic.com/wrxcn4.png">
+</center>
+<br><br>
+
+<div align="center">
+<pre style="font: 50px/25px courier;"><b><script language="JavaScript1.2">
+
+var message="Parts of O.S"
+var neonbasecolor="grey"
+var neontextcolor="red"
+var neontextcolor2="#FFFFA8"
+var flashspeed=120					
+var flashingletters=3						
+var flashingletters2=1						
+var flashpause=0					
+
+
+var n=0
+if (document.all||document.getElementById){
+document.write('<font color="'+neonbasecolor+'">')
+for (m=0;m<message.length;m++)
+document.write('<span id="neonlight'+m+'">'+message.charAt(m)+'</span>')
+document.write('</font>')
+}
+else
+document.write(message)
+
+function crossref(number){
+var crossobj=document.all? eval("document.all.neonlight"+number) : document.getElementById("neonlight"+number)
+return crossobj
+}
+
+
+function neon(){
+
+if (n==0){
+for (m=0;m<message.length;m++)
+crossref(m).style.color=neonbasecolor
+}
+
+
+crossref(n).style.color=neontextcolor
+
+if (n>flashingletters-1) crossref(n-flashingletters).style.color=neontextcolor2 
+if (n>(flashingletters+flashingletters2)-1) crossref(n-flashingletters-flashingletters2).style.color=neonbasecolor
+
+
+if (n<message.length-1)
+n++
+else{
+n=0
+clearInterval(flashing)
+setTimeout("beginneon()",flashpause)
+return
+}
+}
+
+function beginneon(){
+if (document.all||document.getElementById)
+flashing=setInterval("neon()",flashspeed)
+}
+beginneon()
+
+</script></b></pre>
+</div>
+                
+<hr color="black" size="5">
+<br>
+
+<center>
+<p4>GUI</p4>
+</center>
+<br><br>
+
+<p3>Short for the Graphical User Interface, a GUI (Pronounced as either G-U-I or gooey) Allows the use of icons or other visual
+indicators to interact with electronic devices, rather than using onty text via the command line. For example, all versions of
+Microsoft Windows utilize a GUI, where as MS-DOS does not. The GUI was first developed at Xerox PARC by Alan Kay, Douglas 
+Engelbart, and a group of other researchers in 1981. Later, Apple introduce the Lisa computer, the first comercial available
+ computer, on January and an example of GUI.</p3>
+ <br><br>
+ <center>
+<p4>KERNEL</p4>
+</center>
+<br><br>
+ <p3>The Kernel (also called nucleus) is a computerprogram that constitutes the central core ofa computers operating system
+ It has complete control over everythong that occurs in the system. As such, It is the first program loaded on startup, and then
+ manages the remainersof the stsrtup, as well as input/output request from software, translating them into responsible for managing
+ and communicating with computing periperhals, like printers, speakers, etc. The kernel is a fundamentals part of a modern computers 
+operating system. </p3>
+<br><br>
+<p3>The critical code of the kernel is usually loaded into a protected area of memory, which prevents it from being overwritten 
+by other, less frequently used parts of the operating system or by applications. The kernel performs its tasks, such as executing
+processes and handling interrupts, in kernel space, where as everything a user in a GUI (Graphical User Interface), is done in user
+space.</p3>
+ <br><br>
+ <p3>This separation prevents user data and kernel data from interfering with each other and thereby diminishing performance or 
+ causing the system to become unstable (and possibly crashing).</p3>
+ <br><br>
+ <p3>When a process makes requests of the kernel, the request is called a system call. Various kernel designs differ in how they manage
+ system calls and resources. For example, a monopolithic kernel executes all the operating system instructions in the same address
+ space in order to improve the performance (clarification needed) of the system. A micro kernel runs most of the operating 
+ system backgrund processes in user space, to make the operating system more modular and therefore, easier to maintain. 
+ (clarification needed).</p3>
+<br><br>
+ <center>
+ <p3>The Kernel's interface is a low-level abstraction layer.</p3>
+<img src="kernel.jpg">
+ </center>
+ <br><br>
+ <center>
+<p4>File Management System</p4>
+</center>
+<br><br>
+ <p3>A file management system is a type of software that manages data files in a computer system. It has limited capabilities and is 
+ designed to manage individual or group files, such as special office documents and records. It may display report deatails, like 
+ owner, creation date, state of completion and similar features useful in an office environment.</p3>
+<br><br>
+ <p3>A file management system is also known as a file manager.</p3>
+<br><br>
+ <p3>A file management system should not be confused with a file system, which manages all types of data and files in an operating
+ system (OS), or a database management system (DBMS), which has relational database  capabilities and includes a programming language
+ for further data manifulation. </p3>
+<br><br>
+ <p3>A file managment system's tracking component is key to the ceation and management of this system, where documents containing 
+ various stages of processing are shared andinterchanged on an ongoing basis.</p3> 
+<br><br>
+<center>
+<img src="file.jpg">
+ </center
+ 
+<br><br>
+<hr color="black" size="5">
+<p1>&copy Russel Mallari|Lorence Nozaleda</p1>
+
+</body>
+</html>

@@ -1,0 +1,371 @@
+body{
+   height:4700px;
+   background-color: #EFF1F4;
+   
+}
+p{line-height: 25px;
+font-size: 110%;}
+
+.Countainer{
+    width: 1170px;
+    margin: auto;}
+   
+    
+    /*begine header*/
+    .slider{
+        height: 590px;
+        background-image: url(Digital-Marketing-Agency-1170x600.jpg);
+        background-size: cover;
+        
+      
+    }
+    
+   
+    
+.nvbar{
+    background-color: #252f31;
+    overflow: hidden;
+    color: #FFF;
+    
+    
+ }
+ 
+ .nvbar h2{
+    float: left; text-transform: uppercase;
+    color: #FCF7F7;
+ }
+ .nvbar span{
+    color: #026275;
+ }
+ .nvbar ul{
+     list-style-type: none;
+    overflow: hidden;
+    padding-left: 0;
+    float: right; /*l2n h2 btkon 3nwan f btkoon fo2 so lazm a5ly el ul klha right*/
+ }
+ .nvbar ul li{
+    float: right;
+    list-style-type: none;
+   padding: 10px;
+     
+ }
+ .nvbar .home {
+    color: #026275;
+ }
+ .nvbar ul li a{
+    color: white;
+    text-decoration: none;
+    
+ }
+ .nvbar ul li a:active{font-size:15px; }
+ /*end header*/
+  /* begine features*/
+ .featues{
+    padding-top:60px; 
+    background: #EFF1F4;
+    padding-bottom: 25px;
+   overflow: hidden;
+ }
+ 
+  .featues .values , .goals , .hobbies{
+    float: left;
+    width: 30.333333%;
+    margin-left: 5px;
+    margin-right: 5px;
+    
+  }
+  .featues .values , .goals , .hobbies p{
+    line-height: 25px;
+    
+   
+  }
+  
+ /*end features*/
+ 
+  /*begine about me*/
+ 
+ .aboutme{
+   
+    background-color: #EFF1F4;
+    overflow: hidden;
+   padding-top: 60px; 
+   
+ }
+ .aboutme .image{
+    float: left;
+    width: 40%;
+ }
+ 
+ .image img{
+    width: 100%;
+    height: 500px;
+ }
+ 
+ .aboutme .about{
+    float: left;
+    width: 60%;
+    overflow: hidden;
+    
+ }
+  .aboutme .about p{line-height: 30px;}
+  
+ .about h2{margin-left: 20px;}
+
+.about  p{margin-left: 20px;} 
+ .about .hobbies{
+    margin: 20px;
+    float:right;
+    
+ }
+        /* very very very important*/            /* ركز*/
+ .hobbies div{height: 150px;
+ padding-right:  50px; 
+
+ }
+ 
+
+.hobbies1{
+   float: left;
+    margin:20px;
+}
+
+
+.hobbies1 div{
+  height: 150px;
+ 
+}
+.hobbies1 a{text-decoration: none;color: #2B2727;}
+
+ .hobbies .A a
+  {color: #2B2727;
+  text-decoration: none;}
+  
+  .hobbies .b a
+  {color: #2B2727;
+  text-decoration: none;}
+
+/* end*/
+
+/* begie my skills*/
+.skills{
+    padding-top:60px ;
+    overflow: hidden;
+    background-color:#EFF1F4;
+    
+}
+
+.skills .myskills button{
+    color: #046D04;
+    border: solid 1px;
+}
+.myskills p {line-height: 25px;}
+.skills .myskills , .HTML{
+    float: left;
+    width: 50%;
+   
+    
+}
+.evaluat_HTML {
+    background: #D6D6D6;
+    height: 30px; width: 500px;
+}
+
+
+.evaluat_HTML span{
+     background-color: #046D04;
+    width: 80%;
+    height: 30px;
+    display: block;
+   line-height: 30px;
+ 
+}
+.evaluat_HTML span p{
+   text-align: right;
+   color: #FFF;
+   
+}
+.evaluat_PHP {
+    background: #D6D6D6;
+    height: 30px; width: 500px;}
+    
+.evaluat_PHP span{
+     background-color: #046D04;
+    width: 90%;
+    height: 30px;
+    display: block;
+   line-height: 30px;
+ 
+}
+.evaluat_PHP span p{
+   text-align: right;
+   color: #FFF;
+   
+}
+
+.evaluat_DATABASE {
+    background: #D6D6D6;
+    height: 30px; width: 500px;}
+    
+.evaluat_DATABASE span{
+     background-color: #046D04;
+    width: 70%;
+    height: 30px;
+    display: block;
+   line-height: 30px;
+ 
+}
+.evaluat_DATABASE span p{
+   text-align: right;
+   color: #FFF;
+   
+}
+
+/*end my skills*/
+/*end*/
+ 
+ /*begine education*/
+ .education{
+    padding-top: 60px;
+    overflow: hidden;
+     background-color:#EFF1F4;
+ }
+ 
+ .myeducation {float: left;
+ width: 60%;}
+ 
+ .myeducation strong{
+  font-size: 120%;  
+ }
+ 
+ .Experiances{
+    float: left;
+    width: 40%;
+   
+}
+.Experiances span{
+    background: #F92525;
+    color: white;
+}
+.Experiances p{font-size: 120%;}
+                    
+ .myeducation p{line-height: 25px;}
+ /*end education*/
+ 
+ /*begine experinces*/
+
+
+/*end exp*/
+/* begine of protfolio*/
+
+.protofolio{
+    padding-top: 60px;
+    background-image: url(1216966-bigthumbnail.jpg);
+     background-size: cover;
+     padding-bottom: 80px;
+}
+.Protfoilio_of_me{
+    text-align: center;
+}
+.Protfoilio_of_me{color: #5555F4;}
+.protfolio_of_pic{
+    margin-top:60px;
+    overflow: hidden;
+}
+
+.protfolio_of_pic>div {
+    float: left;
+    margin:15px;
+    
+}
+/* end protofolio*/
+/*begine contact*/
+
+.contact{
+    padding-top: 30px;
+    
+    overflow: hidden;
+  background: #E0EAF9;
+    
+}
+
+
+.contact_me{
+    float: left;
+    width: 30%;
+    line-height: 25px;
+    font-size: 17px;
+   
+    
+}
+.contact_me strong{
+    color: #96BDF7;
+    font-weight: 900; 
+}
+
+.form{
+    padding-top: 30px;
+    float: left;
+    width: 70%;
+    overflow: hidden;
+     
+}
+.form label{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    
+}
+.form input{
+    display: block;
+    margin-top: 10px;
+    
+}
+.form input[ type="text" ], [type="password"]{
+ background: #96BDF7;
+border: none;
+color: #FFF;
+padding:5px 20px 10px 20px ;
+line-height: 5px;
+
+}
+.form .info{
+    float: left;
+    width: 50%;
+    height: 8%;
+}
+.form .Mssage {float: right;
+width: 50%;
+ height:8%;}
+.form .Mssage textarea{
+   
+    padding-bottom: 60px;
+    padding-right: 50px ;
+    background: #96BDF7;
+    border: none;
+    color: #FFF;
+}
+.send button{
+  
+    padding-right: 80px;
+    padding-left: 80px ;
+   margin-left:  36%;
+   font-size: 20px;
+   font-weight: 600;
+   background: #96BDF7;
+   border: none;
+}
+/* end contact*/
+
+/* begin copy*/
+.copy {padding-top: 20px;
+
+text-align: center;
+padding-bottom: 20px;
+ }
+
+
+.copy img{
+    display: inline;
+    margin: 0;
+}

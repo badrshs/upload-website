@@ -1,0 +1,83 @@
+/*===footer area css ===*/
+.footer-area{
+    background: #282828;
+    text-align: center;
+    padding: 240px 0px 71px;
+    position: relative;
+    .img{
+        position: absolute;
+        top: -140px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .footer-content{
+        position: relative;
+        padding-top: 4px;
+        h2{
+            font: 400 43px/51px $loraFont;
+            color: #fff;
+            padding-bottom: 55px;
+        }
+        &:after{
+            content: "\7b";
+            font-family: 'ElegantIcons';
+            speak: none;
+            font-style: normal;
+            font-size: 48px;
+            line-height: 25px;
+            color: #fff;
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        span{
+            font:400 24px/30px $arimo;
+            color: #fff;
+            position: relative;
+            display: block;
+            padding-top: 28px;
+            &:after{
+                width: 120px;
+                height: 1px;
+                content: '';
+                background: #fff;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                display: block;
+            }
+            a{
+                font-style: italic;
+                color: #fff;
+            }
+        }
+    }
+}
+ 
+/*====--- footer 2 css ---===*/
+.footer-bg{
+    background: #ececec;
+    .footer-content{
+        &:after{
+            color: $dark-gray;
+        }
+        h2{
+            color: $dark-gray;
+        }
+        span{
+            color: $dark-gray;
+            &:after{
+                background: $dark-gray;
+            }
+            a{
+               color: $dark-gray; 
+            }
+        }
+    }
+}
+/*==== footer-bg2 css ====*/
+.footer-bg2{
+    background: $black;
+}

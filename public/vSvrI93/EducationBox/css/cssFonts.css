@@ -1,0 +1,56 @@
+ @import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script);
+   
+
+
+@font-face{
+    font-family:DancingScript-Regular;
+    src:url(../fonts/DancingScript-Regular.otf);
+}
+@font-face{
+    font-family:Pacifico;
+    src:url(../fonts/Pacifico.ttf);
+}
+
+@font-face{
+    font-family:blackjack;
+    src:url(../fonts/blackjack.otf);
+}
+@font-face{
+    font-family:belligerent;
+    src:url(../fonts/belligerent.ttf);
+}
+@font-face{
+    font-family:Capsuula;
+    src:url(../fonts/Capsuula.ttf);
+}
+@font-face{
+    font-family:Condiment-Regular;
+    src:url(../fonts/Condiment-Regular.otf);
+}
+
+@font-face {
+  font-family: 'Quattrocento Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Quattrocento Sans'), local('QuattrocentoSans'), url(https://fonts.gstatic.com/s/quattrocentosans/v9/efd6FGWWGX5Z3ztwLBrG9R1JpkpdfXqLiJU_2vmgb_g.woff) format('woff');
+}
+@font-face {
+  font-family: 'Quattrocento Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Quattrocento Sans Bold'), local('QuattrocentoSans-Bold'), url(https://fonts.gstatic.com/s/quattrocentosans/v9/tXSgPxDl7Lk8Zr_5qX8FIceOkA69e3jJ5e0L0gVhFV4.woff) format('woff');
+}
+@font-face {
+  font-family: 'Quattrocento Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Quattrocento Sans Italic'), local('QuattrocentoSans-Italic'), url(https://fonts.gstatic.com/s/quattrocentosans/v9/8PXYbvM__bjl0rBnKiByg-R9RV9RBbGLi96BW3Cp0Sw.woff) format('woff');
+}
+@font-face {
+  font-family: 'Quattrocento Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Quattrocento Sans Bold Italic'), local('QuattrocentoSans-BoldItalic'), url(https://fonts.gstatic.com/s/quattrocentosans/v9/8N1PdXpbG6RtFvTjl-5E7QPGuAIIErSnwc3SMUgcpdc.woff) format('woff');
+}
+

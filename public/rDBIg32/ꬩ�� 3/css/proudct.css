@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+
+ .iconheader , .navbaraside  { padding-left:20px}
+ .iconheader i {color:#1DA1F2 }
+ .iconheader h2 { display:inline-block ; color:#FEAE02 }
+ .navbaraside h2 { color:#686868 ; margin-bottom:30px}
+ .navbaraside .button { cursor:pointer ; font-size:16px  ; color:#686868 
+ ; border:1px  solid #B4B4B4  ; padding:10px 10px 10px 20px ; margin-bottom:10px ; transition:all 1s ease 
+ ; display:block ; color:#FEAE02}
+   .navbaraside .hvr-shutter-in-horizontal:before { background-color:#fff  }
+   .navbaraside .button:hover { color:#fff}
+     .navbaraside .offer h3 { margin:3px}
+	 .navbaraside .offer i { color:#838383; cursor:pointer} 
+	 .navbaraside .offer i:hover { color:#FEAE02}
+	 .navbaraside .offer{}
+	 .product { position:relative}
+	 .product  h1 { margin-bottom:20px}
+	  

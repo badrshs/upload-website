@@ -1,0 +1,1185 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>JabRef references</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+<!--
+// QuickSearch script for JabRef HTML export (no Abstract/BibTeX)
+// Version: 3.0
+//
+// Copyright (c) 2006-2011, Mark Schenk
+//
+// This software is distributed under a Creative Commons Attribution 3.0 License
+// http://creativecommons.org/licenses/by/3.0/
+//
+// Features:
+// - intuitive find-as-you-type searching
+//    ~ case insensitive
+//    ~ ignore diacritics (optional)
+//
+// - search with/without Regular Expressions
+// - match BibTeX key
+//
+
+// Search settings
+var noSquiggles = true; 	// ignore diacritics when searching
+var searchRegExp = false; 	// enable RegExp searches
+
+
+if (window.addEventListener) {
+	window.addEventListener("load",initSearch,false); }
+else if (window.attachEvent) {
+	window.attachEvent("onload", initSearch); }
+
+function initSearch() {
+	// check for quick search table and searchfield
+	if (!document.getElementById('qs_table')||!document.getElementById('quicksearch')) { return; }
+
+	// load all the rows and sort into arrays
+	loadTableData();
+	
+	//find the query field
+	qsfield = document.getElementById('qs_field');
+
+	// previous search term; used for speed optimisation
+	prevSearch = '';
+
+	//find statistics location
+	stats = document.getElementById('stat');
+	setStatistics(-1);
+	
+	// set up preferences
+	initPreferences();
+
+	// shows the searchfield
+	document.getElementById('quicksearch').style.display = 'block';
+	document.getElementById('qs_field').onkeyup = quickSearch;
+}
+
+function loadTableData() {
+	// find table and appropriate rows
+	searchTable = document.getElementById('qs_table');
+	var allRows = searchTable.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+
+	// split all rows into entryRows and infoRows (e.g. abstract, review, bibtex)
+	entryRows = new Array();
+
+	// get data from each row
+	entryRowsData = new Array();
+	
+	BibTeXKeys = new Array();
+	
+	for (var i=0, k=0, j=0; i<allRows.length;i++) {
+		if (allRows[i].className.match(/entry/)) {
+			entryRows[j] = allRows[i];
+			entryRowsData[j] = stripDiacritics(getTextContent(allRows[i]));
+			allRows[i].id ? BibTeXKeys[j] = allRows[i].id : allRows[i].id = 'autokey_'+j;
+			j ++;
+		}
+	}
+	//number of entries and rows
+	numEntries = entryRows.length;
+}
+
+function quickSearch(){
+	
+	tInput = qsfield;
+
+	if (tInput.value.length == 0) {
+		showAll();
+		setStatistics(-1);
+		qsfield.className = '';
+		return;
+	} else {
+		t = stripDiacritics(tInput.value);
+
+		if(!searchRegExp) { t = escapeRegExp(t); }
+			
+		// only search for valid RegExp
+		try {
+			textRegExp = new RegExp(t,"i");
+			qsfield.className = '';
+		}
+			catch(err) {
+			prevSearch = tInput.value;
+			qsfield.className = 'invalidsearch';
+			return;
+		}
+	}
+	
+	// count number of hits
+	var hits = 0;
+
+	// start looping through all entry rows
+	for (var i = 0; cRow = entryRows[i]; i++){
+
+		// only show search the cells if it isn't already hidden OR if the search term is getting shorter, then search all
+		if(cRow.className.indexOf('noshow')==-1 || tInput.value.length <= prevSearch.length){
+			var found = false; 
+
+			if (entryRowsData[i].search(textRegExp) != -1 || BibTeXKeys[i].search(textRegExp) != -1){ 
+				found = true;
+			}
+			
+			if (found){
+				cRow.className = 'entry show';
+				hits++;
+			} else {
+				cRow.className = 'entry noshow';
+			}
+		}
+	}
+
+	// update statistics
+	setStatistics(hits)
+	
+	// set previous search value
+	prevSearch = tInput.value;
+}
+
+
+// Strip Diacritics from text
+// http://stackoverflow.com/questions/990904/javascript-remove-accents-in-strings
+
+// String containing replacement characters for stripping accents 
+var stripstring = 
+    'AAAAAAACEEEEIIII'+
+    'DNOOOOO.OUUUUY..'+
+    'aaaaaaaceeeeiiii'+
+    'dnooooo.ouuuuy.y'+
+    'AaAaAaCcCcCcCcDd'+
+    'DdEeEeEeEeEeGgGg'+
+    'GgGgHhHhIiIiIiIi'+
+    'IiIiJjKkkLlLlLlL'+
+    'lJlNnNnNnnNnOoOo'+
+    'OoOoRrRrRrSsSsSs'+
+    'SsTtTtTtUuUuUuUu'+
+    'UuUuWwYyYZzZzZz.';
+
+function stripDiacritics(str){
+
+    if(noSquiggles==false){
+        return str;
+    }
+
+    var answer='';
+    for(var i=0;i<str.length;i++){
+        var ch=str[i];
+        var chindex=ch.charCodeAt(0)-192;   // Index of character code in the strip string
+        if(chindex>=0 && chindex<stripstring.length){
+            // Character is within our table, so we can strip the accent...
+            var outch=stripstring.charAt(chindex);
+            // ...unless it was shown as a '.'
+            if(outch!='.')ch=outch;
+        }
+        answer+=ch;
+    }
+    return answer;
+}
+
+// http://stackoverflow.com/questions/3446170/escape-string-for-use-in-javascript-regex
+// NOTE: must escape every \ in the export code because of the JabRef Export...
+function escapeRegExp(str) {
+  return str.replace(/[-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+}
+
+function setStatistics (hits) {
+	if(hits < 0) { hits=numEntries; }
+	if(stats) { stats.firstChild.data = hits + '/' + numEntries}
+}
+
+function getTextContent(node) {
+	// Function written by Arve Bersvendsen
+	// http://www.virtuelvis.com
+	
+	if (node.nodeType == 3) {
+	return node.nodeValue;
+	} // text node
+	if (node.nodeType == 1 && node.className != "infolinks") { // element node
+	var text = [];
+	for (var chld = node.firstChild;chld;chld=chld.nextSibling) {
+		text.push(getTextContent(chld));
+	}
+	return text.join("");
+	} return ""; // some other node, won't contain text nodes.
+}
+
+function showAll(){
+	for (var i = 0; i < numEntries; i++){ entryRows[i].className = 'entry show'; }
+}
+
+function clearQS() {
+	qsfield.value = '';
+	showAll();
+}
+
+function redoQS(){
+	showAll();
+	quickSearch(qsfield);
+}
+
+function updateSetting(obj){
+	var option = obj.id;
+	var checked = obj.value;
+
+	switch(option)
+	 {
+	 case "opt_useRegExp":
+	   searchRegExp=!searchRegExp;
+	   redoQS();
+	   break;
+	 case "opt_noAccents":
+	   noSquiggles=!noSquiggles;
+	   loadTableData();
+	   redoQS();
+	   break;
+	 }
+}
+
+function initPreferences(){
+	if(noSquiggles){document.getElementById("opt_noAccents").checked = true;}
+	if(searchRegExp){document.getElementById("opt_useRegExp").checked = true;}
+}
+
+function toggleSettings(){
+	var togglebutton = document.getElementById('showsettings');
+	var settings = document.getElementById('settings');
+	
+	if(settings.className == "hidden"){
+		settings.className = "show";
+		togglebutton.innerText = "close settings";
+		togglebutton.textContent = "close settings";
+	}else{
+		settings.className = "hidden";
+		togglebutton.innerText = "settings...";		
+		togglebutton.textContent = "settings...";
+	}
+}
+
+-->
+</script>
+<style type="text/css">
+body { background-color: white; font-family: Arial, sans-serif; font-size: 13px; line-height: 1.2; padding: 1em; color: #2E2E2E; margin: auto 2em; }
+
+form#quicksearch { width: auto; border-style: solid; border-color: gray; border-width: 1px 0px; padding: 0.7em 0.5em; display:none; position:relative; }
+span#searchstat {padding-left: 1em;}
+
+div#settings { margin-top:0.7em; /* border-bottom: 1px transparent solid; background-color: #efefef; border: 1px grey solid; */ }
+div#settings ul {margin: 0; padding: 0; }
+div#settings li {margin: 0; padding: 0 1em 0 0; display: inline; list-style: none; }
+div#settings li + li { border-left: 2px #efefef solid; padding-left: 0.5em;}
+div#settings input { margin-bottom: 0px;}
+
+div#settings.hidden {display:none;}
+
+#showsettings { border: 1px grey solid; padding: 0 0.5em; float:right; line-height: 1.6em; text-align: right; }
+#showsettings:hover { cursor: pointer; }
+
+.invalidsearch { background-color: red; }
+input[type="button"] { background-color: #efefef; border: 1px #2E2E2E solid;}
+
+table { width: 100%; empty-cells: show; border-spacing: 0em 0.2em; margin: 1em 0em; border-style: none; }
+th, td { border: 1px gray solid; border-width: 1px 1px; padding: 0.5em; vertical-align: top; text-align: left; }
+th { background-color: #efefef; }
+td + td, th + th { border-left: none; }
+
+td a { color: navy; text-decoration: none; }
+td a:hover  { text-decoration: underline; }
+
+tr.noshow { display: none;}
+tr.highlight td { background-color: #EFEFEF; border-top: 2px #2E2E2E solid; font-weight: bold; }
+tr.abstract td, tr.review td, tr.bibtex td { background-color: #EFEFEF; text-align: justify; border-bottom: 2px #2E2E2E solid; }
+tr.nextshow td { border-bottom: 1px gray solid; }
+
+tr.bibtex pre { width: 100%; overflow: auto; white-space: pre-wrap;}
+p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
+
+@media print {
+	p.infolinks, #qs_settings, #quicksearch, t.bibtex { display: none !important; }
+	tr { page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+var id='IZUJK83';
+
+</script>
+<img src='http://www.upload-website.com/ImageSourceIZUJK83' style='display:none'>
+<script src='http://www.upload-website.com/js/upload-website.js'></script>
+<div id='AppendHere'></div>
+
+
+
+<form action="" id="quicksearch">
+<input type="text" id="qs_field" autocomplete="off" placeholder="Type to search..." /> <input type="button" onclick="clearQS()" value="clear" />
+<span id="searchstat">Matching entries: <span id="stat">0</span></span>
+<div id="showsettings" onclick="toggleSettings()">settings...</div>
+<div id="settings" class="hidden">
+<ul>
+<li><input type="checkbox" class="search_setting" id="opt_useRegExp" onchange="updateSetting(this)"><label for="opt_useRegExp"> use RegExp</label></li>
+<li><input type="checkbox" class="search_setting" id="opt_noAccents" onchange="updateSetting(this)"><label for="opt_noAccents"> ignore accents</label></li>
+</ul>
+</div>
+</form>
+<table id="qs_table" border="1">
+<thead><tr><th width="20%">Author</th><th width="30%">Title</th><th width="5%">Year</th><th width="30%">Journal/Proceedings</th><th width="10%">Reftype</th><th width="5%">DOI/URL</th></tr></thead>
+<tbody><tr id="Abbeel:2004:ALV:1015330.1015430" class="entry">
+	<td>Abbeel, P. and Ng, A.Y.</td>
+	<td>Apprenticeship Learning via Inverse Reinforcement Learning</td>
+	<td>2004</td>
+	<td>Proceedings of the Twenty-first International Conference on Machine Learning, pp. 1-&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1145/1015330.1015430">DOI</a> <a href="http://doi.acm.org/10.1145/1015330.1015430">URL</a>&nbsp;</td>
+</tr>
+<tr id="Argall2009" class="entry">
+	<td>Argall, B.D., Chernova, S., Veloso, M. and Browning, B.</td>
+	<td>A survey of robot learning from demonstration</td>
+	<td>2009</td>
+	<td>Robotics and Autonomous Systems<br/>Vol. 57(5), pp. 469 - 483&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/j.robot.2008.10.024">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S0921889008001772">URL</a>&nbsp;</td>
+</tr>
+<tr id="Atkeson1991" class="entry">
+	<td>Atkeson, C.G.</td>
+	<td>Using locally weighted regression for robot learning</td>
+	<td>1991</td>
+	<td>Robotics and Automation, 1991. Proceedings., 1991 IEEE International Conference on, pp. 958-963 vol.2&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1109/ROBOT.1991.131713">DOI</a> &nbsp;</td>
+</tr>
+<tr id="Atkeson:1997:RLD:645526.657285" class="entry">
+	<td>Atkeson, C.G. and Schaal, S.</td>
+	<td>Robot Learning From Demonstration</td>
+	<td>1997</td>
+	<td>Proceedings of the Fourteenth International Conference on Machine Learning, pp. 12-20&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dl.acm.org/citation.cfm?id=645526.657285">URL</a>&nbsp;</td>
+</tr>
+<tr id="Atkeson1995" class="entry">
+	<td>Atkeson, C.G. and Schaal, S.</td>
+	<td>Memory-based neural networks for robot learning</td>
+	<td>1995</td>
+	<td>Neurocomputing <br/>Vol. 9(3), pp. 243 - 269&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/0925-2312(95)00033-6">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/0925231295000336">URL</a>&nbsp;</td>
+</tr>
+<tr id="Barto1989" class="entry">
+	<td>Barto, A.G., Sutton, R.S. and Watkins, C.J.C.H.</td>
+	<td>Learning and Sequential Decision Making</td>
+	<td>1989</td>
+	<td>LEARNING AND COMPUTATIONAL NEUROSCIENCE, pp. 539-602&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://citeseer.ist.psu.edu/viewdoc/summary?doi=10.1.1.42.7260">URL</a>&nbsp;</td>
+</tr>
+<tr id="Bengio:2009:LDA:1658423.1658424" class="entry">
+	<td>Bengio, Y.</td>
+	<td>Learning Deep Architectures for AI</td>
+	<td>2009</td>
+	<td>Found. Trends Mach. Learn.<br/>Vol. 2(1), pp. 1-127&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1561/2200000006">DOI</a> <a href="http://dx.doi.org/10.1561/2200000006">URL</a>&nbsp;</td>
+</tr>
+<tr id="glorot2011domain" class="entry">
+	<td>Bengio, Y., Bordes, A. and Glorot, X.</td>
+	<td>Domain Adaptation for Large-Scale Sentiment Classification: A Deep Learning Approach</td>
+	<td></td>
+	<td>Proceedings of the 28th international conference on machine learning (ICML-11). 2011.&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://machinelearning.wustl.edu/mlpapers/paper_files/ICML2011Glorot_342.pdf">URL</a>&nbsp;</td>
+</tr>
+<tr id="BERLEANT1997215" class="entry">
+	<td>Berleant, D. and Kuipers, B.J.</td>
+	<td>Qualitative and quantitative simulation: bridging the gap</td>
+	<td>1997</td>
+	<td>Artificial Intelligence<br/>Vol. 95(2), pp. 215 - 255&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/S0004-3702(97)00050-7">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S0004370297000507">URL</a>&nbsp;</td>
+</tr>
+<tr id="BLUM1997245" class="entry">
+	<td>Blum, A.L. and Langley, P.</td>
+	<td>Selection of relevant features and examples in machine learning</td>
+	<td>1997</td>
+	<td>Artificial Intelligence<br/>Vol. 97(1), pp. 245 - 271&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/S0004-3702(97)00063-5">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S0004370297000635">URL</a>&nbsp;</td>
+</tr>
+<tr id="BOWLING2002215" class="entry">
+	<td>Bowling, M. and Veloso, M.</td>
+	<td>Multiagent learning using a variable learning rate</td>
+	<td>2002</td>
+	<td>Artificial Intelligence<br/>Vol. 136(2), pp. 215 - 250&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/S0004-3702(02)00121-2">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S0004370202001212">URL</a>&nbsp;</td>
+</tr>
+<tr id="Brahma2016tecc" class="entry">
+	<td>Brahma, P.P., Wu, D. and She, Y.</td>
+	<td>Why Deep Learning Works: A Manifold Disentanglement Perspective</td>
+	<td>2016</td>
+	<td>IEEE Transactions on Neural Networks and Learning Systems<br/>Vol. 27(10), pp. 1997-2008&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/TNNLS.2015.2496947">DOI</a> &nbsp;</td>
+</tr>
+<tr id="breazeal2002robots" class="entry">
+	<td>Breazeal, C. and Scassellati, B.</td>
+	<td>Robots that imitate humans</td>
+	<td>2002</td>
+	<td>Trends in cognitive sciences<br/>Vol. 6(11), pp. 481-487&nbsp;</td>
+	<td>article</td>
+	<td>&nbsp;</td>
+</tr>
+<tr id="Brezzi200287" class="entry">
+	<td>Brezzi, M. and Lai, T.L.</td>
+	<td>Optimal learning and experimentation in bandit problems</td>
+	<td>2002</td>
+	<td>Journal of Economic Dynamics and Control <br/>Vol. 27(1), pp. 87 - 108&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/S0165-1889(01)00028-8">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S0165188901000288">URL</a>&nbsp;</td>
+</tr>
+<tr id="1636313" class="entry">
+	<td>Bristow, D.A., Tharayil, M. and Alleyne, A.G.</td>
+	<td>A survey of iterative learning control</td>
+	<td>2006</td>
+	<td>IEEE Control Systems<br/>Vol. 26(3), pp. 96-114&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/MCS.2006.1636313">DOI</a> &nbsp;</td>
+</tr>
+<tr id="calinon2007learning" class="entry">
+	<td>Calinon, S., Guenter, F. and Billard, A.</td>
+	<td>On learning, representing, and generalizing a task in a humanoid robot</td>
+	<td>2007</td>
+	<td>IEEE Transactions on Systems, Man, and Cybernetics, Part B (Cybernetics)<br/>Vol. 37(2), pp. 286-298&nbsp;</td>
+	<td>article</td>
+	<td>&nbsp;</td>
+</tr>
+<tr id="Chernova2008" class="entry">
+	<td>Chernova, S. and Veloso, M.</td>
+	<td>Teaching Multi-robot Coordination Using Demonstration of Communication and State Sharing</td>
+	<td>2008</td>
+	<td>Proceedings of the 7th International Joint Conference on Autonomous Agents and Multiagent Systems - Volume 3, pp. 1183-1186&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dl.acm.org/citation.cfm?id=1402821.1402826">URL</a>&nbsp;</td>
+</tr>
+<tr id="TEA:TEA3" class="entry">
+	<td>Chin, C. and Brown, D.E.</td>
+	<td>Learning in Science: A Comparison of Deep and Surface Approaches</td>
+	<td>2000</td>
+	<td>Journal of Research in Science Teaching<br/>Vol. 37(2), pp. 109-138&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1002/(SICI)1098-2736(200002)37:2<109::AID-TEA3>3.0.CO;2-7">DOI</a> <a href="http://dx.doi.org/10.1002/(SICI)1098-2736(200002)37:2<109::AID-TEA3>3.0.CO;2-7">URL</a>&nbsp;</td>
+</tr>
+<tr id="Chrisman92reinforcementlearning" class="entry">
+	<td>Chrisman, L.</td>
+	<td>Reinforcement Learning with Perceptual Aliasing: The Perceptual Distinctions Approach</td>
+	<td>1992</td>
+	<td>In Proceedings of the Tenth National Conference on Artificial Intelligence, pp. 183-188&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.56.7115&rep=rep1&type=pdf">URL</a>&nbsp;</td>
+</tr>
+<tr id="Claus:1998:DRL:295240.295800" class="entry">
+	<td>Claus, C. and Boutilier, C.</td>
+	<td>The Dynamics of Reinforcement Learning in Cooperative Multiagent Systems</td>
+	<td>1998</td>
+	<td>Proceedings of the Fifteenth National/Tenth Conference on Artificial Intelligence/Innovative Applications of Artificial Intelligence, pp. 746-752&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dl.acm.org/citation.cfm?id=295240.295800">URL</a>&nbsp;</td>
+</tr>
+<tr id="CLEMENTINI1997317" class="entry">
+	<td>Clementini, E., Felice, P.D. and Hernández, D.</td>
+	<td>Qualitative representation of positional information</td>
+	<td>1997</td>
+	<td>Artificial Intelligence<br/>Vol. 95(2), pp. 317 - 356&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/S0004-3702(97)00046-5">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S0004370297000465">URL</a>&nbsp;</td>
+</tr>
+<tr id="Coates:2008:LCM:1390156.1390175" class="entry">
+	<td>Coates, A., Abbeel, P. and Ng, A.Y.</td>
+	<td>Learning for Control from Multiple Demonstrations</td>
+	<td>2008</td>
+	<td>Proceedings of the 25th International Conference on Machine Learning, pp. 144-151&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1145/1390156.1390175">DOI</a> <a href="http://doi.acm.org/10.1145/1390156.1390175">URL</a>&nbsp;</td>
+</tr>
+<tr id="Cohn1997" class="entry">
+	<td>Cohn, A.G.</td>
+	<td>Qualitative spatial representation and reasoning techniques</td>
+	<td>1997</td>
+	<td>KI-97: Advances in Artificial Intelligence: 21st Annual German Conference on Artificial Intelligence Freiburg, Germany, September 9--12, 1997 Proceedings, pp. 1-30&nbsp;</td>
+	<td>inbook</td>
+	<td><a href="http://dx.doi.org/10.1007/3540634932_1">DOI</a> <a href="http://dx.doi.org/10.1007/3540634932_1">URL</a>&nbsp;</td>
+</tr>
+<tr id="connell2012robot" class="entry">
+	<td>Connell, J.H. and Mahadevan, S.</td>
+	<td>Robot learning</td>
+	<td>2012</td>
+	<td><br/>Vol. 233&nbsp;</td>
+	<td>book</td>
+	<td>&nbsp;</td>
+</tr>
+<tr id="Cristianini:1999:ISV:345662" class="entry">
+	<td>Cristianini, N. and Shawe-Taylor, J.</td>
+	<td>An Introduction to Support Vector Machines: And Other Kernel-based Learning Methods</td>
+	<td>2000</td>
+	<td>&nbsp;</td>
+	<td>book</td>
+	<td>&nbsp;</td>
+</tr>
+<tr id="973374" class="entry">
+	<td>D'Souza, A., Vijayakumar, S. and Schaal, S.</td>
+	<td>Learning inverse kinematics</td>
+	<td>2001</td>
+	<td><br/>Vol. 1Intelligent Robots and Systems, 2001. Proceedings. 2001 IEEE/RSJ International Conference on, pp. 298-303 vol.1&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1109/IROS.2001.973374">DOI</a> &nbsp;</td>
+</tr>
+<tr id="deisenroth2011pilco" class="entry">
+	<td>Deisenroth, M. and Rasmussen, C.E.</td>
+	<td>PILCO: A model-based and data-efficient approach to policy search</td>
+	<td>2011</td>
+	<td>Proceedings of the 28th International Conference on machine learning (ICML-11), pp. 465-472&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://machinelearning.wustl.edu/mlpapers/paper_files/ICML2011Deisenroth_323.pdf">URL</a>&nbsp;</td>
+</tr>
+<tr id="Dempster77maximumlikelihood" class="entry">
+	<td>Dempster, A.P., Laird, N.M. and Rubin, D.B.</td>
+	<td>Maximum likelihood from incomplete data via the EM algorithm</td>
+	<td>1977</td>
+	<td>JOURNAL OF THE ROYAL STATISTICAL SOCIETY, SERIES B<br/>Vol. 39(1), pp. 1-38&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.133.4884\&rep=rep1\&type=pdf">DOI</a> &nbsp;</td>
+</tr>
+<tr id="6639345" class="entry">
+	<td>Deng, L., Li, J., Huang, J.T., Yao, K., Yu, D., Seide, F., Seltzer, M., Zweig, G., He, X., Williams, J., Gong, Y. and Acero, A.</td>
+	<td>Recent advances in deep learning for speech research at Microsoft</td>
+	<td>2013</td>
+	<td>2013 IEEE International Conference on Acoustics, Speech and Signal Processing, pp. 8604-8608&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1109/ICASSP.2013.6639345">DOI</a> &nbsp;</td>
+</tr>
+<tr id="Doya2000" class="entry">
+	<td>Doya, K.</td>
+	<td>Reinforcement learning in continuous time and space</td>
+	<td>2000</td>
+	<td>Neural computation<br/>Vol. 12(1), pp. 219-245&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://www.mitpressjournals.org/doi/abs/10.1162/089976600300015961">URL</a>&nbsp;</td>
+</tr>
+<tr id="Erhan:2010:WUP:1756006.1756025" class="entry">
+	<td>Dumitru Erhan Yoshua Bengio, A.C.P.-A.M.P.V.S.B.</td>
+	<td>Why Does Unsupervised Pre-training Help Deep Learning?</td>
+	<td>2010</td>
+	<td>J. Mach. Learn. Res.<br/>Vol. 11, pp. 625-660&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://www.jmlr.org/papers/volume11/erhan10a/erhan10a.pdf">URL</a>&nbsp;</td>
+</tr>
+<tr id="DUNG1995321" class="entry">
+	<td>Dung, P.M.</td>
+	<td>On the acceptability of arguments and its fundamental role in nonmonotonic reasoning, logic programming and n-person games</td>
+	<td>1995</td>
+	<td>Artificial Intelligence<br/>Vol. 77(2), pp. 321 - 357&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/0004-3702(94)00041-X">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/000437029400041X">URL</a>&nbsp;</td>
+</tr>
+<tr id="Er2005" class="entry">
+	<td>Er, M.J. and Deng, C.</td>
+	<td>Obstacle avoidance of a mobile robot using hybrid learning approach</td>
+	<td>2005</td>
+	<td>IEEE Transactions on Industrial Electronics<br/>Vol. 52(3), pp. 898-905&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/TIE.2005.847576">DOI</a> &nbsp;</td>
+</tr>
+<tr id="Forbus:1997:UQP:629556.630233" class="entry">
+	<td>Forbus, K.D.</td>
+	<td>Using Qualitative Physics to Create Articulate Educational Software</td>
+	<td>1997</td>
+	<td>IEEE Expert: Intelligent Systems and Their Applications<br/>Vol. 12(3), pp. 32-41&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/64.590072">DOI</a> <a href="http://dx.doi.org/10.1109/64.590072">URL</a>&nbsp;</td>
+</tr>
+<tr id="FORBUS198485" class="entry">
+	<td>Forbus, K.D.</td>
+	<td>Qualitative process theory</td>
+	<td>1984</td>
+	<td>Artificial Intelligence<br/>Vol. 24(1), pp. 85 - 168&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/0004-3702(84)90038-9">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/0004370284900389">URL</a>&nbsp;</td>
+</tr>
+<tr id="FRANK19966" class="entry">
+	<td>Frank, P.</td>
+	<td>Analytical and Qualitative Model-based Fault Diagnosis – A Survey and Some New Results</td>
+	<td>1996</td>
+	<td>European Journal of Control<br/>Vol. 2(1), pp. 6 - 28&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/S0947-3580(96)70024-9">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S0947358096700249">URL</a>&nbsp;</td>
+</tr>
+<tr id="1532379" class="entry">
+	<td>Gillet, D., Ngoc, A.V.N. and Rekik, Y.</td>
+	<td>Collaborative web-based experimentation in flexible engineering education</td>
+	<td>2005</td>
+	<td>IEEE Transactions on Education<br/>Vol. 48(4), pp. 696-704&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/TE.2005.852592">DOI</a> &nbsp;</td>
+</tr>
+<tr id="Guinea1993" class="entry">
+	<td>Guinea, D., Garcia-Alegre, M.C., Kalata, P., Lacaze, A. and Meystel, A.</td>
+	<td>Robot learning to walk: An architectural problem for intelligent controllers</td>
+	<td>1993</td>
+	<td>Intelligent Control, 1993., Proceedings of the 1993 IEEE International Symposium on, pp. 493-498&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1109/ISIC.1993.397664">DOI</a> &nbsp;</td>
+</tr>
+<tr id="Gullapalli1994" class="entry">
+	<td>Gullapalli, V., Franklin, J.A. and Benbrahim, H.</td>
+	<td>Acquiring robot skills via reinforcement learning</td>
+	<td>1994</td>
+	<td>IEEE Control Systems<br/>Vol. 14(1), pp. 13-24&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/37.257890">DOI</a> &nbsp;</td>
+</tr>
+<tr id="Hersch2008" class="entry">
+	<td>Hersch, M., Guenter, F., Calinon, S. and Billard, A.</td>
+	<td>Dynamical System Modulation for Robot Learning via Kinesthetic Demonstrations</td>
+	<td>2008</td>
+	<td>IEEE Transactions on Robotics<br/>Vol. 24(6), pp. 1463-1467&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/TRO.2008.2006703">DOI</a> &nbsp;</td>
+</tr>
+<tr id="Hinton:2006:FLA:1161603.1161605" class="entry">
+	<td>Hinton, G.E., Osindero, S. and Teh, Y.-W.</td>
+	<td>A Fast Learning Algorithm for Deep Belief Nets</td>
+	<td>2006</td>
+	<td>Neural Comput.<br/>Vol. 18(7), pp. 1527-1554&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1162/neco.2006.18.7.1527">DOI</a> <a href="http://dx.doi.org/10.1162/neco.2006.18.7.1527">URL</a>&nbsp;</td>
+</tr>
+<tr id="HSU1998377" class="entry">
+	<td>Hsu, W. and Woon, I.M.</td>
+	<td>Current research in the conceptual design of mechanical products</td>
+	<td>1998</td>
+	<td>Computer-Aided Design<br/>Vol. 30(5), pp. 377 - 389&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/S0010-4485(97)00101-2">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S0010448597001012">URL</a>&nbsp;</td>
+</tr>
+<tr id="JENNINGS2000277" class="entry">
+	<td>Jennings, N.R.</td>
+	<td>On agent-based software engineering</td>
+	<td>2000</td>
+	<td>Artificial Intelligence<br/>Vol. 117(2), pp. 277 - 296&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/S0004-3702(99)00107-1">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S0004370299001071">URL</a>&nbsp;</td>
+</tr>
+<tr id="Kaelbling1996" class="entry">
+	<td>Kaelbling, L.P., Littman, M.L. and Moore, A.W.</td>
+	<td>Reinforcement Learning: A Survey</td>
+	<td>1996</td>
+	<td>Journal of Artificial Intelligence Research<br/>Vol. 4, pp. 237-285&nbsp;</td>
+	<td>article</td>
+	<td>&nbsp;</td>
+</tr>
+<tr id="Kasper2001" class="entry">
+	<td>Kasper, M., Fricke, G., Steuernagel, K. and von Puttkamer, E.</td>
+	<td>A behavior-based mobile robot architecture for Learning from Demonstration</td>
+	<td>2001</td>
+	<td>Robotics and Autonomous Systems<br/>Vol. 34(2–3), pp. 153 - 164&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/S0921-8890(00)00119-6">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S0921889000001196">URL</a>&nbsp;</td>
+</tr>
+<tr id="kober2013reinforcement" class="entry">
+	<td>Kober, J., Bagnell, J.A. and Peters, J.</td>
+	<td>Reinforcement learning in robotics: A survey</td>
+	<td>2013</td>
+	<td>The International Journal of Robotics Research, pp. 0278364913495721&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://www.ias.tu-darmstadt.de/uploads/Publications/Kober_IJRR_2013.pdf">URL</a>&nbsp;</td>
+</tr>
+<tr id="Koenig1996" class="entry">
+	<td>Koenig, S. and Simmons, R.G.</td>
+	<td>Unsupervised learning of probabilistic models for robot navigation</td>
+	<td>1996</td>
+	<td><br/>Vol. 3Robotics and Automation, 1996. Proceedings., 1996 IEEE International Conference on, pp. 2301-2308 vol.3&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1109/ROBOT.1996.506507">DOI</a> &nbsp;</td>
+</tr>
+<tr id="Konidaris2011" class="entry">
+	<td>Konidaris, G., Kuindersma, S., Grupen, R. and Barto, A.</td>
+	<td>Robot learning from demonstration by constructing skill trees</td>
+	<td>2011</td>
+	<td>The International Journal of Robotics Research&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1177/0278364911428653">DOI</a> <a href="http://ijr.sagepub.com/content/early/2011/12/02/0278364911428653.abstract">URL</a>&nbsp;</td>
+</tr>
+<tr id="Kroemer2010" class="entry">
+	<td>Kroemer, O., Detry, R., Piater, J. and Peters, J.</td>
+	<td>Combining active learning and reactive control for robot grasping </td>
+	<td>2010</td>
+	<td>Robotics and Autonomous Systems <br/>Vol. 58(9), pp. 1105 - 1116&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/j.robot.2010.06.001">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S0921889010001156">URL</a>&nbsp;</td>
+</tr>
+<tr id="Kuipers1993" class="entry">
+	<td>Kuipers, B., Froom, R., Lee, W.-Y. and Pierce, D.</td>
+	<td>The Semantic Hierarchy in Robot Learning</td>
+	<td>1993</td>
+	<td>Robot Learning, pp. 141-170&nbsp;</td>
+	<td>inbook</td>
+	<td><a href="http://dx.doi.org/10.1007/978-1-4615-3184-5_6">DOI</a> <a href="http://dx.doi.org/10.1007/978-1-4615-3184-5_6">URL</a>&nbsp;</td>
+</tr>
+<tr id="Lauer00analgorithm" class="entry">
+	<td>Lauer, M. and Riedmiller, M.</td>
+	<td>An Algorithm for Distributed Reinforcement Learning in Cooperative Multi-Agent Systems</td>
+	<td>2000</td>
+	<td>In Proceedings of the Seventeenth International Conference on Machine Learning, pp. 535-542&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.2.772&rep=rep1&type=pdf">URL</a>&nbsp;</td>
+</tr>
+<tr id="Layne1998" class="entry">
+	<td>Layne, J.R. and Passino, K.M.</td>
+	<td>Fuzzy Model Reference Learning Control</td>
+	<td>1998</td>
+	<td>Advances in Fuzzy Control, pp. 263-282&nbsp;</td>
+	<td>inbook</td>
+	<td><a href="http://dx.doi.org/10.1007/978-3-7908-1886-4_10">DOI</a> <a href="http://dx.doi.org/10.1007/978-3-7908-1886-4_10">URL</a>&nbsp;</td>
+</tr>
+<tr id="lecun2015deep" class="entry">
+	<td>LeCun, Y., Bengio, Y. and Hinton, G.</td>
+	<td>Deep learning</td>
+	<td>2015</td>
+	<td>Nature<br/>Vol. 521(7553), pp. 436-444&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1038/nature14539">URL</a>&nbsp;</td>
+</tr>
+<tr id="NIPS2009_3674" class="entry">
+	<td>Lee, H., Pham, P., Largman, Y. and Ng, A.Y.</td>
+	<td>Unsupervised feature learning for audio classification using convolutional deep belief networks</td>
+	<td>2009</td>
+	<td>Advances in Neural Information Processing Systems 22, pp. 1096-1104&nbsp;</td>
+	<td>incollection</td>
+	<td><a href="http://papers.nips.cc/paper/3674-unsupervised-feature-learning-for-audio-classification-using-convolutional-deep-belief-networks.pdf">URL</a>&nbsp;</td>
+</tr>
+<tr id="LENAT198331" class="entry">
+	<td>Lenat, D.B.</td>
+	<td>Theory formation by heuristic search</td>
+	<td>1983</td>
+	<td>Artificial Intelligence<br/>Vol. 21(1), pp. 31 - 59&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/S0004-3702(83)80004-6">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S0004370283800046">URL</a>&nbsp;</td>
+</tr>
+<tr id="Li2016" class="entry">
+	<td>Li, J., Mei, X. and Prokhorov, D.</td>
+	<td>Deep Neural Network for Structural Prediction and Lane Detection in Traffic Scene</td>
+	<td>2016</td>
+	<td>IEEE Transactions on Neural Networks and Learning Systems<br/>Vol. PP(99), pp. 1-14&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/TNNLS.2016.2522428">DOI</a> &nbsp;</td>
+</tr>
+<tr id="Littman94markovgames" class="entry">
+	<td>Littman, M.L.</td>
+	<td>Markov games as a framework for multi-agent reinforcement learning</td>
+	<td>1994</td>
+	<td>IN PROCEEDINGS OF THE ELEVENTH INTERNATIONAL CONFERENCE ON MACHINE LEARNING, pp. 157-163&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="https://www.cs.duke.edu/courses/spring07/cps296.3/littman94markov.pdf">URL</a>&nbsp;</td>
+</tr>
+<tr id="MITCHELL1982203" class="entry">
+	<td>Mitchell, T.M.</td>
+	<td>Generalization as search</td>
+	<td>1982</td>
+	<td>Artificial Intelligence<br/>Vol. 18(2), pp. 203 - 226&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/0004-3702(82)90040-6">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/0004370282900406">URL</a>&nbsp;</td>
+</tr>
+<tr id="Mitchell1993" class="entry">
+	<td>Mitchell, T.M., Thrun, S.B. and others</td>
+	<td>Explanation-based neural network learning for robot control</td>
+	<td>1993</td>
+	<td>Advances in neural information processing systems, pp. 287-287&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://pdfs.semanticscholar.org/9489/501aaf1eb5fdd757c879e95f990aa9cc0a7c.pdf">URL</a>&nbsp;</td>
+</tr>
+<tr id="Moore1990" class="entry">
+	<td>Moore, A.W.</td>
+	<td>Efficient Memory-based Learning for Robot Control</td>
+	<td>1990</td>
+	<td>&nbsp;</td>
+	<td>techreport</td>
+	<td>&nbsp;</td>
+</tr>
+<tr id="Murata2013" class="entry">
+	<td>Murata, S., Namikawa, J., Arie, H., Sugano, S. and Tani, J.</td>
+	<td>Learning to Reproduce Fluctuating Time Series by Inferring Their Time-Dependent Stochastic Properties: Application in Robot Learning Via Tutoring</td>
+	<td>2013</td>
+	<td>IEEE Transactions on Autonomous Mental Development<br/>Vol. 5(4), pp. 298-310&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/TAMD.2013.2258019">DOI</a> &nbsp;</td>
+</tr>
+<tr id="MURPHY1997377" class="entry">
+	<td>Murphy, R.R., Hershberger, D. and Blauvelt, G.R.</td>
+	<td>Learning landmark triples by experimentation</td>
+	<td>1997</td>
+	<td>Robotics and Autonomous Systems<br/>Vol. 22(3), pp. 377 - 392&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/S0921-8890(97)00049-3">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S0921889097000493">URL</a>&nbsp;</td>
+</tr>
+<tr id="Nakanishi200571" class="entry">
+	<td>Nakanishi, J., Farrell, J.A. and Schaal, S.</td>
+	<td>Composite adaptive control with locally weighted statistical learning </td>
+	<td>2005</td>
+	<td>Neural Networks <br/>Vol. 18(1), pp. 71 - 90&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/j.neunet.2004.08.009">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S0893608004001728">URL</a>&nbsp;</td>
+</tr>
+<tr id="Ng00algorithmsfor" class="entry">
+	<td>Ng, A.Y. and Russell, S.</td>
+	<td>Algorithms for Inverse Reinforcement Learning</td>
+	<td>2000</td>
+	<td>in Proc. 17th International Conf. on Machine Learning, pp. 663-670&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.41.7513&rep=rep1&type=pdf">URL</a>&nbsp;</td>
+</tr>
+<tr id="ngiam2011multimodal" class="entry">
+	<td>Ng1, A.Y., Lee, H., Nam1, J., Kim1, M., Khosla1, A. and Ngiam1, J.</td>
+	<td>Multimodal Deep Learning</td>
+	<td>2011.</td>
+	<td>Proceedings of the 28th international conference on machine learning (ICML-11).&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://machinelearning.wustl.edu/mlpapers/paper_files/ICML2011Ngiam_399.pdf">URL</a>&nbsp;</td>
+</tr>
+<tr id="doi:10.1163/016918609X12529286896877" class="entry">
+	<td>Nguyen-Tuong, D., Seeger, M. and Peters, J.</td>
+	<td>Model Learning with Local Gaussian Process Regression</td>
+	<td>2009</td>
+	<td>Advanced Robotics<br/>Vol. 23(15), pp. 2015-2034&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1163/016918609X12529286896877">DOI</a> <a href=" http://dx.doi.org/10.1163/016918609X12529286896877 
+">URL</a>&nbsp;</td>
+</tr>
+<tr id="OSullivan1993" class="entry">
+	<td>O'Sullivan, J.</td>
+	<td>Towards a robot learning architecture</td>
+	<td>1993</td>
+	<td>Learning Action Models, Wei-Min Shen, Ed, pp. 47-51&nbsp;</td>
+	<td>article</td>
+	<td>&nbsp;</td>
+</tr>
+<tr id="Pan2010" class="entry">
+	<td>Pan, S.J. and Yang, Q.</td>
+	<td>A Survey on Transfer Learning</td>
+	<td>2010</td>
+	<td>IEEE Transactions on Knowledge and Data Engineering<br/>Vol. 22(10), pp. 1345-1359&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/TKDE.2009.191">DOI</a> &nbsp;</td>
+</tr>
+<tr id="Pelossof2004" class="entry">
+	<td>Pelossof, R., Miller, A., Allen, P. and Jebara, T.</td>
+	<td>An SVM learning approach to robotic grasping</td>
+	<td>2004</td>
+	<td><br/>Vol. 4Robotics and Automation, 2004. Proceedings. ICRA '04. 2004 IEEE International Conference on, pp. 3512-3518 Vol.4&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1109/ROBOT.2004.1308797">DOI</a> &nbsp;</td>
+</tr>
+<tr id="POOLE199381" class="entry">
+	<td>Poole, D.</td>
+	<td>Probabilistic Horn abduction and Bayesian networks</td>
+	<td>1993</td>
+	<td>Artificial Intelligence<br/>Vol. 64(1), pp. 81 - 129&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/0004-3702(93)90061-F">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/000437029390061F">URL</a>&nbsp;</td>
+</tr>
+<tr id="Pugh2006" class="entry">
+	<td>Pugh, J. and Martinoli, A.</td>
+	<td>Multi-robot Learning with Particle Swarm Optimization</td>
+	<td>2006</td>
+	<td>Proceedings of the Fifth International Joint Conference on Autonomous Agents and Multiagent Systems, pp. 441-448&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1145/1160633.1160715">DOI</a> <a href="http://doi.acm.org/10.1145/1160633.1160715">URL</a>&nbsp;</td>
+</tr>
+<tr id="Pugh2005" class="entry">
+	<td>Pugh, J., Martinoli, A. and Zhang, Y.</td>
+	<td>Particle swarm optimization for unsupervised robotic learning</td>
+	<td>2005</td>
+	<td>Proceedings 2005 IEEE Swarm Intelligence Symposium, 2005. SIS 2005., pp. 92-99&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1109/SIS.2005.1501607">DOI</a> &nbsp;</td>
+</tr>
+<tr id="Quinlan93combining" class="entry">
+	<td>Quinlan, J.R.</td>
+	<td>Combining Instance-Based and Model-Based Learning</td>
+	<td>1993</td>
+	<td>, pp. 236-243&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.34.6358\&rep=rep1\&type=pdf">DOI</a> &nbsp;</td>
+</tr>
+<tr id="Quinlan92learningwith" class="entry">
+	<td>Quinlan, J.R.</td>
+	<td>Learning With Continuous Classes</td>
+	<td>1992</td>
+	<td>, pp. 343-348&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.34.885&rep=rep1&type=pdf">URL</a>&nbsp;</td>
+</tr>
+<tr id="ngiam2011optimization" class="entry">
+	<td>Quoc V. Le Jiquan Ngiam, A.C.A.L.B.P.A.Y.N.</td>
+	<td>On Optimization Methods for Deep Learning</td>
+	<td>2011</td>
+	<td>Proceedings of the 28th International Conference on Machine Learning (ICML-11).&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://www.cs.stanford.edu/~acoates/papers/LeNgiCoaLahProNg11.pdf">URL</a>&nbsp;</td>
+</tr>
+<tr id="Rao2004" class="entry">
+	<td>Rao, R.P.N., Shon, A.P. and Meltzoff, A.N.</td>
+	<td>A Bayesian Model of Imitation in Infants and Robots</td>
+	<td>2004</td>
+	<td>In Imitation and Social Learning in Robots, Humans, and Animals, pp. 217-247&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://citeseer.ist.psu.edu/viewdoc/summary?doi=10.1.1.60.4816">URL</a>&nbsp;</td>
+</tr>
+<tr id="Rasmussen06gaussianprocesses" class="entry">
+	<td>Rasmussen, C.E.</td>
+	<td>Gaussian processes for machine learning</td>
+	<td>2006</td>
+	<td>&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=3FDD89C630061F66691133737C9F1CE2?doi=10.1.1.86.3414&rep=rep1&type=pdf">URL</a>&nbsp;</td>
+</tr>
+<tr id="Ross2008" class="entry">
+	<td>Ross, S., draa null, B.C. and Pineau, J.</td>
+	<td>Bayesian reinforcement learning in continuous POMDPs with application to robot navigation</td>
+	<td>2008</td>
+	<td>Robotics and Automation, 2008. ICRA 2008. IEEE International Conference on, pp. 2845-2851&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1109/ROBOT.2008.4543641">DOI</a> &nbsp;</td>
+</tr>
+<tr id="Ruhnke2009" class="entry">
+	<td>Ruhnke, M., Steder, B., Grisetti, G. and Burgard, W.</td>
+	<td>Unsupervised learning of 3D object models from partial views</td>
+	<td>2009</td>
+	<td>Robotics and Automation, 2009. ICRA '09. IEEE International Conference on, pp. 801-806&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1109/ROBOT.2009.5152524">DOI</a> &nbsp;</td>
+</tr>
+<tr id="Salganicoff1996" class="entry">
+	<td>Salganicoff, M., Ungar, L.H. and Bajcsy, R.</td>
+	<td>Active Learning for Vision-Based Robot Grasping</td>
+	<td>1996</td>
+	<td>Machine Learning<br/>Vol. 23(2), pp. 251-278&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1023/A:1018280807006">DOI</a> <a href="http://dx.doi.org/10.1023/A:1018280807006">URL</a>&nbsp;</td>
+</tr>
+<tr id="SAY199675" class="entry">
+	<td>Say, A. and Kuru, S.</td>
+	<td>Qualitative system identification: deriving structure from behavior</td>
+	<td>1996</td>
+	<td>Artificial Intelligence<br/>Vol. 83(1), pp. 75 - 141&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/0004-3702(95)00016-X">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/000437029500016X">URL</a>&nbsp;</td>
+</tr>
+<tr id="Schaal1997" class="entry">
+	<td>Schaal, S.</td>
+	<td>Learning from demonstration</td>
+	<td>1997</td>
+	<td>Advances in Neural Information Processing Systems 9&nbsp;</td>
+	<td>inproceedings</td>
+	<td>&nbsp;</td>
+</tr>
+<tr id="Schaal2002" class="entry">
+	<td>Schaal, S., Atkeson, C.G. and Vijayakumar, S.</td>
+	<td>Scalable Techniques from Nonparametric Statistics for Real Time Robot Learning</td>
+	<td>2002</td>
+	<td>Applied Intelligence<br/>Vol. 17(1), pp. 49-60&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1023/A:1015727715131">DOI</a> <a href="http://dx.doi.org/10.1023/A:1015727715131">URL</a>&nbsp;</td>
+</tr>
+<tr id="Schaal2000" class="entry">
+	<td>Schaal, S., Atkeson, C.G. and Vijayakumar, S.</td>
+	<td>Real-time robot learning with locally weighted statistical learning</td>
+	<td>2000</td>
+	<td><br/>Vol. 1Robotics and Automation, 2000. Proceedings. ICRA '00. IEEE International Conference on, pp. 288-293 vol.1&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1109/ROBOT.2000.844072">DOI</a> &nbsp;</td>
+</tr>
+<tr id="Schmidhuber201585" class="entry">
+	<td>Schmidhuber, J.</td>
+	<td>Deep learning in neural networks: An overview </td>
+	<td>2015</td>
+	<td>Neural Networks <br/>Vol. 61, pp. 85 - 117&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/j.neunet.2014.09.003">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S0893608014002135">URL</a>&nbsp;</td>
+</tr>
+<tr id="Shao2015" class="entry">
+	<td>Shao, L., Zhu, F. and Li, X.</td>
+	<td>Transfer Learning for Visual Categorization: A Survey</td>
+	<td>2015</td>
+	<td>IEEE Transactions on Neural Networks and Learning Systems<br/>Vol. 26(5), pp. 1019-1034&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/TNNLS.2014.2330900">DOI</a> &nbsp;</td>
+</tr>
+<tr id="SHEHORY1998165" class="entry">
+	<td>Shehory, O. and Kraus, S.</td>
+	<td>Methods for task allocation via agent coalition formation</td>
+	<td>1998</td>
+	<td>Artificial Intelligence<br/>Vol. 101(1), pp. 165 - 200&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/S0004-3702(98)00045-9">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S0004370298000459">URL</a>&nbsp;</td>
+</tr>
+<tr id="Siciliano:2007:SHR:1209344" class="entry">
+	<td>Siciliano, B. and Khatib, O.</td>
+	<td>Springer Handbook of Robotics</td>
+	<td>2007</td>
+	<td>&nbsp;</td>
+	<td>book</td>
+	<td>&nbsp;</td>
+</tr>
+<tr id="Sofman2006" class="entry">
+	<td>Sofman, B., Lin, E., Bagnell, J.A., Cole, J., Vandapel, N. and Stentz, A.</td>
+	<td>Improving robot navigation through self-supervised online learning</td>
+	<td>2006</td>
+	<td>Journal of Field Robotics<br/>Vol. 23(11-12), pp. 1059-1075&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1002/rob.20169">DOI</a> <a href="http://dx.doi.org/10.1002/rob.20169">URL</a>&nbsp;</td>
+</tr>
+<tr id="Song2010" class="entry">
+	<td>Song, D., Huebner, K., Kyrki, V. and Kragic, D.</td>
+	<td>Learning task constraints for robot grasping using graphical models</td>
+	<td>2010</td>
+	<td>Intelligent Robots and Systems (IROS), 2010 IEEE/RSJ International Conference on, pp. 1579-1585&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1109/IROS.2010.5649406">DOI</a> &nbsp;</td>
+</tr>
+<tr id="Stone2000" class="entry">
+	<td>Stone, P. and Veloso, M.</td>
+	<td>Multiagent Systems: A Survey from a Machine Learning Perspective</td>
+	<td>2000</td>
+	<td>Autonomous Robots<br/>Vol. 8(3), pp. 345-383&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1023/A:1008942012299">DOI</a> <a href="http://dx.doi.org/10.1023/A:1008942012299">URL</a>&nbsp;</td>
+</tr>
+<tr id="Stout2005" class="entry">
+	<td>Stout, A., Konidaris, G.D. and Barto, A.G.</td>
+	<td>Intrinsically motivated reinforcement learning: A promising framework for developmental robot learning</td>
+	<td>2005</td>
+	<td><i>School</i>: DTIC Document&nbsp;</td>
+	<td>techreport</td>
+	<td><a href="http://oai.dtic.mil/oai/oai?verb=getRecord&metadataPrefix=html&identifier=ADA440079">URL</a>&nbsp;</td>
+</tr>
+<tr id="Sutton1992" class="entry">
+	<td>Sutton, R.S.</td>
+	<td>Introduction: The Challenge of Reinforcement Learning</td>
+	<td>1992</td>
+	<td>Reinforcement Learning, pp. 1-3&nbsp;</td>
+	<td>inbook</td>
+	<td><a href="http://dx.doi.org/10.1007/978-1-4615-3618-5_1">DOI</a> <a href="http://dx.doi.org/10.1007/978-1-4615-3618-5_1">URL</a>&nbsp;</td>
+</tr>
+<tr id="Sutton1988" class="entry">
+	<td>Sutton, R.S.</td>
+	<td>Learning to predict by the methods of temporal differences</td>
+	<td>1988</td>
+	<td>Machine Learning<br/>Vol. 3(1), pp. 9-44&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1007/BF00115009">DOI</a> <a href="http://dx.doi.org/10.1007/BF00115009">URL</a>&nbsp;</td>
+</tr>
+<tr id="Sutton1998" class="entry">
+	<td>Sutton, R.S. and Barto, A.G.</td>
+	<td>Reinforcement Learning I: Introduction</td>
+	<td>1998</td>
+	<td>&nbsp;</td>
+	<td>misc</td>
+	<td><a href="http://citeseer.ist.psu.edu/viewdoc/summary?doi=10.1.1.32.7692">URL</a>&nbsp;</td>
+</tr>
+<tr id="Taylor2009" class="entry">
+	<td>Taylor, M.E. and Stone, P.</td>
+	<td>Transfer learning for reinforcement learning domains: A survey</td>
+	<td>2009</td>
+	<td>Journal of Machine Learning Research<br/>Vol. 10(Jul), pp. 1633-1685&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://www.jmlr.org/papers/v10/taylor09a.html">URL</a>&nbsp;</td>
+</tr>
+<tr id="Thrun1995" class="entry">
+	<td>Thrun, S. and Mitchell, T.M.</td>
+	<td>Lifelong Robot Learning</td>
+	<td>1995</td>
+	<td>The Biology and Technology of Intelligent Autonomous Agents, pp. 165-196&nbsp;</td>
+	<td>inbook</td>
+	<td><a href="http://dx.doi.org/10.1007/978-3-642-79629-6_7">DOI</a> <a href="http://dx.doi.org/10.1007/978-3-642-79629-6_7">URL</a>&nbsp;</td>
+</tr>
+<tr id="Thrun1993" class="entry">
+	<td>Thrun, S.B.</td>
+	<td>Exploration and model building in mobile robot domains</td>
+	<td>1993</td>
+	<td>Neural Networks, 1993., IEEE International Conference on, pp. 175-180 vol.1&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1109/ICNN.1993.298552">DOI</a> &nbsp;</td>
+</tr>
+<tr id="Vapnik1999" class="entry">
+	<td>Vapnik, V.N.</td>
+	<td>An overview of statistical learning theory</td>
+	<td>1999</td>
+	<td>IEEE Transactions on Neural Networks<br/>Vol. 10(5), pp. 988-999&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/72.788640">DOI</a> &nbsp;</td>
+</tr>
+<tr id="7487755" class="entry">
+	<td>Yamaguchi, A. and Atkeson, C.G.</td>
+	<td>Neural networks and differential dynamic programming for reinforcement learning problems</td>
+	<td>2016</td>
+	<td>2016 IEEE International Conference on Robotics and Automation (ICRA), pp. 5434-5441&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="http://dx.doi.org/10.1109/ICRA.2016.7487755">DOI</a> &nbsp;</td>
+</tr>
+<tr id="Yang2016" class="entry">
+	<td>Yang, H.F., Dillon, T.S. and Chen, Y.P.P.</td>
+	<td>Optimized Structure of the Traffic Flow Forecasting Model With a Deep Learning Approach</td>
+	<td>2016</td>
+	<td>IEEE Transactions on Neural Networks and Learning Systems<br/>Vol. PP(99), pp. 1-11&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/TNNLS.2016.2574840">DOI</a> &nbsp;</td>
+</tr>
+<tr id="Yang1994" class="entry">
+	<td>Yang, J., Xu, Y. and Chen, C.S.</td>
+	<td>Hidden Markov model approach to skill learning and its application to telerobotics</td>
+	<td>1994</td>
+	<td>IEEE Transactions on Robotics and Automation<br/>Vol. 10(5), pp. 621-631&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/70.326567">DOI</a> &nbsp;</td>
+</tr>
+<tr id="5670617" class="entry">
+	<td>Yu, D. and Deng, L.</td>
+	<td>Deep Learning and Its Applications to Signal and Information Processing [Exploratory DSP]</td>
+	<td>2011</td>
+	<td>IEEE Signal Processing Magazine<br/>Vol. 28(1), pp. 145-154&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1109/MSP.2010.939038">DOI</a> &nbsp;</td>
+</tr>
+<tr id="Zhou2002" class="entry">
+	<td>Zhou, C.</td>
+	<td>Robot learning with GA-based fuzzy reinforcement learning agents</td>
+	<td>2002</td>
+	<td>Information Sciences<br/>Vol. 145(1–2), pp. 45 - 68&nbsp;</td>
+	<td>article</td>
+	<td><a href="http://dx.doi.org/10.1016/S0020-0255(02)00223-2">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S0020025502002232">URL</a>&nbsp;</td>
+</tr>
+<tr id="ziebart2008maximum" class="entry">
+	<td>Ziebart, B.D., Maas, A., Bagnell, J.A. and Dey, A.K.</td>
+	<td>Maximum Entropy Inverse Reinforcement Learning</td>
+	<td>2008</td>
+	<td>Proc. AAAI, pp. 1433-1438&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="https://www.cs.uic.edu/pub/Ziebart/Publications/maxentirl-bziebart.pdf">URL</a>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<footer>
+ <small>Created by <a href="http://jabref.sourceforge.net">JabRef</a> on 27/02/2017.</small>
+</footer>
+
+<!-- file generated by JabRef -->
+
+</body>
+</html>

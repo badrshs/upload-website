@@ -1,0 +1,262 @@
+@import 'https://fonts.googleapis.com/css?family=Cairo';
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    
+}
+nav{
+    font: normal 16px 'cairo' , sans-serif;
+}
+.navbar-inverse {
+    padding: 20px 0
+}
+nav .logo{
+    display: inline-block;
+    float: right
+}
+nav .menu{
+    display: inline-block;
+    float: left
+}
+nav .menu ul{
+    list-style: none
+}
+nav .menu ul li{
+    display: inline-block;
+    margin-right: 20px;
+    float: right
+}
+
+nav .menu ul li a{
+    color: #444;
+    display: block;
+    padding: 0 10px
+}
+nav .menu ul li a.active{
+    border-bottom: 3px solid rgba(41, 128, 185,1.0)
+}
+nav .menu ul li a:hover{
+    color: #000;
+    text-decoration: none;
+    border-bottom: 3px solid rgba(41, 128, 185,1.0)
+}
+
+
+header {
+    height: 70vh;
+    background: url(../img/tile.png) , url('../img/hand_sponge.png') no-repeat;
+    background-position: center , right 50px;
+    font-family: 'cairo' , sans-serif;
+    padding-top: 150px
+}
+.header_contact{}
+.header_contact h1{
+    padding: 10px;
+    line-height: 1.2;
+    color: #000
+}
+.header_contact p{
+    line-height: 2.4;
+    color: #444
+}
+.header_contact a{
+    display: inline-block;
+    padding: 10px 25px;
+    border: 1px solid #444;
+    color: #000;
+    border-radius: 2px
+}
+.header_contact a:hover{
+    background: #444;
+    color: #fff;
+    text-decoration: none
+}
+
+.call{
+    text-align: center;
+    margin: 100px auto 0
+}
+.call h2{
+    font-weight: 600;
+    word-spacing: 10px;
+}
+.call span{
+    display: inline-block;
+    padding: 20px 50px;
+    background: rgba(44, 62, 80,0.9);
+    color: #fff;
+    font-size: 40px;
+    margin: 20px auto;
+    border-radius: 60px;
+    box-shadow: 0 0 10px 0px rgba(0,0,0,0.5);
+}
+.call span i{
+    color: rgba(39, 174, 96,1);
+    padding:10px
+}
+
+
+.service{
+    padding: 50px 0;
+    background:url('../img/serv.png') 170px bottom no-repeat;
+    background-size: 400px , 90px;
+    font-family: 'cairo' , sans-serif;
+}
+.service .title{
+    font-size: 25px;
+    margin-bottom: 50px
+}
+.serv{
+    background: ;
+    padding: 30px 0;
+    margin-bottom: 30px;
+    cursor: pointer
+}
+.serv i{
+    display: inline-block;
+}
+.serv h2{}
+.service p{
+    line-height: 2.2;
+    text-align: right
+}
+
+
+.blog{
+    direction:ltr;
+    padding: 100px 0;
+    background: #fafafa
+}
+
+#owl-demo .item{
+    margin: 15px;
+    text-align: right;
+    font-family: 'cairo' , sans-serif
+}
+#owl-demo .item img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+#owl-demo .item h3{
+    line-height: 1.4;
+    color: #000;
+    margin-top: 5px;
+}
+#owl-demo .item p{
+    line-height: 1.8;
+    color: #555
+}
+
+
+
+.contact_us{
+    padding: 50px 0;
+    font-family: 'cairo' , sans-serif;
+    background: linear-gradient(to left top, rgba(0,0,0,0.6) , rgba(0,0,0,0.5)) , url(../img/1.jpg) center no-repeat;
+    background-size: cover;
+    color: #fff
+}
+.contact_us h3{
+    margin-bottom: 50px
+}
+.contact_us form{}
+.contact_us form input ,
+.contact_us form textarea{
+    margin-bottom: 15px;
+    padding: 25px 20px;
+    border: 1px solid #ccc;
+    color: #fff;
+    outline: none;
+    border-radius: 0;
+    background: rgba(0,0,0,0.2)
+}
+.contact_us form input:focus ,
+.contact_us form textarea:focus {
+    background: rgba(0,0,0,0.2);
+    outline: none;
+}
+.contact_us .call span{
+    background: #fff;
+    color: rgba(44, 62, 80,0.9);
+    font-weight: 600
+}
+
+
+.social{
+    padding: 50px 0;
+    background: url(../img/struckaxiom.png);
+
+}
+.social h3{
+    text-align: center;
+    font-family: 'cairo' , sans-serif;
+    margin-bottom: 50px;
+}
+.social .icon{
+    text-align: center;
+    direction: ltr
+}
+.social a {
+    display: inline-block;
+    padding: 20px 20px;
+    margin: 0 10px;
+}
+.social a{
+    color: #444;
+}
+.social a i[class~=fa-facebook]:hover{color: #3b5998;}
+.social a i[class~=fa-twitter]:hover{color: #1da1f2;}
+.social a i[class~=fa-instagram]:hover{color: #833ab4;}
+.social a i[class~=fa-google-plus]:hover{color: #dd4b39;}
+
+
+
+.up{
+    width: 80px;
+    height: 80px;
+    line-height: 90px;
+    text-align: center;
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+    background: rgba(46, 204, 113,1.0);
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;    
+    transition: all 0.4s
+}
+.up:hover{
+    line-height: 60px;
+    background: rgba(39, 174, 96,1.0)
+}
+
+
+@media screen and (max-width:720px){
+
+    header{
+        height: auto;
+        padding:150px 0 0;
+        background-position: bottom
+    }
+    .service{
+        padding-bottom: 0;
+        background-position: -160px center
+    }
+    .serv{
+        text-align: center
+    }
+    .service p{
+        padding: 20px;
+    }
+    .contact_us{
+        padding: 30px 0
+    }
+    .contact_us input[type=submit]{
+        display: block;
+        width: 100%
+    }
+}
+

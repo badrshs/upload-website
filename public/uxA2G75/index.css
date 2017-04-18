@@ -1,0 +1,288 @@
+
+ html {
+ font-size: 100%;
+ }
+ 
+ /* iPhone 5 View Model [Start] */
+ /* 640px [WIDTH] = Portrait */
+ @media all and (max-width: 640px) {
+ #header {
+ position: fixed;
+ background-color: rgba(238, 238, 238, 0.8);
+ top: 0px;
+ left: 0px;
+ height: 7.2em;
+ width: 100%;
+ z-index: 9999;
+ }
+ }
+ 
+ @media all and (max-width: 640px) {
+ #logo {
+ display: block;
+ position: absolute;
+ height: 5.1875em;
+ top: 1em;
+ left: 2em;
+ z-index: 9999;
+ }
+ }
+ 
+ @media all and (max-width: 640px) {
+ #header-text {
+ display: block;
+ position: fixed;
+ font-family: 'Allerta';
+ font-size: 2.8em;
+ top: em;
+ left: 3.4em;
+ z-index: 9999;
+ }
+ }
+ 
+ @media all and (max-width: 640px) {
+ #container1 {
+ display: block;
+ position: absolute;
+ background-color: #EC4F36;
+ height: 35em;
+ width: 100%;
+ z-index: -9999;
+ top: 0px;
+ left: 0px; 
+ }
+ }
+ 
+ @media all and (max-width: 640px) {
+ #container1-header {
+ display: block; 
+ position: absolute;
+ font-family: 'Allerta';
+ color: white;
+ font-size: 3.4em;
+ top: 2.7em;
+ left: 0.68em;
+ }
+ }
+ 
+ @media all and (max-width: 640px) {
+ #content-divider-style1 {
+ display: block;
+ position: absolute;
+ border-top: 6px solid white;
+ width: 14%;
+ top: 17em;
+ left: 2.5em; 
+ }
+ }
+ 
+ @media all and (max-width: 640px) {
+ #container1-paragraph {
+ display: block; 
+ position: absolute;
+ color: white;
+ font-family: 'Allerta';
+ font-size: 1.9em;
+ left: 1.22em;
+ top: 9.5em;
+ padding-right: 20px;
+ }
+ }
+ 
+ @media all and (max-width: 640px) {
+ #container2 {
+ display: block;
+ position: absolute;
+ height: 78%;
+ width: 100%;
+ z-index: -9999;
+ top: 34.95em;
+ left: 0px; 
+ }
+ }
+ 
+ @media all and (max-width: 640px) {
+ #container2-header {
+ display: block;
+ position: relative;
+ text-align: center;
+ font-family: 'Allerta';
+ font-size: 3.4em;
+ color: #424949;
+ top: 1em;
+ }
+ }
+ 
+ @media all and (max-width: 640px) {
+ #self-image {
+ display: block;
+ position: relative;
+ margin-left: auto;
+ margin-right: auto;
+ top: 2.8em;
+ border-radius: 15px;
+ height: 20em;
+ }
+ }
+ 
+ @media all and (max-width: 640px) {
+ #content-spacing {
+ display: block;
+ position: relative; 
+ border-top: 3px solid #424949;
+ width: 68%;
+ margin-right: auto;
+ margin-left: auto;
+ top: 4.2em;
+ }
+ }
+ 
+ @media all and (max-width: 640px) {
+ #container2-paragraph {
+ display: block; 
+ position: absolute;
+ text-align: center;
+ padding-right: 5%;
+ padding-left: 5%;
+ font-family: 'Allerta';
+ color: #424949;
+ top: 16.8em;
+ font-size: 2em;
+ }
+ }
+ 
+ @media all and (max-width: 640px) {
+ #container3 {
+ display: block;
+ position: absolute;
+ height: 50%;
+ width: 100%;
+ z-index: -9999;
+ top: 90em;
+ left: 0px; 
+ }
+ }
+ 
+ @media all and (max-width: 640px) {
+ #container3-header {
+ display: block;
+ position: relative;
+ text-align: center;
+ font-family: 'Allerta';
+ font-size: 3.4em;
+ color: #424949;
+ top: 0.5em;
+ }
+ }
+ 
+ @media all and (max-width: 640px) {
+ #house-img {
+ display: block;
+ position: relative;
+ margin-left: auto;
+ margin-right: auto;
+ top: 2em;
+ border-radius: 15px;
+ height: 20em;
+ border-bottom-left-radius: 2.5em;
+ border-bottom-right-radius: 2.5em;
+ } 
+ }
+ 
+ @media all and (max-width: 640px) {
+ #content-spacing2 {
+ display: block;
+ position: relative; 
+ border-top: 3px solid #424949;
+ width: 68%;
+ margin-right: auto;
+ margin-left: auto;
+ top: 3.5em;
+ }
+ }
+ 
+ @media all and (max-width: 640px) {
+ #container3-paragraph {
+ display: block; 
+ position: absolute;
+ text-align: center;
+ padding-right: 5%;
+ padding-left: 5%;
+ font-family: 'Allerta';
+ color: #424949;
+ top: 16.5em;
+ font-size: 2em;
+ }
+ }
+ 
+ @media all and (max-width: 640px) {
+ #dog-image {
+ display: block;
+ position: relative;
+ height: 10em;
+ top: 27em;
+ left: 28em;
+ }
+ }
+ 
+ @media all and (max-width: 640px) {
+ #container4 {
+ display: block;
+ position: absolute;
+ height: 50%;
+ width: 100%;
+ z-index: -9999;
+ top: 155.8em;
+ left: 0px; 
+ background-color: #B0B0B0;
+ }
+ }
+ 
+ @media all and (max-width: 640px) {
+ #container4-header {
+ display: block;
+ position: relative;
+ text-align: center;
+ font-family: 'Allerta';
+ font-size: 3.4em;
+ color: white; /* #424949 */
+ top: 0.6em;
+ }
+ }
+ 
+ @media all and (max-width: 640px) {
+ #contact-info {
+ display: block;
+ position: relative;
+ text-align: center;
+ color: white;
+ font-family: 'Allerta';
+ font-size: 1.8em;
+ padding-right: 1.2em;
+ padding-left: 1.2em;
+ top: 0.5em;
+ }
+ 
+ @media all and (max-width: 640px) {
+ #Email {
+ display: block;
+ position: relative;
+ color: white;
+ text-align: center;
+ font-family: 'Allerta';
+ font-size: 2.2em;
+ top: 1em;
+ }
+ }
+ 
+ @media all and (max-width: 640px) {
+ #iMessage {
+ display: block;
+ position: relative;
+ color: white;
+ text-align: center;
+ font-family: 'Allerta';
+ font-size: 2.2em;
+ top: 1em;
+ }
+ }

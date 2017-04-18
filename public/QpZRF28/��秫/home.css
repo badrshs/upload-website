@@ -1,0 +1,92 @@
+body
+{
+	
+	background-image:url("./img/36.JPG");
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+ul
+{
+	list-style-type:none;
+	overflow:hidden;
+	background-color:silver;
+}
+ul li 
+{
+	
+	float:right;
+	padding:14px 16px;
+	border-right:1px solid #fff ;
+
+	
+}
+li a 
+{
+	
+	color:#0000;
+	text-decoration:none;
+	font-size:20px;
+}
+Li:hover
+{
+	background-color:#000;
+}
+table
+{
+	width:300px;
+	height:400px;
+	background-color:rgba(2,2,2,0.3);
+	
+}
+td
+{
+	
+}
+.A
+{
+	width:300px;
+	height:30px;
+	background-color:#0F3;
+	
+}
+input:hover
+{
+	background-color:#fff;
+}
+div
+{
+	width:400px;
+	height:600px;
+	background-color:rgba(2,2,2,0.3);
+	font-size:21px;
+	right:320px;
+	position:absolute;
+	text-align:center;
+}
+.C
+{
+	width:400px;
+	height:825px;
+	background-color:rgba(2,2,2,0.3);
+	font-size:21px;
+	right:320px;
+	position:absolute;
+	text-align:center;
+}
+.V
+{
+	width:400px;
+	height:775px;
+	background-color:rgba(2,2,2,0.3);
+	font-size:35px;
+}
+.N
+{
+	border: 2px solid #a1a1a1;
+	background-color:#09F;
+	border-radius: 25px;
+}
+N:hover
+{
+	background-color:#FFF;
+}

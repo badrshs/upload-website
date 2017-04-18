@@ -1,0 +1,949 @@
+/* fonts */
+@font-face{
+    font-family: R;
+    src:url('../fonts/Raleway-Regular.ttf');
+}
+*{
+    font-family: R;
+}
+/*// fonts */
+/* Framework */
+a:hover,
+a:active{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+ul{
+    padding: 0px;
+    margin: 0px;
+}
+/*// Framework */
+/*==================
+    Index Page
+====================*/
+/* Navbar */
+nav.navbar{
+    height: 80px;
+    margin: 0px;
+    background: #fff;
+    border-bottom: 0px;
+    box-shadow: 0px 0px 5px #333;
+    -webkit-box-shadow: 0px 0px 5px #333;
+    -moz-box-shadow: 0px 0px 5px #333;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+}
+.navbar-default .navbar-collapse{
+    position: relative;
+}
+nav.navbar a.navbar-brand{
+    padding: 20px 0px;
+    margin: 0px;
+}
+.navbar-right~.navbar-right{
+    height: 40px;
+    padding: 24px 0px;
+    margin-right: 20px;
+}
+.navbar-right~.navbar-right li{
+    position: relative;
+    padding: 0px;
+}
+.navbar-right~.navbar-right li a.mainlinks{
+    font-size: 13px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    color: #2a3044;
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+.navbar-right~.navbar-right li.active a.mainlinks{
+    background: none;
+    color: #f8c34f;
+}
+.navbar-right~.navbar-right li.active:hover a.mainlinks{
+    background: none;
+    color: #f8c34f;
+}
+.navbar-right~.navbar-right li.active a.mainlinks:after{
+    content: "";
+    display: block;
+    width: 10px;
+    height: 2px;
+    background: #f8c34f;
+}
+.navbar-right~.navbar-right li a.mainlinks:after{
+    content: "";
+    display: block;
+    width: 0px;
+    height: 0px;
+    background: #f8c34f;
+}
+.navbar-right~.navbar-right li:hover a.mainlinks:after{
+    width: 10px;
+    height: 2px;
+    transition: all ease-in-out 0.3s;
+    -webkit-transition: all ease-in-out 0.3s;
+    -moz-transition: all ease-in-out 0.3s;
+    -o-transition: all ease-in-out 0.3s;
+    -ms-transition: all ease-in-out 0.3s;
+}
+.navbar-right~.navbar-right li:hover a.mainlinks{
+    color: #f8c34f;
+    transition: all ease-in-out 0.3s;
+    -webkit-transition: all ease-in-out 0.3s;
+    -moz-transition: all ease-in-out 0.3s;
+    -o-transition: all ease-in-out 0.3s;
+    -ms-transition: all ease-in-out 0.3s;
+}
+.navbar-right~.navbar-right li ul.sublinks{
+    position: absolute;
+    width: 100px;
+    background: #fff;
+    top: 20px;
+    padding-top: 30px;
+    display: none;
+}
+.navbar-right~.navbar-right li ul.sublinks li{
+    width: 100%;
+    text-align: center;
+    line-height: 30px;
+}
+.navbar-right~.navbar-right li ul.sublinks li a{
+    color: #2a3044;
+    font-weight: bolder;
+}
+.navbar-right~.navbar-right li ul.sublinks li a:hover{
+    color: #f8c34f;
+    transition: all ease-in-out 0.4s;
+    -webkit-transition: all ease-in-out 0.4s;
+    -moz-transition: all ease-in-out 0.4s;
+    -o-transition: all ease-in-out 0.4s;
+    -ms-transition: all ease-in-out 0.4s;
+}
+.navbar-right~.navbar-right li:hover ul.sublinks{
+    display: block;
+}
+.navbar-form input[type="text"]{
+    position: absolute;
+    right:10px;
+    top: 21px;
+    z-index: 8888888;
+    border-radius: 0px;
+    width: 70%;
+    display: none;
+}
+.navbar-form button:focus{
+    background: none;
+    outline: none;
+}
+.navbar-form button{
+    position: absolute;
+    right: 10px;
+    top: 21px;
+    z-index: 9999999999999;
+    background: none;
+    border: none;
+    color: #cdcdcd;
+    line-height: 23px;
+}
+.navbar-form button:hover{
+    background: none;
+    color: #f8c34f;
+}
+/*// Navbar */
+/* Welcome Section */
+section.welcome{
+    background: #f7f9f8;
+    margin: 0px;
+    text-align: center;
+    margin-top: 80px;
+}
+section.welcome h1{
+    text-transform: uppercase;
+    font-weight: bolder;
+    margin-top: 70px;
+}
+section.welcome h1 b{
+    color: #f8c34f;
+}
+section.welcome h3{
+    font-size: 22px;
+    color: #555555;
+}
+section.welcome a{
+    background: #2a3044;
+    color: #fff;
+    font-weight: bolder;
+    text-transform: uppercase;
+    border: none;
+    margin-top: 20px;
+    padding: 15px 25px;
+}
+section.welcome a:hover{
+    background: #f8c34f;
+    transition: all ease-in-out 0.5s;
+    -webkit-transition: all ease-in-out 0.5s;
+    -moz-transition: all ease-in-out 0.5s;
+    -o-transition: all ease-in-out 0.5s;
+    -ms-transition: all ease-in-out 0.5s;
+}
+section.welcome img{
+    margin: 0px auto 25px auto;
+}
+/*// Welcome Section */
+/* Services Section */
+section.services h3{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    margin-top: 70px;
+    font-size: 22px;
+}
+section.services h4{
+    text-align: center;
+    color: #555555;
+    font-size: 14px;
+    font-weight: bolder;
+}
+section.services h4:after{
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #f8c34f;
+    margin: 10px auto;
+    border-radius: 3px;
+}
+section.services div.services-grid{
+    margin: 70px 0px 70px 0px;
+}
+section.services div.services-grid div.service div.services-img{
+    border: 2px solid #ebebeb;
+    width: 80px;
+    height: 80px;
+}
+section.services div.services-grid div.service h5{
+    margin-top: 15px;
+    font-weight: bolder;
+    font-size: 16px;
+}
+section.services div.services-grid div.service h5:after{
+    content: "";
+    display: block;
+    height: 2px;
+    width: 30px;
+    margin: 5px 0px 5px 0px;
+    background: #2a3044;
+}
+section.services div.services-grid div.service p{
+    color: #7d7d7d;
+    font-size: 13px;
+}
+section.services div.services-grid div.service a{
+    border-radius: 0px;
+    border: 2px solid #d7d7d7;;
+    margin-top: 20px;
+    text-transform: uppercase;
+    color: #cdcdcd;
+    font-size: 13px;
+    padding: 10px 15px;
+    color: #7d7d7d;
+    font-weight: bolder;
+}
+section.services div.services-grid div.service a:hover{
+    background: none;
+}
+section.services div.services-grid div.service{
+    transition: all ease-in-out 0.4s;
+    -webkit-transition: all ease-in-out 0.4s;
+    -moz-transition: all ease-in-out 0.4s;
+    -o-transition: all ease-in-out 0.4s;
+    -ms-transition: all ease-in-out 0.4s;
+}
+section.services div.services-grid div.service:hover div.services-img{
+    border-color: #f8c34f;
+}
+section.services div.services-grid div.service:hover h5:after{
+    width: 60px;
+    background: #f8c34f;
+    transition: all ease-in-out 0.4s;
+    -webkit-transition: all ease-in-out 0.4s;
+    -moz-transition: all ease-in-out 0.4s;
+    -o-transition: all ease-in-out 0.4s;
+    -ms-transition: all ease-in-out 0.4s;
+}
+section.services div.services-grid div.service:hover a{
+    background: #f8c34f;
+    border-color: #f8c34f;
+    color: #fff;
+}
+/*// Services Section */
+/* About Us Section */
+section.aboutus{
+    background: #f7f9f8;
+    padding: 70px 0px;
+    overflow: hidden;
+}
+section.aboutus h3{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 22px;
+    margin: 0px;
+}
+section.aboutus h4{
+    text-align: center;
+    color: #555555;
+    font-weight: bolder;
+    font-size: 14px;
+    margin-top: 10px;
+}
+section.aboutus h4:after{
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #f8c34f;
+    margin: 15px auto;
+}
+section.aboutus h2{
+    margin: 100px 0px 0px 0px;
+}
+section.aboutus div.aboutus-grid p{
+    margin: 20px 0px 30px 0px;
+    color: #363636;
+}
+section.aboutus div.aboutus-grid label{
+    display: block;
+    margin: 15px 0px;
+}
+section.aboutus div.aboutus-grid label span{
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #f8c34f;
+    border-radius: 50%;
+    float: left;
+    margin-right: 10px;
+}
+section.aboutus div.aboutus-grid label span i{
+    display: block;
+    width: 14px;
+    height: 14px;
+    display: block;
+    background: #f8c34f;
+    border-radius: 50%;
+    margin: 2px 0px 0px 2px;
+    color: #2a3044;
+    font-size: 13px;
+}
+section.aboutus div.aboutus-grid a{
+    background:#2a3044;
+    margin: 20px 0px;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 15px 25px;
+    border:none;
+}
+section.aboutus div.aboutus-grid div.browsers{
+    position: relative;
+}
+section.aboutus div.aboutus-grid div.browsers img{
+    position: absolute;
+    top: 70px;
+}
+section.aboutus div.aboutus-grid div.browsers img.browser-one{
+    right: -250px;
+    z-index: 99999999;
+}
+section.aboutus div.aboutus-grid div.browsers img.browser-two{
+    top: 100px;
+}
+/*// About Us Section */
+/* Portfolio Section */
+section.home-portfolio{
+    padding: 70px 0px;
+    background: #2a3044;
+}
+section.home-portfolio h3{
+    color: #fff;
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    text-align: center;
+}
+section.home-portfolio h4{
+    font-size: 14px;
+    color: #555555;
+    text-align: center;
+    font-weight: bolder;
+}
+section.home-portfolio h4:after{
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #f8c34f;
+    margin: 15px auto;
+}
+section.home-portfolio div.portfolio-filter{
+    margin: 70px 0px;
+}
+section.home-portfolio div.portfolio-filter div.filter-controllers{
+    text-align: center;
+    margin-bottom: 50px;
+}
+section.home-portfolio div.portfolio-filter div.filter-controllers b{
+    padding: 10px 15px;
+    border: 1px solid #acacac;
+    margin-right: 8px;
+    cursor: pointer;
+    color: #fff;
+}
+section.home-portfolio div.portfolio-filter div.filter-controllers b:hover{
+    border-color: #f8c34f;
+    color: #f8c34f;
+}
+section.home-portfolio div.portfolio-filter div.filter-controllers b.active{
+    background: #f8c34f;
+    border-color: #f8c34f;
+    color: #fff;
+}
+section.home-portfolio a.portfolio-item{
+    display: block;
+    margin: 0px 0px 25px 0px;
+    position: relative;
+}
+section.home-portfolio a.portfolio-item img{
+    min-width: 100%;
+}
+#Container .mix{
+    display: none;
+}
+section.home-portfolio a.portfolio-item div.portfolio-info{
+    position: absolute;
+    top: 0;
+    background: #2a3044;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+section.home-portfolio a.portfolio-item:hover div.portfolio-info{
+    opacity: 1;
+    transition: all ease-in-out 0.4s;
+    -webkit-transition: all ease-in-out 0.4s;
+    -moz-transition: all ease-in-out 0.4s;
+    -o-transition: all ease-in-out 0.4s;
+    -ms-transition: all ease-in-out 0.4s;
+}
+section.home-portfolio a.portfolio-item div.portfolio-info h4{
+    color: #fff;
+    font-size: 18px;
+    margin-top: 70px;
+}
+section.home-portfolio a.portfolio-item div.portfolio-info h5{
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+}
+section.home-portfolio div.more-projects{
+    text-align: center;
+}
+section.home-portfolio div.more-projects a{
+    background: none;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 3px;
+    border: 1px solid #f8c34f;
+    font-size: 14px;
+    font-weight: bolder;
+}
+section.home-portfolio div.more-projects a:hover{
+    background: #f8c34f;
+    transition: all ease-in-out 0.4s;
+    -webkit-transition: all ease-in-out 0.4s;
+    -moz-transition: all ease-in-out 0.4s;
+    -o-transition: all ease-in-out 0.4s;
+    -ms-transition: all ease-in-out 0.4s;
+}
+/*// Portfolio Section */
+/* Our Features */
+section.ourfeatures{
+    padding:70px 0px;
+}
+section.ourfeatures h3{
+    text-transform: uppercase;
+    font-weight: bolder;
+    text-align: center;
+    color: #2a3044;
+    font-size: 22px;
+}
+section.ourfeatures h4{
+    text-align: center;
+    font-size: 14px;
+    color: #555555;
+}
+section.ourfeatures h4:after{
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #f8c34f;
+    margin: 10px auto;
+}
+section.ourfeatures div.ourfeatures-grid{
+    margin-top: 70px;
+}
+section.ourfeatures div.ourfeatures-grid div.ourfeaturefirst,
+section.ourfeatures div.ourfeatures-grid div.ourfeaturesecond{
+    margin-top: 50px;
+}
+section.ourfeatures div.ourfeatures-grid div.ourfeaturefirst i,
+section.ourfeatures div.ourfeatures-grid div.ourfeaturesecond i{
+    font-size: 30px;
+    color: #2a3044;
+}
+section.ourfeatures div.ourfeatures-grid div.ourfeaturefirst h5,
+section.ourfeatures div.ourfeatures-grid div.ourfeaturesecond h5{
+    font-weight: bolder;
+    font-size: 14px;
+    color: #2a3044;
+}
+section.ourfeatures div.ourfeatures-grid div.ourfeaturefirst p,
+section.ourfeatures div.ourfeatures-grid div.ourfeaturesecond p{
+    width: 90%;
+    color: #bcbcbc;
+    font-size: 12px;
+}
+section.ourfeatures div.ourfeatures-grid div.ourfeaturefirst  div.featuretwo,
+section.ourfeatures div.ourfeatures-grid div.ourfeaturesecond div.featuretwo{
+    margin-top: 70px;
+}
+section.ourfeatures div.ourfeatures-grid div.ourfeaturesecond{
+    text-align: right;
+}
+section.ourfeatures div.ourfeatures-grid div.ourfeaturesecond p{
+    width: 100%;
+    padding-left: 20px;
+}
+section.ourfeatures div.ourfeatures-grid div.ourfeaturefirst div.featureone:hover i,
+section.ourfeatures div.ourfeatures-grid div.ourfeaturefirst div.featureone:hover h4,
+section.ourfeatures div.ourfeatures-grid div.ourfeaturefirst div.featuretwo:hover i,
+section.ourfeatures div.ourfeatures-grid div.ourfeaturefirst div.featuretwo:hover h4,
+section.ourfeatures div.ourfeatures-grid div.ourfeaturesecond div.featureone:hover i,
+section.ourfeatures div.ourfeatures-grid div.ourfeaturesecond div.featureone:hover h4,
+section.ourfeatures div.ourfeatures-grid div.ourfeaturesecond div.featuretwo:hover i,
+section.ourfeatures div.ourfeatures-grid div.ourfeaturesecond div.featuretwo:hover h4{
+    color: #f8c34f;
+    transition: all ease-in-out 0.5s;
+    -webkit-transition: all ease-in-out 0.5s;
+    -moz-transition: all ease-in-out 0.5s;
+    -o-transition: all ease-in-out 0.5s;
+    -ms-transition: all ease-in-out 0.5s;
+}
+/*// Our Features */
+/* Our Team */
+section.ourteam{
+    background: #f7f9f8;
+    padding: 70px 0px;
+}
+section.ourteam h3{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 22px;
+}
+section.ourteam h4{
+    text-align: center;
+    color: #555555;
+    font-size: 14px;
+}
+section.ourteam h4:after{
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    margin: 10px auto;
+    background: #f8c34f;
+}
+section.ourteam div.ourteam-grid{
+    margin: 70px 0px 0px 0px;
+}
+section.ourteam div.ourteam-grid div.team{
+    background: #fff;
+    border: 1px solid #ebebeb;
+    text-align: center;
+    margin-bottom: 30px;
+}
+section.ourteam div.ourteam-grid div.team div.team-info h5{
+    font-weight: bolder;
+    font-size: 14px;
+    margin-top: 15px;
+}
+section.ourteam div.ourteam-grid div.team div.team-info h5:after{
+    content: "";
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #f8c34f;
+    margin: 5px auto;
+}
+section.ourteam div.ourteam-grid div.team div.team-info h6{
+    font-weight: bold;
+    font-family: A;
+    color: #898989;
+}
+section.ourteam div.ourteam-grid div.team div.team-info div.team-social{
+    border-top: 1px solid #f7f9f8;
+    padding: 12px 0px;
+}
+section.ourteam div.ourteam-grid div.team div.team-info div.team-social a{
+    color: #a1a1a1;
+    padding: 0px 8px;
+    border-right: 1px solid #ebebeb;
+    height: 10px;
+}
+section.ourteam div.ourteam-grid div.team div.team-info div.team-social a.facebook:hover{
+    color: #3b5999;
+}
+section.ourteam div.ourteam-grid div.team div.team-info div.team-social a.twitter:hover{
+    color: #55acee;
+}
+section.ourteam div.ourteam-grid div.team div.team-info div.team-social a.linkedin:hover{
+    color: #0077B5;
+}
+section.ourteam div.ourteam-grid div.team div.team-info div.team-social a.linkedin:hover{
+    color: #0077B5;
+}
+section.ourteam div.ourteam-grid div.team div.team-info div.team-social a.instagram:hover{
+    color: #3f729b;
+}
+section.ourteam div.ourteam-grid div.team div.team-info div.team-social a.behance:hover{
+    color: #131418;
+}
+section.ourteam div.ourteam-grid div.team:hover{
+    box-shadow: 0px 0px 10px #2a3044;
+    -webkit-box-shadow: 0px 0px 10px #2a3044;
+    -moz-box-shadow: 0px 0px 10px #2a3044;
+    transition: all ease-in-out 0.5s;
+    -webkit-transition: all ease-in-out 0.5s;
+    -moz-transition: all ease-in-out 0.5s;
+    -o-transition: all ease-in-out 0.5s;
+    -ms-transition: all ease-in-out 0.5s;
+}
+section.ourteam div.ourteam-grid div.team:hover div.team-info h4:after{
+    width: 40px;
+    transition: all ease-in-out 0.5s;
+    -webkit-transition: all ease-in-out 0.5s;
+    -moz-transition: all ease-in-out 0.5s;
+    -o-transition: all ease-in-out 0.5s;
+    -ms-transition: all ease-in-out 0.5s;
+}
+/*// Our Team */
+/* What We Can Do */
+section.can-do{
+    padding: 70px 0px;
+    background: #f7f9f8;
+}
+section.can-do h3{
+    font-size: 22px;
+    color: #2a3044;
+    font-weight: bolder;
+    text-transform: uppercase;
+    text-align: center;
+}
+section.can-do h4{
+    font-size: 14px;
+    color: #555555;
+    text-align: center;
+}
+section.can-do h4:after{
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #f8c34f;
+    margin: 10px auto;
+}
+section.can-do div.what-can-circles{
+    margin-top: 70px;
+}
+section.can-do div.what-can-circles div#circleone,
+section.can-do div.what-can-circles div#circletwo,
+section.can-do div.what-can-circles div#circlethree,
+section.can-do div.what-can-circles div#circlefoure{
+    text-align: center;
+    position: relative;
+    line-height: 1.2;
+}
+section.can-do div.what-can-circles div#circleone span,
+section.can-do div.what-can-circles div#circletwo span,
+section.can-do div.what-can-circles div#circlethree span,
+section.can-do div.what-can-circles div#circlefoure span{
+    position: absolute;
+    top: 35px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 30px;
+}
+section.can-do div.what-can-circles h5{
+    font-size: 16px;
+    font-weight: bolder;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+/*// What We Can Do */
+/* Blog */
+section.blog{
+    padding: 70px 0px;
+}
+section.blog h3{
+    font-size: 22px;
+    color: #2a3044;
+    text-align: center;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+section.blog h4{
+    font-size: 14px;
+    color: #555555;
+    text-align: center;
+    font-weight: bolder;
+}
+section.blog h4:after{
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #f8c34f;
+    margin: 10px auto;
+}
+section.blog div.blog-grid{
+    margin-top: 50px;
+}
+section.blog div.blog-grid a.blog-item{
+    display: block;
+    box-shadow: 0px 0px 15px #efeff1;
+    -webkit-box-shadow: 0px 0px 15px #efeff1;
+    -moz-box-shadow: 0px 0px 15px #efeff1;
+}
+section.blog div.blog-grid a.blog-item div.blog-img{
+    position: relative;
+}
+section.blog div.blog-grid a.blog-item div.blog-img div.blog-date{
+    position: absolute;
+    top: 0;
+    color: #fff;
+    width: 60px;
+    left: 20px;
+    background: #2d2b36;
+    padding: 10px 0px;
+}
+section.blog div.blog-grid a.blog-item div.blog-img div.blog-date span{
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bolder;
+}
+section.blog div.blog-grid a.blog-item div.blog-info{
+    padding: 15px 20px;
+}
+section.blog div.blog-grid a.blog-item div.blog-info h5{
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #2a3044;
+    font-weight: bolder;
+}
+section.blog div.blog-grid a.blog-item div.blog-info p{
+    color: #898989;
+    font-size: 11px;
+}
+section.blog div.blog-grid a.blog-item:hover{
+    box-shadow: 5px 5px 10px #efeff1;
+    -webkit-box-shadow: 5px 5px 10px #efeff1;
+    -moz-box-shadow: 5px 5px 10px #efeff1;
+}
+/*// Blog */
+/* Buy Trendy */
+section.buy{
+    padding: 70px 0px 0px 0px;
+    text-align: center;
+    background: #f7f9f8;
+}
+section.buy h2,
+section.buy h3{
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+section.buy a{
+    border: 2px solid #f8c34f;
+    color: #f8c34f;
+    text-transform: uppercase;
+    border-radius: 3px;
+    margin: 20px 0px;
+    padding: 10px 30px;
+    background: none;
+}
+section.buy a:hover{
+    background: #f8c34f;
+    color: #fff;
+    border-color: #f8c34f;
+    transition: all ease-in-out 0.5s;
+    -webkit-transition: all ease-in-out 0.5s;
+    -moz-transition: all ease-in-out 0.5s;
+    -o-transition: all ease-in-out 0.5s;
+    -ms-transition: all ease-in-out 0.5s;
+}
+section.buy img{
+    margin: 30px auto 0px auto;
+}
+/*// Buy Trendy */
+/* Footer */
+footer div.footer-top{
+    background: #2a3044;
+    padding: 70px 0px;
+}
+footer div.footer-top div.about h3{
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+footer div.footer-top div.about p{
+    color: #555864;
+    margin-top: 20px;
+    width: 80%;
+}
+footer div.footer-top div.about div.contact{
+    margin-top: 30px;
+}
+footer div.footer-top div.about label{
+    display: block;
+    color: #cccccc;
+    margin: 5px 0px;
+}
+footer div.footer-top div.about label i{
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}
+footer div.footer-top div.featured-blog h3{
+    color: #fff;
+}
+footer div.footer-top div.featured-blog div.blogs{
+    margin-top: 20px;
+}
+footer div.footer-top div.featured-blog a.footer-blog{
+    display: block;
+    overflow: hidden;
+    margin: 10px 0px;
+}
+footer div.footer-top div.featured-blog a.footer-blog div.blog-img{
+    float: left;
+    width: 20%;
+}
+footer div.footer-top div.featured-blog a.footer-blog div.blog-info{
+    float: right;
+    width: 79%;
+    padding: 0px 20px;
+}
+footer div.footer-top div.featured-blog a.footer-blog div.blog-info h5{
+    margin: 5px 0px;
+    color: #fff;
+    text-transform: uppercase;
+}
+footer div.footer-top div.featured-blog a.footer-blog div.blog-info p{
+    font-size: 11px;
+    color: #87888a;
+}
+footer div.footer-top div.featured-blog a.footer-blog div.blog-info:hover h5{
+    color: #f8c34f;
+    transition: all ease-in-out 0.5s;
+    -webkit-transition: all ease-in-out 0.5s;
+    -moz-transition: all ease-in-out 0.5s;
+    -o-transition: all ease-in-out 0.5s;
+    -ms-transition: all ease-in-out 0.5s;
+}
+footer div.footer-top div.getnews h3{
+    color: #fff;
+    text-transform: uppercase;
+}
+footer div.footer-top div.getnews p{
+    color: #767983;
+    margin-top: 30px;
+    width: 80%;
+}
+footer div.footer-top div.getnews form{
+    margin-top: 20px;
+}
+footer div.footer-top div.getnews label{
+    position: relative;
+    display: block;
+    width: 80%;
+}
+footer div.footer-top div.getnews label i{
+    color: #cccccc;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+footer div.footer-top div.getnews label input[type="email"]{
+    background: #353d56;
+    border:none;
+    padding: 0px 40px;
+}
+footer div.footer-top div.getnews button{
+    background: #f8c34f;
+    border-color: #f8c34f;
+    margin-top: 30px;
+    font-size: 20px;
+    border-radius: 2px;
+    color: #fff;
+}
+footer div.footer-bottom{
+    background: #353d56;
+}
+footer div.footer-bottom div.copy{
+    color: #fff;
+}
+footer div.footer-bottom div.copy ul li{
+    float: left;
+    margin: 30px 0px;
+}
+footer div.footer-bottom div.copy ul li{
+    border-right: 1px solid #c2c2c2;
+    padding: 0px 5px;
+    line-height: 15px;
+    font-size: 18px;
+}
+footer div.footer-bottom div.copy ul li:last-of-type{
+    border-right: none;
+}
+footer div.footer-bottom div.copy ul li a{
+    color: #f8c34f;
+}
+footer div.footer-bottom div.socialmedia{
+    margin: 30px 0px;
+    text-align: right;
+}
+footer div.footer-bottom div.socialmedia a{
+    color: #898989;
+    font-weight: bolder;
+    margin: 0px 10px;
+    font-size: 18px;
+}
+footer div.footer-bottom div.socialmedia a:hover{
+    color: #fff;
+    transition: all ease-in-out 0.5s;
+    -webkit-transition: all ease-in-out 0.5s;
+    -moz-transition: all ease-in-out 0.5s;
+    -o-transition: all ease-in-out 0.5s;
+    -ms-transition: all ease-in-out 0.5s;
+}
+/*// Footer */
