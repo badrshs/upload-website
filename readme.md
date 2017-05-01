@@ -29,3 +29,14 @@ https://askubuntu.com/questions/764782/install-laravel-5-on-ubuntu-16-04
 
 
 php artisan cache:clear 
+
+
+
+inside the main conf we have to add 
+
+
+ <Directory /var/www/html/public>
+       AllowOverride All
+     </Directory>
+     
+     
