@@ -18,3 +18,14 @@ inside this filder just add
 ##  www-data ALL=(ALL:ALL) NOPASSWD: /etc/init.d/apache2 reload
 
 to give permission for the normal user 
+
+
+
+# ubunto laravel instulaion 
+
+sudo apt-get install php-mbstring
+
+https://askubuntu.com/questions/764782/install-laravel-5-on-ubuntu-16-04
+
+
+php artisan cache:clear 
