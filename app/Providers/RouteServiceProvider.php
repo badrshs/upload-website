@@ -66,13 +66,13 @@ class RouteServiceProvider extends ServiceProvider
   
                         }
             
-            
+         /*   
        if (!strpos(\Request::server ("HTTP_HOST"), 'upload-website') !== false) {
            
           header("location: http://www.upload-website.com/");
    exit();
        }
-    
+    */
             
             
             

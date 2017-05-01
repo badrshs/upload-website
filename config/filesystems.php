@@ -70,8 +70,8 @@ return [
   ],
         
              'subdomain' => [
-            'driver' => 'local',
-            'root'   => '/etc/nginx/sites-available',
+            'driver' => 'local', 
+            'root'   => '/etc/apache2/sites-available',
           ],
 
     ],

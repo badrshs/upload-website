@@ -241,112 +241,61 @@ var id='$Random';
                 
                 $this->Save($home_folder,$AllFileSize,$ZipSize);
             
-            
-            
-            
-            
-  $CreateFile='
-
-server {
-    listen 80;
-    listen [::]:80;
-
-    root /var/www/laravel/public/'.$Random.'; 
-    index index.html index.htm;
-
-    server_name '.$Random.'.upload-website.com www.'.$Random.'.upload-website.com;
-
- 	location / {
-		 
-		#try_files $uri $uri/ /index.php?$query_string;
-	     try_files $uri $uri/ =404;
-
-        
-           autoindex on;
-
-        
-         location ~ ^.+/.*\.php$ { 
-    location ~ .*\.(php)?$ 
-    { 
-      deny all; 
-    }
-    
-    location ~ .*\.(py)?$ 
-    { 
-      deny all; 
-    }
-    
-    location ~ .*\.(pl)?$ 
-    { 
-      deny all; 
-    }
-    
-    location ~ .*\.(cgi)?$ 
-    { 
-      deny all; 
-    }
-    
-    location ~ .*\.(php3)?$ 
-    { 
-      deny all; 
-    }
-    
-    location ~ .*\.(php4)?$ 
-    { 
-      deny all; 
-    }
-    
-    location ~ .*\.(php5)?$ 
-    { 
-      deny all; 
-    }
-    
-    location ~ .*\.(phtml)?$ 
-    { 
-      deny all; 
-    }
-    
-    location ~ .*\.(pyc)?$ 
-    { 
-      deny all; 
-    }
-    location ~ .*\.(pyo)?$ 
-    { 
-      deny all; 
-    }
- }
-        
-        
-   
-        
-  
-        
-	}
-    
-    
-  
-
+     $CreateFile='
+ <VirtualHost *:80>
+    ServerAdmin admin@example.com
+    ServerName '.$Random.'.quiztest.me
+   #ServerAlias '.$Random.'.quiztest.me
+    DocumentRoot /var/www/html/public/'.$Random.'
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+	<IfModule mod_speling.c>
+    CheckCaseOnly ON
+    CheckSpelling ON
+</IfModule>
  
-}
+  php_admin_value engine Off
+ <Directory /var/www/html/public/'.$Random.'>
+            # Important for security, prevents someone from
+            # uploading a malicious .htaccess
+            AllowOverride None
+            
+            Options -ExecCGI
+            php_flag engine off
+            RemoveHandler .cgi .php .php3 .php4 .php5 .phtml .pl .py .pyc .pyo
+            <Files *>
+                    AllowOverride None
 
- ' 
- ;
+                    Options -ExecCGI
+                    php_flag engine off
+                    RemoveHandler .cgi .php .php3 .php4 .php5 .phtml .pl .py .pyc .pyo
+            </Files>
+    </Directory>
+</VirtualHost>';
+
              Storage::disk('zip')->put("$Random.zip",  file_get_contents (Input::file('zip')));
             
             
             #اضافة السب دومين لملف الكوفج
-           Storage::disk('subdomain')->put("$Random",  "$CreateFile");
+           Storage::disk('subdomain')->put("$Random.conf",  "$CreateFile");
          $TOKEN = "d5d06b1bff548b6255201b8fb16bf04c9ed5e8a1ea8ef0f37041a12af961c624";
             #اضافة السب للديجال اوشن
             
      // echo shell_exec ("curl -X POST \"https://api.digitalocean.com/v2/domains/upload-website.com/records\" -H 'Content-Type: application/json' -H \"Authorization: Bearer $TOKEN\" -d '{\"type\":\"CNAME\",\"name\":\"$Random\",\"data\":\"'upload-website.com'.\"}'");   
-            
+            /*
+			
+
+If you have sudo installed you can create a file: /etc/suduers.d/apache2reload with the following content:
+
+username    ALL=NOPASSWD:/usr/bin/service apache2 reload  */
+
+ 
             
             
             #نقل ملف الاعدادات 
-         echo shell_exec ("ln -s /etc/nginx/sites-available/$Random /etc/nginx/sites-enabled/$Random");
-            #اعادة تشغيل الانجيكس
-         $A = shell_exec("sudo /etc/init.d/nginx reload"); 
+         echo shell_exec ("ln -s /etc/apache2/sites-available/$Random.conf /etc/apache2/sites-enabled/$Random.conf");
+ 
+			$A = shell_exec("sudo /etc/init.d/apache2 reload "); 
 
             
             $this->GeneratLink($Random);
@@ -355,7 +304,7 @@ server {
 
   // return  Redirect::to("http://upload-website.com/$Random");
             
-                    return Redirect::to("http://$Random.upload-website.com/");
+                    return Redirect::to("http://$Random.quiztest.me/");
 
                 
                 
@@ -428,7 +377,7 @@ server {
     public function GeneratLink($url)
 {
        
-        
+        /*
         
         $link = "http://www.upload-website.com/$url";
  
@@ -460,7 +409,7 @@ $doc = new DOMDocument();
   FilesDB::where('name', $url)->update(['Title' =>$title ,'Image' =>$Image ] );
         
         
-        
+        */
         
         
         
