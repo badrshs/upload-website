@@ -13,6 +13,8 @@
 
 inside this file we have 90-cloud-init-users file 
 
-inside this filder just add www-data ALL=(ALL:ALL) NOPASSWD: /etc/init.d/apache2 reload
+inside this filder just add
+
+##  www-data ALL=(ALL:ALL) NOPASSWD: /etc/init.d/apache2 reload
 
 to give permission for the normal user 
